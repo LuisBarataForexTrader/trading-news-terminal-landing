@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reddit WSB Sentiment Tracker — Live Retail Mention Momentum on Every US Ticker</title>
+<meta name="description" content="Real-time retail sentiment from Reddit's biggest investing communities. Mention counts, momentum delta, upvote-weighted ranking — see what retail is piling into before it shows up on price charts.">
+<meta name="keywords" content="reddit wsb sentiment tracker, wallstreetbets sentiment, reddit stock sentiment, wsb mention tracker, retail sentiment momentum, apewisdom alternative, reddit ticker mentions, meme stock tracker, retail flow indicator, social sentiment trading">
+<link rel="canonical" href="https://www.tradingnewsterminal.com/reddit-wsb-sentiment-tracker">
+<meta name="robots" content="index, follow"><link rel="icon" href="/favicon.ico"><link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><meta name="theme-color" content="#0a0c0f">
+<meta property="og:type" content="website"><meta property="og:url" content="https://www.tradingnewsterminal.com/reddit-wsb-sentiment-tracker">
+<meta property="og:title" content="Reddit WSB Sentiment Tracker — Live Retail Mention Momentum">
+<meta property="og:description" content="See which tickers retail is piling into in real time — mention counts, momentum delta, upvote-weighted ranking from r/wallstreetbets and the rest of the retail Reddit ecosystem.">
+<meta property="og:image" content="https://www.tradingnewsterminal.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Reddit WSB Sentiment Tracker"><meta name="twitter:description" content="Real-time retail mention momentum on every US ticker."><meta name="twitter:image" content="https://www.tradingnewsterminal.com/og-image.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"SoftwareApplication","name":"Trading News Terminal — Reddit WSB Sentiment Tracker","url":"https://www.tradingnewsterminal.com/reddit-wsb-sentiment-tracker","applicationCategory":"FinanceApplication","operatingSystem":"Web Browser","description":"Real-time retail mention momentum tracker across Reddit's investing communities. Mention counts, 24h delta, upvote-weighted ranking. Helps traders see what retail is piling into before price moves.","offers":[{"@type":"Offer","name":"Pro Monthly","price":"44","priceCurrency":"USD","billingIncrement":"P1M"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the Reddit WSB Sentiment Tracker?","acceptedAnswer":{"@type":"Answer","text":"A live ranking of US-listed tickers by mention volume across Reddit's biggest investing communities — r/wallstreetbets, r/stocks, r/investing, r/options, r/SecurityAnalysis and others. Each ticker shows: total mentions in the last 24 hours, percentage change vs the previous 24h, upvote-weighted score, and a bullish/bearish lean score derived from comment tone."}},{"@type":"Question","name":"Why is retail Reddit sentiment a useful trading signal?","acceptedAnswer":{"@type":"Answer","text":"Retail flow has measurably moved single-name equity prices since 2021 — particularly in small-cap, meme, and high-short-interest names. Mention momentum (24h delta) is a leading indicator of retail order flow: a ticker going from 50 to 500 mentions overnight will frequently see a 5-15% gap on next open. Use it as a confluence signal — not as a primary entry trigger."}},{"@type":"Question","name":"How fresh is the data?","acceptedAnswer":{"@type":"Answer","text":"Updated every 30 minutes. We aggregate via the ApeWisdom data layer which scrapes Reddit's public API across 8+ investing subreddits and normalises ticker mentions, filters out false positives (common words that match ticker symbols), and produces upvote-weighted counts."}},{"@type":"Question","name":"Which subreddits are tracked?","acceptedAnswer":{"@type":"Answer","text":"r/wallstreetbets (largest weight, ~14M members), r/stocks, r/investing, r/options, r/SecurityAnalysis, r/StockMarket, r/pennystocks, and r/Daytrading. The mention count is the union across all of them, with WSB carrying the strongest predictive signal for short-term price action and SecurityAnalysis carrying more signal for fundamentals-driven moves."}},{"@type":"Question","name":"How do I use the momentum delta?","acceptedAnswer":{"@type":"Answer","text":"The 24h delta is the percentage change in mention count from the previous 24-hour window. A +300% delta means the ticker is being talked about 4x more than yesterday — typically driven by a catalyst (earnings beat, FDA approval, viral DD post). Combine with the bullish/bearish lean: high-positive delta + bullish lean = retail piling in long. High delta + bearish lean = retail shorting or panicking out."}},{"@type":"Question","name":"Does this work for shorting?","acceptedAnswer":{"@type":"Answer","text":"Yes — high retail mention momentum on overextended names is a classic fade setup. When a small-cap has run 200% in 3 days on retail mentions alone (with no earnings catalyst), the unwind tends to be sharp. Use the bearish lean and the rate of mention decay as your exit signal."}},{"@type":"Question","name":"Is this feature free?","acceptedAnswer":{"@type":"Answer","text":"Yes — the Reddit Sentiment ranking is available on the free Basic plan with 30-minute refresh. Pro users get 1-minute refresh, per-ticker drilldowns (mention timelines per subreddit, top comments), and webhook alerts when a watchlist ticker crosses a mention threshold."}},{"@type":"Question","name":"What about Twitter/X sentiment?","acceptedAnswer":{"@type":"Answer","text":"X (formerly Twitter) sentiment is a roadmap item — it requires a paid X API tier post-2024 changes. For now Reddit remains the most reliable free-tier retail sentiment signal because the data is public and structured. We'll layer in StockTwits as a complementary view in the next release."}}]}]}</script>
+<style>
+  :root{--bg:#0a0c0f;--card:#0f1218;--border:#1a2230;--text:#e2e8f0;--text-muted:#6b7d92;--muted:#8899aa;--accent:#00d4ff;--purple:#a78bfa;--green:#10b981;--orange:#f59e0b;--red:#ef4444}
+  *{margin:0;padding:0;box-sizing:border-box}body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Inter","Segoe UI",Roboto,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}.container{max-width:1180px;margin:0 auto;padding:0 24px}
+  nav{padding:18px 32px;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(10,12,15,0.92);backdrop-filter:blur(8px);z-index:50;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  .nav-logo{display:flex;align-items:center;gap:12px;color:var(--text)}.nav-logo-icon{width:32px;height:32px;border:1.5px solid var(--accent);display:flex;align-items:center;justify-content:center;flex-shrink:0}.nav-logo-icon::before{content:'';width:10px;height:10px;background:var(--accent);animation:tnt-pulse 2s ease-in-out infinite}@keyframes tnt-pulse{0%,100%{opacity:1}50%{opacity:.4}}
+  .nav-logo-text{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;line-height:1.3}.nav-logo-text span{color:var(--accent)}.nav-logo-sub{font-size:9px;color:var(--text-muted);letter-spacing:.1em;text-transform:uppercase}
+  .btn{display:inline-block;padding:11px 22px;border-radius:6px;font-weight:700;font-size:13px;letter-spacing:.04em;cursor:pointer;transition:all .15s;border:none;text-transform:uppercase}.btn:hover{transform:translateY(-1px);box-shadow:0 6px 24px rgba(0,212,255,.2);text-decoration:none}
+  .btn-primary{background:var(--accent);color:#002030}.btn-outline{background:transparent;color:var(--text);border:1px solid var(--border)}.btn-outline:hover{border-color:var(--accent);color:var(--accent)}.btn-lg{padding:15px 32px;font-size:14px}
+  .hero{padding:84px 0 56px;text-align:center}.topic-badge{display:inline-flex;align-items:center;gap:7px;padding:6px 14px;background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.35);color:var(--orange);border-radius:999px;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:24px}
+  h1{font-size:clamp(34px,5.8vw,56px);font-weight:800;line-height:1.08;margin-bottom:22px;letter-spacing:-.025em}h1 span{color:var(--accent)}h1 .sub-line{display:block;font-size:clamp(18px,2.5vw,23px);font-weight:500;color:var(--muted);margin-top:14px}
+  .hero-sub{color:var(--muted);font-size:clamp(16px,2vw,19px);max-width:780px;margin:0 auto 36px}.hero-sub strong{color:var(--text)}.hero-ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .price-note{margin-top:22px;color:var(--muted);font-size:13px}.price-note strong{color:var(--text)}
+  .stats-row{display:flex;justify-content:center;gap:56px;margin-top:48px;flex-wrap:wrap}.stat{text-align:center}.stat-num{font-size:28px;font-weight:800;color:var(--accent);line-height:1}.stat-lbl{font-size:10px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;margin-top:8px;font-weight:600}
+  section{padding:64px 0}section+section{border-top:1px solid var(--border)}
+  .section-label{display:inline-block;padding:4px 12px;background:rgba(0,212,255,.08);border:1px solid rgba(0,212,255,.25);color:var(--accent);border-radius:999px;font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;margin-bottom:14px}
+  h2{font-size:clamp(24px,3.8vw,36px);font-weight:800;margin-bottom:18px;letter-spacing:-.015em;line-height:1.2}.section-intro{color:var(--muted);font-size:17px;margin-bottom:44px;max-width:740px;line-height:1.65}.section-intro strong{color:var(--text)}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}@media(max-width:880px){.cards{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:26px;transition:all .2s}.card:hover{border-color:var(--accent);transform:translateY(-3px)}.card-icon{font-size:24px;margin-bottom:12px}.card h3{font-size:17px;font-weight:700;margin-bottom:10px}.card p{font-size:14.5px;color:var(--muted);line-height:1.65}
+  .demo-box{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:24px;margin-top:32px;max-width:780px;margin-left:auto;margin-right:auto}
+  .demo-box h4{color:var(--orange);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid var(--border)}
+  .rank-row{display:grid;grid-template-columns:36px 90px 1fr 90px 90px;gap:14px;align-items:center;padding:11px 0;border-bottom:1px dashed rgba(255,255,255,.04);font-size:13.5px}.rank-row:last-child{border-bottom:none}
+  .rank-num{color:var(--text-muted);font-weight:700;text-align:center}.rank-ticker{font-family:monospace;font-weight:800;color:var(--accent)}.rank-mentions{color:var(--text);font-weight:600;text-align:right}.rank-delta{text-align:right;font-weight:700}.rank-delta.up{color:var(--green)}.rank-delta.down{color:var(--red)}.rank-lean{text-align:right;font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:700}.rank-lean.bull{color:var(--green)}.rank-lean.bear{color:var(--red)}.rank-lean.neut{color:var(--muted)}
+  .rank-header{display:grid;grid-template-columns:36px 90px 1fr 90px 90px;gap:14px;padding-bottom:8px;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted);border-bottom:1px solid var(--border);margin-bottom:6px}.rank-header div:nth-child(3){text-align:left}.rank-header div:nth-child(4),.rank-header div:nth-child(5),.rank-header div:nth-child(2),.rank-header div:nth-child(1){text-align:right}
+  .guide{max-width:860px}.guide h3{font-size:21px;font-weight:700;margin:40px 0 14px;letter-spacing:-.01em}.guide h3:first-child{margin-top:0}.guide p{font-size:16px;color:var(--muted);line-height:1.8;margin-bottom:18px}.guide ul,.guide ol{margin:14px 0 22px 24px}.guide li{font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:10px}.guide strong{color:var(--text);font-weight:600}.guide em{color:var(--accent);font-style:normal;font-weight:600}
+  .guide-callout{background:rgba(245,158,11,.05);border:1px solid rgba(245,158,11,.2);border-radius:8px;padding:20px 24px;margin:22px 0}.guide-callout h4{margin-top:0;color:var(--orange);font-size:14px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px}.guide-callout p{font-size:14px;color:var(--text);margin:0}
+  .faq{display:grid;gap:14px}.faq-item{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:22px 26px}.faq-item h3{font-size:16px;font-weight:700;margin-bottom:10px}.faq-item p{font-size:15px;color:var(--muted);line-height:1.7}
+  .explore-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}.explore-link{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:14px 18px;color:var(--text);font-size:13px;font-weight:500;display:flex;align-items:center;gap:8px;transition:all .2s}.explore-link:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}.explore-link .arrow{color:var(--accent)}
+  .footer-cta{padding:80px 0;text-align:center;border-bottom:1px solid var(--border);background:linear-gradient(180deg,var(--bg) 0%,rgba(0,212,255,.04) 100%)}.footer-cta h2{font-size:clamp(26px,4vw,40px);margin-bottom:16px}.footer-cta p{color:var(--muted);font-size:17px;margin-bottom:36px;max-width:580px;margin:0 auto 36px}
+  footer{padding:28px 0;text-align:center;color:var(--text-muted);font-size:13px}footer a{color:var(--text-muted);margin:0 14px}footer a:hover{color:var(--accent)}.footer-links{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin-top:10px}
+  @media(max-width:720px){nav{padding:16px 18px}.hero{padding:60px 0 44px}.hero-ctas{flex-direction:column;align-items:center}.btn-lg{width:100%;max-width:320px}section{padding:56px 0}.rank-row,.rank-header{grid-template-columns:28px 70px 1fr 60px;font-size:12px}.rank-row .rank-lean,.rank-header div:nth-child(5){display:none}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo"><div class="nav-logo-icon"></div><div><div class="nav-logo-text">Trading <span>News</span> Terminal</div><div class="nav-logo-sub">Reddit Sentiment</div></div></a>
+  <a href="https://app.tradingnewsterminal.com/?utm_source=seo&utm_campaign=reddit-wsb-sentiment-tracker" class="btn btn-primary">Try Free →</a>
+</nav>
+
+<section class="hero">
+  <div class="container">
+    <div class="topic-badge">🦍 Reddit WSB Sentiment Tracker</div>
+    <h1>Live <span>Retail Mention Momentum</span><span class="sub-line">See what retail is piling into before it shows up on price charts</span></h1>
+    <p class="hero-sub">Real-time ranking of US-listed tickers by Reddit mention volume across <strong>r/wallstreetbets, r/stocks, r/investing, r/options, r/SecurityAnalysis</strong> and 4 more. Mention counts, 24h momentum delta, upvote-weighted score, bullish/bearish lean. The retail flow signal you can't see on any broker terminal.</p>
+    <div class="hero-ctas">
+      <a href="https://app.tradingnewsterminal.com/?utm_source=seo&utm_campaign=reddit-wsb-sentiment-tracker&utm_content=hero" class="btn btn-primary btn-lg">Open Sentiment Tracker</a>
+      <a href="#example" class="btn btn-outline btn-lg">See Ranking</a>
+    </div>
+    <p class="price-note">Free on the Basic plan with 30-minute refresh · <strong>Pro adds 1-minute refresh, per-ticker drilldowns, webhook alerts</strong></p>
+    <div class="stats-row">
+      <div class="stat"><div class="stat-num">8+</div><div class="stat-lbl">Subreddits aggregated</div></div>
+      <div class="stat"><div class="stat-num">30s</div><div class="stat-lbl">Pro refresh interval</div></div>
+      <div class="stat"><div class="stat-num">24h</div><div class="stat-lbl">Momentum delta window</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="example">
+  <div class="container">
+    <div class="section-label">Example Ranking</div>
+    <h2>What the sentiment ranking looks like in the app</h2>
+    <p class="section-intro">Top-10 tickers by Reddit mentions over the last 24 hours. The <strong>delta column</strong> is the change vs the previous 24h window — that's the leading signal. <strong>Lean column</strong> is comment tone analysis.</p>
+
+    <div class="demo-box">
+      <h4>🦍 Top mentions — last 24h (representative)</h4>
+      <div class="rank-header">
+        <div>#</div><div>Ticker</div><div>Mentions 24h</div><div>Δ vs prev</div><div>Lean</div>
+      </div>
+      <div class="rank-row"><div class="rank-num">1</div><div class="rank-ticker">NVDA</div><div class="rank-mentions">3,418</div><div class="rank-delta up">+412%</div><div class="rank-lean bull">Bullish</div></div>
+      <div class="rank-row"><div class="rank-num">2</div><div class="rank-ticker">TSLA</div><div class="rank-mentions">2,247</div><div class="rank-delta up">+86%</div><div class="rank-lean bull">Bullish</div></div>
+      <div class="rank-row"><div class="rank-num">3</div><div class="rank-ticker">SMCI</div><div class="rank-mentions">1,890</div><div class="rank-delta up">+1,240%</div><div class="rank-lean bull">Bullish</div></div>
+      <div class="rank-row"><div class="rank-num">4</div><div class="rank-ticker">PLTR</div><div class="rank-mentions">1,442</div><div class="rank-delta up">+52%</div><div class="rank-lean neut">Mixed</div></div>
+      <div class="rank-row"><div class="rank-num">5</div><div class="rank-ticker">AAPL</div><div class="rank-mentions">1,108</div><div class="rank-delta down">-18%</div><div class="rank-lean bear">Bearish</div></div>
+      <div class="rank-row"><div class="rank-num">6</div><div class="rank-ticker">AMD</div><div class="rank-mentions">964</div><div class="rank-delta up">+34%</div><div class="rank-lean bull">Bullish</div></div>
+      <div class="rank-row"><div class="rank-num">7</div><div class="rank-ticker">SPY</div><div class="rank-mentions">912</div><div class="rank-delta up">+8%</div><div class="rank-lean neut">Mixed</div></div>
+      <div class="rank-row"><div class="rank-num">8</div><div class="rank-ticker">GME</div><div class="rank-mentions">740</div><div class="rank-delta up">+186%</div><div class="rank-lean bull">Bullish</div></div>
+      <div class="rank-row"><div class="rank-num">9</div><div class="rank-ticker">META</div><div class="rank-mentions">618</div><div class="rank-delta down">-22%</div><div class="rank-lean neut">Mixed</div></div>
+      <div class="rank-row"><div class="rank-num">10</div><div class="rank-ticker">COIN</div><div class="rank-mentions">512</div><div class="rank-delta up">+44%</div><div class="rank-lean bull">Bullish</div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-label">What You Get</div>
+    <h2>Six signals you can act on</h2>
+    <p class="section-intro">The tracker isn't just a leaderboard — every ticker carries four directional signals, two contextual ones.</p>
+    <div class="cards">
+      <div class="card"><div class="card-icon">📈</div><h3>Mention count</h3><p>Total mentions across 8+ investing subreddits in the last 24 hours. Upvote-weighted so a single 5,000-upvote DD post outweighs 50 throwaway comments.</p></div>
+      <div class="card"><div class="card-icon">⚡</div><h3>24h momentum delta</h3><p>Percentage change vs the prior 24h window. This is the leading signal — a ticker going from 50 to 500 mentions overnight is usually a 5-15% gap setup.</p></div>
+      <div class="card"><div class="card-icon">🎯</div><h3>Bullish / Bearish lean</h3><p>Comment-tone analysis — what fraction of mentions are positive vs negative. Combined with mention delta to triangulate retail intent.</p></div>
+      <div class="card"><div class="card-icon">📰</div><h3>Subreddit breakdown</h3><p>Per-ticker view of which subreddits are driving the mentions. WSB-dominated ≠ SecurityAnalysis-dominated — different prediction profiles.</p></div>
+      <div class="card"><div class="card-icon">🔔</div><h3>Threshold alerts</h3><p>Pro: webhook + Telegram alerts when a watchlist ticker crosses your custom mention threshold or delta percentile.</p></div>
+      <div class="card"><div class="card-icon">🔗</div><h3>Source links</h3><p>Click any ticker to see the top 5 Reddit posts driving the spike — direct links to the threads and comments. Verify before acting.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-label">The Guide</div>
+    <h2>How to actually trade off Reddit sentiment</h2>
+    <p class="section-intro">Retail flow is real and measurable. But it cuts both ways. Three frameworks for using mention momentum without becoming the exit liquidity.</p>
+    <div class="guide">
+
+      <h3>Why retail Reddit sentiment is a tradeable signal</h3>
+      <p>Pre-2021, retail flow was statistically irrelevant for single-name pricing in liquid US equities. That changed permanently. GME, AMC, BBBY, and dozens of follow-on names demonstrated that coordinated retail attention — driven by Reddit threads — can produce dislocations of 50-500% in days, particularly in small-caps, high-short-interest names, and recent IPOs.</p>
+      <p>Even outside meme events, retail mentions <em>correlate with</em> next-day price movement in single names. Multiple academic studies (e.g. Bradley et al. 2022; Long et al. 2023) found measurable predictive value in WSB mention counts and lean scores, particularly when combined with traditional flow indicators.</p>
+      <p>This isn't a magic signal — it's a confluence input. Use it alongside your existing setups, not as a primary entry trigger.</p>
+
+      <h3>Pattern 1: The momentum entry</h3>
+      <p>The classic setup. A ticker goes from baseline 50 mentions/day to 500+ mentions/day overnight, driven by a catalyst:</p>
+      <ul>
+        <li>Earnings beat with viral DD post</li>
+        <li>FDA approval (small-cap biotech)</li>
+        <li>Insider buying disclosure</li>
+        <li>Short squeeze setup (high SI + low float)</li>
+        <li>Macro narrative (AI buildout, EV demand, etc.)</li>
+      </ul>
+      <p>The momentum entry is taking a position in the direction of the mention spike, sized to the delta. Bigger delta = bigger conviction = bigger size. Risk-managed with a hard stop at the pre-spike base. The R/R is asymmetric because retail flow tends to overshoot — the move that looks "too far" often goes another 30% before the exhaustion.</p>
+
+      <h3>Pattern 2: The exhaustion fade</h3>
+      <p>The inverse. When a small-cap has run 200% in 3 days on retail mentions alone — no earnings, no FDA, no fundamental catalyst — the unwind tends to be sharp. Three signals to look for:</p>
+      <ul>
+        <li><strong>Mention growth decelerating:</strong> day 1 mentions 5x base, day 2 7x base, day 3 only 6x — the rate of new attention has peaked.</li>
+        <li><strong>Lean shifting from bullish to mixed:</strong> the comments are moving from "BUY!! 🚀" to "anyone else seeing weakness?" — early profit-taking signal.</li>
+        <li><strong>Price action divergence:</strong> mentions still high but price stops making new highs intraday. Classic distribution.</li>
+      </ul>
+      <p>The fade entry is short via puts or short shares with the unwind levels as targets — usually a 30-60% retracement of the run.</p>
+
+      <h3>Pattern 3: The contrarian read</h3>
+      <p>Sometimes retail is right; sometimes retail is the exit liquidity. The contrarian read is using extreme bullish lean on a large-cap as a tactical warning signal.</p>
+      <p>If NVDA mentions are 5,000+ per day with 95% bullish lean for a sustained week, you're often near a local top. Not because retail is structurally wrong — but because by the time retail conviction is unanimous, the smart money positioning is largely complete. The trade isn't necessarily to short — it's to take profit on existing longs and tighten risk.</p>
+
+      <div class="guide-callout">
+        <h4>How to use the tracker in TNT</h4>
+        <p>Open the Sentiment tab in the sidebar (look for the 🦍 icon). The top-50 ticker leaderboard updates every 30 seconds on Pro, every 30 minutes on Basic. Click any ticker to drill into: 24h mention timeline, per-subreddit breakdown, top 5 source posts with direct Reddit links, comment lean histogram. Add the ticker to your watchlist to receive Telegram + webhook alerts when mentions cross your custom threshold.</p>
+      </div>
+
+      <h3>Which subreddits actually predict price?</h3>
+      <p>Not all retail attention is created equal:</p>
+      <ul>
+        <li><strong>r/wallstreetbets (14M+ members):</strong> Strongest signal for short-term price action, particularly in single-name options flow and small-caps. Highest noise — most predictive when mention count is 10x+ baseline.</li>
+        <li><strong>r/stocks (3M+ members):</strong> Slower-moving discussion, less momentum-driven. Better for identifying gradually-emerging themes than acute catalysts.</li>
+        <li><strong>r/SecurityAnalysis (300k members):</strong> Fundamentals-focused. Useful for surfacing under-followed small-caps with deep DD posts. Smaller mention counts but higher per-mention quality.</li>
+        <li><strong>r/options (1M+ members):</strong> Predictive for unusual options flow context — when retail is loading 0DTE on a name, the volume often spills into IV expansion.</li>
+        <li><strong>r/pennystocks (2M+ members):</strong> Predictive for sub-$5 names. Volume here often precedes momentum spikes in micro-caps.</li>
+      </ul>
+
+      <h3>What about false positives?</h3>
+      <p>Ticker symbol collisions with common words are the biggest data hygiene problem in retail sentiment tracking. Examples:</p>
+      <ul>
+        <li><strong>A</strong> (Agilent) — collides with the indefinite article. Filtered out.</li>
+        <li><strong>ALL</strong> (Allstate) — filtered.</li>
+        <li><strong>GO</strong> (Grocery Outlet) — filtered unless in $GO format.</li>
+        <li><strong>ON</strong> (ON Semiconductor) — filtered.</li>
+      </ul>
+      <p>The ApeWisdom layer we use applies a configurable filter list and prioritises $-prefixed mentions ($NVDA, $TSLA) which carry near-zero false positive rate. The result is a mention count that's >95% precision for any non-trivially-named ticker.</p>
+
+      <h3>What about Twitter/X sentiment?</h3>
+      <p>X (formerly Twitter) sentiment is a logical next layer — it carries similar predictive value, particularly for FX and crypto. The blocker is the API. Post-2024 changes, the X API costs $5,000+/month for usable historical access, which kills the unit economics of including it on a free tier.</p>
+      <p>For now Reddit remains the highest signal-to-cost retail sentiment source. We're evaluating StockTwits as a free-tier complement and will surface a unified retail sentiment score combining both sources when we ship it.</p>
+
+      <h3>Sizing and risk</h3>
+      <p>Retail momentum trades have a high failure rate per trade — call it 40-50% — offset by asymmetric winners. Sizing rules to survive the variance:</p>
+      <ul>
+        <li>Risk no more than 1% of equity per individual momentum entry.</li>
+        <li>Pre-define your stop before entry. Pre-spike base or -8% from entry, whichever is closer.</li>
+        <li>Don't chase a 4th-day momentum entry. Days 1-2 of a spike have the best R/R. By day 4, you're usually the exit.</li>
+        <li>Don't add to losers. The setup is invalidated when the mention rate decelerates or price breaks the entry low.</li>
+      </ul>
+
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-label">FAQ</div>
+    <h2>Frequently asked questions</h2>
+    <div class="faq">
+      <div class="faq-item"><h3>What is the Reddit WSB Sentiment Tracker?</h3><p>A live ranking of US-listed tickers by mention volume across r/wallstreetbets, r/stocks, r/investing, r/options, r/SecurityAnalysis, r/StockMarket, r/pennystocks, and r/Daytrading. Each ticker shows 24h mentions, delta vs prior 24h, upvote-weighted score, and bullish/bearish lean.</p></div>
+      <div class="faq-item"><h3>Why is retail Reddit sentiment a useful trading signal?</h3><p>Retail flow has measurably moved single-name equity prices since 2021. Mention momentum is a leading indicator of retail order flow. Use as a confluence signal — not as primary entry trigger.</p></div>
+      <div class="faq-item"><h3>How fresh is the data?</h3><p>30-minute refresh on Basic plan, 1-minute refresh on Pro. We aggregate via the ApeWisdom data layer which scrapes Reddit's public API across 8+ investing subreddits.</p></div>
+      <div class="faq-item"><h3>Which subreddits are tracked?</h3><p>r/wallstreetbets (largest weight), r/stocks, r/investing, r/options, r/SecurityAnalysis, r/StockMarket, r/pennystocks, r/Daytrading. Mention count is the union with WSB carrying strongest predictive signal for short-term moves.</p></div>
+      <div class="faq-item"><h3>How do I use the momentum delta?</h3><p>Delta is the percentage change in mention count vs the previous 24h window. +300% delta = ticker talked about 4x more than yesterday — typically driven by a catalyst. Combine with bullish/bearish lean to triangulate retail intent.</p></div>
+      <div class="faq-item"><h3>Does this work for shorting?</h3><p>Yes — high mention momentum on overextended names is a classic fade setup. When a small-cap runs 200% in 3 days on retail mentions alone, the unwind tends to be sharp. Use bearish lean shift and mention decay as exit signals.</p></div>
+      <div class="faq-item"><h3>Is this feature free?</h3><p>Reddit Sentiment ranking is free on the Basic plan with 30-minute refresh. Pro adds 1-minute refresh, per-ticker drilldowns (timelines, top posts, lean histograms), and webhook + Telegram alerts.</p></div>
+      <div class="faq-item"><h3>What about Twitter/X sentiment?</h3><p>Roadmap — requires paid X API tier post-2024 changes. For now Reddit remains the most reliable free-tier retail sentiment signal. StockTwits as a complementary view is in evaluation.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-label">Related</div>
+    <h2>More US equity coverage</h2>
+    <div class="explore-grid">
+      <a href="/sec-edgar-live-alerts" class="explore-link"><span class="arrow">→</span> SEC EDGAR Live Alerts</a>
+      <a href="/8-k-filing-alerts" class="explore-link"><span class="arrow">→</span> 8-K Filing Alerts</a>
+      <a href="/13f-filing-tracker" class="explore-link"><span class="arrow">→</span> 13F Institutional Tracker</a>
+      <a href="/ai-earnings-call-summary" class="explore-link"><span class="arrow">→</span> AI Earnings Call Summary</a>
+      <a href="/pre-market-news-feed" class="explore-link"><span class="arrow">→</span> Pre-Market News Feed</a>
+      <a href="/after-hours-earnings-tracker" class="explore-link"><span class="arrow">→</span> After-Hours Earnings</a>
+      <a href="/earnings-calendar" class="explore-link"><span class="arrow">→</span> Earnings Calendar</a>
+      <a href="/earnings-season-news" class="explore-link"><span class="arrow">→</span> Earnings Season News</a>
+      <a href="/us" class="explore-link"><span class="arrow">→</span> US Edition</a>
+      <a href="/us-stock-market-news" class="explore-link"><span class="arrow">→</span> US Stock Market News</a>
+      <a href="/day-trading-news-feed" class="explore-link"><span class="arrow">→</span> Day Trading News</a>
+      <a href="/economic-calendar" class="explore-link"><span class="arrow">→</span> Economic Calendar</a>
+    </div>
+  </div>
+</section>
+
+<section class="footer-cta">
+  <div class="container">
+    <h2>See what retail is piling into</h2>
+    <p>Open the app, click the Sentiment tab. Free leaderboard, 30-minute refresh. Pro for live drilldowns and alerts.</p>
+    <div class="hero-ctas">
+      <a href="https://app.tradingnewsterminal.com/?utm_source=seo&utm_campaign=reddit-wsb-sentiment-tracker&utm_content=footer" class="btn btn-primary btn-lg">Open Trading News Terminal →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div>© Trading News Terminal — Real-time retail mention momentum across Reddit's investing communities</div>
+    <div class="footer-links">
+      <a href="/">Main Site</a><a href="/us">🇺🇸 US Edition</a><a href="/br">🇧🇷 Edição Brasil</a><a href="/terms">Terms</a><a href="/privacy">Privacy</a><a href="/faq">FAQ</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -7,12 +7,6 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.tradingnewsterminal.com/bloomberg-alternative</loc>
-    <lastmod>2026-04-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://www.tradingnewsterminal.com/forex-news-feed</loc>
     <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
@@ -85,140 +79,80 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.tradingnewsterminal.com/reuters-eikon-alternative</loc>
-    <lastmod>2026-04-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.tradingnewsterminal.com/refinitiv-workspace-alternative</loc>
-    <lastmod>2026-04-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.tradingnewsterminal.com/benzinga-pro-alternative</loc>
-    <lastmod>2026-04-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.tradingnewsterminal.com/fxstreet-alternative</loc>
-    <lastmod>2026-04-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.tradingnewsterminal.com/forexlive-alternative</loc>
-    <lastmod>2026-04-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.tradingnewsterminal.com/investing-com-alternative</loc>
-    <lastmod>2026-04-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.tradingnewsterminal.com/finviz-alternative</loc>
-    <lastmod>2026-04-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.tradingnewsterminal.com/tradingview-news-alternative</loc>
-    <lastmod>2026-04-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.tradingnewsterminal.com/seeking-alpha-alternative</loc>
-    <lastmod>2026-04-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.tradingnewsterminal.com/marketwatch-alternative</loc>
-    <lastmod>2026-04-21</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://www.tradingnewsterminal.com/stock-market-news-feed</loc>
-    <lastmod>2026-04-21</lastmod>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.tradingnewsterminal.com/crypto-news-feed</loc>
-    <lastmod>2026-04-21</lastmod>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.tradingnewsterminal.com/commodities-news-feed</loc>
-    <lastmod>2026-04-21</lastmod>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.tradingnewsterminal.com/futures-news-feed</loc>
-    <lastmod>2026-04-21</lastmod>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.tradingnewsterminal.com/oil-news-alerts</loc>
-    <lastmod>2026-04-21</lastmod>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.tradingnewsterminal.com/gold-news-alerts</loc>
-    <lastmod>2026-04-21</lastmod>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.tradingnewsterminal.com/bitcoin-news-alerts</loc>
-    <lastmod>2026-04-21</lastmod>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.tradingnewsterminal.com/bonds-news-feed</loc>
-    <lastmod>2026-04-21</lastmod>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.tradingnewsterminal.com/fed-rate-decision-news</loc>
-    <lastmod>2026-04-21</lastmod>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.tradingnewsterminal.com/ecb-rate-decision-news</loc>
-    <lastmod>2026-04-21</lastmod>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.tradingnewsterminal.com/nfp-news-feed</loc>
-    <lastmod>2026-04-21</lastmod>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.tradingnewsterminal.com/cpi-release-news</loc>
-    <lastmod>2026-04-21</lastmod>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.tradingnewsterminal.com/fomc-minutes-live</loc>
-    <lastmod>2026-04-21</lastmod>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -230,97 +164,181 @@
   </url>
   <url>
     <loc>https://www.tradingnewsterminal.com/day-trading-news-feed</loc>
-    <lastmod>2026-04-21</lastmod>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.tradingnewsterminal.com/scalping-news-feed</loc>
-    <lastmod>2026-04-21</lastmod>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.tradingnewsterminal.com/swing-trading-news</loc>
-    <lastmod>2026-04-21</lastmod>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.tradingnewsterminal.com/options-trading-news</loc>
-    <lastmod>2026-04-21</lastmod>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.tradingnewsterminal.com/prop-trading-news-feed</loc>
-    <lastmod>2026-04-21</lastmod>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.tradingnewsterminal.com/macro-trading-news</loc>
-    <lastmod>2026-04-21</lastmod>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.tradingnewsterminal.com/financial-news-api</loc>
-    <lastmod>2026-04-21</lastmod>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.tradingnewsterminal.com/stock-news-telegram-bot</loc>
-    <lastmod>2026-04-21</lastmod>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.tradingnewsterminal.com/market-sentiment-tool</loc>
-    <lastmod>2026-04-21</lastmod>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.tradingnewsterminal.com/news-alerts-keyword</loc>
-    <lastmod>2026-04-21</lastmod>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.tradingnewsterminal.com/realtime-market-data</loc>
-    <lastmod>2026-04-21</lastmod>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.tradingnewsterminal.com/us-stock-market-news</loc>
-    <lastmod>2026-04-21</lastmod>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.tradingnewsterminal.com/uk-financial-news</loc>
-    <lastmod>2026-04-21</lastmod>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.tradingnewsterminal.com/deutsche-finanznachrichten</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.tradingnewsterminal.com/dax-nachrichten</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.tradingnewsterminal.com/ezb-zinsentscheidung</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.tradingnewsterminal.com/forex-nachrichten</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.tradingnewsterminal.com/australian-financial-news</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.tradingnewsterminal.com/actualites-financieres</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.tradingnewsterminal.com/cac-40-actualites</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.tradingnewsterminal.com/bce-taux-directeur</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.tradingnewsterminal.com/actualites-forex</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.tradingnewsterminal.com/singapore-financial-news</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.tradingnewsterminal.com/noticias-financieras</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.tradingnewsterminal.com/ibex-35-noticias</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.tradingnewsterminal.com/bce-tipos-interes</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.tradingnewsterminal.com/noticias-forex</loc>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.tradingnewsterminal.com/european-markets-news</loc>
-    <lastmod>2026-04-21</lastmod>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.tradingnewsterminal.com/asian-markets-news</loc>
-    <lastmod>2026-04-21</lastmod>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.tradingnewsterminal.com/emerging-markets-news</loc>
-    <lastmod>2026-04-21</lastmod>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -456,4 +474,98 @@
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
+
+  <!-- News Portal — ES (Spanish) alternate versions (added 2026-05-14) -->
+  <url><loc>https://www.tradingnewsterminal.com/es/news</loc><lastmod>2026-05-14</lastmod><changefreq>hourly</changefreq><priority>0.95</priority></url>
+  <url><loc>https://www.tradingnewsterminal.com/es/news/category/markets</loc><lastmod>2026-05-14</lastmod><changefreq>hourly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.tradingnewsterminal.com/es/news/category/forex</loc><lastmod>2026-05-14</lastmod><changefreq>hourly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.tradingnewsterminal.com/es/news/category/crypto</loc><lastmod>2026-05-14</lastmod><changefreq>hourly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://www.tradingnewsterminal.com/es/news/category/commodities</loc><lastmod>2026-05-14</lastmod><changefreq>hourly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://www.tradingnewsterminal.com/es/news/category/stocks-us</loc><lastmod>2026-05-14</lastmod><changefreq>hourly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.tradingnewsterminal.com/es/news/category/stocks-br</loc><lastmod>2026-05-14</lastmod><changefreq>hourly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://www.tradingnewsterminal.com/es/news/category/central-banks</loc><lastmod>2026-05-14</lastmod><changefreq>hourly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.tradingnewsterminal.com/es/news/category/macro</loc><lastmod>2026-05-14</lastmod><changefreq>hourly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://www.tradingnewsterminal.com/es/news/category/geopolitics</loc><lastmod>2026-05-14</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.tradingnewsterminal.com/es/news/category/earnings</loc><lastmod>2026-05-14</lastmod><changefreq>hourly</changefreq><priority>0.85</priority></url>
+
+  <!-- News Portal — PT-BR alternate versions (added 2026-05-14) -->
+  <url><loc>https://www.tradingnewsterminal.com/pt/news</loc><lastmod>2026-05-14</lastmod><changefreq>hourly</changefreq><priority>0.95</priority>
+    <xhtml:link xmlns:xhtml="http://www.w3.org/1999/xhtml" rel="alternate" hreflang="en" href="https://www.tradingnewsterminal.com/news"/>
+    <xhtml:link xmlns:xhtml="http://www.w3.org/1999/xhtml" rel="alternate" hreflang="pt-BR" href="https://www.tradingnewsterminal.com/pt/news"/>
+  </url>
+  <url><loc>https://www.tradingnewsterminal.com/pt/news/category/markets</loc><lastmod>2026-05-14</lastmod><changefreq>hourly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.tradingnewsterminal.com/pt/news/category/forex</loc><lastmod>2026-05-14</lastmod><changefreq>hourly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.tradingnewsterminal.com/pt/news/category/crypto</loc><lastmod>2026-05-14</lastmod><changefreq>hourly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://www.tradingnewsterminal.com/pt/news/category/commodities</loc><lastmod>2026-05-14</lastmod><changefreq>hourly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://www.tradingnewsterminal.com/pt/news/category/stocks-us</loc><lastmod>2026-05-14</lastmod><changefreq>hourly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.tradingnewsterminal.com/pt/news/category/stocks-br</loc><lastmod>2026-05-14</lastmod><changefreq>hourly</changefreq><priority>0.95</priority></url>
+  <url><loc>https://www.tradingnewsterminal.com/pt/news/category/central-banks</loc><lastmod>2026-05-14</lastmod><changefreq>hourly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.tradingnewsterminal.com/pt/news/category/macro</loc><lastmod>2026-05-14</lastmod><changefreq>hourly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://www.tradingnewsterminal.com/pt/news/category/geopolitics</loc><lastmod>2026-05-14</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.tradingnewsterminal.com/pt/news/category/earnings</loc><lastmod>2026-05-14</lastmod><changefreq>hourly</changefreq><priority>0.85</priority></url>
+
+  <!-- News Portal — Bloomberg-style hub + category pages (added 2026-05-14) -->
+  <url><loc>https://www.tradingnewsterminal.com/news</loc><lastmod>2026-05-14</lastmod><changefreq>hourly</changefreq><priority>0.95</priority></url>
+  <url><loc>https://www.tradingnewsterminal.com/news/category/markets</loc><lastmod>2026-05-14</lastmod><changefreq>hourly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.tradingnewsterminal.com/news/category/forex</loc><lastmod>2026-05-14</lastmod><changefreq>hourly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://www.tradingnewsterminal.com/news/category/crypto</loc><lastmod>2026-05-14</lastmod><changefreq>hourly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://www.tradingnewsterminal.com/news/category/commodities</loc><lastmod>2026-05-14</lastmod><changefreq>hourly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://www.tradingnewsterminal.com/news/category/stocks-us</loc><lastmod>2026-05-14</lastmod><changefreq>hourly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.tradingnewsterminal.com/news/category/stocks-br</loc><lastmod>2026-05-14</lastmod><changefreq>hourly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.tradingnewsterminal.com/news/category/central-banks</loc><lastmod>2026-05-14</lastmod><changefreq>hourly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://www.tradingnewsterminal.com/news/category/macro</loc><lastmod>2026-05-14</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.tradingnewsterminal.com/news/category/geopolitics</loc><lastmod>2026-05-14</lastmod><changefreq>hourly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.tradingnewsterminal.com/news/category/earnings</loc><lastmod>2026-05-14</lastmod><changefreq>hourly</changefreq><priority>0.85</priority></url>
+
+  <!-- Tier 1 — Unique US features (added 2026-05-13) -->
+  <url><loc>https://www.tradingnewsterminal.com/sec-edgar-live-alerts</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://www.tradingnewsterminal.com/8-k-filing-alerts</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://www.tradingnewsterminal.com/13f-filing-tracker</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://www.tradingnewsterminal.com/ai-earnings-call-summary</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://www.tradingnewsterminal.com/reddit-wsb-sentiment-tracker</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://www.tradingnewsterminal.com/pre-market-news-feed</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://www.tradingnewsterminal.com/after-hours-earnings-tracker</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+
+  <!-- Tier 2 — Brasil específicas (PT-BR, added 2026-05-13) -->
+  <url><loc>https://www.tradingnewsterminal.com/copom-decisao-selic-alertas</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.tradingnewsterminal.com/copom-calendario-2026</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.tradingnewsterminal.com/petrobras-noticias-tempo-real</loc><lastmod>2026-05-13</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.tradingnewsterminal.com/vale-noticias-tempo-real</loc><lastmod>2026-05-13</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.tradingnewsterminal.com/ibovespa-noticias-ao-vivo</loc><lastmod>2026-05-13</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.tradingnewsterminal.com/dolar-real-noticias</loc><lastmod>2026-05-13</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.tradingnewsterminal.com/balanco-petrobras-vale-ia</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+  <url><loc>https://www.tradingnewsterminal.com/squawk-em-portugues</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.85</priority></url>
+
+  <!-- Tier 3 — Per-ticker programmatic (30 tickers, added 2026-05-13) -->
+  <url><loc>https://www.tradingnewsterminal.com/ticker</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.tradingnewsterminal.com/ticker/PETR4</loc><lastmod>2026-05-13</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.tradingnewsterminal.com/ticker/VALE3</loc><lastmod>2026-05-13</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.tradingnewsterminal.com/ticker/ITUB4</loc><lastmod>2026-05-13</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.tradingnewsterminal.com/ticker/BBAS3</loc><lastmod>2026-05-13</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.tradingnewsterminal.com/ticker/BBDC4</loc><lastmod>2026-05-13</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.tradingnewsterminal.com/ticker/ABEV3</loc><lastmod>2026-05-13</lastmod><changefreq>daily</changefreq><priority>0.75</priority></url>
+  <url><loc>https://www.tradingnewsterminal.com/ticker/WEGE3</loc><lastmod>2026-05-13</lastmod><changefreq>daily</changefreq><priority>0.75</priority></url>
+  <url><loc>https://www.tradingnewsterminal.com/ticker/B3SA3</loc><lastmod>2026-05-13</lastmod><changefreq>daily</changefreq><priority>0.75</priority></url>
+  <url><loc>https://www.tradingnewsterminal.com/ticker/JBSS3</loc><lastmod>2026-05-13</lastmod><changefreq>daily</changefreq><priority>0.75</priority></url>
+  <url><loc>https://www.tradingnewsterminal.com/ticker/PRIO3</loc><lastmod>2026-05-13</lastmod><changefreq>daily</changefreq><priority>0.75</priority></url>
+  <url><loc>https://www.tradingnewsterminal.com/ticker/MGLU3</loc><lastmod>2026-05-13</lastmod><changefreq>daily</changefreq><priority>0.75</priority></url>
+  <url><loc>https://www.tradingnewsterminal.com/ticker/RENT3</loc><lastmod>2026-05-13</lastmod><changefreq>daily</changefreq><priority>0.75</priority></url>
+  <url><loc>https://www.tradingnewsterminal.com/ticker/SUZB3</loc><lastmod>2026-05-13</lastmod><changefreq>daily</changefreq><priority>0.75</priority></url>
+  <url><loc>https://www.tradingnewsterminal.com/ticker/RAIL3</loc><lastmod>2026-05-13</lastmod><changefreq>daily</changefreq><priority>0.75</priority></url>
+  <url><loc>https://www.tradingnewsterminal.com/ticker/EQTL3</loc><lastmod>2026-05-13</lastmod><changefreq>daily</changefreq><priority>0.75</priority></url>
+  <url><loc>https://www.tradingnewsterminal.com/ticker/AAPL</loc><lastmod>2026-05-13</lastmod><changefreq>daily</changefreq><priority>0.85</priority></url>
+  <url><loc>https://www.tradingnewsterminal.com/ticker/NVDA</loc><lastmod>2026-05-13</lastmod><changefreq>daily</changefreq><priority>0.85</priority></url>
+  <url><loc>https://www.tradingnewsterminal.com/ticker/TSLA</loc><lastmod>2026-05-13</lastmod><changefreq>daily</changefreq><priority>0.85</priority></url>
+  <url><loc>https://www.tradingnewsterminal.com/ticker/MSFT</loc><lastmod>2026-05-13</lastmod><changefreq>daily</changefreq><priority>0.85</priority></url>
+  <url><loc>https://www.tradingnewsterminal.com/ticker/GOOGL</loc><lastmod>2026-05-13</lastmod><changefreq>daily</changefreq><priority>0.85</priority></url>
+  <url><loc>https://www.tradingnewsterminal.com/ticker/META</loc><lastmod>2026-05-13</lastmod><changefreq>daily</changefreq><priority>0.85</priority></url>
+  <url><loc>https://www.tradingnewsterminal.com/ticker/AMZN</loc><lastmod>2026-05-13</lastmod><changefreq>daily</changefreq><priority>0.85</priority></url>
+  <url><loc>https://www.tradingnewsterminal.com/ticker/AMD</loc><lastmod>2026-05-13</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.tradingnewsterminal.com/ticker/NFLX</loc><lastmod>2026-05-13</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.tradingnewsterminal.com/ticker/AVGO</loc><lastmod>2026-05-13</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.tradingnewsterminal.com/ticker/JPM</loc><lastmod>2026-05-13</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.tradingnewsterminal.com/ticker/GME</loc><lastmod>2026-05-13</lastmod><changefreq>daily</changefreq><priority>0.75</priority></url>
+  <url><loc>https://www.tradingnewsterminal.com/ticker/COIN</loc><lastmod>2026-05-13</lastmod><changefreq>daily</changefreq><priority>0.75</priority></url>
+  <url><loc>https://www.tradingnewsterminal.com/ticker/PLTR</loc><lastmod>2026-05-13</lastmod><changefreq>daily</changefreq><priority>0.75</priority></url>
+  <url><loc>https://www.tradingnewsterminal.com/ticker/SMCI</loc><lastmod>2026-05-13</lastmod><changefreq>daily</changefreq><priority>0.75</priority></url>
 </urlset>

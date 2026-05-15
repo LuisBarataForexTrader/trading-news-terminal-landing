@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Actualités Forex en Temps Réel — EUR/USD, GBP/USD & Devises Live</title>
+  <meta name="description" content="Actualités forex en temps réel : EUR/USD, GBP/USD, USD/JPY, EUR/CHF et toutes les paires majeures — avec couverture des banques centrales G10, données macro et squawk live.">
+  <link rel="canonical" href="https://www.tradingnewsterminal.com/actualites-forex">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512x512.png">
+  <meta property="og:title" content="Actualités Forex en Temps Réel — EUR/USD, GBP/USD & Devises Live">
+  <meta property="og:description" content="EUR/USD, GBP/USD, USD/JPY, EUR/CHF — actualités forex en temps réel avec couverture banques centrales G10 et squawk live.">
+  <meta property="og:url" content="https://www.tradingnewsterminal.com/actualites-forex">
+  <meta property="og:image" content="https://www.tradingnewsterminal.com/og-image.png">
+  <meta property="og:type" content="website">
+  <meta name="robots" content="index, follow">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Actualités Forex en Temps Réel — EUR/USD, GBP/USD & Devises Live">
+  <meta name="twitter:description" content="EUR/USD, GBP/USD, USD/JPY, EUR/CHF — actualités forex en temps réel avec couverture banques centrales G10 et squawk live.">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Trading News Terminal",
+      "url": "https://www.tradingnewsterminal.com",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "description": "Actualités forex en temps réel : EUR/USD, GBP/USD, USD/JPY, EUR/CHF avec couverture banques centrales G10 et squawk live.",
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Basic",
+          "price": "0",
+          "priceCurrency": "EUR",
+          "description": "Accès gratuit : actualités différées, calendrier économique, intégration TradingView."
+        },
+        {
+          "@type": "Offer",
+          "name": "Pro",
+          "price": "40",
+          "priceCurrency": "EUR",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "billingDuration": "P1M"
+          },
+          "description": "Terminal professionnel : forex news sans délai, squawk box, TV financière en direct."
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Quelles paires de devises sont couvertes ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Toutes les majeures : EUR/USD, GBP/USD, USD/JPY, USD/CHF, AUD/USD, USD/CAD, NZD/USD. Plus EUR/GBP, EUR/CHF, EUR/JPY et les principales crosses."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quelles banques centrales sont couvertes pour les traders forex ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Fed, BCE, BoE, BoJ, BNS, RBA, RBNZ, BoC — toutes les banques centrales G10 avec décisions, comptes rendus et discours en temps réel."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Y a-t-il un squawk pour les événements forex ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui — avec le plan Pro, la Squawk Box s'active automatiquement lors des événements HIGH-impact (NFP, CPI, décisions de taux). Les chiffres sont annoncés vocalement en temps réel."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Les données macro comme le CPI et le NFP sont-elles incluses ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Oui — toutes les données macro importantes : NFP américain, CPI, PCE, PMI, PIB — avec indication immédiate de dépassement ou déception par rapport au consensus."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Quel est le prix de l'abonnement Pro ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Le plan Basic est gratuit en permanence. Le plan Pro coûte 40 €/mois — sans engagement, résiliation à tout moment."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+  <style>
+  :root {
+    --bg: #0a0e14; --card: #0d1117; --border: #1e2a3a; --text: #e0e8f0; --muted: #8899aa;
+    --accent: #00d4ff; --accent2: #00ff9c; --green: #10b981; --red: #ef4444;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+  header { padding: 20px 0; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: rgba(10,14,20,0.92); backdrop-filter: blur(8px); z-index: 50; }
+  header .container { display: flex; align-items: center; justify-content: space-between; }
+  .nav-logo { display: flex; align-items: center; gap: 10px; color: var(--text); }
+  .nav-logo-icon { width: 32px; height: 32px; border: 1.5px solid var(--accent); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .nav-logo-icon::before { content: ''; width: 10px; height: 10px; background: var(--accent); animation: pulse 2s ease-in-out infinite; }
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.4;transform:scale(0.7)} }
+  .nav-logo-text { font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; line-height: 1.3; }
+  .nav-logo-text span { color: var(--accent); }
+  .nav-logo-sub { font-size: 9px; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; }
+  .btn { display: inline-block; padding: 11px 22px; border-radius: 6px; font-weight: 700; font-size: 14px; letter-spacing: 0.02em; cursor: pointer; transition: transform 0.15s, box-shadow 0.15s; border: none; }
+  .btn:hover { transform: translateY(-1px); box-shadow: 0 6px 24px rgba(0,212,255,0.2); text-decoration: none; }
+  .btn-primary { background: var(--accent); color: #002030; }
+  .btn-outline { background: transparent; color: var(--text); border: 1px solid var(--border); }
+  .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+  .btn-lg { padding: 14px 28px; font-size: 15px; }
+  .hero { padding: 72px 0 56px; text-align: center; }
+  .hero-badge { display: inline-block; padding: 5px 12px; background: rgba(0,212,255,0.1); border: 1px solid rgba(0,212,255,0.3); color: var(--accent); border-radius: 999px; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 20px; }
+  h1 { font-size: clamp(32px, 5.5vw, 52px); font-weight: 800; line-height: 1.12; margin-bottom: 20px; letter-spacing: -0.02em; }
+  h1 span { color: var(--accent); }
+  .hero-sub { color: var(--muted); font-size: clamp(16px, 2vw, 19px); max-width: 780px; margin: 0 auto 32px; }
+  .hero-ctas { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .price-note { margin-top: 22px; color: var(--muted); font-size: 13px; }
+  .price-note strong { color: var(--text); }
+  section { padding: 56px 0; }
+  section + section { border-top: 1px solid var(--border); }
+  .section-label { display: inline-block; padding: 3px 10px; background: rgba(0,212,255,0.08); border: 1px solid rgba(0,212,255,0.25); color: var(--accent); border-radius: 999px; font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 12px; }
+  h2 { font-size: clamp(22px, 3.5vw, 32px); font-weight: 700; margin-bottom: 16px; color: var(--text); }
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 24px; transition: border-color 0.2s; }
+  .card:hover { border-color: var(--accent); }
+  .card-icon { font-size: 28px; margin-bottom: 14px; }
+  .card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; color: var(--text); }
+  .card p { font-size: 14px; color: var(--muted); line-height: 1.6; }
+  .steps { display: grid; gap: 24px; }
+  .step { display: flex; gap: 20px; align-items: flex-start; }
+  .step-num { min-width: 40px; height: 40px; background: rgba(0,212,255,0.1); border: 1px solid rgba(0,212,255,0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; color: var(--accent); font-size: 16px; }
+  .step-body h3 { font-size: 17px; font-weight: 700; margin-bottom: 6px; }
+  .step-body p { color: var(--muted); font-size: 15px; }
+  .faq { display: grid; gap: 16px; }
+  .faq-item { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px 24px; }
+  .faq-item h3 { font-size: 16px; font-weight: 700; margin-bottom: 10px; color: var(--text); }
+  .faq-item p { font-size: 15px; color: var(--muted); line-height: 1.65; }
+  .guide-content { max-width: 820px; }
+  .guide-content h3 { font-size: 19px; font-weight: 700; margin: 36px 0 12px; color: var(--text); }
+  .guide-content p { font-size: 16px; color: var(--muted); line-height: 1.8; margin-bottom: 16px; }
+  .guide-content ul { margin: 12px 0 20px 22px; }
+  .guide-content li { font-size: 15px; color: var(--muted); line-height: 1.75; margin-bottom: 8px; }
+  .guide-content strong { color: var(--text); }
+  .explore-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
+  .explore-link { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 14px 18px; color: var(--text); font-size: 14px; font-weight: 500; display: flex; align-items: center; gap: 8px; transition: border-color 0.2s, color 0.2s; }
+  .explore-link:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+  .explore-link .arrow { color: var(--accent); font-size: 16px; }
+  .footer-cta { padding: 72px 0; text-align: center; border-bottom: 1px solid var(--border); background: linear-gradient(180deg, var(--bg) 0%, rgba(0,212,255,0.03) 100%); }
+  .footer-cta h2 { font-size: clamp(24px, 4vw, 38px); margin-bottom: 16px; }
+  .footer-cta p { color: var(--muted); font-size: 17px; margin-bottom: 36px; max-width: 560px; margin-left: auto; margin-right: auto; }
+  footer { padding: 28px 0; text-align: center; color: var(--muted); font-size: 13px; }
+  footer a { color: var(--muted); }
+  footer a:hover { color: var(--accent); }
+  .footer-links { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 8px; }
+  @media (max-width: 600px) { .hero { padding: 48px 0 40px; } .hero-ctas { flex-direction: column; align-items: center; } .btn-lg { width: 100%; max-width: 320px; text-align: center; } }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <a href="https://www.tradingnewsterminal.com/?utm_source=seo&utm_medium=organic&utm_campaign=actualites-forex&utm_content=header" class="nav-logo">
+      <div class="nav-logo-icon"></div>
+      <div>
+        <div class="nav-logo-text">Trading <span>News</span> Terminal</div>
+        <div class="nav-logo-sub">Intelligence de marché en temps réel</div>
+      </div>
+    </a>
+    <a href="https://www.tradingnewsterminal.com/login?plan=trial&utm_source=seo&utm_medium=organic&utm_campaign=actualites-forex&utm_content=header" class="btn btn-primary">Essai gratuit →</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-badge">Devises &amp; FX</div>
+    <h1><span>Actualités Forex</span> en Temps Réel</h1>
+    <p class="hero-sub">EUR/USD, GBP/USD, USD/JPY, EUR/CHF et toutes les paires majeures — couverture complète des banques centrales G10 (Fed, BCE, BNS, BoJ), données macro mondiales et squawk live lors des événements HIGH-impact.</p>
+    <div class="hero-ctas">
+      <a href="https://www.tradingnewsterminal.com/login?plan=trial&utm_source=seo&utm_medium=organic&utm_campaign=actualites-forex&utm_content=hero" class="btn btn-primary btn-lg">Démarrer l'essai gratuit</a>
+      <a href="https://www.tradingnewsterminal.com/signup?utm_source=seo&utm_medium=organic&utm_campaign=actualites-forex&utm_content=hero" class="btn btn-outline btn-lg">Ouvrir le terminal gratuit</a>
+    </div>
+    <p class="price-note">Plan Basic <strong>gratuit en permanence</strong> · Sans carte bancaire · Pro à <strong>40 €/mois</strong></p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-label">Ce que vous obtenez</div>
+    <h2>Tout ce dont les traders forex ont besoin</h2>
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon">💱</div>
+        <h3>Toutes les majeures &amp; crosses</h3>
+        <p>EUR/USD, GBP/USD, USD/JPY, USD/CHF, AUD/USD, EUR/CHF, EUR/JPY — flux d'actualités complet pour toutes les paires importantes.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🏦</div>
+        <h3>Banques centrales G10</h3>
+        <p>Fed, BCE, BoE, BoJ, BNS, RBA, RBNZ, BoC — toutes les décisions de taux, comptes rendus et discours des gouverneurs en temps réel.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📊</div>
+        <h3>Données macro Beat/Miss</h3>
+        <p>NFP, CPI, PCE, PMI, PIB — toutes les données importantes avec résultat réel vs. consensus immédiatement.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔊</div>
+        <h3>Squawk Live</h3>
+        <p>Alerte audio lors des événements HIGH-impact — les chiffres sont annoncés vocalement, sans regarder l'écran.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-label">Comment ça marche</div>
+    <h2>De l'inscription à l'intelligence de marché en 60 secondes</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <h3>Créer votre compte gratuit</h3>
+          <p>Inscription en moins de 30 secondes — sans carte bancaire. Accès immédiat au calendrier économique et à l'intégration TradingView.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <h3>Configurer vos paires &amp; filtres</h3>
+          <p>Sélectionnez vos paires préférées, réglez le filtre HIGH/MEDIUM/LOW et activez le squawk pour les alertes audio lors des événements clés.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <h3>Trader avec une intelligence complète</h3>
+          <p>Décisions de banques centrales, données macro et breaking news arrivent en temps réel. Pro ajoute news sans délai, squawk box, TV en direct et alertes Telegram.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="guide-content">
+      <h3>Le marché des changes : le plus grand marché financier au monde</h3>
+      <p>Le forex (foreign exchange) est le marché où les devises s'échangent les unes contre les autres. Avec un volume quotidien de <strong>7 500 milliards de dollars</strong>, c'est le marché financier le plus liquide de la planète — loin devant les actions et les obligations. Il fonctionne <strong>24 heures sur 24, 5 jours sur 7</strong>, de l'ouverture de Sydney le dimanche soir jusqu'à la fermeture de New York le vendredi.</p>
+      <p>Contrairement aux marchés actions, le forex n'a pas de bourse centralisée. Les transactions s'effectuent de gré à gré (OTC) entre banques, institutions, courtiers et traders particuliers. Cette décentralisation garantit une liquidité permanente et des spreads compétitifs sur les paires majeures.</p>
+
+      <h3>Comment les actualités forex font bouger les cours</h3>
+      <p>Les prix des devises reflètent à tout moment les anticipations des marchés concernant la politique monétaire, la croissance économique et les flux de capitaux. Quand une donnée macroéconomique est publiée, son impact dépend d'un seul critère : <strong>est-elle meilleure ou moins bonne que ce que le marché attendait ?</strong></p>
+      <p>Exemple concret : si le NFP américain (emplois non-agricoles) ressort à +280 000 alors que le consensus tablait sur +200 000, le dollar se renforce immédiatement, car un marché du travail solide augmente la probabilité que la Fed maintienne des taux élevés. Inversement, une déception fait plonger le dollar en quelques secondes.</p>
+      <p>Ce mécanisme — <strong>surprise positive = devise plus forte, surprise négative = devise plus faible</strong> — s'applique à chaque publication : CPI, PIB, PMI, ventes au détail, balance commerciale. La vitesse d'exécution est donc cruciale : les traders professionnels réagissent dans les 100 millisecondes suivant la publication.</p>
+
+      <h3>Les paires majeures et leurs moteurs fondamentaux</h3>
+      <p>Chaque paire de devises a ses propres catalyseurs d'actualité :</p>
+      <ul>
+        <li><strong>EUR/USD</strong> — la paire la plus tradeée au monde (≈ 23 % du volume global). Pilotée par le différentiel de politique monétaire BCE–Fed. Les décisions de taux de Lagarde et Powell, les CPI américain et européen, et les PMI manufacturiers sont les données à surveiller en priorité.</li>
+        <li><strong>GBP/USD</strong> — le "câble". Très sensible aux données UK (CPI, emploi, PIB) et aux décisions de la Banque d'Angleterre. La prime de risque politique (Brexit, instabilité gouvernementale) génère des pics de volatilité ponctuels.</li>
+        <li><strong>USD/JPY</strong> — le yen comme valeur refuge. En période de stress mondial, le yen s'apprécie. La politique ultra-accommodante historique de la BoJ crée régulièrement des divergences avec la Fed, sources d'opportunités.</li>
+        <li><strong>EUR/CHF</strong> — paire de liquidité européenne. La BNS (Banque nationale suisse) intervient directement sur le marché FX pour éviter une appréciation excessive du franc. Les décisions BNS surprennent fréquemment le marché.</li>
+        <li><strong>AUD/USD</strong> — proxy des matières premières. Corrélé aux prix du minerai de fer, du cuivre et aux données économiques chinoises. Un PMI manufacturier chinois décevant fait baisser l'AUD instantanément.</li>
+      </ul>
+
+      <h3>Les banques centrales G10 : les acteurs clés des actualités forex</h3>
+      <p>Neuf banques centrales dominent le marché des changes mondial. Leurs décisions de politique monétaire sont les <strong>événements à plus fort impact</strong> pour les traders forex :</p>
+      <ul>
+        <li><strong>Fed (États-Unis)</strong> — réunions FOMC toutes les 6 semaines, dot plot trimestriel, déclarations de Powell. Le dollar représente un côté de 88 % de toutes les transactions forex.</li>
+        <li><strong>BCE (Zone euro)</strong> — décisions le premier jeudi du mois (environ), conférence de presse de Lagarde à 14h45 CET. Pilote directement EUR/USD, EUR/GBP, EUR/JPY.</li>
+        <li><strong>BoE (Royaume-Uni)</strong> — comité MPC, rapport trimestriel d'inflation (Monetary Policy Report). Impact direct sur GBP/USD et EUR/GBP.</li>
+        <li><strong>BoJ (Japon)</strong> — connue pour ses surprises de politique monétaire (YCC, taux négatifs). Les interventions verbales du gouverneur peuvent décaler USD/JPY de 200-300 pips.</li>
+        <li><strong>BNS (Suisse)</strong> — réunions trimestrielles uniquement (mars, juin, septembre, décembre). Tendance aux surprises de taux.</li>
+        <li><strong>RBA / RBNZ / BoC</strong> — banques centrales australienne, néo-zélandaise et canadienne, pilotant respectivement AUD, NZD et CAD.</li>
+      </ul>
+
+      <h3>Les données macro essentielles pour trader le forex</h3>
+      <p>Au-delà des banques centrales, plusieurs publications macroéconomiques régulières génèrent des mouvements significatifs :</p>
+      <ul>
+        <li><strong>NFP (Non-Farm Payrolls)</strong> — premier vendredi du mois, 14h30 CET. La donnée US à plus fort impact : volume de trading multiplié par 3-5x dans les minutes suivantes.</li>
+        <li><strong>CPI (Inflation)</strong> — mensuel pour la plupart des économies. Détermine directement les anticipations de hausse ou de baisse de taux.</li>
+        <li><strong>PMI manufacturier et services</strong> — flash PMI le troisième vendredi du mois. Indicateur avancé de l'activité économique.</li>
+        <li><strong>PIB</strong> — trimestriel. Les révisions de PIB peuvent créer des mouvements durables sur les paires concernées.</li>
+        <li><strong>Ventes au détail</strong> — indicateur de la consommation des ménages, proxy de la santé économique domestique.</li>
+      </ul>
+      <p>Pour les actualités forex en temps réel, ce qui compte n'est pas seulement la donnée publiée, mais l'<strong>écart par rapport au consensus</strong> — et la rapidité à laquelle vous en prenez connaissance.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-label">Questions fréquentes</div>
+    <h2>FAQ</h2>
+    <div class="faq">
+      <div class="faq-item">
+        <h3>Quelles paires de devises sont couvertes ?</h3>
+        <p>Toutes les majeures : EUR/USD, GBP/USD, USD/JPY, USD/CHF, AUD/USD, USD/CAD, NZD/USD. Plus EUR/GBP, EUR/CHF, EUR/JPY et les principales crosses.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Quelles banques centrales sont couvertes pour les traders forex ?</h3>
+        <p>Fed, BCE, BoE, BoJ, BNS, RBA, RBNZ, BoC — toutes les banques centrales G10 avec décisions, comptes rendus et discours en temps réel.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Y a-t-il un squawk pour les événements forex ?</h3>
+        <p>Oui — avec le plan Pro, la Squawk Box s'active automatiquement lors des événements HIGH-impact (NFP, CPI, décisions de taux). Les chiffres sont annoncés vocalement en temps réel.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Les données macro comme le CPI et le NFP sont-elles incluses ?</h3>
+        <p>Oui — toutes les données macro importantes : NFP américain, CPI, PCE, PMI, PIB — avec indication immédiate de dépassement ou déception par rapport au consensus.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Quel est le prix de l'abonnement Pro ?</h3>
+        <p>Le plan Basic est gratuit en permanence. Le plan Pro coûte 40 €/mois — sans engagement, résiliation à tout moment.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-label">Explorer</div>
+    <h2>Tout dans le Trading News Terminal</h2>
+    <div class="explore-grid">
+      <a href="/actualites-financieres" class="explore-link"><span class="arrow">→</span> Actualités Financières</a>
+      <a href="/cac-40-actualites" class="explore-link"><span class="arrow">→</span> Actualités CAC 40</a>
+      <a href="/bce-taux-directeur" class="explore-link"><span class="arrow">→</span> BCE Taux Directeur</a>
+      <a href="/forex-news-feed" class="explore-link"><span class="arrow">→</span> Forex News Feed</a>
+      <a href="/economic-calendar" class="explore-link"><span class="arrow">→</span> Economic Calendar</a>
+      <a href="/squawk-box" class="explore-link"><span class="arrow">→</span> Live Squawk Box</a>
+      <a href="/central-banks-tracker" class="explore-link"><span class="arrow">→</span> Central Banks Tracker</a>
+      <a href="/gold-news-alerts" class="explore-link"><span class="arrow">→</span> Gold News Alerts</a>
+    </div>
+  </div>
+</section>
+
+<section class="footer-cta">
+  <div class="container">
+    <h2>Tradez le forex avec une intelligence professionnelle</h2>
+    <p>Créez votre compte gratuit en moins de 30 secondes — sans carte bancaire. Passez au Pro pour des actualités sans délai, la squawk box et les alertes Telegram.</p>
+    <div class="hero-ctas">
+      <a href="https://www.tradingnewsterminal.com/login?plan=trial&utm_source=seo&utm_medium=organic&utm_campaign=actualites-forex&utm_content=footer" class="btn btn-primary btn-lg">Démarrer l'essai gratuit</a>
+      <a href="https://www.tradingnewsterminal.com/signup?utm_source=seo&utm_medium=organic&utm_campaign=actualites-forex&utm_content=footer" class="btn btn-outline btn-lg">Ouvrir le terminal gratuit</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div>© Trading News Terminal — intelligence de marché en temps réel pour traders professionnels.</div>
+    <div class="footer-links">
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/affiliates">Affiliates</a>
+      <a href="/economic-calendar">Economic Calendar</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

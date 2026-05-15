@@ -1,798 +1,791 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Live Financial TV — Bloomberg, CNBC &amp; 5 More Channels</title>
-  <meta name="description" content="Watch 7 live financial TV channels inside your trading terminal. Bloomberg, CNBC, Fox Business &amp; Reuters — no extra subscription required.">
-  <link rel="canonical" href="https://www.tradingnewsterminal.com/live-financial-tv">
-  <link rel="icon" href="/favicon.ico">
-  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512x512.png">
-  <meta property="og:title" content="Live Financial TV — Bloomberg, CNBC &amp; 5 More Channels">
-  <meta property="og:description" content="Watch 7 live financial TV channels inside your trading terminal. Bloomberg, CNBC, Fox Business &amp; Reuters — no extra subscription required.">
-  <meta property="og:url" content="https://www.tradingnewsterminal.com/live-financial-tv">
-  <meta property="og:image" content="https://www.tradingnewsterminal.com/og-image.png">
-  <meta property="og:type" content="website">
-  <meta name="robots" content="index, follow">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Live Financial TV — 7 Channels for Active Traders">
-  <meta name="twitter:description" content="Watch 7 live financial TV channels inside your trading terminal. Bloomberg, CNBC, Fox Business, Reuters and more — no tab switching.">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebApplication",
-        "name": "Trading News Terminal",
-        "url": "https://www.tradingnewsterminal.com",
-        "applicationCategory": "FinanceApplication",
-        "operatingSystem": "Web",
-        "description": "7 live financial TV channels embedded inside the trading terminal — Bloomberg TV, CNBC, Fox Business, Reuters TV and more. Pro feature at €40/month.",
-        "offers": [
-          {
-            "@type": "Offer",
-            "name": "Pro",
-            "price": "40",
-            "priceCurrency": "EUR",
-            "priceSpecification": {
-              "@type": "UnitPriceSpecification",
-              "billingDuration": "P1M"
-            },
-            "description": "Pro plan: 7 live financial TV channels, zero-delay news, squawk box, full terminal."
-          }
-        ]
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Can I watch Bloomberg TV for free?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Bloomberg TV is available inside Trading News Terminal Pro at €40/month, embedded directly in the trading terminal alongside the news feed, economic calendar, and squawk box. This is one of the most cost-effective ways to access Bloomberg TV without a full Bloomberg Terminal subscription at $2,000/month."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What financial TV channels are available?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Trading News Terminal Pro includes 7 live financial TV channels embedded in the terminal: Bloomberg TV, CNBC, Fox Business, Reuters TV, and additional international financial news channels. The full channel list is visible inside the terminal once you activate the TV panel."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Is CNBC live free for traders?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "CNBC live is accessible inside Trading News Terminal Pro as one of 7 embedded financial TV channels. The Pro plan is €40/month and includes all TV channels alongside the zero-delay news feed, live squawk box, economic calendar, and TradingView chart integration."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Why do traders watch financial TV?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Traders watch financial TV for live market commentary, breaking news context, and to hear directly from central bank officials, CEOs, and economists who appear on air. TV adds a qualitative layer to the quantitative data in the news feed — hearing a Fed official's tone and emphasis often gives as much information as the words themselves. It's also useful for tracking market sentiment and understanding the broader macro narrative."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What is the best financial news channel for traders?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Bloomberg TV is generally considered the gold standard for market professionals due to its depth of coverage, live data overlays, and quality of guests. CNBC is popular for US equity markets and has excellent breaking news coverage. Reuters TV focuses on global macro and geopolitical developments. Fox Business tends to focus on US markets and economic policy. Trading News Terminal Pro gives you access to all major channels in one place."
-            }
-          }
-        ]
-      }
-    ]
-  }
-  </script>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --bg: #0a0c0f; --bg2: #0d1117; --card: #111827; --border: #1e2a3a;
-      --accent: #00d4ff; --accent2: #0099bb; --text: #e0e8f0; --muted: #8899aa;
-      --green: #00c853; --red: #ff3d57; --yellow: #ffc107;
-    }
-    html { scroll-behavior: smooth; }
-    body { background: var(--bg); color: var(--text); font-family: 'Inter', system-ui, -apple-system, sans-serif; font-size: 16px; line-height: 1.6; }
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
-    header {
-      position: sticky; top: 0; z-index: 100;
-      background: rgba(10,12,15,0.97);
-      border-bottom: 1px solid #1e2a3a;
-      padding: 0 24px; height: 56px;
-      display: flex; align-items: center; justify-content: space-between;
-      backdrop-filter: blur(8px);
-    }
-    .nav-logo { display:flex; align-items:center; gap:12px; text-decoration:none; }
-    .nav-logo-icon { width:32px; height:32px; border:1.5px solid #00d4ff; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
-    .nav-logo-icon::before { content:''; width:10px; height:10px; background:#00d4ff; animation:pulse 2s ease-in-out infinite; }
-    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.4;transform:scale(0.7)} }
-    .nav-logo-text { font-size:13px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; line-height:1.3; color:#e0e8f0; }
-    .nav-logo-text span { color:#00d4ff; }
-    .nav-logo-sub { font-size:9px; color:#556677; letter-spacing:0.1em; text-transform:uppercase; }
-    .btn { display: inline-block; padding: 9px 20px; border-radius: 6px; font-weight: 600; font-size: 14px; cursor: pointer; transition: opacity 0.15s, transform 0.15s; border: none; text-decoration: none; }
-    .btn:hover { opacity: 0.85; transform: translateY(-1px); text-decoration: none; }
-    .btn-primary { background: var(--accent); color: var(--bg); }
-    .btn-outline { background: transparent; color: var(--accent); border: 1px solid var(--accent); }
-    .hero { padding: 72px 0 56px; text-align: center; border-bottom: 1px solid var(--border); }
-    .hero-badge { display: inline-block; background: rgba(0,212,255,0.1); color: var(--accent); border: 1px solid rgba(0,212,255,0.3); padding: 5px 14px; border-radius: 20px; font-size: 13px; font-weight: 600; margin-bottom: 24px; letter-spacing: 0.03em; }
-    .hero h1 { font-size: clamp(28px, 5vw, 48px); font-weight: 800; line-height: 1.15; margin-bottom: 20px; }
-    .hero h1 span { color: var(--accent); }
-    .hero-sub { font-size: 18px; color: var(--muted); max-width: 640px; margin: 0 auto 36px; line-height: 1.7; }
-    .hero-ctas { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
-    .btn-lg { padding: 14px 32px; font-size: 16px; border-radius: 8px; }
-    .price-note { margin-top: 18px; font-size: 13px; color: var(--muted); }
-    .price-note strong { color: var(--text); }
-    section { padding: 56px 0; border-bottom: 1px solid var(--border); }
-    .section-label { font-size: 12px; font-weight: 700; letter-spacing: 0.1em; color: var(--accent); text-transform: uppercase; margin-bottom: 12px; }
-    h2 { font-size: clamp(22px, 3.5vw, 32px); font-weight: 700; margin-bottom: 16px; }
-    .section-intro { color: var(--muted); font-size: 17px; margin-bottom: 40px; max-width: 700px; }
-    /* TV GRID */
-    .tv-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; }
-    .tv-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 20px; display: flex; flex-direction: column; gap: 10px; transition: border-color 0.2s; }
-    .tv-card:hover { border-color: var(--accent2); }
-    .tv-screen { background: var(--bg2); border-radius: 6px; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; border: 1px solid var(--border); }
-    .tv-screen-label { font-size: 13px; font-weight: 800; letter-spacing: 0.05em; color: var(--accent); }
-    .tv-live-tag { position: absolute; top: 6px; right: 6px; background: var(--red); color: #fff; font-size: 10px; font-weight: 700; padding: 2px 6px; border-radius: 3px; letter-spacing: 0.05em; }
-    .tv-channel-name { font-size: 15px; font-weight: 700; color: var(--text); }
-    .tv-channel-desc { font-size: 13px; color: var(--muted); line-height: 1.5; }
-    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
-    .card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 24px; transition: border-color 0.2s; }
-    .card:hover { border-color: var(--accent2); }
-    .card-icon { font-size: 28px; margin-bottom: 14px; }
-    .card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
-    .card p { font-size: 14px; color: var(--muted); line-height: 1.6; }
-    .steps { display: grid; gap: 24px; }
-    .step { display: flex; gap: 20px; align-items: flex-start; }
-    .step-num { min-width: 40px; height: 40px; background: rgba(0,212,255,0.1); border: 1px solid rgba(0,212,255,0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; color: var(--accent); font-size: 16px; }
-    .step-body h3 { font-size: 17px; font-weight: 700; margin-bottom: 6px; }
-    .step-body p { color: var(--muted); font-size: 15px; }
-    .table-wrap { overflow-x: auto; }
-    table { width: 100%; border-collapse: collapse; font-size: 15px; }
-    th { background: var(--card); color: var(--text); font-weight: 700; padding: 14px 16px; text-align: left; border-bottom: 2px solid var(--border); }
-    th.accent-col { color: var(--accent); }
-    td { padding: 13px 16px; border-bottom: 1px solid var(--border); color: var(--muted); }
-    tr:last-child td { border-bottom: none; }
-    tr:hover td { background: rgba(255,255,255,0.02); }
-    .check { color: var(--green); font-weight: 700; }
-    .cross { color: var(--red); }
-    td:first-child { color: var(--text); font-weight: 500; }
-    .faq { display: grid; gap: 16px; }
-    .faq-item { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px 24px; }
-    .faq-item h3 { font-size: 16px; font-weight: 700; margin-bottom: 10px; }
-    .faq-item p { font-size: 15px; color: var(--muted); line-height: 1.65; }
-    .explore-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
-    .explore-link { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 14px 18px; color: var(--text); font-size: 14px; font-weight: 500; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: border-color 0.2s, color 0.2s; }
-    .explore-link:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
-    .explore-link .arrow { color: var(--accent); font-size: 16px; }
-    .footer-cta { padding: 72px 0; text-align: center; border-bottom: 1px solid var(--border); background: linear-gradient(180deg, var(--bg) 0%, rgba(0,212,255,0.03) 100%); }
-    .footer-cta h2 { font-size: clamp(24px, 4vw, 38px); margin-bottom: 16px; }
-    .footer-cta p { color: var(--muted); font-size: 17px; margin-bottom: 36px; max-width: 560px; margin-left: auto; margin-right: auto; }
-    footer { padding: 28px 0; text-align: center; color: var(--muted); font-size: 13px; }
-    footer a { color: var(--muted); }
-    footer a:hover { color: var(--accent); }
-    .footer-links { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 8px; }
-    @media (max-width: 600px) { .hero { padding: 48px 0 40px; } .hero-ctas { flex-direction: column; align-items: center; } .btn-lg { width: 100%; max-width: 320px; text-align: center; } }
-  </style>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Live Financial TV — Bloomberg, CNBC &amp; 5 More Channels</title>
+ <meta name="description" content="Watch 7 live financial TV channels inside your trading terminal. Bloomberg, CNBC, Fox Business &amp; Reuters — no extra subscription required.">
+ <link rel="canonical" href="https://www.tradingnewsterminal.com/live-financial-tv">
+ <link rel="icon" href="/favicon.ico">
+ <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+ <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512x512.png">
+ <meta property="og:title" content="Live Financial TV — Bloomberg, CNBC &amp; 5 More Channels">
+ <meta property="og:description" content="Watch 7 live financial TV channels inside your trading terminal. Bloomberg, CNBC, Fox Business &amp; Reuters — no extra subscription required.">
+ <meta property="og:url" content="https://www.tradingnewsterminal.com/live-financial-tv">
+ <meta property="og:image" content="https://www.tradingnewsterminal.com/og-image.png">
+ <meta property="og:type" content="website">
+ <meta name="robots" content="index, follow">
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:title" content="Live Financial TV — 7 Channels for Active Traders">
+ <meta name="twitter:description" content="Watch 7 live financial TV channels inside your trading terminal. Bloomberg, CNBC, Fox Business, Reuters and more — no tab switching.">
+ <script type="application/ld+json">
+ {
+ "@context": "https://schema.org",
+ "@graph": [
+ {
+ "@type": "WebApplication",
+ "name": "Trading News Terminal",
+ "url": "https://www.tradingnewsterminal.com",
+ "applicationCategory": "FinanceApplication",
+ "operatingSystem": "Web",
+ "description": "7 live financial TV channels embedded inside the trading terminal — Bloomberg TV, CNBC, Fox Business, Reuters TV and more. Pro feature at €40/month.",
+ "offers": [
+ {
+ "@type": "Offer",
+ "name": "Pro",
+ "price": "40",
+ "priceCurrency": "EUR",
+ "priceSpecification": {
+ "@type": "UnitPriceSpecification",
+ "billingDuration": "P1M"
+ },
+ "description": "Pro plan: 7 live financial TV channels, zero-delay news, squawk box, full terminal."
+ }
+ ]
+ },
+ {
+ "@type": "FAQPage",
+ "mainEntity": [
+ {
+ "@type": "Question",
+ "name": "Can I watch Bloomberg TV for free?",
+ "acceptedAnswer": {
+ "@type": "Answer",
+ "text": "Bloomberg TV is available inside Trading News Terminal Pro at €40/month, embedded directly in the trading terminal alongside the news feed, economic calendar, and squawk box. This is one of the most cost-effective ways to access Bloomberg TV inside a complete trading workflow."
+ }
+ },
+ {
+ "@type": "Question",
+ "name": "What financial TV channels are available?",
+ "acceptedAnswer": {
+ "@type": "Answer",
+ "text": "Trading News Terminal Pro includes 7 live financial TV channels embedded in the terminal: Bloomberg TV, CNBC, Fox Business, Reuters TV, and additional international financial news channels. The full channel list is visible inside the terminal once you activate the TV panel."
+ }
+ },
+ {
+ "@type": "Question",
+ "name": "Is CNBC live free for traders?",
+ "acceptedAnswer": {
+ "@type": "Answer",
+ "text": "CNBC live is accessible inside Trading News Terminal Pro as one of 7 embedded financial TV channels. The Pro plan is €40/month and includes all TV channels alongside the zero-delay news feed, live squawk box, economic calendar, and TradingView chart integration."
+ }
+ },
+ {
+ "@type": "Question",
+ "name": "Why do traders watch financial TV?",
+ "acceptedAnswer": {
+ "@type": "Answer",
+ "text": "Traders watch financial TV for live market commentary, breaking news context, and to hear directly from central bank officials, CEOs, and economists who appear on air. TV adds a qualitative layer to the quantitative data in the news feed — hearing a Fed official's tone and emphasis often gives as much information as the words themselves. It's also useful for tracking market sentiment and understanding the broader macro narrative."
+ }
+ },
+ {
+ "@type": "Question",
+ "name": "What is the best financial news channel for traders?",
+ "acceptedAnswer": {
+ "@type": "Answer",
+ "text": "Bloomberg TV is generally considered the gold standard for market professionals due to its depth of coverage, live data overlays, and quality of guests. CNBC is popular for US equity markets and has excellent breaking news coverage. Reuters TV focuses on global macro and geopolitical developments. Fox Business tends to focus on US markets and economic policy. Trading News Terminal Pro gives you access to all major channels in one place."
+ }
+ }
+ ]
+ }
+ ]
+ }
+ </script>
+ <style>
+ *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+ :root {
+ --bg: #0a0c0f; --bg2: #0d1117; --card: #111827; --border: #1e2a3a;
+ --accent: #00d4ff; --accent2: #0099bb; --text: #e0e8f0; --muted: #8899aa;
+ --green: #00c853; --red: #ff3d57; --yellow: #ffc107;
+ }
+ html { scroll-behavior: smooth; }
+ body { background: var(--bg); color: var(--text); font-family: 'Inter', system-ui, -apple-system, sans-serif; font-size: 16px; line-height: 1.6; }
+ a { color: var(--accent); text-decoration: none; }
+ a:hover { text-decoration: underline; }
+ .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
+ header {
+ position: sticky; top: 0; z-index: 100;
+ background: rgba(10,12,15,0.97);
+ border-bottom: 1px solid #1e2a3a;
+ padding: 0 24px; height: 56px;
+ display: flex; align-items: center; justify-content: space-between;
+ backdrop-filter: blur(8px);
+ }
+ .nav-logo { display:flex; align-items:center; gap:12px; text-decoration:none; }
+ .nav-logo-icon { width:32px; height:32px; border:1.5px solid #00d4ff; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+ .nav-logo-icon::before { content:''; width:10px; height:10px; background:#00d4ff; animation:pulse 2s ease-in-out infinite; }
+ @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.4;transform:scale(0.7)} }
+ .nav-logo-text { font-size:13px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; line-height:1.3; color:#e0e8f0; }
+ .nav-logo-text span { color:#00d4ff; }
+ .nav-logo-sub { font-size:9px; color:#556677; letter-spacing:0.1em; text-transform:uppercase; }
+ .btn { display: inline-block; padding: 9px 20px; border-radius: 6px; font-weight: 600; font-size: 14px; cursor: pointer; transition: opacity 0.15s, transform 0.15s; border: none; text-decoration: none; }
+ .btn:hover { opacity: 0.85; transform: translateY(-1px); text-decoration: none; }
+ .btn-primary { background: var(--accent); color: var(--bg); }
+ .btn-outline { background: transparent; color: var(--accent); border: 1px solid var(--accent); }
+ .hero { padding: 72px 0 56px; text-align: center; border-bottom: 1px solid var(--border); }
+ .hero-badge { display: inline-block; background: rgba(0,212,255,0.1); color: var(--accent); border: 1px solid rgba(0,212,255,0.3); padding: 5px 14px; border-radius: 20px; font-size: 13px; font-weight: 600; margin-bottom: 24px; letter-spacing: 0.03em; }
+ .hero h1 { font-size: clamp(28px, 5vw, 48px); font-weight: 800; line-height: 1.15; margin-bottom: 20px; }
+ .hero h1 span { color: var(--accent); }
+ .hero-sub { font-size: 18px; color: var(--muted); max-width: 640px; margin: 0 auto 36px; line-height: 1.7; }
+ .hero-ctas { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+ .btn-lg { padding: 14px 32px; font-size: 16px; border-radius: 8px; }
+ .price-note { margin-top: 18px; font-size: 13px; color: var(--muted); }
+ .price-note strong { color: var(--text); }
+ section { padding: 56px 0; border-bottom: 1px solid var(--border); }
+ .section-label { font-size: 12px; font-weight: 700; letter-spacing: 0.1em; color: var(--accent); text-transform: uppercase; margin-bottom: 12px; }
+ h2 { font-size: clamp(22px, 3.5vw, 32px); font-weight: 700; margin-bottom: 16px; }
+ .section-intro { color: var(--muted); font-size: 17px; margin-bottom: 40px; max-width: 700px; }
+ /* TV GRID */
+ .tv-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; }
+ .tv-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 20px; display: flex; flex-direction: column; gap: 10px; transition: border-color 0.2s; }
+ .tv-card:hover { border-color: var(--accent2); }
+ .tv-screen { background: var(--bg2); border-radius: 6px; aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; border: 1px solid var(--border); }
+ .tv-screen-label { font-size: 13px; font-weight: 800; letter-spacing: 0.05em; color: var(--accent); }
+ .tv-live-tag { position: absolute; top: 6px; right: 6px; background: var(--red); color: #fff; font-size: 10px; font-weight: 700; padding: 2px 6px; border-radius: 3px; letter-spacing: 0.05em; }
+ .tv-channel-name { font-size: 15px; font-weight: 700; color: var(--text); }
+ .tv-channel-desc { font-size: 13px; color: var(--muted); line-height: 1.5; }
+ .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+ .card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 24px; transition: border-color 0.2s; }
+ .card:hover { border-color: var(--accent2); }
+ .card-icon { font-size: 28px; margin-bottom: 14px; }
+ .card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+ .card p { font-size: 14px; color: var(--muted); line-height: 1.6; }
+ .steps { display: grid; gap: 24px; }
+ .step { display: flex; gap: 20px; align-items: flex-start; }
+ .step-num { min-width: 40px; height: 40px; background: rgba(0,212,255,0.1); border: 1px solid rgba(0,212,255,0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; color: var(--accent); font-size: 16px; }
+ .step-body h3 { font-size: 17px; font-weight: 700; margin-bottom: 6px; }
+ .step-body p { color: var(--muted); font-size: 15px; }
+ .table-wrap { overflow-x: auto; }
+ table { width: 100%; border-collapse: collapse; font-size: 15px; }
+ th { background: var(--card); color: var(--text); font-weight: 700; padding: 14px 16px; text-align: left; border-bottom: 2px solid var(--border); }
+ th.accent-col { color: var(--accent); }
+ td { padding: 13px 16px; border-bottom: 1px solid var(--border); color: var(--muted); }
+ tr:last-child td { border-bottom: none; }
+ tr:hover td { background: rgba(255,255,255,0.02); }
+ .check { color: var(--green); font-weight: 700; }
+ .cross { color: var(--red); }
+ td:first-child { color: var(--text); font-weight: 500; }
+ .faq { display: grid; gap: 16px; }
+ .faq-item { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px 24px; }
+ .faq-item h3 { font-size: 16px; font-weight: 700; margin-bottom: 10px; }
+ .faq-item p { font-size: 15px; color: var(--muted); line-height: 1.65; }
+ .explore-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
+ .explore-link { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 14px 18px; color: var(--text); font-size: 14px; font-weight: 500; text-decoration: none; display: flex; align-items: center; gap: 8px; transition: border-color 0.2s, color 0.2s; }
+ .explore-link:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+ .explore-link .arrow { color: var(--accent); font-size: 16px; }
+ .footer-cta { padding: 72px 0; text-align: center; border-bottom: 1px solid var(--border); background: linear-gradient(180deg, var(--bg) 0%, rgba(0,212,255,0.03) 100%); }
+ .footer-cta h2 { font-size: clamp(24px, 4vw, 38px); margin-bottom: 16px; }
+ .footer-cta p { color: var(--muted); font-size: 17px; margin-bottom: 36px; max-width: 560px; margin-left: auto; margin-right: auto; }
+ footer { padding: 28px 0; text-align: center; color: var(--muted); font-size: 13px; }
+ footer a { color: var(--muted); }
+ footer a:hover { color: var(--accent); }
+ .footer-links { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 8px; }
+ @media (max-width: 600px) { .hero { padding: 48px 0 40px; } .hero-ctas { flex-direction: column; align-items: center; } .btn-lg { width: 100%; max-width: 320px; text-align: center; } }
+ </style>
 </head>
 <body>
 
 <header>
-  <a href="https://www.tradingnewsterminal.com/?utm_source=seo&utm_medium=organic&utm_campaign=live-financial-tv&utm_content=header" class="nav-logo" data-seo-track="live-financial-tv">
-    <div class="nav-logo-icon"></div>
-    <div>
-      <div class="nav-logo-text">Trading <span>News</span> Terminal</div>
-      <div class="nav-logo-sub" data-i18n="tagline">Real-time Market Intelligence</div>
-    </div>
-  </a>
-  <div style="display:flex;align-items:center;gap:10px;">
-    <div style="position:relative;" id="langPicker">
-      <button onclick="document.getElementById('langMenu').style.display=document.getElementById('langMenu').style.display==='block'?'none':'block'" style="display:flex;align-items:center;gap:6px;padding:7px 10px;background:#111827;border:1px solid #1e2a3a;color:#e0e8f0;font-size:11px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;cursor:pointer;border-radius:3px;">
-        <img src="https://twemoji.maxcdn.com/v/latest/svg/1f1ec-1f1e7.svg" width="16" height="16" alt="EN" style="vertical-align:middle;"> <span data-i18n="active">EN</span>
-      </button>
-      <div id="langMenu" style="display:none;position:absolute;right:0;top:calc(100% + 4px);background:#111827;border:1px solid #1e2a3a;border-radius:4px;min-width:130px;z-index:200;overflow:hidden;">
-        <a href="#" data-lang="en" onclick="setLang('en');return false;" style="display:flex;align-items:center;gap:8px;padding:9px 14px;color:#00d4ff;font-size:12px;text-decoration:none;background:rgba(0,212,255,0.08);">
-          <img src="https://twemoji.maxcdn.com/v/latest/svg/1f1ec-1f1e7.svg" width="16" height="16" alt="EN"> English ✓
-        </a>
-        <a href="#" data-lang="pt" onclick="setLang('pt');return false;" style="display:flex;align-items:center;gap:8px;padding:9px 14px;color:#8899aa;font-size:12px;text-decoration:none;">
-          <img src="https://twemoji.maxcdn.com/v/latest/svg/1f1f5-1f1f9.svg" width="16" height="16" alt="PT"> Português
-        </a>
-        <a href="#" data-lang="es" onclick="setLang('es');return false;" style="display:flex;align-items:center;gap:8px;padding:9px 14px;color:#8899aa;font-size:12px;text-decoration:none;">
-          <img src="https://twemoji.maxcdn.com/v/latest/svg/1f1ea-1f1f8.svg" width="16" height="16" alt="ES"> Español
-        </a>
-        <a href="#" data-lang="fr" onclick="setLang('fr');return false;" style="display:flex;align-items:center;gap:8px;padding:9px 14px;color:#8899aa;font-size:12px;text-decoration:none;">
-          <img src="https://twemoji.maxcdn.com/v/latest/svg/1f1eb-1f1f7.svg" width="16" height="16" alt="FR"> Français
-        </a>
-        <a href="#" data-lang="de" onclick="setLang('de');return false;" style="display:flex;align-items:center;gap:8px;padding:9px 14px;color:#8899aa;font-size:12px;text-decoration:none;">
-          <img src="https://twemoji.maxcdn.com/v/latest/svg/1f1e9-1f1ea.svg" width="16" height="16" alt="DE"> Deutsch
-        </a>
-        <a href="#" data-lang="it" onclick="setLang('it');return false;" style="display:flex;align-items:center;gap:8px;padding:9px 14px;color:#8899aa;font-size:12px;text-decoration:none;">
-          <img src="https://twemoji.maxcdn.com/v/latest/svg/1f1ee-1f1f9.svg" width="16" height="16" alt="IT"> Italiano
-        </a>
-      </div>
-    </div>
-    <a href="https://www.tradingnewsterminal.com/login?plan=trial&utm_source=seo&utm_medium=organic&utm_campaign=live-financial-tv&utm_content=header" class="btn btn-primary" data-seo-track="live-financial-tv"><span data-i18n="try_btn">Try Free →</span></a>
-  </div>
+ <a href="https://www.tradingnewsterminal.com/?utm_source=seo&utm_medium=organic&utm_campaign=live-financial-tv&utm_content=header" class="nav-logo" data-seo-track="live-financial-tv">
+ <div class="nav-logo-icon"></div>
+ <div>
+ <div class="nav-logo-text">Trading <span>News</span> Terminal</div>
+ <div class="nav-logo-sub" data-i18n="tagline">Real-time Market Intelligence</div>
+ </div>
+ </a>
+ <div style="display:flex;align-items:center;gap:10px;">
+ <div style="position:relative;" id="langPicker">
+ <button onclick="document.getElementById('langMenu').style.display=document.getElementById('langMenu').style.display==='block'?'none':'block'" style="display:flex;align-items:center;gap:6px;padding:7px 10px;background:#111827;border:1px solid #1e2a3a;color:#e0e8f0;font-size:11px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;cursor:pointer;border-radius:3px;">
+ <img src="https://twemoji.maxcdn.com/v/latest/svg/1f1ec-1f1e7.svg" width="16" height="16" alt="EN" style="vertical-align:middle;"> <span data-i18n="active">EN</span>
+ </button>
+ <div id="langMenu" style="display:none;position:absolute;right:0;top:calc(100% + 4px);background:#111827;border:1px solid #1e2a3a;border-radius:4px;min-width:130px;z-index:200;overflow:hidden;">
+ <a href="#" data-lang="en" onclick="setLang('en');return false;" style="display:flex;align-items:center;gap:8px;padding:9px 14px;color:#00d4ff;font-size:12px;text-decoration:none;background:rgba(0,212,255,0.08);">
+ <img src="https://twemoji.maxcdn.com/v/latest/svg/1f1ec-1f1e7.svg" width="16" height="16" alt="EN"> English ✓
+ </a>
+ <a href="#" data-lang="pt" onclick="setLang('pt');return false;" style="display:flex;align-items:center;gap:8px;padding:9px 14px;color:#8899aa;font-size:12px;text-decoration:none;">
+ <img src="https://twemoji.maxcdn.com/v/latest/svg/1f1f5-1f1f9.svg" width="16" height="16" alt="PT"> Português
+ </a>
+ <a href="#" data-lang="es" onclick="setLang('es');return false;" style="display:flex;align-items:center;gap:8px;padding:9px 14px;color:#8899aa;font-size:12px;text-decoration:none;">
+ <img src="https://twemoji.maxcdn.com/v/latest/svg/1f1ea-1f1f8.svg" width="16" height="16" alt="ES"> Español
+ </a>
+ <a href="#" data-lang="fr" onclick="setLang('fr');return false;" style="display:flex;align-items:center;gap:8px;padding:9px 14px;color:#8899aa;font-size:12px;text-decoration:none;">
+ <img src="https://twemoji.maxcdn.com/v/latest/svg/1f1eb-1f1f7.svg" width="16" height="16" alt="FR"> Français
+ </a>
+ <a href="#" data-lang="de" onclick="setLang('de');return false;" style="display:flex;align-items:center;gap:8px;padding:9px 14px;color:#8899aa;font-size:12px;text-decoration:none;">
+ <img src="https://twemoji.maxcdn.com/v/latest/svg/1f1e9-1f1ea.svg" width="16" height="16" alt="DE"> Deutsch
+ </a>
+ <a href="#" data-lang="it" onclick="setLang('it');return false;" style="display:flex;align-items:center;gap:8px;padding:9px 14px;color:#8899aa;font-size:12px;text-decoration:none;">
+ <img src="https://twemoji.maxcdn.com/v/latest/svg/1f1ee-1f1f9.svg" width="16" height="16" alt="IT"> Italiano
+ </a>
+ </div>
+ </div>
+ <a href="https://www.tradingnewsterminal.com/login?plan=trial&utm_source=seo&utm_medium=organic&utm_campaign=live-financial-tv&utm_content=header" class="btn btn-primary" data-seo-track="live-financial-tv"><span data-i18n="try_btn">Try Free →</span></a>
+ </div>
 </header>
 
 <section class="hero">
-  <div class="container">
-    <div class="hero-badge" data-i18n="hero.badge">Live Financial TV — Pro Feature</div>
-    <h1 data-i18n="hero.h1">Live <span>Financial TV</span> — 7 Channels Inside Your Trading Terminal</h1>
-    <p class="hero-sub" data-i18n="hero.sub">Bloomberg TV, CNBC, Fox Business, Reuters and more — all embedded directly inside your trading terminal. One tab, full market intelligence. No subscriptions, no tab-switching.</p>
-    <div class="hero-ctas">
-      <a href="https://www.tradingnewsterminal.com/login?plan=trial&utm_source=seo&utm_medium=organic&utm_campaign=live-financial-tv&utm_content=hero" class="btn btn-primary btn-lg" data-seo-track="live-financial-tv"><span data-i18n="trial_btn">Start Free Trial</span></a>
-      <a href="https://www.tradingnewsterminal.com/signup?utm_source=seo&utm_medium=organic&utm_campaign=live-financial-tv&utm_content=hero" class="btn btn-outline btn-lg" data-seo-track="live-financial-tv"><span data-i18n="free_btn">Open Free Terminal</span></a>
-    </div>
-    <p class="price-note" data-i18n-html="hero.price_note">Live TV is a <strong>Pro feature</strong> at €40/month · Basic plan free · Pro trial available</p>
-  </div>
+ <div class="container">
+ <div class="hero-badge" data-i18n="hero.badge">Live Financial TV — Pro Feature</div>
+ <h1 data-i18n="hero.h1">Live <span>Financial TV</span> — 7 Channels Inside Your Trading Terminal</h1>
+ <p class="hero-sub" data-i18n="hero.sub">Bloomberg TV, CNBC, Fox Business, Reuters and more — all embedded directly inside your trading terminal. One tab, full market intelligence. No subscriptions, no tab-switching.</p>
+ <div class="hero-ctas">
+ <a href="https://www.tradingnewsterminal.com/login?plan=trial&utm_source=seo&utm_medium=organic&utm_campaign=live-financial-tv&utm_content=hero" class="btn btn-primary btn-lg" data-seo-track="live-financial-tv"><span data-i18n="trial_btn">Start Free Trial</span></a>
+ <a href="https://www.tradingnewsterminal.com/signup?utm_source=seo&utm_medium=organic&utm_campaign=live-financial-tv&utm_content=hero" class="btn btn-outline btn-lg" data-seo-track="live-financial-tv"><span data-i18n="free_btn">Open Free Terminal</span></a>
+ </div>
+ <p class="price-note" data-i18n-html="hero.price_note">Live TV is a <strong>Pro feature</strong> at €40/month · Basic plan free · Pro trial available</p>
+ </div>
 </section>
 
 <section style="padding:40px 0 48px;border-bottom:1px solid #1e2a3a;">
-  <div class="container">
-    <div class="section-label" data-i18n="preview.label">Terminal Preview</div>
-    <h2 style="margin-bottom:24px;" data-i18n="preview.h2">Live Financial TV — Channel Grid</h2>
-    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px;">
-      <div style="background:#111827;border:1px solid #1e2a3a;border-radius:8px;overflow:hidden;">
-        <div style="background:#0d1117;aspect-ratio:16/9;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;border-bottom:1px solid #1e2a3a;">
-          <svg width="32" height="28" viewBox="0 0 32 28" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="30" height="22" rx="2" stroke="#1e2a3a" stroke-width="1.5"/><line x1="12" y1="23" x2="10" y2="27" stroke="#1e2a3a" stroke-width="1.5"/><line x1="20" y1="23" x2="22" y2="27" stroke="#1e2a3a" stroke-width="1.5"/><line x1="8" y1="27" x2="24" y2="27" stroke="#1e2a3a" stroke-width="1.5"/></svg>
-          <span style="color:#00d4ff;font-family:monospace;font-size:11px;font-weight:800;letter-spacing:0.1em;margin-top:8px;">BLOOMBERG</span>
-          <span style="position:absolute;top:6px;right:6px;background:#ff3d57;color:#fff;font-size:9px;font-weight:700;padding:2px 5px;border-radius:2px;font-family:monospace;letter-spacing:0.05em;">● LIVE</span>
-        </div>
-        <div style="padding:10px 12px;font-size:12px;color:#8899aa;font-family:monospace;">Bloomberg TV</div>
-      </div>
-      <div style="background:#111827;border:1px solid #1e2a3a;border-radius:8px;overflow:hidden;">
-        <div style="background:#0d1117;aspect-ratio:16/9;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;border-bottom:1px solid #1e2a3a;">
-          <svg width="32" height="28" viewBox="0 0 32 28" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="30" height="22" rx="2" stroke="#1e2a3a" stroke-width="1.5"/><line x1="12" y1="23" x2="10" y2="27" stroke="#1e2a3a" stroke-width="1.5"/><line x1="20" y1="23" x2="22" y2="27" stroke="#1e2a3a" stroke-width="1.5"/><line x1="8" y1="27" x2="24" y2="27" stroke="#1e2a3a" stroke-width="1.5"/></svg>
-          <span style="color:#00d4ff;font-family:monospace;font-size:11px;font-weight:800;letter-spacing:0.1em;margin-top:8px;">CNBC</span>
-          <span style="position:absolute;top:6px;right:6px;background:#ff3d57;color:#fff;font-size:9px;font-weight:700;padding:2px 5px;border-radius:2px;font-family:monospace;letter-spacing:0.05em;">● LIVE</span>
-        </div>
-        <div style="padding:10px 12px;font-size:12px;color:#8899aa;font-family:monospace;">CNBC</div>
-      </div>
-      <div style="background:#111827;border:1px solid #1e2a3a;border-radius:8px;overflow:hidden;">
-        <div style="background:#0d1117;aspect-ratio:16/9;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;border-bottom:1px solid #1e2a3a;">
-          <svg width="32" height="28" viewBox="0 0 32 28" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="30" height="22" rx="2" stroke="#1e2a3a" stroke-width="1.5"/><line x1="12" y1="23" x2="10" y2="27" stroke="#1e2a3a" stroke-width="1.5"/><line x1="20" y1="23" x2="22" y2="27" stroke="#1e2a3a" stroke-width="1.5"/><line x1="8" y1="27" x2="24" y2="27" stroke="#1e2a3a" stroke-width="1.5"/></svg>
-          <span style="color:#00d4ff;font-family:monospace;font-size:11px;font-weight:800;letter-spacing:0.1em;margin-top:8px;">FOX BIZ</span>
-          <span style="position:absolute;top:6px;right:6px;background:#ff3d57;color:#fff;font-size:9px;font-weight:700;padding:2px 5px;border-radius:2px;font-family:monospace;letter-spacing:0.05em;">● LIVE</span>
-        </div>
-        <div style="padding:10px 12px;font-size:12px;color:#8899aa;font-family:monospace;">Fox Business</div>
-      </div>
-      <div style="background:#111827;border:1px solid #1e2a3a;border-radius:8px;overflow:hidden;">
-        <div style="background:#0d1117;aspect-ratio:16/9;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;border-bottom:1px solid #1e2a3a;">
-          <svg width="32" height="28" viewBox="0 0 32 28" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="30" height="22" rx="2" stroke="#1e2a3a" stroke-width="1.5"/><line x1="12" y1="23" x2="10" y2="27" stroke="#1e2a3a" stroke-width="1.5"/><line x1="20" y1="23" x2="22" y2="27" stroke="#1e2a3a" stroke-width="1.5"/><line x1="8" y1="27" x2="24" y2="27" stroke="#1e2a3a" stroke-width="1.5"/></svg>
-          <span style="color:#00d4ff;font-family:monospace;font-size:11px;font-weight:800;letter-spacing:0.1em;margin-top:8px;">REUTERS</span>
-          <span style="position:absolute;top:6px;right:6px;background:#ff3d57;color:#fff;font-size:9px;font-weight:700;padding:2px 5px;border-radius:2px;font-family:monospace;letter-spacing:0.05em;">● LIVE</span>
-        </div>
-        <div style="padding:10px 12px;font-size:12px;color:#8899aa;font-family:monospace;">Reuters TV</div>
-      </div>
-    </div>
-  </div>
+ <div class="container">
+ <div class="section-label" data-i18n="preview.label">Terminal Preview</div>
+ <h2 style="margin-bottom:24px;" data-i18n="preview.h2">Live Financial TV — Channel Grid</h2>
+ <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px;">
+ <div style="background:#111827;border:1px solid #1e2a3a;border-radius:8px;overflow:hidden;">
+ <div style="background:#0d1117;aspect-ratio:16/9;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;border-bottom:1px solid #1e2a3a;">
+ <svg width="32" height="28" viewBox="0 0 32 28" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="30" height="22" rx="2" stroke="#1e2a3a" stroke-width="1.5"/><line x1="12" y1="23" x2="10" y2="27" stroke="#1e2a3a" stroke-width="1.5"/><line x1="20" y1="23" x2="22" y2="27" stroke="#1e2a3a" stroke-width="1.5"/><line x1="8" y1="27" x2="24" y2="27" stroke="#1e2a3a" stroke-width="1.5"/></svg>
+ <span style="color:#00d4ff;font-family:monospace;font-size:11px;font-weight:800;letter-spacing:0.1em;margin-top:8px;">BLOOMBERG</span>
+ <span style="position:absolute;top:6px;right:6px;background:#ff3d57;color:#fff;font-size:9px;font-weight:700;padding:2px 5px;border-radius:2px;font-family:monospace;letter-spacing:0.05em;">● LIVE</span>
+ </div>
+ <div style="padding:10px 12px;font-size:12px;color:#8899aa;font-family:monospace;">Bloomberg TV</div>
+ </div>
+ <div style="background:#111827;border:1px solid #1e2a3a;border-radius:8px;overflow:hidden;">
+ <div style="background:#0d1117;aspect-ratio:16/9;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;border-bottom:1px solid #1e2a3a;">
+ <svg width="32" height="28" viewBox="0 0 32 28" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="30" height="22" rx="2" stroke="#1e2a3a" stroke-width="1.5"/><line x1="12" y1="23" x2="10" y2="27" stroke="#1e2a3a" stroke-width="1.5"/><line x1="20" y1="23" x2="22" y2="27" stroke="#1e2a3a" stroke-width="1.5"/><line x1="8" y1="27" x2="24" y2="27" stroke="#1e2a3a" stroke-width="1.5"/></svg>
+ <span style="color:#00d4ff;font-family:monospace;font-size:11px;font-weight:800;letter-spacing:0.1em;margin-top:8px;">CNBC</span>
+ <span style="position:absolute;top:6px;right:6px;background:#ff3d57;color:#fff;font-size:9px;font-weight:700;padding:2px 5px;border-radius:2px;font-family:monospace;letter-spacing:0.05em;">● LIVE</span>
+ </div>
+ <div style="padding:10px 12px;font-size:12px;color:#8899aa;font-family:monospace;">CNBC</div>
+ </div>
+ <div style="background:#111827;border:1px solid #1e2a3a;border-radius:8px;overflow:hidden;">
+ <div style="background:#0d1117;aspect-ratio:16/9;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;border-bottom:1px solid #1e2a3a;">
+ <svg width="32" height="28" viewBox="0 0 32 28" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="30" height="22" rx="2" stroke="#1e2a3a" stroke-width="1.5"/><line x1="12" y1="23" x2="10" y2="27" stroke="#1e2a3a" stroke-width="1.5"/><line x1="20" y1="23" x2="22" y2="27" stroke="#1e2a3a" stroke-width="1.5"/><line x1="8" y1="27" x2="24" y2="27" stroke="#1e2a3a" stroke-width="1.5"/></svg>
+ <span style="color:#00d4ff;font-family:monospace;font-size:11px;font-weight:800;letter-spacing:0.1em;margin-top:8px;">FOX BIZ</span>
+ <span style="position:absolute;top:6px;right:6px;background:#ff3d57;color:#fff;font-size:9px;font-weight:700;padding:2px 5px;border-radius:2px;font-family:monospace;letter-spacing:0.05em;">● LIVE</span>
+ </div>
+ <div style="padding:10px 12px;font-size:12px;color:#8899aa;font-family:monospace;">Fox Business</div>
+ </div>
+ <div style="background:#111827;border:1px solid #1e2a3a;border-radius:8px;overflow:hidden;">
+ <div style="background:#0d1117;aspect-ratio:16/9;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;border-bottom:1px solid #1e2a3a;">
+ <svg width="32" height="28" viewBox="0 0 32 28" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="30" height="22" rx="2" stroke="#1e2a3a" stroke-width="1.5"/><line x1="12" y1="23" x2="10" y2="27" stroke="#1e2a3a" stroke-width="1.5"/><line x1="20" y1="23" x2="22" y2="27" stroke="#1e2a3a" stroke-width="1.5"/><line x1="8" y1="27" x2="24" y2="27" stroke="#1e2a3a" stroke-width="1.5"/></svg>
+ <span style="color:#00d4ff;font-family:monospace;font-size:11px;font-weight:800;letter-spacing:0.1em;margin-top:8px;">REUTERS</span>
+ <span style="position:absolute;top:6px;right:6px;background:#ff3d57;color:#fff;font-size:9px;font-weight:700;padding:2px 5px;border-radius:2px;font-family:monospace;letter-spacing:0.05em;">● LIVE</span>
+ </div>
+ <div style="padding:10px 12px;font-size:12px;color:#8899aa;font-family:monospace;">Reuters TV</div>
+ </div>
+ </div>
+ </div>
 </section>
 
 <section>
-  <div class="container">
-    <div class="section-label" data-i18n="channels.label">Available Channels</div>
-    <h2 data-i18n="channels.h2">7 Live Financial TV Channels, All in One Place</h2>
-    <p class="section-intro" data-i18n="channels.intro">Each channel is embedded directly inside the terminal panel — no external links, no separate browser tabs. Switch channels with a single click while your charts and news feed stay live.</p>
-    <div class="tv-grid">
-      <div class="tv-card">
-        <div class="tv-screen">
-          <span class="tv-screen-label">BLOOMBERG</span>
-          <span class="tv-live-tag">LIVE</span>
-        </div>
-        <div class="tv-channel-name">Bloomberg TV</div>
-        <div class="tv-channel-desc" data-i18n="ch1.desc">The benchmark for financial journalism. Live market data overlays, expert interviews, and continuous global market coverage.</div>
-      </div>
-      <div class="tv-card">
-        <div class="tv-screen">
-          <span class="tv-screen-label">CNBC</span>
-          <span class="tv-live-tag">LIVE</span>
-        </div>
-        <div class="tv-channel-name">CNBC</div>
-        <div class="tv-channel-desc" data-i18n="ch2.desc">Leading US equity and markets coverage. Breaking news, earnings calls, Fed coverage, and the best guest lineup in financial media.</div>
-      </div>
-      <div class="tv-card">
-        <div class="tv-screen">
-          <span class="tv-screen-label">FOX BIZ</span>
-          <span class="tv-live-tag">LIVE</span>
-        </div>
-        <div class="tv-channel-name">Fox Business</div>
-        <div class="tv-channel-desc" data-i18n="ch3.desc">US-focused market and economic policy coverage. Strong on Washington, tariffs, trade, and US corporate news.</div>
-      </div>
-      <div class="tv-card">
-        <div class="tv-screen">
-          <span class="tv-screen-label">REUTERS</span>
-          <span class="tv-live-tag">LIVE</span>
-        </div>
-        <div class="tv-channel-name">Reuters TV</div>
-        <div class="tv-channel-desc" data-i18n="ch4.desc">Global macro, geopolitics, and emerging markets. Reuters' global bureau network provides unparalleled international coverage.</div>
-      </div>
-      <div class="tv-card">
-        <div class="tv-screen">
-          <span class="tv-screen-label">+ MORE</span>
-          <span class="tv-live-tag">LIVE</span>
-        </div>
-        <div class="tv-channel-name" data-i18n="ch5.name">3 Additional Channels</div>
-        <div class="tv-channel-desc" data-i18n="ch5.desc">Three more international financial news streams included in the Pro plan. Full channel list visible inside the terminal.</div>
-      </div>
-    </div>
-  </div>
+ <div class="container">
+ <div class="section-label" data-i18n="channels.label">Available Channels</div>
+ <h2 data-i18n="channels.h2">7 Live Financial TV Channels, All in One Place</h2>
+ <p class="section-intro" data-i18n="channels.intro">Each channel is embedded directly inside the terminal panel — no external links, no separate browser tabs. Switch channels with a single click while your charts and news feed stay live.</p>
+ <div class="tv-grid">
+ <div class="tv-card">
+ <div class="tv-screen">
+ <span class="tv-screen-label">BLOOMBERG</span>
+ <span class="tv-live-tag">LIVE</span>
+ </div>
+ <div class="tv-channel-name">Bloomberg TV</div>
+ <div class="tv-channel-desc" data-i18n="ch1.desc">The benchmark for financial journalism. Live market data overlays, expert interviews, and continuous global market coverage.</div>
+ </div>
+ <div class="tv-card">
+ <div class="tv-screen">
+ <span class="tv-screen-label">CNBC</span>
+ <span class="tv-live-tag">LIVE</span>
+ </div>
+ <div class="tv-channel-name">CNBC</div>
+ <div class="tv-channel-desc" data-i18n="ch2.desc">Leading US equity and markets coverage. Breaking news, earnings calls, Fed coverage, and the best guest lineup in financial media.</div>
+ </div>
+ <div class="tv-card">
+ <div class="tv-screen">
+ <span class="tv-screen-label">FOX BIZ</span>
+ <span class="tv-live-tag">LIVE</span>
+ </div>
+ <div class="tv-channel-name">Fox Business</div>
+ <div class="tv-channel-desc" data-i18n="ch3.desc">US-focused market and economic policy coverage. Strong on Washington, tariffs, trade, and US corporate news.</div>
+ </div>
+ <div class="tv-card">
+ <div class="tv-screen">
+ <span class="tv-screen-label">REUTERS</span>
+ <span class="tv-live-tag">LIVE</span>
+ </div>
+ <div class="tv-channel-name">Reuters TV</div>
+ <div class="tv-channel-desc" data-i18n="ch4.desc">Global macro, geopolitics, and emerging markets. Reuters' global bureau network provides unparalleled international coverage.</div>
+ </div>
+ <div class="tv-card">
+ <div class="tv-screen">
+ <span class="tv-screen-label">+ MORE</span>
+ <span class="tv-live-tag">LIVE</span>
+ </div>
+ <div class="tv-channel-name" data-i18n="ch5.name">3 Additional Channels</div>
+ <div class="tv-channel-desc" data-i18n="ch5.desc">Three more international financial news streams included in the Pro plan. Full channel list visible inside the terminal.</div>
+ </div>
+ </div>
+ </div>
 </section>
 
 <section>
-  <div class="container">
-    <div class="section-label" data-i18n="why.label">Why It Matters</div>
-    <h2 data-i18n="why.h2">What Live Financial TV Adds to Your Trading</h2>
-    <div class="cards">
-      <div class="card">
-        <div class="card-icon">🎙️</div>
-        <h3 data-i18n="why1.title">Hear It from the Source</h3>
-        <p data-i18n="why1.body">When a Fed official, ECB president, or finance minister speaks live on TV, the tone and emphasis matters as much as the words. Read a text summary or hear the actual interview — the difference is significant.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">📊</div>
-        <h3 data-i18n="why2.title">Market Context and Commentary</h3>
-        <p data-i18n="why2.body">Expert analysts provide real-time commentary on price movements, economic data, and geopolitical events. This macro narrative context is difficult to get from a text-only news feed.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">🗂️</div>
-        <h3 data-i18n="why3.title">One Tab, Everything You Need</h3>
-        <p data-i18n="why3.body">News feed, economic calendar, squawk box, TradingView charts, and 7 live TV channels — all inside a single browser tab. No context switching, no lost focus, no missed moves.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">💸</div>
-        <h3 data-i18n="why4.title">No Separate Subscriptions</h3>
-        <p data-i18n="why4.body">Bloomberg TV, CNBC, and the other channels are bundled into the Trading News Terminal Pro plan at €40/month. No cable subscription, no streaming add-ons, no per-channel fees.</p>
-      </div>
-    </div>
-  </div>
+ <div class="container">
+ <div class="section-label" data-i18n="why.label">Why It Matters</div>
+ <h2 data-i18n="why.h2">What Live Financial TV Adds to Your Trading</h2>
+ <div class="cards">
+ <div class="card">
+ <div class="card-icon">🎙️</div>
+ <h3 data-i18n="why1.title">Hear It from the Source</h3>
+ <p data-i18n="why1.body">When a Fed official, ECB president, or finance minister speaks live on TV, the tone and emphasis matters as much as the words. Read a text summary or hear the actual interview — the difference is significant.</p>
+ </div>
+ <div class="card">
+ <div class="card-icon">📊</div>
+ <h3 data-i18n="why2.title">Market Context and Commentary</h3>
+ <p data-i18n="why2.body">Expert analysts provide real-time commentary on price movements, economic data, and geopolitical events. This macro narrative context is difficult to get from a text-only news feed.</p>
+ </div>
+ <div class="card">
+ <div class="card-icon">🗂️</div>
+ <h3 data-i18n="why3.title">One Tab, Everything You Need</h3>
+ <p data-i18n="why3.body">News feed, economic calendar, squawk box, TradingView charts, and 7 live TV channels — all inside a single browser tab. No context switching, no lost focus, no missed moves.</p>
+ </div>
+ <div class="card">
+ <div class="card-icon">💸</div>
+ <h3 data-i18n="why4.title">No Separate Subscriptions</h3>
+ <p data-i18n="why4.body">Bloomberg TV, CNBC, and the other channels are bundled into the Trading News Terminal Pro plan at €40/month. No cable subscription, no streaming add-ons, no per-channel fees.</p>
+ </div>
+ </div>
+ </div>
 </section>
 
 <section>
-  <div class="container">
-    <div class="section-label" data-i18n="how_title">How It Works</div>
-    <h2 data-i18n="how.h2">Financial TV Integrated Into Your Terminal Workflow</h2>
-    <div class="steps">
-      <div class="step">
-        <div class="step-num">1</div>
-        <div class="step-body">
-          <h3 data-i18n="step1.title">Open the TV panel in your terminal</h3>
-          <p data-i18n="step1.body">Pro subscribers see the TV panel button in the terminal interface. Click to expand the embedded video player, which loads the selected channel immediately. The terminal layout keeps your news feed, economic calendar, and chart panels active alongside the TV panel — you're not replacing one tool with another, you're adding a layer.</p>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-num">2</div>
-        <div class="step-body">
-          <h3 data-i18n="step2.title">Select your channel</h3>
-          <p data-i18n="step2.body">Seven channels are accessible from the channel selector within the TV panel. Switch between Bloomberg TV, CNBC, Fox Business, Reuters TV, and the additional channels with a single click — no page reload, no buffering delay. The channel selector is always visible so you can react quickly when you need to change your focus.</p>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-num">3</div>
-        <div class="step-body">
-          <h3 data-i18n="step3.title">Use it alongside squawk, news, and calendar</h3>
-          <p data-i18n="step3.body">The real power of embedded financial TV comes from using it in combination with the rest of the terminal. When the squawk box announces a breaking headline and the economic calendar shows a data beat, you can flip to Bloomberg TV or CNBC immediately to hear the live market reaction and analyst commentary — all within the same tab, without losing your chart positions or news feed context.</p>
-        </div>
-      </div>
-    </div>
-  </div>
+ <div class="container">
+ <div class="section-label" data-i18n="how_title">How It Works</div>
+ <h2 data-i18n="how.h2">Financial TV Integrated Into Your Terminal Workflow</h2>
+ <div class="steps">
+ <div class="step">
+ <div class="step-num">1</div>
+ <div class="step-body">
+ <h3 data-i18n="step1.title">Open the TV panel in your terminal</h3>
+ <p data-i18n="step1.body">Pro subscribers see the TV panel button in the terminal interface. Click to expand the embedded video player, which loads the selected channel immediately. The terminal layout keeps your news feed, economic calendar, and chart panels active alongside the TV panel — you're not replacing one tool with another, you're adding a layer.</p>
+ </div>
+ </div>
+ <div class="step">
+ <div class="step-num">2</div>
+ <div class="step-body">
+ <h3 data-i18n="step2.title">Select your channel</h3>
+ <p data-i18n="step2.body">Seven channels are accessible from the channel selector within the TV panel. Switch between Bloomberg TV, CNBC, Fox Business, Reuters TV, and the additional channels with a single click — no page reload, no buffering delay. The channel selector is always visible so you can react quickly when you need to change your focus.</p>
+ </div>
+ </div>
+ <div class="step">
+ <div class="step-num">3</div>
+ <div class="step-body">
+ <h3 data-i18n="step3.title">Use it alongside squawk, news, and calendar</h3>
+ <p data-i18n="step3.body">The real power of embedded financial TV comes from using it in combination with the rest of the terminal. When the squawk box announces a breaking headline and the economic calendar shows a data beat, you can flip to Bloomberg TV or CNBC immediately to hear the live market reaction and analyst commentary — all within the same tab, without losing your chart positions or news feed context.</p>
+ </div>
+ </div>
+ </div>
+ </div>
 </section>
 
 <section>
-  <div class="container">
-    <div class="section-label" data-i18n="cmp.label">Comparison</div>
-    <h2 data-i18n="cmp.h2">Trading News Terminal TV vs Alternatives</h2>
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr>
-            <th data-i18n="cmp.th1">Option</th>
-            <th data-i18n="cmp.th2">Channels</th>
-            <th data-i18n="cmp.th3">Integrated with terminal?</th>
-            <th class="accent-col" data-i18n="cmp.th4">Cost</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td data-i18n="cmp.row1c1">TNT Pro (this)</td>
-            <td data-i18n="cmp.row1c2">7 live financial channels</td>
-            <td class="check" data-i18n="cmp.row1c3">✓ Yes — same tab</td>
-            <td style="color:var(--accent);font-weight:700">€40/month (all-in)</td>
-          </tr>
-          <tr>
-            <td>Bloomberg Terminal</td>
-            <td data-i18n="cmp.row2c2">Bloomberg TV + limited</td>
-            <td class="check" data-i18n="cmp.yes">✓ Yes</td>
-            <td>~$2,000/month</td>
-          </tr>
-          <tr>
-            <td data-i18n="cmp.row3c1">Cable / satellite TV</td>
-            <td>CNBC, Bloomberg, Fox Biz</td>
-            <td class="cross" data-i18n="cmp.sep_screen">✗ Separate screen</td>
-            <td>$60–120/month</td>
-          </tr>
-          <tr>
-            <td data-i18n="cmp.row4c1">Streaming services</td>
-            <td data-i18n="cmp.row4c2">Varies (1–2 channels)</td>
-            <td class="cross" data-i18n="cmp.sep_tab">✗ Separate tab</td>
-            <td>$8–15/month per service</td>
-          </tr>
-          <tr>
-            <td data-i18n="cmp.row5c1">Free YouTube streams</td>
-            <td data-i18n="cmp.row5c2">Variable availability</td>
-            <td class="cross" data-i18n="cmp.sep_tab">✗ Separate tab</td>
-            <td data-i18n="cmp.row5c4">Free but unreliable</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
+ <div class="container">
+ <div class="section-label" data-i18n="cmp.label">Comparison</div>
+ <h2 data-i18n="cmp.h2">Trading News Terminal TV vs Alternatives</h2>
+ <div class="table-wrap">
+ <table>
+ <thead>
+ <tr>
+ <th data-i18n="cmp.th1">Option</th>
+ <th data-i18n="cmp.th2">Channels</th>
+ <th data-i18n="cmp.th3">Integrated with terminal?</th>
+ <th class="accent-col" data-i18n="cmp.th4">Cost</th>
+ </tr>
+ </thead>
+ <tbody>
+ <tr>
+ <td data-i18n="cmp.row1c1">TNT Pro (this)</td>
+ <td data-i18n="cmp.row1c2">7 live financial channels</td>
+ <td class="check" data-i18n="cmp.row1c3">✓ Yes — same tab</td>
+ <td style="color:var(--accent);font-weight:700">€40/month (all-in)</td>
+ </tr>
+ <tr>
+ <td data-i18n="cmp.row3c1">Cable / satellite TV</td>
+ <td>CNBC, Bloomberg, Fox Biz</td>
+ <td class="cross" data-i18n="cmp.sep_screen">✗ Separate screen</td>
+ <td>$60–120/month</td>
+ </tr>
+ <tr>
+ <td data-i18n="cmp.row4c1">Streaming services</td>
+ <td data-i18n="cmp.row4c2">Varies (1–2 channels)</td>
+ <td class="cross" data-i18n="cmp.sep_tab">✗ Separate tab</td>
+ <td>$8–15/month per service</td>
+ </tr>
+ <tr>
+ <td data-i18n="cmp.row5c1">Free YouTube streams</td>
+ <td data-i18n="cmp.row5c2">Variable availability</td>
+ <td class="cross" data-i18n="cmp.sep_tab">✗ Separate tab</td>
+ <td data-i18n="cmp.row5c4">Free but unreliable</td>
+ </tr>
+ </tbody>
+ </table>
+ </div>
+ </div>
 </section>
 
 <section>
-  <div class="container">
-    <div class="section-label" data-i18n="faq_title">Frequently Asked Questions</div>
-    <h2 data-i18n="faq.h2">Live Financial TV — Common Questions</h2>
-    <div class="faq">
-      <div class="faq-item">
-        <h3 data-i18n="faq1.q">Can I watch Bloomberg TV for free?</h3>
-        <p data-i18n="faq1.a">Bloomberg TV is available inside Trading News Terminal Pro at €40/month — significantly less than a Bloomberg Terminal subscription at $2,000/month, and less than most cable packages that include Bloomberg TV. The Pro plan also includes zero-delay financial news, a live squawk box, the economic calendar with beat/miss signals, and TradingView chart integration. A Pro trial is available so you can evaluate the full terminal including Bloomberg TV before committing to a monthly plan.</p>
-      </div>
-      <div class="faq-item">
-        <h3 data-i18n="faq2.q">What financial TV channels are available?</h3>
-        <p data-i18n="faq2.a">Trading News Terminal Pro includes 7 live financial TV channels embedded inside the terminal: Bloomberg TV, CNBC, Fox Business, Reuters TV, and three additional international financial news channels. The full channel lineup is visible inside the terminal TV panel. All channels are embedded via iframe-based streams — no external apps or separate subscriptions required. Channels can be switched with a single click while the rest of the terminal (news feed, calendar, charts) remains active.</p>
-      </div>
-      <div class="faq-item">
-        <h3 data-i18n="faq3.q">Is CNBC live free for traders?</h3>
-        <p data-i18n="faq3.a">CNBC live is included in Trading News Terminal Pro as one of 7 embedded channels. The Pro plan at €40/month covers all TV channels, the zero-delay news feed, squawk box, economic calendar, and TradingView integration. There's no separate CNBC subscription required. The free Basic plan does not include live TV — it covers the economic calendar, filtered news (2-minute delay), and charts.</p>
-      </div>
-      <div class="faq-item">
-        <h3 data-i18n="faq4.q">Why do traders watch financial TV?</h3>
-        <p data-i18n="faq4.a">Traders watch financial TV for several reasons that text-based news feeds cannot fully replicate: live commentary from market professionals during volatile sessions, direct-to-camera interviews with central bank officials where tone and emphasis add critical context, real-time analyst reactions to economic data as it prints, and the ability to follow developing stories as they evolve on-screen. The combination of audio-visual TV with a text news feed and economic calendar gives traders a more complete picture of market conditions than any single tool alone.</p>
-      </div>
-      <div class="faq-item">
-        <h3 data-i18n="faq5.q">What is the best financial news channel for active traders?</h3>
-        <p data-i18n="faq5.a">Bloomberg TV is the benchmark for professional market coverage — it features the highest-quality guests, live data overlays, and the deepest institutional market focus. CNBC has the widest reach and the fastest US equity market coverage. Reuters TV excels at global macro and geopolitical events. Fox Business is strong on US economic policy and Washington developments. The right channel depends on what you're trading: forex traders often prefer Bloomberg and Reuters; equity traders lean towards CNBC. With Trading News Terminal Pro you get access to all seven channels and can switch based on what's happening in the market.</p>
-      </div>
-    </div>
-  </div>
+ <div class="container">
+ <div class="section-label" data-i18n="faq_title">Frequently Asked Questions</div>
+ <h2 data-i18n="faq.h2">Live Financial TV — Common Questions</h2>
+ <div class="faq">
+ <div class="faq-item">
+ <h3 data-i18n="faq1.q">Can I watch Bloomberg TV for free?</h3>
+ <p data-i18n="faq1.a">Bloomberg TV is available inside Trading News Terminal Pro at €40/month. The Pro plan also includes zero-delay financial news, a live squawk box, the economic calendar with beat/miss signals, and TradingView chart integration. A Pro trial is available so you can evaluate the full terminal including Bloomberg TV before committing to a monthly plan.</p>
+ </div>
+ <div class="faq-item">
+ <h3 data-i18n="faq2.q">What financial TV channels are available?</h3>
+ <p data-i18n="faq2.a">Trading News Terminal Pro includes 7 live financial TV channels embedded inside the terminal: Bloomberg TV, CNBC, Fox Business, Reuters TV, and three additional international financial news channels. The full channel lineup is visible inside the terminal TV panel. All channels are embedded via iframe-based streams — no external apps or separate subscriptions required. Channels can be switched with a single click while the rest of the terminal (news feed, calendar, charts) remains active.</p>
+ </div>
+ <div class="faq-item">
+ <h3 data-i18n="faq3.q">Is CNBC live free for traders?</h3>
+ <p data-i18n="faq3.a">CNBC live is included in Trading News Terminal Pro as one of 7 embedded channels. The Pro plan at €40/month covers all TV channels, the zero-delay news feed, squawk box, economic calendar, and TradingView integration. There's no separate CNBC subscription required. The free Basic plan does not include live TV — it covers the economic calendar, filtered news (2-minute delay), and charts.</p>
+ </div>
+ <div class="faq-item">
+ <h3 data-i18n="faq4.q">Why do traders watch financial TV?</h3>
+ <p data-i18n="faq4.a">Traders watch financial TV for several reasons that text-based news feeds cannot fully replicate: live commentary from market professionals during volatile sessions, direct-to-camera interviews with central bank officials where tone and emphasis add critical context, real-time analyst reactions to economic data as it prints, and the ability to follow developing stories as they evolve on-screen. The combination of audio-visual TV with a text news feed and economic calendar gives traders a more complete picture of market conditions than any single tool alone.</p>
+ </div>
+ <div class="faq-item">
+ <h3 data-i18n="faq5.q">What is the best financial news channel for active traders?</h3>
+ <p data-i18n="faq5.a">Bloomberg TV is the benchmark for professional market coverage — it features the highest-quality guests, live data overlays, and the deepest institutional market focus. CNBC has the widest reach and the fastest US equity market coverage. Reuters TV excels at global macro and geopolitical events. Fox Business is strong on US economic policy and Washington developments. The right channel depends on what you're trading: forex traders often prefer Bloomberg and Reuters; equity traders lean towards CNBC. With Trading News Terminal Pro you get access to all seven channels and can switch based on what's happening in the market.</p>
+ </div>
+ </div>
+ </div>
 </section>
 
 <section>
-  <div class="container">
-    <div class="section-label" data-i18n="explore_title">Explore Other Features</div>
-    <h2 data-i18n="explore.h2">Everything in the Trading News Terminal</h2>
-    <div class="explore-grid">
-      <a href="/bloomberg-alternative" class="explore-link"><span class="arrow">→</span> Bloomberg Alternative</a>
-      <a href="/forex-news-feed" class="explore-link"><span class="arrow">→</span> Forex News Feed</a>
-      <a href="/economic-calendar" class="explore-link"><span class="arrow">→</span> Economic Calendar</a>
-      <a href="/squawk-box" class="explore-link"><span class="arrow">→</span> Live Squawk Box</a>
-      <a href="/live-financial-tv" class="explore-link"><span class="arrow">→</span> Live Financial TV</a>
-      <a href="/market-screener" class="explore-link"><span class="arrow">→</span> Market Screener</a>
-      <a href="/central-banks-tracker" class="explore-link"><span class="arrow">→</span> Central Banks Tracker</a>
-      <a href="/macro-bonds-hub" class="explore-link"><span class="arrow">→</span> Macro &amp; Bonds Hub</a>
-      <a href="/earnings-calendar" class="explore-link"><span class="arrow">→</span> Earnings Calendar</a>
-      <a href="/trading-charts" class="explore-link"><span class="arrow">→</span> Trading Charts</a>
-    </div>
-  </div>
+ <div class="container">
+ <div class="section-label" data-i18n="explore_title">Explore Other Features</div>
+ <h2 data-i18n="explore.h2">Everything in the Trading News Terminal</h2>
+ <div class="explore-grid">
+ <a href="/forex-news-feed" class="explore-link"><span class="arrow">→</span> Forex News Feed</a>
+ <a href="/economic-calendar" class="explore-link"><span class="arrow">→</span> Economic Calendar</a>
+ <a href="/squawk-box" class="explore-link"><span class="arrow">→</span> Live Squawk Box</a>
+ <a href="/live-financial-tv" class="explore-link"><span class="arrow">→</span> Live Financial TV</a>
+ <a href="/market-screener" class="explore-link"><span class="arrow">→</span> Market Screener</a>
+ <a href="/central-banks-tracker" class="explore-link"><span class="arrow">→</span> Central Banks Tracker</a>
+ <a href="/macro-bonds-hub" class="explore-link"><span class="arrow">→</span> Macro &amp; Bonds Hub</a>
+ <a href="/earnings-calendar" class="explore-link"><span class="arrow">→</span> Earnings Calendar</a>
+ <a href="/trading-charts" class="explore-link"><span class="arrow">→</span> Trading Charts</a>
+ </div>
+ </div>
 </section>
 
 <div class="footer-cta">
-  <div class="container">
-    <h2 data-i18n="cta.h2">Bloomberg TV, CNBC, Reuters — All in One Tab</h2>
-    <p data-i18n="cta.sub">Stop switching between your trading terminal and TV streams. Get 7 live financial channels embedded inside Trading News Terminal Pro — €40/month, trial available.</p>
-    <a href="https://www.tradingnewsterminal.com/login?plan=trial&utm_source=seo&utm_medium=organic&utm_campaign=live-financial-tv&utm_content=bottom" class="btn btn-primary btn-lg" data-seo-track="live-financial-tv"><span data-i18n="cta.btn">Start Pro Trial — Watch Live TV Free</span></a>
-  </div>
+ <div class="container">
+ <h2 data-i18n="cta.h2">Bloomberg TV, CNBC, Reuters — All in One Tab</h2>
+ <p data-i18n="cta.sub">Stop switching between your trading terminal and TV streams. Get 7 live financial channels embedded inside Trading News Terminal Pro — €40/month, trial available.</p>
+ <a href="https://www.tradingnewsterminal.com/login?plan=trial&utm_source=seo&utm_medium=organic&utm_campaign=live-financial-tv&utm_content=bottom" class="btn btn-primary btn-lg" data-seo-track="live-financial-tv"><span data-i18n="cta.btn">Start Pro Trial — Watch Live TV Free</span></a>
+ </div>
 </div>
 
 <footer>
-  <div class="container">
-    <p data-i18n="footer.copy">© 2026 Trading News Terminal · Live Financial TV for Traders</p>
-    <div class="footer-links">
-      <a href="https://www.tradingnewsterminal.com/?utm_source=seo&utm_medium=organic&utm_campaign=live-financial-tv&utm_content=footer" data-seo-track="live-financial-tv">tradingnewsterminal.com</a>
-      <a href="/privacy">Privacy Policy</a>
-      <a href="/terms">Terms of Service</a>
-      <a href="/login">Sign In</a>
-      <a href="/signup">Sign Up</a>
-    </div>
-  </div>
+ <div class="container">
+ <p data-i18n="footer.copy">© 2026 Trading News Terminal · Live Financial TV for Traders</p>
+ <div class="footer-links">
+ <a href="https://www.tradingnewsterminal.com/?utm_source=seo&utm_medium=organic&utm_campaign=live-financial-tv&utm_content=footer" data-seo-track="live-financial-tv">tradingnewsterminal.com</a>
+ <a href="/privacy">Privacy Policy</a>
+ <a href="/terms">Terms of Service</a>
+ <a href="/login">Sign In</a>
+ <a href="/signup">Sign Up</a>
+ </div>
+ </div>
 </footer>
 
 <script>
 var _tnt={
-  en:{
-    active:'EN',tagline:'Real-time Market Intelligence',
-    try_btn:'Try Free \u2192',trial_btn:'Start Free Trial',free_btn:'Open Free Terminal',
-    'hero.badge':'Live Financial TV \u2014 Pro Feature',
-    'hero.h1':'Live Financial TV \u2014 7 Channels Inside Your Trading Terminal',
-    'hero.sub':'Bloomberg TV, CNBC, Fox Business, Reuters and more \u2014 all embedded directly inside your trading terminal. One tab, full market intelligence. No subscriptions, no tab-switching.',
-    'hero.price_note':'Live TV is a <strong>Pro feature</strong> at \u20ac40/month \u00b7 Basic plan free \u00b7 Pro trial available',
-    'preview.label':'Terminal Preview','preview.h2':'Live Financial TV \u2014 Channel Grid',
-    'channels.label':'Available Channels','channels.h2':'7 Live Financial TV Channels, All in One Place',
-    'channels.intro':'Each channel is embedded directly inside the terminal panel \u2014 no external links, no separate browser tabs. Switch channels with a single click while your charts and news feed stay live.',
-    'ch1.desc':'The benchmark for financial journalism. Live market data overlays, expert interviews, and continuous global market coverage.',
-    'ch2.desc':'Leading US equity and markets coverage. Breaking news, earnings calls, Fed coverage, and the best guest lineup in financial media.',
-    'ch3.desc':'US-focused market and economic policy coverage. Strong on Washington, tariffs, trade, and US corporate news.',
-    'ch4.desc':'Global macro, geopolitics, and emerging markets. Reuters\u2019 global bureau network provides unparalleled international coverage.',
-    'ch5.name':'3 Additional Channels','ch5.desc':'Three more international financial news streams included in the Pro plan. Full channel list visible inside the terminal.',
-    'why.label':'Why It Matters','why.h2':'What Live Financial TV Adds to Your Trading',
-    'why1.title':'Hear It from the Source','why1.body':'When a Fed official, ECB president, or finance minister speaks live on TV, the tone and emphasis matters as much as the words. Read a text summary or hear the actual interview \u2014 the difference is significant.',
-    'why2.title':'Market Context and Commentary','why2.body':'Expert analysts provide real-time commentary on price movements, economic data, and geopolitical events. This macro narrative context is difficult to get from a text-only news feed.',
-    'why3.title':'One Tab, Everything You Need','why3.body':'News feed, economic calendar, squawk box, TradingView charts, and 7 live TV channels \u2014 all inside a single browser tab. No context switching, no lost focus, no missed moves.',
-    'why4.title':'No Separate Subscriptions','why4.body':'Bloomberg TV, CNBC, and the other channels are bundled into the Trading News Terminal Pro plan at \u20ac40/month. No cable subscription, no streaming add-ons, no per-channel fees.',
-    how_title:'How It Works','how.h2':'Financial TV Integrated Into Your Terminal Workflow',
-    'step1.title':'Open the TV panel in your terminal','step1.body':'Pro subscribers see the TV panel button in the terminal interface. Click to expand the embedded video player, which loads the selected channel immediately. The terminal layout keeps your news feed, economic calendar, and chart panels active alongside the TV panel \u2014 you\u2019re not replacing one tool with another, you\u2019re adding a layer.',
-    'step2.title':'Select your channel','step2.body':'Seven channels are accessible from the channel selector within the TV panel. Switch between Bloomberg TV, CNBC, Fox Business, Reuters TV, and the additional channels with a single click \u2014 no page reload, no buffering delay. The channel selector is always visible so you can react quickly when you need to change your focus.',
-    'step3.title':'Use it alongside squawk, news, and calendar','step3.body':'The real power of embedded financial TV comes from using it in combination with the rest of the terminal. When the squawk box announces a breaking headline and the economic calendar shows a data beat, you can flip to Bloomberg TV or CNBC immediately to hear the live market reaction and analyst commentary \u2014 all within the same tab, without losing your chart positions or news feed context.',
-    'cmp.label':'Comparison','cmp.h2':'Trading News Terminal TV vs Alternatives',
-    'cmp.th1':'Option','cmp.th2':'Channels','cmp.th3':'Integrated with terminal?','cmp.th4':'Cost',
-    'cmp.row1c1':'TNT Pro (this)','cmp.row1c2':'7 live financial channels','cmp.row1c3':'\u2713 Yes \u2014 same tab',
-    'cmp.row2c2':'Bloomberg TV + limited','cmp.yes':'\u2713 Yes',
-    'cmp.row3c1':'Cable / satellite TV','cmp.sep_screen':'\u2717 Separate screen',
-    'cmp.row4c1':'Streaming services','cmp.row4c2':'Varies (1\u20132 channels)','cmp.sep_tab':'\u2717 Separate tab',
-    'cmp.row5c1':'Free YouTube streams','cmp.row5c2':'Variable availability','cmp.row5c4':'Free but unreliable',
-    faq_title:'Frequently Asked Questions','faq.h2':'Live Financial TV \u2014 Common Questions',
-    'faq1.q':'Can I watch Bloomberg TV for free?','faq1.a':'Bloomberg TV is available inside Trading News Terminal Pro at \u20ac40/month \u2014 significantly less than a Bloomberg Terminal subscription at $2,000/month, and less than most cable packages that include Bloomberg TV. The Pro plan also includes zero-delay financial news, a live squawk box, the economic calendar with beat/miss signals, and TradingView chart integration. A Pro trial is available so you can evaluate the full terminal including Bloomberg TV before committing to a monthly plan.',
-    'faq2.q':'What financial TV channels are available?','faq2.a':'Trading News Terminal Pro includes 7 live financial TV channels embedded inside the terminal: Bloomberg TV, CNBC, Fox Business, Reuters TV, and three additional international financial news channels. The full channel lineup is visible inside the terminal TV panel. All channels are embedded via iframe-based streams \u2014 no external apps or separate subscriptions required. Channels can be switched with a single click while the rest of the terminal (news feed, calendar, charts) remains active.',
-    'faq3.q':'Is CNBC live free for traders?','faq3.a':'CNBC live is included in Trading News Terminal Pro as one of 7 embedded channels. The Pro plan at \u20ac40/month covers all TV channels, the zero-delay news feed, squawk box, economic calendar, and TradingView integration. There\u2019s no separate CNBC subscription required. The free Basic plan does not include live TV \u2014 it covers the economic calendar, filtered news (2-minute delay), and charts.',
-    'faq4.q':'Why do traders watch financial TV?','faq4.a':'Traders watch financial TV for several reasons that text-based news feeds cannot fully replicate: live commentary from market professionals during volatile sessions, direct-to-camera interviews with central bank officials where tone and emphasis add critical context, real-time analyst reactions to economic data as it prints, and the ability to follow developing stories as they evolve on-screen. The combination of audio-visual TV with a text news feed and economic calendar gives traders a more complete picture of market conditions than any single tool alone.',
-    'faq5.q':'What is the best financial news channel for active traders?','faq5.a':'Bloomberg TV is the benchmark for professional market coverage \u2014 it features the highest-quality guests, live data overlays, and the deepest institutional market focus. CNBC has the widest reach and the fastest US equity market coverage. Reuters TV excels at global macro and geopolitical events. Fox Business is strong on US economic policy and Washington developments. The right channel depends on what you\u2019re trading: forex traders often prefer Bloomberg and Reuters; equity traders lean towards CNBC. With Trading News Terminal Pro you get access to all seven channels and can switch based on what\u2019s happening in the market.',
-    explore_title:'Explore Other Features','explore.h2':'Everything in the Trading News Terminal',
-    'cta.h2':'Bloomberg TV, CNBC, Reuters \u2014 All in One Tab','cta.sub':'Stop switching between your trading terminal and TV streams. Get 7 live financial channels embedded inside Trading News Terminal Pro \u2014 \u20ac40/month, trial available.','cta.btn':'Start Pro Trial \u2014 Watch Live TV Free',
-    cta_free:'Start Free \u2014 No Card Required',
-    'footer.copy':'\u00a9 2026 Trading News Terminal \u00b7 Live Financial TV for Traders' },
-  pt:{
-    active:'PT',tagline:'Intelig\u00eancia de Mercado em Tempo Real',
-    try_btn:'Experimentar Gr\u00e1tis \u2192',trial_btn:'Iniciar Trial Gr\u00e1tis',free_btn:'Abrir Terminal Gr\u00e1tis',
-    'hero.badge':'TV Financeira ao Vivo \u2014 Funcionalidade Pro',
-    'hero.h1':'TV Financeira ao Vivo \u2014 7 Canais Dentro do Seu Terminal',
-    'hero.sub':'Bloomberg TV, CNBC, Fox Business, Reuters e mais \u2014 todos embutidos diretamente no seu terminal de trading. Um separador, intelig\u00eancia de mercado completa. Sem subscri\u00e7\u00f5es extra, sem troca de abas.',
-    'hero.price_note':'TV ao vivo \u00e9 uma <strong>funcionalidade Pro</strong> a \u20ac40/m\u00eas \u00b7 Plano Basic gratuito \u00b7 Trial Pro dispon\u00edvel',
-    'preview.label':'Pr\u00e9-visualiza\u00e7\u00e3o do Terminal','preview.h2':'TV Financeira ao Vivo \u2014 Grelha de Canais',
-    'channels.label':'Canais Dispon\u00edveis','channels.h2':'7 Canais de TV Financeira ao Vivo, Todos Num S\u00f3 Lugar',
-    'channels.intro':'Cada canal est\u00e1 embutido diretamente no painel do terminal \u2014 sem links externos, sem separadores adicionais. Mude de canal com um clique enquanto os seus gr\u00e1ficos e feed de not\u00edcias continuam ativos.',
-    'ch1.desc':'A refer\u00eancia do jornalismo financeiro. Dados de mercado em tempo real, entrevistas com especialistas e cobertura global cont\u00ednua.',
-    'ch2.desc':'Cobertura l\u00edder dos mercados acion\u00e1rios dos EUA. Not\u00edcias de \u00faltima hora, resultados, cobertura da Fed e os melhores convidados dos media financeiros.',
-    'ch3.desc':'Cobertura de mercados e pol\u00edtica econ\u00f3mica dos EUA. Forte em Washington, tarifas, com\u00e9rcio e not\u00edcias empresariais americanas.',
-    'ch4.desc':'Macroeconomia global, geopolítica e mercados emergentes. A rede global de correspondentes da Reuters oferece cobertura internacional insuperável.',
-    'ch5.name':'3 Canais Adicionais','ch5.desc':'Mais tr\u00eas canais internacionais de not\u00edcias financeiras inclu\u00eddos no plano Pro. Lista completa de canais vis\u00edvel dentro do terminal.',
-    'why.label':'Porqu\u00ea Importa','why.h2':'O Que a TV Financeira ao Vivo Acrescenta ao Seu Trading',
-    'why1.title':'Ouvi\u00e7a Diretamente da Fonte','why1.body':'Quando um responsável da Fed, o presidente do BCE ou um ministro das finanças fala ao vivo na TV, o tom e a \u00eanfase importam tanto quanto as palavras. Ler um resumo de texto ou ouvir a entrevista real \u2014 a diferen\u00e7a é significativa.',
-    'why2.title':'Contexto e Coment\u00e1rio de Mercado','why2.body':'Analistas especializados fornecem coment\u00e1rio em tempo real sobre movimentos de pre\u00e7os, dados econ\u00f3micos e eventos geopolíticos. Este contexto narrativo macro \u00e9 dif\u00edcil de obter apenas com feeds de texto.',
-    'why3.title':'Um Separador, Tudo o Que Precisa','why3.body':'Feed de not\u00edcias, calend\u00e1rio econ\u00f3mico, squawk box, gr\u00e1ficos TradingView e 7 canais de TV ao vivo \u2014 tudo dentro de um \u00fanico separador do browser. Sem troca de contexto, sem perder o foco, sem oportunidades perdidas.',
-    'why4.title':'Sem Subscri\u00e7\u00f5es Separadas','why4.body':'Bloomberg TV, CNBC e os outros canais est\u00e3o incluídos no plano Pro do Trading News Terminal a \u20ac40/m\u00eas. Sem subscri\u00e7\u00e3o de cabo, sem extras de streaming, sem taxas por canal.',
-    how_title:'Como Funciona','how.h2':'TV Financeira Integrada no Seu Fluxo de Trabalho no Terminal',
-    'step1.title':'Abra o painel de TV no seu terminal','step1.body':'Os subscritores Pro v\u00eaem o bot\u00e3o do painel de TV na interface do terminal. Clique para expandir o leitor de v\u00eddeo embutido, que carrega o canal selecionado imediatamente. O layout do terminal mant\u00e9m o seu feed de not\u00edcias, calend\u00e1rio econ\u00f3mico e painéis de gr\u00e1ficos ativos junto ao painel de TV \u2014 n\u00e3o está a substituir uma ferramenta por outra, está a adicionar uma camada.',
-    'step2.title':'Selecione o seu canal','step2.body':'Sete canais est\u00e3o acess\u00edveis a partir do seletor de canais no painel de TV. Mude entre Bloomberg TV, CNBC, Fox Business, Reuters TV e os canais adicionais com um \u00fanico clique \u2014 sem recarregar a p\u00e1gina, sem atraso de buffer. O seletor de canais est\u00e1 sempre vis\u00edvel para que possa reagir rapidamente quando precisar de mudar o foco.',
-    'step3.title':'Use-o junto ao squawk, not\u00edcias e calend\u00e1rio','step3.body':'O verdadeiro poder da TV financeira embutida vem de a usar em combina\u00e7\u00e3o com o resto do terminal. Quando o squawk box anuncia uma manchete de \u00faltima hora e o calend\u00e1rio econ\u00f3mico mostra um dado acima do previsto, pode mudar para Bloomberg TV ou CNBC imediatamente para ouvir a reação ao vivo do mercado e o coment\u00e1rio dos analistas \u2014 tudo dentro do mesmo separador, sem perder as posi\u00e7\u00f5es nos gr\u00e1ficos ou o contexto do feed.',
-    'cmp.label':'Compara\u00e7\u00e3o','cmp.h2':'Trading News Terminal TV vs Alternativas',
-    'cmp.th1':'Op\u00e7\u00e3o','cmp.th2':'Canais','cmp.th3':'Integrado com terminal?','cmp.th4':'Custo',
-    'cmp.row1c1':'TNT Pro (este)','cmp.row1c2':'7 canais financeiros ao vivo','cmp.row1c3':'\u2713 Sim \u2014 mesmo separador',
-    'cmp.row2c2':'Bloomberg TV + limitado','cmp.yes':'\u2713 Sim',
-    'cmp.row3c1':'TV por cabo / sat\u00e9lite','cmp.sep_screen':'\u2717 Ecr\u00e3 separado',
-    'cmp.row4c1':'Servi\u00e7os de streaming','cmp.row4c2':'Varia (1\u20132 canais)','cmp.sep_tab':'\u2717 Separador separado',
-    'cmp.row5c1':'Streams gratuitos no YouTube','cmp.row5c2':'Disponibilidade vari\u00e1vel','cmp.row5c4':'Gratuito mas inst\u00e1vel',
-    faq_title:'Perguntas Frequentes','faq.h2':'TV Financeira ao Vivo \u2014 Perguntas Comuns',
-    'faq1.q':'Posso ver a Bloomberg TV de gra\u00e7a?','faq1.a':'A Bloomberg TV est\u00e1 dispon\u00edvel dentro do Trading News Terminal Pro a \u20ac40/m\u00eas \u2014 significativamente menos do que uma subscri\u00e7\u00e3o Bloomberg Terminal a $2.000/m\u00eas, e menos do que a maioria dos pacotes de cabo que incluem Bloomberg TV. O plano Pro tamb\u00e9m inclui not\u00edcias financeiras sem atraso, squawk box ao vivo, calend\u00e1rio econ\u00f3mico com sinais beat/miss e integra\u00e7\u00e3o de gr\u00e1ficos TradingView. Um trial Pro est\u00e1 dispon\u00edvel para avaliar o terminal completo incluindo Bloomberg TV antes de se comprometer.',
-    'faq2.q':'Que canais de TV financeira est\u00e3o dispon\u00edveis?','faq2.a':'O Trading News Terminal Pro inclui 7 canais de TV financeira ao vivo embutidos no terminal: Bloomberg TV, CNBC, Fox Business, Reuters TV e tr\u00eas canais internacionais adicionais de not\u00edcias financeiras. A lista completa de canais est\u00e1 vis\u00edvel no painel de TV do terminal. Todos os canais s\u00e3o embutidos via streams iframe \u2014 sem apps externas nem subscri\u00e7\u00f5es separadas. Os canais podem ser trocados com um clique enquanto o resto do terminal (feed, calend\u00e1rio, gr\u00e1ficos) permanece ativo.',
-    'faq3.q':'A CNBC ao vivo \u00e9 gratuita para traders?','faq3.a':'A CNBC ao vivo est\u00e1 inclu\u00edda no Trading News Terminal Pro como um dos 7 canais embutidos. O plano Pro a \u20ac40/m\u00eas cobre todos os canais de TV, o feed de not\u00edcias sem atraso, squawk box, calend\u00e1rio econ\u00f3mico e integra\u00e7\u00e3o TradingView. N\u00e3o \u00e9 necess\u00e1ria uma subscri\u00e7\u00e3o separada da CNBC. O plano Basic gratuito n\u00e3o inclui TV ao vivo \u2014 cobre o calend\u00e1rio econ\u00f3mico, not\u00edcias filtradas (atraso de 2 minutos) e gr\u00e1ficos.',
-    'faq4.q':'Porque é que os traders veem TV financeira?','faq4.a':'Os traders veem TV financeira por v\u00e1rias raz\u00f5es que os feeds de not\u00edcias em texto n\u00e3o conseguem replicar totalmente: coment\u00e1rio ao vivo de profissionais de mercado durante sess\u00f5es vol\u00e1teis, entrevistas diretas com responsáveis de bancos centrais onde o tom e a \u00eanfase acrescentam contexto cr\u00edtico, reações de analistas em tempo real a dados econ\u00f3micos \u00e0 medida que s\u00e3o publicados, e a capacidade de acompanhar hist\u00f3rias em desenvolvimento no ecr\u00e3. A combina\u00e7\u00e3o de TV audiovisual com feed de texto e calend\u00e1rio econ\u00f3mico d\u00e1 aos traders uma vis\u00e3o mais completa das condi\u00e7\u00f5es de mercado.',
-    'faq5.q':'Qual \u00e9 o melhor canal de not\u00edcias financeiras para traders ativos?','faq5.a':'A Bloomberg TV \u00e9 a refer\u00eancia para a cobertura profissional de mercados \u2014 apresenta os convidados de maior qualidade, sobreposições de dados ao vivo e o foco institucional mais profundo. A CNBC tem o maior alcance e a cobertura mais r\u00e1pida dos mercados acion\u00e1rios dos EUA. A Reuters TV destaca-se na macroecon\u00f3mica global e eventos geopolíticos. A Fox Business \u00e9 forte em pol\u00edtica econ\u00f3mica dos EUA. O canal certo depende do que est\u00e1 a negociar: os traders de forex preferem frequentemente Bloomberg e Reuters; os traders de a\u00e7\u00f5es tendem para a CNBC. Com o Trading News Terminal Pro tem acesso a todos os sete canais.',
-    explore_title:'Explorar Funcionalidades','explore.h2':'Tudo no Trading News Terminal',
-    'cta.h2':'Bloomberg TV, CNBC, Reuters \u2014 Tudo Num S\u00f3 Separador','cta.sub':'Pare de alternar entre o seu terminal de trading e streams de TV. Obtenha 7 canais financeiros ao vivo embutidos no Trading News Terminal Pro \u2014 \u20ac40/m\u00eas, trial dispon\u00edvel.','cta.btn':'Iniciar Trial Pro \u2014 Ver TV ao Vivo Gr\u00e1tis',
-    cta_free:'Come\u00e7ar Gr\u00e1tis \u2014 Sem Cart\u00e3o',
-    'footer.copy':'\u00a9 2026 Trading News Terminal \u00b7 TV Financeira ao Vivo para Traders' },
-  es:{
-    active:'ES',tagline:'Inteligencia de Mercado en Tiempo Real',
-    try_btn:'Probar Gratis \u2192',trial_btn:'Iniciar Prueba Gratis',free_btn:'Abrir Terminal Gratis',
-    'hero.badge':'TV Financiera en Vivo \u2014 Funci\u00f3n Pro',
-    'hero.h1':'TV Financiera en Vivo \u2014 7 Canales Dentro de Tu Terminal',
-    'hero.sub':'Bloomberg TV, CNBC, Fox Business, Reuters y m\u00e1s \u2014 todos integrados directamente en tu terminal de trading. Una pesta\u00f1a, inteligencia de mercado completa. Sin suscripciones adicionales, sin cambiar de pesta\u00f1a.',
-    'hero.price_note':'La TV en vivo es una <strong>funci\u00f3n Pro</strong> a \u20ac40/mes \u00b7 Plan Basic gratuito \u00b7 Prueba Pro disponible',
-    'preview.label':'Vista Previa del Terminal','preview.h2':'TV Financiera en Vivo \u2014 Cuadr\u00edcula de Canales',
-    'channels.label':'Canales Disponibles','channels.h2':'7 Canales de TV Financiera en Vivo, Todos en Un Solo Lugar',
-    'channels.intro':'Cada canal est\u00e1 integrado directamente dentro del panel del terminal \u2014 sin enlaces externos, sin pesta\u00f1as adicionales. Cambia de canal con un solo clic mientras tus gr\u00e1ficos y feed de noticias siguen activos.',
-    'ch1.desc':'El referente del periodismo financiero. Datos de mercado en tiempo real, entrevistas con expertos y cobertura global continua.',
-    'ch2.desc':'Cobertura l\u00edder de los mercados de renta variable de EE.UU. Noticias de \u00faltima hora, resultados empresariales, cobertura de la Fed y los mejores invitados de los medios financieros.',
-    'ch3.desc':'Cobertura de mercados y pol\u00edtica econ\u00f3mica de EE.UU. Fuerte en Washington, aranceles, comercio y noticias corporativas estadounidenses.',
-    'ch4.desc':'Macroeconom\u00eda global, geopolítica y mercados emergentes. La red global de corresponsales de Reuters ofrece una cobertura internacional insuperable.',
-    'ch5.name':'3 Canales Adicionales','ch5.desc':'Tres canales internacionales m\u00e1s de noticias financieras incluidos en el plan Pro. Lista completa de canales visible dentro del terminal.',
-    'why.label':'Por Qu\u00e9 Importa','why.h2':'Lo Que la TV Financiera en Vivo A\u00f1ade a Tu Trading',
-    'why1.title':'Esc\u00facha la Fuente Directamente','why1.body':'Cuando un funcionario de la Fed, el presidente del BCE o un ministro de finanzas habla en vivo por TV, el tono y el \u00e9nfasis importan tanto como las palabras. Leer un resumen o escuchar la entrevista real \u2014 la diferencia es significativa.',
-    'why2.title':'Contexto y Comentario de Mercado','why2.body':'Analistas expertos ofrecen comentarios en tiempo real sobre movimientos de precios, datos econ\u00f3micos y eventos geopolíticos. Este contexto narrativo macro es dif\u00edcil de obtener solo con feeds de texto.',
-    'why3.title':'Una Pesta\u00f1a, Todo Lo Que Necesitas','why3.body':'Feed de noticias, calendario econ\u00f3mico, squawk box, gr\u00e1ficos TradingView y 7 canales de TV en vivo \u2014 todo dentro de una sola pesta\u00f1a del navegador. Sin cambiar de contexto, sin perder el foco, sin movimientos perdidos.',
-    'why4.title':'Sin Suscripciones Separadas','why4.body':'Bloomberg TV, CNBC y los dem\u00e1s canales est\u00e1n incluidos en el plan Pro del Trading News Terminal a \u20ac40/mes. Sin suscripci\u00f3n de cable, sin extras de streaming, sin tarifas por canal.',
-    how_title:'C\u00f3mo Funciona','how.h2':'TV Financiera Integrada en Tu Flujo de Trabajo del Terminal',
-    'step1.title':'Abre el panel de TV en tu terminal','step1.body':'Los suscriptores Pro ven el bot\u00f3n del panel de TV en la interfaz del terminal. Haz clic para expandir el reproductor de v\u00eddeo integrado, que carga el canal seleccionado de inmediato. El dise\u00f1o del terminal mantiene tu feed de noticias, calendario econ\u00f3mico y paneles de gr\u00e1ficos activos junto al panel de TV \u2014 no est\u00e1s reemplazando una herramienta por otra, est\u00e1s a\u00f1adiendo una capa.',
-    'step2.title':'Selecciona tu canal','step2.body':'Siete canales son accesibles desde el selector de canales dentro del panel de TV. Cambia entre Bloomberg TV, CNBC, Fox Business, Reuters TV y los canales adicionales con un solo clic \u2014 sin recargar la p\u00e1gina, sin retraso de b\u00fafer. El selector de canales siempre est\u00e1 visible para que puedas reaccionar r\u00e1pidamente cuando necesites cambiar tu foco.',
-    'step3.title':'Ús alo junto al squawk, noticias y calendario','step3.body':'El verdadero poder de la TV financiera integrada surge de usarla en combinaci\u00f3n con el resto del terminal. Cuando el squawk box anuncia un titular de \u00faltima hora y el calendario econ\u00f3mico muestra un dato por encima de lo esperado, puedes cambiar a Bloomberg TV o CNBC de inmediato para escuchar la reacci\u00f3n en vivo del mercado y el comentario de los analistas \u2014 todo dentro de la misma pesta\u00f1a.',
-    'cmp.label':'Comparaci\u00f3n','cmp.h2':'Trading News Terminal TV vs Alternativas',
-    'cmp.th1':'Opci\u00f3n','cmp.th2':'Canales','cmp.th3':'\u00bfIntegrado con terminal?','cmp.th4':'Coste',
-    'cmp.row1c1':'TNT Pro (este)','cmp.row1c2':'7 canales financieros en vivo','cmp.row1c3':'\u2713 S\u00ed \u2014 misma pesta\u00f1a',
-    'cmp.row2c2':'Bloomberg TV + limitado','cmp.yes':'\u2713 S\u00ed',
-    'cmp.row3c1':'TV por cable / sat\u00e9lite','cmp.sep_screen':'\u2717 Pantalla separada',
-    'cmp.row4c1':'Servicios de streaming','cmp.row4c2':'Var\u00eda (1\u20132 canales)','cmp.sep_tab':'\u2717 Pesta\u00f1a separada',
-    'cmp.row5c1':'Streams gratuitos en YouTube','cmp.row5c2':'Disponibilidad variable','cmp.row5c4':'Gratuito pero poco fiable',
-    faq_title:'Preguntas Frecuentes','faq.h2':'TV Financiera en Vivo \u2014 Preguntas Comunes',
-    'faq1.q':'\u00bfPuedo ver Bloomberg TV gratis?','faq1.a':'Bloomberg TV est\u00e1 disponible dentro del Trading News Terminal Pro a \u20ac40/mes \u2014 significativamente menos que una suscripci\u00f3n Bloomberg Terminal a $2.000/mes, y menos que la mayor\u00eda de paquetes de cable que incluyen Bloomberg TV. El plan Pro tambi\u00e9n incluye noticias financieras sin demora, un squawk box en vivo, el calendario econ\u00f3mico con se\u00f1ales beat/miss e integraci\u00f3n de gr\u00e1ficos TradingView. Hay una prueba Pro disponible para evaluar el terminal completo incluyendo Bloomberg TV antes de comprometerte.',
-    'faq2.q':'\u00bfQu\u00e9 canales de TV financiera est\u00e1n disponibles?','faq2.a':'Trading News Terminal Pro incluye 7 canales de TV financiera en vivo integrados en el terminal: Bloomberg TV, CNBC, Fox Business, Reuters TV y tres canales internacionales adicionales de noticias financieras. La lista completa de canales es visible en el panel de TV del terminal. Todos los canales se integran mediante streams iframe \u2014 sin apps externas ni suscripciones separadas. Los canales se pueden cambiar con un clic mientras el resto del terminal (feed, calendario, gr\u00e1ficos) permanece activo.',
-    'faq3.q':'\u00bfEs CNBC en vivo gratuita para traders?','faq3.a':'CNBC en vivo est\u00e1 incluida en Trading News Terminal Pro como uno de 7 canales integrados. El plan Pro a \u20ac40/mes cubre todos los canales de TV, el feed de noticias sin demora, squawk box, calendario econ\u00f3mico e integraci\u00f3n TradingView. No se requiere una suscripci\u00f3n separada de CNBC. El plan Basic gratuito no incluye TV en vivo \u2014 cubre el calendario econ\u00f3mico, noticias filtradas (2 minutos de demora) y gr\u00e1ficos.',
-    'faq4.q':'\u00bfPor qu\u00e9 los traders ven TV financiera?','faq4.a':'Los traders ven TV financiera por varias razones que los feeds de noticias en texto no pueden replicar completamente: comentarios en vivo de profesionales del mercado durante sesiones vol\u00e1tiles, entrevistas directas con funcionarios de bancos centrales donde el tono a\u00f1ade contexto cr\u00edtico, reacciones de analistas en tiempo real a datos econ\u00f3micos y la capacidad de seguir historias en desarrollo. La combinaci\u00f3n de TV audiovisual con un feed de texto y calendario econ\u00f3mico da a los traders una imagen m\u00e1s completa de las condiciones del mercado.',
-    'faq5.q':'\u00bfCu\u00e1l es el mejor canal de noticias financieras para traders activos?','faq5.a':'Bloomberg TV es el referente para la cobertura profesional de mercados \u2014 presenta los invitados de mayor calidad, superposiciones de datos en vivo y el enfoque institucional m\u00e1s profundo. CNBC tiene el mayor alcance y la cobertura m\u00e1s r\u00e1pida de los mercados de renta variable de EE.UU. Reuters TV sobresale en macroeconom\u00eda global y eventos geopolíticos. Fox Business es fuerte en pol\u00edtica econ\u00f3mica de EE.UU. El canal adecuado depende de lo que est\u00e9s negociando: los traders de forex prefieren Bloomberg y Reuters; los de renta variable tienden a CNBC. Con Trading News Terminal Pro accedes a los siete canales.',
-    explore_title:'Explorar Caracter\u00edsticas','explore.h2':'Todo en el Trading News Terminal',
-    'cta.h2':'Bloomberg TV, CNBC, Reuters \u2014 Todo en Una Pesta\u00f1a','cta.sub':'Deja de cambiar entre tu terminal de trading y los streams de TV. Obt\u00e9n 7 canales financieros en vivo integrados en Trading News Terminal Pro \u2014 \u20ac40/mes, prueba disponible.','cta.btn':'Iniciar Prueba Pro \u2014 Ver TV en Vivo Gratis',
-    cta_free:'Empezar Gratis \u2014 Sin Tarjeta',
-    'footer.copy':'\u00a9 2026 Trading News Terminal \u00b7 TV Financiera en Vivo para Traders' },
-  fr:{
-    active:'FR',tagline:'Intelligence March\u00e9 en Temps R\u00e9el',
-    try_btn:'Essai Gratuit \u2192',trial_btn:'D\u00e9marrer l\u2019Essai Gratuit',free_btn:'Ouvrir le Terminal Gratuit',
-    'hero.badge':'TV Financi\u00e8re en Direct \u2014 Fonction Pro',
-    'hero.h1':'TV Financi\u00e8re en Direct \u2014 7 Cha\u00eenes dans Votre Terminal',
-    'hero.sub':'Bloomberg TV, CNBC, Fox Business, Reuters et plus \u2014 tous int\u00e9gr\u00e9s directement dans votre terminal de trading. Un seul onglet, renseignement de march\u00e9 complet. Sans abonnements suppl\u00e9mentaires, sans changer d\u2019onglet.',
-    'hero.price_note':'La TV en direct est une <strong>fonction Pro</strong> \u00e0 \u20ac40/mois \u00b7 Plan Basic gratuit \u00b7 Essai Pro disponible',
-    'preview.label':'Aper\u00e7u du Terminal','preview.h2':'TV Financi\u00e8re en Direct \u2014 Grille de Cha\u00eenes',
-    'channels.label':'Cha\u00eenes Disponibles','channels.h2':'7 Cha\u00eenes de TV Financi\u00e8re en Direct, Toutes au M\u00eame Endroit',
-    'channels.intro':'Chaque cha\u00eene est int\u00e9gr\u00e9e directement dans le panneau du terminal \u2014 sans liens externes, sans onglets s\u00e9par\u00e9s. Changez de cha\u00eene en un clic pendant que vos graphiques et votre flux d\u2019actualit\u00e9s restent actifs.',
-    'ch1.desc':'La r\u00e9f\u00e9rence du journalisme financier. Superpositions de donn\u00e9es de march\u00e9 en temps r\u00e9el, interviews d\u2019experts et couverture mondiale continue.',
-    'ch2.desc':'La couverture de r\u00e9f\u00e9rence des march\u00e9s actions am\u00e9ricains. Informations de derni\u00e8re minute, r\u00e9sultats d\u2019entreprises, couverture de la Fed et les meilleurs invit\u00e9s des m\u00e9dias financiers.',
-    'ch3.desc':'Couverture des march\u00e9s et de la politique \u00e9conomique am\u00e9ricaine. Solide sur Washington, les tarifs douaniers, le commerce et les actualit\u00e9s des entreprises am\u00e9ricaines.',
-    'ch4.desc':'Macro mondiale, g\u00e9opolitique et march\u00e9s \u00e9mergents. Le r\u00e9seau mondial de bureaux de Reuters offre une couverture internationale incomparable.',
-    'ch5.name':'3 Cha\u00eenes Suppl\u00e9mentaires','ch5.desc':'Trois cha\u00eenes suppl\u00e9mentaires de news financi\u00e8res internationales incluses dans le plan Pro. Liste compl\u00e8te visible dans le terminal.',
-    'why.label':'Pourquoi C\u2019est Important','why.h2':'Ce Que la TV Financi\u00e8re en Direct Apporte \u00e0 Votre Trading',
-    'why1.title':'Entendez-le Directement de la Source','why1.body':'Quand un responsable de la Fed, le pr\u00e9sident de la BCE ou un ministre des finances s\u2019exprime en direct \u00e0 la t\u00e9l\u00e9vision, le ton et l\u2019emphase comptent autant que les mots. Lire un r\u00e9sum\u00e9 ou \u00e9couter l\u2019interview r\u00e9elle \u2014 la diff\u00e9rence est significative.',
-    'why2.title':'Contexte et Commentaire de March\u00e9','why2.body':'Des analystes experts fournissent des commentaires en temps r\u00e9el sur les mouvements de prix, les donn\u00e9es \u00e9conomiques et les \u00e9v\u00e9nements g\u00e9opolitiques. Ce contexte narratif macro est difficile \u00e0 obtenir avec un simple flux de texte.',
-    'why3.title':'Un Seul Onglet, Tout Ce Dont Vous Avez Besoin','why3.body':'Flux d\u2019actualit\u00e9s, calendrier \u00e9conomique, squawk box, graphiques TradingView et 7 cha\u00eenes TV en direct \u2014 tout dans un seul onglet du navigateur. Sans changement de contexte, sans perte de concentration, sans opportunit\u00e9s manqu\u00e9es.',
-    'why4.title':'Sans Abonnements S\u00e9par\u00e9s','why4.body':'Bloomberg TV, CNBC et les autres cha\u00eenes sont incluses dans le plan Pro du Trading News Terminal \u00e0 \u20ac40/mois. Pas d\u2019abonnement c\u00e2ble, pas d\u2019options de streaming suppl\u00e9mentaires, pas de frais par cha\u00eene.',
-    how_title:'Comment \u00e7a marche','how.h2':'TV Financi\u00e8re Int\u00e9gr\u00e9e dans Votre Workflow du Terminal',
-    'step1.title':'Ouvrez le panneau TV dans votre terminal','step1.body':'Les abonn\u00e9s Pro voient le bouton du panneau TV dans l\u2019interface du terminal. Cliquez pour d\u00e9velopper le lecteur vid\u00e9o int\u00e9gr\u00e9, qui charge la cha\u00eene s\u00e9lectionn\u00e9e imm\u00e9diatement. La disposition du terminal maintient votre flux d\u2019actualit\u00e9s, calendrier \u00e9conomique et panneaux de graphiques actifs \u00e0 c\u00f4t\u00e9 du panneau TV \u2014 vous n\u2019\u00eates pas en train de remplacer un outil par un autre, vous ajoutez une couche.',
-    'step2.title':'S\u00e9lectionnez votre cha\u00eene','step2.body':'Sept cha\u00eenes sont accessibles depuis le s\u00e9lecteur de cha\u00eenes du panneau TV. Passez de Bloomberg TV \u00e0 CNBC, Fox Business, Reuters TV et les cha\u00eenes suppl\u00e9mentaires d\u2019un simple clic \u2014 sans rechargement de page, sans d\u00e9lai de mise en mémoire tampon. Le s\u00e9lecteur est toujours visible pour r\u00e9agir rapidement.',
-    'step3.title':'Utilisez-le avec le squawk, les actualit\u00e9s et le calendrier','step3.body':'La vraie puissance de la TV financi\u00e8re int\u00e9gr\u00e9e vient de son utilisation combin\u00e9e avec le reste du terminal. Quand le squawk box annonce une info de derni\u00e8re minute et que le calendrier \u00e9conomique affiche un chiffre au-dessus des attentes, vous pouvez basculer sur Bloomberg TV ou CNBC imm\u00e9diatement pour entendre la r\u00e9action en direct du march\u00e9 \u2014 tout dans le m\u00eame onglet.',
-    'cmp.label':'Comparaison','cmp.h2':'Trading News Terminal TV vs Alternatives',
-    'cmp.th1':'Option','cmp.th2':'Cha\u00eenes','cmp.th3':'Int\u00e9gr\u00e9 avec terminal\u00a0?','cmp.th4':'Co\u00fbt',
-    'cmp.row1c1':'TNT Pro (celui-ci)','cmp.row1c2':'7 cha\u00eenes financi\u00e8res en direct','cmp.row1c3':'\u2713 Oui \u2014 m\u00eame onglet',
-    'cmp.row2c2':'Bloomberg TV + limit\u00e9','cmp.yes':'\u2713 Oui',
-    'cmp.row3c1':'TV c\u00e2ble / satellite','cmp.sep_screen':'\u2717 \u00c9cran s\u00e9par\u00e9',
-    'cmp.row4c1':'Services de streaming','cmp.row4c2':'Variable (1\u20132 cha\u00eenes)','cmp.sep_tab':'\u2717 Onglet s\u00e9par\u00e9',
-    'cmp.row5c1':'Streams gratuits YouTube','cmp.row5c2':'Disponibilit\u00e9 variable','cmp.row5c4':'Gratuit mais peu fiable',
-    faq_title:'Questions Fr\u00e9quentes','faq.h2':'TV Financi\u00e8re en Direct \u2014 Questions Courantes',
-    'faq1.q':'Puis-je regarder Bloomberg TV gratuitement\u00a0?','faq1.a':'Bloomberg TV est disponible dans Trading News Terminal Pro \u00e0 \u20ac40/mois \u2014 nettement moins qu\u2019un abonnement Bloomberg Terminal \u00e0 $2\u00a0000/mois, et moins que la plupart des forfaits c\u00e2ble incluant Bloomberg TV. Le plan Pro inclut \u00e9galement des actualit\u00e9s financi\u00e8res sans d\u00e9lai, un squawk box en direct, le calendrier \u00e9conomique avec signaux beat/miss et l\u2019int\u00e9gration des graphiques TradingView. Un essai Pro est disponible pour \u00e9valuer le terminal complet avant de s\u2019engager.',
-    'faq2.q':'Quelles cha\u00eenes TV financi\u00e8res sont disponibles\u00a0?','faq2.a':'Trading News Terminal Pro inclut 7 cha\u00eenes TV financi\u00e8res en direct int\u00e9gr\u00e9es dans le terminal : Bloomberg TV, CNBC, Fox Business, Reuters TV et trois cha\u00eenes internationales suppl\u00e9mentaires. La liste compl\u00e8te est visible dans le panneau TV du terminal. Toutes les cha\u00eenes sont int\u00e9gr\u00e9es via des flux iframe \u2014 sans applications externes ni abonnements s\u00e9par\u00e9s. Les cha\u00eenes peuvent \u00eatre chang\u00e9es d\u2019un clic pendant que le reste du terminal reste actif.',
-    'faq3.q':'CNBC en direct est-elle gratuite pour les traders\u00a0?','faq3.a':'CNBC en direct est incluse dans Trading News Terminal Pro comme l\u2019une des 7 cha\u00eenes int\u00e9gr\u00e9es. Le plan Pro \u00e0 \u20ac40/mois couvre toutes les cha\u00eenes TV, le flux d\u2019actualit\u00e9s sans d\u00e9lai, le squawk box, le calendrier \u00e9conomique et l\u2019int\u00e9gration TradingView. Aucun abonnement CNBC s\u00e9par\u00e9 n\u2019est requis. Le plan Basic gratuit n\u2019inclut pas la TV en direct \u2014 il couvre le calendrier \u00e9conomique, les actualit\u00e9s filtr\u00e9es (d\u00e9lai de 2 minutes) et les graphiques.',
-    'faq4.q':'Pourquoi les traders regardent-ils la TV financi\u00e8re\u00a0?','faq4.a':'Les traders regardent la TV financi\u00e8re pour plusieurs raisons que les flux d\u2019actualit\u00e9s textuels ne peuvent pas totalement reproduire : commentaires en direct de professionnels du march\u00e9 lors de sessions volatiles, interviews directes avec des responsables de banques centrales o\u00f9 le ton apporte un contexte critique, r\u00e9actions d\u2019analystes en temps r\u00e9el aux donn\u00e9es \u00e9conomiques, et la capacit\u00e9 de suivre les \u00e9v\u00e9nements en cours. La combinaison TV audiovisuelle avec flux de texte et calendrier donne aux traders une vision plus compl\u00e8te des conditions de march\u00e9.',
-    'faq5.q':'Quelle est la meilleure cha\u00eene de news financi\u00e8res pour les traders actifs\u00a0?','faq5.a':'Bloomberg TV est la r\u00e9f\u00e9rence pour la couverture professionnelle des march\u00e9s \u2014 elle pr\u00e9sente les invit\u00e9s de la plus haute qualit\u00e9, des superpositions de donn\u00e9es en direct et le focus institutionnel le plus profond. CNBC a la plus grande audience et la couverture la plus rapide des march\u00e9s actions am\u00e9ricains. Reuters TV excelle en macro mondiale et \u00e9v\u00e9nements g\u00e9opolitiques. Fox Business est solide sur la politique \u00e9conomique am\u00e9ricaine. Le bon canal d\u00e9pend de ce que vous tradez : les traders forex pr\u00e9f\u00e8rent souvent Bloomberg et Reuters ; les traders actions penchent vers CNBC. Avec Trading News Terminal Pro, vous acc\u00e9dez aux sept cha\u00eenes.',
-    explore_title:'Explorer les Fonctionnalit\u00e9s','explore.h2':'Tout dans le Trading News Terminal',
-    'cta.h2':'Bloomberg TV, CNBC, Reuters \u2014 Tout dans Un Seul Onglet','cta.sub':'Arr\u00eatez de basculer entre votre terminal de trading et les flux TV. Obtenez 7 cha\u00eenes financi\u00e8res en direct int\u00e9gr\u00e9es dans Trading News Terminal Pro \u2014 \u20ac40/mois, essai disponible.','cta.btn':'Lancer l\u2019Essai Pro \u2014 Regarder la TV en Direct Gratuitement',
-    cta_free:'Commencer Gratuitement',
-    'footer.copy':'\u00a9 2026 Trading News Terminal \u00b7 TV Financi\u00e8re en Direct pour Traders' },
-  de:{
-    active:'DE',tagline:'Echtzeit-Marktintelligenz',
-    try_btn:'Kostenlos Testen \u2192',trial_btn:'Kostenlose Testphase',free_btn:'Terminal \u00d6ffnen',
-    'hero.badge':'Live Finanz-TV \u2014 Pro-Funktion',
-    'hero.h1':'Live Finanz-TV \u2014 7 Kan\u00e4le in Ihrem Trading-Terminal',
-    'hero.sub':'Bloomberg TV, CNBC, Fox Business, Reuters und mehr \u2014 alle direkt in Ihr Trading-Terminal eingebettet. Ein Tab, vollst\u00e4ndige Marktintelligenz. Keine zus\u00e4tzlichen Abonnements, kein Tab-Wechsel.',
-    'hero.price_note':'Live-TV ist eine <strong>Pro-Funktion</strong> f\u00fcr \u20ac40/Monat \u00b7 Basic-Plan kostenlos \u00b7 Pro-Testphase verf\u00fcgbar',
-    'preview.label':'Terminal-Vorschau','preview.h2':'Live Finanz-TV \u2014 Kanal\u00fcbersicht',
-    'channels.label':'Verf\u00fcgbare Kan\u00e4le','channels.h2':'7 Live Finanz-TV-Kan\u00e4le an einem Ort',
-    'channels.intro':'Jeder Kanal ist direkt in das Terminal-Panel eingebettet \u2014 keine externen Links, keine separaten Browser-Tabs. Wechseln Sie mit einem Klick den Kanal, w\u00e4hrend Ihre Charts und der Nachrichten-Feed aktiv bleiben.',
-    'ch1.desc':'Der Ma\u00dfstab f\u00fcr Finanzjournalismus. Live-Marktdaten-Overlays, Experteninterviews und kontinuierliche globale Marktberichterstattung.',
-    'ch2.desc':'F\u00fchrende Berichterstattung \u00fcber US-Aktienmärkte. Eilmeldungen, Gewinnberichte, Fed-Berichterstattung und die besten G\u00e4ste in den Finanzmedien.',
-    'ch3.desc':'US-fokussierte Markt- und Wirtschaftspolitik-Berichterstattung. Stark in Washington, Z\u00f6llen, Handel und US-Unternehmensnachrichten.',
-    'ch4.desc':'Globale Makro\u00f6konomie, Geopolitik und Schwellenl\u00e4nder. Das globale Korrespondentennetz von Reuters bietet unerreichte internationale Berichterstattung.',
-    'ch5.name':'3 Weitere Kan\u00e4le','ch5.desc':'Drei weitere internationale Finanz-News-Streams im Pro-Plan enthalten. Vollst\u00e4ndige Kanalliste im Terminal sichtbar.',
-    'why.label':'Warum Es Wichtig Ist','why.h2':'Was Live Finanz-TV Ihrem Trading Hinzuf\u00fcgt',
-    'why1.title':'H\u00f6ren Sie es direkt aus erster Hand','why1.body':'Wenn ein Fed-Verantwortlicher, der EZB-Pr\u00e4sident oder ein Finanzminister live im TV spricht, z\u00e4hlen Ton und Betonung ebenso viel wie die Worte. Eine Textzusammenfassung lesen oder das echte Interview h\u00f6ren \u2014 der Unterschied ist erheblich.',
-    'why2.title':'Marktkontext und Kommentar','why2.body':'Fachkundige Analysten liefern Echtzeit-Kommentare zu Kursbewegungen, Wirtschaftsdaten und geopolitischen Ereignissen. Dieser makro-narrative Kontext ist mit einem reinen Textfeed schwer zu erhalten.',
-    'why3.title':'Ein Tab, Alles Was Sie Ben\u00f6tigen','why3.body':'Nachrichten-Feed, Wirtschaftskalender, Squawk Box, TradingView-Charts und 7 Live-TV-Kan\u00e4le \u2014 alles in einem einzigen Browser-Tab. Kein Kontextwechsel, kein Fokusverlust, keine verpassten Bewegungen.',
-    'why4.title':'Keine Separaten Abonnements','why4.body':'Bloomberg TV, CNBC und die anderen Kan\u00e4le sind im Trading News Terminal Pro-Plan f\u00fcr \u20ac40/Monat enthalten. Kein Kabelabonnement, keine Streaming-Add-ons, keine Geb\u00fchren pro Kanal.',
-    how_title:'So funktioniert es','how.h2':'Finanz-TV in Ihren Terminal-Workflow Integriert',
-    'step1.title':'TV-Panel im Terminal \u00f6ffnen','step1.body':'Pro-Abonnenten sehen die TV-Panel-Schaltfl\u00e4che in der Terminal-Oberfl\u00e4che. Klicken Sie, um den eingebetteten Videoplayer zu \u00f6ffnen, der den gew\u00e4hlten Kanal sofort l\u00e4dt. Das Terminal-Layout h\u00e4lt Ihren Nachrichten-Feed, Wirtschaftskalender und Chart-Panels neben dem TV-Panel aktiv \u2014 Sie ersetzen kein Werkzeug, Sie f\u00fcgen eine Ebene hinzu.',
-    'step2.title':'Kanal ausw\u00e4hlen','step2.body':'Sieben Kan\u00e4le sind \u00fcber den Kanalw\u00e4hler im TV-Panel zug\u00e4nglich. Wechseln Sie zwischen Bloomberg TV, CNBC, Fox Business, Reuters TV und den zus\u00e4tzlichen Kan\u00e4len mit einem einzigen Klick \u2014 kein Neuladen der Seite, keine Pufferverz\u00f6gerung. Der Kanalw\u00e4hler ist immer sichtbar.',
-    'step3.title':'Zusammen mit Squawk, Nachrichten und Kalender nutzen','step3.body':'Die wahre St\u00e4rke des eingebetteten Finanz-TVs entfaltet sich in Kombination mit dem Rest des Terminals. Wenn die Squawk Box eine Eilmeldung ank\u00fcndigt und der Wirtschaftskalender einen \u00fcberraschenden Datenpunkt zeigt, k\u00f6nnen Sie sofort zu Bloomberg TV oder CNBC wechseln, um die Live-Marktreaktion zu h\u00f6ren \u2014 alles im selben Tab.',
-    'cmp.label':'Vergleich','cmp.h2':'Trading News Terminal TV vs. Alternativen',
-    'cmp.th1':'Option','cmp.th2':'Kan\u00e4le','cmp.th3':'Im Terminal integriert?','cmp.th4':'Kosten',
-    'cmp.row1c1':'TNT Pro (dieses)','cmp.row1c2':'7 Live-Finanzkan\u00e4le','cmp.row1c3':'\u2713 Ja \u2014 gleicher Tab',
-    'cmp.row2c2':'Bloomberg TV + begrenzt','cmp.yes':'\u2713 Ja',
-    'cmp.row3c1':'Kabel- / Satellitenfernsehen','cmp.sep_screen':'\u2717 Separater Bildschirm',
-    'cmp.row4c1':'Streaming-Dienste','cmp.row4c2':'Variiert (1\u20132 Kan\u00e4le)','cmp.sep_tab':'\u2717 Separater Tab',
-    'cmp.row5c1':'Kostenlose YouTube-Streams','cmp.row5c2':'Verf\u00fcgbarkeit variiert','cmp.row5c4':'Kostenlos aber unzuverl\u00e4ssig',
-    faq_title:'H\u00e4ufige Fragen','faq.h2':'Live Finanz-TV \u2014 H\u00e4ufige Fragen',
-    'faq1.q':'Kann ich Bloomberg TV kostenlos schauen?','faq1.a':'Bloomberg TV ist in Trading News Terminal Pro f\u00fcr \u20ac40/Monat verf\u00fcgbar \u2014 deutlich weniger als ein Bloomberg-Terminal-Abonnement f\u00fcr $2.000/Monat und weniger als die meisten Kabelpakete mit Bloomberg TV. Der Pro-Plan enth\u00e4lt auch verz\u00f6gerungsfreie Finanznachrichten, eine Live-Squawk-Box, den Wirtschaftskalender mit Beat/Miss-Signalen und TradingView-Chart-Integration. Eine Pro-Testphase steht zur Verf\u00fcgung, um das vollst\u00e4ndige Terminal einschlie\u00dflich Bloomberg TV zu evaluieren.',
-    'faq2.q':'Welche Finanz-TV-Kan\u00e4le sind verf\u00fcgbar?','faq2.a':'Trading News Terminal Pro enth\u00e4lt 7 eingebettete Live-Finanz-TV-Kan\u00e4le: Bloomberg TV, CNBC, Fox Business, Reuters TV und drei weitere internationale Finanz-News-Kan\u00e4le. Die vollst\u00e4ndige Kanalliste ist im TV-Panel des Terminals sichtbar. Alle Kan\u00e4le sind per Iframe-Streams eingebettet \u2014 keine externen Apps oder separaten Abonnements erforderlich. Kan\u00e4le k\u00f6nnen mit einem Klick gewechselt werden, w\u00e4hrend der Rest des Terminals aktiv bleibt.',
-    'faq3.q':'Ist CNBC live f\u00fcr Trader kostenlos?','faq3.a':'CNBC live ist in Trading News Terminal Pro als einer von 7 eingebetteten Kan\u00e4len enthalten. Der Pro-Plan f\u00fcr \u20ac40/Monat umfasst alle TV-Kan\u00e4le, den verz\u00f6gerungsfreien Nachrichten-Feed, Squawk Box, Wirtschaftskalender und TradingView-Integration. Kein separates CNBC-Abonnement erforderlich. Der kostenlose Basic-Plan enth\u00e4lt kein Live-TV.',
-    'faq4.q':'Warum schauen Trader Finanz-TV?','faq4.a':'Trader schauen Finanz-TV aus mehreren Gr\u00fcnden, die textbasierte Nachrichten-Feeds nicht vollst\u00e4ndig ersetzen k\u00f6nnen: Live-Kommentare von Marktprofis in volatilen Sitzungen, Direktinterviews mit Zentralbankern, bei denen Ton und Betonung kritischen Kontext liefern, Echtzeit-Analystenreaktionen auf Wirtschaftsdaten und die M\u00f6glichkeit, sich entwickelnde Ereignisse im Bild zu verfolgen. Die Kombination aus TV mit Textfeed und Wirtschaftskalender gibt Tradern ein vollst\u00e4ndigeres Bild der Marktbedingungen.',
-    'faq5.q':'Welcher Finanz-News-Kanal ist der beste f\u00fcr aktive Trader?','faq5.a':'Bloomberg TV gilt als Referenz f\u00fcr professionelle Marktberichterstattung \u2014 mit den hochwertigsten G\u00e4sten, Live-Daten-Overlays und dem tiefsten institutionellen Fokus. CNBC hat die gr\u00f6\u00dfte Reichweite und die schnellste US-Aktienmarktberichterstattung. Reuters TV gl\u00e4nzt bei globaler Makro\u00f6konomie und geopolitischen Ereignissen. Fox Business ist stark in US-Wirtschaftspolitik. Der richtige Kanal h\u00e4ngt davon ab, was Sie handeln: Forex-Trader bevorzugen oft Bloomberg und Reuters; Aktienhändler neigen zu CNBC. Mit Trading News Terminal Pro haben Sie Zugang zu allen sieben Kan\u00e4len.',
-    explore_title:'Weitere Funktionen','explore.h2':'Alles im Trading News Terminal',
-    'cta.h2':'Bloomberg TV, CNBC, Reuters \u2014 Alles in Einem Tab','cta.sub':'H\u00f6ren Sie auf, zwischen Ihrem Trading-Terminal und TV-Streams zu wechseln. Erhalten Sie 7 eingebettete Live-Finanzkan\u00e4le in Trading News Terminal Pro \u2014 \u20ac40/Monat, Testphase verf\u00fcgbar.','cta.btn':'Pro-Testphase Starten \u2014 Live-TV Kostenlos Ansehen',
-    cta_free:'Kostenlos Starten',
-    'footer.copy':'\u00a9 2026 Trading News Terminal \u00b7 Live Finanz-TV f\u00fcr Trader' },
-  it:{
-    active:'IT',tagline:'Intelligenza di Mercato in Tempo Reale',
-    try_btn:'Prova Gratuita \u2192',trial_btn:'Inizia la Prova Gratuita',free_btn:'Apri il Terminal',
-    'hero.badge':'TV Finanziaria in Diretta \u2014 Funzione Pro',
-    'hero.h1':'TV Finanziaria in Diretta \u2014 7 Canali nel Tuo Terminal',
-    'hero.sub':'Bloomberg TV, CNBC, Fox Business, Reuters e altro \u2014 tutti integrati direttamente nel tuo terminal di trading. Un solo tab, intelligenza di mercato completa. Senza abbonamenti aggiuntivi, senza cambiare tab.',
-    'hero.price_note':'La TV in diretta \u00e8 una <strong>funzione Pro</strong> a \u20ac40/mese \u00b7 Piano Basic gratuito \u00b7 Prova Pro disponibile',
-    'preview.label':'Anteprima del Terminal','preview.h2':'TV Finanziaria in Diretta \u2014 Griglia Canali',
-    'channels.label':'Canali Disponibili','channels.h2':'7 Canali di TV Finanziaria in Diretta, Tutti in Un Posto',
-    'channels.intro':'Ogni canale \u00e8 integrato direttamente nel pannello del terminal \u2014 nessun link esterno, nessun tab separato. Cambia canale con un clic mentre i tuoi grafici e il feed di notizie restano attivi.',
-    'ch1.desc':'Il punto di riferimento del giornalismo finanziario. Overlay di dati di mercato in tempo reale, interviste con esperti e copertura globale continua.',
-    'ch2.desc':'La copertura leader dei mercati azionari statunitensi. Notizie dell\u2019ultim\u2019ora, utili aziendali, copertura della Fed e i migliori ospiti nei media finanziari.',
-    'ch3.desc':'Copertura dei mercati e della politica economica statunitense. Forte su Washington, dazi, commercio e notizie aziendali americane.',
-    'ch4.desc':'Macroeconomia globale, geopolitica e mercati emergenti. La rete globale di corrispondenti di Reuters offre una copertura internazionale senza pari.',
-    'ch5.name':'3 Canali Aggiuntivi','ch5.desc':'Tre canali internazionali di news finanziarie in pi\u00f9 inclusi nel piano Pro. Lista completa visibile all\u2019interno del terminal.',
-    'why.label':'Perch\u00e9 \u00c8 Importante','why.h2':'Cosa Aggiunge la TV Finanziaria in Diretta al Tuo Trading',
-    'why1.title':'Ascoltalo Direttamente dalla Fonte','why1.body':'Quando un funzionario della Fed, il presidente della BCE o un ministro delle finanze parla in diretta in TV, il tono e l\u2019enfasi contano quanto le parole. Leggere un riassunto testuale o ascoltare l\u2019intervista reale \u2014 la differenza \u00e8 significativa.',
-    'why2.title':'Contesto e Commento di Mercato','why2.body':'Analisti esperti forniscono commenti in tempo reale sui movimenti dei prezzi, sui dati economici e sugli eventi geopolitici. Questo contesto narrativo macro \u00e8 difficile da ottenere da un semplice feed testuale.',
-    'why3.title':'Un Solo Tab, Tutto Ci\u00f2 di Cui Hai Bisogno','why3.body':'Feed di notizie, calendario economico, squawk box, grafici TradingView e 7 canali TV in diretta \u2014 tutto in un unico tab del browser. Nessun cambio di contesto, nessuna perdita di focus, nessuna mossa mancata.',
-    'why4.title':'Senza Abbonamenti Separati','why4.body':'Bloomberg TV, CNBC e gli altri canali sono inclusi nel piano Pro del Trading News Terminal a \u20ac40/mese. Nessun abbonamento via cavo, nessun extra di streaming, nessuna tariffa per canale.',
-    how_title:'Come funziona','how.h2':'TV Finanziaria Integrata nel Tuo Flusso di Lavoro sul Terminal',
-    'step1.title':'Apri il pannello TV nel tuo terminal','step1.body':'Gli abbonati Pro vedono il pulsante del pannello TV nell\u2019interfaccia del terminal. Clicca per espandere il lettore video integrato, che carica il canale selezionato immediatamente. Il layout del terminal mantiene il tuo feed di notizie, calendario economico e pannelli dei grafici attivi accanto al pannello TV \u2014 non stai sostituendo uno strumento con un altro, stai aggiungendo uno strato.',
-    'step2.title':'Seleziona il tuo canale','step2.body':'Sette canali sono accessibili dal selettore canali nel pannello TV. Passa tra Bloomberg TV, CNBC, Fox Business, Reuters TV e i canali aggiuntivi con un singolo clic \u2014 nessun ricaricamento della pagina, nessun ritardo di buffering. Il selettore \u00e8 sempre visibile per reagire rapidamente.',
-    'step3.title':'Usalo insieme a squawk, notizie e calendario','step3.body':'La vera potenza della TV finanziaria integrata emerge dall\u2019usarla in combinazione con il resto del terminal. Quando lo squawk box annuncia un titolo di ultima ora e il calendario economico mostra un dato sopra le attese, puoi passare a Bloomberg TV o CNBC immediatamente per ascoltare la reazione live del mercato \u2014 tutto nello stesso tab.',
-    'cmp.label':'Confronto','cmp.h2':'Trading News Terminal TV vs Alternative',
-    'cmp.th1':'Opzione','cmp.th2':'Canali','cmp.th3':'Integrato con terminal?','cmp.th4':'Costo',
-    'cmp.row1c1':'TNT Pro (questo)','cmp.row1c2':'7 canali finanziari in diretta','cmp.row1c3':'\u2713 S\u00ec \u2014 stesso tab',
-    'cmp.row2c2':'Bloomberg TV + limitato','cmp.yes':'\u2713 S\u00ec',
-    'cmp.row3c1':'TV via cavo / satellite','cmp.sep_screen':'\u2717 Schermo separato',
-    'cmp.row4c1':'Servizi di streaming','cmp.row4c2':'Varia (1\u20132 canali)','cmp.sep_tab':'\u2717 Tab separato',
-    'cmp.row5c1':'Stream gratuiti su YouTube','cmp.row5c2':'Disponibilit\u00e0 variabile','cmp.row5c4':'Gratuito ma inaffidabile',
-    faq_title:'Domande Frequenti','faq.h2':'TV Finanziaria in Diretta \u2014 Domande Comuni',
-    'faq1.q':'Posso guardare Bloomberg TV gratis?','faq1.a':'Bloomberg TV \u00e8 disponibile in Trading News Terminal Pro a \u20ac40/mese \u2014 significativamente meno di un abbonamento Bloomberg Terminal a $2.000/mese, e meno della maggior parte dei pacchetti via cavo che includono Bloomberg TV. Il piano Pro include anche notizie finanziarie senza ritardo, uno squawk box in diretta, il calendario economico con segnali beat/miss e l\u2019integrazione dei grafici TradingView. \u00c8 disponibile una prova Pro per valutare il terminal completo incluso Bloomberg TV prima di impegnarsi.',
-    'faq2.q':'Quali canali TV finanziari sono disponibili?','faq2.a':'Trading News Terminal Pro include 7 canali TV finanziari in diretta integrati nel terminal: Bloomberg TV, CNBC, Fox Business, Reuters TV e tre canali internazionali aggiuntivi di news finanziarie. La lista completa \u00e8 visibile nel pannello TV del terminal. Tutti i canali sono integrati tramite stream iframe \u2014 senza app esterne n\u00e9 abbonamenti separati. I canali possono essere cambiati con un clic mentre il resto del terminal rimane attivo.',
-    'faq3.q':'CNBC in diretta \u00e8 gratuita per i trader?','faq3.a':'CNBC in diretta \u00e8 inclusa in Trading News Terminal Pro come uno dei 7 canali integrati. Il piano Pro a \u20ac40/mese copre tutti i canali TV, il feed di notizie senza ritardo, squawk box, calendario economico e integrazione TradingView. Non \u00e8 richiesto un abbonamento separato a CNBC. Il piano Basic gratuito non include la TV in diretta.',
-    'faq4.q':'Perch\u00e9 i trader guardano la TV finanziaria?','faq4.a':'I trader guardano la TV finanziaria per diverse ragioni che i feed di testo non possono replicare completamente: commenti in diretta da professionisti di mercato durante sessioni volatili, interviste dirette con funzionari di banche centrali dove il tono aggiunge contesto critico, reazioni di analisti in tempo reale ai dati economici e la capacit\u00e0 di seguire le notizie in sviluppo. La combinazione di TV audiovisiva con feed testuale e calendario economico offre ai trader una visione pi\u00f9 completa delle condizioni di mercato.',
-    'faq5.q':'Qual \u00e8 il miglior canale di news finanziarie per trader attivi?','faq5.a':'Bloomberg TV \u00e8 il punto di riferimento per la copertura professionale dei mercati \u2014 presenta gli ospiti di pi\u00f9 alta qualit\u00e0, overlay di dati in diretta e il focus istituzionale pi\u00f9 profondo. CNBC ha la pi\u00f9 ampia copertura del mercato azionario statunitense. Reuters TV eccelle in macroeconomia globale ed eventi geopolitici. Fox Business \u00e8 solida sulla politica economica statunitense. Il canale giusto dipende da cosa si sta negoziando: i trader forex preferiscono spesso Bloomberg e Reuters; i trader azionari tendono verso CNBC. Con Trading News Terminal Pro si accede a tutti e sette i canali.',
-    explore_title:'Esplora Funzionalit\u00e0','explore.h2':'Tutto nel Trading News Terminal',
-    'cta.h2':'Bloomberg TV, CNBC, Reuters \u2014 Tutto in Un Solo Tab','cta.sub':'Smetti di alternare tra il tuo terminal di trading e gli stream TV. Ottieni 7 canali finanziari in diretta integrati in Trading News Terminal Pro \u2014 \u20ac40/mese, prova disponibile.','cta.btn':'Inizia la Prova Pro \u2014 Guarda la TV in Diretta Gratis',
-    cta_free:'Inizia Gratis',
-    'footer.copy':'\u00a9 2026 Trading News Terminal \u00b7 TV Finanziaria in Diretta per Trader' } }; function _applyLang(l){
-  var t=_tnt[l]||_tnt.en;
-  document.querySelectorAll('[data-i18n]').forEach(function(el){
-    var k=el.getAttribute('data-i18n');
-    if(t[k]!==undefined)el.textContent=t[k];
-  });
-  document.querySelectorAll('[data-i18n-html]').forEach(function(el){
-    var k=el.getAttribute('data-i18n-html');
-    if(t[k]!==undefined)el.innerHTML=t[k];
-  });
-  var flags={en:'1f1ec-1f1e7',pt:'1f1f5-1f1f9',es:'1f1ea-1f1f8',fr:'1f1eb-1f1f7',de:'1f1e9-1f1ea',it:'1f1ee-1f1f9'};
-  var btn=document.querySelector('#langPicker>button');
-  if(btn)btn.innerHTML='<img src="https://twemoji.maxcdn.com/v/latest/svg/'+flags[l]+'.svg" width="16" height="16" style="vertical-align:middle;"> '+t['active'];
-  document.querySelectorAll('#langMenu a').forEach(function(a){
-    a.style.color=a.getAttribute('data-lang')===l?'#00d4ff':'#8899aa';
-    a.style.background=a.getAttribute('data-lang')===l?'rgba(0,212,255,0.08)':'';
-  });
-  try{history.replaceState(null,'',location.pathname+'?lang='+l);}catch(e){}
-  localStorage.setItem('tnt_lang',l);
+ en:{
+ active:'EN',tagline:'Real-time Market Intelligence',
+ try_btn:'Try Free \u2192',trial_btn:'Start Free Trial',free_btn:'Open Free Terminal',
+ 'hero.badge':'Live Financial TV \u2014 Pro Feature',
+ 'hero.h1':'Live Financial TV \u2014 7 Channels Inside Your Trading Terminal',
+ 'hero.sub':'Bloomberg TV, CNBC, Fox Business, Reuters and more \u2014 all embedded directly inside your trading terminal. One tab, full market intelligence. No subscriptions, no tab-switching.',
+ 'hero.price_note':'Live TV is a <strong>Pro feature</strong> at \u20ac40/month \u00b7 Basic plan free \u00b7 Pro trial available',
+ 'preview.label':'Terminal Preview','preview.h2':'Live Financial TV \u2014 Channel Grid',
+ 'channels.label':'Available Channels','channels.h2':'7 Live Financial TV Channels, All in One Place',
+ 'channels.intro':'Each channel is embedded directly inside the terminal panel \u2014 no external links, no separate browser tabs. Switch channels with a single click while your charts and news feed stay live.',
+ 'ch1.desc':'The benchmark for financial journalism. Live market data overlays, expert interviews, and continuous global market coverage.',
+ 'ch2.desc':'Leading US equity and markets coverage. Breaking news, earnings calls, Fed coverage, and the best guest lineup in financial media.',
+ 'ch3.desc':'US-focused market and economic policy coverage. Strong on Washington, tariffs, trade, and US corporate news.',
+ 'ch4.desc':'Global macro, geopolitics, and emerging markets. Reuters\u2019 global bureau network provides unparalleled international coverage.',
+ 'ch5.name':'3 Additional Channels','ch5.desc':'Three more international financial news streams included in the Pro plan. Full channel list visible inside the terminal.',
+ 'why.label':'Why It Matters','why.h2':'What Live Financial TV Adds to Your Trading',
+ 'why1.title':'Hear It from the Source','why1.body':'When a Fed official, ECB president, or finance minister speaks live on TV, the tone and emphasis matters as much as the words. Read a text summary or hear the actual interview \u2014 the difference is significant.',
+ 'why2.title':'Market Context and Commentary','why2.body':'Expert analysts provide real-time commentary on price movements, economic data, and geopolitical events. This macro narrative context is difficult to get from a text-only news feed.',
+ 'why3.title':'One Tab, Everything You Need','why3.body':'News feed, economic calendar, squawk box, TradingView charts, and 7 live TV channels \u2014 all inside a single browser tab. No context switching, no lost focus, no missed moves.',
+ 'why4.title':'No Separate Subscriptions','why4.body':'Bloomberg TV, CNBC, and the other channels are bundled into the Trading News Terminal Pro plan at \u20ac40/month. No cable subscription, no streaming add-ons, no per-channel fees.',
+ how_title:'How It Works','how.h2':'Financial TV Integrated Into Your Terminal Workflow',
+ 'step1.title':'Open the TV panel in your terminal','step1.body':'Pro subscribers see the TV panel button in the terminal interface. Click to expand the embedded video player, which loads the selected channel immediately. The terminal layout keeps your news feed, economic calendar, and chart panels active alongside the TV panel \u2014 you\u2019re not replacing one tool with another, you\u2019re adding a layer.',
+ 'step2.title':'Select your channel','step2.body':'Seven channels are accessible from the channel selector within the TV panel. Switch between Bloomberg TV, CNBC, Fox Business, Reuters TV, and the additional channels with a single click \u2014 no page reload, no buffering delay. The channel selector is always visible so you can react quickly when you need to change your focus.',
+ 'step3.title':'Use it alongside squawk, news, and calendar','step3.body':'The real power of embedded financial TV comes from using it in combination with the rest of the terminal. When the squawk box announces a breaking headline and the economic calendar shows a data beat, you can flip to Bloomberg TV or CNBC immediately to hear the live market reaction and analyst commentary \u2014 all within the same tab, without losing your chart positions or news feed context.',
+ 'cmp.label':'Comparison','cmp.h2':'Trading News Terminal TV vs Alternatives',
+ 'cmp.th1':'Option','cmp.th2':'Channels','cmp.th3':'Integrated with terminal?','cmp.th4':'Cost',
+ 'cmp.row1c1':'TNT Pro (this)','cmp.row1c2':'7 live financial channels','cmp.row1c3':'\u2713 Yes \u2014 same tab',
+ 'cmp.yes':'\u2713 Yes',
+ 'cmp.row3c1':'Cable / satellite TV','cmp.sep_screen':'\u2717 Separate screen',
+ 'cmp.row4c1':'Streaming services','cmp.row4c2':'Varies (1\u20132 channels)','cmp.sep_tab':'\u2717 Separate tab',
+ 'cmp.row5c1':'Free YouTube streams','cmp.row5c2':'Variable availability','cmp.row5c4':'Free but unreliable',
+ faq_title:'Frequently Asked Questions','faq.h2':'Live Financial TV \u2014 Common Questions',
+ 'faq1.q':'Can I watch Bloomberg TV for free?','faq1.a':'Bloomberg TV is available inside Trading News Terminal Pro at \u20ac40/month. The Pro plan also includes zero-delay financial news, a live squawk box, the economic calendar with beat/miss signals, and TradingView chart integration. A Pro trial is available so you can evaluate the full terminal including Bloomberg TV before committing to a monthly plan.',
+ 'faq2.q':'What financial TV channels are available?','faq2.a':'Trading News Terminal Pro includes 7 live financial TV channels embedded inside the terminal: Bloomberg TV, CNBC, Fox Business, Reuters TV, and three additional international financial news channels. The full channel lineup is visible inside the terminal TV panel. All channels are embedded via iframe-based streams \u2014 no external apps or separate subscriptions required. Channels can be switched with a single click while the rest of the terminal (news feed, calendar, charts) remains active.',
+ 'faq3.q':'Is CNBC live free for traders?','faq3.a':'CNBC live is included in Trading News Terminal Pro as one of 7 embedded channels. The Pro plan at \u20ac40/month covers all TV channels, the zero-delay news feed, squawk box, economic calendar, and TradingView integration. There\u2019s no separate CNBC subscription required. The free Basic plan does not include live TV \u2014 it covers the economic calendar, filtered news (2-minute delay), and charts.',
+ 'faq4.q':'Why do traders watch financial TV?','faq4.a':'Traders watch financial TV for several reasons that text-based news feeds cannot fully replicate: live commentary from market professionals during volatile sessions, direct-to-camera interviews with central bank officials where tone and emphasis add critical context, real-time analyst reactions to economic data as it prints, and the ability to follow developing stories as they evolve on-screen. The combination of audio-visual TV with a text news feed and economic calendar gives traders a more complete picture of market conditions than any single tool alone.',
+ 'faq5.q':'What is the best financial news channel for active traders?','faq5.a':'Bloomberg TV is the benchmark for professional market coverage \u2014 it features the highest-quality guests, live data overlays, and the deepest institutional market focus. CNBC has the widest reach and the fastest US equity market coverage. Reuters TV excels at global macro and geopolitical events. Fox Business is strong on US economic policy and Washington developments. The right channel depends on what you\u2019re trading: forex traders often prefer Bloomberg and Reuters; equity traders lean towards CNBC. With Trading News Terminal Pro you get access to all seven channels and can switch based on what\u2019s happening in the market.',
+ explore_title:'Explore Other Features','explore.h2':'Everything in the Trading News Terminal',
+ 'cta.h2':'Bloomberg TV, CNBC, Reuters \u2014 All in One Tab','cta.sub':'Stop switching between your trading terminal and TV streams. Get 7 live financial channels embedded inside Trading News Terminal Pro \u2014 \u20ac40/month, trial available.','cta.btn':'Start Pro Trial \u2014 Watch Live TV Free',
+ cta_free:'Start Free \u2014 No Card Required',
+ 'footer.copy':'\u00a9 2026 Trading News Terminal \u00b7 Live Financial TV for Traders' },
+ pt:{
+ active:'PT',tagline:'Intelig\u00eancia de Mercado em Tempo Real',
+ try_btn:'Experimentar Gr\u00e1tis \u2192',trial_btn:'Iniciar Trial Gr\u00e1tis',free_btn:'Abrir Terminal Gr\u00e1tis',
+ 'hero.badge':'TV Financeira ao Vivo \u2014 Funcionalidade Pro',
+ 'hero.h1':'TV Financeira ao Vivo \u2014 7 Canais Dentro do Seu Terminal',
+ 'hero.sub':'Bloomberg TV, CNBC, Fox Business, Reuters e mais \u2014 todos embutidos diretamente no seu terminal de trading. Um separador, intelig\u00eancia de mercado completa. Sem subscri\u00e7\u00f5es extra, sem troca de abas.',
+ 'hero.price_note':'TV ao vivo \u00e9 uma <strong>funcionalidade Pro</strong> a \u20ac40/m\u00eas \u00b7 Plano Basic gratuito \u00b7 Trial Pro dispon\u00edvel',
+ 'preview.label':'Pr\u00e9-visualiza\u00e7\u00e3o do Terminal','preview.h2':'TV Financeira ao Vivo \u2014 Grelha de Canais',
+ 'channels.label':'Canais Dispon\u00edveis','channels.h2':'7 Canais de TV Financeira ao Vivo, Todos Num S\u00f3 Lugar',
+ 'channels.intro':'Cada canal est\u00e1 embutido diretamente no painel do terminal \u2014 sem links externos, sem separadores adicionais. Mude de canal com um clique enquanto os seus gr\u00e1ficos e feed de not\u00edcias continuam ativos.',
+ 'ch1.desc':'A refer\u00eancia do jornalismo financeiro. Dados de mercado em tempo real, entrevistas com especialistas e cobertura global cont\u00ednua.',
+ 'ch2.desc':'Cobertura l\u00edder dos mercados acion\u00e1rios dos EUA. Not\u00edcias de \u00faltima hora, resultados, cobertura da Fed e os melhores convidados dos media financeiros.',
+ 'ch3.desc':'Cobertura de mercados e pol\u00edtica econ\u00f3mica dos EUA. Forte em Washington, tarifas, com\u00e9rcio e not\u00edcias empresariais americanas.',
+ 'ch4.desc':'Macroeconomia global, geopolítica e mercados emergentes. A rede global de correspondentes da Reuters oferece cobertura internacional insuperável.',
+ 'ch5.name':'3 Canais Adicionais','ch5.desc':'Mais tr\u00eas canais internacionais de not\u00edcias financeiras inclu\u00eddos no plano Pro. Lista completa de canais vis\u00edvel dentro do terminal.',
+ 'why.label':'Porqu\u00ea Importa','why.h2':'O Que a TV Financeira ao Vivo Acrescenta ao Seu Trading',
+ 'why1.title':'Ouvi\u00e7a Diretamente da Fonte','why1.body':'Quando um responsável da Fed, o presidente do BCE ou um ministro das finanças fala ao vivo na TV, o tom e a \u00eanfase importam tanto quanto as palavras. Ler um resumo de texto ou ouvir a entrevista real \u2014 a diferen\u00e7a é significativa.',
+ 'why2.title':'Contexto e Coment\u00e1rio de Mercado','why2.body':'Analistas especializados fornecem coment\u00e1rio em tempo real sobre movimentos de pre\u00e7os, dados econ\u00f3micos e eventos geopolíticos. Este contexto narrativo macro \u00e9 dif\u00edcil de obter apenas com feeds de texto.',
+ 'why3.title':'Um Separador, Tudo o Que Precisa','why3.body':'Feed de not\u00edcias, calend\u00e1rio econ\u00f3mico, squawk box, gr\u00e1ficos TradingView e 7 canais de TV ao vivo \u2014 tudo dentro de um \u00fanico separador do browser. Sem troca de contexto, sem perder o foco, sem oportunidades perdidas.',
+ 'why4.title':'Sem Subscri\u00e7\u00f5es Separadas','why4.body':'Bloomberg TV, CNBC e os outros canais est\u00e3o incluídos no plano Pro do Trading News Terminal a \u20ac40/m\u00eas. Sem subscri\u00e7\u00e3o de cabo, sem extras de streaming, sem taxas por canal.',
+ how_title:'Como Funciona','how.h2':'TV Financeira Integrada no Seu Fluxo de Trabalho no Terminal',
+ 'step1.title':'Abra o painel de TV no seu terminal','step1.body':'Os subscritores Pro v\u00eaem o bot\u00e3o do painel de TV na interface do terminal. Clique para expandir o leitor de v\u00eddeo embutido, que carrega o canal selecionado imediatamente. O layout do terminal mant\u00e9m o seu feed de not\u00edcias, calend\u00e1rio econ\u00f3mico e painéis de gr\u00e1ficos ativos junto ao painel de TV \u2014 n\u00e3o está a substituir uma ferramenta por outra, está a adicionar uma camada.',
+ 'step2.title':'Selecione o seu canal','step2.body':'Sete canais est\u00e3o acess\u00edveis a partir do seletor de canais no painel de TV. Mude entre Bloomberg TV, CNBC, Fox Business, Reuters TV e os canais adicionais com um \u00fanico clique \u2014 sem recarregar a p\u00e1gina, sem atraso de buffer. O seletor de canais est\u00e1 sempre vis\u00edvel para que possa reagir rapidamente quando precisar de mudar o foco.',
+ 'step3.title':'Use-o junto ao squawk, not\u00edcias e calend\u00e1rio','step3.body':'O verdadeiro poder da TV financeira embutida vem de a usar em combina\u00e7\u00e3o com o resto do terminal. Quando o squawk box anuncia uma manchete de \u00faltima hora e o calend\u00e1rio econ\u00f3mico mostra um dado acima do previsto, pode mudar para Bloomberg TV ou CNBC imediatamente para ouvir a reação ao vivo do mercado e o coment\u00e1rio dos analistas \u2014 tudo dentro do mesmo separador, sem perder as posi\u00e7\u00f5es nos gr\u00e1ficos ou o contexto do feed.',
+ 'cmp.label':'Compara\u00e7\u00e3o','cmp.h2':'Trading News Terminal TV vs Alternativas',
+ 'cmp.th1':'Op\u00e7\u00e3o','cmp.th2':'Canais','cmp.th3':'Integrado com terminal?','cmp.th4':'Custo',
+ 'cmp.row1c1':'TNT Pro (este)','cmp.row1c2':'7 canais financeiros ao vivo','cmp.row1c3':'\u2713 Sim \u2014 mesmo separador',
+ 'cmp.yes':'\u2713 Sim',
+ 'cmp.row3c1':'TV por cabo / sat\u00e9lite','cmp.sep_screen':'\u2717 Ecr\u00e3 separado',
+ 'cmp.row4c1':'Servi\u00e7os de streaming','cmp.row4c2':'Varia (1\u20132 canais)','cmp.sep_tab':'\u2717 Separador separado',
+ 'cmp.row5c1':'Streams gratuitos no YouTube','cmp.row5c2':'Disponibilidade vari\u00e1vel','cmp.row5c4':'Gratuito mas inst\u00e1vel',
+ faq_title:'Perguntas Frequentes','faq.h2':'TV Financeira ao Vivo \u2014 Perguntas Comuns',
+ 'faq1.q':'Posso ver a Bloomberg TV de gra\u00e7a?','faq1.a':'A Bloomberg TV est\u00e1 dispon\u00edvel dentro do Trading News Terminal Pro a \u20ac40/m\u00eas. O plano Pro tamb\u00e9m inclui not\u00edcias financeiras sem atraso, squawk box ao vivo, calend\u00e1rio econ\u00f3mico com sinais beat/miss e integra\u00e7\u00e3o de gr\u00e1ficos TradingView. Um trial Pro est\u00e1 dispon\u00edvel para avaliar o terminal completo incluindo Bloomberg TV antes de se comprometer.',
+ 'faq2.q':'Que canais de TV financeira est\u00e3o dispon\u00edveis?','faq2.a':'O Trading News Terminal Pro inclui 7 canais de TV financeira ao vivo embutidos no terminal: Bloomberg TV, CNBC, Fox Business, Reuters TV e tr\u00eas canais internacionais adicionais de not\u00edcias financeiras. A lista completa de canais est\u00e1 vis\u00edvel no painel de TV do terminal. Todos os canais s\u00e3o embutidos via streams iframe \u2014 sem apps externas nem subscri\u00e7\u00f5es separadas. Os canais podem ser trocados com um clique enquanto o resto do terminal (feed, calend\u00e1rio, gr\u00e1ficos) permanece ativo.',
+ 'faq3.q':'A CNBC ao vivo \u00e9 gratuita para traders?','faq3.a':'A CNBC ao vivo est\u00e1 inclu\u00edda no Trading News Terminal Pro como um dos 7 canais embutidos. O plano Pro a \u20ac40/m\u00eas cobre todos os canais de TV, o feed de not\u00edcias sem atraso, squawk box, calend\u00e1rio econ\u00f3mico e integra\u00e7\u00e3o TradingView. N\u00e3o \u00e9 necess\u00e1ria uma subscri\u00e7\u00e3o separada da CNBC. O plano Basic gratuito n\u00e3o inclui TV ao vivo \u2014 cobre o calend\u00e1rio econ\u00f3mico, not\u00edcias filtradas (atraso de 2 minutos) e gr\u00e1ficos.',
+ 'faq4.q':'Porque é que os traders veem TV financeira?','faq4.a':'Os traders veem TV financeira por v\u00e1rias raz\u00f5es que os feeds de not\u00edcias em texto n\u00e3o conseguem replicar totalmente: coment\u00e1rio ao vivo de profissionais de mercado durante sess\u00f5es vol\u00e1teis, entrevistas diretas com responsáveis de bancos centrais onde o tom e a \u00eanfase acrescentam contexto cr\u00edtico, reações de analistas em tempo real a dados econ\u00f3micos \u00e0 medida que s\u00e3o publicados, e a capacidade de acompanhar hist\u00f3rias em desenvolvimento no ecr\u00e3. A combina\u00e7\u00e3o de TV audiovisual com feed de texto e calend\u00e1rio econ\u00f3mico d\u00e1 aos traders uma vis\u00e3o mais completa das condi\u00e7\u00f5es de mercado.',
+ 'faq5.q':'Qual \u00e9 o melhor canal de not\u00edcias financeiras para traders ativos?','faq5.a':'A Bloomberg TV \u00e9 a refer\u00eancia para a cobertura profissional de mercados \u2014 apresenta os convidados de maior qualidade, sobreposições de dados ao vivo e o foco institucional mais profundo. A CNBC tem o maior alcance e a cobertura mais r\u00e1pida dos mercados acion\u00e1rios dos EUA. A Reuters TV destaca-se na macroecon\u00f3mica global e eventos geopolíticos. A Fox Business \u00e9 forte em pol\u00edtica econ\u00f3mica dos EUA. O canal certo depende do que est\u00e1 a negociar: os traders de forex preferem frequentemente Bloomberg e Reuters; os traders de a\u00e7\u00f5es tendem para a CNBC. Com o Trading News Terminal Pro tem acesso a todos os sete canais.',
+ explore_title:'Explorar Funcionalidades','explore.h2':'Tudo no Trading News Terminal',
+ 'cta.h2':'Bloomberg TV, CNBC, Reuters \u2014 Tudo Num S\u00f3 Separador','cta.sub':'Pare de alternar entre o seu terminal de trading e streams de TV. Obtenha 7 canais financeiros ao vivo embutidos no Trading News Terminal Pro \u2014 \u20ac40/m\u00eas, trial dispon\u00edvel.','cta.btn':'Iniciar Trial Pro \u2014 Ver TV ao Vivo Gr\u00e1tis',
+ cta_free:'Come\u00e7ar Gr\u00e1tis \u2014 Sem Cart\u00e3o',
+ 'footer.copy':'\u00a9 2026 Trading News Terminal \u00b7 TV Financeira ao Vivo para Traders' },
+ es:{
+ active:'ES',tagline:'Inteligencia de Mercado en Tiempo Real',
+ try_btn:'Probar Gratis \u2192',trial_btn:'Iniciar Prueba Gratis',free_btn:'Abrir Terminal Gratis',
+ 'hero.badge':'TV Financiera en Vivo \u2014 Funci\u00f3n Pro',
+ 'hero.h1':'TV Financiera en Vivo \u2014 7 Canales Dentro de Tu Terminal',
+ 'hero.sub':'Bloomberg TV, CNBC, Fox Business, Reuters y m\u00e1s \u2014 todos integrados directamente en tu terminal de trading. Una pesta\u00f1a, inteligencia de mercado completa. Sin suscripciones adicionales, sin cambiar de pesta\u00f1a.',
+ 'hero.price_note':'La TV en vivo es una <strong>funci\u00f3n Pro</strong> a \u20ac40/mes \u00b7 Plan Basic gratuito \u00b7 Prueba Pro disponible',
+ 'preview.label':'Vista Previa del Terminal','preview.h2':'TV Financiera en Vivo \u2014 Cuadr\u00edcula de Canales',
+ 'channels.label':'Canales Disponibles','channels.h2':'7 Canales de TV Financiera en Vivo, Todos en Un Solo Lugar',
+ 'channels.intro':'Cada canal est\u00e1 integrado directamente dentro del panel del terminal \u2014 sin enlaces externos, sin pesta\u00f1as adicionales. Cambia de canal con un solo clic mientras tus gr\u00e1ficos y feed de noticias siguen activos.',
+ 'ch1.desc':'El referente del periodismo financiero. Datos de mercado en tiempo real, entrevistas con expertos y cobertura global continua.',
+ 'ch2.desc':'Cobertura l\u00edder de los mercados de renta variable de EE.UU. Noticias de \u00faltima hora, resultados empresariales, cobertura de la Fed y los mejores invitados de los medios financieros.',
+ 'ch3.desc':'Cobertura de mercados y pol\u00edtica econ\u00f3mica de EE.UU. Fuerte en Washington, aranceles, comercio y noticias corporativas estadounidenses.',
+ 'ch4.desc':'Macroeconom\u00eda global, geopolítica y mercados emergentes. La red global de corresponsales de Reuters ofrece una cobertura internacional insuperable.',
+ 'ch5.name':'3 Canales Adicionales','ch5.desc':'Tres canales internacionales m\u00e1s de noticias financieras incluidos en el plan Pro. Lista completa de canales visible dentro del terminal.',
+ 'why.label':'Por Qu\u00e9 Importa','why.h2':'Lo Que la TV Financiera en Vivo A\u00f1ade a Tu Trading',
+ 'why1.title':'Esc\u00facha la Fuente Directamente','why1.body':'Cuando un funcionario de la Fed, el presidente del BCE o un ministro de finanzas habla en vivo por TV, el tono y el \u00e9nfasis importan tanto como las palabras. Leer un resumen o escuchar la entrevista real \u2014 la diferencia es significativa.',
+ 'why2.title':'Contexto y Comentario de Mercado','why2.body':'Analistas expertos ofrecen comentarios en tiempo real sobre movimientos de precios, datos econ\u00f3micos y eventos geopolíticos. Este contexto narrativo macro es dif\u00edcil de obtener solo con feeds de texto.',
+ 'why3.title':'Una Pesta\u00f1a, Todo Lo Que Necesitas','why3.body':'Feed de noticias, calendario econ\u00f3mico, squawk box, gr\u00e1ficos TradingView y 7 canales de TV en vivo \u2014 todo dentro de una sola pesta\u00f1a del navegador. Sin cambiar de contexto, sin perder el foco, sin movimientos perdidos.',
+ 'why4.title':'Sin Suscripciones Separadas','why4.body':'Bloomberg TV, CNBC y los dem\u00e1s canales est\u00e1n incluidos en el plan Pro del Trading News Terminal a \u20ac40/mes. Sin suscripci\u00f3n de cable, sin extras de streaming, sin tarifas por canal.',
+ how_title:'C\u00f3mo Funciona','how.h2':'TV Financiera Integrada en Tu Flujo de Trabajo del Terminal',
+ 'step1.title':'Abre el panel de TV en tu terminal','step1.body':'Los suscriptores Pro ven el bot\u00f3n del panel de TV en la interfaz del terminal. Haz clic para expandir el reproductor de v\u00eddeo integrado, que carga el canal seleccionado de inmediato. El dise\u00f1o del terminal mantiene tu feed de noticias, calendario econ\u00f3mico y paneles de gr\u00e1ficos activos junto al panel de TV \u2014 no est\u00e1s reemplazando una herramienta por otra, est\u00e1s a\u00f1adiendo una capa.',
+ 'step2.title':'Selecciona tu canal','step2.body':'Siete canales son accesibles desde el selector de canales dentro del panel de TV. Cambia entre Bloomberg TV, CNBC, Fox Business, Reuters TV y los canales adicionales con un solo clic \u2014 sin recargar la p\u00e1gina, sin retraso de b\u00fafer. El selector de canales siempre est\u00e1 visible para que puedas reaccionar r\u00e1pidamente cuando necesites cambiar tu foco.',
+ 'step3.title':'Ús alo junto al squawk, noticias y calendario','step3.body':'El verdadero poder de la TV financiera integrada surge de usarla en combinaci\u00f3n con el resto del terminal. Cuando el squawk box anuncia un titular de \u00faltima hora y el calendario econ\u00f3mico muestra un dato por encima de lo esperado, puedes cambiar a Bloomberg TV o CNBC de inmediato para escuchar la reacci\u00f3n en vivo del mercado y el comentario de los analistas \u2014 todo dentro de la misma pesta\u00f1a.',
+ 'cmp.label':'Comparaci\u00f3n','cmp.h2':'Trading News Terminal TV vs Alternativas',
+ 'cmp.th1':'Opci\u00f3n','cmp.th2':'Canales','cmp.th3':'\u00bfIntegrado con terminal?','cmp.th4':'Coste',
+ 'cmp.row1c1':'TNT Pro (este)','cmp.row1c2':'7 canales financieros en vivo','cmp.row1c3':'\u2713 S\u00ed \u2014 misma pesta\u00f1a',
+ 'cmp.yes':'\u2713 S\u00ed',
+ 'cmp.row3c1':'TV por cable / sat\u00e9lite','cmp.sep_screen':'\u2717 Pantalla separada',
+ 'cmp.row4c1':'Servicios de streaming','cmp.row4c2':'Var\u00eda (1\u20132 canales)','cmp.sep_tab':'\u2717 Pesta\u00f1a separada',
+ 'cmp.row5c1':'Streams gratuitos en YouTube','cmp.row5c2':'Disponibilidad variable','cmp.row5c4':'Gratuito pero poco fiable',
+ faq_title:'Preguntas Frecuentes','faq.h2':'TV Financiera en Vivo \u2014 Preguntas Comunes',
+ 'faq1.q':'\u00bfPuedo ver Bloomberg TV gratis?','faq1.a':'Bloomberg TV est\u00e1 disponible dentro del Trading News Terminal Pro a \u20ac40/mes. El plan Pro tambi\u00e9n incluye noticias financieras sin demora, un squawk box en vivo, el calendario econ\u00f3mico con se\u00f1ales beat/miss e integraci\u00f3n de gr\u00e1ficos TradingView. Hay una prueba Pro disponible para evaluar el terminal completo incluyendo Bloomberg TV antes de comprometerte.',
+ 'faq2.q':'\u00bfQu\u00e9 canales de TV financiera est\u00e1n disponibles?','faq2.a':'Trading News Terminal Pro incluye 7 canales de TV financiera en vivo integrados en el terminal: Bloomberg TV, CNBC, Fox Business, Reuters TV y tres canales internacionales adicionales de noticias financieras. La lista completa de canales es visible en el panel de TV del terminal. Todos los canales se integran mediante streams iframe \u2014 sin apps externas ni suscripciones separadas. Los canales se pueden cambiar con un clic mientras el resto del terminal (feed, calendario, gr\u00e1ficos) permanece activo.',
+ 'faq3.q':'\u00bfEs CNBC en vivo gratuita para traders?','faq3.a':'CNBC en vivo est\u00e1 incluida en Trading News Terminal Pro como uno de 7 canales integrados. El plan Pro a \u20ac40/mes cubre todos los canales de TV, el feed de noticias sin demora, squawk box, calendario econ\u00f3mico e integraci\u00f3n TradingView. No se requiere una suscripci\u00f3n separada de CNBC. El plan Basic gratuito no incluye TV en vivo \u2014 cubre el calendario econ\u00f3mico, noticias filtradas (2 minutos de demora) y gr\u00e1ficos.',
+ 'faq4.q':'\u00bfPor qu\u00e9 los traders ven TV financiera?','faq4.a':'Los traders ven TV financiera por varias razones que los feeds de noticias en texto no pueden replicar completamente: comentarios en vivo de profesionales del mercado durante sesiones vol\u00e1tiles, entrevistas directas con funcionarios de bancos centrales donde el tono a\u00f1ade contexto cr\u00edtico, reacciones de analistas en tiempo real a datos econ\u00f3micos y la capacidad de seguir historias en desarrollo. La combinaci\u00f3n de TV audiovisual con un feed de texto y calendario econ\u00f3mico da a los traders una imagen m\u00e1s completa de las condiciones del mercado.',
+ 'faq5.q':'\u00bfCu\u00e1l es el mejor canal de noticias financieras para traders activos?','faq5.a':'Bloomberg TV es el referente para la cobertura profesional de mercados \u2014 presenta los invitados de mayor calidad, superposiciones de datos en vivo y el enfoque institucional m\u00e1s profundo. CNBC tiene el mayor alcance y la cobertura m\u00e1s r\u00e1pida de los mercados de renta variable de EE.UU. Reuters TV sobresale en macroeconom\u00eda global y eventos geopolíticos. Fox Business es fuerte en pol\u00edtica econ\u00f3mica de EE.UU. El canal adecuado depende de lo que est\u00e9s negociando: los traders de forex prefieren Bloomberg y Reuters; los de renta variable tienden a CNBC. Con Trading News Terminal Pro accedes a los siete canales.',
+ explore_title:'Explorar Caracter\u00edsticas','explore.h2':'Todo en el Trading News Terminal',
+ 'cta.h2':'Bloomberg TV, CNBC, Reuters \u2014 Todo en Una Pesta\u00f1a','cta.sub':'Deja de cambiar entre tu terminal de trading y los streams de TV. Obt\u00e9n 7 canales financieros en vivo integrados en Trading News Terminal Pro \u2014 \u20ac40/mes, prueba disponible.','cta.btn':'Iniciar Prueba Pro \u2014 Ver TV en Vivo Gratis',
+ cta_free:'Empezar Gratis \u2014 Sin Tarjeta',
+ 'footer.copy':'\u00a9 2026 Trading News Terminal \u00b7 TV Financiera en Vivo para Traders' },
+ fr:{
+ active:'FR',tagline:'Intelligence March\u00e9 en Temps R\u00e9el',
+ try_btn:'Essai Gratuit \u2192',trial_btn:'D\u00e9marrer l\u2019Essai Gratuit',free_btn:'Ouvrir le Terminal Gratuit',
+ 'hero.badge':'TV Financi\u00e8re en Direct \u2014 Fonction Pro',
+ 'hero.h1':'TV Financi\u00e8re en Direct \u2014 7 Cha\u00eenes dans Votre Terminal',
+ 'hero.sub':'Bloomberg TV, CNBC, Fox Business, Reuters et plus \u2014 tous int\u00e9gr\u00e9s directement dans votre terminal de trading. Un seul onglet, renseignement de march\u00e9 complet. Sans abonnements suppl\u00e9mentaires, sans changer d\u2019onglet.',
+ 'hero.price_note':'La TV en direct est une <strong>fonction Pro</strong> \u00e0 \u20ac40/mois \u00b7 Plan Basic gratuit \u00b7 Essai Pro disponible',
+ 'preview.label':'Aper\u00e7u du Terminal','preview.h2':'TV Financi\u00e8re en Direct \u2014 Grille de Cha\u00eenes',
+ 'channels.label':'Cha\u00eenes Disponibles','channels.h2':'7 Cha\u00eenes de TV Financi\u00e8re en Direct, Toutes au M\u00eame Endroit',
+ 'channels.intro':'Chaque cha\u00eene est int\u00e9gr\u00e9e directement dans le panneau du terminal \u2014 sans liens externes, sans onglets s\u00e9par\u00e9s. Changez de cha\u00eene en un clic pendant que vos graphiques et votre flux d\u2019actualit\u00e9s restent actifs.',
+ 'ch1.desc':'La r\u00e9f\u00e9rence du journalisme financier. Superpositions de donn\u00e9es de march\u00e9 en temps r\u00e9el, interviews d\u2019experts et couverture mondiale continue.',
+ 'ch2.desc':'La couverture de r\u00e9f\u00e9rence des march\u00e9s actions am\u00e9ricains. Informations de derni\u00e8re minute, r\u00e9sultats d\u2019entreprises, couverture de la Fed et les meilleurs invit\u00e9s des m\u00e9dias financiers.',
+ 'ch3.desc':'Couverture des march\u00e9s et de la politique \u00e9conomique am\u00e9ricaine. Solide sur Washington, les tarifs douaniers, le commerce et les actualit\u00e9s des entreprises am\u00e9ricaines.',
+ 'ch4.desc':'Macro mondiale, g\u00e9opolitique et march\u00e9s \u00e9mergents. Le r\u00e9seau mondial de bureaux de Reuters offre une couverture internationale incomparable.',
+ 'ch5.name':'3 Cha\u00eenes Suppl\u00e9mentaires','ch5.desc':'Trois cha\u00eenes suppl\u00e9mentaires de news financi\u00e8res internationales incluses dans le plan Pro. Liste compl\u00e8te visible dans le terminal.',
+ 'why.label':'Pourquoi C\u2019est Important','why.h2':'Ce Que la TV Financi\u00e8re en Direct Apporte \u00e0 Votre Trading',
+ 'why1.title':'Entendez-le Directement de la Source','why1.body':'Quand un responsable de la Fed, le pr\u00e9sident de la BCE ou un ministre des finances s\u2019exprime en direct \u00e0 la t\u00e9l\u00e9vision, le ton et l\u2019emphase comptent autant que les mots. Lire un r\u00e9sum\u00e9 ou \u00e9couter l\u2019interview r\u00e9elle \u2014 la diff\u00e9rence est significative.',
+ 'why2.title':'Contexte et Commentaire de March\u00e9','why2.body':'Des analystes experts fournissent des commentaires en temps r\u00e9el sur les mouvements de prix, les donn\u00e9es \u00e9conomiques et les \u00e9v\u00e9nements g\u00e9opolitiques. Ce contexte narratif macro est difficile \u00e0 obtenir avec un simple flux de texte.',
+ 'why3.title':'Un Seul Onglet, Tout Ce Dont Vous Avez Besoin','why3.body':'Flux d\u2019actualit\u00e9s, calendrier \u00e9conomique, squawk box, graphiques TradingView et 7 cha\u00eenes TV en direct \u2014 tout dans un seul onglet du navigateur. Sans changement de contexte, sans perte de concentration, sans opportunit\u00e9s manqu\u00e9es.',
+ 'why4.title':'Sans Abonnements S\u00e9par\u00e9s','why4.body':'Bloomberg TV, CNBC et les autres cha\u00eenes sont incluses dans le plan Pro du Trading News Terminal \u00e0 \u20ac40/mois. Pas d\u2019abonnement c\u00e2ble, pas d\u2019options de streaming suppl\u00e9mentaires, pas de frais par cha\u00eene.',
+ how_title:'Comment \u00e7a marche','how.h2':'TV Financi\u00e8re Int\u00e9gr\u00e9e dans Votre Workflow du Terminal',
+ 'step1.title':'Ouvrez le panneau TV dans votre terminal','step1.body':'Les abonn\u00e9s Pro voient le bouton du panneau TV dans l\u2019interface du terminal. Cliquez pour d\u00e9velopper le lecteur vid\u00e9o int\u00e9gr\u00e9, qui charge la cha\u00eene s\u00e9lectionn\u00e9e imm\u00e9diatement. La disposition du terminal maintient votre flux d\u2019actualit\u00e9s, calendrier \u00e9conomique et panneaux de graphiques actifs \u00e0 c\u00f4t\u00e9 du panneau TV \u2014 vous n\u2019\u00eates pas en train de remplacer un outil par un autre, vous ajoutez une couche.',
+ 'step2.title':'S\u00e9lectionnez votre cha\u00eene','step2.body':'Sept cha\u00eenes sont accessibles depuis le s\u00e9lecteur de cha\u00eenes du panneau TV. Passez de Bloomberg TV \u00e0 CNBC, Fox Business, Reuters TV et les cha\u00eenes suppl\u00e9mentaires d\u2019un simple clic \u2014 sans rechargement de page, sans d\u00e9lai de mise en mémoire tampon. Le s\u00e9lecteur est toujours visible pour r\u00e9agir rapidement.',
+ 'step3.title':'Utilisez-le avec le squawk, les actualit\u00e9s et le calendrier','step3.body':'La vraie puissance de la TV financi\u00e8re int\u00e9gr\u00e9e vient de son utilisation combin\u00e9e avec le reste du terminal. Quand le squawk box annonce une info de derni\u00e8re minute et que le calendrier \u00e9conomique affiche un chiffre au-dessus des attentes, vous pouvez basculer sur Bloomberg TV ou CNBC imm\u00e9diatement pour entendre la r\u00e9action en direct du march\u00e9 \u2014 tout dans le m\u00eame onglet.',
+ 'cmp.label':'Comparaison','cmp.h2':'Trading News Terminal TV vs Alternatives',
+ 'cmp.th1':'Option','cmp.th2':'Cha\u00eenes','cmp.th3':'Int\u00e9gr\u00e9 avec terminal\u00a0?','cmp.th4':'Co\u00fbt',
+ 'cmp.row1c1':'TNT Pro (celui-ci)','cmp.row1c2':'7 cha\u00eenes financi\u00e8res en direct','cmp.row1c3':'\u2713 Oui \u2014 m\u00eame onglet',
+ 'cmp.yes':'\u2713 Oui',
+ 'cmp.row3c1':'TV c\u00e2ble / satellite','cmp.sep_screen':'\u2717 \u00c9cran s\u00e9par\u00e9',
+ 'cmp.row4c1':'Services de streaming','cmp.row4c2':'Variable (1\u20132 cha\u00eenes)','cmp.sep_tab':'\u2717 Onglet s\u00e9par\u00e9',
+ 'cmp.row5c1':'Streams gratuits YouTube','cmp.row5c2':'Disponibilit\u00e9 variable','cmp.row5c4':'Gratuit mais peu fiable',
+ faq_title:'Questions Fr\u00e9quentes','faq.h2':'TV Financi\u00e8re en Direct \u2014 Questions Courantes',
+ 'faq1.q':'Puis-je regarder Bloomberg TV gratuitement\u00a0?','faq1.a':'Bloomberg TV est disponible dans Trading News Terminal Pro \u00e0 \u20ac40/mois. Le plan Pro inclut \u00e9galement des actualit\u00e9s financi\u00e8res sans d\u00e9lai, un squawk box en direct, le calendrier \u00e9conomique avec signaux beat/miss et l\u2019int\u00e9gration des graphiques TradingView. Un essai Pro est disponible pour \u00e9valuer le terminal complet avant de s\u2019engager.',
+ 'faq2.q':'Quelles cha\u00eenes TV financi\u00e8res sont disponibles\u00a0?','faq2.a':'Trading News Terminal Pro inclut 7 cha\u00eenes TV financi\u00e8res en direct int\u00e9gr\u00e9es dans le terminal : Bloomberg TV, CNBC, Fox Business, Reuters TV et trois cha\u00eenes internationales suppl\u00e9mentaires. La liste compl\u00e8te est visible dans le panneau TV du terminal. Toutes les cha\u00eenes sont int\u00e9gr\u00e9es via des flux iframe \u2014 sans applications externes ni abonnements s\u00e9par\u00e9s. Les cha\u00eenes peuvent \u00eatre chang\u00e9es d\u2019un clic pendant que le reste du terminal reste actif.',
+ 'faq3.q':'CNBC en direct est-elle gratuite pour les traders\u00a0?','faq3.a':'CNBC en direct est incluse dans Trading News Terminal Pro comme l\u2019une des 7 cha\u00eenes int\u00e9gr\u00e9es. Le plan Pro \u00e0 \u20ac40/mois couvre toutes les cha\u00eenes TV, le flux d\u2019actualit\u00e9s sans d\u00e9lai, le squawk box, le calendrier \u00e9conomique et l\u2019int\u00e9gration TradingView. Aucun abonnement CNBC s\u00e9par\u00e9 n\u2019est requis. Le plan Basic gratuit n\u2019inclut pas la TV en direct \u2014 il couvre le calendrier \u00e9conomique, les actualit\u00e9s filtr\u00e9es (d\u00e9lai de 2 minutes) et les graphiques.',
+ 'faq4.q':'Pourquoi les traders regardent-ils la TV financi\u00e8re\u00a0?','faq4.a':'Les traders regardent la TV financi\u00e8re pour plusieurs raisons que les flux d\u2019actualit\u00e9s textuels ne peuvent pas totalement reproduire : commentaires en direct de professionnels du march\u00e9 lors de sessions volatiles, interviews directes avec des responsables de banques centrales o\u00f9 le ton apporte un contexte critique, r\u00e9actions d\u2019analystes en temps r\u00e9el aux donn\u00e9es \u00e9conomiques, et la capacit\u00e9 de suivre les \u00e9v\u00e9nements en cours. La combinaison TV audiovisuelle avec flux de texte et calendrier donne aux traders une vision plus compl\u00e8te des conditions de march\u00e9.',
+ 'faq5.q':'Quelle est la meilleure cha\u00eene de news financi\u00e8res pour les traders actifs\u00a0?','faq5.a':'Bloomberg TV est la r\u00e9f\u00e9rence pour la couverture professionnelle des march\u00e9s \u2014 elle pr\u00e9sente les invit\u00e9s de la plus haute qualit\u00e9, des superpositions de donn\u00e9es en direct et le focus institutionnel le plus profond. CNBC a la plus grande audience et la couverture la plus rapide des march\u00e9s actions am\u00e9ricains. Reuters TV excelle en macro mondiale et \u00e9v\u00e9nements g\u00e9opolitiques. Fox Business est solide sur la politique \u00e9conomique am\u00e9ricaine. Le bon canal d\u00e9pend de ce que vous tradez : les traders forex pr\u00e9f\u00e8rent souvent Bloomberg et Reuters ; les traders actions penchent vers CNBC. Avec Trading News Terminal Pro, vous acc\u00e9dez aux sept cha\u00eenes.',
+ explore_title:'Explorer les Fonctionnalit\u00e9s','explore.h2':'Tout dans le Trading News Terminal',
+ 'cta.h2':'Bloomberg TV, CNBC, Reuters \u2014 Tout dans Un Seul Onglet','cta.sub':'Arr\u00eatez de basculer entre votre terminal de trading et les flux TV. Obtenez 7 cha\u00eenes financi\u00e8res en direct int\u00e9gr\u00e9es dans Trading News Terminal Pro \u2014 \u20ac40/mois, essai disponible.','cta.btn':'Lancer l\u2019Essai Pro \u2014 Regarder la TV en Direct Gratuitement',
+ cta_free:'Commencer Gratuitement',
+ 'footer.copy':'\u00a9 2026 Trading News Terminal \u00b7 TV Financi\u00e8re en Direct pour Traders' },
+ de:{
+ active:'DE',tagline:'Echtzeit-Marktintelligenz',
+ try_btn:'Kostenlos Testen \u2192',trial_btn:'Kostenlose Testphase',free_btn:'Terminal \u00d6ffnen',
+ 'hero.badge':'Live Finanz-TV \u2014 Pro-Funktion',
+ 'hero.h1':'Live Finanz-TV \u2014 7 Kan\u00e4le in Ihrem Trading-Terminal',
+ 'hero.sub':'Bloomberg TV, CNBC, Fox Business, Reuters und mehr \u2014 alle direkt in Ihr Trading-Terminal eingebettet. Ein Tab, vollst\u00e4ndige Marktintelligenz. Keine zus\u00e4tzlichen Abonnements, kein Tab-Wechsel.',
+ 'hero.price_note':'Live-TV ist eine <strong>Pro-Funktion</strong> f\u00fcr \u20ac40/Monat \u00b7 Basic-Plan kostenlos \u00b7 Pro-Testphase verf\u00fcgbar',
+ 'preview.label':'Terminal-Vorschau','preview.h2':'Live Finanz-TV \u2014 Kanal\u00fcbersicht',
+ 'channels.label':'Verf\u00fcgbare Kan\u00e4le','channels.h2':'7 Live Finanz-TV-Kan\u00e4le an einem Ort',
+ 'channels.intro':'Jeder Kanal ist direkt in das Terminal-Panel eingebettet \u2014 keine externen Links, keine separaten Browser-Tabs. Wechseln Sie mit einem Klick den Kanal, w\u00e4hrend Ihre Charts und der Nachrichten-Feed aktiv bleiben.',
+ 'ch1.desc':'Der Ma\u00dfstab f\u00fcr Finanzjournalismus. Live-Marktdaten-Overlays, Experteninterviews und kontinuierliche globale Marktberichterstattung.',
+ 'ch2.desc':'F\u00fchrende Berichterstattung \u00fcber US-Aktienmärkte. Eilmeldungen, Gewinnberichte, Fed-Berichterstattung und die besten G\u00e4ste in den Finanzmedien.',
+ 'ch3.desc':'US-fokussierte Markt- und Wirtschaftspolitik-Berichterstattung. Stark in Washington, Z\u00f6llen, Handel und US-Unternehmensnachrichten.',
+ 'ch4.desc':'Globale Makro\u00f6konomie, Geopolitik und Schwellenl\u00e4nder. Das globale Korrespondentennetz von Reuters bietet unerreichte internationale Berichterstattung.',
+ 'ch5.name':'3 Weitere Kan\u00e4le','ch5.desc':'Drei weitere internationale Finanz-News-Streams im Pro-Plan enthalten. Vollst\u00e4ndige Kanalliste im Terminal sichtbar.',
+ 'why.label':'Warum Es Wichtig Ist','why.h2':'Was Live Finanz-TV Ihrem Trading Hinzuf\u00fcgt',
+ 'why1.title':'H\u00f6ren Sie es direkt aus erster Hand','why1.body':'Wenn ein Fed-Verantwortlicher, der EZB-Pr\u00e4sident oder ein Finanzminister live im TV spricht, z\u00e4hlen Ton und Betonung ebenso viel wie die Worte. Eine Textzusammenfassung lesen oder das echte Interview h\u00f6ren \u2014 der Unterschied ist erheblich.',
+ 'why2.title':'Marktkontext und Kommentar','why2.body':'Fachkundige Analysten liefern Echtzeit-Kommentare zu Kursbewegungen, Wirtschaftsdaten und geopolitischen Ereignissen. Dieser makro-narrative Kontext ist mit einem reinen Textfeed schwer zu erhalten.',
+ 'why3.title':'Ein Tab, Alles Was Sie Ben\u00f6tigen','why3.body':'Nachrichten-Feed, Wirtschaftskalender, Squawk Box, TradingView-Charts und 7 Live-TV-Kan\u00e4le \u2014 alles in einem einzigen Browser-Tab. Kein Kontextwechsel, kein Fokusverlust, keine verpassten Bewegungen.',
+ 'why4.title':'Keine Separaten Abonnements','why4.body':'Bloomberg TV, CNBC und die anderen Kan\u00e4le sind im Trading News Terminal Pro-Plan f\u00fcr \u20ac40/Monat enthalten. Kein Kabelabonnement, keine Streaming-Add-ons, keine Geb\u00fchren pro Kanal.',
+ how_title:'So funktioniert es','how.h2':'Finanz-TV in Ihren Terminal-Workflow Integriert',
+ 'step1.title':'TV-Panel im Terminal \u00f6ffnen','step1.body':'Pro-Abonnenten sehen die TV-Panel-Schaltfl\u00e4che in der Terminal-Oberfl\u00e4che. Klicken Sie, um den eingebetteten Videoplayer zu \u00f6ffnen, der den gew\u00e4hlten Kanal sofort l\u00e4dt. Das Terminal-Layout h\u00e4lt Ihren Nachrichten-Feed, Wirtschaftskalender und Chart-Panels neben dem TV-Panel aktiv \u2014 Sie ersetzen kein Werkzeug, Sie f\u00fcgen eine Ebene hinzu.',
+ 'step2.title':'Kanal ausw\u00e4hlen','step2.body':'Sieben Kan\u00e4le sind \u00fcber den Kanalw\u00e4hler im TV-Panel zug\u00e4nglich. Wechseln Sie zwischen Bloomberg TV, CNBC, Fox Business, Reuters TV und den zus\u00e4tzlichen Kan\u00e4len mit einem einzigen Klick \u2014 kein Neuladen der Seite, keine Pufferverz\u00f6gerung. Der Kanalw\u00e4hler ist immer sichtbar.',
+ 'step3.title':'Zusammen mit Squawk, Nachrichten und Kalender nutzen','step3.body':'Die wahre St\u00e4rke des eingebetteten Finanz-TVs entfaltet sich in Kombination mit dem Rest des Terminals. Wenn die Squawk Box eine Eilmeldung ank\u00fcndigt und der Wirtschaftskalender einen \u00fcberraschenden Datenpunkt zeigt, k\u00f6nnen Sie sofort zu Bloomberg TV oder CNBC wechseln, um die Live-Marktreaktion zu h\u00f6ren \u2014 alles im selben Tab.',
+ 'cmp.label':'Vergleich','cmp.h2':'Trading News Terminal TV vs. Alternativen',
+ 'cmp.th1':'Option','cmp.th2':'Kan\u00e4le','cmp.th3':'Im Terminal integriert?','cmp.th4':'Kosten',
+ 'cmp.row1c1':'TNT Pro (dieses)','cmp.row1c2':'7 Live-Finanzkan\u00e4le','cmp.row1c3':'\u2713 Ja \u2014 gleicher Tab',
+ 'cmp.yes':'\u2713 Ja',
+ 'cmp.row3c1':'Kabel- / Satellitenfernsehen','cmp.sep_screen':'\u2717 Separater Bildschirm',
+ 'cmp.row4c1':'Streaming-Dienste','cmp.row4c2':'Variiert (1\u20132 Kan\u00e4le)','cmp.sep_tab':'\u2717 Separater Tab',
+ 'cmp.row5c1':'Kostenlose YouTube-Streams','cmp.row5c2':'Verf\u00fcgbarkeit variiert','cmp.row5c4':'Kostenlos aber unzuverl\u00e4ssig',
+ faq_title:'H\u00e4ufige Fragen','faq.h2':'Live Finanz-TV \u2014 H\u00e4ufige Fragen',
+ 'faq1.q':'Kann ich Bloomberg TV kostenlos schauen?','faq1.a':'Bloomberg TV ist in Trading News Terminal Pro f\u00fcr \u20ac40/Monat verf\u00fcgbar \u2014 deutlich weniger als ein Bloomberg-Terminal-Abonnement f\u00fcr $2.000/Monat und weniger als die meisten Kabelpakete mit Bloomberg TV. Der Pro-Plan enth\u00e4lt auch verz\u00f6gerungsfreie Finanznachrichten, eine Live-Squawk-Box, den Wirtschaftskalender mit Beat/Miss-Signalen und TradingView-Chart-Integration. Eine Pro-Testphase steht zur Verf\u00fcgung, um das vollst\u00e4ndige Terminal einschlie\u00dflich Bloomberg TV zu evaluieren.',
+ 'faq2.q':'Welche Finanz-TV-Kan\u00e4le sind verf\u00fcgbar?','faq2.a':'Trading News Terminal Pro enth\u00e4lt 7 eingebettete Live-Finanz-TV-Kan\u00e4le: Bloomberg TV, CNBC, Fox Business, Reuters TV und drei weitere internationale Finanz-News-Kan\u00e4le. Die vollst\u00e4ndige Kanalliste ist im TV-Panel des Terminals sichtbar. Alle Kan\u00e4le sind per Iframe-Streams eingebettet \u2014 keine externen Apps oder separaten Abonnements erforderlich. Kan\u00e4le k\u00f6nnen mit einem Klick gewechselt werden, w\u00e4hrend der Rest des Terminals aktiv bleibt.',
+ 'faq3.q':'Ist CNBC live f\u00fcr Trader kostenlos?','faq3.a':'CNBC live ist in Trading News Terminal Pro als einer von 7 eingebetteten Kan\u00e4len enthalten. Der Pro-Plan f\u00fcr \u20ac40/Monat umfasst alle TV-Kan\u00e4le, den verz\u00f6gerungsfreien Nachrichten-Feed, Squawk Box, Wirtschaftskalender und TradingView-Integration. Kein separates CNBC-Abonnement erforderlich. Der kostenlose Basic-Plan enth\u00e4lt kein Live-TV.',
+ 'faq4.q':'Warum schauen Trader Finanz-TV?','faq4.a':'Trader schauen Finanz-TV aus mehreren Gr\u00fcnden, die textbasierte Nachrichten-Feeds nicht vollst\u00e4ndig ersetzen k\u00f6nnen: Live-Kommentare von Marktprofis in volatilen Sitzungen, Direktinterviews mit Zentralbankern, bei denen Ton und Betonung kritischen Kontext liefern, Echtzeit-Analystenreaktionen auf Wirtschaftsdaten und die M\u00f6glichkeit, sich entwickelnde Ereignisse im Bild zu verfolgen. Die Kombination aus TV mit Textfeed und Wirtschaftskalender gibt Tradern ein vollst\u00e4ndigeres Bild der Marktbedingungen.',
+ 'faq5.q':'Welcher Finanz-News-Kanal ist der beste f\u00fcr aktive Trader?','faq5.a':'Bloomberg TV gilt als Referenz f\u00fcr professionelle Marktberichterstattung \u2014 mit den hochwertigsten G\u00e4sten, Live-Daten-Overlays und dem tiefsten institutionellen Fokus. CNBC hat die gr\u00f6\u00dfte Reichweite und die schnellste US-Aktienmarktberichterstattung. Reuters TV gl\u00e4nzt bei globaler Makro\u00f6konomie und geopolitischen Ereignissen. Fox Business ist stark in US-Wirtschaftspolitik. Der richtige Kanal h\u00e4ngt davon ab, was Sie handeln: Forex-Trader bevorzugen oft Bloomberg und Reuters; Aktienhändler neigen zu CNBC. Mit Trading News Terminal Pro haben Sie Zugang zu allen sieben Kan\u00e4len.',
+ explore_title:'Weitere Funktionen','explore.h2':'Alles im Trading News Terminal',
+ 'cta.h2':'Bloomberg TV, CNBC, Reuters \u2014 Alles in Einem Tab','cta.sub':'H\u00f6ren Sie auf, zwischen Ihrem Trading-Terminal und TV-Streams zu wechseln. Erhalten Sie 7 eingebettete Live-Finanzkan\u00e4le in Trading News Terminal Pro \u2014 \u20ac40/Monat, Testphase verf\u00fcgbar.','cta.btn':'Pro-Testphase Starten \u2014 Live-TV Kostenlos Ansehen',
+ cta_free:'Kostenlos Starten',
+ 'footer.copy':'\u00a9 2026 Trading News Terminal \u00b7 Live Finanz-TV f\u00fcr Trader' },
+ it:{
+ active:'IT',tagline:'Intelligenza di Mercato in Tempo Reale',
+ try_btn:'Prova Gratuita \u2192',trial_btn:'Inizia la Prova Gratuita',free_btn:'Apri il Terminal',
+ 'hero.badge':'TV Finanziaria in Diretta \u2014 Funzione Pro',
+ 'hero.h1':'TV Finanziaria in Diretta \u2014 7 Canali nel Tuo Terminal',
+ 'hero.sub':'Bloomberg TV, CNBC, Fox Business, Reuters e altro \u2014 tutti integrati direttamente nel tuo terminal di trading. Un solo tab, intelligenza di mercato completa. Senza abbonamenti aggiuntivi, senza cambiare tab.',
+ 'hero.price_note':'La TV in diretta \u00e8 una <strong>funzione Pro</strong> a \u20ac40/mese \u00b7 Piano Basic gratuito \u00b7 Prova Pro disponibile',
+ 'preview.label':'Anteprima del Terminal','preview.h2':'TV Finanziaria in Diretta \u2014 Griglia Canali',
+ 'channels.label':'Canali Disponibili','channels.h2':'7 Canali di TV Finanziaria in Diretta, Tutti in Un Posto',
+ 'channels.intro':'Ogni canale \u00e8 integrato direttamente nel pannello del terminal \u2014 nessun link esterno, nessun tab separato. Cambia canale con un clic mentre i tuoi grafici e il feed di notizie restano attivi.',
+ 'ch1.desc':'Il punto di riferimento del giornalismo finanziario. Overlay di dati di mercato in tempo reale, interviste con esperti e copertura globale continua.',
+ 'ch2.desc':'La copertura leader dei mercati azionari statunitensi. Notizie dell\u2019ultim\u2019ora, utili aziendali, copertura della Fed e i migliori ospiti nei media finanziari.',
+ 'ch3.desc':'Copertura dei mercati e della politica economica statunitense. Forte su Washington, dazi, commercio e notizie aziendali americane.',
+ 'ch4.desc':'Macroeconomia globale, geopolitica e mercati emergenti. La rete globale di corrispondenti di Reuters offre una copertura internazionale senza pari.',
+ 'ch5.name':'3 Canali Aggiuntivi','ch5.desc':'Tre canali internazionali di news finanziarie in pi\u00f9 inclusi nel piano Pro. Lista completa visibile all\u2019interno del terminal.',
+ 'why.label':'Perch\u00e9 \u00c8 Importante','why.h2':'Cosa Aggiunge la TV Finanziaria in Diretta al Tuo Trading',
+ 'why1.title':'Ascoltalo Direttamente dalla Fonte','why1.body':'Quando un funzionario della Fed, il presidente della BCE o un ministro delle finanze parla in diretta in TV, il tono e l\u2019enfasi contano quanto le parole. Leggere un riassunto testuale o ascoltare l\u2019intervista reale \u2014 la differenza \u00e8 significativa.',
+ 'why2.title':'Contesto e Commento di Mercato','why2.body':'Analisti esperti forniscono commenti in tempo reale sui movimenti dei prezzi, sui dati economici e sugli eventi geopolitici. Questo contesto narrativo macro \u00e8 difficile da ottenere da un semplice feed testuale.',
+ 'why3.title':'Un Solo Tab, Tutto Ci\u00f2 di Cui Hai Bisogno','why3.body':'Feed di notizie, calendario economico, squawk box, grafici TradingView e 7 canali TV in diretta \u2014 tutto in un unico tab del browser. Nessun cambio di contesto, nessuna perdita di focus, nessuna mossa mancata.',
+ 'why4.title':'Senza Abbonamenti Separati','why4.body':'Bloomberg TV, CNBC e gli altri canali sono inclusi nel piano Pro del Trading News Terminal a \u20ac40/mese. Nessun abbonamento via cavo, nessun extra di streaming, nessuna tariffa per canale.',
+ how_title:'Come funziona','how.h2':'TV Finanziaria Integrata nel Tuo Flusso di Lavoro sul Terminal',
+ 'step1.title':'Apri il pannello TV nel tuo terminal','step1.body':'Gli abbonati Pro vedono il pulsante del pannello TV nell\u2019interfaccia del terminal. Clicca per espandere il lettore video integrato, che carica il canale selezionato immediatamente. Il layout del terminal mantiene il tuo feed di notizie, calendario economico e pannelli dei grafici attivi accanto al pannello TV \u2014 non stai sostituendo uno strumento con un altro, stai aggiungendo uno strato.',
+ 'step2.title':'Seleziona il tuo canale','step2.body':'Sette canali sono accessibili dal selettore canali nel pannello TV. Passa tra Bloomberg TV, CNBC, Fox Business, Reuters TV e i canali aggiuntivi con un singolo clic \u2014 nessun ricaricamento della pagina, nessun ritardo di buffering. Il selettore \u00e8 sempre visibile per reagire rapidamente.',
+ 'step3.title':'Usalo insieme a squawk, notizie e calendario','step3.body':'La vera potenza della TV finanziaria integrata emerge dall\u2019usarla in combinazione con il resto del terminal. Quando lo squawk box annuncia un titolo di ultima ora e il calendario economico mostra un dato sopra le attese, puoi passare a Bloomberg TV o CNBC immediatamente per ascoltare la reazione live del mercato \u2014 tutto nello stesso tab.',
+ 'cmp.label':'Confronto','cmp.h2':'Trading News Terminal TV vs Alternative',
+ 'cmp.th1':'Opzione','cmp.th2':'Canali','cmp.th3':'Integrato con terminal?','cmp.th4':'Costo',
+ 'cmp.row1c1':'TNT Pro (questo)','cmp.row1c2':'7 canali finanziari in diretta','cmp.row1c3':'\u2713 S\u00ec \u2014 stesso tab',
+ 'cmp.yes':'\u2713 S\u00ec',
+ 'cmp.row3c1':'TV via cavo / satellite','cmp.sep_screen':'\u2717 Schermo separato',
+ 'cmp.row4c1':'Servizi di streaming','cmp.row4c2':'Varia (1\u20132 canali)','cmp.sep_tab':'\u2717 Tab separato',
+ 'cmp.row5c1':'Stream gratuiti su YouTube','cmp.row5c2':'Disponibilit\u00e0 variabile','cmp.row5c4':'Gratuito ma inaffidabile',
+ faq_title:'Domande Frequenti','faq.h2':'TV Finanziaria in Diretta \u2014 Domande Comuni',
+ 'faq1.q':'Posso guardare Bloomberg TV gratis?','faq1.a':'Bloomberg TV \u00e8 disponibile in Trading News Terminal Pro a \u20ac40/mese \u2014 , e meno della maggior parte dei pacchetti via cavo che includono Bloomberg TV. Il piano Pro include anche notizie finanziarie senza ritardo, uno squawk box in diretta, il calendario economico con segnali beat/miss e l\u2019integrazione dei grafici TradingView. \u00c8 disponibile una prova Pro per valutare il terminal completo incluso Bloomberg TV prima di impegnarsi.',
+ 'faq2.q':'Quali canali TV finanziari sono disponibili?','faq2.a':'Trading News Terminal Pro include 7 canali TV finanziari in diretta integrati nel terminal: Bloomberg TV, CNBC, Fox Business, Reuters TV e tre canali internazionali aggiuntivi di news finanziarie. La lista completa \u00e8 visibile nel pannello TV del terminal. Tutti i canali sono integrati tramite stream iframe \u2014 senza app esterne n\u00e9 abbonamenti separati. I canali possono essere cambiati con un clic mentre il resto del terminal rimane attivo.',
+ 'faq3.q':'CNBC in diretta \u00e8 gratuita per i trader?','faq3.a':'CNBC in diretta \u00e8 inclusa in Trading News Terminal Pro come uno dei 7 canali integrati. Il piano Pro a \u20ac40/mese copre tutti i canali TV, il feed di notizie senza ritardo, squawk box, calendario economico e integrazione TradingView. Non \u00e8 richiesto un abbonamento separato a CNBC. Il piano Basic gratuito non include la TV in diretta.',
+ 'faq4.q':'Perch\u00e9 i trader guardano la TV finanziaria?','faq4.a':'I trader guardano la TV finanziaria per diverse ragioni che i feed di testo non possono replicare completamente: commenti in diretta da professionisti di mercato durante sessioni volatili, interviste dirette con funzionari di banche centrali dove il tono aggiunge contesto critico, reazioni di analisti in tempo reale ai dati economici e la capacit\u00e0 di seguire le notizie in sviluppo. La combinazione di TV audiovisiva con feed testuale e calendario economico offre ai trader una visione pi\u00f9 completa delle condizioni di mercato.',
+ 'faq5.q':'Qual \u00e8 il miglior canale di news finanziarie per trader attivi?','faq5.a':'Bloomberg TV \u00e8 il punto di riferimento per la copertura professionale dei mercati \u2014 presenta gli ospiti di pi\u00f9 alta qualit\u00e0, overlay di dati in diretta e il focus istituzionale pi\u00f9 profondo. CNBC ha la pi\u00f9 ampia copertura del mercato azionario statunitense. Reuters TV eccelle in macroeconomia globale ed eventi geopolitici. Fox Business \u00e8 solida sulla politica economica statunitense. Il canale giusto dipende da cosa si sta negoziando: i trader forex preferiscono spesso Bloomberg e Reuters; i trader azionari tendono verso CNBC. Con Trading News Terminal Pro si accede a tutti e sette i canali.',
+ explore_title:'Esplora Funzionalit\u00e0','explore.h2':'Tutto nel Trading News Terminal',
+ 'cta.h2':'Bloomberg TV, CNBC, Reuters \u2014 Tutto in Un Solo Tab','cta.sub':'Smetti di alternare tra il tuo terminal di trading e gli stream TV. Ottieni 7 canali finanziari in diretta integrati in Trading News Terminal Pro \u2014 \u20ac40/mese, prova disponibile.','cta.btn':'Inizia la Prova Pro \u2014 Guarda la TV in Diretta Gratis',
+ cta_free:'Inizia Gratis',
+ 'footer.copy':'\u00a9 2026 Trading News Terminal \u00b7 TV Finanziaria in Diretta per Trader' } }; function _applyLang(l){
+ var t=_tnt[l]||_tnt.en;
+ document.querySelectorAll('[data-i18n]').forEach(function(el){
+ var k=el.getAttribute('data-i18n');
+ if(t[k]!==undefined)el.textContent=t[k];
+ });
+ document.querySelectorAll('[data-i18n-html]').forEach(function(el){
+ var k=el.getAttribute('data-i18n-html');
+ if(t[k]!==undefined)el.innerHTML=t[k];
+ });
+ var flags={en:'1f1ec-1f1e7',pt:'1f1f5-1f1f9',es:'1f1ea-1f1f8',fr:'1f1eb-1f1f7',de:'1f1e9-1f1ea',it:'1f1ee-1f1f9'};
+ var btn=document.querySelector('#langPicker>button');
+ if(btn)btn.innerHTML='<img src="https://twemoji.maxcdn.com/v/latest/svg/'+flags[l]+'.svg" width="16" height="16" style="vertical-align:middle;"> '+t['active'];
+ document.querySelectorAll('#langMenu a').forEach(function(a){
+ a.style.color=a.getAttribute('data-lang')===l?'#00d4ff':'#8899aa';
+ a.style.background=a.getAttribute('data-lang')===l?'rgba(0,212,255,0.08)':'';
+ });
+ try{history.replaceState(null,'',location.pathname+'?lang='+l);}catch(e){}
+ localStorage.setItem('tnt_lang',l);
 }
 function setLang(l){document.getElementById('langMenu').style.display='none';_applyLang(l);}
 (function(){
-  var p=new URLSearchParams(location.search).get('lang')||localStorage.getItem('tnt_lang')||'en';
-  if(p!=='en')_applyLang(p);
+ var p=new URLSearchParams(location.search).get('lang')||localStorage.getItem('tnt_lang')||'en';
+ if(p!=='en')_applyLang(p);
 })();
 // ── SEO Tracking ─────────────────────────────────────────────────────────────
 (function(){
-  var BE='https://trading-news-terminal-backend-production.up.railway.app', PAGE='live-financial-tv';
-  // Visit
-  fetch(BE+'/admin/track/seo?event=visit&page='+PAGE,{method:'POST'}).catch(function(){});
-  // Click tracking on all data-seo-track CTAs
-  document.querySelectorAll('[data-seo-track]').forEach(function(el){
-    el.addEventListener('click',function(){
-      var href=el.getAttribute('href')||'';
-      var pos='';
-      var m=href.match(/utm_content=([^&]+)/);
-      if(m)pos=m[1];
-      fetch(BE+'/admin/track/seo?event=click&page='+PAGE+'&position='+pos,{method:'POST'}).catch(function(){});
-    });
-  });
+ var BE='https://trading-news-terminal-backend-production.up.railway.app', PAGE='live-financial-tv';
+ // Visit
+ fetch(BE+'/admin/track/seo?event=visit&page='+PAGE,{method:'POST'}).catch(function(){});
+ // Click tracking on all data-seo-track CTAs
+ document.querySelectorAll('[data-seo-track]').forEach(function(el){
+ el.addEventListener('click',function(){
+ var href=el.getAttribute('href')||'';
+ var pos='';
+ var m=href.match(/utm_content=([^&]+)/);
+ if(m)pos=m[1];
+ fetch(BE+'/admin/track/seo?event=click&page='+PAGE+'&position='+pos,{method:'POST'}).catch(function(){});
+ });
+ });
 })();
 
 </script>

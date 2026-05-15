@@ -806,7 +806,7 @@ function _tl(key) {
   return (_AUTH_STR[lang] || _AUTH_STR.en)[key] || _AUTH_STR.en[key] || key;
 }
 
-const BACKEND = 'https://trading-news-terminal-backend-production.up.railway.app';
+const BACKEND = 'https://api.tradingnewsterminal.com';
 const APP_URL = 'https://app.tradingnewsterminal.com';
 
 let _lastUnverifiedEmail = '';
@@ -820,7 +820,7 @@ let _lastUnverifiedEmail = '';
     document.cookie = 'aff_ref=' + _ref + ';expires=' + _exp.toUTCString() + ';path=/;SameSite=Lax';
     localStorage.setItem('aff_ref', _ref);
     // Fire click tracking (in case user landed directly on /login?ref=CODE)
-    fetch('https://trading-news-terminal-backend-production.up.railway.app/affiliates/click?code=' + _ref, { method: 'POST' }).catch(function(){});
+    fetch('https://api.tradingnewsterminal.com/affiliates/click?code=' + _ref, { method: 'POST' }).catch(function(){});
   }
 })();
 
@@ -914,7 +914,24 @@ function _showPlanPicker(token) {
   const boxEl = document.querySelector('.auth-box');
   if (boxEl) boxEl.style.display = 'none';
   document.getElementById('plan-picker').classList.add('visible');
+  history.pushState({ planPicker: true }, '', location.href);
 }
+
+function _hidePlanPicker() {
+  document.getElementById('plan-picker').classList.remove('visible');
+  const boxEl = document.querySelector('.auth-box');
+  if (boxEl) boxEl.style.display = '';
+  const tabsEl = document.querySelector('.auth-tabs');
+  if (tabsEl) tabsEl.style.display = '';
+  _ppToken = null;
+}
+
+window.addEventListener('popstate', function(e) {
+  const picker = document.getElementById('plan-picker');
+  if (picker && picker.classList.contains('visible')) {
+    _hidePlanPicker();
+  }
+});
 
 async function _pickPlan(type, el) {
   if (!_ppToken) return;
@@ -1238,13 +1255,13 @@ _applyAuthTranslations();
 
 // ── Track login page visit (admin analytics) ──────────────────
 (function(){
-  fetch('https://trading-news-terminal-backend-production.up.railway.app/admin/track/visit?source=login',
+  fetch('https://api.tradingnewsterminal.com/admin/track/visit?source=login',
     { method: 'POST' }).catch(()=>{});
 }());
 
 // ── Real-time online heartbeat ─────────────────────────────────
 (function(){
-  const BE = 'https://trading-news-terminal-backend-production.up.railway.app';
+  const BE = 'https://api.tradingnewsterminal.com';
   let _sid = sessionStorage.getItem('_tnt_sid');
   if (!_sid) { _sid = crypto.randomUUID(); sessionStorage.setItem('_tnt_sid', _sid); }
   function _ping() {

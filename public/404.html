@@ -5,174 +5,284 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>404 — Page Not Found | Trading News Terminal</title>
   <meta name="robots" content="noindex, follow">
+  <meta name="theme-color" content="#0a0c0f">
   <link rel="icon" href="/favicon.ico">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
   <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512x512.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --bg: #0a0c0f; --bg2: #0d1118; --bg3: #111827;
-      --accent: #00d4ff; --border: #1a2332; --border2: #1e2a3a;
-      --text: #e0e8f0; --text-dim: #8899aa; --text-muted: #556677;
-      --font: system-ui, -apple-system, 'Segoe UI', sans-serif;
+      --bg:#0a0c0f; --bg2:#0f1217; --bg3:#141820;
+      --border:#1e2530; --border2:#2a3444;
+      --text:#ffffff; --text-dim:#d0dde8; --text-muted:#7a8a9a;
+      --accent:#00d4ff; --accent2:#0099cc;
+      --high:#ff3b5c; --medium:#f59e0b; --low:#10b981; --pro:#a78bfa;
+      --font:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+      --mono:'IBM Plex Mono','Courier New',monospace;
     }
-    html, body { height: 100%; background: var(--bg); color: var(--text); font-family: var(--font); }
+    html, body { height: 100%; background: var(--bg); color: var(--text); font-family: var(--font); -webkit-font-smoothing: antialiased; overflow-x:hidden; }
 
-    /* HEADER */
+    /* Scanline overlay (matches app) */
+    body::before{content:'';position:fixed;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,0.025) 2px,rgba(0,0,0,0.025) 4px);pointer-events:none;z-index:1000;}
+    /* Ambient glow */
+    body::after{content:'';position:fixed;inset:-200px;background:radial-gradient(ellipse 60% 50% at 50% 30%,rgba(0,212,255,.08) 0%,transparent 60%),radial-gradient(ellipse 40% 40% at 80% 70%,rgba(167,139,250,.06) 0%,transparent 60%);pointer-events:none;z-index:0;}
+
+    /* ─── Simulated ticker strip ─── */
+    .ticker {
+      position: relative; z-index: 2;
+      background: var(--bg2); border-bottom: 1px solid var(--border);
+      height: 34px; display: flex; align-items: center; overflow: hidden;
+      font-family: var(--mono); font-size: 11px; letter-spacing: .04em;
+    }
+    .ticker-track {
+      display: flex; gap: 32px; white-space: nowrap;
+      animation: scroll 60s linear infinite; padding-left: 24px;
+    }
+    .ticker-item { display:inline-flex; gap:6px; align-items:center; color:var(--text-dim); }
+    .ticker-item b { color:var(--text); font-weight:600; }
+    .up { color: var(--low); } .dn { color: var(--high); }
+    @keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+    /* ─── Header ─── */
     header {
       position: sticky; top: 0; z-index: 100;
-      background: rgba(10,12,15,0.97);
+      background: rgba(10,12,15,0.92);
       border-bottom: 1px solid var(--border2);
-      padding: 0 24px; height: 56px;
+      padding: 0 24px; height: 64px;
       display: flex; align-items: center; justify-content: space-between;
-      backdrop-filter: blur(8px);
+      backdrop-filter: blur(10px);
     }
     .nav-logo { display:flex; align-items:center; gap:12px; text-decoration:none; }
-    .nav-logo-icon { width:32px; height:32px; border:1.5px solid var(--accent); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
-    .nav-logo-icon::before { content:''; width:10px; height:10px; background:var(--accent); animation:pulse 2s ease-in-out infinite; }
+    .nav-logo-icon { width:34px; height:34px; border:1.5px solid var(--accent); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .nav-logo-icon::before { content:''; width:11px; height:11px; background:var(--accent); animation:pulse 2s ease-in-out infinite; box-shadow:0 0 10px var(--accent); }
     @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.4;transform:scale(0.7)} }
-    .nav-logo-text { font-size:13px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; line-height:1.3; color:#e0e8f0; }
-    .nav-logo-text span { color:#00d4ff; }
-    .nav-logo-sub { font-size:9px; color:#556677; letter-spacing:0.1em; text-transform:uppercase; }
+    .nav-logo-text { font-size:13px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; line-height:1.3; color:var(--text); }
+    .nav-logo-text span { color:var(--accent); }
+    .nav-logo-sub { font-size:9px; color:var(--text-muted); letter-spacing:0.1em; text-transform:uppercase; margin-top:2px; }
+
+    .status-pill {
+      display:inline-flex; align-items:center; gap:8px;
+      padding:6px 12px; border:1px solid var(--border2); border-radius:999px;
+      font-family:var(--mono); font-size:10px; letter-spacing:.1em; text-transform:uppercase;
+      color:var(--text-muted); background:rgba(255,255,255,0.02);
+    }
+    .status-pill .dot { width:6px; height:6px; border-radius:50%; background:var(--high); box-shadow:0 0 8px var(--high); animation:pulse 1.6s ease-in-out infinite; }
+
     .btn {
-      display: inline-flex; align-items: center; gap: 6px;
-      padding: 9px 20px; border-radius: 3px;
-      font-family: var(--font); font-size: 12px; font-weight: 700;
-      letter-spacing: 0.08em; text-transform: uppercase;
-      text-decoration: none; cursor: pointer; transition: all .2s;
+      display:inline-flex; align-items:center; gap:6px;
+      padding:10px 20px; border-radius:4px;
+      font-family:var(--font); font-size:12px; font-weight:700;
+      letter-spacing:0.08em; text-transform:uppercase;
+      text-decoration:none; cursor:pointer; transition:all .2s; border:none;
     }
-    .btn-primary { background: var(--accent); color: #000; border: none; box-shadow: 0 0 24px rgba(0,212,255,0.2); }
-    .btn-primary:hover { background: #00b8d9; transform: translateY(-1px); }
-    .btn-outline { background: transparent; color: var(--text); border: 1px solid var(--border2); }
-    .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+    .btn-primary { background:var(--accent); color:#000; box-shadow:0 0 24px rgba(0,212,255,0.25); }
+    .btn-primary:hover { background:#00e4ff; transform:translateY(-1px); box-shadow:0 0 32px rgba(0,212,255,0.4); }
+    .btn-outline { background:transparent; color:var(--text); border:1px solid var(--border2); }
+    .btn-outline:hover { border-color:var(--accent); color:var(--accent); }
 
-    /* MAIN */
+    /* ─── MAIN ─── */
     main {
-      min-height: calc(100vh - 56px - 80px);
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      text-align: center; padding: 60px 24px;
+      position: relative; z-index: 2;
+      min-height: calc(100vh - 34px - 64px - 80px);
+      display:flex; flex-direction:column;
+      align-items:center; justify-content:center;
+      text-align:center; padding:60px 24px;
+    }
+    /* Subtle grid backdrop */
+    main::before{
+      content:''; position:absolute; inset:0;
+      background:
+        linear-gradient(rgba(0,212,255,.04) 1px,transparent 1px) 0 0/48px 48px,
+        linear-gradient(90deg,rgba(0,212,255,.04) 1px,transparent 1px) 0 0/48px 48px;
+      mask-image: radial-gradient(ellipse 70% 60% at 50% 50%, black 40%, transparent 85%);
+      pointer-events:none;
     }
 
-    /* 404 terminal block */
-    .terminal-block {
-      background: var(--bg3); border: 1px solid var(--border2);
-      border-radius: 6px; padding: 32px 40px; margin-bottom: 48px;
-      max-width: 480px; width: 100%;
-      font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+    /* Terminal window */
+    .terminal {
+      position:relative; z-index:1;
+      background:linear-gradient(180deg, rgba(20,24,32,0.9), rgba(15,18,23,0.9));
+      border:1px solid var(--border2); border-radius:8px;
+      padding:0; margin-bottom:40px;
+      max-width:520px; width:100%;
+      box-shadow: 0 24px 64px rgba(0,0,0,.5), 0 0 0 1px rgba(0,212,255,.06), inset 0 1px 0 rgba(255,255,255,.03);
     }
     .terminal-bar {
-      display: flex; gap: 6px; margin-bottom: 20px;
+      display:flex; align-items:center; gap:6px; padding:12px 16px;
+      border-bottom:1px solid var(--border); background:rgba(0,0,0,.2);
+      border-radius:8px 8px 0 0;
     }
-    .terminal-dot { width: 11px; height: 11px; border-radius: 50%; }
-    .terminal-dot:nth-child(1) { background: #ff5f57; }
-    .terminal-dot:nth-child(2) { background: #febc2e; }
-    .terminal-dot:nth-child(3) { background: #28c840; }
+    .terminal-dot { width:11px; height:11px; border-radius:50%; }
+    .terminal-dot:nth-child(1) { background:#ff5f57; }
+    .terminal-dot:nth-child(2) { background:#febc2e; }
+    .terminal-dot:nth-child(3) { background:#28c840; }
+    .terminal-title {
+      margin-left:12px; font-family:var(--mono); font-size:11px;
+      color:var(--text-muted); letter-spacing:.06em;
+    }
     .terminal-code {
-      font-size: 13px; line-height: 1.9; text-align: left;
+      font-family:var(--mono); font-size:13px; line-height:1.9;
+      text-align:left; padding:20px 24px;
     }
-    .terminal-code .prompt { color: var(--accent); }
-    .terminal-code .cmd { color: var(--text); }
-    .terminal-code .err { color: #ff5f57; }
-    .terminal-code .dim { color: var(--text-muted); }
-    .terminal-code .blink {
-      display: inline-block; width: 8px; height: 14px;
-      background: var(--accent); vertical-align: middle; margin-left: 2px;
-      animation: blink 1s step-end infinite;
+    .prompt { color:var(--accent); }
+    .cmd { color:var(--text); }
+    .err { color:var(--high); font-weight:600; }
+    .ok { color:var(--low); }
+    .dim { color:var(--text-muted); }
+    .blink {
+      display:inline-block; width:8px; height:14px;
+      background:var(--accent); vertical-align:middle; margin-left:4px;
+      animation:blink 1s step-end infinite;
     }
     @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
 
+    /* 404 mega glyph */
     .error-code {
-      font-size: clamp(64px, 12vw, 96px); font-weight: 900;
-      letter-spacing: -0.04em; line-height: 1;
-      background: linear-gradient(135deg, var(--accent), #7c3aed);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin-bottom: 12px;
+      font-family:var(--font);
+      font-size:clamp(80px, 16vw, 160px); font-weight:900;
+      letter-spacing:-0.05em; line-height:.9;
+      background: linear-gradient(135deg, #00d4ff 0%, #7c3aed 60%, #ff3b5c 100%);
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+      background-clip:text;
+      margin-bottom:16px;
+      filter: drop-shadow(0 0 32px rgba(0,212,255,.25));
+      position:relative;
     }
+    .error-code::after{
+      content:'404'; position:absolute; inset:0;
+      background:linear-gradient(135deg,#00d4ff,#7c3aed,#ff3b5c);
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+      background-clip:text;
+      filter:blur(18px); opacity:.35; z-index:-1;
+    }
+
     h1 {
-      font-size: clamp(20px, 4vw, 28px); font-weight: 700;
-      color: var(--text); margin-bottom: 12px;
+      font-size:clamp(22px, 4vw, 30px); font-weight:700;
+      color:var(--text); margin-bottom:12px; letter-spacing:-.01em;
     }
     .subtitle {
-      font-size: 15px; color: var(--text-dim);
-      max-width: 420px; line-height: 1.6; margin-bottom: 36px;
+      font-size:15px; color:var(--text-dim);
+      max-width:460px; line-height:1.6; margin-bottom:36px;
     }
     .cta-row {
-      display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;
-      margin-bottom: 48px;
+      display:flex; gap:12px; flex-wrap:wrap; justify-content:center;
+      margin-bottom:56px;
     }
 
     /* Explore links */
     .explore-title {
-      font-size: 10px; font-weight: 700; letter-spacing: 0.2em;
-      text-transform: uppercase; color: var(--text-muted);
-      margin-bottom: 16px;
+      font-family:var(--mono);
+      font-size:10px; font-weight:600; letter-spacing:0.22em;
+      text-transform:uppercase; color:var(--text-muted);
+      margin-bottom:18px;
+      display:inline-flex; align-items:center; gap:10px;
+    }
+    .explore-title::before, .explore-title::after {
+      content:''; width:36px; height:1px; background:var(--border2);
     }
     .explore-grid {
-      display: flex; flex-wrap: wrap; gap: 8px;
-      justify-content: center; max-width: 600px;
+      display:flex; flex-wrap:wrap; gap:8px;
+      justify-content:center; max-width:720px;
     }
     .explore-link {
-      padding: 7px 14px; background: var(--bg3);
-      border: 1px solid var(--border2); border-radius: 3px;
-      color: var(--text-dim); font-size: 12px; text-decoration: none;
-      transition: all .15s;
+      padding:8px 14px; background:rgba(20,24,32,.6);
+      border:1px solid var(--border2); border-radius:4px;
+      color:var(--text-dim); font-size:12px; text-decoration:none;
+      transition:all .15s; font-weight:500;
     }
-    .explore-link:hover { border-color: var(--accent); color: var(--accent); }
+    .explore-link:hover { border-color:var(--accent); color:var(--accent); background:rgba(0,212,255,.05); transform:translateY(-1px); }
 
-    /* FOOTER */
+    /* Footer */
     footer {
-      background: var(--bg2); border-top: 1px solid var(--border);
-      padding: 20px 24px; text-align: center;
-      font-size: 12px; color: var(--text-muted);
+      position:relative; z-index:2;
+      background:var(--bg2); border-top:1px solid var(--border);
+      padding:22px 24px; text-align:center;
+      font-size:12px; color:var(--text-muted);
     }
-    footer a { color: var(--text-muted); text-decoration: none; margin: 0 8px; }
-    footer a:hover { color: var(--accent); }
+    footer a { color:var(--text-muted); text-decoration:none; margin:0 10px; transition:color .15s; }
+    footer a:hover { color:var(--accent); }
+    footer .sep { margin:0 6px; opacity:.4; }
+
+    @media (max-width: 520px) {
+      main { padding: 40px 16px; }
+      .terminal-code { font-size:12px; padding:16px 18px; }
+      .terminal-title { display:none; }
+    }
   </style>
 </head>
 <body>
 
+<!-- Faux ticker strip -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span class="ticker-item"><b>EURUSD</b> 1.0842 <span class="up">+0.12%</span></span>
+    <span class="ticker-item"><b>GBPUSD</b> 1.2634 <span class="dn">−0.08%</span></span>
+    <span class="ticker-item"><b>USDJPY</b> 151.24 <span class="up">+0.33%</span></span>
+    <span class="ticker-item"><b>BTC</b> 72,415 <span class="up">+2.18%</span></span>
+    <span class="ticker-item"><b>ETH</b> 3,842 <span class="up">+1.44%</span></span>
+    <span class="ticker-item"><b>SPX</b> 5,118 <span class="up">+0.41%</span></span>
+    <span class="ticker-item"><b>NDX</b> 17,984 <span class="up">+0.62%</span></span>
+    <span class="ticker-item"><b>GOLD</b> 2,341 <span class="dn">−0.18%</span></span>
+    <span class="ticker-item"><b>OIL</b> 82.14 <span class="up">+0.72%</span></span>
+    <span class="ticker-item"><b>DXY</b> 104.32 <span class="dn">−0.05%</span></span>
+    <!-- duplicate for seamless loop -->
+    <span class="ticker-item"><b>EURUSD</b> 1.0842 <span class="up">+0.12%</span></span>
+    <span class="ticker-item"><b>GBPUSD</b> 1.2634 <span class="dn">−0.08%</span></span>
+    <span class="ticker-item"><b>USDJPY</b> 151.24 <span class="up">+0.33%</span></span>
+    <span class="ticker-item"><b>BTC</b> 72,415 <span class="up">+2.18%</span></span>
+    <span class="ticker-item"><b>ETH</b> 3,842 <span class="up">+1.44%</span></span>
+    <span class="ticker-item"><b>SPX</b> 5,118 <span class="up">+0.41%</span></span>
+    <span class="ticker-item"><b>NDX</b> 17,984 <span class="up">+0.62%</span></span>
+    <span class="ticker-item"><b>GOLD</b> 2,341 <span class="dn">−0.18%</span></span>
+    <span class="ticker-item"><b>OIL</b> 82.14 <span class="up">+0.72%</span></span>
+    <span class="ticker-item"><b>DXY</b> 104.32 <span class="dn">−0.05%</span></span>
+  </div>
+</div>
+
 <header>
-  <a href="https://www.tradingnewsterminal.com/" class="nav-logo">
+  <a href="/" class="nav-logo">
     <div class="nav-logo-icon"></div>
     <div>
       <div class="nav-logo-text">Trading <span>News</span> Terminal</div>
       <div class="nav-logo-sub">Real-time Market Intelligence</div>
     </div>
   </a>
-  <a href="https://www.tradingnewsterminal.com/login?plan=trial" class="btn btn-primary">Try Free →</a>
+  <span class="status-pill" title="Signal lost"><span class="dot"></span>Signal Lost</span>
 </header>
 
 <main>
-  <div class="terminal-block">
+  <div class="terminal" role="img" aria-label="Terminal window showing a 404 error">
     <div class="terminal-bar">
       <div class="terminal-dot"></div>
       <div class="terminal-dot"></div>
       <div class="terminal-dot"></div>
+      <div class="terminal-title">tnt@terminal ~ /router</div>
     </div>
     <div class="terminal-code">
-      <div><span class="prompt">$</span> <span class="cmd">GET /page</span></div>
-      <div><span class="err">ERROR 404</span> <span class="dim">— NOT_FOUND</span></div>
-      <div><span class="dim">→ Route not matched in registry</span></div>
-      <div><span class="dim">→ Searching alternative routes...</span></div>
-      <div><span class="prompt">$</span> <span class="cmd">redirect</span> <span class="dim">--to /</span><span class="blink"></span></div>
+      <div><span class="prompt">$</span> <span class="cmd">GET</span> <span class="dim">/page</span></div>
+      <div><span class="err">✕ ERROR 404</span> <span class="dim">— ROUTE_NOT_FOUND</span></div>
+      <div><span class="dim">→ path not matched in registry</span></div>
+      <div><span class="dim">→ searching alternatives...</span></div>
+      <div><span class="ok">✓</span> <span class="dim">fallback available:</span> <span class="cmd">/</span></div>
+      <div><span class="prompt">$</span> <span class="cmd">redirect</span> <span class="dim">--home</span><span class="blink"></span></div>
     </div>
   </div>
 
   <div class="error-code">404</div>
-  <h1>Page not found</h1>
-  <p class="subtitle">The page you're looking for doesn't exist or has been moved. Head back to the terminal — markets don't wait.</p>
+  <h1>Signal lost — page not found.</h1>
+  <p class="subtitle">The route you requested isn't in the registry. Markets don't wait, so neither should you — jump back to the terminal or browse a feature below.</p>
 
   <div class="cta-row">
-    <a href="https://www.tradingnewsterminal.com/" class="btn btn-primary">▶ Open Terminal</a>
-    <a href="https://www.tradingnewsterminal.com/" class="btn btn-outline">← Back to Home</a>
+    <a href="https://app.tradingnewsterminal.com/" class="btn btn-primary">▶ Open Terminal</a>
+    <a href="/" class="btn btn-outline">← Back to Home</a>
   </div>
 
   <div class="explore-title">Or explore a feature</div>
   <div class="explore-grid">
-    <a href="/bloomberg-alternative" class="explore-link">Bloomberg Alternative</a>
     <a href="/forex-news-feed" class="explore-link">Forex News Feed</a>
     <a href="/economic-calendar" class="explore-link">Economic Calendar</a>
     <a href="/squawk-box" class="explore-link">Live Squawk Box</a>
@@ -186,10 +296,12 @@
 </main>
 
 <footer>
-  <a href="https://www.tradingnewsterminal.com/">tradingnewsterminal.com</a>
+  <a href="/">tradingnewsterminal.com</a>
+  <span class="sep">·</span>
   <a href="/terms">Terms</a>
   <a href="/privacy">Privacy</a>
-  <span>· © 2026 Trading News Terminal</span>
+  <span class="sep">·</span>
+  <span>© 2026 Trading News Terminal</span>
 </footer>
 
 </body>

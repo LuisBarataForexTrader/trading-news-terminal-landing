@@ -1,0 +1,934 @@
+{
+  "tickers": [
+    {
+      "symbol": "PETR4",
+      "name": "Petrobras",
+      "lang": "pt-BR",
+      "region": "BR",
+      "exchange": "B3",
+      "sector": "Petróleo & Gás",
+      "headline": "Petrobras (PETR4) Notícias, Balanço, Dividendos e Cotação em Tempo Real",
+      "description": "Notícias da Petrobras (PETR4) em tempo real. Fato relevante via CVM, dividendos, produção de petróleo, cotação Brent. Resumo do balanço com IA em PT-BR.",
+      "intro": "PETR4 é a ação preferencial da Petrobras — maior empresa de petróleo do Brasil e uma das blue chips mais líquidas da B3. Cobertura unificada de PETR4 (PN), PETR3 (ON) e PBR (ADR NYSE).",
+      "drivers": [
+        ["🛢️ Brent (Petróleo)", "Beta ~0.7. Variação de 1% no Brent move PETR4 ~0.6-0.8% no curto prazo. OPEC+, EIA, geopolítica."],
+        ["💰 Dividend policy", "Política paga ~45% do free cash flow. Anúncios de dividendo extraordinário movem PETR4 2-5% no dia."],
+        ["🏛️ Risco político/regulatório", "Mudança de gestão, política de preços, royalties, plano de investimento. Eventos binários — moves de 5-15% em um dia."],
+        ["💵 USD/BRL", "Beta inverso. Receita em USD, custos parcialmente em BRL. Dólar forte ajuda margens."]
+      ],
+      "guide_intro": "PETR4 responde a três famílias de catalisadores: petróleo internacional (Brent), política de dividendos da empresa, e risco político/regulatório. Saber qual está em curso evita mistakes de tese.",
+      "key_events": [
+        "Release de resultados trimestrais (entre 18:00 e 19:00 BRT, quarta ou quinta da semana de reporte)",
+        "Reunião OPEC+ mensal — afeta Brent → PETR4 com beta ~0.7",
+        "Dados de produção mensal (publicação dia 15-25 do mês seguinte)",
+        "Anúncio de dividendo trimestral (~3 semanas antes do pagamento)",
+        "Estoques semanais EUA (EIA, toda quarta-feira 11:30 EST)"
+      ],
+      "related_seo": [
+        ["/petrobras-noticias-tempo-real", "PETR4 News em Tempo Real"],
+        ["/balanco-petrobras-vale-ia", "Balanço PETR4 com IA"],
+        ["/ibovespa-noticias-ao-vivo", "Ibovespa ao Vivo"],
+        ["/oil-news-alerts", "Oil News Alerts"]
+      ]
+    },
+    {
+      "symbol": "VALE3",
+      "name": "Vale",
+      "lang": "pt-BR",
+      "region": "BR",
+      "exchange": "B3",
+      "sector": "Mineração",
+      "headline": "Vale (VALE3) Notícias, Balanço, Minério de Ferro e Cotação em Tempo Real",
+      "description": "Notícias da Vale (VALE3) em tempo real. Fato relevante via CVM, dividendos, minério de ferro 62%, demanda chinesa. Resumo do balanço com IA em PT-BR.",
+      "intro": "VALE3 é a maior mineradora do Brasil e uma das três blue chips de maior peso no Ibovespa. Cobertura unificada VALE3 (B3) + VALE (ADR NYSE).",
+      "drivers": [
+        ["⛏️ Minério de Ferro 62%", "Beta ~0.7 com spot Singapore. Variações entre US$ 90-120 movem VALE3 +15% a +30% em ciclos."],
+        ["🇨🇳 Demanda chinesa", "China consome ~60% da produção. PMI manufatureiro, produção de aço, estímulo PBoC."],
+        ["💧 Risco ESG / Barragens", "Acidentes, descomissionamento, acordos com Ministério Público. Eventos de cauda longa."],
+        ["💵 USD/BRL", "Receita em USD, custos parcialmente em BRL. Dólar forte ajuda margem."]
+      ],
+      "guide_intro": "VALE3 responde a três famílias de catalisadores estruturalmente diferentes de PETR4: preço do minério de ferro, demanda chinesa, e risco operacional/ESG.",
+      "key_events": [
+        "Release de resultados trimestrais (geralmente 18:00-19:00 BRT)",
+        "Relatório operacional trimestral (meio do mês seguinte ao fim do trimestre)",
+        "PMI manufatureiro chinês (publicação mensal)",
+        "Dados de produção de aço chinesa (publicação mensal pelo NBS)",
+        "Anúncio de dividendos (política baseada em fórmula de FCF)"
+      ],
+      "related_seo": [
+        ["/vale-noticias-tempo-real", "VALE3 News em Tempo Real"],
+        ["/balanco-petrobras-vale-ia", "Balanço VALE3 com IA"],
+        ["/ibovespa-noticias-ao-vivo", "Ibovespa ao Vivo"],
+        ["/commodities-news-feed", "Commodities News"]
+      ]
+    },
+    {
+      "symbol": "ITUB4",
+      "name": "Banco Itaú",
+      "lang": "pt-BR",
+      "region": "BR",
+      "exchange": "B3",
+      "sector": "Bancos",
+      "headline": "ITUB4 Notícias, Balanço, Dividendos e Cotação em Tempo Real",
+      "description": "Notícias do banco (ITUB4) em tempo real. Fato relevante via CVM, dividendos trimestrais, decisão do Copom, sensibilidade à Selic. Resumo do balanço com IA em PT-BR.",
+      "intro": "ITUB4 é uma das blue chips bancárias de maior peso no Ibov (~6%). Cobertura unificada ITUB4 (PN) + ITUB (ADR NYSE).",
+      "drivers": [
+        ["🏛️ Selic / Copom", "Beta ~2.5x ao índice em cortes da Selic. Cortes deprimem NIM; altas expandem."],
+        ["💰 Dividendos", "Distribuição trimestral robusta. Dividend yield anualizado entre 5-8% historicamente."],
+        ["📊 Inadimplência", "Indicadores de crédito (NPL ratio, índice de inadimplência) — leading indicators."],
+        ["🇧🇷 PIB & atividade", "Ciclo de crédito acompanha PIB. PIB acelerando = expansão de carteira."]
+      ],
+      "guide_intro": "ITUB4 é a blue chip bancária de maior peso no Ibov. Responde a Copom, qualidade de crédito e ciclo econômico doméstico.",
+      "key_events": [
+        "Release de resultados trimestrais",
+        "Reunião do Copom (8x/ano)",
+        "Publicação de IPCA mensal (IBGE)",
+        "Dados de crédito mensais do BCB",
+        "Dividendo trimestral declarado"
+      ],
+      "related_seo": [
+        ["/ibovespa-noticias-ao-vivo", "Ibovespa ao Vivo"],
+        ["/copom-decisao-selic-alertas", "Alerta Copom"],
+        ["/dolar-real-noticias", "USD/BRL Notícias"],
+        ["/balanco-petrobras-vale-ia", "Balanço com IA"]
+      ]
+    },
+    {
+      "symbol": "BBAS3",
+      "name": "Banco do Brasil",
+      "lang": "pt-BR",
+      "region": "BR",
+      "exchange": "B3",
+      "sector": "Bancos",
+      "headline": "BBAS3 Notícias, Balanço, Dividendos e Cotação em Tempo Real",
+      "description": "Notícias do banco estatal (BBAS3) em tempo real. Fato relevante via CVM, dividendos, sensibilidade à Selic, ciclo de crédito agro. Resumo do balanço com IA em PT-BR.",
+      "intro": "BBAS3 é o banco estatal listado com maior exposição ao crédito agropecuário e dividendos generosos. Peso ~5% no Ibovespa.",
+      "drivers": [
+        ["🏛️ Selic / Copom", "Beta forte ao ciclo de juros. NIM expande em alta de juros."],
+        ["💰 Dividend yield alto", "Histórico de yield entre 8-12% — atrai income investors."],
+        ["🌾 Ciclo agro", "Exposição relevante a crédito rural. Safra positiva = expansão da carteira."],
+        ["🏛️ Risco político", "Como banco estatal, decisões de governo podem afetar política de crédito e dividendos."]
+      ],
+      "guide_intro": "BBAS3 combina os drivers clássicos de banco (Selic, qualidade de crédito) com exposição agro e risco político mais elevado por ser estatal.",
+      "key_events": [
+        "Release de resultados trimestrais",
+        "Reunião do Copom",
+        "Resultados de safra agrícola (Conab, USDA)",
+        "Dividendos trimestrais",
+        "Anúncio de governança/diretoria"
+      ],
+      "related_seo": [
+        ["/ibovespa-noticias-ao-vivo", "Ibovespa ao Vivo"],
+        ["/copom-decisao-selic-alertas", "Alerta Copom"],
+        ["/dolar-real-noticias", "USD/BRL Notícias"],
+        ["/commodities-news-feed", "Commodities News"]
+      ]
+    },
+    {
+      "symbol": "ABEV3",
+      "name": "Ambev",
+      "lang": "pt-BR",
+      "region": "BR",
+      "exchange": "B3",
+      "sector": "Bebidas",
+      "headline": "ABEV3 Notícias, Balanço, Dividendos e Cotação em Tempo Real",
+      "description": "Notícias da Ambev (ABEV3) em tempo real. Fato relevante via CVM, volumes de cerveja, dividendos, sensibilidade ao consumo. Resumo do balanço com IA em PT-BR.",
+      "intro": "ABEV3 é a maior empresa de bebidas da América Latina e parte do grupo internacional. Defensive name no Ibov com beta baixo.",
+      "drivers": [
+        ["🍺 Volumes de cerveja", "Indicador top-line. Volumes crescendo + preço premium = receita expandindo."],
+        ["💵 Câmbio (USD/BRL)", "Custos de insumos parcialmente em USD. Dólar forte pressiona margem."],
+        ["🛍️ Consumo doméstico", "Massa salarial real, emprego formal, confiança do consumidor."],
+        ["💰 Dividendos", "Histórico de payout consistente. Dividend yield ~4-6%."]
+      ],
+      "guide_intro": "ABEV3 é defensive name — beta baixo, dividend yield consistente, fluxos de caixa previsíveis. Move com consumo doméstico e custo de insumos.",
+      "key_events": [
+        "Release de resultados trimestrais",
+        "Volumes mensais de cerveja (publicação trimestral consolidada)",
+        "Dados de massa salarial real (IBGE)",
+        "Confiança do consumidor (FGV)",
+        "Custo de cevada e milho (commodities)"
+      ],
+      "related_seo": [
+        ["/ibovespa-noticias-ao-vivo", "Ibovespa ao Vivo"],
+        ["/dolar-real-noticias", "USD/BRL Notícias"],
+        ["/commodities-news-feed", "Commodities News"],
+        ["/balanco-petrobras-vale-ia", "Balanço com IA"]
+      ]
+    },
+    {
+      "symbol": "WEGE3",
+      "name": "WEG",
+      "lang": "pt-BR",
+      "region": "BR",
+      "exchange": "B3",
+      "sector": "Bens de Capital",
+      "headline": "WEGE3 Notícias, Balanço, Exportações e Cotação em Tempo Real",
+      "description": "Notícias da WEG (WEGE3) em tempo real. Fato relevante via CVM, exportações, ciclo industrial global, energia renovável. Resumo do balanço com IA em PT-BR.",
+      "intro": "WEGE3 é uma das compounders mais reverenciadas da B3 — fabricante de motores elétricos, geradores e equipamentos industriais. Exposição forte a exportação.",
+      "drivers": [
+        ["🌍 Exportações", "~60% da receita vem de exportação. Dólar forte = receita expandindo em BRL."],
+        ["⚡ Energia renovável (GTD)", "Linha de Geração, Transmissão e Distribuição — crescimento estrutural com transição energética."],
+        ["🏭 Ciclo industrial global", "Beta a PMI manufatureiro global (EUA, China, Europa)."],
+        ["📈 ROIC / EVA", "WEG é compounder — métricas de retorno sobre capital são leading indicators de qualidade da gestão."]
+      ],
+      "guide_intro": "WEGE3 é compounder global — beta a ciclo industrial, exportação e dólar. Premium de qualidade vs pares.",
+      "key_events": [
+        "Release de resultados trimestrais",
+        "PMI manufatureiro global (mensal — EUA, China, Europa)",
+        "Anúncios de capex em renováveis",
+        "Comércio exterior brasileiro (mensal MDIC)",
+        "Câmbio USD/BRL"
+      ],
+      "related_seo": [
+        ["/ibovespa-noticias-ao-vivo", "Ibovespa ao Vivo"],
+        ["/dolar-real-noticias", "USD/BRL Notícias"],
+        ["/asian-markets-news", "Asian Markets News"],
+        ["/european-markets-news", "European Markets News"]
+      ]
+    },
+    {
+      "symbol": "B3SA3",
+      "name": "B3",
+      "lang": "pt-BR",
+      "region": "BR",
+      "exchange": "B3",
+      "sector": "Bolsa",
+      "headline": "B3SA3 Notícias, Balanço, Volumes e Cotação em Tempo Real",
+      "description": "Notícias da B3 (B3SA3) em tempo real. Fato relevante via CVM, volumes negociados, dividendos, sensibilidade ao fluxo. Resumo do balanço com IA em PT-BR.",
+      "intro": "B3SA3 é a bolsa de valores brasileira — operadora do Ibovespa, do mini-dólar, mini-índice e DI futuro. Receita ligada a volumes negociados.",
+      "drivers": [
+        ["📊 Volumes de negociação", "Maior volume médio diário = mais receita. Volatilidade alta tipicamente puxa volumes."],
+        ["🇧🇷 Atividade do varejo", "Crescimento da base de investidores PF. Educação financeira, abertura de contas."],
+        ["💵 Fluxo estrangeiro", "Capital externo na B3 (saldo positivo = volumes maiores em ações)."],
+        ["💰 Dividendos", "Payout alto. Yield ~4-6% historicamente."]
+      ],
+      "guide_intro": "B3SA3 é a play sobre o próprio mercado de capitais brasileiro. Volumes negociados são a métrica-chave.",
+      "key_events": [
+        "Release de resultados trimestrais",
+        "Volumes mensais da B3 (publicação mensal)",
+        "Crescimento da base de investidores PF (Anbima)",
+        "Saldo de fluxo estrangeiro",
+        "Anúncio de novos produtos (ETFs, derivativos)"
+      ],
+      "related_seo": [
+        ["/ibovespa-noticias-ao-vivo", "Ibovespa ao Vivo"],
+        ["/copom-decisao-selic-alertas", "Alerta Copom"],
+        ["/dolar-real-noticias", "USD/BRL Notícias"],
+        ["/realtime-market-data", "Real-Time Market Data"]
+      ]
+    },
+    {
+      "symbol": "BBDC4",
+      "name": "Banco privado",
+      "lang": "pt-BR",
+      "region": "BR",
+      "exchange": "B3",
+      "sector": "Bancos",
+      "headline": "BBDC4 Notícias, Balanço, Dividendos e Cotação em Tempo Real",
+      "description": "Notícias do banco BBDC4 em tempo real. Fato relevante via CVM, dividendos, sensibilidade à Selic, qualidade de crédito. Resumo do balanço com IA em PT-BR.",
+      "intro": "BBDC4 é um dos três grandes bancos privados listados na B3. Peso relevante no Ibov (~5%).",
+      "drivers": [
+        ["🏛️ Selic / Copom", "Beta forte ao ciclo de juros. NIM expande em alta de juros."],
+        ["📊 Qualidade de crédito", "Inadimplência PJ e PF — leading indicators do ciclo de provisões."],
+        ["💰 Dividendos", "Distribuição trimestral. Yield ~5-7%."],
+        ["📈 PIB & atividade", "Carteira de crédito cresce com PIB nominal."]
+      ],
+      "guide_intro": "BBDC4 segue o playbook clássico de banco privado: Copom, qualidade de crédito, PIB.",
+      "key_events": [
+        "Release de resultados trimestrais",
+        "Reunião do Copom",
+        "Dados de crédito mensais do BCB",
+        "Dividendo trimestral",
+        "Investor day / coletivas"
+      ],
+      "related_seo": [
+        ["/ibovespa-noticias-ao-vivo", "Ibovespa ao Vivo"],
+        ["/copom-decisao-selic-alertas", "Alerta Copom"],
+        ["/dolar-real-noticias", "USD/BRL Notícias"],
+        ["/balanco-petrobras-vale-ia", "Balanço com IA"]
+      ]
+    },
+    {
+      "symbol": "JBSS3",
+      "name": "JBS",
+      "lang": "pt-BR",
+      "region": "BR",
+      "exchange": "B3",
+      "sector": "Frigoríficos",
+      "headline": "JBSS3 Notícias, Balanço, Exportações e Cotação em Tempo Real",
+      "description": "Notícias da JBSS3 em tempo real. Fato relevante via CVM, ciclo do boi gordo, exportações de proteína, sensibilidade à China e EUA. Resumo do balanço com IA em PT-BR.",
+      "intro": "JBSS3 é uma das maiores processadoras de proteína animal do mundo. Receita global diversificada — Brasil, EUA, Austrália, Europa.",
+      "drivers": [
+        ["🐄 Ciclo do boi gordo", "Custo do principal insumo. Preço da arroba do boi gordo (B3 futuro)."],
+        ["🌍 Exportações", "China, EUA, países do Oriente Médio. Embargos sanitários movem o tape."],
+        ["💵 USD/BRL", "Receita majoritariamente em USD. Dólar forte = expansão de margem em BRL."],
+        ["🏛️ Listagem dual", "Plano histórico de listar nos EUA (JBS USA Holdings). Catalisador potencial."]
+      ],
+      "guide_intro": "JBSS3 é play global de proteína. Câmbio + ciclo do boi + demanda chinesa são os três motores.",
+      "key_events": [
+        "Release de resultados trimestrais",
+        "Boi gordo futuro B3",
+        "Exportações mensais de carne (Secex/MDIC)",
+        "Decisões sanitárias chinesas (CIQ)",
+        "Notícias de listagem dual / IPO US"
+      ],
+      "related_seo": [
+        ["/ibovespa-noticias-ao-vivo", "Ibovespa ao Vivo"],
+        ["/dolar-real-noticias", "USD/BRL Notícias"],
+        ["/commodities-news-feed", "Commodities News"],
+        ["/asian-markets-news", "Asian Markets News"]
+      ]
+    },
+    {
+      "symbol": "PRIO3",
+      "name": "Petrorio",
+      "lang": "pt-BR",
+      "region": "BR",
+      "exchange": "B3",
+      "sector": "Petróleo & Gás",
+      "headline": "PRIO3 Notícias, Balanço, Produção e Cotação em Tempo Real",
+      "description": "Notícias da PRIO3 em tempo real. Fato relevante via CVM, produção offshore, Brent, custos operacionais. Resumo do balanço com IA em PT-BR.",
+      "intro": "PRIO3 é a maior produtora independente de petróleo do Brasil. Diferentemente da Petrobras, PRIO3 tem custos baixos e foco em campos maduros offshore.",
+      "drivers": [
+        ["🛢️ Brent (Petróleo)", "Beta alto — PRIO3 é alavancada ao preço por ter custos baixos e dívida moderada."],
+        ["⛽ Produção de boe/dia", "Métrica top-line. Aquisição de novos campos = crescimento."],
+        ["💵 USD/BRL", "Receita em USD. Dólar forte = expansão de margem em BRL."],
+        ["📊 Custos operacionais (lifting cost)", "Diferencial competitivo vs Petrobras. PRIO3 opera com lifting cost ~US$ 9/barril."]
+      ],
+      "guide_intro": "PRIO3 é leveraged play sobre o Brent — beta mais alto que PETR4. Crescimento via aquisição de campos maduros offshore.",
+      "key_events": [
+        "Release de resultados trimestrais",
+        "Anúncio de aquisição de campo",
+        "Brent e OPEC+",
+        "EIA estoques semanais EUA",
+        "Volumes mensais de produção"
+      ],
+      "related_seo": [
+        ["/petrobras-noticias-tempo-real", "Petrobras PETR4"],
+        ["/oil-news-alerts", "Oil News Alerts"],
+        ["/ibovespa-noticias-ao-vivo", "Ibovespa ao Vivo"],
+        ["/commodities-news-feed", "Commodities News"]
+      ]
+    },
+    {
+      "symbol": "MGLU3",
+      "name": "Magazine Luiza",
+      "lang": "pt-BR",
+      "region": "BR",
+      "exchange": "B3",
+      "sector": "Varejo",
+      "headline": "MGLU3 Notícias, Balanço, GMV e Cotação em Tempo Real",
+      "description": "Notícias da MGLU3 em tempo real. Fato relevante via CVM, vendas online (GMV), sensibilidade ao consumo, alavancagem operacional. Resumo do balanço com IA em PT-BR.",
+      "intro": "MGLU3 é um dos principais varejistas omnichannel listados na B3. Sensibilidade alta a ciclo de consumo e juros.",
+      "drivers": [
+        ["🛍️ GMV (Gross Merchandise Value)", "Métrica top-line. Crescimento online vs físico é leading indicator."],
+        ["🏛️ Selic / Copom", "Beta muito alto a cortes da Selic. Alavancagem operacional + financeira."],
+        ["💵 USD/BRL", "Custo de mercadorias (eletrônicos) parcialmente em USD."],
+        ["📊 Massa salarial real", "Consumo discricionário é sensível à renda disponível."]
+      ],
+      "guide_intro": "MGLU3 é varejo discricionário com alavancagem alta — beta forte a Selic e consumo. Movimentos de 5-10% no dia são comuns.",
+      "key_events": [
+        "Release de resultados trimestrais",
+        "Black Friday (final de novembro)",
+        "Dia das Mães, Pais e Natal",
+        "Reunião do Copom",
+        "Confiança do consumidor (FGV)"
+      ],
+      "related_seo": [
+        ["/ibovespa-noticias-ao-vivo", "Ibovespa ao Vivo"],
+        ["/copom-decisao-selic-alertas", "Alerta Copom"],
+        ["/dolar-real-noticias", "USD/BRL Notícias"],
+        ["/balanco-petrobras-vale-ia", "Balanço com IA"]
+      ]
+    },
+    {
+      "symbol": "RENT3",
+      "name": "Localiza",
+      "lang": "pt-BR",
+      "region": "BR",
+      "exchange": "B3",
+      "sector": "Locação de Frota",
+      "headline": "RENT3 Notícias, Balanço, Frota e Cotação em Tempo Real",
+      "description": "Notícias da RENT3 em tempo real. Fato relevante via CVM, frota total, RAC, sensibilidade ao consumo e juros. Resumo do balanço com IA em PT-BR.",
+      "intro": "RENT3 é a maior empresa de locação de frota da América Latina. Sensibilidade alta a Selic via custo de capital e a consumo via RAC (Rent a Car).",
+      "drivers": [
+        ["🏛️ Selic / Copom", "Beta alto. Frota financiada com dívida — custo de capital é variável-chave."],
+        ["🚗 Preço de carros novos", "Capex de renovação de frota. Alta de preços comprime margem."],
+        ["🛍️ Consumo discricionário", "RAC depende de viagens e turismo doméstico."],
+        ["📊 Yield management", "Diária média realizada — métrica de pricing power."]
+      ],
+      "guide_intro": "RENT3 é alavancada operacionalmente e financeiramente — beta forte a Selic e ciclo econômico.",
+      "key_events": [
+        "Release de resultados trimestrais",
+        "Reunião do Copom",
+        "Dados de turismo doméstico",
+        "Preços de carros novos (FIPE)",
+        "Anúncio de aquisição de frota"
+      ],
+      "related_seo": [
+        ["/ibovespa-noticias-ao-vivo", "Ibovespa ao Vivo"],
+        ["/copom-decisao-selic-alertas", "Alerta Copom"],
+        ["/dolar-real-noticias", "USD/BRL Notícias"],
+        ["/balanco-petrobras-vale-ia", "Balanço com IA"]
+      ]
+    },
+    {
+      "symbol": "SUZB3",
+      "name": "Suzano",
+      "lang": "pt-BR",
+      "region": "BR",
+      "exchange": "B3",
+      "sector": "Papel & Celulose",
+      "headline": "SUZB3 Notícias, Balanço, Celulose e Cotação em Tempo Real",
+      "description": "Notícias da Suzano (SUZB3) em tempo real. Fato relevante via CVM, preço da celulose, exportações para China, USD/BRL. Resumo do balanço com IA em PT-BR.",
+      "intro": "SUZB3 é a maior produtora de celulose de fibra curta do mundo. ~80% da receita exportada, ~70% em USD.",
+      "drivers": [
+        ["🌲 Preço da celulose (BHKP)", "Spot na China (NBSK e BHKP). Variações de 5% movem SUZB3 com beta forte."],
+        ["💵 USD/BRL", "Receita majoritariamente em USD. Beta inverso ao real."],
+        ["🇨🇳 Demanda chinesa de papel", "Maior comprador de celulose brasileira."],
+        ["📊 Custos cash", "Energia, químicos, madeira. Lifting cost ~US$ 220/t."]
+      ],
+      "guide_intro": "SUZB3 é exportadora pura — beta a celulose, dólar e China. Receita em USD permite dividendos generosos em ciclos altos.",
+      "key_events": [
+        "Release de resultados trimestrais",
+        "Preço spot da celulose (China)",
+        "Produção de papel chinesa (NBS)",
+        "USD/BRL",
+        "Anúncio de capex / aquisição"
+      ],
+      "related_seo": [
+        ["/ibovespa-noticias-ao-vivo", "Ibovespa ao Vivo"],
+        ["/dolar-real-noticias", "USD/BRL Notícias"],
+        ["/asian-markets-news", "Asian Markets News"],
+        ["/commodities-news-feed", "Commodities News"]
+      ]
+    },
+    {
+      "symbol": "RAIL3",
+      "name": "Rumo",
+      "lang": "pt-BR",
+      "region": "BR",
+      "exchange": "B3",
+      "sector": "Logística Ferroviária",
+      "headline": "RAIL3 Notícias, Balanço, Volumes Ferroviários e Cotação em Tempo Real",
+      "description": "Notícias da Rumo (RAIL3) em tempo real. Fato relevante via CVM, volumes de grãos transportados, safra, contrato Malha Paulista. Resumo do balanço com IA em PT-BR.",
+      "intro": "RAIL3 é a maior operadora ferroviária do Brasil. Receita ligada a volumes de exportação de grãos e produtos industrializados.",
+      "drivers": [
+        ["🌾 Safra de grãos", "Soja e milho dominam volumes. Beta forte a Conab/USDA."],
+        ["🚂 Volumes transportados", "TKU (Tonelada-Quilômetro-Útil). Métrica top-line."],
+        ["💰 Dividendos", "Free cash flow elevado em ciclos de safra forte."],
+        ["📜 Renovação de contratos", "Malha Paulista, Norte-Sul. Eventos regulatórios."]
+      ],
+      "guide_intro": "RAIL3 é monopolista regional. Volumes de safra + dólar + regulação são os três motores.",
+      "key_events": [
+        "Release de resultados trimestrais",
+        "Estimativas de safra (Conab)",
+        "USDA World Agricultural Outlook",
+        "Anúncios regulatórios (ANTT)",
+        "Dividendos"
+      ],
+      "related_seo": [
+        ["/ibovespa-noticias-ao-vivo", "Ibovespa ao Vivo"],
+        ["/dolar-real-noticias", "USD/BRL Notícias"],
+        ["/commodities-news-feed", "Commodities News"],
+        ["/balanco-petrobras-vale-ia", "Balanço com IA"]
+      ]
+    },
+    {
+      "symbol": "EQTL3",
+      "name": "Equatorial Energia",
+      "lang": "pt-BR",
+      "region": "BR",
+      "exchange": "B3",
+      "sector": "Utilities",
+      "headline": "EQTL3 Notícias, Balanço, Tarifa e Cotação em Tempo Real",
+      "description": "Notícias da Equatorial (EQTL3) em tempo real. Fato relevante via CVM, reajustes tarifários, perdas, sensibilidade à Selic. Resumo do balanço com IA em PT-BR.",
+      "intro": "EQTL3 é uma das principais distribuidoras de energia listadas. Player consolidador no setor de utilities brasileiro.",
+      "drivers": [
+        ["🏛️ Selic / Copom", "Utilities têm beta muito alto a Selic via DCF — cortes de juros expandem múltiplo."],
+        ["⚡ Reajustes tarifários", "Decisões da ANEEL. Catalisador binário."],
+        ["📊 Perdas técnicas e comerciais", "Métrica operacional. Redução de perdas = ganho de receita."],
+        ["🌧️ Hidrologia", "Custos de aquisição de energia variam com regime de chuvas."]
+      ],
+      "guide_intro": "EQTL3 é utility defensive — fluxos previsíveis, beta a Selic via duration. Outperforma em ciclos de cortes.",
+      "key_events": [
+        "Release de resultados trimestrais",
+        "Reunião do Copom",
+        "Decisões da ANEEL sobre tarifa",
+        "Dados de hidrologia (ONS)",
+        "Anúncios de aquisição"
+      ],
+      "related_seo": [
+        ["/ibovespa-noticias-ao-vivo", "Ibovespa ao Vivo"],
+        ["/copom-decisao-selic-alertas", "Alerta Copom"],
+        ["/dolar-real-noticias", "USD/BRL Notícias"],
+        ["/balanco-petrobras-vale-ia", "Balanço com IA"]
+      ]
+    },
+    {
+      "symbol": "AAPL",
+      "name": "Apple",
+      "lang": "en",
+      "region": "US",
+      "exchange": "NASDAQ",
+      "sector": "Consumer Electronics",
+      "headline": "AAPL News, Earnings, AI Summary & Live Feed",
+      "description": "Apple (AAPL) news in real time. SEC 8-K filings, earnings reports, AI 5-bullet summary, analyst rating changes, services + iPhone revenue. Free Basic tier.",
+      "intro": "AAPL is one of the largest market-cap companies in the world and the most heavily-followed name in global equity. Sits in pre-market, regular session, and after-hours catalyst flow.",
+      "drivers": [
+        ["📱 iPhone cycle", "iPhone is ~50% of revenue. New model cycle (September) is the single biggest annual catalyst."],
+        ["💼 Services revenue", "Highest-margin segment growing 15-20% YoY. Multiple expansion lives here."],
+        ["🇨🇳 China demand", "Greater China is ~17% of revenue. Geopolitical and demand cycles move the stock."],
+        ["💰 Capital returns", "Buyback program is one of the largest globally. Dividend hikes annually."]
+      ],
+      "guide_intro": "AAPL responds to product cycle (iPhone in Sep), services growth, China demand, and capital returns. Reports after-hours quarterly.",
+      "key_events": [
+        "Quarterly earnings (after-hours, ~30 days post quarter-end)",
+        "iPhone launch event (September)",
+        "WWDC developer conference (June)",
+        "Analyst rating changes (premarket frequently)",
+        "China retail sales / Singles Day (November)"
+      ],
+      "related_seo": [
+        ["/us-stock-market-news", "US Stock Market News"],
+        ["/ai-earnings-call-summary", "AI Earnings Summary"],
+        ["/sec-edgar-live-alerts", "SEC EDGAR Alerts"],
+        ["/after-hours-earnings-tracker", "After-Hours Earnings"]
+      ]
+    },
+    {
+      "symbol": "NVDA",
+      "name": "NVIDIA",
+      "lang": "en",
+      "region": "US",
+      "exchange": "NASDAQ",
+      "sector": "Semiconductors",
+      "headline": "NVDA News, Earnings, AI Summary & Live Feed",
+      "description": "NVIDIA (NVDA) news in real time. SEC 8-K filings, earnings reports with AI 5-bullet summary, Blackwell ramp, data center revenue, China export rules. Free Basic tier.",
+      "intro": "NVDA is the most heavily-watched stock in the AI cycle. Data center revenue dominates the story; gaming and auto are secondary.",
+      "drivers": [
+        ["⚡ Data center revenue", "70%+ of revenue from data center. Hyperscaler capex is the leading indicator."],
+        ["🇨🇳 China export rules", "US export controls on advanced GPUs create binary catalysts."],
+        ["📊 Blackwell ramp", "Product cycle drives gross margin. Supply constraint vs demand commentary moves stock 5-10%."],
+        ["💼 Hyperscaler capex", "AMZN, MSFT, GOOGL, META capex guides set NVDA expectations 90 days ahead."]
+      ],
+      "guide_intro": "NVDA is the AI bellwether — data center revenue and Blackwell ramp dominate. Reports after-hours.",
+      "key_events": [
+        "Quarterly earnings (after-hours)",
+        "GTC developer conference (March)",
+        "Hyperscaler earnings (drives NVDA expectations)",
+        "China export rule announcements",
+        "Analyst rating changes"
+      ],
+      "related_seo": [
+        ["/us-stock-market-news", "US Stock Market News"],
+        ["/ai-earnings-call-summary", "AI Earnings Summary"],
+        ["/after-hours-earnings-tracker", "After-Hours Earnings"],
+        ["/sec-edgar-live-alerts", "SEC EDGAR Alerts"]
+      ]
+    },
+    {
+      "symbol": "TSLA",
+      "name": "Tesla",
+      "lang": "en",
+      "region": "US",
+      "exchange": "NASDAQ",
+      "sector": "Auto Manufacturers",
+      "headline": "TSLA News, Earnings, AI Summary & Live Feed",
+      "description": "Tesla (TSLA) news in real time. SEC 8-K filings, quarterly delivery numbers, FSD/Autopilot updates, energy storage, China sales. Free Basic tier.",
+      "intro": "TSLA is one of the highest-beta names in the S&P 500. Quarterly deliveries, FSD progress, and China demand are the three catalysts.",
+      "drivers": [
+        ["🚗 Quarterly deliveries", "Single biggest catalyst. Beat or miss moves stock 5-15% in 1 day."],
+        ["🤖 FSD / Autopilot progress", "Regulatory approval, beta releases, robotaxi commentary."],
+        ["🇨🇳 China demand", "Shanghai gigafactory output and China sales mix."],
+        ["💰 Margin trajectory", "Auto gross margin is most-watched profitability metric."]
+      ],
+      "guide_intro": "TSLA is high-beta growth name. Deliveries, FSD, China, and margins are the four catalysts.",
+      "key_events": [
+        "Quarterly deliveries (first 3 days of new quarter)",
+        "Quarterly earnings (after-hours)",
+        "AI Day / Robotaxi day events",
+        "China monthly retail sales",
+        "Analyst rating changes"
+      ],
+      "related_seo": [
+        ["/us-stock-market-news", "US Stock Market News"],
+        ["/ai-earnings-call-summary", "AI Earnings Summary"],
+        ["/after-hours-earnings-tracker", "After-Hours Earnings"],
+        ["/reddit-wsb-sentiment-tracker", "Reddit WSB Sentiment"]
+      ]
+    },
+    {
+      "symbol": "MSFT",
+      "name": "Microsoft",
+      "lang": "en",
+      "region": "US",
+      "exchange": "NASDAQ",
+      "sector": "Software",
+      "headline": "MSFT News, Earnings, AI Summary & Live Feed",
+      "description": "Microsoft (MSFT) news in real time. SEC 8-K filings, Azure growth, Copilot/AI revenue, OpenAI partnership, enterprise IT. Free Basic tier.",
+      "intro": "MSFT is the second-largest mega-cap and the bellwether for enterprise IT spend and cloud computing.",
+      "drivers": [
+        ["☁️ Azure growth rate", "Largest segment in growth. 25-30% YoY range. Deceleration is the bear case."],
+        ["🤖 Copilot revenue", "AI monetization. Per-seat pricing, attach rate to Office 365."],
+        ["🤝 OpenAI partnership", "Investments, exclusivity arrangements, governance."],
+        ["💼 Enterprise IT spend", "Macro driver. CIO budget surveys lead 90 days."]
+      ],
+      "guide_intro": "MSFT is the enterprise IT bellwether. Azure growth rate is the single most-watched metric.",
+      "key_events": [
+        "Quarterly earnings (after-hours)",
+        "Build developer conference (May)",
+        "Ignite enterprise conference (November)",
+        "OpenAI announcements",
+        "Enterprise IT survey publications (Morgan Stanley, ETR)"
+      ],
+      "related_seo": [
+        ["/us-stock-market-news", "US Stock Market News"],
+        ["/ai-earnings-call-summary", "AI Earnings Summary"],
+        ["/after-hours-earnings-tracker", "After-Hours Earnings"],
+        ["/sec-edgar-live-alerts", "SEC EDGAR Alerts"]
+      ]
+    },
+    {
+      "symbol": "GOOGL",
+      "name": "Alphabet",
+      "lang": "en",
+      "region": "US",
+      "exchange": "NASDAQ",
+      "sector": "Internet Services",
+      "headline": "GOOGL News, Earnings, AI Summary & Live Feed",
+      "description": "Alphabet (GOOGL) news in real time. SEC filings, search revenue, YouTube, Google Cloud, Waymo, AI products. Free Basic tier.",
+      "intro": "GOOGL is the parent of Google. Search, YouTube, Google Cloud, and Other Bets (Waymo) are the segments.",
+      "drivers": [
+        ["🔍 Search revenue", "60%+ of revenue. AI search disruption is the bear narrative."],
+        ["📺 YouTube ads", "Highest-margin growth segment."],
+        ["☁️ Google Cloud", "Third-place cloud player. Growth rate vs Azure is key."],
+        ["⚖️ Antitrust", "DOJ search monopoly case, Play Store cases. Binary outcomes."]
+      ],
+      "guide_intro": "GOOGL is the search/ads bellwether. Search revenue + AI disruption narrative dominate.",
+      "key_events": [
+        "Quarterly earnings (after-hours)",
+        "Google I/O developer conference (May)",
+        "Antitrust case rulings",
+        "Search algorithm updates",
+        "YouTube TV pricing"
+      ],
+      "related_seo": [
+        ["/us-stock-market-news", "US Stock Market News"],
+        ["/ai-earnings-call-summary", "AI Earnings Summary"],
+        ["/after-hours-earnings-tracker", "After-Hours Earnings"],
+        ["/sec-edgar-live-alerts", "SEC EDGAR Alerts"]
+      ]
+    },
+    {
+      "symbol": "META",
+      "name": "Meta Platforms",
+      "lang": "en",
+      "region": "US",
+      "exchange": "NASDAQ",
+      "sector": "Internet Services",
+      "headline": "META News, Earnings, AI Summary & Live Feed",
+      "description": "Meta Platforms (META) news in real time. SEC filings, ad revenue, Reels growth, AI capex, Reality Labs losses. Free Basic tier.",
+      "intro": "META owns Facebook, Instagram, WhatsApp, and Threads. Ad revenue is ~98% of total; AI capex is the cost story.",
+      "drivers": [
+        ["📱 Ad revenue growth", "Top-line metric. Reels monetization, AI ad targeting."],
+        ["💸 Capex on AI", "$60-80B annual capex on AI infrastructure. Major bear narrative."],
+        ["🥽 Reality Labs losses", "$15B+ annual operating losses. Visibility on profitability is contentious."],
+        ["📊 DAUs / engagement", "Daily active users across the family of apps."]
+      ],
+      "guide_intro": "META is the social ads bellwether. Ad revenue + capex restraint are the two earnings questions every quarter.",
+      "key_events": [
+        "Quarterly earnings (after-hours)",
+        "Connect developer conference (September)",
+        "Reels monetization milestones",
+        "AI product launches",
+        "Antitrust case rulings"
+      ],
+      "related_seo": [
+        ["/us-stock-market-news", "US Stock Market News"],
+        ["/ai-earnings-call-summary", "AI Earnings Summary"],
+        ["/after-hours-earnings-tracker", "After-Hours Earnings"],
+        ["/sec-edgar-live-alerts", "SEC EDGAR Alerts"]
+      ]
+    },
+    {
+      "symbol": "AMZN",
+      "name": "Amazon",
+      "lang": "en",
+      "region": "US",
+      "exchange": "NASDAQ",
+      "sector": "E-commerce / Cloud",
+      "headline": "AMZN News, Earnings, AI Summary & Live Feed",
+      "description": "Amazon (AMZN) news in real time. SEC filings, AWS growth, retail margins, advertising, Prime. Free Basic tier.",
+      "intro": "AMZN runs three businesses: AWS (cloud), e-commerce, and advertising. Each has its own catalyst stream.",
+      "drivers": [
+        ["☁️ AWS growth rate", "Largest profit contributor. Growth deceleration is bear narrative."],
+        ["📦 Retail margin", "Operating margin in North America retail. Fulfillment cost trajectory."],
+        ["💰 Advertising", "Fastest-growing high-margin segment."],
+        ["🎬 Prime subscriber growth", "Engagement driver across the ecosystem."]
+      ],
+      "guide_intro": "AMZN is three businesses. AWS growth + retail margin trajectory are the two earnings questions.",
+      "key_events": [
+        "Quarterly earnings (after-hours)",
+        "Prime Day (July)",
+        "re:Invent AWS conference (December)",
+        "Holiday quarter (Q4 results in February)",
+        "Same-day delivery expansion announcements"
+      ],
+      "related_seo": [
+        ["/us-stock-market-news", "US Stock Market News"],
+        ["/ai-earnings-call-summary", "AI Earnings Summary"],
+        ["/after-hours-earnings-tracker", "After-Hours Earnings"],
+        ["/sec-edgar-live-alerts", "SEC EDGAR Alerts"]
+      ]
+    },
+    {
+      "symbol": "AMD",
+      "name": "Advanced Micro Devices",
+      "lang": "en",
+      "region": "US",
+      "exchange": "NASDAQ",
+      "sector": "Semiconductors",
+      "headline": "AMD News, Earnings, AI Summary & Live Feed",
+      "description": "AMD news in real time. SEC filings, MI300 ramp, server CPU share, gaming GPU, AI accelerator competition vs NVDA. Free Basic tier.",
+      "intro": "AMD competes with NVIDIA in data center accelerators and Intel in server CPUs. The MI300/MI350 ramp is the AI catalyst story.",
+      "drivers": [
+        ["⚡ Data center AI ramp", "MI300/MI350 revenue from hyperscalers. NVDA's competitive position."],
+        ["🖥️ Server CPU share", "EPYC vs Intel Xeon. Share gains in cloud."],
+        ["🎮 Gaming GPU", "Console + retail PC gaming."],
+        ["📊 Gross margin trajectory", "Product mix shift to AI accelerators expands margin."]
+      ],
+      "guide_intro": "AMD is the #2 AI accelerator play. MI300 ramp is the catalyst; server CPU share is the cash cow.",
+      "key_events": [
+        "Quarterly earnings (after-hours)",
+        "NVDA earnings (sets sympathy direction)",
+        "Hyperscaler capex guides",
+        "Computex conference (June)",
+        "Analyst rating changes"
+      ],
+      "related_seo": [
+        ["/us-stock-market-news", "US Stock Market News"],
+        ["/ai-earnings-call-summary", "AI Earnings Summary"],
+        ["/after-hours-earnings-tracker", "After-Hours Earnings"],
+        ["/sec-edgar-live-alerts", "SEC EDGAR Alerts"]
+      ]
+    },
+    {
+      "symbol": "NFLX",
+      "name": "Netflix",
+      "lang": "en",
+      "region": "US",
+      "exchange": "NASDAQ",
+      "sector": "Streaming",
+      "headline": "NFLX News, Earnings, AI Summary & Live Feed",
+      "description": "Netflix (NFLX) news in real time. SEC filings, subscriber growth, ad tier, password sharing crackdown, content slate. Free Basic tier.",
+      "intro": "NFLX is the global streaming leader. Subscriber growth and ARPU expansion via ad tier dominate the story.",
+      "drivers": [
+        ["📺 Subscriber growth", "Net adds per quarter. Ad-supported tier driving incremental subs."],
+        ["💰 ARPU expansion", "Price hikes + ad tier monetization."],
+        ["🎬 Content slate", "Major releases (e.g. Squid Game, Stranger Things)."],
+        ["💸 Free cash flow", "Reinvestment in content vs FCF generation."]
+      ],
+      "guide_intro": "NFLX is the streaming leader. Sub growth + ARPU + FCF are the three earnings questions.",
+      "key_events": [
+        "Quarterly earnings (after-hours)",
+        "Major content launches",
+        "Price increase announcements",
+        "Live sports rights announcements",
+        "Competitive launches (Disney+, Max, etc.)"
+      ],
+      "related_seo": [
+        ["/us-stock-market-news", "US Stock Market News"],
+        ["/ai-earnings-call-summary", "AI Earnings Summary"],
+        ["/after-hours-earnings-tracker", "After-Hours Earnings"],
+        ["/sec-edgar-live-alerts", "SEC EDGAR Alerts"]
+      ]
+    },
+    {
+      "symbol": "AVGO",
+      "name": "Broadcom",
+      "lang": "en",
+      "region": "US",
+      "exchange": "NASDAQ",
+      "sector": "Semiconductors",
+      "headline": "AVGO News, Earnings, AI Summary & Live Feed",
+      "description": "Broadcom (AVGO) news in real time. SEC filings, custom ASIC revenue, VMware integration, networking chip share. Free Basic tier.",
+      "intro": "AVGO designs custom AI ASICs for hyperscalers (Google TPUs, Meta MTIA) and dominates networking silicon. Acquired VMware.",
+      "drivers": [
+        ["🧠 Custom AI ASIC revenue", "TPU manufacturing for Google, MTIA for Meta. Multi-year visibility."],
+        ["🌐 Networking silicon", "Tomahawk switches. Dominant share in hyperscaler networking."],
+        ["💻 VMware integration", "Synergy realization, subscription transition."],
+        ["💰 Dividends", "Aristocrat. Annual dividend hikes."]
+      ],
+      "guide_intro": "AVGO is the picks-and-shovels AI play. Custom ASIC + networking + VMware are the three engines.",
+      "key_events": [
+        "Quarterly earnings (after-hours)",
+        "Hyperscaler capex guides (drive ASIC visibility)",
+        "VMware integration milestones",
+        "Annual dividend hike",
+        "M&A announcements"
+      ],
+      "related_seo": [
+        ["/us-stock-market-news", "US Stock Market News"],
+        ["/ai-earnings-call-summary", "AI Earnings Summary"],
+        ["/after-hours-earnings-tracker", "After-Hours Earnings"],
+        ["/sec-edgar-live-alerts", "SEC EDGAR Alerts"]
+      ]
+    },
+    {
+      "symbol": "JPM",
+      "name": "JPMorgan",
+      "lang": "en",
+      "region": "US",
+      "exchange": "NYSE",
+      "sector": "Banks",
+      "headline": "JPM News, Earnings, AI Summary & Live Feed",
+      "description": "JPMorgan (JPM) news in real time. SEC filings, net interest income, credit losses, trading revenue, IBank fees. Free Basic tier.",
+      "intro": "JPM is the largest US bank and the bellwether for US financials. Reports pre-market kicking off earnings season.",
+      "drivers": [
+        ["💵 Net Interest Income (NII)", "Bank's core earnings. Rate environment + loan growth."],
+        ["📊 Credit losses", "Provisions for credit losses. Recession signal."],
+        ["📈 Trading & IBank revenue", "Volatility-sensitive. Capital markets activity."],
+        ["💰 Dividends + buybacks", "Capital returns post-CCAR (annual stress test)."]
+      ],
+      "guide_intro": "JPM is the US bank bellwether. NII + credit + trading are the three earnings questions.",
+      "key_events": [
+        "Quarterly earnings (pre-market, kicks off earnings season)",
+        "CCAR results (June)",
+        "Fed meeting (rate environment)",
+        "Investor day",
+        "Analyst day"
+      ],
+      "related_seo": [
+        ["/us-stock-market-news", "US Stock Market News"],
+        ["/ai-earnings-call-summary", "AI Earnings Summary"],
+        ["/pre-market-news-feed", "Pre-Market News Feed"],
+        ["/fed-rate-decision-news", "Fed Rate Decisions"]
+      ]
+    },
+    {
+      "symbol": "GME",
+      "name": "GameStop",
+      "lang": "en",
+      "region": "US",
+      "exchange": "NYSE",
+      "sector": "Retail",
+      "headline": "GME News, Earnings, Reddit Sentiment & Live Feed",
+      "description": "GameStop (GME) news in real time. SEC filings, retail sentiment, Reddit mentions, short interest, cash balance. Free Basic tier.",
+      "intro": "GME is the original meme stock. Reddit sentiment, retail mention momentum, and short interest are the catalysts that matter most.",
+      "drivers": [
+        ["🦍 Reddit sentiment", "Mention momentum on r/wallstreetbets is leading indicator."],
+        ["📊 Short interest", "Days-to-cover, borrow rates. Squeeze setups."],
+        ["💵 Cash balance", "Repositioned as cash-rich operator. Acquisition optionality."],
+        ["📦 Quarterly results", "Revenue decline trajectory; operational turnaround."]
+      ],
+      "guide_intro": "GME is meme-driven. Reddit sentiment, short interest, and cash strategy define the trade.",
+      "key_events": [
+        "Quarterly earnings",
+        "Reddit mention spikes",
+        "Short interest data releases (bi-monthly)",
+        "Annual meetings",
+        "M&A / acquisition announcements"
+      ],
+      "related_seo": [
+        ["/reddit-wsb-sentiment-tracker", "Reddit WSB Sentiment"],
+        ["/us-stock-market-news", "US Stock Market News"],
+        ["/sec-edgar-live-alerts", "SEC EDGAR Alerts"],
+        ["/ai-earnings-call-summary", "AI Earnings Summary"]
+      ]
+    },
+    {
+      "symbol": "COIN",
+      "name": "Coinbase",
+      "lang": "en",
+      "region": "US",
+      "exchange": "NASDAQ",
+      "sector": "Crypto / Fintech",
+      "headline": "COIN News, Earnings, AI Summary & Live Feed",
+      "description": "Coinbase (COIN) news in real time. SEC filings, BTC price correlation, trading volumes, staking, regulatory wins/losses. Free Basic tier.",
+      "intro": "COIN is the largest publicly-listed crypto exchange in the US. Beta to BTC and ETH prices is extreme.",
+      "drivers": [
+        ["₿ Bitcoin / Ethereum price", "Trading volumes correlate with crypto price action."],
+        ["⚖️ Regulatory environment", "SEC enforcement actions, court rulings."],
+        ["💎 Staking revenue", "ETH staking, custody fees."],
+        ["🌐 Stablecoin USDC", "Joint venture with Circle. Treasury revenue."]
+      ],
+      "guide_intro": "COIN is the regulated crypto play. BTC price + regulation are the two earnings questions.",
+      "key_events": [
+        "Quarterly earnings (after-hours)",
+        "SEC case rulings",
+        "BTC halving cycles",
+        "Major crypto rally / crash",
+        "Spot ETF flows"
+      ],
+      "related_seo": [
+        ["/bitcoin-news-alerts", "Bitcoin News Alerts"],
+        ["/crypto-news-feed", "Crypto News Feed"],
+        ["/us-stock-market-news", "US Stock Market News"],
+        ["/sec-edgar-live-alerts", "SEC EDGAR Alerts"]
+      ]
+    },
+    {
+      "symbol": "PLTR",
+      "name": "Palantir",
+      "lang": "en",
+      "region": "US",
+      "exchange": "NASDAQ",
+      "sector": "Software",
+      "headline": "PLTR News, Earnings, AI Summary & Live Feed",
+      "description": "Palantir (PLTR) news in real time. SEC filings, AIP traction, gov vs commercial mix, RPO, profitability. Free Basic tier.",
+      "intro": "PLTR is one of the AI software stories. Government contracts (Foundry) plus commercial expansion (AIP) drive the narrative.",
+      "drivers": [
+        ["🤖 AIP traction", "Commercial AI platform — boot camps and customer wins."],
+        ["🏛️ Government contracts", "DoD, intelligence community. Multi-year visibility."],
+        ["💰 Free cash flow", "Profitability path. Rule of 40+."],
+        ["📊 RPO growth", "Remaining performance obligations — leading indicator."]
+      ],
+      "guide_intro": "PLTR is AI-narrative software. AIP commercial traction + government baseline + profitability drive it.",
+      "key_events": [
+        "Quarterly earnings (after-hours)",
+        "Major government contract awards",
+        "AIP boot camp announcements",
+        "Lock-up expirations (historical)",
+        "Index inclusion events"
+      ],
+      "related_seo": [
+        ["/us-stock-market-news", "US Stock Market News"],
+        ["/ai-earnings-call-summary", "AI Earnings Summary"],
+        ["/after-hours-earnings-tracker", "After-Hours Earnings"],
+        ["/reddit-wsb-sentiment-tracker", "Reddit WSB Sentiment"]
+      ]
+    },
+    {
+      "symbol": "SMCI",
+      "name": "Super Micro Computer",
+      "lang": "en",
+      "region": "US",
+      "exchange": "NASDAQ",
+      "sector": "Hardware",
+      "headline": "SMCI News, Earnings, AI Summary & Live Feed",
+      "description": "Super Micro (SMCI) news in real time. SEC filings, server revenue, NVDA partnership, liquid cooling, accounting governance. Free Basic tier.",
+      "intro": "SMCI is one of the leading AI server builders. NVDA GPU integration partnership is the primary driver; governance has been the bear case.",
+      "drivers": [
+        ["🖥️ Server revenue", "Build cycle tied to NVDA GPU availability."],
+        ["💧 Liquid cooling", "Differentiated capability for high-density AI racks."],
+        ["📋 Accounting governance", "Historical concerns; auditor changes."],
+        ["🔗 NVDA partnership", "Allocation of NVDA GPUs is the binary catalyst."]
+      ],
+      "guide_intro": "SMCI is leveraged NVDA play with idiosyncratic governance risk. Revenue surge + 10-Q timing are key.",
+      "key_events": [
+        "Quarterly earnings",
+        "10-Q / 10-K filings (governance focus)",
+        "NVDA earnings (sympathy)",
+        "Liquid cooling announcements",
+        "Customer wins (hyperscalers)"
+      ],
+      "related_seo": [
+        ["/us-stock-market-news", "US Stock Market News"],
+        ["/ai-earnings-call-summary", "AI Earnings Summary"],
+        ["/sec-edgar-live-alerts", "SEC EDGAR Alerts"],
+        ["/reddit-wsb-sentiment-tracker", "Reddit WSB Sentiment"]
+      ]
+    }
+  ]
+}

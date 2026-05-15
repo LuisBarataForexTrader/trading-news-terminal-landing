@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TNT Widget Preview</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%;overflow:hidden;background:#0a0c0f;font-family:'Inter',-apple-system,sans-serif;color:#f0f4f8}
+.widget{display:flex;flex-direction:column;height:100%;overflow:hidden}
+.widget-header{display:flex;align-items:center;gap:8px;padding:10px 14px;background:#0d1118;border-bottom:1px solid #1c2535;flex-shrink:0}
+.widget-dot{width:6px;height:6px;border-radius:50%;background:#00d4ff;animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
+.widget-title{font-size:11px;font-weight:700;letter-spacing:0.08em;color:#00d4ff;text-transform:uppercase}
+.widget-live{font-size:9px;font-weight:600;color:#5a7a96;margin-left:auto;letter-spacing:0.06em}
+.news-list{flex:1;overflow-y:auto;padding:6px 0}
+.news-list::-webkit-scrollbar{width:3px}
+.news-list::-webkit-scrollbar-track{background:transparent}
+.news-list::-webkit-scrollbar-thumb{background:#1c2535;border-radius:2px}
+.news-item{padding:10px 14px;border-bottom:1px solid rgba(28,37,53,0.6);cursor:pointer;transition:background .15s;display:flex;flex-direction:column;gap:4px}
+.news-item:hover{background:rgba(0,212,255,0.03)}
+.news-meta{display:flex;align-items:center;gap:6px}
+.impact{font-size:8px;font-weight:800;letter-spacing:0.08em;padding:2px 6px;border-radius:2px;text-transform:uppercase;flex-shrink:0}
+.impact.high{background:rgba(255,59,92,0.12);color:#ff3b5c;border:1px solid rgba(255,59,92,0.25)}
+.impact.medium{background:rgba(245,158,11,0.1);color:#f59e0b;border:1px solid rgba(245,158,11,0.2)}
+.impact.low{background:rgba(16,185,129,0.08);color:#10b981;border:1px solid rgba(16,185,129,0.18)}
+.asset-tag{font-size:9px;font-weight:600;color:#5a7a96;font-family:'IBM Plex Mono',monospace}
+.news-headline{font-size:12px;font-weight:500;color:#c8d8e8;line-height:1.45;letter-spacing:-0.01em}
+.widget-footer{padding:8px 14px;background:#070910;border-top:1px solid #1c2535;display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
+.widget-footer-brand{font-size:9px;font-weight:700;letter-spacing:0.1em;color:#3a5a76;text-transform:uppercase}
+.widget-footer-brand span{color:#00d4ff}
+.empty{padding:30px;text-align:center;color:#3a5a76;font-size:12px}
+</style>
+</head>
+<body>
+<div class="widget">
+  <div class="widget-header">
+    <div class="widget-dot"></div>
+    <div class="widget-title">Market News</div>
+    <div class="widget-live">LIVE</div>
+  </div>
+  <div class="news-list" id="newsList">
+    <div class="empty">Loading...</div>
+  </div>
+  <div class="widget-footer">
+    <div class="widget-footer-brand">Powered by <span>Trading News Terminal</span></div>
+  </div>
+</div>
+<script>
+const BE = 'https://api.tradingnewsterminal.com';
+const params = new URLSearchParams(location.search);
+const topics = (params.get('topics') || '').split(',').filter(Boolean);
+const impact = params.get('impact') || 'all';
+const theme  = params.get('theme') || 'dark';
+
+
+const PLACEHOLDERS = [
+  {impact:'high',assets:['USD','EUR'],title:'Fed signals cautious approach amid inflation uncertainty — markets reprice rate cuts'},
+  {impact:'high',assets:['GOLD','USD'],title:'Gold hits 3-month high as safe-haven demand surges on geopolitical tensions'},
+  {impact:'medium',assets:['EUR','GBP'],title:'ECB Lagarde: inflation trajectory remains on track despite energy volatility'},
+  {impact:'high',assets:['SPX','NDX'],title:'US equities rally as tech earnings beat consensus estimates across the board'},
+  {impact:'medium',assets:['BTC','ETH'],title:'Crypto markets stabilise after regulatory clarity from SEC on digital assets'},
+  {impact:'low',assets:['OIL','USD'],title:'OPEC+ maintains production targets, output discipline holding firm through Q2'},
+  {impact:'medium',assets:['USD','JPY'],title:'BoJ board member signals possible rate adjustment if wage data confirms trend'},
+];
+
+let _retryCount = 0;
+
+async function loadNews() {
+  const list = document.getElementById('newsList');
+  try {
+    const url = BE + '/widget/news?limit=20' + (impact !== 'all' ? '&impact=' + impact : '');
+    const r = await fetch(url, {signal: AbortSignal.timeout(8000)});
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    const data = await r.json();
+    const items = (data.items || []).slice(0, 12);
+    if (!items.length) { renderPlaceholders(); return; }
+    _retryCount = 0;
+    list.innerHTML = items.map(n => renderItem(
+      (n.impact || 'low').toLowerCase(),
+      (n.assets || []).slice(0, 2),
+      n.title || ''
+    )).join('');
+  } catch(e) {
+    _retryCount++;
+    if (_retryCount <= 2) { setTimeout(loadNews, 5000); }
+    renderPlaceholders();
+  }
+}
+
+function renderItem(imp, assets, title) {
+  return `<div class="news-item">
+    <div class="news-meta">
+      <span class="impact ${imp}">${imp.toUpperCase()}</span>
+      ${assets.length ? `<span class="asset-tag">${assets.join(' · ')}</span>` : ''}
+    </div>
+    <div class="news-headline">${title}</div>
+  </div>`;
+}
+
+function renderPlaceholders() {
+  const list = document.getElementById('newsList');
+  list.innerHTML = PLACEHOLDERS.map(p =>
+    renderItem(p.impact, p.assets, p.title)
+  ).join('');
+}
+
+loadNews();
+setInterval(loadNews, 30000);
+</script>
+</body>
+</html>

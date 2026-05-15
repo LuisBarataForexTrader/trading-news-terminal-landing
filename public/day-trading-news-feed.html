@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Day Trading News Feed — Real-Time Intraday Market News</title>
+  <meta name="description" content="Real-time news feed built for day traders: zero-delay wires, live squawk, economic calendar, impact classification. Free to start.">
+  <link rel="canonical" href="https://www.tradingnewsterminal.com/day-trading-news-feed">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512x512.png">
+  <meta property="og:title" content="Day Trading News Feed — Real-Time Intraday Market News">
+  <meta property="og:description" content="Real-time news feed built for day traders: zero-delay wires, live squawk, economic calendar, impact classification. Free to start.">
+  <meta property="og:url" content="https://www.tradingnewsterminal.com/day-trading-news-feed">
+  <meta property="og:image" content="https://www.tradingnewsterminal.com/og-image.png">
+  <meta property="og:type" content="website">
+  <meta name="robots" content="index, follow">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Day Trading News Feed — Real-Time Intraday Market News">
+  <meta name="twitter:description" content="Real-time news feed built for day traders: zero-delay wires, live squawk, economic calendar, impact classification. Free to start.">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Trading News Terminal",
+      "url": "https://www.tradingnewsterminal.com",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "description": "Real-time news feed built for day traders: zero-delay wires, live squawk, economic calendar, impact classification. Free to start.",
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Basic",
+          "price": "0",
+          "priceCurrency": "EUR",
+          "description": "Free tier with delayed news, economic calendar, and limited features."
+        },
+        {
+          "@type": "Offer",
+          "name": "Pro",
+          "price": "40",
+          "priceCurrency": "EUR",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "billingDuration": "P1M"
+          },
+          "description": "Full professional terminal: zero-delay news, squawk box, live TV, all features."
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is the news fast enough for day trading?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "On Pro, yes — seconds from wire to screen. On Basic, there's a small delay (not suitable for scalping, fine for swing setups)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the squawk help while day trading?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolutely — day traders typically have 3–5 windows open. The squawk lets you keep eyes on charts while hearing every market-moving headline."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What about pre-market news?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes — pre-market (04:00 ET+) is fully covered. Asian session news and overnight macro prints all flow into the feed."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I filter for a specific session?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes — keyword alerts can be session-scoped. Set alerts to fire only during specific hours via your device's notification preferences."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Pricing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Basic permanently free (delayed — good for learning). Pro €40/month for real-time (essential for active day trading)."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+  <style>
+  :root {
+    --bg: #0a0e14; --card: #0d1117; --border: #1e2a3a; --text: #e0e8f0; --muted: #8899aa;
+    --accent: #00d4ff; --accent2: #00ff9c; --green: #10b981; --red: #ef4444;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+  header { padding: 20px 0; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: rgba(10,14,20,0.92); backdrop-filter: blur(8px); z-index: 50; }
+  header .container { display: flex; align-items: center; justify-content: space-between; }
+  .nav-logo { display: flex; align-items: center; gap: 10px; color: var(--text); }
+  .nav-logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%); border-radius: 6px; }
+  .nav-logo-text { font-weight: 800; font-size: 17px; letter-spacing: 0.02em; }
+  .nav-logo-text span { color: var(--accent); }
+  .nav-logo-sub { font-size: 10px; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; margin-top: 1px; }
+  .btn { display: inline-block; padding: 11px 22px; border-radius: 6px; font-weight: 700; font-size: 14px; letter-spacing: 0.02em; cursor: pointer; transition: transform 0.15s, box-shadow 0.15s; border: none; }
+  .btn:hover { transform: translateY(-1px); box-shadow: 0 6px 24px rgba(0,212,255,0.2); text-decoration: none; }
+  .btn-primary { background: var(--accent); color: #002030; }
+  .btn-outline { background: transparent; color: var(--text); border: 1px solid var(--border); }
+  .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+  .btn-lg { padding: 14px 28px; font-size: 15px; }
+  .hero { padding: 72px 0 56px; text-align: center; }
+  .hero-badge { display: inline-block; padding: 5px 12px; background: rgba(0,212,255,0.1); border: 1px solid rgba(0,212,255,0.3); color: var(--accent); border-radius: 999px; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 20px; }
+  h1 { font-size: clamp(32px, 5.5vw, 52px); font-weight: 800; line-height: 1.12; margin-bottom: 20px; letter-spacing: -0.02em; }
+  h1 span { color: var(--accent); }
+  .hero-sub { color: var(--muted); font-size: clamp(16px, 2vw, 19px); max-width: 780px; margin: 0 auto 32px; }
+  .hero-ctas { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .price-note { margin-top: 22px; color: var(--muted); font-size: 13px; }
+  .price-note strong { color: var(--text); }
+  section { padding: 56px 0; }
+  section + section { border-top: 1px solid var(--border); }
+  .section-label { display: inline-block; padding: 3px 10px; background: rgba(0,212,255,0.08); border: 1px solid rgba(0,212,255,0.25); color: var(--accent); border-radius: 999px; font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 12px; }
+  h2 { font-size: clamp(22px, 3.5vw, 32px); font-weight: 700; margin-bottom: 16px; color: var(--text); }
+  .section-intro { color: var(--muted); font-size: 17px; margin-bottom: 40px; max-width: 700px; }
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 24px; transition: border-color 0.2s; }
+  .card:hover { border-color: var(--accent); }
+  .card-icon { font-size: 28px; margin-bottom: 14px; }
+  .card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; color: var(--text); }
+  .card p { font-size: 14px; color: var(--muted); line-height: 1.6; }
+  .steps { display: grid; gap: 24px; }
+  .step { display: flex; gap: 20px; align-items: flex-start; }
+  .step-num { min-width: 40px; height: 40px; background: rgba(0,212,255,0.1); border: 1px solid rgba(0,212,255,0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; color: var(--accent); font-size: 16px; }
+  .step-body h3 { font-size: 17px; font-weight: 700; margin-bottom: 6px; }
+  .step-body p { color: var(--muted); font-size: 15px; }
+  .faq { display: grid; gap: 16px; }
+  .faq-item { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px 24px; }
+  .faq-item h3 { font-size: 16px; font-weight: 700; margin-bottom: 10px; color: var(--text); }
+  .faq-item p { font-size: 15px; color: var(--muted); line-height: 1.65; }
+  .guide-content { max-width: 820px; }
+  .guide-content h3 { font-size: 19px; font-weight: 700; margin: 36px 0 12px; color: var(--text); }
+  .guide-content p { font-size: 16px; color: var(--muted); line-height: 1.8; margin-bottom: 16px; }
+  .guide-content ul { margin: 12px 0 20px 22px; }
+  .guide-content li { font-size: 15px; color: var(--muted); line-height: 1.75; margin-bottom: 8px; }
+  .guide-content strong { color: var(--text); }
+  .explore-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
+  .explore-link { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 14px 18px; color: var(--text); font-size: 14px; font-weight: 500; display: flex; align-items: center; gap: 8px; transition: border-color 0.2s, color 0.2s; }
+  .explore-link:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+  .explore-link .arrow { color: var(--accent); font-size: 16px; }
+  .footer-cta { padding: 72px 0; text-align: center; border-bottom: 1px solid var(--border); background: linear-gradient(180deg, var(--bg) 0%, rgba(0,212,255,0.03) 100%); }
+  .footer-cta h2 { font-size: clamp(24px, 4vw, 38px); margin-bottom: 16px; }
+  .footer-cta p { color: var(--muted); font-size: 17px; margin-bottom: 36px; max-width: 560px; margin-left: auto; margin-right: auto; }
+  footer { padding: 28px 0; text-align: center; color: var(--muted); font-size: 13px; }
+  footer a { color: var(--muted); }
+  footer a:hover { color: var(--accent); }
+  .footer-links { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 8px; }
+  .comp-visual { background: #0d1117; border: 1px solid #1e2a3a; border-radius: 10px; overflow: hidden; font-family: monospace; font-size: 13px; margin-top: 20px; }
+  .comp-visual-hdr { background: #111827; padding: 10px 16px; border-bottom: 1px solid #1e2a3a; display: flex; align-items: center; gap: 8px; }
+  .comp-visual-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+  .comp-visual-body { padding: 16px 20px; line-height: 2; color: #556677; }
+  .c-red { color: #ff3d57; } .c-green { color: #00c853; } .c-muted { color: #556677; }
+  @media (max-width: 600px) { .hero { padding: 48px 0 40px; } .hero-ctas { flex-direction: column; align-items: center; } .btn-lg { width: 100%; max-width: 320px; text-align: center; } }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <a href="https://www.tradingnewsterminal.com/?utm_source=seo&utm_medium=organic&utm_campaign=day-trading-news-feed&utm_content=header" class="nav-logo">
+      <div class="nav-logo-icon"></div>
+      <div>
+        <div class="nav-logo-text">Trading <span>News</span> Terminal</div>
+        <div class="nav-logo-sub">Real-time Market Intelligence</div>
+      </div>
+    </a>
+    <a href="https://www.tradingnewsterminal.com/login?plan=trial&utm_source=seo&utm_medium=organic&utm_campaign=day-trading-news-feed&utm_content=header" class="btn btn-primary">Try Free →</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-badge">Workflow</div>
+    <h1>Real-Time <span>Day Trading News Feed</span></h1>
+    <p class="hero-sub">Day trading lives and dies on news speed. Trading News Terminal delivers zero-delay wire headlines, live audio squawk, and an economic calendar with beat/miss signals — the exact toolkit active intraday traders need to catch moves as they happen, not after.</p>
+    <div class="hero-ctas">
+      <a href="https://www.tradingnewsterminal.com/login?plan=trial&utm_source=seo&utm_medium=organic&utm_campaign=day-trading-news-feed&utm_content=hero" class="btn btn-primary btn-lg">Start Free Trial</a>
+      <a href="https://www.tradingnewsterminal.com/signup?utm_source=seo&utm_medium=organic&utm_campaign=day-trading-news-feed&utm_content=hero" class="btn btn-outline btn-lg">Open Free Terminal</a>
+    </div>
+    <p class="price-note">Basic plan is <strong>permanently free</strong> · No credit card required · Pro at <strong>€40/month</strong></p>
+  </div>
+</section>
+
+
+<section>
+  <div class="container">
+    <div class="section-label">What You Get</div>
+    <h2>Why Traders Choose Trading News Terminal</h2>
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon">⚡</div>
+        <h3>Wire-Speed News</h3>
+        <p>Seconds from institutional wire to your screen — no editorial delay, no article lag.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔊</div>
+        <h3>Live Audio Squawk</h3>
+        <p>HIGH-impact headlines read aloud — stay on your charts and react on sound.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📅</div>
+        <h3>Intraday Calendar</h3>
+        <p>Every scheduled release (NFP, CPI, PMIs, Fed speak) with countdown timers + beat/miss signals.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🎯</div>
+        <h3>Impact Filtering</h3>
+        <p>HIGH/MEDIUM/LOW classification lets you filter noise and focus on movers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-label">How It Works</div>
+    <h2>From Sign-Up to Trading Intelligence in 60 Seconds</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <h3>Create your free account</h3>
+          <p>Sign up in under 30 seconds — no credit card required. Basic plan gives you the economic calendar, delayed news feed, and TradingView chart integration immediately.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <h3>Customise your terminal</h3>
+          <p>Select the asset classes you trade, set your impact filter (HIGH/MEDIUM/LOW), and configure squawk preferences. The terminal adapts to your workflow.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <h3>Trade with professional intelligence</h3>
+          <p>Every breaking headline, economic release, and market-moving event flows into your terminal in real time. Upgrade to Pro for zero-delay news, squawk box, live financial TV, and Telegram bot DMs.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="guide-content">
+      <h3>Day trading with real-time news: the informational edge</h3>
+      <p>Day trading — entering and exiting positions within the same trading session — is one of the most information-dependent trading styles. A single economic data release, central bank comment or geopolitical headline can generate 50–200% of a typical day's trading range within minutes. Day traders who receive and interpret news faster than the market have a measurable edge; those who react to news that is already priced in lose money.</p>
+      <p>The professional day trader's news toolkit has three components: a <strong>real-time newswire</strong> (zero-delay headlines), an <strong>economic calendar</strong> (knowing when data releases), and a <strong>squawk box</strong> (verbal announcements of high-impact data at the moment of release).</p>
+
+      <h3>The news trading cycle for day traders</h3>
+      <p>Successful news-based day trading follows a structured approach to each market session:</p>
+      <ul>
+        <li><strong>Pre-market preparation:</strong> Review the day's economic calendar. Identify HIGH-impact releases (NFP, CPI, FOMC, ECB) and their scheduled times. Note prior readings and consensus estimates. Markets will range-trade in the 30–60 minutes before major releases as professional traders reduce risk.</li>
+        <li><strong>News event execution:</strong> At the moment of release, the squawk box delivers the headline number vocally in under 1 second — before most algorithms fully process the full report. The initial move (first 30–60 seconds) is mechanical — fast money reacting to the headline number vs consensus. The secondary move (2–15 minutes) incorporates the full report's details.</li>
+        <li><strong>Post-news session trading:</strong> After major data digestion, markets often trend in the direction of the surprise for 1–4 hours. News flow continues throughout the day — earnings announcements, central bank speakers, geopolitical developments create additional volatility pockets.</li>
+      </ul>
+
+      <h3>Key high-impact news events for day traders</h3>
+      <p>Ranked by typical intraday volatility generated:</p>
+      <ul>
+        <li><strong>FOMC rate decision + Powell press conference:</strong> Single most volatile scheduled event. EUR/USD can move 100–300 pips from decision to press conference end. S&P 500 can move 1–3% intraday.</li>
+        <li><strong>NFP (Non-Farm Payrolls):</strong> First Friday of month, 08:30 ET. Trading volume triples in the minutes following release. Squawk box is essential for speed.</li>
+        <li><strong>CPI (US Consumer Price Index):</strong> Second Tuesday of month, 08:30 ET. Direct Fed implications — hot CPI = USD rally + equity sell-off; soft CPI = USD weakness + equity rally.</li>
+        <li><strong>ECB rate decision + Lagarde press conference:</strong> First Thursday of relevant months, 14:15/14:45 CET. EUR/USD can move 80–200 pips from statement to press conference close.</li>
+        <li><strong>Flash PMI:</strong> ~22nd of month. Lower-impact but can move markets 20–40 pips if significantly above/below expectations.</li>
+      </ul>
+
+      <h3>Session overlap: the highest-volatility trading window</h3>
+      <p>For day traders, the <strong>London/New York overlap (14:00–17:00 CET)</strong> is the most liquid and volatile window. Both major market centres are active simultaneously, volume is highest, and most US economic data releases fall within or just before this window. Spreads narrow, execution is cleaner and trend moves are more sustained than in single-market sessions.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-label">Frequently Asked Questions</div>
+    <h2>Common Questions</h2>
+    <div class="faq">
+      <div class="faq-item">
+        <h3>Is the news fast enough for day trading?</h3>
+        <p>On Pro, yes — seconds from wire to screen. On Basic, there's a small delay (not suitable for scalping, fine for swing setups).</p>
+      </div>
+      <div class="faq-item">
+        <h3>Does the squawk help while day trading?</h3>
+        <p>Absolutely — day traders typically have 3–5 windows open. The squawk lets you keep eyes on charts while hearing every market-moving headline.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What about pre-market news?</h3>
+        <p>Yes — pre-market (04:00 ET+) is fully covered. Asian session news and overnight macro prints all flow into the feed.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Can I filter for a specific session?</h3>
+        <p>Yes — keyword alerts can be session-scoped. Set alerts to fire only during specific hours via your device's notification preferences.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Pricing?</h3>
+        <p>Basic permanently free (delayed — good for learning). Pro €40/month for real-time (essential for active day trading).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-label">Explore More</div>
+    <h2>Everything in the Trading News Terminal</h2>
+    <div class="explore-grid">
+      <a href="/macro-trading-news" class="explore-link"><span class="arrow">→</span> Macro Trading News</a>
+      <a href="/swing-trading-news" class="explore-link"><span class="arrow">→</span> Swing Trading News</a>
+      <a href="/options-trading-news" class="explore-link"><span class="arrow">→</span> Options Trading News</a>
+      <a href="/economic-calendar" class="explore-link"><span class="arrow">→</span> Economic Calendar</a>
+      <a href="/squawk-box" class="explore-link"><span class="arrow">→</span> Live Squawk Box</a>
+      <a href="/live-financial-tv" class="explore-link"><span class="arrow">→</span> Live Financial TV</a>
+      <a href="/forex-news-feed" class="explore-link"><span class="arrow">→</span> Forex News Feed</a>
+      <a href="/earnings-calendar" class="explore-link"><span class="arrow">→</span> Earnings Calendar</a>
+    </div>
+  </div>
+</section>
+
+<section class="footer-cta">
+  <div class="container">
+    <h2>Start Trading with Professional Intelligence</h2>
+    <p>Create your free account in under 30 seconds — no credit card required. Upgrade to Pro when you need zero-delay news, squawk box, and live financial TV.</p>
+    <div class="hero-ctas">
+      <a href="https://www.tradingnewsterminal.com/login?plan=trial&utm_source=seo&utm_medium=organic&utm_campaign=day-trading-news-feed&utm_content=footer" class="btn btn-primary btn-lg">Start Free Trial</a>
+      <a href="https://www.tradingnewsterminal.com/signup?utm_source=seo&utm_medium=organic&utm_campaign=day-trading-news-feed&utm_content=footer" class="btn btn-outline btn-lg">Open Free Terminal</a>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="container">
+    <div>© Trading News Terminal — real-time market intelligence for professional traders.</div>
+    <div class="footer-links">
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/affiliates">Affiliates</a>
+      <a href="/economic-calendar">Economic Calendar</a>
+    </div>
+  </div>
+</footer>
+
+
+</body>
+</html>

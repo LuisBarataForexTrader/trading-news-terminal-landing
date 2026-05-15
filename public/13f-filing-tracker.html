@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>13F Filing Tracker — Real-Time Institutional Holdings Disclosures from SEC EDGAR</title>
+<meta name="description" content="Real-time 13F filing alerts: institutional managers with $100M+ AUM disclose their quarterly equity holdings. Track Berkshire, Pershing Square, Renaissance, Bridgewater. Free tier.">
+<meta name="keywords" content="13f filing tracker, 13f sec filing, hedge fund holdings tracker, institutional positions tracker, berkshire 13f, pershing square 13f, 13f sec edgar, hedge fund 13f alert, free 13f tracker, whalewisdom alternative">
+<link rel="canonical" href="https://www.tradingnewsterminal.com/13f-filing-tracker">
+<meta name="robots" content="index, follow"><link rel="icon" href="/favicon.ico"><link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><meta name="theme-color" content="#0a0c0f">
+<meta property="og:type" content="website"><meta property="og:url" content="https://www.tradingnewsterminal.com/13f-filing-tracker">
+<meta property="og:title" content="13F Filing Tracker — Institutional Holdings Disclosures Real-Time">
+<meta property="og:description" content="Track hedge fund 13Fs as they hit SEC EDGAR. Berkshire, Pershing Square, Renaissance. Free tier.">
+<meta property="og:image" content="https://www.tradingnewsterminal.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="13F Filing Tracker"><meta name="twitter:description" content="Real-time institutional holdings disclosures from SEC EDGAR."><meta name="twitter:image" content="https://www.tradingnewsterminal.com/og-image.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"SoftwareApplication","name":"Trading News Terminal — 13F Filing Tracker","url":"https://www.tradingnewsterminal.com/13f-filing-tracker","applicationCategory":"FinanceApplication","operatingSystem":"Web Browser","description":"Real-time 13F filing alerts from SEC EDGAR. Track institutional managers with $100M+ AUM disclosing quarterly equity holdings.","offers":[{"@type":"Offer","name":"Basic","price":"0","priceCurrency":"USD"},{"@type":"Offer","name":"Pro Monthly","price":"44","priceCurrency":"USD","billingIncrement":"P1M"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a 13F filing?","acceptedAnswer":{"@type":"Answer","text":"A 13F is a quarterly report filed with the SEC by institutional investment managers with $100M+ in US-listed equity securities under management. It discloses long equity holdings as of the quarter-end date. Filed within 45 days of quarter end. Discloses position size and stock identity but not entry price."}},{"@type":"Question","name":"How fast do 13Fs appear in TNT?","acceptedAnswer":{"@type":"Answer","text":"Within ~15 minutes of being filed with the SEC. We poll the official EDGAR atom feeds every 12 minutes. Note: 13Fs are filed 45 days after the quarter they describe, so the disclosed positions are already 45+ days old."}},{"@type":"Question","name":"Which hedge funds are worth tracking via 13F?","acceptedAnswer":{"@type":"Answer","text":"Concentrated portfolios with strong track records: Berkshire Hathaway (Buffett), Pershing Square (Ackman), Greenlight (Einhorn), Third Point (Loeb), Trian (Peltz), ValueAct, Elliott Management, Starboard Value, Tiger Global, Coatue, Lone Pine. For systematic strategies: Renaissance Technologies, Two Sigma, AQR, Citadel. Avoid following multi-strategy funds with 1000+ positions — too dispersed to signal anything."}},{"@type":"Question","name":"Why are 13F positions 45 days stale?","acceptedAnswer":{"@type":"Answer","text":"SEC rules give institutional managers 45 days after quarter end to file their 13F. The information is therefore inherently lagged. The manager may have sold the position entirely by the time it's disclosed. Use 13Fs for narrative confirmation (what was a manager doing?) not for entry signals (what should I do now?)."}},{"@type":"Question","name":"Are short positions disclosed in 13Fs?","acceptedAnswer":{"@type":"Answer","text":"No. 13F is long-only disclosure. A fund's true net exposure is opaque — a hedge fund could be net short the market even with a long-heavy 13F. Treat 13F as 'what does the manager find interesting on the long side,' not as a complete portfolio snapshot."}},{"@type":"Question","name":"How is this different from WhaleWisdom?","acceptedAnswer":{"@type":"Answer","text":"WhaleWisdom is a dedicated 13F aggregator with deeper historical data and portfolio tracking (~$19/mo). TNT integrates 13Fs into the broader news feed so you see institutional positioning alongside earnings, macro data, and SEC filings — useful for synthesizing the full picture. Both have value; TNT is free for the live feed."}}]}]}</script>
+<style>
+  :root{--bg:#0a0c0f;--card:#0f1218;--border:#1a2230;--text:#e2e8f0;--text-muted:#6b7d92;--muted:#8899aa;--accent:#00d4ff;--purple:#a78bfa;--green:#10b981;--orange:#f59e0b;--yellow:#fbbf24}
+  *{margin:0;padding:0;box-sizing:border-box}body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Inter","Segoe UI",Roboto,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}.container{max-width:1180px;margin:0 auto;padding:0 24px}
+  nav{padding:18px 32px;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(10,12,15,0.92);backdrop-filter:blur(8px);z-index:50;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  .nav-logo{display:flex;align-items:center;gap:12px;color:var(--text)}.nav-logo-icon{width:32px;height:32px;border:1.5px solid var(--accent);display:flex;align-items:center;justify-content:center;flex-shrink:0}.nav-logo-icon::before{content:'';width:10px;height:10px;background:var(--accent);animation:tnt-pulse 2s ease-in-out infinite}@keyframes tnt-pulse{0%,100%{opacity:1}50%{opacity:.4}}
+  .nav-logo-text{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;line-height:1.3}.nav-logo-text span{color:var(--accent)}.nav-logo-sub{font-size:9px;color:var(--text-muted);letter-spacing:.1em;text-transform:uppercase}
+  .btn{display:inline-block;padding:11px 22px;border-radius:6px;font-weight:700;font-size:13px;letter-spacing:.04em;cursor:pointer;transition:all .15s;border:none;text-transform:uppercase}.btn:hover{transform:translateY(-1px);box-shadow:0 6px 24px rgba(0,212,255,.2);text-decoration:none}
+  .btn-primary{background:var(--accent);color:#002030}.btn-outline{background:transparent;color:var(--text);border:1px solid var(--border)}.btn-outline:hover{border-color:var(--accent);color:var(--accent)}.btn-lg{padding:15px 32px;font-size:14px}
+  .hero{padding:84px 0 56px;text-align:center}.topic-badge{display:inline-flex;align-items:center;gap:7px;padding:6px 14px;background:rgba(167,139,250,.1);border:1px solid rgba(167,139,250,.35);color:var(--purple);border-radius:999px;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:24px}
+  h1{font-size:clamp(34px,5.8vw,56px);font-weight:800;line-height:1.08;margin-bottom:22px;letter-spacing:-.025em}h1 span{color:var(--accent)}h1 .sub-line{display:block;font-size:clamp(18px,2.5vw,23px);font-weight:500;color:var(--muted);margin-top:14px}
+  .hero-sub{color:var(--muted);font-size:clamp(16px,2vw,19px);max-width:780px;margin:0 auto 36px}.hero-sub strong{color:var(--text)}.hero-ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .price-note{margin-top:22px;color:var(--muted);font-size:13px}.price-note strong{color:var(--text)}
+  .stats-row{display:flex;justify-content:center;gap:56px;margin-top:48px;flex-wrap:wrap}.stat{text-align:center}.stat-num{font-size:28px;font-weight:800;color:var(--accent);line-height:1}.stat-lbl{font-size:10px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;margin-top:8px;font-weight:600}
+  section{padding:64px 0}section+section{border-top:1px solid var(--border)}
+  .section-label{display:inline-block;padding:4px 12px;background:rgba(0,212,255,.08);border:1px solid rgba(0,212,255,.25);color:var(--accent);border-radius:999px;font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;margin-bottom:14px}
+  h2{font-size:clamp(24px,3.8vw,36px);font-weight:800;margin-bottom:18px;letter-spacing:-.015em;line-height:1.2}.section-intro{color:var(--muted);font-size:17px;margin-bottom:44px;max-width:740px;line-height:1.65}.section-intro strong{color:var(--text)}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}@media(max-width:960px){.cards{grid-template-columns:repeat(2,1fr)}}@media(max-width:620px){.cards{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:26px;transition:all .2s}.card:hover{border-color:var(--accent);transform:translateY(-3px)}.card-icon{font-size:30px;margin-bottom:14px}.card h3{font-size:17px;font-weight:700;margin-bottom:10px}.card p{font-size:14px;color:var(--muted);line-height:1.65}.card .accent{color:var(--accent);font-weight:700}
+  .guide{max-width:860px}.guide h3{font-size:21px;font-weight:700;margin:40px 0 14px;letter-spacing:-.01em}.guide h3:first-child{margin-top:0}.guide p{font-size:16px;color:var(--muted);line-height:1.8;margin-bottom:18px}.guide ul,.guide ol{margin:14px 0 22px 24px}.guide li{font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:10px}.guide strong{color:var(--text);font-weight:600}.guide em{color:var(--accent);font-style:normal;font-weight:600}
+  .guide-callout{background:rgba(0,212,255,.05);border:1px solid rgba(0,212,255,.2);border-radius:8px;padding:20px 24px;margin:22px 0}.guide-callout h4{margin-top:0;color:var(--accent);font-size:14px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px}.guide-callout p{font-size:14px;color:var(--text);margin:0}
+  .faq{display:grid;gap:14px}.faq-item{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:22px 26px}.faq-item h3{font-size:16px;font-weight:700;margin-bottom:10px}.faq-item p{font-size:15px;color:var(--muted);line-height:1.7}
+  .explore-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}.explore-link{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:14px 18px;color:var(--text);font-size:13px;font-weight:500;display:flex;align-items:center;gap:8px;transition:all .2s}.explore-link:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}.explore-link .arrow{color:var(--accent)}
+  .footer-cta{padding:80px 0;text-align:center;border-bottom:1px solid var(--border);background:linear-gradient(180deg,var(--bg) 0%,rgba(0,212,255,.04) 100%)}.footer-cta h2{font-size:clamp(26px,4vw,40px);margin-bottom:16px}.footer-cta p{color:var(--muted);font-size:17px;margin-bottom:36px;max-width:580px;margin:0 auto 36px}
+  footer{padding:28px 0;text-align:center;color:var(--text-muted);font-size:13px}footer a{color:var(--text-muted);margin:0 14px}footer a:hover{color:var(--accent)}.footer-links{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin-top:10px}
+  @media(max-width:720px){nav{padding:16px 18px}.hero{padding:60px 0 44px}.hero-ctas{flex-direction:column;align-items:center}.btn-lg{width:100%;max-width:320px}section{padding:56px 0}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo"><div class="nav-logo-icon"></div><div><div class="nav-logo-text">Trading <span>News</span> Terminal</div><div class="nav-logo-sub">13F Filing Tracker</div></div></a>
+  <a href="https://app.tradingnewsterminal.com/?utm_source=seo&utm_campaign=13f-filing-tracker" class="btn btn-primary">Try Free →</a>
+</nav>
+
+<section class="hero">
+  <div class="container">
+    <div class="topic-badge">🏛️ 13F · Institutional Holdings</div>
+    <h1>Real-Time <span>13F Filing Tracker</span><span class="sub-line">Hedge funds and institutions with $100M+ AUM disclose holdings quarterly</span></h1>
+    <p class="hero-sub">Track Berkshire Hathaway, Pershing Square, Renaissance Technologies, Tiger Global and every other $100M+ manager. <strong>Every 13F surfaced within 15 minutes of filing. Free tier. No paywall.</strong> The institutional positioning data Wall Street pays $19/mo for, integrated free into your news feed.</p>
+    <div class="hero-ctas">
+      <a href="https://app.tradingnewsterminal.com/?utm_source=seo&utm_campaign=13f-filing-tracker&utm_content=hero" class="btn btn-primary btn-lg">Start Free — No Card</a>
+      <a href="#13f-guide" class="btn btn-outline btn-lg">How to Read 13Fs</a>
+    </div>
+    <p class="price-note">13F alerts on the <strong>free Basic plan</strong> · Pro adds historical search across the 13F archive</p>
+    <div class="stats-row">
+      <div class="stat"><div class="stat-num">$100M</div><div class="stat-lbl">AUM trigger threshold</div></div>
+      <div class="stat"><div class="stat-num">45d</div><div class="stat-lbl">SEC reporting lag</div></div>
+      <div class="stat"><div class="stat-num">$0</div><div class="stat-lbl">For 13F alerts</div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-label">What 13F Discloses</div>
+    <h2>The institutional positioning layer</h2>
+    <p class="section-intro">13F is the quarterly required disclosure of long US-listed equity holdings by institutional managers with $100M+ AUM. Every hedge fund, mutual fund, pension fund, and sovereign wealth fund managing US equities files one.</p>
+    <div class="cards">
+      <div class="card"><div class="card-icon">📊</div><h3>Position size</h3><p>Number of shares held + market value at quarter-end. Lets you size the conviction (1% of portfolio vs 10%).</p></div>
+      <div class="card"><div class="card-icon">📈</div><h3>Quarter-over-quarter changes</h3><p>New positions, exited positions, sizes increased/decreased. Most useful signal — what the manager did during the quarter.</p></div>
+      <div class="card"><div class="card-icon">🎯</div><h3>Top holdings concentration</h3><p>For concentrated managers (Berkshire, Pershing Square), top 5 holdings often represent 60%+ of the portfolio.</p></div>
+      <div class="card"><div class="card-icon">⚠️</div><h3>What's NOT disclosed</h3><p>Short positions, currency hedges, bond holdings, options/derivatives, foreign listings. 13F is long-only US equities.</p></div>
+      <div class="card"><div class="card-icon">⏰</div><h3>45-day reporting lag</h3><p>Positions are quarter-end dated but filed up to 45 days later. The manager may have already exited by the time you see it.</p></div>
+      <div class="card"><div class="card-icon">🔍</div><h3>Pattern recognition</h3><p>Multiple managers buying the same name same quarter = consensus thesis. Concentrated managers reducing top positions = lost conviction.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="13f-guide">
+  <div class="container">
+    <div class="section-label">The Guide</div>
+    <h2>How to read 13F filings the way institutional analysts do</h2>
+    <p class="section-intro">A framework for converting 13F filings into actionable signals — without falling into the trap of treating stale positions as entry signals.</p>
+    <div class="guide">
+
+      <h3>The 13F filing structure</h3>
+      <p>A 13F (specifically the 13F-HR variant for the holdings report) discloses:</p>
+      <ul>
+        <li><strong>List of holdings</strong> — each long equity position by CUSIP, share class, and ticker.</li>
+        <li><strong>Number of shares</strong> — exact position size in shares.</li>
+        <li><strong>Market value</strong> — calculated at quarter-end closing price.</li>
+        <li><strong>Investment discretion</strong> — sole, shared, or none (for managers who run multiple sub-accounts).</li>
+        <li><strong>Voting authority</strong> — sole, shared, or none.</li>
+      </ul>
+      <p>Note what's missing: <em>entry price</em> (we don't know what the manager paid), <em>cost basis</em>, <em>short positions</em>, <em>options/derivatives</em>, <em>non-US listings</em>, <em>cash holdings</em>, <em>bond holdings</em>. 13F is a deliberately narrow disclosure — long-only US equities at quarter-end.</p>
+
+      <h3>Which managers are worth tracking</h3>
+      <p>Most active retail traders waste time following too many funds. The signal-to-noise ratio drops rapidly past the top 20 most-followed managers. Useful taxonomy:</p>
+      <h3>Concentrated value managers</h3>
+      <ul>
+        <li><strong>Berkshire Hathaway</strong> (Warren Buffett) — 50+ positions but top 10 represent ~85% of portfolio. Long horizons, rare changes. Apple is ~50% of equity portfolio. Watch top-10 rebalances closely.</li>
+        <li><strong>Pershing Square</strong> (Bill Ackman) — Highly concentrated, 8-12 positions usually. Each is high-conviction. When Ackman exits, it's a signal.</li>
+        <li><strong>Greenlight Capital</strong> (David Einhorn) — Concentrated long/short. 13F shows only long side.</li>
+        <li><strong>ValueAct Capital</strong> — Constructive activist with operational focus. Sticky positions.</li>
+      </ul>
+      <h3>Activist managers</h3>
+      <ul>
+        <li><strong>Elliott Management</strong> (Paul Singer) — Often files 13D activist stakes before they appear in 13F.</li>
+        <li><strong>Starboard Value</strong> (Jeff Smith) — Operational activist. Watch for board-seat campaigns.</li>
+        <li><strong>Third Point</strong> (Dan Loeb) — Event-driven with activist tilts.</li>
+        <li><strong>Trian Fund</strong> (Nelson Peltz) — Constructive activism, longer holds.</li>
+      </ul>
+      <h3>Long/short equity (tech-focused)</h3>
+      <ul>
+        <li><strong>Tiger Global</strong> — Growth and emerging tech. Position turnover higher than value managers.</li>
+        <li><strong>Coatue Management</strong> — Tech, similar profile.</li>
+        <li><strong>Lone Pine</strong> — Tech and growth.</li>
+        <li><strong>Whale Rock</strong> — Tech specialist.</li>
+      </ul>
+      <h3>Quantitative / systematic</h3>
+      <ul>
+        <li><strong>Renaissance Technologies</strong> — Medallion is proprietary but RIDA/RIEF show some signal in 13F. Thousands of positions but ranked by conviction signals.</li>
+        <li><strong>Two Sigma</strong>, <strong>AQR Capital</strong>, <strong>Citadel</strong> — Large multi-strategy filings. 13F-only view is partial.</li>
+      </ul>
+      <p>What to skip: multi-strategy mega-funds with 1,000+ positions (the disclosure is too dispersed to signal). Mutual funds (they have specific mandates that drive turnover). Index funds (no signal — they hold what the index demands).</p>
+
+      <h3>Patterns that signal real conviction</h3>
+      <p>Three reading patterns that work consistently:</p>
+      <ol>
+        <li><strong>New 5%+ positions in concentrated managers.</strong> When Buffett or Ackman adds a brand-new position that's 5%+ of portfolio, it's a deliberate bet. They've done extensive work. Look at the company's recent 8-K filings and 10-Ks for the thesis context.</li>
+        <li><strong>Consensus buys across multiple managers.</strong> If 3-5 top-tier managers all initiate the same position in the same quarter, that's a cluster signal. Often precedes the broader market catching on.</li>
+        <li><strong>Concentrated exits.</strong> When a concentrated value manager fully exits a long-held position, they've lost the thesis. The exit signal is sometimes more useful than the buy signal — the manager has done specific work to conclude the original thesis is broken.</li>
+      </ol>
+
+      <h3>Patterns that are noise, not signal</h3>
+      <ul>
+        <li><strong>Position-size rebalances.</strong> A manager trimming 10% of their top position is often just risk management, not a change in conviction.</li>
+        <li><strong>Small additions to large positions.</strong> Berkshire adding 0.1% to its Apple stake means nothing.</li>
+        <li><strong>"Closet index" managers.</strong> Managers whose 13F looks like the S&amp;P 500 weighted by market cap. Their position changes are flow-driven, not view-driven.</li>
+      </ul>
+
+      <div class="guide-callout">
+        <h4>How TNT surfaces 13F filings</h4>
+        <p>Every 13F filed with SEC EDGAR appears in the news feed within ~15 minutes. Headline format: <em>"SEC 13F · CIK 0001067983 (BERKSHIRE HATHAWAY INC) — Institutional Holdings Report"</em>. Click the headline to open the filing on SEC.gov where you can see the full holdings list. We don't pre-parse the holdings into a queryable database (that's WhaleWisdom's product) — we surface the filing event itself integrated into your news feed alongside related news, earnings, and macro data.</p>
+      </div>
+
+      <h3>Combining 13F with other SEC filings</h3>
+      <p>The most powerful 13F reads come from combining with other filings on the same name:</p>
+      <ul>
+        <li><strong>13D + 13F combo.</strong> Activist manager files 13D (5%+ activist stake) → next quarter's 13F shows the position formally + any changes. Confirms whether they've been adding/trimming.</li>
+        <li><strong>Insider Form 4 + 13F combo.</strong> Insider selling while institutional holders adding = mixed signal but interesting. Insider buying alongside institutional accumulation = consensus.</li>
+        <li><strong>8-K + 13F combo.</strong> Company announces strategic catalyst (M&amp;A, restructuring) via 8-K → next quarter's 13F shows which institutions believed the thesis.</li>
+      </ul>
+
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-label">FAQ</div>
+    <h2>Frequently asked questions</h2>
+    <div class="faq">
+      <div class="faq-item"><h3>What is a 13F filing?</h3><p>A 13F is a quarterly report filed with the SEC by institutional investment managers with $100M+ in US-listed equity securities under management. It discloses long equity holdings as of the quarter-end date, filed within 45 days of quarter end.</p></div>
+      <div class="faq-item"><h3>How fast do 13Fs appear in TNT?</h3><p>Within ~15 minutes of being filed with the SEC. We poll the official EDGAR atom feeds every 12 minutes.</p></div>
+      <div class="faq-item"><h3>Which hedge funds are worth tracking via 13F?</h3><p>Concentrated portfolios with strong track records: Berkshire, Pershing Square, Greenlight, Third Point, Trian, ValueAct, Elliott, Starboard, Tiger Global, Coatue, Lone Pine. For systematic strategies: Renaissance, Two Sigma, AQR, Citadel. Avoid multi-strategy funds with 1000+ positions.</p></div>
+      <div class="faq-item"><h3>Why are 13F positions 45 days stale?</h3><p>SEC rules give institutional managers 45 days after quarter end to file. The manager may have sold by the time it's disclosed. Use 13Fs for narrative confirmation, not entry signals.</p></div>
+      <div class="faq-item"><h3>Are short positions disclosed in 13Fs?</h3><p>No. 13F is long-only US equities. A fund's true net exposure is opaque.</p></div>
+      <div class="faq-item"><h3>How is this different from WhaleWisdom?</h3><p>WhaleWisdom is a dedicated 13F aggregator with deeper historical data (~$19/mo). TNT integrates 13Fs into the broader news feed so you see institutional positioning alongside earnings, macro data, and SEC filings — useful for synthesizing the full picture. Both have value; TNT is free for the live feed.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-label">Related</div>
+    <h2>More SEC and US equity coverage</h2>
+    <div class="explore-grid">
+      <a href="/sec-edgar-live-alerts" class="explore-link"><span class="arrow">→</span> SEC EDGAR Live Alerts</a>
+      <a href="/8-k-filing-alerts" class="explore-link"><span class="arrow">→</span> 8-K Filing Alerts</a>
+      <a href="/ai-earnings-call-summary" class="explore-link"><span class="arrow">→</span> AI Earnings Call Summary</a>
+      <a href="/reddit-wsb-sentiment-tracker" class="explore-link"><span class="arrow">→</span> Reddit WSB Sentiment</a>
+      <a href="/pre-market-news-feed" class="explore-link"><span class="arrow">→</span> Pre-Market News Feed</a>
+      <a href="/after-hours-earnings-tracker" class="explore-link"><span class="arrow">→</span> After-Hours Earnings</a>
+      <a href="/us" class="explore-link"><span class="arrow">→</span> US Edition</a>
+      <a href="/us-stock-market-news" class="explore-link"><span class="arrow">→</span> US Stock Market News</a>
+      <a href="/earnings-calendar" class="explore-link"><span class="arrow">→</span> Earnings Calendar</a>
+      <a href="/economic-calendar" class="explore-link"><span class="arrow">→</span> Economic Calendar</a>
+      <a href="/fed-rate-decision-news" class="explore-link"><span class="arrow">→</span> Fed Rate Decisions</a>
+      <a href="/macro-trading-news" class="explore-link"><span class="arrow">→</span> Macro Trading News</a>
+    </div>
+  </div>
+</section>
+
+<section class="footer-cta">
+  <div class="container">
+    <h2>Start tracking institutional 13F filings</h2>
+    <p>Free Basic plan includes all SEC form types including 13Fs from Berkshire, Pershing Square, Renaissance, and every other $100M+ manager.</p>
+    <div class="hero-ctas">
+      <a href="https://app.tradingnewsterminal.com/?utm_source=seo&utm_campaign=13f-filing-tracker&utm_content=footer" class="btn btn-primary btn-lg">Open Trading News Terminal →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div>© Trading News Terminal — Real-time 13F institutional holdings tracker</div>
+    <div class="footer-links">
+      <a href="/">Main Site</a><a href="/us">🇺🇸 US Edition</a><a href="/br">🇧🇷 Edição Brasil</a><a href="/terms">Terms</a><a href="/privacy">Privacy</a><a href="/faq">FAQ</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

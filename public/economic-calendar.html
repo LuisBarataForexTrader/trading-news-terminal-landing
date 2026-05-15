@@ -545,7 +545,6 @@
     <div class="section-label" data-i18n="explore_title">Explore Other Features</div>
     <h2 data-i18n="explore.h2">Everything in the Trading News Terminal</h2>
     <div class="explore-grid">
-      <a href="/bloomberg-alternative" class="explore-link"><span class="arrow">→</span> Bloomberg Alternative</a>
       <a href="/forex-news-feed" class="explore-link"><span class="arrow">→</span> Forex News Feed</a>
       <a href="/economic-calendar" class="explore-link"><span class="arrow">→</span> Economic Calendar</a>
       <a href="/squawk-box" class="explore-link"><span class="arrow">→</span> Live Squawk Box</a>
@@ -866,7 +865,7 @@ function setLang(l){document.getElementById('langMenu').style.display='none';_ap
 })();
 // ── SEO Tracking ─────────────────────────────────────────────────────────────
 (function(){
-  var BE='https://trading-news-terminal-backend-production.up.railway.app', PAGE='economic-calendar';
+  var BE='https://api.tradingnewsterminal.com', PAGE='economic-calendar';
   // Visit
   fetch(BE+'/admin/track/seo?event=visit&page='+PAGE,{method:'POST'}).catch(function(){});
   // Click tracking on all data-seo-track CTAs

@@ -15,6 +15,9 @@
 <meta property="og:url" content="https://www.tradingnewsterminal.com/earnings-calendar">
 <meta property="og:image" content="https://www.tradingnewsterminal.com/og-image.png">
 <meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Live Earnings Calendar — EPS Beat/Miss & Revenue Alerts">
+<meta name="twitter:description" content="Live earnings calendar with real-time EPS beat/miss signals, revenue surprises & instant news alerts. Never miss a market-moving earnings release.">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -568,7 +571,6 @@
             <th class="tnt-col">TNT Pro</th>
             <th>Earnings Whispers</th>
             <th>Investing.com</th>
-            <th>Bloomberg</th>
           </tr>
         </thead>
         <tbody>
@@ -577,12 +579,10 @@
             <td class="tnt-col check">✓</td>
             <td class="check">✓</td>
             <td class="check">✓</td>
-            <td class="check">✓</td>
           </tr>
           <tr>
             <td data-i18n="ec_cmp_row2">Live EPS beat/miss color coding</td>
             <td class="tnt-col check">✓</td>
-            <td class="check">✓</td>
             <td class="check">✓</td>
             <td class="check">✓</td>
           </tr>
@@ -591,35 +591,30 @@
             <td class="tnt-col check">✓</td>
             <td class="cross">✗</td>
             <td class="check">✓</td>
-            <td class="check">✓</td>
           </tr>
           <tr>
             <td data-i18n="ec_cmp_row4">Instant integrated news feed</td>
             <td class="tnt-col check">✓</td>
             <td class="cross">✗</td>
             <td class="cross">✗</td>
-            <td class="check">✓</td>
           </tr>
           <tr>
             <td data-i18n="ec_cmp_row5">Live squawk audio alerts</td>
             <td class="tnt-col check">✓</td>
             <td class="cross">✗</td>
             <td class="cross">✗</td>
-            <td class="check">✓</td>
           </tr>
           <tr>
             <td data-i18n="ec_cmp_row6">Zero-delay result delivery</td>
             <td class="tnt-col check">✓</td>
             <td class="cross">✗</td>
             <td class="cross">✗</td>
-            <td class="check">✓</td>
           </tr>
           <tr>
             <td data-i18n="ec_cmp_price">Price (monthly)</td>
             <td class="tnt-col" style="color: var(--accent);">€40</td>
             <td>Free / $9.99+</td>
             <td>Free / $34.99+</td>
-            <td>$2,000+</td>
           </tr>
         </tbody>
       </table>
@@ -663,7 +658,6 @@
     <div class="section-label" data-i18n="ec_explore_label">Explore</div>
     <h2 class="section-title" data-i18n="explore_title">Explore Other Features</h2>
     <div class="cross-links">
-      <a href="/bloomberg-alternative" class="cross-link">Bloomberg Alternative</a>
       <a href="/forex-news-feed" class="cross-link">Forex News Feed</a>
       <a href="/economic-calendar" class="cross-link">Economic Calendar</a>
       <a href="/squawk-box" class="cross-link">Squawk Box</a>
@@ -949,7 +943,7 @@ function setLang(l){document.getElementById('langMenu').style.display='none';_ap
 })();
 // ── SEO Tracking ─────────────────────────────────────────────────────────────
 (function(){
-  var BE='https://trading-news-terminal-backend-production.up.railway.app', PAGE='earnings-calendar';
+  var BE='https://api.tradingnewsterminal.com', PAGE='earnings-calendar';
   // Visit
   fetch(BE+'/admin/track/seo?event=visit&page='+PAGE,{method:'POST'}).catch(function(){});
   // Click tracking on all data-seo-track CTAs

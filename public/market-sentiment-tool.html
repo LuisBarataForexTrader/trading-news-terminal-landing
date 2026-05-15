@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Market Sentiment Tool — Real-Time Risk-On / Risk-Off Signal</title>
+  <meta name="description" content="AI-driven market sentiment tool: real-time risk-on/risk-off signal aggregating news, volatility, safe-haven flows. Pro €40/month.">
+  <link rel="canonical" href="https://www.tradingnewsterminal.com/market-sentiment-tool">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512x512.png">
+  <meta property="og:title" content="Market Sentiment Tool — Real-Time Risk-On / Risk-Off Signal">
+  <meta property="og:description" content="AI-driven market sentiment tool: real-time risk-on/risk-off signal aggregating news, volatility, safe-haven flows. Pro €40/month.">
+  <meta property="og:url" content="https://www.tradingnewsterminal.com/market-sentiment-tool">
+  <meta property="og:image" content="https://www.tradingnewsterminal.com/og-image.png">
+  <meta property="og:type" content="website">
+  <meta name="robots" content="index, follow">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Market Sentiment Tool — Real-Time Risk-On / Risk-Off Signal">
+  <meta name="twitter:description" content="AI-driven market sentiment tool: real-time risk-on/risk-off signal aggregating news, volatility, safe-haven flows. Pro €40/month.">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Trading News Terminal",
+      "url": "https://www.tradingnewsterminal.com",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "description": "AI-driven market sentiment tool: real-time risk-on/risk-off signal aggregating news, volatility, safe-haven flows. Pro €40/month.",
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Basic",
+          "price": "0",
+          "priceCurrency": "EUR",
+          "description": "Free tier with delayed news, economic calendar, and limited features."
+        },
+        {
+          "@type": "Offer",
+          "name": "Pro",
+          "price": "40",
+          "priceCurrency": "EUR",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "billingDuration": "P1M"
+          },
+          "description": "Full professional terminal: zero-delay news, squawk box, live TV, all features."
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How is the sentiment score calculated?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Proprietary weighted composite: news tone (AI classification), VIX level, gold/DXY ratio, 10y-2y spread, risk-on currency performance (AUD/JPY). All normalised and blended."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is it reliable for trading?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It's a context tool, not a signal generator — use it for regime confirmation, not trade entry."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How often does it update?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Every 30–60 seconds during market hours, slower overnight when news flow is thin."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I see the historical score?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes — the terminal shows a rolling 24h chart of the score so you can see regime shifts."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is it included in Basic?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pro only — it's a Pro feature at €40/month."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+  <style>
+  :root {
+    --bg: #0a0e14; --card: #0d1117; --border: #1e2a3a; --text: #e0e8f0; --muted: #8899aa;
+    --accent: #00d4ff; --accent2: #00ff9c; --green: #10b981; --red: #ef4444;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+  header { padding: 20px 0; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: rgba(10,14,20,0.92); backdrop-filter: blur(8px); z-index: 50; }
+  header .container { display: flex; align-items: center; justify-content: space-between; }
+  .nav-logo { display: flex; align-items: center; gap: 10px; color: var(--text); }
+  .nav-logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%); border-radius: 6px; }
+  .nav-logo-text { font-weight: 800; font-size: 17px; letter-spacing: 0.02em; }
+  .nav-logo-text span { color: var(--accent); }
+  .nav-logo-sub { font-size: 10px; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; margin-top: 1px; }
+  .btn { display: inline-block; padding: 11px 22px; border-radius: 6px; font-weight: 700; font-size: 14px; letter-spacing: 0.02em; cursor: pointer; transition: transform 0.15s, box-shadow 0.15s; border: none; }
+  .btn:hover { transform: translateY(-1px); box-shadow: 0 6px 24px rgba(0,212,255,0.2); text-decoration: none; }
+  .btn-primary { background: var(--accent); color: #002030; }
+  .btn-outline { background: transparent; color: var(--text); border: 1px solid var(--border); }
+  .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+  .btn-lg { padding: 14px 28px; font-size: 15px; }
+  .hero { padding: 72px 0 56px; text-align: center; }
+  .hero-badge { display: inline-block; padding: 5px 12px; background: rgba(0,212,255,0.1); border: 1px solid rgba(0,212,255,0.3); color: var(--accent); border-radius: 999px; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 20px; }
+  h1 { font-size: clamp(32px, 5.5vw, 52px); font-weight: 800; line-height: 1.12; margin-bottom: 20px; letter-spacing: -0.02em; }
+  h1 span { color: var(--accent); }
+  .hero-sub { color: var(--muted); font-size: clamp(16px, 2vw, 19px); max-width: 780px; margin: 0 auto 32px; }
+  .hero-ctas { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .price-note { margin-top: 22px; color: var(--muted); font-size: 13px; }
+  .price-note strong { color: var(--text); }
+  section { padding: 56px 0; }
+  section + section { border-top: 1px solid var(--border); }
+  .section-label { display: inline-block; padding: 3px 10px; background: rgba(0,212,255,0.08); border: 1px solid rgba(0,212,255,0.25); color: var(--accent); border-radius: 999px; font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 12px; }
+  h2 { font-size: clamp(22px, 3.5vw, 32px); font-weight: 700; margin-bottom: 16px; color: var(--text); }
+  .section-intro { color: var(--muted); font-size: 17px; margin-bottom: 40px; max-width: 700px; }
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 24px; transition: border-color 0.2s; }
+  .card:hover { border-color: var(--accent); }
+  .card-icon { font-size: 28px; margin-bottom: 14px; }
+  .card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; color: var(--text); }
+  .card p { font-size: 14px; color: var(--muted); line-height: 1.6; }
+  .steps { display: grid; gap: 24px; }
+  .step { display: flex; gap: 20px; align-items: flex-start; }
+  .step-num { min-width: 40px; height: 40px; background: rgba(0,212,255,0.1); border: 1px solid rgba(0,212,255,0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; color: var(--accent); font-size: 16px; }
+  .step-body h3 { font-size: 17px; font-weight: 700; margin-bottom: 6px; }
+  .step-body p { color: var(--muted); font-size: 15px; }
+  .faq { display: grid; gap: 16px; }
+  .faq-item { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px 24px; }
+  .faq-item h3 { font-size: 16px; font-weight: 700; margin-bottom: 10px; color: var(--text); }
+  .faq-item p { font-size: 15px; color: var(--muted); line-height: 1.65; }
+  .guide-content { max-width: 820px; }
+  .guide-content h3 { font-size: 19px; font-weight: 700; margin: 36px 0 12px; color: var(--text); }
+  .guide-content p { font-size: 16px; color: var(--muted); line-height: 1.8; margin-bottom: 16px; }
+  .guide-content ul { margin: 12px 0 20px 22px; }
+  .guide-content li { font-size: 15px; color: var(--muted); line-height: 1.75; margin-bottom: 8px; }
+  .guide-content strong { color: var(--text); }
+  .explore-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
+  .explore-link { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 14px 18px; color: var(--text); font-size: 14px; font-weight: 500; display: flex; align-items: center; gap: 8px; transition: border-color 0.2s, color 0.2s; }
+  .explore-link:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+  .explore-link .arrow { color: var(--accent); font-size: 16px; }
+  .footer-cta { padding: 72px 0; text-align: center; border-bottom: 1px solid var(--border); background: linear-gradient(180deg, var(--bg) 0%, rgba(0,212,255,0.03) 100%); }
+  .footer-cta h2 { font-size: clamp(24px, 4vw, 38px); margin-bottom: 16px; }
+  .footer-cta p { color: var(--muted); font-size: 17px; margin-bottom: 36px; max-width: 560px; margin-left: auto; margin-right: auto; }
+  footer { padding: 28px 0; text-align: center; color: var(--muted); font-size: 13px; }
+  footer a { color: var(--muted); }
+  footer a:hover { color: var(--accent); }
+  .footer-links { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 8px; }
+  .comp-visual { background: #0d1117; border: 1px solid #1e2a3a; border-radius: 10px; overflow: hidden; font-family: monospace; font-size: 13px; margin-top: 20px; }
+  .comp-visual-hdr { background: #111827; padding: 10px 16px; border-bottom: 1px solid #1e2a3a; display: flex; align-items: center; gap: 8px; }
+  .comp-visual-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+  .comp-visual-body { padding: 16px 20px; line-height: 2; color: #556677; }
+  .c-red { color: #ff3d57; } .c-green { color: #00c853; } .c-muted { color: #556677; }
+  @media (max-width: 600px) { .hero { padding: 48px 0 40px; } .hero-ctas { flex-direction: column; align-items: center; } .btn-lg { width: 100%; max-width: 320px; text-align: center; } }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <a href="https://www.tradingnewsterminal.com/?utm_source=seo&utm_medium=organic&utm_campaign=market-sentiment-tool&utm_content=header" class="nav-logo">
+      <div class="nav-logo-icon"></div>
+      <div>
+        <div class="nav-logo-text">Trading <span>News</span> Terminal</div>
+        <div class="nav-logo-sub">Real-time Market Intelligence</div>
+      </div>
+    </a>
+    <a href="https://www.tradingnewsterminal.com/login?plan=trial&utm_source=seo&utm_medium=organic&utm_campaign=market-sentiment-tool&utm_content=header" class="btn btn-primary">Try Free →</a>
+  </div>
+</header>
+
+<!-- ── Related Analysis (drives traffic to /blog — added 2026-05-15) ── -->
+<section style="padding:18px 0;background:rgba(168,85,247,0.05);border-bottom:1px solid rgba(168,85,247,0.20);">
+  <div class="container" style="display:flex;align-items:center;gap:18px;flex-wrap:wrap;">
+    <span style="font-size:22px;line-height:1;">📖</span>
+    <div style="flex:1;min-width:240px;">
+      <div style="font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:#c4b5fd;margin-bottom:3px;">Related Analysis</div>
+      <div style="font-size:14px;color:#e2e8f0;line-height:1.5;">Understanding positioning? Read our COT report breakdown for FX, commodities, and equity index futures.</div>
+    </div>
+    <a href="https://app.tradingnewsterminal.com/blog" target="_blank" rel="noopener" style="background:rgba(168,85,247,0.18);border:1px solid rgba(168,85,247,0.55);color:#c4b5fd;padding:9px 18px;border-radius:6px;font-weight:700;font-size:12px;letter-spacing:0.06em;text-transform:uppercase;text-decoration:none;white-space:nowrap;">Read Guides →</a>
+  </div>
+</section>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-badge">Tool</div>
+    <h1>AI <span>Market Sentiment Tool</span></h1>
+    <p class="hero-sub">A real-time risk-on/risk-off dashboard aggregating news tone, volatility indicators, safe-haven asset moves, and macro-data beat/miss patterns — into a single composite sentiment score. Pro feature.</p>
+    <div class="hero-ctas">
+      <a href="https://www.tradingnewsterminal.com/login?plan=trial&utm_source=seo&utm_medium=organic&utm_campaign=market-sentiment-tool&utm_content=hero" class="btn btn-primary btn-lg">Start Free Trial</a>
+      <a href="https://www.tradingnewsterminal.com/signup?utm_source=seo&utm_medium=organic&utm_campaign=market-sentiment-tool&utm_content=hero" class="btn btn-outline btn-lg">Open Free Terminal</a>
+    </div>
+    <p class="price-note">Basic plan is <strong>permanently free</strong> · No credit card required · Pro at <strong>€40/month</strong></p>
+  </div>
+</section>
+
+
+<section>
+  <div class="container">
+    <div class="section-label">What You Get</div>
+    <h2>Why Traders Choose Trading News Terminal</h2>
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon">📊</div>
+        <h3>Composite Score</h3>
+        <p>One number (-100 to +100) summarising market sentiment across news tone, VIX, gold, DXY, bonds.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">⚡</div>
+        <h3>Updates in Real Time</h3>
+        <p>Recalculated as news/data flows in — typically updates every 30–60 seconds.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔄</div>
+        <h3>Risk-On / Risk-Off</h3>
+        <p>Instant visual on the current regime — helpful for trend-following or mean-reversion setup selection.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📰</div>
+        <h3>Backed by News</h3>
+        <p>The score is driven by aggregated news tone, so it reflects the actual narrative, not just price action.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-label">How It Works</div>
+    <h2>From Sign-Up to Trading Intelligence in 60 Seconds</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <h3>Create your free account</h3>
+          <p>Sign up in under 30 seconds — no credit card required. Basic plan gives you the economic calendar, delayed news feed, and TradingView chart integration immediately.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <h3>Customise your terminal</h3>
+          <p>Select the asset classes you trade, set your impact filter (HIGH/MEDIUM/LOW), and configure squawk preferences. The terminal adapts to your workflow.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <h3>Trade with professional intelligence</h3>
+          <p>Every breaking headline, economic release, and market-moving event flows into your terminal in real time. Upgrade to Pro for zero-delay news, squawk box, live financial TV, and Telegram bot DMs.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="guide-content">
+      <h3>Market sentiment: what it is and why it matters</h3>
+      <p>Market sentiment refers to the overall attitude of investors and traders towards a particular financial market, asset class or instrument. It is the aggregate of emotions, expectations and positioning that drives price beyond what fundamental analysis alone can explain. <strong>Understanding sentiment is understanding why markets sometimes move the "wrong" way in response to news</strong> — why good news fails to lift prices, or bad news fails to push them lower.</p>
+      <p>Sentiment operates on multiple timeframes simultaneously: short-term intraday sentiment (driven by news flow and technicals), medium-term positioning (reflecting conviction in a directional narrative), and long-term structural sentiment (investor confidence in an economy, sector or asset class).</p>
+
+      <h3>Measuring market sentiment: the key indicators</h3>
+      <p>Professional traders use a range of quantitative and qualitative sentiment measures:</p>
+      <ul>
+        <li><strong>VIX (CBOE Volatility Index):</strong> The "fear index." Measures implied volatility of S&P 500 options. VIX above 25 = elevated fear, risk-off environment. VIX below 15 = complacency, risk-on. Spikes in VIX often coincide with market bottoms; extreme VIX compression often precedes corrections.</li>
+        <li><strong>Put/Call ratio:</strong> The ratio of put options purchased (bearish bets) to call options purchased (bullish bets). High put/call ratio = excessive bearishness = contrarian bullish signal. Low ratio = excessive bullishness = contrarian bearish signal.</li>
+        <li><strong>CFTC Commitment of Traders (COT) report:</strong> Published weekly, shows net long/short positioning by commercial hedgers, large speculators and small traders across futures markets. Extreme speculative positioning (historically long or short) is a reliable mean-reversion signal.</li>
+        <li><strong>AAII Investor Sentiment Survey:</strong> Weekly survey of retail investor bullish/bearish/neutral percentages. When bullish sentiment exceeds 55% or bearish sentiment exceeds 50%, contrarian signals are historically reliable.</li>
+        <li><strong>Credit spreads:</strong> The spread between corporate bond yields and Treasury yields. Widening spreads signal risk aversion and deteriorating financial conditions — a leading indicator of equity stress.</li>
+      </ul>
+
+      <h3>News flow and sentiment: the feedback loop</h3>
+      <p>News and sentiment interact in a reinforcing feedback loop that experienced traders learn to recognise:</p>
+      <ul>
+        <li><strong>Bullish sentiment makes markets "news-resistant":</strong> In strongly bullish sentiment environments, even marginally disappointing data fails to push markets lower — every dip is bought. This is called "climbing the wall of worry." It ends abruptly when a catalyst breaks the narrative.</li>
+        <li><strong>Bearish sentiment creates overshooting:</strong> In panic-driven bearish sentiment, even neutral or slightly positive news fails to lift markets. Selling is indiscriminate. These periods often create the best buying opportunities for contrarian traders — particularly when VIX is extremely elevated.</li>
+        <li><strong>Sentiment shifts create the biggest moves:</strong> The most violent market moves occur not when news is bad, but when sentiment shifts from bullish to bearish (or vice versa). The 2022 equity sell-off began not when inflation was highest, but when the sentiment shifted from "transitory" to "persistent."</li>
+      </ul>
+
+      <h3>Using sentiment alongside news: a practical framework</h3>
+      <p>Integrating sentiment data with real-time news creates a powerful analytical edge:</p>
+      <ul>
+        <li>When sentiment is extremely bearish AND news begins to improve → strongest buy signals</li>
+        <li>When sentiment is extremely bullish AND news begins to disappoint → strongest sell signals</li>
+        <li>When news and sentiment align (bullish news + bullish sentiment) → trend continuation, not reversal</li>
+        <li>When news and sentiment diverge (bearish news + market fails to fall) → the trend has more fuel, don't fight it</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-label">Frequently Asked Questions</div>
+    <h2>Common Questions</h2>
+    <div class="faq">
+      <div class="faq-item">
+        <h3>How is the sentiment score calculated?</h3>
+        <p>Proprietary weighted composite: news tone (AI classification), VIX level, gold/DXY ratio, 10y-2y spread, risk-on currency performance (AUD/JPY). All normalised and blended.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Is it reliable for trading?</h3>
+        <p>It's a context tool, not a signal generator — use it for regime confirmation, not trade entry.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How often does it update?</h3>
+        <p>Every 30–60 seconds during market hours, slower overnight when news flow is thin.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Can I see the historical score?</h3>
+        <p>Yes — the terminal shows a rolling 24h chart of the score so you can see regime shifts.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Is it included in Basic?</h3>
+        <p>Pro only — it's a Pro feature at €40/month.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-label">Explore More</div>
+    <h2>Everything in the Trading News Terminal</h2>
+    <div class="explore-grid">
+      <a href="/realtime-market-data" class="explore-link"><span class="arrow">→</span> Real-Time Market Data</a>
+      <a href="/stock-news-telegram-bot" class="explore-link"><span class="arrow">→</span> News Telegram Bot</a>
+      <a href="/financial-news-api" class="explore-link"><span class="arrow">→</span> Financial News API</a>
+      <a href="/economic-calendar" class="explore-link"><span class="arrow">→</span> Economic Calendar</a>
+      <a href="/squawk-box" class="explore-link"><span class="arrow">→</span> Live Squawk Box</a>
+      <a href="/live-financial-tv" class="explore-link"><span class="arrow">→</span> Live Financial TV</a>
+      <a href="/forex-news-feed" class="explore-link"><span class="arrow">→</span> Forex News Feed</a>
+      <a href="/earnings-calendar" class="explore-link"><span class="arrow">→</span> Earnings Calendar</a>
+    </div>
+  </div>
+</section>
+
+<section class="footer-cta">
+  <div class="container">
+    <h2>Start Trading with Professional Intelligence</h2>
+    <p>Create your free account in under 30 seconds — no credit card required. Upgrade to Pro when you need zero-delay news, squawk box, and live financial TV.</p>
+    <div class="hero-ctas">
+      <a href="https://www.tradingnewsterminal.com/login?plan=trial&utm_source=seo&utm_medium=organic&utm_campaign=market-sentiment-tool&utm_content=footer" class="btn btn-primary btn-lg">Start Free Trial</a>
+      <a href="https://www.tradingnewsterminal.com/signup?utm_source=seo&utm_medium=organic&utm_campaign=market-sentiment-tool&utm_content=footer" class="btn btn-outline btn-lg">Open Free Terminal</a>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="container">
+    <div>© Trading News Terminal — real-time market intelligence for professional traders.</div>
+    <div class="footer-links">
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/affiliates">Affiliates</a>
+      <a href="/economic-calendar">Economic Calendar</a>
+    </div>
+  </div>
+</footer>
+
+
+</body>
+</html>

@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ — Trading News Terminal</title>
+  <meta name="description" content="Frequently asked questions about Trading News Terminal — Basic vs Pro plans, features, trial, billing, notifications, troubleshooting and account management.">
+  <link rel="canonical" href="https://www.tradingnewsterminal.com/faq">
+  <link rel="icon" href="/favicon.ico">
+  <meta property="og:title" content="FAQ — Trading News Terminal">
+  <meta property="og:description" content="Frequently asked questions about Trading News Terminal.">
+  <meta property="og:url" content="https://www.tradingnewsterminal.com/faq">
+  <meta property="og:type" content="website">
+  <meta name="robots" content="index, follow">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"What's the difference between Basic and Pro?","acceptedAnswer":{"@type":"Answer","text":"Basic (free): HIGH-impact news feed, 24/7 multi-source aggregation, asset filters, economic calendar in 6 languages, Telegram DM alerts. Pro (€40/month): everything in Basic plus sub-second real-time feed, AI Daily Playbook, AI directional arrows on every headline, deep-history asset filter (2,000 results), 7 embedded live financial TV channels, Live Squawk, web push notifications."}},
+    {"@type":"Question","name":"How does the 7-day Pro trial work?","acceptedAnswer":{"@type":"Answer","text":"When you start the trial, you get full Pro access for 7 days. Card details are required upfront so the subscription auto-converts on Day 7. If you cancel before Day 7 from your billing settings, you won't be charged."}},
+    {"@type":"Question","name":"How do I cancel my Pro subscription?","acceptedAnswer":{"@type":"Answer","text":"Open the terminal, click your name (top right), choose Manage Subscription, then Cancel in the Stripe portal. Pro access continues until the end of your billing period, then drops to Basic automatically."}},
+    {"@type":"Question","name":"What is the AI Daily Playbook?","acceptedAnswer":{"@type":"Answer","text":"An educational scenario generator that runs three times per day, producing 3–5 if-this-then-that scenarios per major asset grounded on current price and recent news. Educational only — not financial advice."}},
+    {"@type":"Question","name":"How fast is the news feed?","acceptedAnswer":{"@type":"Answer","text":"Pro users get sub-second delivery on premium wire sources, with average latency of 1-3 seconds from publication. Basic users see a several-minute delay on the feed."}}
+  ]}
+  </script>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--bg:#0a0c0f;--bg2:#0d1117;--card:#111827;--border:#1e2a3a;--border2:#2a3a4d;
+          --accent:#00d4ff;--text:#e0e8f0;--muted:#8899aa;--purple:#a78bfa}
+    html{scroll-behavior:smooth}
+    body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,-apple-system,sans-serif;font-size:15px;line-height:1.6;min-height:100vh}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+    header{position:sticky;top:0;z-index:100;background:rgba(10,12,15,0.97);border-bottom:1px solid #1e2a3a;padding:0 24px;height:56px;display:flex;align-items:center;justify-content:space-between;backdrop-filter:blur(8px)}
+    .nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+    .nav-logo-icon{width:32px;height:32px;border:1.5px solid #00d4ff;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+    .nav-logo-icon::before{content:'';width:10px;height:10px;background:#00d4ff;animation:pulse 2s ease-in-out infinite}
+    @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.4;transform:scale(0.7)}}
+    .nav-logo-text{font-size:13px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;line-height:1.3;color:#e0e8f0}
+    .nav-logo-text span{color:#00d4ff}
+    .nav-logo-sub{font-size:9px;color:#556677;letter-spacing:0.1em;text-transform:uppercase}
+    .btn{display:inline-block;padding:9px 20px;border-radius:6px;font-weight:600;font-size:14px;cursor:pointer;transition:opacity 0.15s;border:none;text-decoration:none}
+    .btn:hover{opacity:0.85;text-decoration:none}
+    .btn-primary{background:var(--accent);color:#0a0c0f}
+    .wrap{max-width:780px;margin:0 auto;padding:56px 24px 96px}
+    h1{font-size:clamp(28px,5vw,42px);font-weight:800;letter-spacing:-.02em;margin-bottom:10px;background:linear-gradient(135deg,#fff,var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.15}
+    .lead{color:var(--muted);font-size:16px;margin-bottom:48px;max-width:600px}
+    .section-label{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin:40px 0 16px}
+    .section-label:first-of-type{margin-top:0}
+    details{background:var(--bg2);border:1px solid var(--border);border-radius:8px;margin-bottom:10px;overflow:hidden;transition:border-color .15s}
+    details[open]{border-color:var(--border2)}
+    summary{padding:16px 20px;font-size:15px;font-weight:600;cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:12px;color:var(--text);transition:background .12s}
+    summary:hover{background:var(--card)}
+    summary::-webkit-details-marker{display:none}
+    summary::after{content:'+';font-family:monospace;font-size:20px;color:var(--muted);transition:transform .2s;flex-shrink:0}
+    details[open] summary::after{content:'−'}
+    details > div{padding:0 20px 18px;color:var(--muted);font-size:14px;line-height:1.7}
+    details > div p{margin-bottom:10px}
+    details > div p:last-child{margin-bottom:0}
+    details code{background:var(--card);padding:1px 6px;border-radius:3px;font-family:monospace;font-size:13px;color:var(--accent)}
+    details a{color:var(--accent)}
+    .tab-bar{display:flex;gap:8px;margin:0 0 32px;padding:6px;background:var(--bg2);border:1px solid var(--border);border-radius:10px;max-width:520px}
+    .tab-btn{flex:1;padding:11px 18px;background:transparent;border:none;color:var(--muted);font-family:inherit;font-size:14px;font-weight:600;cursor:pointer;border-radius:7px;transition:all .15s;letter-spacing:.02em}
+    .tab-btn:hover{color:var(--text)}
+    .tab-btn.active{background:var(--accent);color:#0a0c0f}
+    .faq-section{display:none}
+    .faq-section.active{display:block}
+    @media (max-width:560px){.tab-bar{max-width:none}.tab-btn{padding:10px 12px;font-size:13px}}
+    .contact-box{margin-top:56px;padding:28px;background:linear-gradient(135deg,rgba(0,212,255,.08),rgba(0,212,255,.02));border:1px solid rgba(0,212,255,.22);border-radius:12px;text-align:center}
+    .contact-box h2{font-size:20px;margin-bottom:8px;color:var(--text);font-weight:700}
+    .contact-box p{color:var(--muted);font-size:14px;margin-bottom:18px}
+    .top-back{display:inline-flex;align-items:center;gap:6px;color:var(--muted);text-decoration:none;font-size:13px;margin-bottom:28px;transition:color .15s}
+    .top-back:hover{color:var(--accent);text-decoration:none}
+    @media (max-width:640px){
+      .wrap{padding:36px 18px 72px}
+      summary{padding:14px 16px;font-size:14px}
+      details > div{padding:0 16px 14px}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="https://www.tradingnewsterminal.com/" class="nav-logo">
+    <div class="nav-logo-icon"></div>
+    <div>
+      <div class="nav-logo-text">Trading <span>News</span> Terminal</div>
+      <div class="nav-logo-sub" data-i18n="tagline">Real-time Market Intelligence</div>
+    </div>
+  </a>
+  <div style="display:flex;align-items:center;gap:10px;">
+    <div style="position:relative;" id="langPicker">
+      <button onclick="document.getElementById('langMenu').style.display=document.getElementById('langMenu').style.display==='block'?'none':'block'" style="display:flex;align-items:center;gap:6px;padding:7px 10px;background:#111827;border:1px solid #1e2a3a;color:#e0e8f0;font-size:11px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;cursor:pointer;border-radius:3px;">
+        <img src="https://twemoji.maxcdn.com/v/latest/svg/1f1ec-1f1e7.svg" width="16" height="16" alt="EN" style="vertical-align:middle;"> <span data-i18n="active">EN</span>
+      </button>
+      <div id="langMenu" style="display:none;position:absolute;right:0;top:calc(100% + 4px);background:#111827;border:1px solid #1e2a3a;border-radius:4px;min-width:130px;z-index:200;overflow:hidden;">
+        <a href="#" data-lang="en" onclick="setLang('en');return false;" style="display:flex;align-items:center;gap:8px;padding:9px 14px;color:#00d4ff;font-size:12px;text-decoration:none;background:rgba(0,212,255,0.08);">
+          <img src="https://twemoji.maxcdn.com/v/latest/svg/1f1ec-1f1e7.svg" width="16" height="16" alt="EN"> English ✓
+        </a>
+        <a href="#" data-lang="pt" onclick="setLang('pt');return false;" style="display:flex;align-items:center;gap:8px;padding:9px 14px;color:#8899aa;font-size:12px;text-decoration:none;">
+          <img src="https://twemoji.maxcdn.com/v/latest/svg/1f1f5-1f1f9.svg" width="16" height="16" alt="PT"> Português
+        </a>
+        <a href="#" data-lang="es" onclick="setLang('es');return false;" style="display:flex;align-items:center;gap:8px;padding:9px 14px;color:#8899aa;font-size:12px;text-decoration:none;">
+          <img src="https://twemoji.maxcdn.com/v/latest/svg/1f1ea-1f1f8.svg" width="16" height="16" alt="ES"> Español
+        </a>
+        <a href="#" data-lang="fr" onclick="setLang('fr');return false;" style="display:flex;align-items:center;gap:8px;padding:9px 14px;color:#8899aa;font-size:12px;text-decoration:none;">
+          <img src="https://twemoji.maxcdn.com/v/latest/svg/1f1eb-1f1f7.svg" width="16" height="16" alt="FR"> Français
+        </a>
+        <a href="#" data-lang="de" onclick="setLang('de');return false;" style="display:flex;align-items:center;gap:8px;padding:9px 14px;color:#8899aa;font-size:12px;text-decoration:none;">
+          <img src="https://twemoji.maxcdn.com/v/latest/svg/1f1e9-1f1ea.svg" width="16" height="16" alt="DE"> Deutsch
+        </a>
+        <a href="#" data-lang="it" onclick="setLang('it');return false;" style="display:flex;align-items:center;gap:8px;padding:9px 14px;color:#8899aa;font-size:12px;text-decoration:none;">
+          <img src="https://twemoji.maxcdn.com/v/latest/svg/1f1ee-1f1f9.svg" width="16" height="16" alt="IT"> Italiano
+        </a>
+      </div>
+    </div>
+    <a href="https://app.tradingnewsterminal.com" class="btn btn-primary"><span data-i18n="open_app">Open App →</span></a>
+  </div>
+</header>
+
+<div class="wrap">
+  <a href="https://www.tradingnewsterminal.com/" class="top-back"><span data-i18n="back">← Back to home</span></a>
+  <h1 data-i18n="hero.h1">Frequently Asked Questions</h1>
+  <p class="lead" data-i18n="hero.sub">Quick answers to the most common questions. Can't find what you need? Reach out — we usually reply within a few hours.</p>
+
+  <div class="tab-bar" role="tablist">
+    <button class="tab-btn active" data-tab="general" onclick="setFaqTab('general')" data-i18n="tab.general">General FAQ</button>
+    <button class="tab-btn" data-tab="app" onclick="setFaqTab('app')" data-i18n="tab.app">App FAQ</button>
+  </div>
+
+  <!-- ── General FAQ — trading & markets concepts (default visible) ── -->
+  <section id="general-faq" class="faq-section active">
+    <div class="section-label" data-i18n="g_sec1">Trading &amp; Markets Basics</div>
+
+    <details><summary data-i18n="g1.q">What is a real-time financial news terminal?</summary><div data-i18n-html="g1.a"><p>A financial news terminal aggregates breaking market-moving news from many institutional sources into a single live feed. Unlike a generic news reader, a trading terminal is tuned for speed and signal density — it surfaces what actually moves prices, classifies impact, and integrates with related tools like the economic calendar and live market data.</p><p>Trading News Terminal aggregates 300+ institutional sources, classifies each headline by impact and asset, and delivers updates in real time to the browser, mobile (PWA) and Telegram.</p></div></details>
+
+    <details><summary data-i18n="g2.q">What is an economic calendar and why does it matter?</summary><div data-i18n-html="g2.a"><p>An economic calendar is a scheduled list of upcoming macroeconomic data releases (CPI, NFP, GDP, central bank decisions, etc.) and events. Each entry shows the date/time, country, forecast and previous reading, then the actual figure once published.</p><p>It matters because these releases routinely cause the largest intraday moves in FX, equities and bonds. Traders use the calendar to manage exposure around volatile events, prepare directional thesis ahead of releases, and react when the actual prints beat or miss consensus.</p></div></details>
+
+    <details><summary data-i18n="g3.q">What does HIGH, MEDIUM and LOW impact news mean?</summary><div data-i18n-html="g3.a"><p>Impact tagging classifies how much a piece of news historically moves markets. <b>HIGH</b> = top-tier events that consistently cause large moves (Fed/ECB rate decisions, NFP, CPI, GDP, geopolitical shocks). <b>MEDIUM</b> = secondary releases that move markets in specific contexts (PMI, retail sales, earnings of major caps). <b>LOW</b> = minor data or context news with limited price impact.</p><p>Filtering by HIGH-only is a common workflow for active traders who only want signal, not noise.</p></div></details>
+
+    <details><summary data-i18n="g4.q">How fast does news need to be for active trading?</summary><div data-i18n-html="g4.a"><p>It depends on your timeframe. <b>Scalpers (M1–M5)</b> need sub-second latency — a 10-second delay on a Fed surprise can be the difference between catching a 20-pip move and missing it entirely. <b>Day traders (15m–1h)</b> can usually work with a few seconds of delay. <b>Swing/position traders (4h+)</b> are not latency-sensitive — context matters more than speed.</p><p>The retail-vs-institutional gap: Bloomberg Terminal and direct wire services deliver in under 1 second; quality retail terminals like Trading News Terminal sit in the 1–3 second range; free tools often have minutes of delay.</p></div></details>
+
+    <details><summary data-i18n="g5.q">What is a news squawk box?</summary><div data-i18n-html="g5.a"><p>A squawk is a hands-free voice-reading service that announces breaking headlines aloud as they arrive — historically the audio system used on professional trading floors so traders could keep their eyes on charts while still hearing news. Modern retail equivalents use text-to-speech to read headlines in real time.</p><p>Squawk lets you stay focused on price action while still catching market-moving headlines — useful for traders who watch charts full-screen.</p></div></details>
+
+    <details><summary data-i18n="g6.q">How do central bank announcements affect markets?</summary><div data-i18n-html="g6.a"><p>Central banks (Fed, ECB, BoE, BoJ) set short-term interest rates which directly drive currency strength, bond yields and equity valuations. A more hawkish (rate-hiking) stance typically strengthens that currency, raises bond yields and pressures equities. A more dovish (rate-cutting) stance does the opposite.</p><p>Beyond the rate decision itself, traders parse the accompanying statement, press conference and dot-plot for forward guidance — that's often where the real move happens.</p></div></details>
+
+    <details><summary data-i18n="g7.q">What's the difference between primary sources, wire services and aggregators?</summary><div data-i18n-html="g7.a"><p><b>Primary sources</b> publish original content (Fed, ECB, Treasury, regulatory filings, company press releases). <b>Wire services</b> (Reuters, Bloomberg, AP) employ journalists to break and verify news — these tend to be the fastest and most authoritative. <b>Aggregators</b> consolidate multiple sources into a unified feed and add value through filtering, classification, translation or integration with other tools.</p><p>For active traders, a good workflow combines a wire service or aggregator (for breadth and speed) with direct primary sources (for the actual statement text).</p></div></details>
+
+    <details><summary data-i18n="g8.q">How do macro news affect crypto compared to traditional markets?</summary><div data-i18n-html="g8.a"><p>Crypto has become increasingly correlated with risk assets — Bitcoin and major altcoins typically move with equities on macro shocks (Fed hawkishness pressures both, dovish surprises help both). The correlation is strongest during high-volatility events.</p><p>Crypto-specific news (regulation, ETF flows, large on-chain moves) creates additional moves that don't affect traditional markets. Watching both macro and crypto-native flow is required for crypto traders.</p></div></details>
+  </section>
+
+  <!-- ── App FAQ — Trading News Terminal usage ── -->
+  <section id="app-faq" class="faq-section">
+    <div class="section-label" data-i18n="sec1">Plans &amp; Billing</div>
+
+    <details><summary data-i18n="q1.q">What's the difference between Basic and Pro?</summary><div data-i18n-html="q1.a"><p><b>Basic (free):</b> HIGH-impact news feed, 24/7 multi-source aggregation, asset filters, economic calendar in 6 languages, Telegram DM alerts.</p><p><b>Pro (€40/month):</b> everything in Basic plus sub-second real-time feed, AI Daily Playbook (3–5 educational scenarios with current price grounding), AI directional arrows on every headline (USD ▲ / EUR ▼), 1-click asset filter with deep history (2,000 results vs 500), 7 embedded live financial TV channels, Live Squawk (hands-free voice reading), web push notifications.</p></div></details>
+
+  <details><summary data-i18n="q2.q">How does the 7-day Pro trial work?</summary><div data-i18n-html="q2.a"><p>When you start the trial, you get full Pro access for 7 days. Card details are required upfront so the subscription auto-converts to paid on Day 7. If you cancel before Day 7 from your billing settings, you won't be charged.</p><p>To cancel: open the terminal → click your name (top right) → Manage Subscription → Cancel.</p></div></details>
+
+  <details><summary data-i18n="q3.q">How do I cancel my Pro subscription?</summary><div data-i18n-html="q3.a"><p>Click your name in the top-right corner → "Manage Subscription" → the Stripe customer portal opens → "Cancel subscription". Pro access continues until the end of your current billing period, then auto-downgrades to Basic.</p></div></details>
+
+  <details><summary data-i18n="q4.q">Can I switch between monthly and annual Pro?</summary><div data-i18n-html="q4.a"><p>Yes. From the billing settings you can switch monthly (€40/mo) ↔ annual (€360/yr — saves €120/year vs monthly). Stripe applies a proration credit automatically for any unused days on the previous plan.</p></div></details>
+
+  <details><summary data-i18n="q5.q">Do you offer refunds?</summary><div data-i18n-html="q5.a"><p>The 7-day Pro trial is the refund mechanism — cancel within 7 days at no cost. For longer billing cycles, refunds are evaluated case-by-case. Email <a href="mailto:support@tradingnewsterminal.com">support@tradingnewsterminal.com</a> with your specific situation.</p></div></details>
+
+  <div class="section-label" data-i18n="sec2">Features</div>
+
+  <details><summary data-i18n="q6.q">What is the AI Daily Playbook?</summary><div data-i18n-html="q6.a"><p>An educational scenario generator that runs 3 times per day (early Europe, US open, late US). For each major asset (USD, EUR, GOLD, SPX, BTC, oil), it produces 3–5 if-this-then-that scenarios grounded on the current price + recent news flow.</p><p>The Playbook is <b>educational only</b> — not financial advice. Setups are framed as learning material to help you think about market structure, not as trade signals.</p></div></details>
+
+  <details><summary data-i18n="q7.q">What is the 1-Click Asset Filter?</summary><div data-i18n-html="q7.a"><p>Every headline shows asset chips (USD, EUR, GOLD, SPX, BTC, etc.) on the right side. Click any chip and the feed filters to only show news affecting that asset. Click the same chip again to remove the filter.</p><p>On Pro, the filter triggers a deep-history fetch (2,000 results) so you see weeks of context, not just today. Basic users see the last 500 cached items.</p></div></details>
+
+  <details><summary data-i18n="q8.q">What are the AI directional arrows (USD ▲ / EUR ▼)?</summary><div data-i18n-html="q8.a"><p>For every headline with HIGH or MEDIUM impact, an AI model tags which assets are affected and the direction (▲ bullish / ▼ bearish). For example, "Fed signals more aggressive rate path" might show <code>USD ▲ / SPX ▼ / GOLD ▼</code>.</p><p>This is a tagging layer — not a recommendation. Use it as a quick filter to focus on headlines that move <i>your</i> assets.</p></div></details>
+
+  <details><summary data-i18n="q9.q">What is Live Squawk?</summary><div data-i18n-html="q9.a"><p>Hands-free voice reading of every breaking headline the moment it arrives — like a professional trading desk squawk. Pro-only. Toggle from the squawk button in the header. Voice + speed + asset filter are configurable.</p></div></details>
+
+  <details><summary data-i18n="q10.q">How fast is the news feed?</summary><div data-i18n-html="q10.a"><p><b>Pro users:</b> sub-second delivery on premium wire sources. Average latency 1–3 seconds from source publication.</p><p><b>Basic users:</b> several-minute delay on the feed.</p></div></details>
+
+  <details><summary data-i18n="q11.q">What sources do you aggregate?</summary><div data-i18n-html="q11.a"><p>300+ institutional sources covering global wire services, regulatory filings, central bank announcements, financial press, equity-focused feeds and crypto news.</p><p>Every headline inside the terminal shows source attribution so you can verify provenance per item.</p></div></details>
+
+  <details><summary data-i18n="q11b.q">What does the "TNT Wire" label mean on Pro?</summary><div data-i18n-html="q11b.a"><p>"TNT Wire" is the badge shown on Pro accounts for headlines arriving through our lowest-latency real-time delivery path — public newswire-style channels we aggregate and surface sub-second. It indicates the <b>delivery channel</b>, not proprietary TNT-authored content.</p><p>The original publisher of each individual headline remains traceable internally. Pro users can request the upstream channel name for any specific item by contacting support.</p></div></details>
+
+  <details><summary data-i18n="q12.q">What languages does the Economic Calendar support?</summary><div data-i18n-html="q12.a"><p>EN · PT · ES · FR · DE · IT. 150+ macro indicators translated by hand (not machine-translated). Switch language from the EN/PT/ES/FR/DE/IT toggle in the header.</p></div></details>
+
+  <div class="section-label" data-i18n="sec3">Notifications &amp; Alerts</div>
+
+  <details><summary data-i18n="q13.q">How do I enable Telegram DM alerts?</summary><div data-i18n-html="q13.a"><p>Open the sidebar → "Connect Telegram" → click the link → press Start in the Telegram bot. Your alerts are now linked. Configure which keywords / assets / impact levels to receive in the Alerts settings.</p><p>Pro gets up to 250 DMs/day. Basic gets HIGH-impact alerts with a several-minute delay.</p></div></details>
+
+  <details><summary data-i18n="q14.q">How do I enable web push notifications?</summary><div data-i18n-html="q14.a"><p>Click the bell icon in the header → "Enable push". Your browser will ask for permission. Once granted, you receive browser notifications even when the tab is closed. Works on iOS (16.4+) when added to home screen as PWA. Pro-only feature.</p></div></details>
+
+  <details><summary data-i18n="q15.q">Why am I not receiving Telegram alerts?</summary><div data-i18n-html="q15.a"><p>Check: (1) your Telegram bot is connected (sidebar → "Connect Telegram"); (2) your alert keywords match recent headlines; (3) you haven't muted the bot in Telegram; (4) you're not on Basic with all impact levels disabled.</p><p>If still not working, email <a href="mailto:support@tradingnewsterminal.com">support@tradingnewsterminal.com</a> with your account email — we'll diagnose.</p></div></details>
+
+  <div class="section-label" data-i18n="sec4">Account &amp; Technical</div>
+
+  <details><summary data-i18n="q16.q">How do I change my password?</summary><div data-i18n-html="q16.a"><p>Log out. On the login page click "Forgot password". Enter your email — you'll receive a reset link valid for 1 hour.</p></div></details>
+
+  <details><summary data-i18n="q17.q">I'm not receiving the verification email after signup.</summary><div data-i18n-html="q17.a"><p>Check spam/promotions folder. The email is from <code>noreply@tradingnewsterminal.com</code>. If it's not there after 5 minutes: log in (the verification flow allows a fresh resend) or email <a href="mailto:support@tradingnewsterminal.com">support@tradingnewsterminal.com</a>.</p></div></details>
+
+  <details><summary data-i18n="q18.q">The terminal shows "Connecting…" and never loads. What do I do?</summary><div data-i18n-html="q18.a"><p>Try: (1) hard refresh — <code>Cmd+Shift+R</code> (Mac) / <code>Ctrl+Shift+R</code> (Win); (2) clear cache for tradingnewsterminal.com; (3) check the status banner at the top of the page — if it's red/yellow, we're aware and working on it.</p><p>Still stuck after 5 minutes? Email us — include your browser + OS.</p></div></details>
+
+  <details><summary data-i18n="q19.q">Does it work on mobile?</summary><div data-i18n-html="q19.a"><p>Yes. The terminal is fully responsive. For the best experience on iOS, open <code>app.tradingnewsterminal.com</code> in Safari → Share → Add to Home Screen. This installs it as a PWA with full-screen mode + push notifications.</p></div></details>
+
+  <details><summary data-i18n="q20.q">Is my data private?</summary><div data-i18n-html="q20.a"><p>We don't sell, share or rent user data. Your email, name and trading preferences are stored only for your own use. Payment data is handled by Stripe (PCI-compliant) — we never see your card details. Read more in our <a href="/privacy">Privacy Policy</a>.</p></div></details>
+  </section>
+
+  <div class="contact-box">
+    <h2 data-i18n="contact.h2">Didn't find your answer?</h2>
+    <p data-i18n="contact.desc">Reach out — we reply fast.</p>
+    <a class="btn btn-primary" href="mailto:support@tradingnewsterminal.com"><span data-i18n="contact.btn">Email support</span></a>
+  </div>
+</div>
+
+<script>
+var _tnt = {
+  en: {
+    tagline:'Real-time Market Intelligence', active:'EN', open_app:'Open App →', back:'← Back to home',
+    'hero.h1':'Frequently Asked Questions',
+    'hero.sub':"Quick answers to the most common questions. Can't find what you need? Reach out — we usually reply within a few hours.",
+    'tab.general':'General FAQ', 'tab.app':'App FAQ',
+    g_sec1:'Trading & Markets Basics',
+    sec1:'Plans & Billing', sec2:'Features', sec3:'Notifications & Alerts', sec4:'Account & Technical',
+    'contact.h2':"Didn't find your answer?", 'contact.desc':'Reach out — we reply fast.', 'contact.btn':'Email support',
+  },
+  pt: {
+    tagline:'Inteligência de Mercado em Tempo Real', active:'PT', open_app:'Abrir App →', back:'← Voltar ao início',
+    'hero.h1':'Perguntas Frequentes',
+    'hero.sub':'Respostas rápidas às perguntas mais comuns. Não encontras o que precisas? Contacta — respondemos normalmente em poucas horas.',
+    'tab.general':'FAQ Geral', 'tab.app':'FAQ da App',
+    g_sec1:'Trading e Mercados — Conceitos',
+    'g1.q':'O que é um terminal de notícias financeiras em tempo real?',
+    'g1.a':'<p>Um terminal de notícias financeiras agrega notícias breaking de várias fontes institucionais num único feed ao vivo. Ao contrário de um leitor de notícias genérico, um terminal de trading é optimizado para velocidade e densidade de sinal — destaca o que realmente move preços, classifica impacto, e integra-se com ferramentas relacionadas como calendário económico e dados de mercado ao vivo.</p><p>O Trading News Terminal agrega mais de 300 fontes institucionais, classifica cada headline por impacto e ativo, e entrega actualizações em tempo real no browser, mobile (PWA) e Telegram.</p>',
+    'g2.q':'O que é um calendário económico e porque é importante?',
+    'g2.a':'<p>Um calendário económico é uma lista programada de futuras divulgações de dados macroeconómicos (CPI, NFP, GDP, decisões de bancos centrais, etc.) e eventos. Cada entrada mostra data/hora, país, previsão e leitura anterior, e depois o valor real assim que publicado.</p><p>É importante porque estas divulgações causam regularmente os maiores movimentos intraday em FX, equities e bonds. Traders usam o calendário para gerir exposição em torno de eventos voláteis, preparar tese direcional antes da divulgação, e reagir quando os valores reais batem ou ficam aquém do consenso.</p>',
+    'g3.q':'O que significa impacto HIGH, MEDIUM e LOW?',
+    'g3.a':'<p>A classificação de impacto categoriza quanto uma notícia historicamente move os mercados. <b>HIGH</b> = eventos top-tier que causam consistentemente grandes movimentos (decisões de taxa Fed/BCE, NFP, CPI, GDP, choques geopolíticos). <b>MEDIUM</b> = divulgações secundárias que movem mercados em contextos específicos (PMI, retail sales, resultados de grandes caps). <b>LOW</b> = dados menores ou notícias de contexto com impacto limitado em preço.</p><p>Filtrar apenas HIGH é um workflow comum para traders ativos que só querem sinal, não ruído.</p>',
+    'g4.q':'Quão rápida tem de ser a notícia para trading ativo?',
+    'g4.a':'<p>Depende do timeframe. <b>Scalpers (M1-M5)</b> precisam de latência sub-segundo — um atraso de 10 segundos numa surpresa Fed pode ser a diferença entre apanhar um movimento de 20 pips e perdê-lo completamente. <b>Day traders (15m-1h)</b> normalmente conseguem trabalhar com alguns segundos de atraso. <b>Swing/position traders (4h+)</b> não são sensíveis a latência — contexto importa mais que velocidade.</p><p>Gap retail vs institucional: Bloomberg Terminal e wires diretos entregam abaixo de 1 segundo; terminais retail de qualidade como o Trading News Terminal ficam no intervalo 1-3 segundos; ferramentas grátis têm frequentemente minutos de atraso.</p>',
+    'g5.q':'O que é uma squawk box de notícias?',
+    'g5.a':'<p>Uma squawk é um serviço de leitura por voz hands-free que anuncia headlines breaking em voz alta à medida que chegam — historicamente o sistema de áudio usado nas salas de trading profissionais para que os traders pudessem manter os olhos nos gráficos enquanto ouviam as notícias. Equivalentes retail modernos usam text-to-speech para ler headlines em tempo real.</p><p>A squawk permite-te manter o foco na price action enquanto ainda apanhas headlines que movem o mercado — útil para traders que vêem gráficos em full-screen.</p>',
+    'g6.q':'Como é que anúncios de bancos centrais afectam mercados?',
+    'g6.a':'<p>Bancos centrais (Fed, BCE, BoE, BoJ) definem taxas de juro de curto prazo que conduzem directamente a força da moeda, rendimentos de bonds e valuations de equities. Uma postura mais hawkish (subir taxas) normalmente fortalece essa moeda, sobe rendimentos de bonds e pressiona equities. Uma postura mais dovish (cortar taxas) faz o oposto.</p><p>Para além da decisão de taxa em si, traders analisam o statement, conferência de imprensa e dot-plot para forward guidance — frequentemente é aí que o movimento real acontece.</p>',
+    'g7.q':'Qual é a diferença entre fontes primárias, wire services e agregadores?',
+    'g7.a':'<p><b>Fontes primárias</b> publicam conteúdo original (Fed, BCE, Tesouro, filings regulatórios, press releases de empresas). <b>Wire services</b> (Reuters, Bloomberg, AP) empregam jornalistas para furar e verificar notícias — tendem a ser os mais rápidos e autoritários. <b>Agregadores</b> consolidam várias fontes num feed unificado e adicionam valor através de filtragem, classificação, tradução ou integração com outras ferramentas.</p><p>Para traders ativos, um bom workflow combina um wire service ou agregador (para breadth e velocidade) com fontes primárias diretas (para o texto real do statement).</p>',
+    'g8.q':'Como é que notícias macro afectam crypto vs mercados tradicionais?',
+    'g8.a':'<p>Crypto tornou-se cada vez mais correlacionado com risk assets — Bitcoin e altcoins principais movem-se normalmente com equities em choques macro (hawkishness da Fed pressiona ambos, surpresas dovish ajudam ambos). A correlação é mais forte durante eventos de alta volatilidade.</p><p>Notícias crypto-específicas (regulação, fluxos ETF, movimentos on-chain grandes) criam movimentos adicionais que não afectam mercados tradicionais. Acompanhar fluxo macro e crypto-native é necessário para traders crypto.</p>',
+    sec1:'Planos e Faturação', sec2:'Funcionalidades', sec3:'Notificações e Alertas', sec4:'Conta e Técnico',
+    'q1.q':'Qual é a diferença entre Basic e Pro?',
+    'q1.a':'<p><b>Basic (grátis):</b> feed de notícias HIGH-impact, agregação multi-fonte 24/7, filtros por ativo, calendário económico em 6 línguas, alertas Telegram DM.</p><p><b>Pro (€40/mês):</b> tudo do Basic mais feed em tempo real sub-segundo, AI Daily Playbook (3-5 cenários educacionais com preços atuais), setas direcionais AI em cada headline (USD ▲ / EUR ▼), filtro por ativo com 1 clique e histórico profundo (2.000 resultados vs 500), 7 canais de TV financeira ao vivo integrados, Live Squawk (leitura por voz hands-free), notificações push web.</p>',
+    'q2.q':'Como funciona o trial Pro de 7 dias?',
+    'q2.a':'<p>Quando inicias o trial, tens acesso total ao Pro durante 7 dias. Os dados do cartão são pedidos à partida para a subscrição converter automaticamente no Dia 7. Se cancelares antes do Dia 7 nas definições de faturação, não és cobrado.</p><p>Para cancelar: abre o terminal → clica no teu nome (canto superior direito) → Gerir Subscrição → Cancelar.</p>',
+    'q3.q':'Como cancelo a minha subscrição Pro?',
+    'q3.a':'<p>Clica no teu nome no canto superior direito → "Gerir Subscrição" → abre o portal do cliente Stripe → "Cancelar subscrição". O acesso Pro continua até ao fim do ciclo de faturação atual, depois passa automaticamente para Basic.</p>',
+    'q4.q':'Posso alternar entre Pro mensal e anual?',
+    'q4.a':'<p>Sim. Nas definições de faturação podes alternar mensal (€40/mês) ↔ anual (€360/ano — poupas €120/ano vs mensal). A Stripe aplica automaticamente um crédito proporcional pelos dias não utilizados do plano anterior.</p>',
+    'q5.q':'Oferecem reembolsos?',
+    'q5.a':'<p>O trial Pro de 7 dias é o mecanismo de reembolso — cancela em 7 dias sem custo. Para ciclos mais longos, os reembolsos são avaliados caso a caso. Envia email para <a href="mailto:support@tradingnewsterminal.com">support@tradingnewsterminal.com</a> com a tua situação específica.</p>',
+    'q6.q':'O que é o AI Daily Playbook?',
+    'q6.a':'<p>Um gerador de cenários educacionais que corre 3 vezes por dia (manhã Europa, abertura EUA, final EUA). Para cada ativo principal (USD, EUR, GOLD, SPX, BTC, petróleo), produz 3-5 cenários "se-isto-então-aquilo" baseados no preço atual e fluxo recente de notícias.</p><p>O Playbook é <b>apenas educacional</b> — não é aconselhamento financeiro. Os setups são apresentados como material de aprendizagem para te ajudar a pensar sobre estrutura de mercado, não como sinais de trading.</p>',
+    'q7.q':'O que é o Filtro por Ativo com 1 clique?',
+    'q7.a':'<p>Cada headline mostra chips de ativos (USD, EUR, GOLD, SPX, BTC, etc.) do lado direito. Clica em qualquer chip e o feed filtra para mostrar apenas notícias que afectam esse ativo. Clica no mesmo chip outra vez para remover o filtro.</p><p>No Pro, o filtro despoleta uma procura de histórico profundo (2.000 resultados) para veres semanas de contexto, não apenas o dia. Basic users vêem os últimos 500 itens em cache.</p>',
+    'q8.q':'O que são as setas direcionais AI (USD ▲ / EUR ▼)?',
+    'q8.a':'<p>Para cada headline com impacto HIGH ou MEDIUM, um modelo de IA identifica que ativos são afectados e a direção (▲ bullish / ▼ bearish). Por exemplo, "Fed sinaliza trajectória mais agressiva de taxas" pode mostrar <code>USD ▲ / SPX ▼ / GOLD ▼</code>.</p><p>Isto é uma camada de tagging — não é recomendação. Usa como filtro rápido para focares headlines que movem os <i>teus</i> ativos.</p>',
+    'q9.q':'O que é o Live Squawk?',
+    'q9.a':'<p>Leitura por voz hands-free de cada headline assim que chega — como o squawk de uma sala de trading profissional. Apenas Pro. Liga/desliga pelo botão squawk no header. Voz + velocidade + filtro por ativo são configuráveis.</p>',
+    'q10.q':'Quão rápido é o feed de notícias?',
+    'q10.a':'<p><b>Pro users:</b> entrega sub-segundo em fontes wire premium. Latência média 1-3 segundos desde a publicação na fonte.</p><p><b>Basic users:</b> atraso de vários minutos no feed.</p>',
+    'q11.q':'Que fontes agregam?',
+    'q11.a':'<p>Mais de 300 fontes institucionais cobrindo wire services globais, comunicações regulatórias, anúncios de bancos centrais, imprensa financeira, feeds focados em equities e notícias crypto.</p><p>Cada headline dentro do terminal mostra a fonte para poderes verificar a proveniência item a item.</p>',
+    'q11b.q':'O que significa o badge "TNT Wire" no Pro?',
+    'q11b.a':'<p>"TNT Wire" é o badge mostrado em contas Pro para headlines que chegam através do nosso caminho de entrega real-time de menor latência — canais públicos estilo newswire que agregamos e mostramos em sub-segundo. Indica o <b>canal de entrega</b>, não conteúdo proprietário criado pela TNT.</p><p>A publicação original de cada headline mantém-se rastreável internamente. Users Pro podem pedir o nome do canal upstream para qualquer item específico contactando o suporte.</p>',
+    'q12.q':'Que línguas o Calendário Económico suporta?',
+    'q12.a':'<p>EN · PT · ES · FR · DE · IT. Mais de 150 indicadores macro traduzidos à mão (não tradução automática). Muda a língua no toggle EN/PT/ES/FR/DE/IT no header.</p>',
+    'q13.q':'Como ativo alertas Telegram DM?',
+    'q13.a':'<p>Abre a sidebar → "Connect Telegram" → clica no link → carrega Start no bot Telegram. Os teus alertas ficam ligados. Configura que keywords / ativos / níveis de impacto queres receber nas definições de Alertas.</p><p>Pro tem até 250 DMs/dia. Basic recebe alertas HIGH-impact com atraso de vários minutos.</p>',
+    'q14.q':'Como ativo notificações push web?',
+    'q14.a':'<p>Clica no ícone de sino no header → "Enable push". O browser pede permissão. Após autorizar, recebes notificações do browser mesmo com o tab fechado. Funciona em iOS (16.4+) quando adicionas ao ecrã principal como PWA. Apenas Pro.</p>',
+    'q15.q':'Porque não recebo alertas Telegram?',
+    'q15.a':'<p>Verifica: (1) bot Telegram ligado (sidebar → "Connect Telegram"); (2) as tuas keywords de alerta correspondem a headlines recentes; (3) não silenciaste o bot no Telegram; (4) não estás em Basic com todos os níveis de impacto desligados.</p><p>Se mesmo assim não funciona, envia email para <a href="mailto:support@tradingnewsterminal.com">support@tradingnewsterminal.com</a> com o email da conta — diagnosticamos.</p>',
+    'q16.q':'Como mudo a password?',
+    'q16.a':'<p>Faz logout. Na página de login clica "Esqueceste a password". Mete o teu email — recebes link de reset válido por 1 hora.</p>',
+    'q17.q':'Não estou a receber o email de verificação após signup.',
+    'q17.a':'<p>Verifica pasta spam/promoções. O email vem de <code>noreply@tradingnewsterminal.com</code>. Se não estiver lá após 5 minutos: faz login (o fluxo de verificação permite reenvio) ou envia email para <a href="mailto:support@tradingnewsterminal.com">support@tradingnewsterminal.com</a>.</p>',
+    'q18.q':'O terminal mostra "Connecting…" e nunca carrega. Que faço?',
+    'q18.a':'<p>Tenta: (1) hard refresh — <code>Cmd+Shift+R</code> (Mac) / <code>Ctrl+Shift+R</code> (Win); (2) limpa cache para tradingnewsterminal.com; (3) verifica o banner de status no topo da página — se estiver vermelho/amarelo, já sabemos e estamos a tratar.</p><p>Ainda sem funcionar após 5 minutos? Envia email — inclui browser + OS.</p>',
+    'q19.q':'Funciona em mobile?',
+    'q19.a':'<p>Sim. O terminal é totalmente responsive. Para a melhor experiência em iOS, abre <code>app.tradingnewsterminal.com</code> em Safari → Partilhar → Adicionar ao Ecrã Principal. Instala como PWA com modo ecrã completo + notificações push.</p>',
+    'q20.q':'Os meus dados são privados?',
+    'q20.a':'<p>Não vendemos, partilhamos nem alugamos dados de utilizadores. O teu email, nome e preferências de trading são guardados apenas para o teu próprio uso. Dados de pagamento são tratados pela Stripe (PCI-compliant) — nunca vemos os dados do teu cartão. Lê mais na <a href="/privacy">Política de Privacidade</a>.</p>',
+    'contact.h2':'Não encontraste a resposta?', 'contact.desc':'Contacta-nos — respondemos rápido.', 'contact.btn':'Enviar email',
+  },
+  es: {
+    tagline:'Inteligencia de Mercado en Tiempo Real', active:'ES', open_app:'Abrir App →', back:'← Volver al inicio',
+    'hero.h1':'Preguntas Frecuentes',
+    'hero.sub':'Respuestas rápidas a las preguntas más comunes. ¿No encuentras lo que buscas? Contáctanos — respondemos normalmente en pocas horas.',
+    'tab.general':'FAQ General', 'tab.app':'FAQ de la App',
+    g_sec1:'Trading y Mercados — Conceptos',
+    'g1.q':'¿Qué es un terminal de noticias financieras en tiempo real?',
+    'g1.a':'<p>Un terminal de noticias financieras agrega noticias breaking de múltiples fuentes institucionales en un único feed en vivo. A diferencia de un lector de noticias genérico, un terminal de trading está optimizado para velocidad y densidad de señal — destaca lo que realmente mueve precios, clasifica impacto, e integra con herramientas relacionadas como calendario económico y datos de mercado en vivo.</p><p>Trading News Terminal agrega más de 300 fuentes institucionales, clasifica cada titular por impacto y activo, y entrega actualizaciones en tiempo real en navegador, mobile (PWA) y Telegram.</p>',
+    'g2.q':'¿Qué es un calendario económico y por qué importa?',
+    'g2.a':'<p>Un calendario económico es una lista programada de futuras publicaciones de datos macroeconómicos (CPI, NFP, GDP, decisiones de bancos centrales, etc.) y eventos. Cada entrada muestra fecha/hora, país, pronóstico y lectura anterior, y luego el valor real una vez publicado.</p><p>Importa porque estas publicaciones causan regularmente los mayores movimientos intraday en FX, equities y bonos. Los traders usan el calendario para gestionar exposición en torno a eventos volátiles, preparar tesis direccionales antes de las publicaciones, y reaccionar cuando los valores reales superan o no alcanzan el consenso.</p>',
+    'g3.q':'¿Qué significa impacto HIGH, MEDIUM y LOW?',
+    'g3.a':'<p>La clasificación de impacto categoriza cuánto una noticia históricamente mueve los mercados. <b>HIGH</b> = eventos top-tier que causan consistentemente grandes movimientos (decisiones de tasa Fed/BCE, NFP, CPI, GDP, shocks geopolíticos). <b>MEDIUM</b> = publicaciones secundarias que mueven mercados en contextos específicos (PMI, retail sales, resultados de grandes caps). <b>LOW</b> = datos menores o noticias de contexto con impacto limitado en precio.</p><p>Filtrar solo HIGH es un workflow común para traders activos que solo quieren señal, no ruido.</p>',
+    'g4.q':'¿Qué tan rápida tiene que ser la noticia para trading activo?',
+    'g4.a':'<p>Depende del timeframe. <b>Scalpers (M1-M5)</b> necesitan latencia sub-segundo — un retraso de 10 segundos en una sorpresa Fed puede ser la diferencia entre coger un movimiento de 20 pips y perderlo por completo. <b>Day traders (15m-1h)</b> normalmente pueden trabajar con algunos segundos de retraso. <b>Swing/position traders (4h+)</b> no son sensibles a latencia — contexto importa más que velocidad.</p><p>Gap retail vs institucional: Bloomberg Terminal y wires directos entregan en menos de 1 segundo; terminales retail de calidad como Trading News Terminal están en el rango 1-3 segundos; herramientas gratuitas suelen tener minutos de retraso.</p>',
+    'g5.q':'¿Qué es una squawk box de noticias?',
+    'g5.a':'<p>Una squawk es un servicio de lectura por voz manos libres que anuncia titulares breaking en voz alta a medida que llegan — históricamente el sistema de audio usado en las salas de trading profesionales para que los traders pudieran mantener los ojos en los gráficos mientras escuchaban las noticias. Equivalentes retail modernos usan text-to-speech para leer titulares en tiempo real.</p><p>La squawk te permite mantener el foco en la price action mientras aún captas titulares que mueven el mercado — útil para traders que ven gráficos a pantalla completa.</p>',
+    'g6.q':'¿Cómo afectan los anuncios de bancos centrales a los mercados?',
+    'g6.a':'<p>Los bancos centrales (Fed, BCE, BoE, BoJ) fijan tasas de interés a corto plazo que directamente impulsan la fuerza de la moneda, rendimientos de bonos y valuaciones de equities. Una postura más hawkish (subir tasas) normalmente fortalece esa moneda, sube rendimientos de bonos y presiona equities. Una postura más dovish (recortar tasas) hace lo contrario.</p><p>Más allá de la decisión de tasa en sí, los traders analizan el statement, la rueda de prensa y el dot-plot para forward guidance — frecuentemente ahí es donde ocurre el movimiento real.</p>',
+    'g7.q':'¿Cuál es la diferencia entre fuentes primarias, wire services y agregadores?',
+    'g7.a':'<p><b>Fuentes primarias</b> publican contenido original (Fed, BCE, Tesoro, filings regulatorios, press releases de empresas). <b>Wire services</b> (Reuters, Bloomberg, AP) emplean periodistas para dar y verificar noticias — tienden a ser los más rápidos y autoritativos. <b>Agregadores</b> consolidan múltiples fuentes en un feed unificado y añaden valor a través de filtrado, clasificación, traducción o integración con otras herramientas.</p><p>Para traders activos, un buen workflow combina un wire service o agregador (para breadth y velocidad) con fuentes primarias directas (para el texto real del statement).</p>',
+    'g8.q':'¿Cómo afectan las noticias macro a crypto vs mercados tradicionales?',
+    'g8.a':'<p>Crypto se ha vuelto cada vez más correlacionado con risk assets — Bitcoin y altcoins principales se mueven normalmente con equities en shocks macro (hawkishness de Fed presiona ambos, sorpresas dovish ayudan ambos). La correlación es más fuerte durante eventos de alta volatilidad.</p><p>Noticias crypto-específicas (regulación, flujos ETF, movimientos on-chain grandes) crean movimientos adicionales que no afectan mercados tradicionales. Seguir flujo macro y crypto-native es necesario para traders crypto.</p>',
+    sec1:'Planes y Facturación', sec2:'Funcionalidades', sec3:'Notificaciones y Alertas', sec4:'Cuenta y Técnico',
+    'q1.q':'¿Cuál es la diferencia entre Basic y Pro?',
+    'q1.a':'<p><b>Basic (gratis):</b> feed de noticias HIGH-impact, agregación multi-fuente 24/7, filtros por activo, calendario económico en 6 idiomas, alertas Telegram DM.</p><p><b>Pro (€40/mes):</b> todo Basic más feed en tiempo real sub-segundo, AI Daily Playbook (3-5 escenarios educativos con precios actuales), flechas direccionales AI en cada titular (USD ▲ / EUR ▼), filtro por activo con 1 clic e historial profundo (2.000 resultados vs 500), 7 canales de TV financiera en vivo integrados, Live Squawk (lectura por voz manos libres), notificaciones push web.</p>',
+    'q2.q':'¿Cómo funciona la prueba Pro de 7 días?',
+    'q2.a':'<p>Al iniciar la prueba tienes acceso completo a Pro durante 7 días. Los datos de la tarjeta se solicitan al inicio para que la suscripción se convierta automáticamente el Día 7. Si cancelas antes del Día 7 desde los ajustes de facturación, no se te cobrará.</p><p>Para cancelar: abre el terminal → clic en tu nombre (esquina superior derecha) → Gestionar Suscripción → Cancelar.</p>',
+    'q3.q':'¿Cómo cancelo mi suscripción Pro?',
+    'q3.a':'<p>Clic en tu nombre en la esquina superior derecha → "Gestionar Suscripción" → se abre el portal de cliente de Stripe → "Cancelar suscripción". El acceso Pro continúa hasta el final del período de facturación actual, luego pasa automáticamente a Basic.</p>',
+    'q4.q':'¿Puedo cambiar entre Pro mensual y anual?',
+    'q4.a':'<p>Sí. Desde los ajustes de facturación puedes cambiar mensual (€40/mes) ↔ anual (€360/año — ahorras €120/año vs mensual). Stripe aplica automáticamente un crédito proporcional por los días no utilizados del plan anterior.</p>',
+    'q5.q':'¿Ofrecen reembolsos?',
+    'q5.a':'<p>La prueba Pro de 7 días es el mecanismo de reembolso — cancela en 7 días sin coste. Para ciclos más largos, los reembolsos se evalúan caso por caso. Envía email a <a href="mailto:support@tradingnewsterminal.com">support@tradingnewsterminal.com</a> con tu situación específica.</p>',
+    'q6.q':'¿Qué es el AI Daily Playbook?',
+    'q6.a':'<p>Un generador de escenarios educativos que se ejecuta 3 veces al día (mañana Europa, apertura EE.UU., final EE.UU.). Para cada activo principal (USD, EUR, GOLD, SPX, BTC, petróleo), produce 3-5 escenarios "si-esto-entonces-aquello" basados en el precio actual y el flujo reciente de noticias.</p><p>El Playbook es <b>solo educativo</b> — no es asesoramiento financiero. Los setups se presentan como material de aprendizaje para ayudarte a pensar sobre estructura de mercado, no como señales de trading.</p>',
+    'q7.q':'¿Qué es el Filtro por Activo con 1 clic?',
+    'q7.a':'<p>Cada titular muestra chips de activos (USD, EUR, GOLD, SPX, BTC, etc.) en el lado derecho. Haz clic en cualquier chip y el feed filtra para mostrar solo noticias que afectan a ese activo. Clic en el mismo chip de nuevo para quitar el filtro.</p><p>En Pro, el filtro dispara una búsqueda de historial profundo (2.000 resultados) para que veas semanas de contexto, no solo el día. Basic users ven los últimos 500 ítems en caché.</p>',
+    'q8.q':'¿Qué son las flechas direccionales AI (USD ▲ / EUR ▼)?',
+    'q8.a':'<p>Para cada titular con impacto HIGH o MEDIUM, un modelo de IA identifica qué activos están afectados y la dirección (▲ alcista / ▼ bajista). Por ejemplo, "Fed señala trayectoria más agresiva de tasas" puede mostrar <code>USD ▲ / SPX ▼ / GOLD ▼</code>.</p><p>Esto es una capa de etiquetado — no recomendación. Úsalo como filtro rápido para enfocar titulares que mueven <i>tus</i> activos.</p>',
+    'q9.q':'¿Qué es Live Squawk?',
+    'q9.a':'<p>Lectura por voz manos libres de cada titular en cuanto llega — como el squawk de una mesa de trading profesional. Solo Pro. Activa/desactiva desde el botón squawk en el header. Voz + velocidad + filtro por activo son configurables.</p>',
+    'q10.q':'¿Qué tan rápido es el feed de noticias?',
+    'q10.a':'<p><b>Pro users:</b> entrega sub-segundo en fuentes wire premium. Latencia media 1-3 segundos desde la publicación en la fuente.</p><p><b>Basic users:</b> retraso de varios minutos en el feed.</p>',
+    'q11.q':'¿Qué fuentes agregan?',
+    'q11.a':'<p>Más de 300 fuentes institucionales cubriendo wire services globales, comunicaciones regulatorias, anuncios de bancos centrales, prensa financiera, feeds enfocados en equities y noticias crypto.</p><p>Cada titular dentro del terminal muestra la fuente para que puedas verificar la procedencia ítem a ítem.</p>',
+    'q11b.q':'¿Qué significa el badge "TNT Wire" en Pro?',
+    'q11b.a':'<p>"TNT Wire" es el badge mostrado en cuentas Pro para titulares que llegan a través de nuestro camino de entrega en tiempo real de menor latencia — canales públicos estilo newswire que agregamos y mostramos en sub-segundo. Indica el <b>canal de entrega</b>, no contenido propio creado por TNT.</p><p>La publicación original de cada titular se mantiene rastreable internamente. Los usuarios Pro pueden pedir el nombre del canal upstream para cualquier ítem específico contactando con el soporte.</p>',
+    'q12.q':'¿Qué idiomas soporta el Calendario Económico?',
+    'q12.a':'<p>EN · PT · ES · FR · DE · IT. Más de 150 indicadores macro traducidos a mano (no traducción automática). Cambia el idioma en el toggle EN/PT/ES/FR/DE/IT del header.</p>',
+    'q13.q':'¿Cómo activo alertas Telegram DM?',
+    'q13.a':'<p>Abre la sidebar → "Connect Telegram" → clic en el link → pulsa Start en el bot Telegram. Tus alertas quedan vinculadas. Configura qué keywords / activos / niveles de impacto quieres recibir en los ajustes de Alertas.</p><p>Pro tiene hasta 250 DMs/día. Basic recibe alertas HIGH-impact con retraso de varios minutos.</p>',
+    'q14.q':'¿Cómo activo notificaciones push web?',
+    'q14.a':'<p>Clic en el icono de campana del header → "Enable push". El navegador pide permiso. Tras autorizar, recibes notificaciones del navegador incluso con la pestaña cerrada. Funciona en iOS (16.4+) cuando lo añades a la pantalla de inicio como PWA. Solo Pro.</p>',
+    'q15.q':'¿Por qué no recibo alertas Telegram?',
+    'q15.a':'<p>Verifica: (1) bot Telegram conectado (sidebar → "Connect Telegram"); (2) tus keywords coinciden con titulares recientes; (3) no silenciaste el bot en Telegram; (4) no estás en Basic con todos los niveles de impacto desactivados.</p><p>Si aún no funciona, envía email a <a href="mailto:support@tradingnewsterminal.com">support@tradingnewsterminal.com</a> con el email de la cuenta — diagnosticamos.</p>',
+    'q16.q':'¿Cómo cambio la contraseña?',
+    'q16.a':'<p>Cierra sesión. En la página de login clic en "Olvidé contraseña". Mete tu email — recibes link de reset válido por 1 hora.</p>',
+    'q17.q':'No recibo el email de verificación tras signup.',
+    'q17.a':'<p>Revisa carpeta spam/promociones. El email viene de <code>noreply@tradingnewsterminal.com</code>. Si no está tras 5 minutos: haz login (el flujo de verificación permite reenvío) o envía email a <a href="mailto:support@tradingnewsterminal.com">support@tradingnewsterminal.com</a>.</p>',
+    'q18.q':'El terminal muestra "Connecting…" y nunca carga. ¿Qué hago?',
+    'q18.a':'<p>Prueba: (1) hard refresh — <code>Cmd+Shift+R</code> (Mac) / <code>Ctrl+Shift+R</code> (Win); (2) limpia caché para tradingnewsterminal.com; (3) revisa el banner de estado en lo alto de la página — si está rojo/amarillo, ya lo sabemos y estamos en ello.</p><p>¿Sigue sin funcionar tras 5 min? Envíanos email — incluye navegador + OS.</p>',
+    'q19.q':'¿Funciona en móvil?',
+    'q19.a':'<p>Sí. El terminal es totalmente responsive. Para la mejor experiencia en iOS, abre <code>app.tradingnewsterminal.com</code> en Safari → Compartir → Añadir a Pantalla de Inicio. Se instala como PWA con modo pantalla completa + notificaciones push.</p>',
+    'q20.q':'¿Mis datos son privados?',
+    'q20.a':'<p>No vendemos, compartimos ni alquilamos datos de usuarios. Tu email, nombre y preferencias de trading se guardan solo para tu propio uso. Datos de pago los gestiona Stripe (PCI-compliant) — nunca vemos los datos de tu tarjeta. Lee más en nuestra <a href="/privacy">Política de Privacidad</a>.</p>',
+    'contact.h2':'¿No encontraste tu respuesta?', 'contact.desc':'Contáctanos — respondemos rápido.', 'contact.btn':'Enviar email',
+  },
+  fr: {
+    tagline:'Renseignement de Marché en Temps Réel', active:'FR', open_app:'Ouvrir l’App →', back:'← Retour à l’accueil',
+    'hero.h1':'Foire Aux Questions',
+    'hero.sub':"Réponses rapides aux questions les plus courantes. Vous ne trouvez pas ? Contactez-nous — nous répondons généralement en quelques heures.",
+    'tab.general':'FAQ Générale', 'tab.app':'FAQ de l’App',
+    g_sec1:'Trading et Marchés — Concepts',
+    'g1.q':"Qu'est-ce qu'un terminal de news financières en temps réel ?",
+    'g1.a':"<p>Un terminal de news financières agrège les news breaking de plusieurs sources institutionnelles dans un seul flux en direct. Contrairement à un lecteur de news générique, un terminal de trading est optimisé pour la vitesse et la densité de signal — il met en avant ce qui bouge réellement les prix, classe l'impact, et s'intègre avec des outils connexes comme le calendrier économique et les données de marché en direct.</p><p>Trading News Terminal agrège plus de 300 sources institutionnelles, classe chaque titre par impact et actif, et livre des mises à jour en temps réel sur navigateur, mobile (PWA) et Telegram.</p>",
+    'g2.q':"Qu'est-ce qu'un calendrier économique et pourquoi est-ce important ?",
+    'g2.a':"<p>Un calendrier économique est une liste programmée des prochaines publications de données macroéconomiques (CPI, NFP, GDP, décisions des banques centrales, etc.) et événements. Chaque entrée affiche date/heure, pays, prévision et lecture précédente, puis la valeur réelle une fois publiée.</p><p>C'est important parce que ces publications causent régulièrement les plus grands mouvements intraday sur FX, equities et obligations. Les traders utilisent le calendrier pour gérer l'exposition autour d'événements volatils, préparer des thèses directionnelles avant publications, et réagir quand les valeurs réelles battent ou ratent le consensus.</p>",
+    'g3.q':'Que signifient les impacts HIGH, MEDIUM et LOW ?',
+    'g3.a':"<p>La classification d'impact catégorise combien une news bouge historiquement les marchés. <b>HIGH</b> = événements top-tier qui causent constamment de grands mouvements (décisions de taux Fed/BCE, NFP, CPI, GDP, chocs géopolitiques). <b>MEDIUM</b> = publications secondaires qui bougent les marchés dans des contextes spécifiques (PMI, retail sales, résultats de grandes caps). <b>LOW</b> = données mineures ou news de contexte avec impact limité sur le prix.</p><p>Filtrer uniquement HIGH est un workflow courant pour traders actifs qui veulent seulement du signal, pas du bruit.</p>",
+    'g4.q':"À quelle vitesse les news doivent-elles être pour du trading actif ?",
+    'g4.a':"<p>Cela dépend de votre timeframe. <b>Scalpers (M1-M5)</b> ont besoin d'une latence sous-seconde — un retard de 10 secondes sur une surprise Fed peut faire la différence entre attraper un mouvement de 20 pips et le rater complètement. <b>Day traders (15m-1h)</b> peuvent généralement travailler avec quelques secondes de retard. <b>Swing/position traders (4h+)</b> ne sont pas sensibles à la latence — le contexte importe plus que la vitesse.</p><p>Écart retail vs institutionnel : Bloomberg Terminal et wires directs livrent en moins d'une seconde ; les terminaux retail de qualité comme Trading News Terminal sont dans la plage 1-3 secondes ; les outils gratuits ont souvent plusieurs minutes de retard.</p>",
+    'g5.q':"Qu'est-ce qu'une squawk box de news ?",
+    'g5.a':"<p>Un squawk est un service de lecture vocale mains libres qui annonce à voix haute les titres breaking dès leur arrivée — historiquement le système audio utilisé sur les salles de trading professionnelles pour que les traders gardent les yeux sur les graphiques tout en entendant les news. Les équivalents retail modernes utilisent la synthèse vocale pour lire les titres en temps réel.</p><p>Le squawk vous permet de rester concentré sur la price action tout en attrapant les titres qui bougent le marché — utile pour les traders qui regardent les graphiques en plein écran.</p>",
+    'g6.q':'Comment les annonces des banques centrales affectent-elles les marchés ?',
+    'g6.a':"<p>Les banques centrales (Fed, BCE, BoE, BoJ) fixent les taux d'intérêt court terme qui pilotent directement la force des devises, les rendements obligataires et les valorisations des equities. Une posture plus hawkish (hausse des taux) renforce typiquement cette devise, élève les rendements obligataires et pèse sur les equities. Une posture plus dovish (baisse des taux) fait l'inverse.</p><p>Au-delà de la décision de taux elle-même, les traders analysent le communiqué, la conférence de presse et le dot-plot pour les forward guidance — c'est souvent là que le mouvement réel se produit.</p>",
+    'g7.q':"Quelle est la différence entre sources primaires, wire services et agrégateurs ?",
+    'g7.a':"<p><b>Sources primaires</b> publient du contenu original (Fed, BCE, Trésor, filings réglementaires, press releases d'entreprises). <b>Wire services</b> (Reuters, Bloomberg, AP) emploient des journalistes pour diffuser et vérifier les news — ils tendent à être les plus rapides et autoritaires. <b>Agrégateurs</b> consolident plusieurs sources en un flux unifié et ajoutent de la valeur via filtrage, classification, traduction ou intégration avec d'autres outils.</p><p>Pour les traders actifs, un bon workflow combine un wire service ou agrégateur (pour la portée et la vitesse) avec des sources primaires directes (pour le texte réel du communiqué).</p>",
+    'g8.q':"Comment les news macro affectent-elles le crypto vs les marchés traditionnels ?",
+    'g8.a':"<p>Le crypto est devenu de plus en plus corrélé avec les risk assets — Bitcoin et altcoins majeurs bougent typiquement avec les equities sur les chocs macro (hawkishness Fed pèse sur les deux, surprises dovish aident les deux). La corrélation est la plus forte pendant les événements de haute volatilité.</p><p>Les news crypto-spécifiques (régulation, flux ETF, gros mouvements on-chain) créent des mouvements additionnels qui n'affectent pas les marchés traditionnels. Suivre le flux macro et crypto-natif est nécessaire pour les traders crypto.</p>",
+    sec1:'Plans et Facturation', sec2:'Fonctionnalités', sec3:'Notifications et Alertes', sec4:'Compte et Technique',
+    'q1.q':'Quelle est la différence entre Basic et Pro ?',
+    'q1.a':"<p><b>Basic (gratuit) :</b> flux d'actualités HIGH-impact, agrégation multi-sources 24/7, filtres par actif, calendrier économique en 6 langues, alertes Telegram DM.</p><p><b>Pro (€40/mois) :</b> tout Basic plus flux temps réel sous-seconde, AI Daily Playbook (3-5 scénarios éducatifs avec prix actuels), flèches directionnelles AI sur chaque titre (USD ▲ / EUR ▼), filtre par actif en 1 clic avec historique profond (2 000 résultats vs 500), 7 chaînes TV financières en direct intégrées, Live Squawk (lecture vocale mains libres), notifications push web.</p>",
+    'q2.q':"Comment fonctionne l'essai Pro de 7 jours ?",
+    'q2.a':"<p>Au démarrage de l'essai, vous avez l'accès complet à Pro pendant 7 jours. Les coordonnées de carte sont demandées au début pour que l'abonnement se convertisse automatiquement au Jour 7. Si vous annulez avant le Jour 7 depuis les paramètres de facturation, vous ne serez pas facturé.</p><p>Pour annuler : ouvrez le terminal → cliquez sur votre nom (coin supérieur droit) → Gérer l'Abonnement → Annuler.</p>",
+    'q3.q':'Comment annuler mon abonnement Pro ?',
+    'q3.a':"<p>Cliquez sur votre nom en haut à droite → « Gérer l'Abonnement » → le portail client Stripe s'ouvre → « Annuler l'abonnement ». L'accès Pro continue jusqu'à la fin de la période de facturation actuelle, puis passe automatiquement à Basic.</p>",
+    'q4.q':'Puis-je passer entre Pro mensuel et annuel ?',
+    'q4.a':"<p>Oui. Depuis les paramètres de facturation vous pouvez passer mensuel (€40/mois) ↔ annuel (€360/an — économisez €120/an vs mensuel). Stripe applique automatiquement un crédit au prorata pour les jours non utilisés du plan précédent.</p>",
+    'q5.q':'Offrez-vous des remboursements ?',
+    'q5.a':"<p>L'essai Pro de 7 jours est le mécanisme de remboursement — annulez en 7 jours sans frais. Pour les cycles plus longs, les remboursements sont évalués au cas par cas. Email à <a href=\"mailto:support@tradingnewsterminal.com\">support@tradingnewsterminal.com</a> avec votre situation.</p>",
+    'q6.q':"Qu'est-ce que l'AI Daily Playbook ?",
+    'q6.a':"<p>Un générateur de scénarios éducatifs qui s'exécute 3 fois par jour (matin Europe, ouverture US, fin US). Pour chaque actif principal (USD, EUR, GOLD, SPX, BTC, pétrole), il produit 3-5 scénarios « si-ceci-alors-cela » basés sur le prix actuel et le flux récent d'actualités.</p><p>Le Playbook est <b>uniquement éducatif</b> — pas un conseil financier. Les setups sont présentés comme du matériel d'apprentissage pour vous aider à réfléchir à la structure du marché, pas comme des signaux de trading.</p>",
+    'q7.q':"Qu'est-ce que le Filtre par Actif en 1 clic ?",
+    'q7.a':"<p>Chaque titre affiche des chips d'actifs (USD, EUR, GOLD, SPX, BTC, etc.) sur le côté droit. Cliquez sur un chip et le flux filtre pour ne montrer que les actualités affectant cet actif. Cliquez à nouveau pour retirer le filtre.</p><p>Sur Pro, le filtre déclenche une recherche d'historique profond (2 000 résultats) pour voir des semaines de contexte, pas seulement aujourd'hui. Les utilisateurs Basic voient les 500 derniers items en cache.</p>",
+    'q8.q':"Que sont les flèches directionnelles AI (USD ▲ / EUR ▼) ?",
+    'q8.a':"<p>Pour chaque titre à impact HIGH ou MEDIUM, un modèle IA identifie quels actifs sont affectés et la direction (▲ haussier / ▼ baissier). Par exemple, « La Fed signale une trajectoire de taux plus agressive » peut afficher <code>USD ▲ / SPX ▼ / GOLD ▼</code>.</p><p>C'est une couche de tagging — pas une recommandation. Utilisez-la comme filtre rapide pour vous concentrer sur les titres qui bougent <i>vos</i> actifs.</p>",
+    'q9.q':"Qu'est-ce que Live Squawk ?",
+    'q9.a':"<p>Lecture vocale mains libres de chaque titre dès qu'il arrive — comme le squawk d'une salle de trading professionnelle. Pro uniquement. Activez/désactivez depuis le bouton squawk dans le header. Voix + vitesse + filtre par actif configurables.</p>",
+    'q10.q':"À quelle vitesse est le flux d'actualités ?",
+    'q10.a':"<p><b>Pro :</b> livraison sous-seconde sur les sources wire premium. Latence moyenne 1-3 secondes depuis la publication.</p><p><b>Basic :</b> délai de plusieurs minutes sur le flux.</p>",
+    'q11.q':'Quelles sources agrégez-vous ?',
+    'q11.a':"<p>Plus de 300 sources institutionnelles couvrant les wire services mondiaux, les dépôts réglementaires, les annonces des banques centrales, la presse financière, les flux orientés actions et les actualités crypto.</p><p>Chaque titre dans le terminal affiche la source pour vérifier la provenance article par article.</p>",
+    'q11b.q':"Que signifie le badge « TNT Wire » sur Pro ?",
+    'q11b.a':"<p>« TNT Wire » est le badge affiché sur les comptes Pro pour les titres qui arrivent via notre canal de livraison temps réel à plus faible latence — des canaux publics de type newswire que nous agrégeons et affichons en sous-seconde. Cela indique le <b>canal de livraison</b>, pas un contenu propriétaire rédigé par TNT.</p><p>La publication d'origine de chaque titre reste traçable en interne. Les utilisateurs Pro peuvent demander le nom du canal amont pour un élément spécifique en contactant le support.</p>",
+    'q12.q':'Quelles langues le Calendrier Économique supporte ?',
+    'q12.a':"<p>EN · PT · ES · FR · DE · IT. Plus de 150 indicateurs macro traduits à la main (pas de traduction automatique). Changez la langue depuis le toggle EN/PT/ES/FR/DE/IT dans le header.</p>",
+    'q13.q':'Comment activer les alertes Telegram DM ?',
+    'q13.a':"<p>Ouvrez la sidebar → « Connect Telegram » → cliquez sur le lien → appuyez sur Start dans le bot Telegram. Vos alertes sont liées. Configurez les mots-clés / actifs / niveaux d'impact à recevoir dans les paramètres d'Alertes.</p><p>Pro a jusqu'à 250 DMs/jour. Basic reçoit les alertes HIGH-impact avec un délai de plusieurs minutes.</p>",
+    'q14.q':'Comment activer les notifications push web ?',
+    'q14.a':"<p>Cliquez sur l'icône cloche du header → « Enable push ». Le navigateur demande la permission. Après autorisation, vous recevez les notifications même avec l'onglet fermé. Fonctionne sur iOS (16.4+) en ajoutant à l'écran d'accueil comme PWA. Pro uniquement.</p>",
+    'q15.q':'Pourquoi je ne reçois pas les alertes Telegram ?',
+    'q15.a':"<p>Vérifiez : (1) bot Telegram connecté (sidebar → « Connect Telegram ») ; (2) vos mots-clés correspondent à des titres récents ; (3) vous n'avez pas mis le bot en sourdine ; (4) vous n'êtes pas sur Basic avec tous les niveaux d'impact désactivés.</p><p>Si ça ne fonctionne toujours pas, email à <a href=\"mailto:support@tradingnewsterminal.com\">support@tradingnewsterminal.com</a> avec l'email du compte — nous diagnostiquons.</p>",
+    'q16.q':'Comment changer mon mot de passe ?',
+    'q16.a':"<p>Déconnectez-vous. Sur la page de login cliquez sur « Mot de passe oublié ». Entrez votre email — vous recevrez un lien de réinitialisation valide 1 heure.</p>",
+    'q17.q':"Je ne reçois pas l'email de vérification après signup.",
+    'q17.a':"<p>Vérifiez le dossier spam/promotions. L'email vient de <code>noreply@tradingnewsterminal.com</code>. S'il n'est pas là après 5 minutes : connectez-vous (le flux de vérification permet un renvoi) ou email à <a href=\"mailto:support@tradingnewsterminal.com\">support@tradingnewsterminal.com</a>.</p>",
+    'q18.q':'Le terminal montre « Connecting… » et ne charge jamais. Que faire ?',
+    'q18.a':"<p>Essayez : (1) hard refresh — <code>Cmd+Shift+R</code> (Mac) / <code>Ctrl+Shift+R</code> (Win) ; (2) videz le cache pour tradingnewsterminal.com ; (3) vérifiez la bannière de statut en haut de la page — si rouge/jaune, nous sommes au courant.</p><p>Toujours bloqué après 5 min ? Envoyez-nous un email — incluez navigateur + OS.</p>",
+    'q19.q':'Fonctionne sur mobile ?',
+    'q19.a':"<p>Oui. Le terminal est entièrement responsive. Pour la meilleure expérience iOS, ouvrez <code>app.tradingnewsterminal.com</code> dans Safari → Partager → Ajouter à l'écran d'accueil. S'installe comme PWA avec mode plein écran + notifications push.</p>",
+    'q20.q':'Mes données sont-elles privées ?',
+    'q20.a':"<p>Nous ne vendons, ne partageons ni ne louons les données utilisateur. Votre email, nom et préférences de trading sont stockés uniquement pour votre propre usage. Les données de paiement sont gérées par Stripe (PCI-compliant) — nous ne voyons jamais les détails de votre carte. Plus dans notre <a href=\"/privacy\">Politique de confidentialité</a>.</p>",
+    'contact.h2':"Pas trouvé votre réponse ?", 'contact.desc':'Contactez-nous — nous répondons rapidement.', 'contact.btn':'Envoyer un email',
+  },
+  de: {
+    tagline:'Echtzeit Markt-Intelligence', active:'DE', open_app:'App öffnen →', back:'← Zurück zur Startseite',
+    'hero.h1':'Häufig gestellte Fragen',
+    'hero.sub':'Schnelle Antworten auf die häufigsten Fragen. Findest du nicht, was du brauchst? Kontaktiere uns — wir antworten normalerweise innerhalb weniger Stunden.',
+    'tab.general':'Allgemeine FAQ', 'tab.app':'App-FAQ',
+    g_sec1:'Trading & Märkte — Grundlagen',
+    'g1.q':'Was ist ein Echtzeit-Finanz-News-Terminal?',
+    'g1.a':'<p>Ein Finanz-News-Terminal aggregiert marktbewegende Breaking News aus vielen institutionellen Quellen in einem einzigen Live-Feed. Im Gegensatz zu einem generischen News-Reader ist ein Trading-Terminal auf Geschwindigkeit und Signaldichte abgestimmt — es hebt hervor, was tatsächlich Preise bewegt, klassifiziert Impact und integriert sich mit verwandten Tools wie Wirtschaftskalender und Live-Marktdaten.</p><p>Trading News Terminal aggregiert über 300 institutionelle Quellen, klassifiziert jede Headline nach Impact und Asset und liefert Updates in Echtzeit an Browser, Mobile (PWA) und Telegram.</p>',
+    'g2.q':'Was ist ein Wirtschaftskalender und warum ist er wichtig?',
+    'g2.a':'<p>Ein Wirtschaftskalender ist eine geplante Liste anstehender makroökonomischer Datenveröffentlichungen (CPI, NFP, GDP, Zentralbankentscheidungen usw.) und Events. Jeder Eintrag zeigt Datum/Uhrzeit, Land, Prognose und vorherige Lesung, dann den tatsächlichen Wert nach Veröffentlichung.</p><p>Wichtig ist er, weil diese Veröffentlichungen regelmäßig die größten Intraday-Bewegungen in FX, Equities und Bonds verursachen. Trader nutzen den Kalender, um Exposure um volatile Events zu managen, Direktionsthese vor Veröffentlichungen vorzubereiten und zu reagieren, wenn die tatsächlichen Werte den Konsens übertreffen oder verfehlen.</p>',
+    'g3.q':'Was bedeuten Impact HIGH, MEDIUM und LOW?',
+    'g3.a':'<p>Impact-Tagging kategorisiert, wie stark eine Nachricht historisch Märkte bewegt. <b>HIGH</b> = Top-Tier-Events, die konstant große Bewegungen verursachen (Fed/EZB-Zinsentscheidungen, NFP, CPI, GDP, geopolitische Schocks). <b>MEDIUM</b> = sekundäre Veröffentlichungen, die Märkte in spezifischen Kontexten bewegen (PMI, Retail Sales, Ergebnisse großer Caps). <b>LOW</b> = kleinere Daten oder Kontext-News mit begrenztem Preis-Impact.</p><p>Nur nach HIGH zu filtern ist ein verbreitetes Workflow für aktive Trader, die nur Signal wollen, kein Rauschen.</p>',
+    'g4.q':'Wie schnell müssen News für aktives Trading sein?',
+    'g4.a':'<p>Kommt aufs Timeframe an. <b>Scalper (M1-M5)</b> brauchen Sub-Sekunden-Latenz — eine 10-Sekunden-Verzögerung bei einer Fed-Überraschung kann den Unterschied bedeuten zwischen einer 20-Pip-Bewegung erwischen und sie ganz verpassen. <b>Day-Trader (15m-1h)</b> können meist mit ein paar Sekunden Verzögerung arbeiten. <b>Swing/Position-Trader (4h+)</b> sind nicht latenz-empfindlich — Kontext zählt mehr als Geschwindigkeit.</p><p>Retail-vs-Institutionell-Gap: Bloomberg Terminal und direkte Wires liefern unter 1 Sekunde; Qualitäts-Retail-Terminals wie Trading News Terminal liegen im 1-3-Sekunden-Bereich; kostenlose Tools haben oft Minuten Verzögerung.</p>',
+    'g5.q':'Was ist eine News-Squawk-Box?',
+    'g5.a':'<p>Eine Squawk ist ein Hands-free-Sprachdienst, der Breaking-Headlines laut ankündigt, sobald sie ankommen — historisch das Audiosystem in professionellen Handelsräumen, damit Trader Augen auf Charts halten und gleichzeitig News hören konnten. Moderne Retail-Äquivalente nutzen Text-to-Speech, um Headlines in Echtzeit zu lesen.</p><p>Squawk lässt dich auf Price Action fokussiert bleiben, während du marktbewegende Headlines immer noch erwischst — nützlich für Trader, die Charts im Vollbild beobachten.</p>',
+    'g6.q':'Wie wirken sich Zentralbank-Ankündigungen auf Märkte aus?',
+    'g6.a':'<p>Zentralbanken (Fed, EZB, BoE, BoJ) setzen kurzfristige Zinssätze, die direkt Währungsstärke, Anleiherenditen und Equity-Bewertungen treiben. Eine hawkishere Haltung (Zinsanhebungen) stärkt typischerweise die Währung, hebt Anleiherenditen und drückt Equities. Eine dovishere Haltung (Zinssenkungen) macht das Gegenteil.</p><p>Über die Zinsentscheidung selbst hinaus analysieren Trader das Statement, die Pressekonferenz und den Dot-Plot für Forward Guidance — dort passiert oft die echte Bewegung.</p>',
+    'g7.q':'Was ist der Unterschied zwischen Primärquellen, Wire-Services und Aggregatoren?',
+    'g7.a':'<p><b>Primärquellen</b> veröffentlichen Originalinhalte (Fed, EZB, Treasury, regulatorische Filings, Unternehmens-Pressemitteilungen). <b>Wire-Services</b> (Reuters, Bloomberg, AP) beschäftigen Journalisten, um News zu bringen und zu verifizieren — sie sind tendenziell am schnellsten und autoritativsten. <b>Aggregatoren</b> konsolidieren mehrere Quellen in einem einheitlichen Feed und fügen Wert hinzu durch Filterung, Klassifizierung, Übersetzung oder Integration mit anderen Tools.</p><p>Für aktive Trader kombiniert ein guter Workflow einen Wire-Service oder Aggregator (für Breite und Geschwindigkeit) mit direkten Primärquellen (für den tatsächlichen Statement-Text).</p>',
+    'g8.q':'Wie wirken Makro-News auf Krypto vs traditionelle Märkte?',
+    'g8.a':'<p>Krypto ist zunehmend mit Risk-Assets korreliert — Bitcoin und große Altcoins bewegen sich typischerweise mit Equities bei Makro-Schocks (Fed-Hawkishness drückt beide, dovishe Überraschungen helfen beiden). Die Korrelation ist am stärksten während hochvolatiler Events.</p><p>Krypto-spezifische News (Regulierung, ETF-Flows, große On-Chain-Bewegungen) erzeugen zusätzliche Bewegungen, die traditionelle Märkte nicht beeinflussen. Sowohl Makro- als auch Krypto-Native-Flow zu beobachten ist für Krypto-Trader erforderlich.</p>',
+    sec1:'Pläne & Abrechnung', sec2:'Funktionen', sec3:'Benachrichtigungen & Alerts', sec4:'Konto & Technisch',
+    'q1.q':'Was ist der Unterschied zwischen Basic und Pro?',
+    'q1.a':'<p><b>Basic (kostenlos):</b> HIGH-Impact News-Feed, 24/7 Multi-Source-Aggregation, Asset-Filter, Wirtschaftskalender in 6 Sprachen, Telegram-DM-Alerts.</p><p><b>Pro (€40/Monat):</b> alles aus Basic plus Echtzeit-Feed unter einer Sekunde, AI Daily Playbook (3-5 lehrreiche Szenarien mit aktuellen Preisen), AI-Richtungspfeile auf jeder Headline (USD ▲ / EUR ▼), 1-Klick Asset-Filter mit tiefem Verlauf (2.000 Ergebnisse vs 500), 7 eingebettete Live-Finanz-TV-Kanäle, Live Squawk (Hands-free Sprachausgabe), Web-Push-Benachrichtigungen.</p>',
+    'q2.q':'Wie funktioniert der 7-Tage Pro-Trial?',
+    'q2.a':'<p>Beim Trial-Start erhältst du 7 Tage vollen Pro-Zugang. Kartendaten werden vorab benötigt, damit das Abonnement am Tag 7 automatisch umgestellt wird. Wenn du vor Tag 7 in den Billing-Einstellungen kündigst, wird dir nichts berechnet.</p><p>Kündigen: Terminal öffnen → Klick auf deinen Namen (oben rechts) → Abonnement verwalten → Kündigen.</p>',
+    'q3.q':'Wie kündige ich mein Pro-Abonnement?',
+    'q3.a':'<p>Klicke oben rechts auf deinen Namen → "Abonnement verwalten" → Stripe Customer Portal öffnet sich → "Abonnement kündigen". Pro-Zugang läuft bis zum Ende des aktuellen Abrechnungszeitraums, dann automatisches Downgrade auf Basic.</p>',
+    'q4.q':'Kann ich zwischen Pro monatlich und jährlich wechseln?',
+    'q4.a':'<p>Ja. In den Billing-Einstellungen kannst du monatlich (€40/Monat) ↔ jährlich (€360/Jahr — spart €120/Jahr vs monatlich) wechseln. Stripe wendet automatisch eine anteilige Gutschrift für ungenutzte Tage des vorherigen Plans an.</p>',
+    'q5.q':'Bietet ihr Rückerstattungen?',
+    'q5.a':'<p>Der 7-Tage Pro-Trial ist der Rückerstattungsmechanismus — innerhalb von 7 Tagen kostenlos kündigen. Bei längeren Abrechnungszeiträumen werden Rückerstattungen fallweise beurteilt. Email an <a href="mailto:support@tradingnewsterminal.com">support@tradingnewsterminal.com</a> mit deiner Situation.</p>',
+    'q6.q':'Was ist das AI Daily Playbook?',
+    'q6.a':'<p>Ein Generator für lehrreiche Szenarien, der 3-mal täglich läuft (Morgens Europa, US-Open, später US). Für jedes Hauptasset (USD, EUR, GOLD, SPX, BTC, Öl) erzeugt er 3-5 Wenn-dann-Szenarien basierend auf aktuellem Preis und jüngstem Newsfluss.</p><p>Das Playbook ist <b>nur lehrreich</b> — keine Finanzberatung. Setups sind als Lernmaterial gedacht, um über Marktstruktur nachzudenken, nicht als Trading-Signale.</p>',
+    'q7.q':'Was ist der 1-Klick Asset-Filter?',
+    'q7.a':'<p>Jede Headline zeigt Asset-Chips (USD, EUR, GOLD, SPX, BTC, etc.) auf der rechten Seite. Klicke einen Chip und der Feed filtert nur die News, die dieses Asset betreffen. Erneut klicken entfernt den Filter.</p><p>Auf Pro löst der Filter eine tiefe Verlaufsabfrage aus (2.000 Ergebnisse), damit du Wochen an Kontext siehst, nicht nur heute. Basic-Nutzer sehen die letzten 500 gecachten Items.</p>',
+    'q8.q':'Was sind die AI-Richtungspfeile (USD ▲ / EUR ▼)?',
+    'q8.a':'<p>Für jede Headline mit HIGH- oder MEDIUM-Impact identifiziert ein KI-Modell betroffene Assets und Richtung (▲ bullish / ▼ bearish). Beispiel: "Fed signalisiert aggressiveren Zinspfad" könnte <code>USD ▲ / SPX ▼ / GOLD ▼</code> zeigen.</p><p>Das ist eine Tagging-Schicht — keine Empfehlung. Nutze es als Schnellfilter, um Headlines zu fokussieren, die <i>deine</i> Assets bewegen.</p>',
+    'q9.q':'Was ist Live Squawk?',
+    'q9.a':'<p>Hands-free Sprachausgabe jeder Headline beim Eingang — wie der Squawk eines professionellen Trading-Desks. Nur Pro. Aktivieren/Deaktivieren über den Squawk-Button im Header. Stimme + Geschwindigkeit + Asset-Filter konfigurierbar.</p>',
+    'q10.q':'Wie schnell ist der News-Feed?',
+    'q10.a':'<p><b>Pro:</b> Sub-Sekunden-Lieferung auf Premium-Wire-Quellen. Durchschnittliche Latenz 1-3 Sekunden ab Veröffentlichung.</p><p><b>Basic:</b> Verzögerung von mehreren Minuten im Feed.</p>',
+    'q11.q':'Welche Quellen aggregiert ihr?',
+    'q11.a':'<p>Über 300 institutionelle Quellen, die globale Wire-Services, regulatorische Meldungen, Zentralbank-Ankündigungen, Finanzpresse, Equity-fokussierte Feeds und Krypto-News abdecken.</p><p>Jede Headline im Terminal zeigt die Quelle, sodass du die Herkunft pro Item verifizieren kannst.</p>',
+    'q11b.q':'Was bedeutet das "TNT Wire"-Label auf Pro?',
+    'q11b.a':'<p>"TNT Wire" ist das Badge, das auf Pro-Konten für Headlines angezeigt wird, die über unseren Echtzeit-Liefermechanismus mit der niedrigsten Latenz eintreffen — öffentliche Newswire-ähnliche Kanäle, die wir aggregieren und in Sub-Sekunden anzeigen. Es kennzeichnet den <b>Liefer-Kanal</b>, nicht TNT-eigene proprietäre Inhalte.</p><p>Der ursprüngliche Verleger jeder Headline bleibt intern nachverfolgbar. Pro-Nutzer können den Upstream-Kanalnamen für ein bestimmtes Item beim Support erfragen.</p>',
+    'q12.q':'Welche Sprachen unterstützt der Wirtschaftskalender?',
+    'q12.a':'<p>EN · PT · ES · FR · DE · IT. Über 150 Makro-Indikatoren von Hand übersetzt (keine maschinelle Übersetzung). Sprache im Header über EN/PT/ES/FR/DE/IT wechseln.</p>',
+    'q13.q':'Wie aktiviere ich Telegram DM-Alerts?',
+    'q13.a':'<p>Sidebar öffnen → "Connect Telegram" → Link anklicken → Start im Telegram-Bot drücken. Deine Alerts sind verbunden. Konfiguriere Keywords / Assets / Impact-Levels in den Alert-Einstellungen.</p><p>Pro erhält bis zu 250 DMs/Tag. Basic erhält HIGH-Impact-Alerts mit mehrminütiger Verzögerung.</p>',
+    'q14.q':'Wie aktiviere ich Web-Push-Benachrichtigungen?',
+    'q14.a':'<p>Klicke auf das Glockensymbol im Header → "Enable push". Der Browser fragt nach Erlaubnis. Nach Genehmigung erhältst du Benachrichtigungen auch bei geschlossenem Tab. Funktioniert auf iOS (16.4+) wenn als PWA zum Homescreen hinzugefügt. Nur Pro.</p>',
+    'q15.q':'Warum erhalte ich keine Telegram-Alerts?',
+    'q15.a':'<p>Prüfe: (1) Telegram-Bot verbunden (Sidebar → "Connect Telegram"); (2) deine Alert-Keywords passen zu aktuellen Headlines; (3) du hast den Bot nicht stummgeschaltet; (4) du bist nicht auf Basic mit allen Impact-Levels deaktiviert.</p><p>Funktioniert es immer noch nicht? Email an <a href="mailto:support@tradingnewsterminal.com">support@tradingnewsterminal.com</a> mit deiner Konto-Email — wir diagnostizieren.</p>',
+    'q16.q':'Wie ändere ich mein Passwort?',
+    'q16.a':'<p>Logge dich aus. Auf der Login-Seite "Passwort vergessen" anklicken. Email eingeben — du erhältst einen Reset-Link, der 1 Stunde gültig ist.</p>',
+    'q17.q':'Ich erhalte die Verifizierungs-Email nach Signup nicht.',
+    'q17.a':'<p>Spam/Werbung-Ordner prüfen. Email kommt von <code>noreply@tradingnewsterminal.com</code>. Wenn nach 5 Minuten nicht da: einloggen (der Verifizierungsfluss erlaubt erneuten Versand) oder Email an <a href="mailto:support@tradingnewsterminal.com">support@tradingnewsterminal.com</a>.</p>',
+    'q18.q':'Das Terminal zeigt "Connecting…" und lädt nie. Was tun?',
+    'q18.a':'<p>Versuche: (1) Hard Refresh — <code>Cmd+Shift+R</code> (Mac) / <code>Ctrl+Shift+R</code> (Win); (2) Cache für tradingnewsterminal.com leeren; (3) Status-Banner oben prüfen — wenn rot/gelb, wissen wir Bescheid.</p><p>Immer noch nach 5 Min? Email an uns — Browser + OS angeben.</p>',
+    'q19.q':'Funktioniert es mobil?',
+    'q19.a':'<p>Ja. Das Terminal ist vollständig responsive. Für die beste iOS-Erfahrung <code>app.tradingnewsterminal.com</code> in Safari öffnen → Teilen → Zum Home-Bildschirm hinzufügen. Installiert als PWA mit Vollbildmodus + Push-Benachrichtigungen.</p>',
+    'q20.q':'Sind meine Daten privat?',
+    'q20.a':'<p>Wir verkaufen, teilen oder vermieten keine Nutzerdaten. Deine Email, Name und Trading-Präferenzen werden nur für deinen eigenen Gebrauch gespeichert. Zahlungsdaten werden von Stripe (PCI-konform) verarbeitet — wir sehen nie deine Kartendaten. Mehr in unserer <a href="/privacy">Datenschutzerklärung</a>.</p>',
+    'contact.h2':'Antwort nicht gefunden?', 'contact.desc':'Kontaktiere uns — wir antworten schnell.', 'contact.btn':'Email senden',
+  },
+  it: {
+    tagline:'Market Intelligence in Tempo Reale', active:'IT', open_app:'Apri App →', back:'← Torna alla home',
+    'hero.h1':'Domande Frequenti',
+    'hero.sub':'Risposte rapide alle domande più comuni. Non trovi quello che cerchi? Contattaci — di solito rispondiamo in poche ore.',
+    'tab.general':'FAQ Generali', 'tab.app':'FAQ App',
+    g_sec1:'Trading e Mercati — Concetti',
+    'g1.q':'Cos’è un terminal di notizie finanziarie in tempo reale?',
+    'g1.a':"<p>Un terminal di notizie finanziarie aggrega notizie breaking da molte fonti istituzionali in un singolo feed live. A differenza di un lettore di notizie generico, un terminal di trading è ottimizzato per velocità e densità di segnale — mette in evidenza ciò che muove realmente i prezzi, classifica l'impatto e si integra con strumenti correlati come calendario economico e dati di mercato live.</p><p>Trading News Terminal aggrega oltre 300 fonti istituzionali, classifica ogni titolo per impatto e asset, e consegna aggiornamenti in tempo reale su browser, mobile (PWA) e Telegram.</p>",
+    'g2.q':'Cos’è un calendario economico e perché è importante?',
+    'g2.a':"<p>Un calendario economico è un elenco programmato delle prossime pubblicazioni di dati macroeconomici (CPI, NFP, GDP, decisioni delle banche centrali, ecc.) ed eventi. Ogni voce mostra data/ora, paese, previsione e lettura precedente, poi il valore effettivo una volta pubblicato.</p><p>È importante perché queste pubblicazioni causano regolarmente i maggiori movimenti intraday su FX, equities e bond. I trader usano il calendario per gestire l'esposizione attorno a eventi volatili, preparare tesi direzionali prima delle pubblicazioni, e reagire quando i valori effettivi battono o mancano il consenso.</p>",
+    'g3.q':'Cosa significa impatto HIGH, MEDIUM e LOW?',
+    'g3.a':"<p>La classificazione di impatto categorizza quanto una notizia muove storicamente i mercati. <b>HIGH</b> = eventi top-tier che causano costantemente grandi movimenti (decisioni di tasso Fed/BCE, NFP, CPI, GDP, shock geopolitici). <b>MEDIUM</b> = pubblicazioni secondarie che muovono i mercati in contesti specifici (PMI, retail sales, risultati di grandi caps). <b>LOW</b> = dati minori o notizie di contesto con impatto limitato sul prezzo.</p><p>Filtrare solo HIGH è un workflow comune per trader attivi che vogliono solo segnale, non rumore.</p>",
+    'g4.q':'Quanto veloci devono essere le notizie per il trading attivo?',
+    'g4.a':"<p>Dipende dal timeframe. <b>Scalper (M1-M5)</b> hanno bisogno di latenza sub-secondo — un ritardo di 10 secondi su una sorpresa Fed può essere la differenza tra prendere un movimento di 20 pips e perderlo del tutto. <b>Day trader (15m-1h)</b> normalmente possono lavorare con alcuni secondi di ritardo. <b>Swing/position trader (4h+)</b> non sono sensibili alla latenza — il contesto conta più della velocità.</p><p>Gap retail vs istituzionale: Bloomberg Terminal e wire diretti consegnano in meno di 1 secondo; terminali retail di qualità come Trading News Terminal sono nel range 1-3 secondi; strumenti gratuiti spesso hanno minuti di ritardo.</p>",
+    'g5.q':'Cos’è una squawk box di notizie?',
+    'g5.a':"<p>Una squawk è un servizio di lettura vocale hands-free che annuncia titoli breaking ad alta voce mentre arrivano — storicamente il sistema audio usato nelle sale di trading professionali perché i trader potessero tenere gli occhi sui grafici mentre ascoltavano le notizie. Gli equivalenti retail moderni usano text-to-speech per leggere titoli in tempo reale.</p><p>La squawk ti permette di rimanere concentrato sulla price action mentre prendi comunque titoli che muovono il mercato — utile per trader che guardano grafici a schermo intero.</p>",
+    'g6.q':'Come gli annunci delle banche centrali influenzano i mercati?',
+    'g6.a':"<p>Le banche centrali (Fed, BCE, BoE, BoJ) fissano tassi di interesse a breve termine che guidano direttamente la forza delle valute, i rendimenti dei bond e le valutazioni degli equities. Una postura più hawkish (aumento tassi) tipicamente rafforza quella valuta, alza i rendimenti dei bond e pressiona gli equities. Una postura più dovish (taglio tassi) fa il contrario.</p><p>Oltre alla decisione di tasso stessa, i trader analizzano lo statement, la conferenza stampa e il dot-plot per la forward guidance — spesso è lì che avviene il vero movimento.</p>",
+    'g7.q':'Qual è la differenza tra fonti primarie, wire services e aggregatori?',
+    'g7.a':"<p><b>Fonti primarie</b> pubblicano contenuto originale (Fed, BCE, Tesoro, filing normativi, press release aziendali). <b>Wire services</b> (Reuters, Bloomberg, AP) impiegano giornalisti per battere e verificare notizie — tendono ad essere i più veloci e autorevoli. <b>Aggregatori</b> consolidano più fonti in un feed unificato e aggiungono valore tramite filtraggio, classificazione, traduzione o integrazione con altri strumenti.</p><p>Per trader attivi, un buon workflow combina un wire service o aggregatore (per ampiezza e velocità) con fonti primarie dirette (per il testo reale dello statement).</p>",
+    'g8.q':'Come le notizie macro influenzano crypto vs mercati tradizionali?',
+    'g8.a':"<p>Crypto è diventato sempre più correlato con i risk asset — Bitcoin e principali altcoin si muovono tipicamente con gli equities sugli shock macro (hawkishness Fed pressiona entrambi, sorprese dovish aiutano entrambi). La correlazione è più forte durante eventi ad alta volatilità.</p><p>Notizie crypto-specifiche (regolamentazione, flussi ETF, grandi movimenti on-chain) creano movimenti aggiuntivi che non influenzano i mercati tradizionali. Seguire sia il flusso macro che crypto-native è necessario per trader crypto.</p>",
+    sec1:'Piani e Fatturazione', sec2:'Funzionalità', sec3:'Notifiche e Avvisi', sec4:'Account e Tecnico',
+    'q1.q':'Qual è la differenza tra Basic e Pro?',
+    'q1.a':"<p><b>Basic (gratuito):</b> feed di news HIGH-impact, aggregazione multi-fonte 24/7, filtri per asset, calendario economico in 6 lingue, avvisi Telegram DM.</p><p><b>Pro (€40/mese):</b> tutto Basic più feed in tempo reale sub-secondo, AI Daily Playbook (3-5 scenari educativi con prezzi attuali), frecce direzionali AI su ogni titolo (USD ▲ / EUR ▼), filtro per asset con 1 clic e storico profondo (2.000 risultati vs 500), 7 canali TV finanziari live integrati, Live Squawk (lettura vocale hands-free), notifiche push web.</p>",
+    'q2.q':'Come funziona la prova Pro di 7 giorni?',
+    'q2.a':"<p>All'inizio della prova hai accesso completo a Pro per 7 giorni. I dati della carta sono richiesti in anticipo perché l'abbonamento si converta automaticamente il Giorno 7. Se cancelli prima del Giorno 7 dalle impostazioni di fatturazione, non ti viene addebitato.</p><p>Per cancellare: apri il terminal → clic sul tuo nome (angolo in alto a destra) → Gestisci Abbonamento → Cancella.</p>",
+    'q3.q':'Come cancello il mio abbonamento Pro?',
+    'q3.a':"<p>Clic sul tuo nome in alto a destra → \"Gestisci Abbonamento\" → si apre il portale cliente Stripe → \"Cancella abbonamento\". L'accesso Pro continua fino alla fine del periodo di fatturazione corrente, poi passa automaticamente a Basic.</p>",
+    'q4.q':'Posso passare tra Pro mensile e annuale?',
+    'q4.a':"<p>Sì. Dalle impostazioni di fatturazione puoi passare mensile (€40/mese) ↔ annuale (€360/anno — risparmi €120/anno vs mensile). Stripe applica automaticamente un credito proporzionale per i giorni non utilizzati del piano precedente.</p>",
+    'q5.q':'Offrite rimborsi?',
+    'q5.a':"<p>La prova Pro di 7 giorni è il meccanismo di rimborso — cancella in 7 giorni senza costi. Per cicli più lunghi, i rimborsi sono valutati caso per caso. Email a <a href=\"mailto:support@tradingnewsterminal.com\">support@tradingnewsterminal.com</a> con la tua situazione.</p>",
+    'q6.q':"Cos'è l'AI Daily Playbook?",
+    'q6.a':"<p>Un generatore di scenari educativi che gira 3 volte al giorno (mattina Europa, apertura US, fine US). Per ogni asset principale (USD, EUR, GOLD, SPX, BTC, petrolio), produce 3-5 scenari \"se-questo-allora-quello\" basati sul prezzo attuale e il flusso recente di news.</p><p>Il Playbook è <b>solo educativo</b> — non è consulenza finanziaria. I setup sono presentati come materiale di apprendimento per aiutarti a pensare alla struttura del mercato, non come segnali di trading.</p>",
+    'q7.q':"Cos'è il Filtro per Asset con 1 clic?",
+    'q7.a':"<p>Ogni titolo mostra chip di asset (USD, EUR, GOLD, SPX, BTC, ecc.) sul lato destro. Clicca un chip e il feed filtra solo le news che riguardano quell'asset. Clicca lo stesso chip di nuovo per rimuovere il filtro.</p><p>Su Pro, il filtro attiva una ricerca di storico profondo (2.000 risultati) per vedere settimane di contesto, non solo oggi. Gli utenti Basic vedono gli ultimi 500 item in cache.</p>",
+    'q8.q':'Cosa sono le frecce direzionali AI (USD ▲ / EUR ▼)?',
+    'q8.a':'<p>Per ogni titolo con impatto HIGH o MEDIUM, un modello AI identifica quali asset sono interessati e la direzione (▲ rialzista / ▼ ribassista). Per esempio, "Fed segnala traiettoria più aggressiva dei tassi" potrebbe mostrare <code>USD ▲ / SPX ▼ / GOLD ▼</code>.</p><p>Questo è uno strato di tagging — non una raccomandazione. Usalo come filtro rapido per concentrarti sui titoli che muovono i <i>tuoi</i> asset.</p>',
+    'q9.q':"Cos'è Live Squawk?",
+    'q9.a':"<p>Lettura vocale hands-free di ogni titolo all'arrivo — come il squawk di una sala trading professionale. Solo Pro. Attiva/disattiva dal pulsante squawk nell'header. Voce + velocità + filtro per asset configurabili.</p>",
+    'q10.q':'Quanto è veloce il feed di news?',
+    'q10.a':'<p><b>Pro:</b> consegna sub-secondo su fonti wire premium. Latenza media 1-3 secondi dalla pubblicazione.</p><p><b>Basic:</b> ritardo di diversi minuti sul feed.</p>',
+    'q11.q':'Quali fonti aggregano?',
+    'q11.a':"<p>Oltre 300 fonti istituzionali che coprono wire services globali, comunicazioni normative, annunci delle banche centrali, stampa finanziaria, feed focalizzati su equities e notizie crypto.</p><p>Ogni titolo dentro il terminal mostra la fonte per verificare la provenienza item per item.</p>",
+    'q11b.q':"Cosa significa l'etichetta \"TNT Wire\" su Pro?",
+    'q11b.a':"<p>\"TNT Wire\" è il badge mostrato sugli account Pro per i titoli che arrivano attraverso il nostro canale di consegna in tempo reale a minore latenza — canali pubblici in stile newswire che aggreghiamo e mostriamo in sub-secondo. Indica il <b>canale di consegna</b>, non contenuti proprietari scritti da TNT.</p><p>L'editore originale di ogni singolo titolo rimane tracciabile internamente. Gli utenti Pro possono richiedere il nome del canale upstream per qualsiasi item specifico contattando il supporto.</p>",
+    'q12.q':'Quali lingue supporta il Calendario Economico?',
+    'q12.a':"<p>EN · PT · ES · FR · DE · IT. Oltre 150 indicatori macro tradotti a mano (non traduzione automatica). Cambia lingua dal toggle EN/PT/ES/FR/DE/IT nell'header.</p>",
+    'q13.q':'Come attivo gli avvisi Telegram DM?',
+    'q13.a':"<p>Apri la sidebar → \"Connect Telegram\" → clicca sul link → premi Start nel bot Telegram. I tuoi avvisi sono collegati. Configura keyword / asset / livelli di impatto da ricevere nelle impostazioni Avvisi.</p><p>Pro ha fino a 250 DM/giorno. Basic riceve avvisi HIGH-impact con ritardo di diversi minuti.</p>",
+    'q14.q':'Come attivo le notifiche push web?',
+    'q14.a':"<p>Clicca sull'icona campanella nell'header → \"Enable push\". Il browser chiede il permesso. Dopo l'autorizzazione ricevi notifiche del browser anche con il tab chiuso. Funziona su iOS (16.4+) quando aggiunto alla home come PWA. Solo Pro.</p>",
+    'q15.q':'Perché non ricevo gli avvisi Telegram?',
+    'q15.a':"<p>Verifica: (1) bot Telegram connesso (sidebar → \"Connect Telegram\"); (2) le tue keyword corrispondono a titoli recenti; (3) non hai silenziato il bot in Telegram; (4) non sei su Basic con tutti i livelli di impatto disattivati.</p><p>Se ancora non funziona, email a <a href=\"mailto:support@tradingnewsterminal.com\">support@tradingnewsterminal.com</a> con l'email dell'account — diagnostichiamo.</p>",
+    'q16.q':'Come cambio la password?',
+    'q16.a':"<p>Esci. Sulla pagina di login clicca \"Password dimenticata\". Inserisci la tua email — ricevi un link di reset valido per 1 ora.</p>",
+    'q17.q':'Non ricevo l’email di verifica dopo il signup.',
+    'q17.a':"<p>Controlla la cartella spam/promozioni. L'email arriva da <code>noreply@tradingnewsterminal.com</code>. Se non c'è dopo 5 minuti: fai login (il flusso di verifica permette nuovo invio) o email a <a href=\"mailto:support@tradingnewsterminal.com\">support@tradingnewsterminal.com</a>.</p>",
+    'q18.q':'Il terminal mostra "Connecting…" e non carica. Che faccio?',
+    'q18.a':"<p>Prova: (1) hard refresh — <code>Cmd+Shift+R</code> (Mac) / <code>Ctrl+Shift+R</code> (Win); (2) pulisci cache per tradingnewsterminal.com; (3) controlla il banner di stato in alto — se rosso/giallo, lo sappiamo e ci stiamo lavorando.</p><p>Ancora bloccato dopo 5 min? Inviaci email — includi browser + OS.</p>",
+    'q19.q':'Funziona su mobile?',
+    'q19.a':"<p>Sì. Il terminal è completamente responsive. Per la migliore esperienza iOS, apri <code>app.tradingnewsterminal.com</code> in Safari → Condividi → Aggiungi alla schermata Home. Si installa come PWA con modalità schermo intero + notifiche push.</p>",
+    'q20.q':'I miei dati sono privati?',
+    'q20.a':"<p>Non vendiamo, condividiamo o affittiamo dati utente. La tua email, nome e preferenze di trading sono memorizzate solo per il tuo uso. I dati di pagamento sono gestiti da Stripe (PCI-compliant) — non vediamo mai i dettagli della tua carta. Leggi di più nella nostra <a href=\"/privacy\">Informativa sulla Privacy</a>.</p>",
+    'contact.h2':'Non hai trovato la risposta?', 'contact.desc':'Contattaci — rispondiamo veloci.', 'contact.btn':'Invia email',
+  },
+};
+
+// Backfill EN-only keys (questions 1-20 fields q1.q, q1.a etc are EN-default from HTML; only override on non-EN langs)
+function _applyLang(l){
+  var t = _tnt[l] || _tnt.en;
+  document.querySelectorAll('[data-i18n]').forEach(function(el){
+    var k = el.getAttribute('data-i18n');
+    if (t[k] !== undefined) el.textContent = t[k];
+  });
+  document.querySelectorAll('[data-i18n-html]').forEach(function(el){
+    var k = el.getAttribute('data-i18n-html');
+    if (t[k] !== undefined) el.innerHTML = t[k];
+  });
+  var flags = {en:'1f1ec-1f1e7',pt:'1f1f5-1f1f9',es:'1f1ea-1f1f8',fr:'1f1eb-1f1f7',de:'1f1e9-1f1ea',it:'1f1ee-1f1f9'};
+  var btn = document.querySelector('#langPicker>button');
+  if (btn) btn.innerHTML = '<img src="https://twemoji.maxcdn.com/v/latest/svg/'+flags[l]+'.svg" width="16" height="16" style="vertical-align:middle;"> ' + (t['active'] || l.toUpperCase());
+  document.querySelectorAll('#langMenu a').forEach(function(a){
+    a.style.color = a.getAttribute('data-lang')===l ? '#00d4ff' : '#8899aa';
+    a.style.background = a.getAttribute('data-lang')===l ? 'rgba(0,212,255,0.08)' : '';
+  });
+  try { history.replaceState(null,'',location.pathname + (l==='en' ? '' : '?lang='+l)); } catch(e) {}
+  localStorage.setItem('tnt_lang', l);
+}
+function setLang(l){ _applyLang(l); document.getElementById('langMenu').style.display='none'; }
+
+// Toggle between General FAQ and App FAQ tabs
+function setFaqTab(name){
+  document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.toggle('active', b.dataset.tab===name); });
+  document.querySelectorAll('.faq-section').forEach(function(s){ s.classList.toggle('active', s.id===name+'-faq'); });
+  try { var u = new URL(location.href); if (name==='general') u.searchParams.delete('tab'); else u.searchParams.set('tab', name); history.replaceState(null,'',u.toString()); } catch(e){}
+}
+// Init tab from URL ?tab=app (defaults to general)
+(function(){ var t = new URLSearchParams(location.search).get('tab'); if (t==='app') setFaqTab('app'); })();
+
+// Init: read ?lang= param or localStorage
+(function(){
+  var urlLang = new URLSearchParams(location.search).get('lang');
+  var savedLang = localStorage.getItem('tnt_lang');
+  var browserLang = (navigator.language || 'en').slice(0,2).toLowerCase();
+  var l = urlLang || savedLang || (['en','pt','es','fr','de','it'].includes(browserLang) ? browserLang : 'en');
+  if (l !== 'en') _applyLang(l);
+})();
+
+// Close lang menu on outside click
+document.addEventListener('click', function(e){
+  var picker = document.getElementById('langPicker');
+  if (picker && !picker.contains(e.target)) {
+    document.getElementById('langMenu').style.display = 'none';
+  }
+});
+</script>
+
+</body>
+</html>

@@ -15,6 +15,9 @@
 <meta property="og:url" content="https://www.tradingnewsterminal.com/central-banks-tracker">
 <meta property="og:image" content="https://www.tradingnewsterminal.com/og-image.png">
 <meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Central Banks Tracker — Fed, ECB, BOE, BOJ Live">
+<meta name="twitter:description" content="Live tracker for every major central bank. Follow Fed, ECB, BOE, BOJ, SNB & RBA rate decisions, speeches and policy statements as they happen.">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -528,7 +531,6 @@
             <th class="tnt-col">TNT Pro</th>
             <th>Investing.com</th>
             <th>ForexFactory</th>
-            <th>Bloomberg</th>
           </tr>
         </thead>
         <tbody>
@@ -537,40 +539,34 @@
             <td class="tnt-col check">✓</td>
             <td class="check">✓</td>
             <td class="check">✓</td>
-            <td class="check">✓</td>
           </tr>
           <tr>
             <td data-i18n="cmp_row2">Live speech tracking</td>
             <td class="tnt-col check">✓</td>
             <td class="cross">✗</td>
             <td class="cross">✗</td>
-            <td class="check">✓</td>
           </tr>
           <tr>
             <td data-i18n="cmp_row3">Hawkish/Dovish tone tagging</td>
             <td class="tnt-col check">✓</td>
             <td class="cross">✗</td>
             <td class="cross">✗</td>
-            <td class="check">✓</td>
           </tr>
           <tr>
             <td data-i18n="cmp_row4">Live squawk audio alerts</td>
             <td class="tnt-col check">✓</td>
             <td class="cross">✗</td>
             <td class="cross">✗</td>
-            <td class="check">✓</td>
           </tr>
           <tr>
             <td data-i18n="cmp_row5">Integrated news feed</td>
             <td class="tnt-col check">✓</td>
             <td class="cross">✗</td>
             <td class="cross">✗</td>
-            <td class="check">✓</td>
           </tr>
           <tr>
             <td data-i18n="cmp_row6">12+ banks covered</td>
             <td class="tnt-col check">✓</td>
-            <td class="check">✓</td>
             <td class="check">✓</td>
             <td class="check">✓</td>
           </tr>
@@ -579,7 +575,6 @@
             <td class="tnt-col" style="color: var(--accent);">€40</td>
             <td>Free / $34.99+</td>
             <td>Free</td>
-            <td>$2,000+</td>
           </tr>
         </tbody>
       </table>
@@ -623,7 +618,6 @@
     <div class="section-label" data-i18n="explore_label">Explore</div>
     <h2 class="section-title" data-i18n="explore_title">Explore Other Features</h2>
     <div class="cross-links">
-      <a href="/bloomberg-alternative" class="cross-link">Bloomberg Alternative</a>
       <a href="/forex-news-feed" class="cross-link">Forex News Feed</a>
       <a href="/economic-calendar" class="cross-link">Economic Calendar</a>
       <a href="/squawk-box" class="cross-link">Squawk Box</a>
@@ -885,7 +879,7 @@ function setLang(l){document.getElementById('langMenu').style.display='none';_ap
 })();
 // ── SEO Tracking ─────────────────────────────────────────────────────────────
 (function(){
-  var BE='https://trading-news-terminal-backend-production.up.railway.app', PAGE='central-banks-tracker';
+  var BE='https://api.tradingnewsterminal.com', PAGE='central-banks-tracker';
   // Visit
   fetch(BE+'/admin/track/seo?event=visit&page='+PAGE,{method:'POST'}).catch(function(){});
   // Click tracking on all data-seo-track CTAs

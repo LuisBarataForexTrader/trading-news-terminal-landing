@@ -15,6 +15,9 @@
 <meta property="og:url" content="https://www.tradingnewsterminal.com/market-screener">
 <meta property="og:image" content="https://www.tradingnewsterminal.com/og-image.png">
 <meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Market Screener — Forex, Stocks, Crypto & Indices Live">
+<meta name="twitter:description" content="Real-time market screener for Forex, Stocks, Crypto, Indices & Commodities. RSI signals, momentum & news activity — all in one trading terminal.">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -500,7 +503,6 @@
             <th class="tnt-col">TNT Pro</th>
             <th>TradingView</th>
             <th>Finviz</th>
-            <th>Bloomberg</th>
           </tr>
         </thead>
         <tbody>
@@ -509,20 +511,17 @@
             <td class="tnt-col check">&#10003;</td>
             <td class="check">&#10003;</td>
             <td class="check">&#10003;</td>
-            <td class="check">&#10003;</td>
           </tr>
           <tr>
             <td data-i18n="cmp.forex">Forex screening</td>
             <td class="tnt-col check">&#10003;</td>
             <td class="check">&#10003;</td>
             <td class="cross">&#10007;</td>
-            <td class="check">&#10003;</td>
           </tr>
           <tr>
             <td data-i18n="cmp.crypto">Crypto screening</td>
             <td class="tnt-col check">&#10003;</td>
             <td class="check">&#10003;</td>
-            <td class="cross">&#10007;</td>
             <td class="cross">&#10007;</td>
           </tr>
           <tr>
@@ -530,19 +529,16 @@
             <td class="tnt-col check">&#10003;</td>
             <td class="cross">&#10007;</td>
             <td class="cross">&#10007;</td>
-            <td class="check">&#10003;</td>
           </tr>
           <tr>
             <td data-i18n="cmp.news_feed">Integrated news feed</td>
             <td class="tnt-col check">&#10003;</td>
             <td class="cross">&#10007;</td>
             <td class="cross">&#10007;</td>
-            <td class="check">&#10003;</td>
           </tr>
           <tr>
             <td data-i18n="cmp.news_rank">News activity ranking</td>
             <td class="tnt-col check">&#10003;</td>
-            <td class="cross">&#10007;</td>
             <td class="cross">&#10007;</td>
             <td class="cross">&#10007;</td>
           </tr>
@@ -551,7 +547,6 @@
             <td class="tnt-col" style="color: var(--accent);">&euro;40</td>
             <td>Free / $14.95+</td>
             <td>Free / $39.50+</td>
-            <td>$2,000+</td>
           </tr>
         </tbody>
       </table>
@@ -595,7 +590,6 @@
     <div class="section-label" data-i18n="explore_title">Explore</div>
     <h2 class="section-title" data-i18n="explore.h2">Explore Other Features</h2>
     <div class="cross-links">
-      <a href="/bloomberg-alternative" class="cross-link">Bloomberg Alternative</a>
       <a href="/forex-news-feed" class="cross-link">Forex News Feed</a>
       <a href="/economic-calendar" class="cross-link">Economic Calendar</a>
       <a href="/squawk-box" class="cross-link">Squawk Box</a>
@@ -845,7 +839,7 @@ function setLang(l){document.getElementById('langMenu').style.display='none';_ap
 })();
 // ── SEO Tracking ─────────────────────────────────────────────────────────────
 (function(){
-  var BE='https://trading-news-terminal-backend-production.up.railway.app', PAGE='market-screener';
+  var BE='https://api.tradingnewsterminal.com', PAGE='market-screener';
   // Visit
   fetch(BE+'/admin/track/seo?event=visit&page='+PAGE,{method:'POST'}).catch(function(){});
   // Click tracking on all data-seo-track CTAs

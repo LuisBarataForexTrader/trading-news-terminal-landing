@@ -351,7 +351,7 @@ footer{padding:40px 32px;border-top:1px solid var(--border);display:flex;align-i
       <div class="tier-commission-block">
         <div class="tier-pct t1">20%</div>
         <div class="tier-pct-note">on first subscription</div>
-        <div class="tier-value t1">€72 per client</div>
+        <div class="tier-value t1">€8 monthly · €72 annual</div>
       </div>
       <div class="tier-divider"></div>
       <ul class="tier-perks">
@@ -370,13 +370,13 @@ footer{padding:40px 32px;border-top:1px solid var(--border);display:flex;align-i
       <div class="tier-commission-block">
         <div class="tier-pct t2">30%</div>
         <div class="tier-pct-note">on first subscription</div>
-        <div class="tier-value t2">€108 per client</div>
+        <div class="tier-value t2">€12 monthly · €108 annual</div>
       </div>
       <div class="tier-divider"></div>
       <ul class="tier-perks">
         <li class="tier-perk"><span class="perk-icon b">✓</span><span>Everything in Tier 1</span></li>
         <li class="tier-perk"><span class="perk-icon b">✓</span><span>Exclusive 20% discount coupon for your community</span></li>
-        <li class="tier-perk"><span class="perk-icon b">✓</span><span><strong style="color:var(--accent)">6 months TNT Pro</strong> — complimentary access</span></li>
+        <li class="tier-perk"><span class="perk-icon b">✓</span><span style="color:var(--accent);font-weight:700">6 months TNT Pro — complimentary access</span></li>
         <li class="tier-perk"><span class="perk-icon b">✓</span><span>Priority support from the TNT team</span></li>
       </ul>
     </div>
@@ -389,14 +389,14 @@ footer{padding:40px 32px;border-top:1px solid var(--border);display:flex;align-i
       <div class="tier-commission-block">
         <div class="tier-pct t3">30% + 10%</div>
         <div class="tier-pct-note">first subscription + all renewals</div>
-        <div class="tier-value t3">€108 first · €36 recurring</div>
+        <div class="tier-value t3">€12/€108 first · €36 recurring</div>
       </div>
       <div class="tier-divider"></div>
       <ul class="tier-perks">
         <li class="tier-perk"><span class="perk-icon p">✓</span><span>Everything in Tier 1 &amp; 2</span></li>
-        <li class="tier-perk"><span class="perk-icon p">✓</span><span><strong style="color:var(--purple)">10% on renewals</strong> — earn every year forever</span></li>
+        <li class="tier-perk"><span class="perk-icon p">✓</span><span style="color:var(--purple);font-weight:700">10% on renewals — earn every year forever</span></li>
         <li class="tier-perk"><span class="perk-icon gold">✓</span><span>Dedicated landing page at tradingnewsterminal.com/you</span></li>
-        <li class="tier-perk"><span class="perk-icon gold">✓</span><span><strong style="color:var(--gold)">1 year TNT Pro</strong> — complimentary access</span></li>
+        <li class="tier-perk"><span class="perk-icon gold">✓</span><span style="color:var(--gold);font-weight:700">1 year TNT Pro — complimentary access</span></li>
       </ul>
     </div>
   </div>
@@ -415,8 +415,8 @@ footer{padding:40px 32px;border-top:1px solid var(--border);display:flex;align-i
         </tr>
       </thead>
       <tbody>
-        <tr><td>Commission on first monthly (€40)</td><td>20% — €8</td><td style="color:var(--accent)">30% — €12</td><td style="color:var(--purple)">30% — €12</td></tr>
-        <tr><td>Commission on first annual (€360)</td><td>20% — €72</td><td style="color:var(--accent)">30% — €108</td><td style="color:var(--purple)">30% — €108</td></tr>
+        <tr><td>Monthly commission (€40)</td><td>20% — €8</td><td style="color:var(--accent)">30% — €12</td><td style="color:var(--purple)">30% — €12</td></tr>
+        <tr><td>Annual commission (€360)</td><td>20% — €72</td><td style="color:var(--accent)">30% — €108</td><td style="color:var(--purple)">30% — €108</td></tr>
         <tr><td>Commission on renewals</td><td class="cross">—</td><td class="cross">—</td><td style="color:var(--purple)">10% — €36/yr</td></tr>
         <tr><td>Referral link (30-day cookie)</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
         <tr><td>Affiliate dashboard</td><td class="check">✓</td><td class="check">✓</td><td class="check">✓</td></tr>
@@ -453,10 +453,10 @@ footer{padding:40px 32px;border-top:1px solid var(--border);display:flex;align-i
           </div>
           <div class="slider-group">
             <div class="slider-row">
-              <span class="slider-name">Commission rate</span>
-              <span class="slider-val" id="sv-cvr">20%</span>
+              <span class="slider-name">Plan type</span>
+              <span class="slider-val" id="sv-plan">Annual</span>
             </div>
-            <input type="range" id="sl-cvr" min="20" max="30" value="20" step="10">
+            <input type="range" id="sl-plan" min="0" max="1" value="1" step="1">
           </div>
           <div class="slider-group" style="margin-bottom:0">
             <div class="slider-row">
@@ -617,7 +617,7 @@ document.querySelectorAll('.faq-q').forEach(q => {
 });
 
 // ── CALCULATOR ───────────────────────────────────────────────────
-const BE = 'https://trading-news-terminal-backend-production.up.railway.app';
+const BE = 'https://api.tradingnewsterminal.com';
 let _earningsChart = null;
 
 function calcTier(clients) {
@@ -627,39 +627,41 @@ function calcTier(clients) {
 }
 
 function updateCalc() {
-  // `refs` = paying clients converted per month (already-converted)
-  // `cvr` = commission rate the user picks (20% = Tier 1, 30% = Tier 2/3)
-  const refs = parseInt(document.getElementById('sl-refs').value);
-  const cvr  = parseInt(document.getElementById('sl-cvr').value) / 100;
-  const mo   = parseInt(document.getElementById('sl-mo').value);
+  const refs      = parseInt(document.getElementById('sl-refs').value);
+  const isAnnual  = parseInt(document.getElementById('sl-plan').value) === 1;
+  const planPrice = isAnnual ? 360 : 40;
+  const mo        = parseInt(document.getElementById('sl-mo').value);
 
   document.getElementById('sv-refs').textContent = refs;
-  document.getElementById('sv-cvr').textContent  = Math.round(cvr * 100) + '%';
+  document.getElementById('sv-plan').textContent = isAnnual ? 'Annual (€360)' : 'Monthly (€40)';
   document.getElementById('sv-mo').textContent   = mo;
 
-  const totalClients    = refs * mo;
-  // Use the commission rate the user selected directly \u2014 no funnel guesswork
-  const totalEarnings   = Math.round(totalClients * 360 * cvr);
-  const monthlyAvg      = Math.round(totalEarnings / mo);
-  // Tier shown in the breakdown still follows the real rules (based on clients_count)
-  const t               = calcTier(totalClients);
-
-  document.getElementById('calc-total').textContent   = '\u20ac' + totalEarnings.toLocaleString();
-  document.getElementById('calc-period').textContent  = `over ${mo} months`;
-  document.getElementById('calc-clients').textContent = totalClients;
-  document.getElementById('calc-tier').textContent    = t.label;
-  document.getElementById('calc-tier').style.color    = t.color;
-  document.getElementById('calc-rate').textContent    = Math.round(cvr * 100) + '%';
-  document.getElementById('calc-monthly').textContent = '\u20ac' + monthlyAvg.toLocaleString();
-
-  // Chart: cumulative earnings per month
+  // Simulate month by month with progressive tier — rate changes at 10 and 50 clients
   const months = []; const data = [];
-  let cumEarnings = 0;
+  let cumClients = 0, cumEarnings = 0;
   for (let m = 1; m <= mo; m++) {
-    cumEarnings += refs * 360 * cvr;
+    let monthEarnings = 0;
+    for (let c = 0; c < refs; c++) {
+      cumClients++;
+      const t = calcTier(cumClients); // tier after this client joins
+      monthEarnings += planPrice * t.rate;
+    }
+    cumEarnings += monthEarnings;
     months.push('M' + m);
     data.push(Math.round(cumEarnings));
   }
+
+  const totalEarnings = Math.round(cumEarnings);
+  const monthlyAvg    = Math.round(totalEarnings / mo);
+  const finalTier     = calcTier(cumClients);
+
+  document.getElementById('calc-total').textContent   = '\u20ac' + totalEarnings.toLocaleString();
+  document.getElementById('calc-period').textContent  = `over ${mo} months`;
+  document.getElementById('calc-clients').textContent = cumClients;
+  document.getElementById('calc-tier').textContent    = finalTier.label;
+  document.getElementById('calc-tier').style.color    = finalTier.color;
+  document.getElementById('calc-rate').textContent    = Math.round(finalTier.rate * 100) + '% (final tier)';
+  document.getElementById('calc-monthly').textContent = '\u20ac' + monthlyAvg.toLocaleString();
 
   const ctx = document.getElementById('chart-earnings').getContext('2d');
   const grad = ctx.createLinearGradient(0, 0, 0, 280);
@@ -719,7 +721,7 @@ function updateCalc() {
   });
 }
 
-['sl-refs','sl-cvr','sl-mo'].forEach(id => {
+['sl-refs','sl-plan','sl-mo'].forEach(id => {
   document.getElementById(id).addEventListener('input', updateCalc);
 });
 updateCalc();
@@ -773,80 +775,153 @@ const TR_PT = {
   "Apply Now": "Candidatar",
   // Hero
   "Affiliate Program": "Programa de Afiliados",
+  "Turn your audience into": "Transforma a tua audiência em",
+  "passive income": "rendimento passivo",
   "Earn Commissions": "Ganha Comissões",
   "Refer traders to TNT Pro. Earn up to 30% commission on every subscription — monthly or annual — with recurring income at Tier 3. No cap, no expiry.": "Refere traders ao TNT Pro. Ganha até 30% de comissão em cada subscrição — mensal ou anual — com rendimento recorrente no Tier 3. Sem tecto, sem expirar.",
   "Apply in 60 seconds": "Candidata-te em 60s",
   "View tier benefits": "Ver benefícios por tier",
   "Annual plan value": "Valor do plano anual",
   "Max commission": "Comissão máxima",
+  "Max per referral": "Máximo por referência",
   "Cookie window": "Janela de cookie",
+  "No earnings cap": "Sem limite de ganhos",
   // Tiers section
-  "Three tiers. One goal: reward loyalty.": "Três níveis. Um objectivo: recompensar lealdade.",
-  "Everyone starts at Tier 1 (20% on first annual). As your conversions grow, you automatically level up. Tier 3 unlocks 10% recurring commissions on renewals.": "Todos começam no Tier 1 (20% na primeira anualidade). Conforme as tuas conversões crescem, subes de nível automaticamente. Tier 3 desbloqueia 10% de comissões recorrentes em renovações.",
-  "0-9 clients": "0-9 clientes",
-  "10-49 clients": "10-49 clientes",
+  "Tier System": "Sistema de Níveis",
+  "More clients =": "Mais clientes =",
+  "bigger rewards": "maiores recompensas",
+  "Your tier upgrades automatically as your client base grows. Bigger tiers unlock higher commissions, exclusive tools, and free platform access.": "O teu nível sobe automaticamente conforme a tua base de clientes cresce. Níveis superiores desbloqueiam comissões mais altas, ferramentas exclusivas e acesso gratuito à plataforma.",
+  "Tier 1 — Starter": "Tier 1 — Iniciante",
+  "1–9 clients": "1–9 clientes",
+  "Tier 2 — Growth": "Tier 2 — Crescimento",
+  "10–49 clients": "10–49 clientes",
+  "Tier 3 — Partner": "Tier 3 — Parceiro",
   "50+ clients": "50+ clientes",
+  "on first subscription": "na primeira subscrição",
+  "first subscription + all renewals": "primeira subscrição + todas as renovações",
+  "€8 monthly · €72 annual": "€8 mensal · €72 anual",
+  "€12 monthly · €108 annual": "€12 mensal · €108 anual",
+  "€12/€108 first · €36 recurring": "€12/€108 primeira · €36 recorrente",
   "Commission on first annual": "Comissão na primeira anualidade",
   "Commission on renewals": "Comissão em renovações",
   "€72 per client": "€72 por cliente",
   "€108 per client": "€108 por cliente",
   "€36 per client /yr": "€36 por cliente/ano",
+  "Unique referral link with 30-day tracking": "Link de referência único com rastreio de 30 dias",
   "Real-time dashboard — clicks, leads, conversions": "Dashboard em tempo real — cliques, leads, conversões",
+  "Payout on demand (7-day intervals)": "Payout a pedido (intervalos de 7 dias)",
   "Bank transfer or Stripe payout": "Transferência bancária ou payout Stripe",
   "30-day cookie attribution": "Atribuição por cookie de 30 dias",
   "Everything in Tier 1": "Tudo do Tier 1",
   "Exclusive 20% discount coupon for your community": "Cupom de desconto 20% exclusivo para a tua comunidade",
+  "6 months TNT Pro — complimentary access": "6 meses TNT Pro — acesso gratuito",
+  "Priority support from the TNT team": "Suporte prioritário da equipa TNT",
   "Priority email support": "Suporte por email prioritário",
   "Everything in Tier 1 & 2": "Tudo dos Tiers 1 & 2",
+  "10% on renewals — earn every year forever": "10% nas renovações — ganhas todos os anos para sempre",
   "10% recurring on renewals for life": "10% recorrente em renovações vitalícias",
+  "1 year TNT Pro — complimentary access": "1 ano TNT Pro — acesso gratuito",
   "Dedicated landing page at tradingnewsterminal.com/you": "Landing page dedicada em tradingnewsterminal.com/tu",
   "Dedicated landing page": "Landing page dedicada",
   "Community discount coupon (20%)": "Cupom de desconto comunidade (20%)",
+  // Comparison table
+  "Benefit": "Benefício",
+  "Monthly commission (€40)": "Comissão mensal (€40)",
+  "Annual commission (€360)": "Comissão anual (€360)",
+  "Commission on first monthly (€40)": "Comissão mensal (€40)",
+  "Commission on first annual (€360)": "Comissão anual (€360)",
+  "Referral link (30-day cookie)": "Link de referência (cookie 30 dias)",
+  "Affiliate dashboard": "Dashboard de afiliado",
+  "Free TNT Pro access": "Acesso gratuito ao TNT Pro",
+  "Priority support": "Suporte prioritário",
+  "✓ Custom page": "✓ Página personalizada",
   // Calculator
   "Earnings Calculator": "Calculadora de Rendimentos",
+  "See your": "Vê os teus",
+  "potential earnings": "rendimentos potenciais",
   "Configure your scenario": "Configura o teu cenário",
   "Adjust the sliders to estimate your monthly and annual income.": "Ajusta os sliders para estimar o teu rendimento mensal e anual.",
   "Paying clients / month": "Clientes pagantes / mês",
+  "Plan type": "Tipo de plano",
+  "Annual (€360)": "Anual (€360)",
+  "Monthly (€40)": "Mensal (€40)",
   "Commission rate": "Taxa de comissão",
   "Months simulated": "Meses simulados",
   "Projected earnings": "Rendimento projectado",
   "Cumulative earnings over time": "Rendimento acumulado ao longo do tempo",
   "Total clients": "Total de clientes",
   "Your tier": "O teu tier",
+  "% (final tier)": "% (tier final)",
   "Per month (avg)": "Por mês (média)",
   "over 12 months": "em 12 meses",
-  // Apply form
-  "Apply as an affiliate": "Candidata-te como afiliado",
+  // How it works
+  "How It Works": "Como Funciona",
+  "Four steps to": "Quatro passos para",
+  "your first commission": "a tua primeira comissão",
+  "Apply & Get Approved": "Candidata-te e sê aprovado",
   "Fill out the form below. Applications are reviewed within 1–2 business days. Free to join, no commitment.": "Preenche o formulário abaixo. Candidaturas são revistas em 1-2 dias úteis. Gratuito, sem compromisso.",
+  "Get Your Link": "Obtém o teu link",
+  "You receive a unique URL like": "Recebes um URL único como",
+  ". Share it with your community.": ". Partilha-o com a tua comunidade.",
+  "Every click is tracked for 30 days. When someone subscribes through your link — monthly or annual — you're credited automatically.": "Cada clique é rastreado por 30 dias. Quando alguém subscreve através do teu link — mensal ou anual — ficas automaticamente creditado.",
+  "Request Payout": "Pedir Payout",
+  "Withdraw your balance at any time via bank transfer (IBAN) or Stripe. New requests every 7 days.": "Levanta o teu saldo a qualquer momento via transferência bancária (IBAN) ou Stripe. Novos pedidos a cada 7 dias.",
+  // Apply form
+  "Join the Program": "Junta-te ao Programa",
+  "Apply as an affiliate": "Candidata-te como afiliado",
+  "Ready to start earning?": "Pronto para começar a ganhar?",
+  "Applications are reviewed within 1–2 business days. Free to join — no commitment, no fees. You'll receive your unique link and dashboard access upon approval.": "Candidaturas são revistas em 1-2 dias úteis. Gratuito — sem compromisso, sem taxas. Recebes o teu link único e acesso ao dashboard após aprovação.",
   "Full Name *": "Nome completo *",
+  "Your name": "O teu nome",
   "Email Address *": "Endereço de email *",
+  "How will you promote TNT?": "Como vais promover o TNT?",
+  "(optional)": "(opcional)",
   "About you": "Sobre ti",
   "Tell us about your audience, your platforms, your trading niche (optional)": "Fala-nos da tua audiência, plataformas, nicho de trading (opcional)",
   "Submit Application →": "Submeter candidatura →",
   "Submitting…": "A submeter…",
-  "Applications are reviewed within 1–2 business days. Free to join — no commitment, no fees. You'll receive your unique link and dashboard access upon approval.": "Candidaturas são revistas em 1-2 dias úteis. Gratuito — sem compromisso, sem taxas. Recebes o teu link único e acesso ao dashboard após aprovação.",
+  "Free to join, no fees": "Gratuito, sem taxas",
+  "Reviewed in 1–2 days": "Revisto em 1-2 dias",
+  "Payout on demand": "Payout a pedido",
+  "6 months": "6 meses",
+  "1 year": "1 ano",
   "✓ Application received! We'll review it and contact you within 1–2 business days.": "✓ Candidatura recebida! Vamos rever e contactar-te em 1-2 dias úteis.",
   "Something went wrong. Please try again.": "Algo correu mal. Tenta novamente.",
   "Connection error. Please try again.": "Erro de conexão. Tenta novamente.",
   // FAQ
+  "FAQ": "FAQ",
   "Common questions": "Perguntas frequentes",
+  "What counts as a \"client\"?": "O que conta como \"cliente\"?",
   "What counts as a 'client'?": "O que conta como 'cliente'?",
   "A client is someone who purchases any TNT Pro subscription — monthly (€40 + VAT) or annual (€360 + VAT) — via your link. Simply registering without paying counts as a lead, not a client.": "Um cliente é alguém que adquire qualquer subscrição TNT Pro — mensal (€40 + IVA) ou anual (€360 + IVA) — via o teu link. Registar-se sem pagar conta como lead, não cliente.",
   "Do both monthly and annual subscriptions earn commission?": "Subscrições mensais e anuais geram comissão?",
   "Yes. Both plans earn commission — monthly (€40/mo, 20% = €8 at Tier 1) and annual (€360/yr, 20% = €72 at Tier 1). Annual conversions pay significantly more per client.": "Sim. Ambos os planos geram comissão — mensal (€40/mês, 20% = €8 no Tier 1) e anual (€360/ano, 20% = €72 no Tier 1). As conversões anuais pagam significativamente mais por cliente.",
+  "How long does the referral cookie last?": "Quanto tempo dura o cookie de referência?",
+  "30 days. If someone clicks your link and purchases within 30 days, the conversion is attributed to you — even if they register and return later.": "30 dias. Se alguém clicar no teu link e comprar dentro de 30 dias, a conversão é atribuída a ti — mesmo que se registe e volte mais tarde.",
+  "When and how do tier upgrades happen?": "Quando e como acontecem as subidas de tier?",
+  "The system automatically detects when you reach a tier threshold. Our team reviews and activates the upgrade — you'll receive an email with your new benefits (coupon, free Pro, etc.).": "O sistema deteta automaticamente quando atinges um limiar de tier. A nossa equipa revê e ativa a subida — receberás um email com os teus novos benefícios (cupom, Pro gratuito, etc.).",
+  "When are payouts processed?": "Quando são processados os payouts?",
+  "You can request a payout from your dashboard at any time with a 7-day minimum interval between requests. We process within a few business days via bank transfer (IBAN/BIC) or Stripe.": "Podes pedir payout no dashboard a qualquer momento com um intervalo mínimo de 7 dias entre pedidos. Processamos em poucos dias úteis via transferência bancária (IBAN/BIC) ou Stripe.",
+  "What is the Tier 2 discount coupon?": "O que é o cupom de desconto do Tier 2?",
+  "At Tier 2 you receive a personal Stripe coupon giving your audience 20% off their first subscription. Share it publicly — it helps you convert leads into clients faster.": "No Tier 2 recebes um cupom Stripe pessoal que dá 20% de desconto à tua audiência na primeira subscrição. Partilha-o — ajuda a converter leads em clientes mais rápido.",
+  "What is the Tier 3 dedicated landing page?": "O que é a landing page dedicada do Tier 3?",
+  "We create a custom page at tradingnewsterminal.com/your-name designed for your community. It includes your referral link and a branded introduction to TNT Pro.": "Criamos uma página personalizada em tradingnewsterminal.com/o-teu-nome para a tua comunidade. Inclui o teu link de referência e uma introdução ao TNT Pro.",
+  "Is there a minimum number of referrals to apply?": "Há um número mínimo de referências para se candidatar?",
+  "No minimum. Anyone with an audience of traders, investors, or financial content consumers is welcome to apply. We evaluate applications based on audience quality, not size.": "Sem mínimo. Qualquer pessoa com uma audiência de traders, investidores ou consumidores de conteúdo financeiro pode candidatar-se. Avaliamos as candidaturas com base na qualidade da audiência, não no tamanho.",
   "How is attribution tracked?": "Como é feito o tracking da atribuição?",
-  "Every click is tracked for 30 days. When someone subscribes through your link — monthly or annual — you're credited automatically.": "Cada clique é rastreado por 30 dias. Quando alguém subscreve através do teu link — mensal ou anual — ficas automaticamente creditado.",
+  "Every click is tracked for 30 days. When someone subscribes through your link, you're credited automatically.": "Cada clique é rastreado por 30 dias. Quando alguém subscreve através do teu link, ficas automaticamente creditado.",
   "When do I get paid?": "Quando recebo o pagamento?",
-  "Commissions become payable once your pending balance reaches €100. Request a payout from the dashboard — we process within 5 business days via bank transfer or Stripe.": "Comissões ficam disponíveis para pagamento quando o saldo pendente atinge €100. Pede payout no dashboard — processamos em 5 dias úteis via transferência bancária ou Stripe.",
+  "Commissions become payable once your pending balance reaches €100. Request a payout from the dashboard — we process within 5 business days via bank transfer or Stripe.": "Comissões ficam disponíveis quando o saldo pendente atinge €100. Pede payout no dashboard — processamos em 5 dias úteis via transferência bancária ou Stripe.",
   "What's the Tier 2 coupon?": "O que é o cupom do Tier 2?",
-  "At Tier 2 you receive a personal Stripe coupon giving your audience 20% off their first annual subscription. Share it publicly \u2014 it helps you convert leads into clients faster.": "No Tier 2 recebes um cupom Stripe pessoal que dá 20% de desconto à tua audiência na primeira subscrição anual. Partilha-o — ajuda a converter leads em clientes mais rápido.",
-  // Final CTA
-  "Ready to start earning?": "Pronto para começar a ganhar?",
+  "At Tier 2 you receive a personal Stripe coupon giving your audience 20% off their first annual subscription. Share it publicly \u2014 it helps you convert leads into clients faster.": "No Tier 2 recebes um cupom Stripe pessoal que dá 20% de desconto à tua audiência na primeira subscrição. Partilha-o — ajuda a converter leads em clientes mais rápido.",
   "Join dozens of traders already sharing TNT with their communities. Apply now — 2 minutes, no fees.": "Junta-te a dezenas de traders que já partilham TNT com as suas comunidades. Candidata-te agora — 2 minutos, sem taxas.",
   // Footer
   "Terms": "Termos",
+  "Terms of Use": "Termos de Utilização",
   "Privacy": "Privacidade",
+  "Privacy Policy": "Política de Privacidade",
   "Contact": "Contacto",
+  "© 2026 Trading News Terminal": "© 2026 Trading News Terminal",
   "© 2026 Trading News Terminal. All rights reserved.": "© 2026 Trading News Terminal. Todos os direitos reservados.",
   "© 2026 Trading News Terminal. All rights reserved. Affiliate programme subject to terms.": "© 2026 Trading News Terminal. Todos os direitos reservados. Programa de afiliados sujeito aos termos.",
   "Real-time Market Intelligence": "Inteligência de Mercado em Tempo Real",
@@ -855,12 +930,16 @@ const TR_PT = {
 const TR_ES = {
   "Home": "Inicio", "Tiers": "Niveles", "Calculator": "Calculadora", "Apply Now": "Postular",
   "Affiliate Program": "Programa de Afiliados", "Earn Commissions": "Gana Comisiones",
-  "Refer traders to TNT Pro. Earn up to 30% commission on annual subscriptions — with recurring income at Tier 3. No cap, no expiry.": "Refiere traders a TNT Pro. Gana hasta 30% de comisión en suscripciones anuales — con ingresos recurrentes en Nivel 3. Sin tope, sin caducidad.",
+  "Turn your audience into": "Convierte tu audiencia en",
+  "passive income": "ingresos pasivos",
+  "Refer traders to TNT Pro. Earn up to 30% commission on every subscription — monthly or annual — with recurring income at Tier 3. No cap, no expiry.": "Refiere traders a TNT Pro. Gana hasta 30% de comisión en cada suscripción — mensual o anual — con ingresos recurrentes en Nivel 3. Sin tope, sin caducidad.",
+  "Refer traders to TNT Pro. Earn up to 30% commission on annual subscriptions — with recurring income at Tier 3. No cap, no expiry.": "Refiere traders a TNT Pro. Gana hasta 30% de comisión en cada suscripción — mensual o anual — con ingresos recurrentes en Nivel 3. Sin tope, sin caducidad.",
   "Apply in 60 seconds": "Postula en 60 segundos", "View tier benefits": "Ver beneficios por nivel",
   "Annual plan value": "Valor del plan anual", "Max commission": "Comisión máxima", "Cookie window": "Ventana de cookie",
   "Three tiers. One goal: reward loyalty.": "Tres niveles. Un objetivo: recompensar la lealtad.",
   "Everyone starts at Tier 1 (20% on first annual). As your conversions grow, you automatically level up. Tier 3 unlocks 10% recurring commissions on renewals.": "Todos comienzan en Nivel 1 (20% en la primera anualidad). A medida que crecen tus conversiones, subes de nivel automáticamente. Nivel 3 desbloquea 10% de comisiones recurrentes en renovaciones.",
-  "0-9 clients": "0-9 clientes", "10-49 clients": "10-49 clientes", "50+ clients": "50+ clientes",
+  "Tier 1 — Starter": "Nivel 1 — Inicial", "Tier 2 — Growth": "Nivel 2 — Crecimiento", "Tier 3 — Partner": "Nivel 3 — Socio",
+  "1–9 clients": "1–9 clientes", "10–49 clients": "10–49 clientes", "50+ clients": "50+ clientes",
   "Commission on first annual": "Comisión en primera anualidad", "Commission on renewals": "Comisión en renovaciones",
   "€72 per client": "€72 por cliente", "€108 per client": "€108 por cliente", "€36 per client /yr": "€36 por cliente/año",
   "Real-time dashboard — clicks, leads, conversions": "Panel en tiempo real — clics, leads, conversiones",
@@ -870,9 +949,36 @@ const TR_ES = {
   "10% recurring on renewals for life": "10% recurrente de por vida", "Dedicated landing page": "Landing page dedicada",
   "Dedicated landing page at tradingnewsterminal.com/you": "Landing page dedicada en tradingnewsterminal.com/tu",
   "Community discount coupon (20%)": "Cupón de descuento comunidad (20%)",
+  "More clients =": "Más clientes =",
+  "See your": "Mira tus",
+  "potential earnings": "ganancias potenciales",
+  "% (final tier)": "% (nivel final)",
+  "Monthly commission (€40)": "Comisión mensual (€40)",
+  "Annual commission (€360)": "Comisión anual (€360)",
+  "Referral link (30-day cookie)": "Enlace de referido (cookie 30 días)",
+  "Affiliate dashboard": "Panel de afiliado",
+  "Free TNT Pro access": "Acceso gratuito a TNT Pro",
+  "6 months": "6 meses",
+  "1 year": "1 año",
+  "Priority support": "Soporte prioritario",
+  "✓ Custom page": "✓ Página personalizada",
+  "Four steps to": "Cuatro pasos para",
+  "your first commission": "tu primera comisión",
+  "Apply & Get Approved": "Postula y sé aprobado",
+  "Get Your Link": "Obtén tu enlace",
+  "You receive a unique URL like": "Recibes una URL única como",
+  ". Share it with your community.": ". Compártela con tu comunidad.",
+  "Request Payout": "Solicitar pago",
+  "Withdraw your balance at any time via bank transfer (IBAN) or Stripe. New requests every 7 days.": "Retira tu saldo en cualquier momento por transferencia bancaria (IBAN) o Stripe. Nuevas solicitudes cada 7 días.",
+  "How will you promote TNT?": "¿Cómo promocionarás el TNT?",
+  "(optional)": "(opcional)",
+  "Your name": "Tu nombre",
+  "Join the Program": "Únete al Programa",
   "Earnings Calculator": "Calculadora de Ganancias", "Configure your scenario": "Configura tu escenario",
   "Adjust the sliders to estimate your monthly and annual income.": "Ajusta los sliders para estimar tus ingresos mensuales y anuales.",
-  "Paying clients / month": "Clientes pagos / mes", "Commission rate": "Tasa de comisión",
+  "Paying clients / month": "Clientes pagos / mes", "Plan type": "Tipo de plan",
+  "Annual (€360)": "Anual (€360)", "Monthly (€40)": "Mensual (€40)",
+  "Commission rate": "Tasa de comisión",
   "Months simulated": "Meses simulados", "Projected earnings": "Ganancias proyectadas",
   "Cumulative earnings over time": "Ganancias acumuladas en el tiempo", "Total clients": "Clientes totales",
   "Your tier": "Tu nivel", "Per month (avg)": "Por mes (promedio)", "over 12 months": "en 12 meses",
@@ -886,11 +992,29 @@ const TR_ES = {
   "Something went wrong. Please try again.": "Algo salió mal. Inténtalo de nuevo.", "Connection error. Please try again.": "Error de conexión. Inténtalo de nuevo.",
   "Common questions": "Preguntas frecuentes",
   "What counts as a 'client'?": "¿Qué cuenta como 'cliente'?",
-  "A client is someone who purchases an annual TNT Pro subscription (€360 + VAT) via your link. Simply registering without paying counts as a lead, not a client.": "Un cliente es alguien que adquiere una suscripción anual TNT Pro (€360 + IVA) a través de tu enlace. Registrarse sin pagar cuenta como lead, no cliente.",
+  "A client is someone who purchases any TNT Pro subscription — monthly (€40 + VAT) or annual (€360 + VAT) — via your link. Simply registering without paying counts as a lead, not a client.": "Un cliente es alguien que adquiere cualquier suscripción TNT Pro — mensual (€40 + IVA) o anual (€360 + IVA) — a través de tu enlace. Registrarse sin pagar cuenta como lead, no cliente.",
+  "A client is someone who purchases an annual TNT Pro subscription (€360 + VAT) via your link. Simply registering without paying counts as a lead, not a client.": "Un cliente es alguien que adquiere cualquier suscripción TNT Pro — mensual (€40 + IVA) o anual (€360 + IVA) — a través de tu enlace. Registrarse sin pagar cuenta como lead, no cliente.",
+  "Do both monthly and annual subscriptions earn commission?": "¿Las suscripciones mensuales y anuales generan comisión?",
   "Do monthly subscriptions earn commission?": "¿Las suscripciones mensuales generan comisión?",
-  "Only annual plans generate commission. Monthly subscriptions (€40/mo) are not eligible — this keeps the programme focused on quality leads.": "Solo los planes anuales generan comisión. Las suscripciones mensuales (€40/mes) no son elegibles — esto mantiene el programa enfocado en leads de calidad.",
+  "Yes. Both plans earn commission — monthly (€40/mo, 20% = €8 at Tier 1) and annual (€360/yr, 20% = €72 at Tier 1). Annual conversions pay significantly more per client.": "Sí. Ambos planes generan comisión — mensual (€40/mes, 20% = €8 en Nivel 1) y anual (€360/año, 20% = €72 en Nivel 1). Las conversiones anuales pagan significativamente más por cliente.",
+  "Only annual plans generate commission. Monthly subscriptions (€40/mo) are not eligible — this keeps the programme focused on quality leads.": "Sí. Ambos planes generan comisión — mensual (€40/mes, 20% = €8 en Nivel 1) y anual (€360/año, 20% = €72 en Nivel 1). Las conversiones anuales pagan significativamente más por cliente.",
   "How is attribution tracked?": "¿Cómo se rastrea la atribución?",
-  "Every click is tracked for 30 days. When someone subscribes annually through your link, you're credited automatically.": "Cada clic se rastrea por 30 días. Cuando alguien se suscribe anualmente a través de tu enlace, se te acredita automáticamente.",
+  "Every click is tracked for 30 days. When someone subscribes through your link — monthly or annual — you're credited automatically.": "Cada clic se rastrea por 30 días. Cuando alguien se suscribe a través de tu enlace — mensual o anual — se te acredita automáticamente.",
+  "Every click is tracked for 30 days. When someone subscribes annually through your link, you're credited automatically.": "Cada clic se rastrea por 30 días. Cuando alguien se suscribe a través de tu enlace — mensual o anual — se te acredita automáticamente.",
+  "on first subscription": "en la primera suscripción",
+  "first subscription + all renewals": "primera suscripción + todas las renovaciones",
+  "See your": "Mira tus",
+  "potential earnings": "ganancias potenciales",
+  "% (final tier)": "% (nivel final)",
+  "€8 monthly · €72 annual": "€8 mensual · €72 anual",
+  "€12 monthly · €108 annual": "€12 mensual · €108 anual",
+  "€12/€108 first · €36 recurring": "€12/€108 primera · €36 recurrente",
+  "Unique referral link with 30-day tracking": "Enlace de referido único con seguimiento de 30 días",
+  "Payout on demand (7-day intervals)": "Pago a demanda (intervalos de 7 días)",
+  "6 months TNT Pro — complimentary access": "6 meses TNT Pro — acceso gratuito",
+  "Priority support from the TNT team": "Soporte prioritario del equipo TNT",
+  "10% on renewals — earn every year forever": "10% en renovaciones — gana cada año para siempre",
+  "1 year TNT Pro — complimentary access": "1 año TNT Pro — acceso gratuito",
   "When do I get paid?": "¿Cuándo cobro?",
   "Commissions become payable once your pending balance reaches €100. Request a payout from the dashboard — we process within 5 business days via bank transfer or Stripe.": "Las comisiones se pueden cobrar cuando tu saldo pendiente alcanza €100. Solicita un pago desde el panel — procesamos en 5 días hábiles vía transferencia bancaria o Stripe.",
   "What's the Tier 2 coupon?": "¿Qué es el cupón del Nivel 2?",
@@ -906,12 +1030,16 @@ const TR_ES = {
 const TR_FR = {
   "Home": "Accueil", "Tiers": "Niveaux", "Calculator": "Calculateur", "Apply Now": "Postuler",
   "Affiliate Program": "Programme d'Affiliation", "Earn Commissions": "Gagnez des Commissions",
-  "Refer traders to TNT Pro. Earn up to 30% commission on annual subscriptions — with recurring income at Tier 3. No cap, no expiry.": "Référez des traders à TNT Pro. Gagnez jusqu'à 30% de commission sur les abonnements annuels — avec revenus récurrents au Niveau 3. Sans plafond, sans expiration.",
+  "Turn your audience into": "Transformez votre audience en",
+  "passive income": "revenus passifs",
+  "Refer traders to TNT Pro. Earn up to 30% commission on every subscription — monthly or annual — with recurring income at Tier 3. No cap, no expiry.": "Référez des traders à TNT Pro. Gagnez jusqu'à 30% de commission sur chaque abonnement — mensuel ou annuel — avec revenus récurrents au Niveau 3. Sans plafond, sans expiration.",
+  "Refer traders to TNT Pro. Earn up to 30% commission on annual subscriptions — with recurring income at Tier 3. No cap, no expiry.": "Référez des traders à TNT Pro. Gagnez jusqu'à 30% de commission sur chaque abonnement — mensuel ou annuel — avec revenus récurrents au Niveau 3. Sans plafond, sans expiration.",
   "Apply in 60 seconds": "Postulez en 60 secondes", "View tier benefits": "Voir les avantages par niveau",
   "Annual plan value": "Valeur du plan annuel", "Max commission": "Commission max", "Cookie window": "Fenêtre cookie",
   "Three tiers. One goal: reward loyalty.": "Trois niveaux. Un objectif : récompenser la fidélité.",
   "Everyone starts at Tier 1 (20% on first annual). As your conversions grow, you automatically level up. Tier 3 unlocks 10% recurring commissions on renewals.": "Tout le monde commence au Niveau 1 (20% sur la première année). Plus vos conversions augmentent, plus vous montez de niveau automatiquement. Le Niveau 3 débloque 10% de commissions récurrentes sur les renouvellements.",
-  "0-9 clients": "0-9 clients", "10-49 clients": "10-49 clients", "50+ clients": "50+ clients",
+  "Tier 1 — Starter": "Niveau 1 — Débutant", "Tier 2 — Growth": "Niveau 2 — Croissance", "Tier 3 — Partner": "Niveau 3 — Partenaire",
+  "1–9 clients": "1–9 clients", "10–49 clients": "10–49 clients", "50+ clients": "50+ clients",
   "Commission on first annual": "Commission première année", "Commission on renewals": "Commission renouvellements",
   "€72 per client": "€72 par client", "€108 per client": "€108 par client", "€36 per client /yr": "€36 par client/an",
   "Real-time dashboard — clicks, leads, conversions": "Tableau de bord temps réel — clics, leads, conversions",
@@ -921,9 +1049,36 @@ const TR_FR = {
   "10% recurring on renewals for life": "10% récurrent sur renouvellements à vie", "Dedicated landing page": "Page de destination dédiée",
   "Dedicated landing page at tradingnewsterminal.com/you": "Page dédiée à tradingnewsterminal.com/vous",
   "Community discount coupon (20%)": "Coupon de réduction communauté (20%)",
+  "More clients =": "Plus de clients =",
+  "See your": "Voyez vos",
+  "potential earnings": "revenus potentiels",
+  "% (final tier)": "% (niveau final)",
+  "Monthly commission (€40)": "Commission mensuelle (€40)",
+  "Annual commission (€360)": "Commission annuelle (€360)",
+  "Referral link (30-day cookie)": "Lien de parrainage (cookie 30 jours)",
+  "Affiliate dashboard": "Tableau de bord affilié",
+  "Free TNT Pro access": "Accès gratuit TNT Pro",
+  "6 months": "6 mois",
+  "1 year": "1 an",
+  "Priority support": "Support prioritaire",
+  "✓ Custom page": "✓ Page personnalisée",
+  "Four steps to": "Quatre étapes vers",
+  "your first commission": "votre première commission",
+  "Apply & Get Approved": "Postulez et soyez approuvé",
+  "Get Your Link": "Obtenez votre lien",
+  "You receive a unique URL like": "Vous recevez une URL unique comme",
+  ". Share it with your community.": ". Partagez-la avec votre communauté.",
+  "Request Payout": "Demander un paiement",
+  "Withdraw your balance at any time via bank transfer (IBAN) or Stripe. New requests every 7 days.": "Retirez votre solde à tout moment par virement bancaire (IBAN) ou Stripe. Nouvelles demandes toutes les 7 jours.",
+  "How will you promote TNT?": "Comment allez-vous promouvoir TNT ?",
+  "(optional)": "(optionnel)",
+  "Your name": "Votre nom",
+  "Join the Program": "Rejoignez le Programme",
   "Earnings Calculator": "Calculateur de Revenus", "Configure your scenario": "Configurez votre scénario",
   "Adjust the sliders to estimate your monthly and annual income.": "Ajustez les curseurs pour estimer vos revenus mensuels et annuels.",
-  "Paying clients / month": "Clients payants / mois", "Commission rate": "Taux de commission",
+  "Paying clients / month": "Clients payants / mois", "Plan type": "Type d'abonnement",
+  "Annual (€360)": "Annuel (€360)", "Monthly (€40)": "Mensuel (€40)",
+  "Commission rate": "Taux de commission",
   "Months simulated": "Mois simulés", "Projected earnings": "Revenus projetés",
   "Cumulative earnings over time": "Revenus cumulés dans le temps", "Total clients": "Total clients",
   "Your tier": "Votre niveau", "Per month (avg)": "Par mois (moyenne)", "over 12 months": "sur 12 mois",
@@ -937,11 +1092,29 @@ const TR_FR = {
   "Something went wrong. Please try again.": "Une erreur s'est produite. Réessayez.", "Connection error. Please try again.": "Erreur de connexion. Réessayez.",
   "Common questions": "Questions fréquentes",
   "What counts as a 'client'?": "Qu'est-ce qu'un 'client' ?",
-  "A client is someone who purchases an annual TNT Pro subscription (€360 + VAT) via your link. Simply registering without paying counts as a lead, not a client.": "Un client est une personne qui achète un abonnement annuel TNT Pro (€360 + TVA) via votre lien. S'inscrire sans payer compte comme un lead, pas un client.",
+  "A client is someone who purchases any TNT Pro subscription — monthly (€40 + VAT) or annual (€360 + VAT) — via your link. Simply registering without paying counts as a lead, not a client.": "Un client est une personne qui souscrit à n'importe quel abonnement TNT Pro — mensuel (€40 + TVA) ou annuel (€360 + TVA) — via votre lien. S'inscrire sans payer compte comme un lead, pas un client.",
+  "A client is someone who purchases an annual TNT Pro subscription (€360 + VAT) via your link. Simply registering without paying counts as a lead, not a client.": "Un client est une personne qui souscrit à n'importe quel abonnement TNT Pro — mensuel (€40 + TVA) ou annuel (€360 + TVA) — via votre lien. S'inscrire sans payer compte comme un lead, pas un client.",
+  "Do both monthly and annual subscriptions earn commission?": "Les abonnements mensuels et annuels génèrent-ils une commission ?",
   "Do monthly subscriptions earn commission?": "Les abonnements mensuels génèrent-ils une commission ?",
-  "Only annual plans generate commission. Monthly subscriptions (€40/mo) are not eligible — this keeps the programme focused on quality leads.": "Seuls les plans annuels génèrent une commission. Les abonnements mensuels (€40/mois) ne sont pas éligibles — cela maintient le programme axé sur des leads de qualité.",
+  "Yes. Both plans earn commission — monthly (€40/mo, 20% = €8 at Tier 1) and annual (€360/yr, 20% = €72 at Tier 1). Annual conversions pay significantly more per client.": "Oui. Les deux plans génèrent une commission — mensuel (€40/mois, 20% = €8 au Niveau 1) et annuel (€360/an, 20% = €72 au Niveau 1). Les conversions annuelles rapportent significativement plus par client.",
+  "Only annual plans generate commission. Monthly subscriptions (€40/mo) are not eligible — this keeps the programme focused on quality leads.": "Oui. Les deux plans génèrent une commission — mensuel (€40/mois, 20% = €8 au Niveau 1) et annuel (€360/an, 20% = €72 au Niveau 1). Les conversions annuelles rapportent significativement plus par client.",
   "How is attribution tracked?": "Comment l'attribution est-elle suivie ?",
-  "Every click is tracked for 30 days. When someone subscribes annually through your link, you're credited automatically.": "Chaque clic est suivi pendant 30 jours. Quand quelqu'un s'abonne annuellement via votre lien, vous êtes crédité automatiquement.",
+  "Every click is tracked for 30 days. When someone subscribes through your link — monthly or annual — you're credited automatically.": "Chaque clic est suivi pendant 30 jours. Quand quelqu'un s'abonne via votre lien — mensuel ou annuel — vous êtes crédité automatiquement.",
+  "Every click is tracked for 30 days. When someone subscribes annually through your link, you're credited automatically.": "Chaque clic est suivi pendant 30 jours. Quand quelqu'un s'abonne via votre lien — mensuel ou annuel — vous êtes crédité automatiquement.",
+  "on first subscription": "sur le premier abonnement",
+  "first subscription + all renewals": "premier abonnement + tous les renouvellements",
+  "See your": "Voyez vos",
+  "potential earnings": "revenus potentiels",
+  "% (final tier)": "% (niveau final)",
+  "€8 monthly · €72 annual": "€8 mensuel · €72 annuel",
+  "€12 monthly · €108 annual": "€12 mensuel · €108 annuel",
+  "€12/€108 first · €36 recurring": "€12/€108 premier · €36 récurrent",
+  "Unique referral link with 30-day tracking": "Lien de parrainage unique avec suivi 30 jours",
+  "Payout on demand (7-day intervals)": "Paiement à la demande (intervalles de 7 jours)",
+  "6 months TNT Pro — complimentary access": "6 mois TNT Pro — accès offert",
+  "Priority support from the TNT team": "Support prioritaire de l'équipe TNT",
+  "10% on renewals — earn every year forever": "10% sur les renouvellements — gagnez chaque année pour toujours",
+  "1 year TNT Pro — complimentary access": "1 an TNT Pro — accès offert",
   "When do I get paid?": "Quand suis-je payé ?",
   "Commissions become payable once your pending balance reaches €100. Request a payout from the dashboard — we process within 5 business days via bank transfer or Stripe.": "Les commissions sont payables lorsque votre solde en attente atteint €100. Demandez un paiement depuis le tableau de bord — nous traitons sous 5 jours ouvrables via virement ou Stripe.",
   "What's the Tier 2 coupon?": "Qu'est-ce que le coupon Niveau 2 ?",
@@ -957,12 +1130,16 @@ const TR_FR = {
 const TR_DE = {
   "Home": "Startseite", "Tiers": "Stufen", "Calculator": "Rechner", "Apply Now": "Jetzt bewerben",
   "Affiliate Program": "Partnerprogramm", "Earn Commissions": "Verdiene Provisionen",
-  "Refer traders to TNT Pro. Earn up to 30% commission on annual subscriptions — with recurring income at Tier 3. No cap, no expiry.": "Empfehle Trader an TNT Pro. Verdiene bis zu 30% Provision auf Jahresabonnements — mit wiederkehrenden Einnahmen in Stufe 3. Kein Limit, kein Ablauf.",
+  "Turn your audience into": "Verwandle dein Publikum in",
+  "passive income": "passives Einkommen",
+  "Refer traders to TNT Pro. Earn up to 30% commission on every subscription — monthly or annual — with recurring income at Tier 3. No cap, no expiry.": "Empfehle Trader an TNT Pro. Verdiene bis zu 30% Provision auf jedes Abonnement — monatlich oder jährlich — mit wiederkehrenden Einnahmen in Stufe 3. Kein Limit, kein Ablauf.",
+  "Refer traders to TNT Pro. Earn up to 30% commission on annual subscriptions — with recurring income at Tier 3. No cap, no expiry.": "Empfehle Trader an TNT Pro. Verdiene bis zu 30% Provision auf jedes Abonnement — monatlich oder jährlich — mit wiederkehrenden Einnahmen in Stufe 3. Kein Limit, kein Ablauf.",
   "Apply in 60 seconds": "In 60 Sekunden bewerben", "View tier benefits": "Stufenvorteile ansehen",
   "Annual plan value": "Jahresplan-Wert", "Max commission": "Max. Provision", "Cookie window": "Cookie-Fenster",
   "Three tiers. One goal: reward loyalty.": "Drei Stufen. Ein Ziel: Treue belohnen.",
   "Everyone starts at Tier 1 (20% on first annual). As your conversions grow, you automatically level up. Tier 3 unlocks 10% recurring commissions on renewals.": "Jeder beginnt in Stufe 1 (20% auf erstes Jahr). Je mehr Konversionen, desto höher die Stufe. Stufe 3 schaltet 10% wiederkehrende Provisionen auf Verlängerungen frei.",
-  "0-9 clients": "0-9 Kunden", "10-49 clients": "10-49 Kunden", "50+ clients": "50+ Kunden",
+  "Tier 1 — Starter": "Stufe 1 — Einsteiger", "Tier 2 — Growth": "Stufe 2 — Wachstum", "Tier 3 — Partner": "Stufe 3 — Partner",
+  "1–9 clients": "1–9 Kunden", "10–49 clients": "10–49 Kunden", "50+ clients": "50+ Kunden",
   "Commission on first annual": "Provision auf erstes Jahr", "Commission on renewals": "Provision auf Verlängerungen",
   "€72 per client": "€72 pro Kunde", "€108 per client": "€108 pro Kunde", "€36 per client /yr": "€36 pro Kunde/Jahr",
   "Real-time dashboard — clicks, leads, conversions": "Echtzeit-Dashboard — Klicks, Leads, Konversionen",
@@ -972,9 +1149,33 @@ const TR_DE = {
   "10% recurring on renewals for life": "10% wiederkehrend auf Verlängerungen lebenslang", "Dedicated landing page": "Dedizierte Landing Page",
   "Dedicated landing page at tradingnewsterminal.com/you": "Dedizierte Landing Page auf tradingnewsterminal.com/du",
   "Community discount coupon (20%)": "Community-Rabatt-Gutschein (20%)",
+  "More clients =": "Mehr Kunden =",
+  "Monthly commission (€40)": "Monatliche Provision (€40)",
+  "Annual commission (€360)": "Jährliche Provision (€360)",
+  "Referral link (30-day cookie)": "Empfehlungslink (30-Tage-Cookie)",
+  "Affiliate dashboard": "Affiliate-Dashboard",
+  "Free TNT Pro access": "Kostenloser TNT Pro Zugang",
+  "6 months": "6 Monate",
+  "1 year": "1 Jahr",
+  "Priority support": "Prioritätssupport",
+  "✓ Custom page": "✓ Eigene Seite",
+  "Four steps to": "Vier Schritte zu",
+  "your first commission": "deiner ersten Provision",
+  "Apply & Get Approved": "Bewirb dich und werde genehmigt",
+  "Get Your Link": "Hol deinen Link",
+  "You receive a unique URL like": "Du erhältst eine einzigartige URL wie",
+  ". Share it with your community.": ". Teile sie mit deiner Community.",
+  "Request Payout": "Auszahlung anfordern",
+  "Withdraw your balance at any time via bank transfer (IBAN) or Stripe. New requests every 7 days.": "Hebe deinen Saldo jederzeit per Überweisung (IBAN) oder Stripe ab. Neue Anfragen alle 7 Tage.",
+  "How will you promote TNT?": "Wie wirst du TNT bewerben?",
+  "(optional)": "(optional)",
+  "Your name": "Dein Name",
+  "Join the Program": "Dem Programm beitreten",
   "Earnings Calculator": "Einnahmen-Rechner", "Configure your scenario": "Konfiguriere dein Szenario",
   "Adjust the sliders to estimate your monthly and annual income.": "Passe die Schieber an, um dein monatliches und jährliches Einkommen zu schätzen.",
-  "Paying clients / month": "Zahlende Kunden / Monat", "Commission rate": "Provisionssatz",
+  "Paying clients / month": "Zahlende Kunden / Monat", "Plan type": "Plantyp",
+  "Annual (€360)": "Jährlich (€360)", "Monthly (€40)": "Monatlich (€40)",
+  "Commission rate": "Provisionssatz",
   "Months simulated": "Simulierte Monate", "Projected earnings": "Prognostizierte Einnahmen",
   "Cumulative earnings over time": "Kumulierte Einnahmen über Zeit", "Total clients": "Kunden gesamt",
   "Your tier": "Deine Stufe", "Per month (avg)": "Pro Monat (Ø)", "over 12 months": "über 12 Monate",
@@ -988,11 +1189,29 @@ const TR_DE = {
   "Something went wrong. Please try again.": "Etwas ist schiefgelaufen. Bitte erneut versuchen.", "Connection error. Please try again.": "Verbindungsfehler. Bitte erneut versuchen.",
   "Common questions": "Häufige Fragen",
   "What counts as a 'client'?": "Was zählt als 'Kunde'?",
-  "A client is someone who purchases an annual TNT Pro subscription (€360 + VAT) via your link. Simply registering without paying counts as a lead, not a client.": "Ein Kunde ist jemand, der über deinen Link ein TNT Pro Jahresabonnement (€360 + MwSt.) kauft. Reine Registrierung ohne Zahlung zählt als Lead, nicht als Kunde.",
+  "A client is someone who purchases any TNT Pro subscription — monthly (€40 + VAT) or annual (€360 + VAT) — via your link. Simply registering without paying counts as a lead, not a client.": "Ein Kunde ist jemand, der über deinen Link ein TNT Pro Abonnement kauft — monatlich (€40 + MwSt.) oder jährlich (€360 + MwSt.). Reine Registrierung ohne Zahlung zählt als Lead, nicht als Kunde.",
+  "A client is someone who purchases an annual TNT Pro subscription (€360 + VAT) via your link. Simply registering without paying counts as a lead, not a client.": "Ein Kunde ist jemand, der über deinen Link ein TNT Pro Abonnement kauft — monatlich (€40 + MwSt.) oder jährlich (€360 + MwSt.). Reine Registrierung ohne Zahlung zählt als Lead, nicht als Kunde.",
+  "Do both monthly and annual subscriptions earn commission?": "Verdienen monatliche und jährliche Abos Provision?",
   "Do monthly subscriptions earn commission?": "Verdienen monatliche Abos Provision?",
-  "Only annual plans generate commission. Monthly subscriptions (€40/mo) are not eligible — this keeps the programme focused on quality leads.": "Nur Jahrespläne generieren Provision. Monatliche Abos (€40/Monat) sind nicht förderfähig — das hält das Programm auf Qualitäts-Leads fokussiert.",
+  "Yes. Both plans earn commission — monthly (€40/mo, 20% = €8 at Tier 1) and annual (€360/yr, 20% = €72 at Tier 1). Annual conversions pay significantly more per client.": "Ja. Beide Pläne generieren Provision — monatlich (€40/Monat, 20% = €8 in Stufe 1) und jährlich (€360/Jahr, 20% = €72 in Stufe 1). Jährliche Konversionen zahlen deutlich mehr pro Kunde.",
+  "Only annual plans generate commission. Monthly subscriptions (€40/mo) are not eligible — this keeps the programme focused on quality leads.": "Ja. Beide Pläne generieren Provision — monatlich (€40/Monat, 20% = €8 in Stufe 1) und jährlich (€360/Jahr, 20% = €72 in Stufe 1). Jährliche Konversionen zahlen deutlich mehr pro Kunde.",
   "How is attribution tracked?": "Wie wird die Attribution verfolgt?",
-  "Every click is tracked for 30 days. When someone subscribes annually through your link, you're credited automatically.": "Jeder Klick wird 30 Tage lang verfolgt. Wenn jemand über deinen Link jährlich abonniert, wirst du automatisch gutgeschrieben.",
+  "Every click is tracked for 30 days. When someone subscribes through your link — monthly or annual — you're credited automatically.": "Jeder Klick wird 30 Tage verfolgt. Wenn jemand über deinen Link abonniert — monatlich oder jährlich — wirst du automatisch gutgeschrieben.",
+  "Every click is tracked for 30 days. When someone subscribes annually through your link, you're credited automatically.": "Jeder Klick wird 30 Tage verfolgt. Wenn jemand über deinen Link abonniert — monatlich oder jährlich — wirst du automatisch gutgeschrieben.",
+  "on first subscription": "beim ersten Abonnement",
+  "first subscription + all renewals": "erstes Abonnement + alle Verlängerungen",
+  "See your": "Sieh deine",
+  "potential earnings": "potenzielle Einnahmen",
+  "% (final tier)": "% (Endstufe)",
+  "€8 monthly · €72 annual": "€8 monatlich · €72 jährlich",
+  "€12 monthly · €108 annual": "€12 monatlich · €108 jährlich",
+  "€12/€108 first · €36 recurring": "€12/€108 erste · €36 wiederkehrend",
+  "Unique referral link with 30-day tracking": "Einzigartiger Empfehlungslink mit 30-Tage-Tracking",
+  "Payout on demand (7-day intervals)": "Auszahlung auf Anfrage (7-Tage-Intervalle)",
+  "6 months TNT Pro — complimentary access": "6 Monate TNT Pro — kostenloser Zugang",
+  "Priority support from the TNT team": "Prioritätssupport vom TNT-Team",
+  "10% on renewals — earn every year forever": "10% auf Verlängerungen — verdiene jedes Jahr für immer",
+  "1 year TNT Pro — complimentary access": "1 Jahr TNT Pro — kostenloser Zugang",
   "When do I get paid?": "Wann werde ich bezahlt?",
   "Commissions become payable once your pending balance reaches €100. Request a payout from the dashboard — we process within 5 business days via bank transfer or Stripe.": "Provisionen werden zahlbar, sobald dein ausstehender Saldo €100 erreicht. Fordere eine Auszahlung vom Dashboard an — wir bearbeiten innerhalb von 5 Werktagen per Überweisung oder Stripe.",
   "What's the Tier 2 coupon?": "Was ist der Stufe-2-Gutschein?",
@@ -1008,12 +1227,16 @@ const TR_DE = {
 const TR_IT = {
   "Home": "Home", "Tiers": "Livelli", "Calculator": "Calcolatore", "Apply Now": "Candidati",
   "Affiliate Program": "Programma Affiliati", "Earn Commissions": "Guadagna Commissioni",
-  "Refer traders to TNT Pro. Earn up to 30% commission on annual subscriptions — with recurring income at Tier 3. No cap, no expiry.": "Riferisci trader a TNT Pro. Guadagna fino al 30% di commissione su abbonamenti annuali — con entrate ricorrenti al Livello 3. Senza limiti, senza scadenza.",
+  "Turn your audience into": "Trasforma il tuo pubblico in",
+  "passive income": "reddito passivo",
+  "Refer traders to TNT Pro. Earn up to 30% commission on every subscription — monthly or annual — with recurring income at Tier 3. No cap, no expiry.": "Riferisci trader a TNT Pro. Guadagna fino al 30% di commissione su ogni abbonamento — mensile o annuale — con entrate ricorrenti al Livello 3. Senza limiti, senza scadenza.",
+  "Refer traders to TNT Pro. Earn up to 30% commission on annual subscriptions — with recurring income at Tier 3. No cap, no expiry.": "Riferisci trader a TNT Pro. Guadagna fino al 30% di commissione su ogni abbonamento — mensile o annuale — con entrate ricorrenti al Livello 3. Senza limiti, senza scadenza.",
   "Apply in 60 seconds": "Candidati in 60 secondi", "View tier benefits": "Vedi benefici per livello",
   "Annual plan value": "Valore piano annuale", "Max commission": "Commissione max", "Cookie window": "Finestra cookie",
   "Three tiers. One goal: reward loyalty.": "Tre livelli. Un obiettivo: premiare la fedeltà.",
   "Everyone starts at Tier 1 (20% on first annual). As your conversions grow, you automatically level up. Tier 3 unlocks 10% recurring commissions on renewals.": "Tutti iniziano al Livello 1 (20% sul primo anno). Man mano che le tue conversioni crescono, sali di livello automaticamente. Il Livello 3 sblocca il 10% di commissioni ricorrenti sui rinnovi.",
-  "0-9 clients": "0-9 clienti", "10-49 clients": "10-49 clienti", "50+ clients": "50+ clienti",
+  "Tier 1 — Starter": "Livello 1 — Principiante", "Tier 2 — Growth": "Livello 2 — Crescita", "Tier 3 — Partner": "Livello 3 — Partner",
+  "1–9 clients": "1–9 clienti", "10–49 clients": "10–49 clienti", "50+ clients": "50+ clienti",
   "Commission on first annual": "Commissione sul primo anno", "Commission on renewals": "Commissione sui rinnovi",
   "€72 per client": "€72 per cliente", "€108 per client": "€108 per cliente", "€36 per client /yr": "€36 per cliente/anno",
   "Real-time dashboard — clicks, leads, conversions": "Dashboard in tempo reale — click, lead, conversioni",
@@ -1023,9 +1246,33 @@ const TR_IT = {
   "10% recurring on renewals for life": "10% ricorrente sui rinnovi a vita", "Dedicated landing page": "Landing page dedicata",
   "Dedicated landing page at tradingnewsterminal.com/you": "Landing page dedicata su tradingnewsterminal.com/tu",
   "Community discount coupon (20%)": "Coupon sconto community (20%)",
+  "More clients =": "Più clienti =",
+  "Monthly commission (€40)": "Commissione mensile (€40)",
+  "Annual commission (€360)": "Commissione annuale (€360)",
+  "Referral link (30-day cookie)": "Link di referral (cookie 30 giorni)",
+  "Affiliate dashboard": "Dashboard affiliato",
+  "Free TNT Pro access": "Accesso gratuito TNT Pro",
+  "6 months": "6 mesi",
+  "1 year": "1 anno",
+  "Priority support": "Supporto prioritario",
+  "✓ Custom page": "✓ Pagina personalizzata",
+  "Four steps to": "Quattro passi verso",
+  "your first commission": "la tua prima commissione",
+  "Apply & Get Approved": "Candidati e vieni approvato",
+  "Get Your Link": "Ottieni il tuo link",
+  "You receive a unique URL like": "Ricevi un URL unico come",
+  ". Share it with your community.": ". Condividilo con la tua community.",
+  "Request Payout": "Richiedi pagamento",
+  "Withdraw your balance at any time via bank transfer (IBAN) or Stripe. New requests every 7 days.": "Preleva il tuo saldo in qualsiasi momento tramite bonifico (IBAN) o Stripe. Nuove richieste ogni 7 giorni.",
+  "How will you promote TNT?": "Come promuoverai TNT?",
+  "(optional)": "(opzionale)",
+  "Your name": "Il tuo nome",
+  "Join the Program": "Unisciti al Programma",
   "Earnings Calculator": "Calcolatore Guadagni", "Configure your scenario": "Configura il tuo scenario",
   "Adjust the sliders to estimate your monthly and annual income.": "Regola gli slider per stimare il tuo reddito mensile e annuale.",
-  "Paying clients / month": "Clienti paganti / mese", "Commission rate": "Tasso di commissione",
+  "Paying clients / month": "Clienti paganti / mese", "Plan type": "Tipo di piano",
+  "Annual (€360)": "Annuale (€360)", "Monthly (€40)": "Mensile (€40)",
+  "Commission rate": "Tasso di commissione",
   "Months simulated": "Mesi simulati", "Projected earnings": "Guadagni previsti",
   "Cumulative earnings over time": "Guadagni cumulativi nel tempo", "Total clients": "Totale clienti",
   "Your tier": "Il tuo livello", "Per month (avg)": "Al mese (media)", "over 12 months": "in 12 mesi",
@@ -1039,11 +1286,29 @@ const TR_IT = {
   "Something went wrong. Please try again.": "Qualcosa è andato storto. Riprova.", "Connection error. Please try again.": "Errore di connessione. Riprova.",
   "Common questions": "Domande frequenti",
   "What counts as a 'client'?": "Cosa conta come 'cliente'?",
-  "A client is someone who purchases an annual TNT Pro subscription (€360 + VAT) via your link. Simply registering without paying counts as a lead, not a client.": "Un cliente è qualcuno che acquista un abbonamento annuale TNT Pro (€360 + IVA) tramite il tuo link. La sola registrazione senza pagamento conta come lead, non cliente.",
+  "A client is someone who purchases any TNT Pro subscription — monthly (€40 + VAT) or annual (€360 + VAT) — via your link. Simply registering without paying counts as a lead, not a client.": "Un cliente è qualcuno che acquista qualsiasi abbonamento TNT Pro — mensile (€40 + IVA) o annuale (€360 + IVA) — tramite il tuo link. La sola registrazione senza pagamento conta come lead, non cliente.",
+  "A client is someone who purchases an annual TNT Pro subscription (€360 + VAT) via your link. Simply registering without paying counts as a lead, not a client.": "Un cliente è qualcuno che acquista qualsiasi abbonamento TNT Pro — mensile (€40 + IVA) o annuale (€360 + IVA) — tramite il tuo link. La sola registrazione senza pagamento conta come lead, non cliente.",
+  "Do both monthly and annual subscriptions earn commission?": "Gli abbonamenti mensili e annuali generano commissione?",
   "Do monthly subscriptions earn commission?": "Gli abbonamenti mensili generano commissione?",
-  "Only annual plans generate commission. Monthly subscriptions (€40/mo) are not eligible — this keeps the programme focused on quality leads.": "Solo i piani annuali generano commissione. Gli abbonamenti mensili (€40/mese) non sono idonei — questo mantiene il programma focalizzato su lead di qualità.",
+  "Yes. Both plans earn commission — monthly (€40/mo, 20% = €8 at Tier 1) and annual (€360/yr, 20% = €72 at Tier 1). Annual conversions pay significantly more per client.": "Sì. Entrambi i piani generano commissione — mensile (€40/mese, 20% = €8 al Livello 1) e annuale (€360/anno, 20% = €72 al Livello 1). Le conversioni annuali pagano significativamente di più per cliente.",
+  "Only annual plans generate commission. Monthly subscriptions (€40/mo) are not eligible — this keeps the programme focused on quality leads.": "Sì. Entrambi i piani generano commissione — mensile (€40/mese, 20% = €8 al Livello 1) e annuale (€360/anno, 20% = €72 al Livello 1). Le conversioni annuali pagano significativamente di più per cliente.",
   "How is attribution tracked?": "Come viene tracciata l'attribuzione?",
-  "Every click is tracked for 30 days. When someone subscribes annually through your link, you're credited automatically.": "Ogni click viene tracciato per 30 giorni. Quando qualcuno si abbona annualmente tramite il tuo link, vieni accreditato automaticamente.",
+  "Every click is tracked for 30 days. When someone subscribes through your link — monthly or annual — you're credited automatically.": "Ogni click viene tracciato per 30 giorni. Quando qualcuno si abbona tramite il tuo link — mensile o annuale — vieni accreditato automaticamente.",
+  "Every click is tracked for 30 days. When someone subscribes annually through your link, you're credited automatically.": "Ogni click viene tracciato per 30 giorni. Quando qualcuno si abbona tramite il tuo link — mensile o annuale — vieni accreditato automaticamente.",
+  "on first subscription": "sul primo abbonamento",
+  "first subscription + all renewals": "primo abbonamento + tutti i rinnovi",
+  "See your": "Guarda i tuoi",
+  "potential earnings": "guadagni potenziali",
+  "% (final tier)": "% (livello finale)",
+  "€8 monthly · €72 annual": "€8 mensile · €72 annuale",
+  "€12 monthly · €108 annual": "€12 mensile · €108 annuale",
+  "€12/€108 first · €36 recurring": "€12/€108 primo · €36 ricorrente",
+  "Unique referral link with 30-day tracking": "Link di referral unico con tracking 30 giorni",
+  "Payout on demand (7-day intervals)": "Pagamento su richiesta (intervalli di 7 giorni)",
+  "6 months TNT Pro — complimentary access": "6 mesi TNT Pro — accesso gratuito",
+  "Priority support from the TNT team": "Supporto prioritario dal team TNT",
+  "10% on renewals — earn every year forever": "10% sui rinnovi — guadagna ogni anno per sempre",
+  "1 year TNT Pro — complimentary access": "1 anno TNT Pro — accesso gratuito",
   "When do I get paid?": "Quando vengo pagato?",
   "Commissions become payable once your pending balance reaches €100. Request a payout from the dashboard — we process within 5 business days via bank transfer or Stripe.": "Le commissioni diventano pagabili quando il saldo in sospeso raggiunge €100. Richiedi il pagamento dalla dashboard — elaboriamo entro 5 giorni lavorativi via bonifico o Stripe.",
   "What's the Tier 2 coupon?": "Cos'è il coupon Livello 2?",

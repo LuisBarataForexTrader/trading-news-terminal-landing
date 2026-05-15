@@ -7,7 +7,7 @@
 <!-- ── Primary SEO ── -->
 <title>Trading News Terminal — Real-Time Financial News</title>
 <meta name="description" content="Real-time news terminal for active traders. Live forex news feed, economic calendar, squawk box, TradingView charts &amp; live financial TV. Free to start.">
-<meta name="keywords" content="real-time financial news terminal, forex news feed, trading news terminal, economic calendar live, free bloomberg alternative, forex news live, financial news trader, squawk box online, market moving news, live trading news, financial juice alternative, forex economic calendar, crypto news live, commodity news, macro news feed, forex terminal free">
+<meta name="keywords" content="real-time financial news terminal, forex news feed, trading news terminal, economic calendar live, forex news live, financial news trader, squawk box online, market moving news, live trading news, forex economic calendar, crypto news live, commodity news, macro news feed, forex terminal free">
 <meta name="author" content="Trading News Terminal">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <meta name="google-site-verification" content="24taSmSdA2Wk7xXlpjkx_1-dfVN8ii0u0gvhDeczRrk">
@@ -212,14 +212,6 @@
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "The economic calendar shows 7 days of upcoming events with live countdown timers. When actual data is published, the result is automatically injected into the news feed with colour-coded positive/negative signals. HIGH impact events trigger an audio alert and squawk reading, so you never miss a major data release."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is Trading News Terminal a Bloomberg alternative?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. Bloomberg Terminal costs approximately $2,000 per month. Trading News Terminal provides real-time financial news, economic calendar, live squawk, live financial TV and TradingView charts for €40/month on the Pro plan — or completely free on the Basic plan. It is the professional-grade, affordable alternative to Bloomberg for retail and independent traders."
       }
     },
     {
@@ -620,7 +612,13 @@ section { padding:100px 24px; }
 
 /* ── FAQ ── */
 .faq-section { background:var(--bg2); }
-.faq-grid { max-width:760px; margin:56px auto 0; display:flex; flex-direction:column; gap:2px; }
+.faq-tabs { max-width:520px; margin:32px auto 0; display:flex; gap:8px; padding:6px; background:var(--bg3); border:1px solid var(--border); border-radius:10px; }
+.faq-tab { flex:1; padding:11px 18px; background:transparent; border:none; color:var(--text-dim); font-family:inherit; font-size:14px; font-weight:600; cursor:pointer; border-radius:7px; transition:all .15s; letter-spacing:.02em; text-decoration:none; text-align:center; display:inline-flex; align-items:center; justify-content:center; gap:6px; }
+.faq-tab:hover { color:var(--text); }
+.faq-tab.active { background:var(--accent); color:#0a0c0f; }
+.faq-tab-ext::after { content:'↗'; font-size:13px; opacity:0.65; }
+@media (max-width:560px){ .faq-tabs { max-width:none; margin:24px 16px 0; } }
+.faq-grid { max-width:760px; margin:32px auto 0; display:flex; flex-direction:column; gap:2px; }
 .faq-item { background:var(--bg3); border:1px solid var(--border); border-radius:3px; overflow:hidden; }
 .faq-q { padding:20px 24px; display:flex; align-items:center; justify-content:space-between; font-size:15px; font-weight:600; cursor:pointer; transition:background .15s; gap:16px; }
 .faq-q:hover { background:var(--bg2); }
@@ -806,12 +804,12 @@ footer { background:var(--bg2); border-top:1px solid var(--border); padding:64px
   <div class="nav-links">
     <a href="#features" data-i18n="nav.features">Features</a>
     <a href="#charts" data-i18n="nav.charts">Charts</a>
+    <a href="https://app.tradingnewsterminal.com/blog" data-i18n="nav.blog" target="_blank" rel="noopener">Blog</a>
     <a href="#pricing" data-i18n="nav.pricing">Pricing</a>
     <a href="#compare" data-i18n="nav.compare">Compare</a>
     <a href="#faq" data-i18n="nav.faq">FAQ</a>
     <a href="#contact" data-i18n="nav.contact">Contact</a>
     <a href="/affiliates" data-i18n="nav.affiliates" target="_blank" rel="noopener">Affiliates</a>
-    <a href="/signin" data-i18n="nav.signin">Sign In ↗</a>
   </div>
   <div style="display:flex;gap:8px;align-items:center;">
     <div class="lang-picker" id="landingLangPicker">
@@ -842,6 +840,7 @@ footer { background:var(--bg2); border-top:1px solid var(--border); padding:64px
 <div class="mobile-menu" id="mobileMenu">
   <a href="#features" data-i18n="nav.features" onclick="closeMobileMenu()">Features</a>
   <a href="#charts" data-i18n="nav.charts" onclick="closeMobileMenu()">Charts</a>
+  <a href="https://app.tradingnewsterminal.com/blog" data-i18n="nav.blog" target="_blank" rel="noopener" onclick="closeMobileMenu()">Blog</a>
   <a href="#pricing" data-i18n="nav.pricing" onclick="closeMobileMenu()">Pricing</a>
   <a href="#compare" data-i18n="nav.compare" onclick="closeMobileMenu()">Compare</a>
   <a href="#faq" data-i18n="nav.faq" onclick="closeMobileMenu()">FAQ</a>
@@ -860,7 +859,6 @@ footer { background:var(--bg2); border-top:1px solid var(--border); padding:64px
   <div class="mm-cta-row">
     <a href="/signup" class="mm-cta" data-i18n="nav.launch_free">Launch Free →</a>
     <a href="/login?plan=pro" class="mm-pro-cta" data-i18n="nav.get_pro">Get Pro</a>
-    <a href="/signin" class="mm-login" data-i18n="nav.signin">Sign In ↗</a>
   </div>
 </div>
 
@@ -879,7 +877,7 @@ footer { background:var(--bg2); border-top:1px solid var(--border); padding:64px
   </h1>
 
   <p class="hero-sub" data-i18n-html="hero.sub">
-    Real-time financial news, live economic calendar, squawk box, TradingView charts and live financial TV — all in one zero-clutter terminal. The affordable alternative to Bloomberg. <strong>Free to start.</strong>
+    Real-time financial news, live economic calendar, squawk box, TradingView charts and live financial TV — all in one zero-clutter terminal. Real-time market intelligence for active traders. <strong>Free to start.</strong>
   </p>
 
   <div class="hero-actions">
@@ -1084,10 +1082,10 @@ footer { background:var(--bg2); border-top:1px solid var(--border); padding:64px
         <span class="feature-tag tag-free" data-i18n="tag.basic_pro">Basic + Pro</span>
       </div>
       <div class="feature-card" role="listitem">
-        <div class="feature-icon" aria-hidden="true" style="background:rgba(167,139,250,0.08);border-color:rgba(167,139,250,0.25);">🔤</div>
-        <h3 class="feature-title" data-i18n="fc10.title">Auto Article Translation</h3>
-        <p class="feature-desc" data-i18n-html="fc10.desc">Click any headline and the full source article opens automatically translated into your selected language — Portuguese, Spanish, French, German or Italian. One toggle in settings, zero effort. Read global market news in your native language. <em style="opacity:0.6;font-size:0.9em;">*subject to destination page authorisation*</em></p>
-        <span class="feature-tag tag-pro" data-i18n="tag.pro_only">Pro Only</span>
+        <div class="feature-icon" aria-hidden="true" style="background:rgba(0,212,255,0.08);border-color:rgba(0,212,255,0.25);">🎯</div>
+        <h3 class="feature-title" data-i18n="fc10.title">1-Click Asset Filter</h3>
+        <p class="feature-desc" data-i18n-html="fc10.desc">Click any asset chip on a headline — <strong>USD</strong>, <strong>EUR</strong>, <strong>GOLD</strong>, <strong>BTC</strong>, <strong>SPX</strong> and 70+ others — and the feed filters instantly to that asset. Pro fetches deeper history (up to 2,000 results per asset vs 500 on Basic) and adds AI directional arrows (USD <strong>▲</strong> / EUR <strong>▼</strong>) showing which way each headline pushes each asset. <strong>RISK-ON</strong> / <strong>RISK-OFF</strong> sentiment chips also click-filterable.</p>
+        <span class="feature-tag tag-free" data-i18n="tag.basic_pro">Basic + Pro</span>
       </div>
       <div class="feature-card" role="listitem">
         <div class="feature-icon" aria-hidden="true">📉</div>
@@ -1129,7 +1127,7 @@ footer { background:var(--bg2); border-top:1px solid var(--border); padding:64px
   <div class="photo-strip-overlay"></div>
   <div class="photo-strip-content">
     <h3 data-i18n="photo.h3">Professional grade. Trader price.</h3>
-    <p data-i18n="photo.p">Everything Bloomberg has for market news — at a fraction of the cost. Built by traders, for traders.</p>
+    <p data-i18n="photo.p">Real-time market intelligence for active traders — at a fraction of the institutional cost. Built by traders, for traders.</p>
   </div>
 </div>
 
@@ -1313,7 +1311,7 @@ footer { background:var(--bg2); border-top:1px solid var(--border); padding:64px
   <div class="container">
     <div class="section-eyebrow" data-i18n="pricing.eyebrow">Plans &amp; Pricing</div>
     <h2 class="section-title" id="pricing-heading" data-i18n="pricing.h2">Start free. Upgrade when you're ready.</h2>
-    <p class="section-sub" data-i18n="pricing.sub">Basic is free forever. Pro is €40/month — less than 2% of what Bloomberg costs.</p>
+    <p class="section-sub" data-i18n="pricing.sub">Basic is free forever. Pro is €40/month — professional-grade market intelligence at a retail price.</p>
 
     <div class="billing-toggle" role="group" aria-label="Billing period">
       <button class="bill-btn bill-active" id="bill-monthly" onclick="setBilling('monthly')" data-i18n="pricing.monthly">Monthly</button>
@@ -1546,7 +1544,7 @@ footer { background:var(--bg2); border-top:1px solid var(--border); padding:64px
 <section class="vs-section" id="compare" aria-labelledby="compare-heading">
   <div class="container">
     <div class="section-eyebrow" data-i18n="vs.eyebrow">Comparison</div>
-    <h2 class="section-title" id="compare-heading" data-i18n-html="vs.h2">How we compare to Bloomberg<br>&amp; FinancialJuice</h2>
+    <h2 class="section-title" id="compare-heading" data-i18n-html="vs.h2">How we compare to FinancialJuice</h2>
     <p class="section-sub" data-i18n="vs.sub">Professional-grade market intelligence without the professional-grade price.</p>
     <div class="vs-table-wrap">
       <table class="vs-table">
@@ -1556,7 +1554,6 @@ footer { background:var(--bg2); border-top:1px solid var(--border); padding:64px
             <th class="ours" data-i18n="vs.th_basic">TNT Basic — Free</th>
             <th class="ours" style="color:#a78bfa;background:rgba(167,139,250,0.06)" data-i18n="vs.th_pro">TNT Pro — €40/mo</th>
             <th>FinancialJuice</th>
-            <th>Bloomberg Terminal</th>
           </tr>
         </thead>
         <tbody>
@@ -1565,13 +1562,11 @@ footer { background:var(--bg2); border-top:1px solid var(--border); padding:64px
             <td class="ours"><span class="check-yes">✓</span> <span data-i18n="vs.delay">Delayed</span></td>
             <td style="background:rgba(167,139,250,0.03)"><span class="check-yes">✓</span> <span data-i18n="vs.realtime">Real-time</span></td>
             <td><span class="check-yes">✓</span> <span data-i18n="vs.limited">Limited</span></td>
-            <td><span class="check-yes">✓</span> <span data-i18n="vs.realtime">Real-time</span></td>
           </tr>
           <tr>
             <td class="feature-name" data-i18n="vs.calendar">Economic calendar</td>
             <td class="ours"><span class="check-yes">✓</span> <span data-i18n="vs.live_releases">Live releases</span></td>
             <td style="background:rgba(167,139,250,0.03)"><span class="check-yes">✓</span> <span data-i18n="vs.live_releases">Live releases</span></td>
-            <td><span class="check-yes">✓</span></td>
             <td><span class="check-yes">✓</span></td>
           </tr>
           <tr>
@@ -1579,34 +1574,29 @@ footer { background:var(--bg2); border-top:1px solid var(--border); padding:64px
             <td class="ours"><span class="check-no">✗</span></td>
             <td style="background:rgba(167,139,250,0.03)"><span class="check-yes">✓</span></td>
             <td><span class="check-no">✗</span></td>
-            <td><span class="check-yes">✓</span></td>
           </tr>
           <tr>
             <td class="feature-name" data-i18n="vs.centralbanks">Central banks tracker</td>
             <td class="ours"><span class="check-no">✗</span></td>
             <td style="background:rgba(167,139,250,0.03)"><span class="check-yes">✓</span></td>
             <td><span class="check-partial">~</span> Limited</td>
-            <td><span class="check-yes">✓</span></td>
           </tr>
           <tr>
             <td class="feature-name" data-i18n="vs.earnings">Earnings calendar</td>
             <td class="ours"><span class="check-no">✗</span></td>
             <td style="background:rgba(167,139,250,0.03)"><span class="check-yes">✓</span></td>
             <td><span class="check-no">✗</span></td>
-            <td><span class="check-yes">✓</span></td>
           </tr>
           <tr>
             <td class="feature-name" data-i18n="vs.screener">Market screener</td>
             <td class="ours"><span class="check-no">✗</span></td>
             <td style="background:rgba(167,139,250,0.03)"><span class="check-yes">✓</span> <span data-i18n="vs.screener_6">6 asset classes</span></td>
             <td><span class="check-no">✗</span></td>
-            <td><span class="check-yes">✓</span></td>
           </tr>
           <tr>
             <td class="feature-name" data-i18n="vs.ai">✦ AI news analysis</td>
             <td class="ours"><span class="check-no">✗</span></td>
             <td style="background:rgba(167,139,250,0.03)"><span class="check-yes">✓</span> <span data-i18n="vs.ai_detail">Full article · asset impact</span></td>
-            <td><span class="check-no">✗</span></td>
             <td><span class="check-no">✗</span></td>
           </tr>
           <tr>
@@ -1614,20 +1604,17 @@ footer { background:var(--bg2); border-top:1px solid var(--border); padding:64px
             <td class="ours"><span class="check-no">✗</span></td>
             <td style="background:rgba(167,139,250,0.03)"><span class="check-yes">✓</span> <span data-i18n="vs.realtime">Real-time</span></td>
             <td><span class="check-no">✗</span></td>
-            <td><span class="check-yes">✓</span></td>
           </tr>
           <tr>
             <td class="feature-name" data-i18n="vs.squawk">Live squawk</td>
             <td class="ours"><span class="check-no">✗</span></td>
             <td style="background:rgba(167,139,250,0.03)"><span class="check-yes">✓</span> <span data-i18n="vs.included">Included</span></td>
             <td><span class="check-partial">~</span> €100+/mo</td>
-            <td><span class="check-yes">✓</span> Paid add-on</td>
           </tr>
           <tr>
             <td class="feature-name" data-i18n="vs.telegram">Telegram mobile alerts</td>
             <td class="ours"><span class="check-no">✗</span></td>
             <td style="background:rgba(167,139,250,0.03)"><span class="check-yes">✓</span> <span data-i18n="vs.included">Included</span></td>
-            <td><span class="check-no">✗</span></td>
             <td><span class="check-no">✗</span></td>
           </tr>
           <tr>
@@ -1635,28 +1622,24 @@ footer { background:var(--bg2); border-top:1px solid var(--border); padding:64px
             <td class="ours"><span class="check-no">✗</span></td>
             <td style="background:rgba(167,139,250,0.03)"><span class="check-yes">✓</span> <span data-i18n="vs.tv_7">7 channels</span></td>
             <td><span class="check-no">✗</span></td>
-            <td><span class="check-yes">✓</span></td>
           </tr>
           <tr>
             <td class="feature-name" data-i18n="vs.charts">TradingView charts</td>
             <td class="ours"><span class="check-yes">✓</span> <span data-i18n="vs.builtin">Built-in</span></td>
             <td style="background:rgba(167,139,250,0.03)"><span class="check-yes">✓</span> <span data-i18n="vs.builtin">Built-in</span></td>
             <td><span class="check-no">✗</span></td>
-            <td><span class="check-yes">✓</span></td>
           </tr>
           <tr>
             <td class="feature-name" data-i18n="vs.adfree">Ad-free</td>
             <td class="ours"><span class="check-no">✗</span></td>
             <td style="background:rgba(167,139,250,0.03)"><span class="check-yes">✓</span></td>
             <td><span class="check-no">✗</span></td>
-            <td><span class="check-yes">✓</span></td>
           </tr>
           <tr>
             <td class="feature-name" data-i18n="vs.price">Monthly price</td>
             <td class="ours" style="color:var(--low);font-weight:700;" data-i18n="vs.free">Free</td>
             <td style="background:rgba(167,139,250,0.03);color:#a78bfa;font-weight:700;">€40 / month</td>
             <td style="color:var(--text-muted)">Free / Paid tiers</td>
-            <td style="color:var(--high);font-weight:700;">~€1,800 / month</td>
           </tr>
         </tbody>
       </table>
@@ -1670,6 +1653,10 @@ footer { background:var(--bg2); border-top:1px solid var(--border); padding:64px
     <div class="section-eyebrow" data-i18n="faq.eyebrow">FAQ</div>
     <h2 class="section-title" id="faq-heading" data-i18n="faq.h2">Frequently asked questions</h2>
     <p style="font-size:15px;color:var(--text-dim);max-width:520px;margin:0 auto;" data-i18n="faq.sub">Everything you need to know about Trading News Terminal.</p>
+    <div class="faq-tabs" role="tablist" aria-label="FAQ category">
+      <button class="faq-tab active" type="button" data-i18n="faq.tab_general" aria-pressed="true">General FAQ</button>
+      <a class="faq-tab faq-tab-ext" href="/faq?tab=app" data-i18n="faq.tab_app">App FAQ</a>
+    </div>
   </div>
   <div class="faq-grid" role="list">
 
@@ -1678,7 +1665,7 @@ footer { background:var(--bg2); border-top:1px solid var(--border); padding:64px
         <span data-i18n="faq.q1">What is Trading News Terminal?</span>
         <span class="faq-icon" aria-hidden="true">+</span>
       </div>
-      <div class="faq-a" data-i18n="faq.a1">Trading News Terminal is a professional real-time financial news platform for active traders. Forex, macro &amp; crypto news, economic calendar and squawk.</div>
+      <div class="faq-a" data-nosnippet data-i18n="faq.a1" data-nosnippet>Trading News Terminal is a professional real-time financial news platform for active traders. It aggregates live news from institutional sources across forex, macro, crypto, equities and commodities, classifies each item by market impact (HIGH, MEDIUM, LOW), and combines it with a live economic calendar, squawk box, TradingView charts and financial TV — all in one zero-clutter web interface.</div>
     </div>
 
     <div class="faq-item" role="listitem">
@@ -1686,7 +1673,7 @@ footer { background:var(--bg2); border-top:1px solid var(--border); padding:64px
         <span data-i18n="faq.q2">What is the difference between Basic and Pro?</span>
         <span class="faq-icon" aria-hidden="true">+</span>
       </div>
-      <div class="faq-a" data-i18n-html="faq.a2">
+      <div class="faq-a" data-nosnippet data-i18n-html="faq.a2">
         <p style="margin-bottom:12px;"><strong>Basic (free)</strong> includes: delayed news feed, live economic calendar, TradingView charts, asset watchlist, smart search and multilingual interface.</p>
         <p><strong>Pro (€40/month)</strong> adds everything in Basic plus: <strong>Real-time zero-delay news feed</strong> — <strong>Macro &amp; Bonds Hub</strong> (GDP, PMI, yields) — <strong>Earnings Calendar</strong> (EPS beat/miss live) — <strong>Central Banks Tracker</strong> (Fed, ECB, BOE, BOJ, SNB…) — <strong>Market Sentiment</strong> (risk-on / risk-off) — <strong>Market Screener</strong> (Forex, Stocks, Crypto, Indices, Commodities &amp; Bonds) — <strong>Live Squawk</strong> (hands-free voice alerts) — <strong>Telegram mobile alerts</strong> (HIGH impact news on your phone, with asset filters) — <strong>7 Live Financial TV channels</strong> — comprehensive source coverage — 100% ad-free — no upgrade prompts — priority support.</p>
       </div>
@@ -1697,7 +1684,7 @@ footer { background:var(--bg2); border-top:1px solid var(--border); padding:64px
         <span data-i18n="faq.q3">Is the Basic plan really free?</span>
         <span class="faq-icon" aria-hidden="true">+</span>
       </div>
-      <div class="faq-a" data-i18n="faq.a3">Yes. The Basic plan is free forever — no credit card required, no auto-upgrade. Simply create an account with your email address in under 30 seconds and get immediate access to the full terminal. For Pro, we offer a 7-day free trial with credit card. After 7 days you're charged €40/month + VAT. Cancel anytime during the trial.</div>
+      <div class="faq-a" data-nosnippet data-i18n="faq.a3">Yes. The Basic plan is free forever — no credit card required, no auto-upgrade. Simply create an account with your email address in under 30 seconds and get immediate access to the full terminal. For Pro, we offer a 7-day free trial with credit card. After 7 days you're charged €40/month + VAT. Cancel anytime during the trial.</div>
     </div>
 
     <div class="faq-item" role="listitem">
@@ -1705,7 +1692,7 @@ footer { background:var(--bg2); border-top:1px solid var(--border); padding:64px
         <span data-i18n="faq.q4">What is the Squawk feature?</span>
         <span class="faq-icon" aria-hidden="true">+</span>
       </div>
-      <div class="faq-a" data-i18n="faq.a4">Squawk uses your browser's Web Speech API to read every new headline aloud as it arrives — just like a professional trading desk squawk box. Enable it with one click. The terminal highlights the card being read in real time, so you never miss breaking news while watching charts. Squawk is a Pro-only feature.</div>
+      <div class="faq-a" data-nosnippet data-i18n="faq.a4">Squawk uses your browser's Web Speech API to read every new headline aloud as it arrives — just like a professional trading desk squawk box. Enable it with one click. The terminal highlights the card being read in real time, so you never miss breaking news while watching charts. Squawk is a Pro-only feature.</div>
     </div>
 
     <div class="faq-item" role="listitem">
@@ -1713,7 +1700,7 @@ footer { background:var(--bg2); border-top:1px solid var(--border); padding:64px
         <span data-i18n="faq.q5">Which news sources does the terminal aggregate?</span>
         <span class="faq-icon" aria-hidden="true">+</span>
       </div>
-      <div class="faq-a" data-i18n="faq.a5">We aggregate from hundreds of institutional and professional news sources across forex, macro, equities, crypto and commodities. We keep our source list confidential for competitive reasons. The Basic plan covers the highest-impact sources; the Pro plan unlocks full comprehensive coverage across every category and asset class.</div>
+      <div class="faq-a" data-nosnippet data-i18n="faq.a5">We aggregate from hundreds of institutional and professional news sources across forex, macro, equities, crypto and commodities. We keep our source list confidential for competitive reasons. The Basic plan covers the highest-impact sources; the Pro plan unlocks full comprehensive coverage across every category and asset class.</div>
     </div>
 
     <div class="faq-item" role="listitem">
@@ -1721,7 +1708,7 @@ footer { background:var(--bg2); border-top:1px solid var(--border); padding:64px
         <span data-i18n="faq.q6">Does Trading News Terminal have live charts?</span>
         <span class="faq-icon" aria-hidden="true">+</span>
       </div>
-      <div class="faq-a" data-i18n="faq.a6">Yes. The terminal includes embedded TradingView charts for forex pairs (EUR/USD, GBP/USD, USD/JPY and more), cryptocurrencies (BTC, ETH, XRP), major indices (S&amp;P 500, DAX, Nikkei, FTSE), metals and energy (Gold, Silver, WTI, Brent, Natural Gas), and agricultural commodities (Corn, Wheat, Soybeans, Coffee, Cocoa, Cotton). Charts are available on both Basic and Pro plans.</div>
+      <div class="faq-a" data-nosnippet data-i18n="faq.a6">Yes. The terminal includes embedded TradingView charts for forex pairs (EUR/USD, GBP/USD, USD/JPY and more), cryptocurrencies (BTC, ETH, XRP), major indices (S&amp;P 500, DAX, Nikkei, FTSE), metals and energy (Gold, Silver, WTI, Brent, Natural Gas), and agricultural commodities (Corn, Wheat, Soybeans, Coffee, Cocoa, Cotton). Charts are available on both Basic and Pro plans.</div>
     </div>
 
     <div class="faq-item" role="listitem">
@@ -1729,15 +1716,7 @@ footer { background:var(--bg2); border-top:1px solid var(--border); padding:64px
         <span data-i18n="faq.q7">How does the economic calendar work?</span>
         <span class="faq-icon" aria-hidden="true">+</span>
       </div>
-      <div class="faq-a" data-i18n="faq.a7">The economic calendar shows 7 days of upcoming events with live countdown timers, previous values and forecasts. When actual data is published, the result is automatically injected into the news feed with colour-coded beat/miss signals. HIGH impact events trigger an audio alert and Squawk reading (on Pro). The calendar covers all major currencies and economies globally.</div>
-    </div>
-
-    <div class="faq-item" role="listitem">
-      <div class="faq-q" onclick="toggleFaq(this)">
-        <span data-i18n="faq.q8">Is Trading News Terminal a Bloomberg alternative?</span>
-        <span class="faq-icon" aria-hidden="true">+</span>
-      </div>
-      <div class="faq-a" data-i18n="faq.a8">Yes. Bloomberg Terminal costs approximately €1,800 per month. Trading News Terminal Pro delivers real-time financial news, economic calendar, live squawk, 7 live TV channels and TradingView charts for €40/month. For independent and retail traders who need professional-grade market intelligence without the institutional price, TNT is the obvious Bloomberg alternative.</div>
+      <div class="faq-a" data-nosnippet data-i18n="faq.a7">The economic calendar shows 7 days of upcoming events with live countdown timers, previous values and forecasts. When actual data is published, the result is automatically injected into the news feed with colour-coded beat/miss signals. HIGH impact events trigger an audio alert and Squawk reading (on Pro). The calendar covers all major currencies and economies globally.</div>
     </div>
 
     <div class="faq-item" role="listitem">
@@ -1745,7 +1724,7 @@ footer { background:var(--bg2); border-top:1px solid var(--border); padding:64px
         <span data-i18n="faq.q9">Does it work on mobile and tablet?</span>
         <span class="faq-icon" aria-hidden="true">+</span>
       </div>
-      <div class="faq-a" data-i18n-html="faq.a9">Mobile and tablet support is <strong>coming soon</strong>. The terminal is currently optimised for desktop and laptop browsers. A fully native mobile experience is in development.</div>
+      <div class="faq-a" data-nosnippet data-i18n-html="faq.a9">Mobile and tablet support is <strong>coming soon</strong>. The terminal is currently optimised for desktop and laptop browsers. A fully native mobile experience is in development.</div>
     </div>
 
     <div class="faq-item" role="listitem">
@@ -1753,7 +1732,7 @@ footer { background:var(--bg2); border-top:1px solid var(--border); padding:64px
         <span data-i18n="faq.q10">How do I cancel during the free trial?</span>
         <span class="faq-icon" aria-hidden="true">+</span>
       </div>
-      <div class="faq-a" data-i18n="faq.a10">You can cancel anytime from your account settings or billing portal. If you cancel within 7 days, you won't be charged. Your Pro access will remain until the trial period ends.</div>
+      <div class="faq-a" data-nosnippet data-i18n="faq.a10">You can cancel anytime from your account settings or billing portal. If you cancel within 7 days, you won't be charged. Your Pro access will remain until the trial period ends.</div>
     </div>
 
   </div>
@@ -1852,6 +1831,7 @@ footer { background:var(--bg2); border-top:1px solid var(--border); padding:64px
       <a href="/signup" data-i18n="footer.open_terminal">Open Terminal</a>
       <a href="#features" data-i18n="nav.features">Features</a>
       <a href="#charts" data-i18n="nav.charts">Charts</a>
+      <a href="https://app.tradingnewsterminal.com/blog" data-i18n="nav.blog" target="_blank" rel="noopener">Blog</a>
       <a href="#pricing" data-i18n="nav.pricing">Pricing</a>
       <a href="#compare" data-i18n="nav.compare">Compare</a>
     </div>
@@ -1867,9 +1847,9 @@ footer { background:var(--bg2); border-top:1px solid var(--border); padding:64px
       <h4 data-i18n="footer.col_resources">Resources</h4>
       <a href="#faq" data-i18n="nav.faq">FAQ</a>
       <a href="/affiliates" data-i18n="nav.affiliates" target="_blank" rel="noopener">Affiliates</a>
+      <a href="/partners">Partners</a>
       <a href="/signup" data-i18n="footer.live_tv">Live Financial TV</a>
       <a href="/signup" data-i18n="footer.live_squawk">Live Squawk</a>
-      <a href="#compare" data-i18n="footer.bloomberg_alt">Bloomberg Alternative</a>
       <a href="/terms" data-i18n="footer.terms">Terms of Use</a>
       <a href="/privacy" data-i18n="footer.privacy">Privacy Policy</a>
       <a href="mailto:support@tradingnewsterminal.com" data-i18n="footer.contact">Contact</a>
@@ -1895,7 +1875,7 @@ footer { background:var(--bg2); border-top:1px solid var(--border); padding:64px
       document.cookie = 'aff_ref=' + _ref + ';expires=' + _exp.toUTCString() + ';path=/;SameSite=Lax';
       localStorage.setItem('aff_ref', _ref);
       // Track click on backend (fire-and-forget)
-      fetch('https://trading-news-terminal-backend-production.up.railway.app/affiliates/click?code=' + _ref, { method: 'POST' }).catch(function(){});
+      fetch('https://api.tradingnewsterminal.com/affiliates/click?code=' + _ref, { method: 'POST' }).catch(function(){});
       // Update all signup/login CTA links to carry ?ref= so code is visible in URL
       var _loginPaths = ['/login', '/signup', '/signin'];
       document.querySelectorAll('a[href]').forEach(function(a) {
@@ -1917,14 +1897,14 @@ let _landingLang = localStorage.getItem('tnt_lang') || 'en';
 const _LS = {
   en: {
     'nav.tagline':'Real-time Market Intelligence',
-    'nav.features':'Features','nav.charts':'Charts','nav.pricing':'Pricing',
+    'nav.features':'Features','nav.charts':'Charts','nav.blog':'Blog','nav.pricing':'Pricing',
     'nav.compare':'Compare','nav.faq':'FAQ','nav.contact':'Contact','nav.affiliates':'Affiliates','nav.signin':'Sign In ↗',
     'nav.login':'Login','nav.launch_free':'Launch Free →','nav.get_pro':'Get Pro',
     'nav.launch':'Launch →',
     'hero.eyebrow':'Live Now — Real-Time Feed Active',
     'hero.h1_line1':'The Professional','hero.h1_line2':'Financial News Terminal',
     'hero.h1_line3':'Built for Active Traders',
-    'hero.sub':'Real-time financial news, live economic calendar, squawk box, TradingView charts and live financial TV — all in one zero-clutter terminal. The affordable alternative to Bloomberg. <strong>Free to start.</strong>',
+    'hero.sub':'Real-time financial news, live economic calendar, squawk box, TradingView charts and live financial TV — all in one zero-clutter terminal. Real-time market intelligence for active traders. <strong>Free to start.</strong>',
     'hero.btn_open':'▶ Open Terminal — Free','hero.btn_pro':'Get Pro — From €30/mo',
     'hero.btn_explore':'Start 7-Day Free Trial',
     'hero.trust1':'Free account in 30 seconds','hero.trust2':'No credit card required',
@@ -1960,8 +1940,8 @@ const _LS = {
     'fc8.desc':'Search by keyword, asset, source or forex pair across all aggregated sources simultaneously. Entering "eurusd" auto-filters for all EUR and USD tagged headlines. Filter by impact level, source, time range or asset class.',
     'fc9.title':'Multilingual Interface',
     'fc9.desc':'Full interface and on-the-fly headline translation across multiple languages. Switch languages instantly — all news items and economic calendar entries translate in real time. More languages are continuously being added.',
-    'fc10.title':'Auto Article Translation',
-    'fc10.desc':'Click any headline and the full source article opens automatically translated into your selected language — Portuguese, Spanish, French, German or Italian. One toggle in settings, zero effort. Read global market news in your native language. <em style="opacity:0.6;font-size:0.9em;">*subject to destination page authorisation*</em>',
+    'fc10.title':'1-Click Asset Filter',
+    'fc10.desc':'Click any asset chip on a headline — <strong>USD</strong>, <strong>EUR</strong>, <strong>GOLD</strong>, <strong>BTC</strong>, <strong>SPX</strong> and 70+ others — and the feed filters instantly to that asset. Pro fetches deeper history (up to 2,000 results per asset vs 500 on Basic) and adds AI directional arrows (USD <strong>▲</strong> / EUR <strong>▼</strong>) showing which way each headline pushes each asset. <strong>RISK-ON</strong> / <strong>RISK-OFF</strong> sentiment chips also click-filterable.',
     'fc11.title':'Macro & Bonds Hub',
     'fc11.desc':'Dedicated Macro tab aggregates global macroeconomic news — GDP, inflation, PMI, trade data, interest rate decisions and government bond yields. Filter by region or indicator. Includes real-time market sentiment analysis.',
     'fc12.title':'Earnings Calendar',
@@ -1970,7 +1950,7 @@ const _LS = {
     'fc13.desc':'Dedicated Central Banks tab monitors all major central bank decisions, speeches and rate path signals — Fed, ECB, BOE, BOJ, SNB, RBA, BOC and more. Rate decisions auto-inject into the live feed the instant they\'re announced.',
     'tag.basic_pro':'Basic + Pro','tag.pro_only':'Pro Only',
     'photo.h3':'Professional grade. Trader price.',
-    'photo.p':'Everything Bloomberg has for market news — at a fraction of the cost. Built by traders, for traders.',
+    'photo.p':'Real-time market intelligence for active traders — at a fraction of the institutional cost. Built by traders, for traders.',
     'charts.eyebrow':'Integrated Charts',
     'charts.h2':'TradingView charts<br>built right in',
     'charts.sub':'No separate tabs. No extra subscriptions. Correlate breaking news to price action instantly, all from within the terminal.',
@@ -1996,7 +1976,7 @@ const _LS = {
     'test.role1':'Forex Day Trader · London','test.role2':'Macro Trader · Lisbon','test.role3':'Swing Trader · Milan',
     'pricing.eyebrow':'Plans & Pricing',
     'pricing.h2':'Start free. Upgrade when you\'re ready.',
-    'pricing.sub':'Basic is free forever. Pro is €40/month — less than 2% of what Bloomberg costs.',
+    'pricing.sub':'Basic is free forever. Pro is €40/month — professional-grade market intelligence at a retail price.',
     'pricing.monthly':'Monthly','pricing.annual':'Annual','pricing.save':'3 months free',
     'plan.basic_badge':'Free Forever','plan.no_cc':'No credit card required',
     'plan.basic_desc':'Essential market intelligence for traders getting started. Access the full terminal and stay informed on what moves the markets — at no cost, forever.',
@@ -2065,7 +2045,7 @@ const _LS = {
     'how.step3_title':'Trade with Confidence',
     'how.step3_desc':'Enable Squawk for hands-free voice alerts. Monitor the economic calendar for upcoming releases. Open the integrated TradingView chart for the instrument you\'re trading — news and price action, side by side.',
     'vs.eyebrow':'Comparison',
-    'vs.h2':'How we compare to Bloomberg<br>& FinancialJuice',
+    'vs.h2':'How we compare to FinancialJuice',
     'vs.sub':'Professional-grade market intelligence without the professional-grade price.',
     'vs.th_feature':'Feature','vs.th_basic':'TNT Basic — Free','vs.th_pro':'TNT Pro — €40/mo',
     'vs.news':'News feed','vs.delay':'Delayed','vs.realtime':'Real-time',
@@ -2078,6 +2058,7 @@ const _LS = {
     'vs.adfree':'Ad-free','vs.price':'Monthly price','vs.free':'Free','vs.limited':'Limited',
     'faq.eyebrow':'FAQ','faq.h2':'Frequently asked questions',
     'faq.sub':'Everything you need to know about Trading News Terminal.',
+    'faq.tab_general':'General FAQ','faq.tab_app':'App FAQ',
     'faq.q1':'What is Trading News Terminal?',
     'faq.a1':'Trading News Terminal is a professional real-time financial news platform for active traders. Forex, macro & crypto news, economic calendar and squawk.',
     'faq.q2':'What is the difference between Basic and Pro?',
@@ -2092,8 +2073,6 @@ const _LS = {
     'faq.a6':'Yes. The terminal includes embedded TradingView charts for forex pairs (EUR/USD, GBP/USD, USD/JPY and more), cryptocurrencies (BTC, ETH, XRP), major indices (S&P 500, DAX, Nikkei, FTSE), metals and energy (Gold, Silver, WTI, Brent, Natural Gas), and agricultural commodities. Available on both Basic and Pro plans.',
     'faq.q7':'How does the economic calendar work?',
     'faq.a7':'The economic calendar shows 7 days of upcoming events with live countdown timers, previous values and forecasts. When actual data is published, the result is automatically injected into the news feed with colour-coded beat/miss signals. HIGH impact events trigger an audio alert and Squawk reading (on Pro).',
-    'faq.q8':'Is Trading News Terminal a Bloomberg alternative?',
-    'faq.a8':'Yes. Bloomberg Terminal costs approximately €1,800 per month. Trading News Terminal Pro delivers real-time financial news, economic calendar, live squawk, 7 live TV channels and TradingView charts for €40/month — the professional-grade Bloomberg alternative at a fraction of the cost.',
     'faq.q9':'Does it work on mobile and tablet?',
     'faq.a9':'Mobile and tablet support is <strong>coming soon</strong>. The terminal is currently optimised for desktop and laptop browsers. A fully native mobile experience is in development.',
     'faq.q10':'How do I cancel during the free trial?',
@@ -2123,7 +2102,7 @@ const _LS = {
     'footer.crypto_news':'Crypto News','footer.macro_bonds':'Macro & Bonds',
     'footer.commodities':'Commodities News','footer.econ_cal':'Economic Calendar',
     'footer.col_resources':'Resources','footer.live_tv':'Live Financial TV',
-    'footer.live_squawk':'Live Squawk','footer.bloomberg_alt':'Bloomberg Alternative',
+    'footer.live_squawk':'Live Squawk',
     'footer.terms':'Terms of Use','footer.privacy':'Privacy Policy',
     'footer.contact':'Contact','footer.copyright':'© 2026 Trading News Terminal. All rights reserved.',
     'contact.eyebrow':'Get in Touch','contact.h2':'Contact Us',
@@ -2139,14 +2118,14 @@ const _LS = {
   },
   pt: {
     'nav.tagline':'Inteligência de Mercado em Tempo Real',
-    'nav.features':'Funcionalidades','nav.charts':'Gráficos','nav.pricing':'Preços',
+    'nav.features':'Funcionalidades','nav.charts':'Gráficos','nav.blog':'Blog','nav.pricing':'Preços',
     'nav.compare':'Comparar','nav.faq':'FAQ','nav.contact':'Contacto','nav.affiliates':'Afiliados','nav.signin':'Entrar ↗',
     'nav.login':'Login','nav.launch_free':'Começar Grátis →','nav.get_pro':'Obter Pro',
     'nav.launch':'Abrir →',
     'hero.eyebrow':'Ao Vivo — Feed em Tempo Real Ativo',
     'hero.h1_line1':'O Terminal Profissional','hero.h1_line2':'de Notícias Financeiras',
     'hero.h1_line3':'Para Traders Ativos',
-    'hero.sub':'Notícias financeiras em tempo real, calendário económico ao vivo, squawk box, gráficos TradingView e TV financeira — tudo num terminal sem distração. A alternativa acessível ao Bloomberg. <strong>Grátis para começar.</strong>',
+    'hero.sub':'Notícias financeiras em tempo real, calendário económico ao vivo, squawk box, gráficos TradingView e TV financeira — tudo num terminal sem distração. Inteligência de mercado em tempo real para traders activos. <strong>Grátis para começar.</strong>',
     'hero.btn_open':'▶ Abrir Terminal — Grátis','hero.btn_pro':'Obter Pro — Desde €30/mês',
     'hero.btn_explore':'Experimentar 7 Dias Grátis',
     'hero.trust1':'Conta grátis em 30 segundos','hero.trust2':'Sem cartão de crédito',
@@ -2182,8 +2161,8 @@ const _LS = {
     'fc8.desc':'Pesquisa por palavra-chave, ativo, fonte ou par de forex em todas as fontes. Digitar "eurusd" filtra automaticamente todas as manchetes com EUR e USD. Filtra por impacto, fonte, intervalo de tempo ou classe de ativo.',
     'fc9.title':'Interface Multilingue',
     'fc9.desc':'Interface completa e tradução de manchetes em múltiplos idiomas. Muda de idioma instantaneamente — todas as notícias e entradas do calendário traduzem em tempo real.',
-    'fc10.title':'Tradução Automática de Artigos',
-    'fc10.desc':'Clica em qualquer manchete e o artigo original abre automaticamente traduzido para o teu idioma — Português, Espanhol, Francês, Alemão ou Italiano. Um toggle nas definições, zero esforço. <em style="opacity:0.6;font-size:0.9em;">*sujeito a autorização da página de destino*</em>',
+    'fc10.title':'Filtro de Ativo com 1 Clique',
+    'fc10.desc':'Clica em qualquer chip de ativo numa manchete — <strong>USD</strong>, <strong>EUR</strong>, <strong>GOLD</strong>, <strong>BTC</strong>, <strong>SPX</strong> e mais de 70 outros — e o feed filtra instantaneamente para esse ativo. O Pro busca histórico mais profundo (até 2.000 resultados por ativo vs 500 no Basic) e adiciona setas direccionais AI (USD <strong>▲</strong> / EUR <strong>▼</strong>) que mostram para onde cada notícia empurra cada ativo. Chips <strong>RISK-ON</strong> / <strong>RISK-OFF</strong> também filtráveis com clique.',
     'fc11.title':'Hub Macro & Obrigações',
     'fc11.desc':'Tab Macro dedicado agrega notícias macroeconómicas globais — PIB, inflação, PMI, dados de comércio, decisões de taxas e yields de obrigações. Inclui análise de sentimento de mercado em tempo real.',
     'fc12.title':'Calendário de Resultados',
@@ -2192,7 +2171,7 @@ const _LS = {
     'fc13.desc':'Tab dedicado monitoriza todas as decisões dos principais bancos centrais — Fed, BCE, BOE, BOJ, SNB, RBA, BOC e mais. As decisões injetam no feed ao vivo no instante em que são anunciadas.',
     'tag.basic_pro':'Basic + Pro','tag.pro_only':'Só Pro',
     'photo.h3':'Qualidade profissional. Preço de trader.',
-    'photo.p':'Tudo o que o Bloomberg tem em notícias de mercado — a uma fração do custo. Criado por traders, para traders.',
+    'photo.p':'Inteligência de mercado em tempo real para traders activos — a uma fração do custo institucional. Criado por traders, para traders.',
     'charts.eyebrow':'Gráficos Integrados',
     'charts.h2':'Gráficos TradingView<br>integrados no terminal',
     'charts.sub':'Sem separadores separados. Sem subscrições extra. Correlaciona notícias com ação de preço instantaneamente, tudo dentro do terminal.',
@@ -2218,7 +2197,7 @@ const _LS = {
     'test.role1':'Trader Forex Intradiário · Londres','test.role2':'Trader Macro · Lisboa','test.role3':'Swing Trader · Milão',
     'pricing.eyebrow':'Planos & Preços',
     'pricing.h2':'Começa grátis. Faz upgrade quando estiveres pronto.',
-    'pricing.sub':'O Basic é gratuito para sempre. O Pro é €40/mês — menos de 2% do que o Bloomberg custa.',
+    'pricing.sub':'O Basic é gratuito para sempre. O Pro é €40/mês — inteligência de mercado profissional a um preço retail.',
     'pricing.monthly':'Mensal','pricing.annual':'Anual','pricing.save':'3 meses grátis',
     'plan.basic_badge':'Grátis Para Sempre','plan.no_cc':'Sem cartão de crédito',
     'plan.basic_desc':'Inteligência de mercado essencial para traders que estão a começar. Acede ao terminal completo e mantém-te informado sobre o que move os mercados — sem custo, para sempre.',
@@ -2287,7 +2266,7 @@ const _LS = {
     'how.step3_title':'Negoceia com Confiança',
     'how.step3_desc':'Ativa o Squawk para alertas de voz mãos-livres. Monitoriza o calendário económico. Abre o gráfico TradingView integrado para o instrumento que estás a negociar — notícias e ação de preço, lado a lado.',
     'vs.eyebrow':'Comparação',
-    'vs.h2':'Como nos comparamos ao Bloomberg<br>& FinancialJuice',
+    'vs.h2':'Como nos comparamos ao FinancialJuice',
     'vs.sub':'Inteligência de mercado de nível profissional sem o preço profissional.',
     'vs.th_feature':'Funcionalidade','vs.th_basic':'TNT Basic — Grátis','vs.th_pro':'TNT Pro — €40/mês',
     'vs.news':'Feed de notícias','vs.delay':'Com atraso','vs.realtime':'Tempo real',
@@ -2300,6 +2279,7 @@ const _LS = {
     'vs.adfree':'Sem anúncios','vs.price':'Preço mensal','vs.free':'Grátis','vs.limited':'Limitado',
     'faq.eyebrow':'FAQ','faq.h2':'Perguntas frequentes',
     'faq.sub':'Tudo o que precisas de saber sobre o Trading News Terminal.',
+    'faq.tab_general':'FAQ Geral','faq.tab_app':'FAQ da App',
     'faq.q1':'O que é o Trading News Terminal?',
     'faq.a1':'O Trading News Terminal é uma plataforma profissional de notícias financeiras em tempo real para traders ativos. Agrega notícias ao vivo de fontes institucionais em forex, macro, cripto, ações e commodities, classifica cada item por impacto de mercado (HIGH, MEDIUM, LOW) e combina com calendário económico ao vivo, squawk box, gráficos TradingView e TV financeira — tudo numa interface web sem distração.',
     'faq.q2':'Qual a diferença entre Basic e Pro?',
@@ -2314,8 +2294,6 @@ const _LS = {
     'faq.a6':'Sim. O terminal inclui gráficos TradingView incorporados para pares de forex (EUR/USD, GBP/USD, USD/JPY e mais), criptomoedas (BTC, ETH, XRP), índices principais (S&P 500, DAX, Nikkei, FTSE), metais e energia (Ouro, Prata, WTI, Brent, Gás Natural) e commodities agrícolas. Disponível nos planos Basic e Pro.',
     'faq.q7':'Como funciona o calendário económico?',
     'faq.a7':'O calendário económico mostra 7 dias de eventos próximos com temporizadores ao vivo, valores anteriores e previsões. Quando os dados reais são publicados, o resultado é automaticamente injetado no feed com sinais de cor beat/miss. Eventos HIGH disparam alertas de áudio e leitura de Squawk (no Pro).',
-    'faq.q8':'O Trading News Terminal é uma alternativa ao Bloomberg?',
-    'faq.a8':'Sim. O Bloomberg Terminal custa aproximadamente €1.800 por mês. O Trading News Terminal Pro entrega notícias financeiras em tempo real, calendário económico, squawk ao vivo, 7 canais de TV e gráficos TradingView por €40/mês — a alternativa profissional ao Bloomberg a uma fração do custo.',
     'faq.q9':'Funciona em mobile e tablet?',
     'faq.a9':'Suporte mobile e tablet está <strong>a chegar em breve</strong>. O terminal está atualmente otimizado para browsers de desktop e laptop. Uma experiência mobile nativa completa está em desenvolvimento.',
     'faq.q10':'Como cancelo durante o período de teste grátis?',
@@ -2345,7 +2323,7 @@ const _LS = {
     'footer.crypto_news':'Notícias Cripto','footer.macro_bonds':'Macro & Obrigações',
     'footer.commodities':'Notícias de Commodities','footer.econ_cal':'Calendário Económico',
     'footer.col_resources':'Recursos','footer.live_tv':'TV Financeira Ao Vivo',
-    'footer.live_squawk':'Squawk Ao Vivo','footer.bloomberg_alt':'Alternativa ao Bloomberg',
+    'footer.live_squawk':'Squawk Ao Vivo',
     'footer.terms':'Termos de Uso','footer.privacy':'Política de Privacidade',
     'footer.contact':'Contacto','footer.copyright':'© 2026 Trading News Terminal. Todos os direitos reservados.',
     'contact.eyebrow':'Fala Connosco','contact.h2':'Contacto',
@@ -2361,14 +2339,14 @@ const _LS = {
   },
   es: {
     'nav.tagline':'Inteligencia de Mercado en Tiempo Real',
-    'nav.features':'Características','nav.charts':'Gráficos','nav.pricing':'Precios',
+    'nav.features':'Características','nav.charts':'Gráficos','nav.blog':'Blog','nav.pricing':'Precios',
     'nav.compare':'Comparar','nav.faq':'FAQ','nav.contact':'Contacto','nav.affiliates':'Afiliados','nav.signin':'Iniciar Sesión ↗',
     'nav.login':'Login','nav.launch_free':'Empezar Gratis →','nav.get_pro':'Obtener Pro',
     'nav.launch':'Abrir →',
     'hero.eyebrow':'En Vivo — Feed en Tiempo Real Activo',
     'hero.h1_line1':'El Terminal Profesional','hero.h1_line2':'de Noticias Financieras',
     'hero.h1_line3':'Para Traders Activos',
-    'hero.sub':'Noticias financieras en tiempo real, calendario económico en vivo, squawk box, gráficos TradingView y TV financiera — todo en un terminal sin distracciones. La alternativa asequible a Bloomberg. <strong>Gratis para empezar.</strong>',
+    'hero.sub':'Noticias financieras en tiempo real, calendario económico en vivo, squawk box, gráficos TradingView y TV financiera — todo en un terminal sin distracciones. Inteligencia de mercado en tiempo real para traders activos. <strong>Gratis para empezar.</strong>',
     'hero.btn_open':'▶ Abrir Terminal — Gratis','hero.btn_pro':'Obtener Pro — Desde €30/mes',
     'hero.btn_explore':'Prueba Gratis 7 Días',
     'hero.trust1':'Cuenta gratis en 30 segundos','hero.trust2':'Sin tarjeta de crédito',
@@ -2404,8 +2382,8 @@ const _LS = {
     'fc8.desc':'Busca por palabra clave, activo, fuente o par de forex en todas las fuentes simultáneamente. Filtrar por nivel de impacto, fuente, rango de tiempo o clase de activo.',
     'fc9.title':'Interfaz Multilingüe',
     'fc9.desc':'Interfaz completa y traducción de titulares en múltiples idiomas. Cambia de idioma al instante — todas las noticias y entradas del calendario se traducen en tiempo real.',
-    'fc10.title':'Traducción Automática de Artículos',
-    'fc10.desc':'Haz clic en cualquier titular y el artículo completo se abre automáticamente traducido a tu idioma seleccionado — Portugués, Español, Francés, Alemán o Italiano. <em style="opacity:0.6;font-size:0.9em;">*sujeto a la autorización de la página de destino*</em>',
+    'fc10.title':'Filtro de Activo con 1 Clic',
+    'fc10.desc':'Haz clic en cualquier chip de activo en un titular — <strong>USD</strong>, <strong>EUR</strong>, <strong>GOLD</strong>, <strong>BTC</strong>, <strong>SPX</strong> y más de 70 otros — y el feed se filtra instantáneamente a ese activo. Pro busca historial más profundo (hasta 2.000 resultados por activo vs 500 en Basic) y añade flechas direccionales IA (USD <strong>▲</strong> / EUR <strong>▼</strong>) mostrando hacia dónde cada noticia empuja cada activo. Chips <strong>RISK-ON</strong> / <strong>RISK-OFF</strong> también filtrables con clic.',
     'fc11.title':'Hub Macro & Bonos',
     'fc11.desc':'Pestaña Macro dedicada agrega noticias macroeconómicas globales — PIB, inflación, PMI, datos de comercio, decisiones de tipos y rendimientos de bonos. Incluye análisis de sentimiento de mercado en tiempo real.',
     'fc12.title':'Calendario de Resultados',
@@ -2414,7 +2392,7 @@ const _LS = {
     'fc13.desc':'Pestaña dedicada monitorea todas las decisiones de los principales bancos centrales — Fed, BCE, BOE, BOJ, SNB, RBA, BOC y más.',
     'tag.basic_pro':'Basic + Pro','tag.pro_only':'Solo Pro',
     'photo.h3':'Calidad profesional. Precio de trader.',
-    'photo.p':'Todo lo que Bloomberg tiene en noticias de mercado — a una fracción del costo. Creado por traders, para traders.',
+    'photo.p':'Inteligencia de mercado en tiempo real para traders activos — a una fracción del costo institucional. Creado por traders, para traders.',
     'charts.eyebrow':'Gráficos Integrados',
     'charts.h2':'Gráficos TradingView<br>integrados en el terminal',
     'charts.sub':'Sin pestañas separadas. Sin suscripciones adicionales. Correlaciona noticias con acción del precio al instante.',
@@ -2436,7 +2414,7 @@ const _LS = {
     'test.role1':'Trader Forex Intradía · Londres','test.role2':'Trader Macro · Lisboa','test.role3':'Swing Trader · Milán',
     'pricing.eyebrow':'Planes & Precios',
     'pricing.h2':'Empieza gratis. Actualiza cuando estés listo.',
-    'pricing.sub':'Basic es gratis para siempre. Pro es €40/mes — menos del 2% de lo que cuesta Bloomberg.',
+    'pricing.sub':'Basic es gratis para siempre. Pro es €40/mes — inteligencia de mercado profesional a precio retail.',
     'pricing.monthly':'Mensual','pricing.annual':'Anual','pricing.save':'3 meses gratis',
     'plan.basic_badge':'Gratis Para Siempre','plan.no_cc':'Sin tarjeta de crédito',
     'plan.basic_desc':'Inteligencia de mercado esencial para traders que empiezan. Accede al terminal completo sin costo, para siempre.',
@@ -2505,7 +2483,7 @@ const _LS = {
     'how.step3_title':'Opera con Confianza',
     'how.step3_desc':'Activa Squawk para alertas de voz manos libres. Monitorea el calendario económico. Abre el gráfico TradingView integrado — noticias y acción del precio, lado a lado.',
     'vs.eyebrow':'Comparación',
-    'vs.h2':'Cómo nos comparamos con Bloomberg<br>& FinancialJuice',
+    'vs.h2':'Cómo nos comparamos con FinancialJuice',
     'vs.sub':'Inteligencia de mercado de nivel profesional sin el precio profesional.',
     'vs.th_feature':'Característica','vs.th_basic':'TNT Basic — Gratis','vs.th_pro':'TNT Pro — €40/mes',
     'vs.news':'Feed de noticias','vs.delay':'Con retraso','vs.realtime':'Tiempo real',
@@ -2518,6 +2496,7 @@ const _LS = {
     'vs.adfree':'Sin anuncios','vs.price':'Precio mensual','vs.free':'Gratis','vs.limited':'Limitado',
     'faq.eyebrow':'FAQ','faq.h2':'Preguntas frecuentes',
     'faq.sub':'Todo lo que necesitas saber sobre Trading News Terminal.',
+    'faq.tab_general':'FAQ General','faq.tab_app':'FAQ de la App',
     'faq.q1':'¿Qué es Trading News Terminal?','faq.a1':'Trading News Terminal es una plataforma profesional de noticias financieras en tiempo real para traders activos. Agrega noticias en vivo de fuentes institucionales en forex, macro, cripto, acciones y materias primas, clasifica cada elemento por impacto de mercado (HIGH, MEDIUM, LOW) y combina con calendario económico, squawk box, gráficos TradingView y TV financiera.',
     'faq.q2':'¿Cuál es la diferencia entre Basic y Pro?','faq.a2':'<p style="margin-bottom:12px;"><strong>Basic (gratis)</strong>: feed con con retraso, calendario económico, gráficos TradingView, watchlist, búsqueda inteligente e interfaz multilingüe.</p><p><strong>Pro (€40/mes)</strong> añade: <strong>Noticias en tiempo real</strong> — <strong>Hub Macro & Bonos</strong> — <strong>Calendario de Resultados</strong> — <strong>Tracker Bancos Centrales</strong> — <strong>Sentimiento de Mercado</strong> — <strong>Screener</strong> — <strong>Squawk en Vivo</strong> — <strong>7 canales TV</strong> — sin anuncios — soporte prioritario.</p>',
     'faq.q3':'¿El plan Basic es realmente gratuito?','faq.a3':'Sí. El plan Basic es gratuito para siempre — sin tarjeta de crédito, sin upgrade automático. Crea una cuenta con tu email en menos de 30 segundos. Para Pro, ofrecemos una prueba gratuita de 7 días con tarjeta de crédito. Después de 7 días se te cobra €40/mes + IVA. Cancela en cualquier momento durante la prueba.',
@@ -2525,7 +2504,6 @@ const _LS = {
     'faq.q5':'¿Qué fuentes de noticias agrega el terminal?','faq.a5':'Agregamos cientos de fuentes institucionales y profesionales. Mantenemos nuestra lista de fuentes confidencial por razones competitivas. Basic cubre las fuentes de mayor impacto; Pro desbloquea cobertura completa.',
     'faq.q6':'¿Tiene gráficos en vivo?','faq.a6':'Sí. El terminal incluye gráficos TradingView para pares de forex, criptomonedas, índices principales, metales y energía, y materias primas agrícolas. Disponible en planes Basic y Pro.',
     'faq.q7':'¿Cómo funciona el calendario económico?','faq.a7':'El calendario económico muestra 7 días de eventos con temporizadores en vivo, valores anteriores y previsiones. Cuando se publican datos reales, el resultado se inyecta automáticamente en el feed con señales de color beat/miss.',
-    'faq.q8':'¿Es Trading News Terminal una alternativa a Bloomberg?','faq.a8':'Sí. Bloomberg Terminal cuesta aproximadamente €1.800 al mes. Trading News Terminal Pro ofrece noticias financieras en tiempo real, calendario económico, squawk, 7 canales de TV y gráficos TradingView por €40/mes.',
     'faq.q9':'¿Funciona en móvil y tablet?','faq.a9':'El soporte para móvil y tablet está <strong>próximamente</strong>. El terminal está optimizado para navegadores de escritorio y portátil.',
     'faq.q10':'¿Cómo cancelo durante la prueba gratuita?',
     'faq.a10':'Puedes cancelar en cualquier momento desde la configuración de tu cuenta o el portal de facturación. Si cancelas dentro de los 7 días, no se te cobrará. Tu acceso Pro continuará hasta que termine el período de prueba.',
@@ -2554,7 +2532,7 @@ const _LS = {
     'footer.crypto_news':'Noticias Cripto','footer.macro_bonds':'Macro & Bonos',
     'footer.commodities':'Noticias de Materias Primas','footer.econ_cal':'Calendario Económico',
     'footer.col_resources':'Recursos','footer.live_tv':'TV Financiera en Vivo',
-    'footer.live_squawk':'Squawk en Vivo','footer.bloomberg_alt':'Alternativa a Bloomberg',
+    'footer.live_squawk':'Squawk en Vivo',
     'footer.terms':'Términos de Uso','footer.privacy':'Política de Privacidad',
     'footer.contact':'Contacto','footer.copyright':'© 2026 Trading News Terminal. Todos los derechos reservados.',
     'contact.eyebrow':'Contáctanos','contact.h2':'Contacto',
@@ -2570,14 +2548,14 @@ const _LS = {
   },
   fr: {
     'nav.tagline':'Intelligence de Marché en Temps Réel',
-    'nav.features':'Fonctionnalités','nav.charts':'Graphiques','nav.pricing':'Tarifs',
+    'nav.features':'Fonctionnalités','nav.charts':'Graphiques','nav.blog':'Blog','nav.pricing':'Tarifs',
     'nav.compare':'Comparer','nav.faq':'FAQ','nav.contact':'Contact','nav.affiliates':'Affiliés','nav.signin':'Se Connecter ↗',
     'nav.login':'Connexion','nav.launch_free':'Commencer Gratuitement →','nav.get_pro':'Obtenir Pro',
     'nav.launch':'Ouvrir →',
     'hero.eyebrow':'En Direct — Flux en Temps Réel Actif',
     'hero.h1_line1':'Le Terminal Professionnel','hero.h1_line2':'d\'Actualités Financières',
     'hero.h1_line3':'Pour les Traders Actifs',
-    'hero.sub':'Actualités financières en temps réel, calendrier économique en direct, squawk box, graphiques TradingView et TV financière — tout dans un terminal sans encombrement. L\'alternative abordable à Bloomberg. <strong>Gratuit pour commencer.</strong>',
+    'hero.sub':'Actualités financières en temps réel, calendrier économique en direct, squawk box, graphiques TradingView et TV financière — tout dans un terminal sans encombrement. Intelligence de marché en temps réel pour traders actifs. <strong>Gratuit pour commencer.</strong>',
     'hero.btn_open':'▶ Ouvrir Terminal — Gratuit','hero.btn_pro':'Obtenir Pro — Dès €30/mois',
     'hero.btn_explore':'Essai Gratuit 7 Jours',
     'hero.trust1':'Compte gratuit en 30 secondes','hero.trust2':'Sans carte de crédit',
@@ -2613,8 +2591,8 @@ const _LS = {
     'fc8.desc':'Recherchez par mot-clé, actif, source ou paire forex dans toutes les sources simultanément.',
     'fc9.title':'Interface Multilingue',
     'fc9.desc':'Interface complète et traduction de titres à la volée en plusieurs langues. Changez de langue instantanément.',
-    'fc10.title':'Traduction Automatique d\'Articles',
-    'fc10.desc':'Cliquez sur n\'importe quel titre et l\'article complet s\'ouvre automatiquement traduit dans votre langue sélectionnée. <em style="opacity:0.6;font-size:0.9em;">*sous réserve d\'autorisation de la page de destination*</em>',
+    'fc10.title':'Filtre d\'Actif en 1 Clic',
+    'fc10.desc':'Cliquez sur n\'importe quel chip d\'actif dans un titre — <strong>USD</strong>, <strong>EUR</strong>, <strong>GOLD</strong>, <strong>BTC</strong>, <strong>SPX</strong> et 70+ autres — et le flux se filtre instantanément pour cet actif. Pro récupère un historique plus profond (jusqu\'à 2 000 résultats par actif vs 500 sur Basic) et ajoute des flèches directionnelles IA (USD <strong>▲</strong> / EUR <strong>▼</strong>) montrant dans quelle direction chaque actualité pousse chaque actif. Chips <strong>RISK-ON</strong> / <strong>RISK-OFF</strong> aussi filtrables au clic.',
     'fc11.title':'Hub Macro & Obligations',
     'fc11.desc':'Onglet Macro dédié agrège les actualités macroéconomiques mondiales — PIB, inflation, PMI, données commerciales, décisions de taux et rendements obligataires.',
     'fc12.title':'Calendrier des Résultats',
@@ -2623,7 +2601,7 @@ const _LS = {
     'fc13.desc':'Onglet dédié surveille toutes les décisions des principales banques centrales — Fed, BCE, BOE, BOJ, SNB, RBA, BOC et plus.',
     'tag.basic_pro':'Basic + Pro','tag.pro_only':'Pro Uniquement',
     'photo.h3':'Qualité professionnelle. Prix de trader.',
-    'photo.p':'Tout ce que Bloomberg a pour les actualités de marché — à une fraction du coût. Créé par des traders, pour des traders.',
+    'photo.p':'Intelligence de marché en temps réel pour traders actifs — à une fraction du coût institutionnel. Créé par des traders, pour des traders.',
     'charts.eyebrow':'Graphiques Intégrés',
     'charts.h2':'Graphiques TradingView<br>intégrés dans le terminal',
     'charts.sub':'Sans onglets séparés. Sans abonnements supplémentaires. Corrélez les actualités à l\'action des prix instantanément.',
@@ -2645,7 +2623,7 @@ const _LS = {
     'test.role1':'Trader Forex Intraday · Londres','test.role2':'Trader Macro · Lisbonne','test.role3':'Swing Trader · Milan',
     'pricing.eyebrow':'Plans & Tarifs',
     'pricing.h2':'Commencez gratuitement. Mettez à niveau quand vous êtes prêt.',
-    'pricing.sub':'Basic est gratuit pour toujours. Pro est €40/mois — moins de 2% de ce que coûte Bloomberg.',
+    'pricing.sub':'Basic est gratuit pour toujours. Pro est €40/mois — intelligence de marché professionnelle au prix retail.',
     'pricing.monthly':'Mensuel','pricing.annual':'Annuel','pricing.save':'3 mois gratuits',
     'plan.basic_badge':'Gratuit Pour Toujours','plan.no_cc':'Sans carte de crédit',
     'plan.basic_desc':'Intelligence de marché essentielle pour les traders débutants. Accédez au terminal complet gratuitement, pour toujours.',
@@ -2714,7 +2692,7 @@ const _LS = {
     'how.step3_title':'Tradez avec Confiance',
     'how.step3_desc':'Activez Squawk pour des alertes vocales mains libres. Surveillez le calendrier économique. Ouvrez le graphique TradingView intégré.',
     'vs.eyebrow':'Comparaison',
-    'vs.h2':'Comment nous comparons à Bloomberg<br>& FinancialJuice',
+    'vs.h2':'Comment nous comparons à FinancialJuice',
     'vs.sub':'Intelligence de marché de niveau professionnel sans le prix professionnel.',
     'vs.th_feature':'Fonctionnalité','vs.th_basic':'TNT Basic — Gratuit','vs.th_pro':'TNT Pro — €40/mois',
     'vs.news':'Flux d\'actualités','vs.delay':'Avec délai','vs.realtime':'Temps réel',
@@ -2727,6 +2705,7 @@ const _LS = {
     'vs.adfree':'Sans publicité','vs.price':'Prix mensuel','vs.free':'Gratuit','vs.limited':'Limité',
     'faq.eyebrow':'FAQ','faq.h2':'Questions fréquemment posées',
     'faq.sub':'Tout ce que vous devez savoir sur Trading News Terminal.',
+    'faq.tab_general':'FAQ Générale','faq.tab_app':'FAQ de l’App',
     'faq.q1':'Qu\'est-ce que Trading News Terminal?','faq.a1':'Trading News Terminal est une plateforme professionnelle d\'actualités financières en temps réel pour les traders actifs. Elle agrège des actualités en direct de sources institutionnelles en forex, macro, crypto, actions et matières premières.',
     'faq.q2':'Quelle est la différence entre Basic et Pro?','faq.a2':'<p style="margin-bottom:12px;"><strong>Basic (gratuit)</strong>: flux avec avec délai, calendrier économique, graphiques TradingView, watchlist, recherche intelligente et interface multilingue.</p><p><strong>Pro (€40/mois)</strong> ajoute: actualités en temps réel — Hub Macro & Obligations — Calendrier Résultats — Suivi Banques Centrales — Sentiment — Screener — Squawk — 7 chaînes TV — sans publicité — support prioritaire.</p>',
     'faq.q3':'Le plan Basic est-il vraiment gratuit?','faq.a3':'Oui. Le plan Basic est gratuit pour toujours — sans carte de crédit, sans mise à niveau automatique. Créez un compte en moins de 30 secondes. Pour le Pro, nous offrons un essai gratuit de 7 jours avec carte de crédit. Après 7 jours, vous serez facturé €40/mois + TVA. Annulez à tout moment pendant l\'essai.',
@@ -2734,7 +2713,6 @@ const _LS = {
     'faq.q5':'Quelles sources d\'actualités le terminal agrège-t-il?','faq.a5':'Nous agrégeons des centaines de sources institutionnelles et professionnelles. Notre liste de sources est confidentielle. Basic couvre les sources à plus fort impact; Pro déverrouille une couverture complète.',
     'faq.q6':'Le terminal a-t-il des graphiques en direct?','faq.a6':'Oui. Le terminal inclut des graphiques TradingView pour paires forex, cryptomonnaies, indices principaux, métaux et énergie, et matières premières agricoles.',
     'faq.q7':'Comment fonctionne le calendrier économique?','faq.a7':'Le calendrier économique affiche 7 jours d\'événements avec minuteries en direct, valeurs précédentes et prévisions. Quand les données réelles sont publiées, le résultat s\'injecte automatiquement dans le flux.',
-    'faq.q8':'Trading News Terminal est-il une alternative à Bloomberg?','faq.a8':'Oui. Bloomberg Terminal coûte environ €1.800 par mois. Trading News Terminal Pro offre actualités en temps réel, calendrier économique, squawk, 7 chaînes TV et graphiques TradingView pour €40/mois.',
     'faq.q9':'Fonctionne-t-il sur mobile et tablette?','faq.a9':'Le support mobile et tablette est <strong>à venir</strong>. Le terminal est actuellement optimisé pour les navigateurs de bureau.',
     'faq.q10':'Comment annuler pendant l\'essai gratuit ?',
     'faq.a10':'Vous pouvez annuler à tout moment depuis les paramètres de votre compte ou le portail de facturation. Si vous annulez dans les 7 jours, vous ne serez pas facturé. Votre accès Pro restera actif jusqu\'à la fin de la période d\'essai.',
@@ -2763,7 +2741,7 @@ const _LS = {
     'footer.crypto_news':'Actualités Crypto','footer.macro_bonds':'Macro & Obligations',
     'footer.commodities':'Actualités Matières Premières','footer.econ_cal':'Calendrier Économique',
     'footer.col_resources':'Ressources','footer.live_tv':'TV Financière en Direct',
-    'footer.live_squawk':'Squawk en Direct','footer.bloomberg_alt':'Alternative à Bloomberg',
+    'footer.live_squawk':'Squawk en Direct',
     'footer.terms':'Conditions d\'Utilisation','footer.privacy':'Politique de Confidentialité',
     'footer.contact':'Contact','footer.copyright':'© 2026 Trading News Terminal. Tous droits réservés.',
     'contact.eyebrow':'Contactez-nous','contact.h2':'Contact',
@@ -2779,14 +2757,14 @@ const _LS = {
   },
   de: {
     'nav.tagline':'Echtzeit-Marktintelligenz',
-    'nav.features':'Funktionen','nav.charts':'Charts','nav.pricing':'Preise',
+    'nav.features':'Funktionen','nav.charts':'Charts','nav.blog':'Blog','nav.pricing':'Preise',
     'nav.compare':'Vergleich','nav.faq':'FAQ','nav.contact':'Kontakt','nav.affiliates':'Affiliates','nav.signin':'Anmelden ↗',
     'nav.login':'Login','nav.launch_free':'Kostenlos starten →','nav.get_pro':'Pro holen',
     'nav.launch':'Öffnen →',
     'hero.eyebrow':'Live — Echtzeit-Feed aktiv',
     'hero.h1_line1':'Das professionelle','hero.h1_line2':'Finanznachrichten-Terminal',
     'hero.h1_line3':'Für aktive Trader',
-    'hero.sub':'Echtzeit-Finanznachrichten, Live-Wirtschaftskalender, Squawk-Box, TradingView-Charts und Live-Finanz-TV — alles in einem aufgeräumten Terminal. Die erschwingliche Alternative zu Bloomberg. <strong>Kostenlos starten.</strong>',
+    'hero.sub':'Echtzeit-Finanznachrichten, Live-Wirtschaftskalender, Squawk-Box, TradingView-Charts und Live-Finanz-TV — alles in einem aufgeräumten Terminal. Echtzeit-Marktintelligenz für aktive Trader. <strong>Kostenlos starten.</strong>',
     'hero.btn_open':'▶ Terminal öffnen — Kostenlos','hero.btn_pro':'Pro holen — Ab €30/Monat',
     'hero.btn_explore':'7 Tage kostenlos testen',
     'hero.trust1':'Kostenloses Konto in 30 Sekunden','hero.trust2':'Keine Kreditkarte erforderlich',
@@ -2822,8 +2800,8 @@ const _LS = {
     'fc8.desc':'Suche nach Stichwort, Asset, Quelle oder Forex-Paar über alle aggregierten Quellen gleichzeitig. Filtere nach Auswirkungsebene, Quelle, Zeitraum oder Asset-Klasse.',
     'fc9.title':'Mehrsprachige Oberfläche',
     'fc9.desc':'Vollständige Oberfläche und On-the-fly-Schlagzeilenübersetzung in mehrere Sprachen. Sprache sofort wechseln — alle Nachrichten und Kalendereinträge übersetzen in Echtzeit.',
-    'fc10.title':'Automatische Artikelübersetzung',
-    'fc10.desc':'Klicke auf eine Schlagzeile und der vollständige Quellartikel öffnet sich automatisch in deiner gewählten Sprache übersetzt. <em style="opacity:0.6;font-size:0.9em;">*vorbehaltlich der Genehmigung der Zielseite*</em>',
+    'fc10.title':'1-Klick Asset-Filter',
+    'fc10.desc':'Klicke auf einen Asset-Chip in einer Schlagzeile — <strong>USD</strong>, <strong>EUR</strong>, <strong>GOLD</strong>, <strong>BTC</strong>, <strong>SPX</strong> und 70+ weitere — und der Feed wird sofort auf diesen Asset gefiltert. Pro ruft tieferen Verlauf ab (bis zu 2.000 Ergebnisse pro Asset vs 500 im Basic) und fügt KI-Richtungspfeile hinzu (USD <strong>▲</strong> / EUR <strong>▼</strong>), die zeigen, in welche Richtung jede Nachricht jeden Asset drückt. <strong>RISK-ON</strong> / <strong>RISK-OFF</strong> Chips ebenfalls per Klick filterbar.',
     'fc11.title':'Makro & Anleihen Hub',
     'fc11.desc':'Dedizierter Makro-Tab aggregiert globale makroökonomische Nachrichten — BIP, Inflation, PMI, Handelsdaten, Zinsentscheidungen und Anleiherenditen.',
     'fc12.title':'Ergebniskalender',
@@ -2832,7 +2810,7 @@ const _LS = {
     'fc13.desc':'Dedizierter Tab überwacht alle wichtigen Zentralbankentscheidungen — Fed, EZB, BOE, BOJ, SNB, RBA, BOC und mehr.',
     'tag.basic_pro':'Basic + Pro','tag.pro_only':'Nur Pro',
     'photo.h3':'Professionelle Qualität. Trader-Preis.',
-    'photo.p':'Alles, was Bloomberg für Marktnachrichten hat — zu einem Bruchteil der Kosten. Von Tradern für Trader.',
+    'photo.p':'Echtzeit-Marktintelligenz für aktive Trader — zu einem Bruchteil der institutionellen Kosten. Von Tradern für Trader.',
     'charts.eyebrow':'Integrierte Charts',
     'charts.h2':'TradingView-Charts<br>direkt eingebaut',
     'charts.sub':'Keine separaten Tabs. Keine zusätzlichen Abonnements. Korreliere Nachrichten mit Preisaktionen sofort.',
@@ -2854,7 +2832,7 @@ const _LS = {
     'test.role1':'Forex-Day-Trader · London','test.role2':'Makro-Trader · Lissabon','test.role3':'Swing-Trader · Mailand',
     'pricing.eyebrow':'Pläne & Preise',
     'pricing.h2':'Kostenlos starten. Upgraden wenn bereit.',
-    'pricing.sub':'Basic ist kostenlos für immer. Pro ist €40/Monat — weniger als 2% von dem, was Bloomberg kostet.',
+    'pricing.sub':'Basic ist kostenlos für immer. Pro ist €40/Monat — professionelle Marktintelligenz zum Retail-Preis.',
     'pricing.monthly':'Monatlich','pricing.annual':'Jährlich','pricing.save':'3 Monate gratis',
     'plan.basic_badge':'Für immer kostenlos','plan.no_cc':'Keine Kreditkarte erforderlich',
     'plan.basic_desc':'Wesentliche Marktintelligenz für Trader, die anfangen. Greife kostenlos für immer auf das vollständige Terminal zu.',
@@ -2923,7 +2901,7 @@ const _LS = {
     'how.step3_title':'Mit Zuversicht handeln',
     'how.step3_desc':'Aktiviere Squawk für freihändige Sprachalarme. Überwache den Wirtschaftskalender. Öffne den integrierten TradingView-Chart — Nachrichten und Preisaktionen, Seite an Seite.',
     'vs.eyebrow':'Vergleich',
-    'vs.h2':'Wie wir uns mit Bloomberg<br>& FinancialJuice vergleichen',
+    'vs.h2':'Wie wir uns mit FinancialJuice vergleichen',
     'vs.sub':'Marktintelligenz auf Profi-Niveau ohne den Profi-Preis.',
     'vs.th_feature':'Funktion','vs.th_basic':'TNT Basic — Kostenlos','vs.th_pro':'TNT Pro — €40/Monat',
     'vs.news':'Nachrichtenfeed','vs.delay':'2 Min. Verzögerung','vs.realtime':'Echtzeit',
@@ -2936,6 +2914,7 @@ const _LS = {
     'vs.adfree':'Werbefrei','vs.price':'Monatspreis','vs.free':'Kostenlos','vs.limited':'Begrenzt',
     'faq.eyebrow':'FAQ','faq.h2':'Häufig gestellte Fragen',
     'faq.sub':'Alles, was du über Trading News Terminal wissen musst.',
+    'faq.tab_general':'Allgemeine FAQ','faq.tab_app':'App-FAQ',
     'faq.q1':'Was ist Trading News Terminal?','faq.a1':'Trading News Terminal ist eine professionelle Echtzeit-Finanznachrichtenplattform für aktive Trader. Es aggregiert Live-Nachrichten aus institutionellen Quellen in Forex, Makro, Krypto, Aktien und Rohstoffen und kombiniert sie mit Live-Wirtschaftskalender, Squawk-Box, TradingView-Charts und Finanz-TV.',
     'faq.q2':'Was ist der Unterschied zwischen Basic und Pro?','faq.a2':'<p style="margin-bottom:12px;"><strong>Basic (kostenlos)</strong>: Feed mit 2 Min. Verzögerung, Live-Wirtschaftskalender, TradingView-Charts, Watchlist, intelligente Suche und mehrsprachige Oberfläche.</p><p><strong>Pro (€40/Monat)</strong> fügt hinzu: Echtzeit-Nachrichten — Makro & Anleihen Hub — Ergebniskalender — Zentralbank-Tracker — Marktsentiment — Marktscreener — Live-Squawk — 7 TV-Kanäle — werbefrei — Prioritätssupport.</p>',
     'faq.q3':'Ist der Basic-Plan wirklich kostenlos?','faq.a3':'Ja. Der Basic-Plan ist für immer kostenlos — keine Kreditkarte, kein automatisches Upgrade. Erstelle ein Konto mit deiner E-Mail in unter 30 Sekunden. Für Pro bieten wir eine 7-tägige kostenlose Testphase mit Kreditkarte. Nach 7 Tagen wird dir €40/Monat + MwSt berechnet. Jederzeit während der Testphase kündbar.',
@@ -2943,7 +2922,6 @@ const _LS = {
     'faq.q5':'Welche Nachrichtenquellen aggregiert das Terminal?','faq.a5':'Wir aggregieren aus Hunderten von institutionellen und professionellen Nachrichtenquellen. Unsere Quellenliste ist aus Wettbewerbsgründen vertraulich. Basic deckt die wirkungsvollsten Quellen ab; Pro schaltet vollständige Abdeckung frei.',
     'faq.q6':'Hat Trading News Terminal Live-Charts?','faq.a6':'Ja. Das Terminal enthält eingebettete TradingView-Charts für Forex-Paare, Kryptowährungen, wichtige Indizes, Metalle und Energie sowie Agrarrohstoffe.',
     'faq.q7':'Wie funktioniert der Wirtschaftskalender?','faq.a7':'Der Wirtschaftskalender zeigt 7 Tage bevorstehender Ereignisse mit Live-Timern, Vorwerten und Prognosen. Wenn Ist-Daten veröffentlicht werden, wird das Ergebnis automatisch in den Feed eingefügt.',
-    'faq.q8':'Ist Trading News Terminal eine Bloomberg-Alternative?','faq.a8':'Ja. Das Bloomberg Terminal kostet etwa €1.800 pro Monat. Trading News Terminal Pro bietet Echtzeit-Finanznachrichten, Wirtschaftskalender, Live-Squawk, 7 TV-Kanäle und TradingView-Charts für €40/Monat.',
     'faq.q9':'Funktioniert es auf Mobilgeräten und Tablets?','faq.a9':'Mobile und Tablet-Unterstützung kommt <strong>bald</strong>. Das Terminal ist derzeit für Desktop- und Laptop-Browser optimiert.',
     'faq.q10':'Wie kündige ich während der kostenlosen Testphase?',
     'faq.a10':'Du kannst jederzeit in deinen Kontoeinstellungen oder im Abrechnungsportal kündigen. Wenn du innerhalb von 7 Tagen kündigst, wird dir nichts berechnet. Dein Pro-Zugang bleibt bis zum Ende der Testphase bestehen.',
@@ -2972,7 +2950,7 @@ const _LS = {
     'footer.crypto_news':'Krypto-Nachrichten','footer.macro_bonds':'Makro & Anleihen',
     'footer.commodities':'Rohstoffnachrichten','footer.econ_cal':'Wirtschaftskalender',
     'footer.col_resources':'Ressourcen','footer.live_tv':'Live-Finanz-TV',
-    'footer.live_squawk':'Live-Squawk','footer.bloomberg_alt':'Bloomberg-Alternative',
+    'footer.live_squawk':'Live-Squawk',
     'footer.terms':'Nutzungsbedingungen','footer.privacy':'Datenschutzrichtlinie',
     'footer.contact':'Kontakt','footer.copyright':'© 2026 Trading News Terminal. Alle Rechte vorbehalten.',
     'contact.eyebrow':'Kontakt','contact.h2':'Kontaktieren Sie uns',
@@ -2988,14 +2966,14 @@ const _LS = {
   },
   it: {
     'nav.tagline':'Intelligenza di Mercato in Tempo Reale',
-    'nav.features':'Funzionalità','nav.charts':'Grafici','nav.pricing':'Prezzi',
+    'nav.features':'Funzionalità','nav.charts':'Grafici','nav.blog':'Blog','nav.pricing':'Prezzi',
     'nav.compare':'Confronta','nav.faq':'FAQ','nav.contact':'Contatto','nav.affiliates':'Affiliati','nav.signin':'Accedi ↗',
     'nav.login':'Login','nav.launch_free':'Inizia Gratis →','nav.get_pro':'Ottieni Pro',
     'nav.launch':'Apri →',
     'hero.eyebrow':'In Diretta — Feed in Tempo Reale Attivo',
     'hero.h1_line1':'Il Terminale Professionale','hero.h1_line2':'di Notizie Finanziarie',
     'hero.h1_line3':'Per Trader Attivi',
-    'hero.sub':'Notizie finanziarie in tempo reale, calendario economico in diretta, squawk box, grafici TradingView e TV finanziaria — tutto in un terminale senza ingombro. L\'alternativa conveniente a Bloomberg. <strong>Gratis per iniziare.</strong>',
+    'hero.sub':'Notizie finanziarie in tempo reale, calendario economico in diretta, squawk box, grafici TradingView e TV finanziaria — tutto in un terminale senza ingombro. Intelligenza di mercato in tempo reale per trader attivi. <strong>Gratis per iniziare.</strong>',
     'hero.btn_open':'▶ Apri Terminale — Gratis','hero.btn_pro':'Ottieni Pro — Da €30/mese',
     'hero.btn_explore':'Prova Gratuita 7 Giorni',
     'hero.trust1':'Account gratuito in 30 secondi','hero.trust2':'Nessuna carta di credito richiesta',
@@ -3031,8 +3009,8 @@ const _LS = {
     'fc8.desc':'Cerca per parola chiave, attivo, fonte o coppia forex in tutte le fonti contemporaneamente. Filtra per livello di impatto, fonte, intervallo di tempo o classe di attivo.',
     'fc9.title':'Interfaccia Multilingue',
     'fc9.desc':'Interfaccia completa e traduzione dei titoli al volo in più lingue. Cambia lingua istantaneamente — tutte le notizie e le voci del calendario si traducono in tempo reale.',
-    'fc10.title':'Traduzione Automatica degli Articoli',
-    'fc10.desc':'Clicca su qualsiasi titolo e l\'articolo completo si apre automaticamente tradotto nella tua lingua selezionata. <em style="opacity:0.6;font-size:0.9em;">*soggetto all\'autorizzazione della pagina di destinazione*</em>',
+    'fc10.title':'Filtro Asset con 1 Clic',
+    'fc10.desc':'Clicca su qualsiasi chip di asset in un titolo — <strong>USD</strong>, <strong>EUR</strong>, <strong>GOLD</strong>, <strong>BTC</strong>, <strong>SPX</strong> e oltre 70 altri — e il feed si filtra istantaneamente per quell\'asset. Pro recupera cronologia più profonda (fino a 2.000 risultati per asset vs 500 nel Basic) e aggiunge frecce direzionali AI (USD <strong>▲</strong> / EUR <strong>▼</strong>) che mostrano in quale direzione ogni notizia spinge ciascun asset. Chip <strong>RISK-ON</strong> / <strong>RISK-OFF</strong> anche filtrabili con clic.',
     'fc11.title':'Hub Macro & Obbligazioni',
     'fc11.desc':'Tab Macro dedicato aggrega notizie macroeconomiche globali — PIL, inflazione, PMI, dati commerciali, decisioni sui tassi e rendimenti obbligazionari.',
     'fc12.title':'Calendario Utili',
@@ -3041,7 +3019,7 @@ const _LS = {
     'fc13.desc':'Tab dedicato monitora tutte le decisioni delle principali banche centrali — Fed, BCE, BOE, BOJ, SNB, RBA, BOC e altri.',
     'tag.basic_pro':'Basic + Pro','tag.pro_only':'Solo Pro',
     'photo.h3':'Qualità professionale. Prezzo da trader.',
-    'photo.p':'Tutto ciò che Bloomberg ha per le notizie di mercato — a una frazione del costo. Creato da trader, per trader.',
+    'photo.p':'Intelligenza di mercato in tempo reale per trader attivi — a una frazione del costo istituzionale. Creato da trader, per trader.',
     'charts.eyebrow':'Grafici Integrati',
     'charts.h2':'Grafici TradingView<br>integrati nel terminale',
     'charts.sub':'Nessuna scheda separata. Nessun abbonamento extra. Correla le notizie all\'azione dei prezzi istantaneamente.',
@@ -3063,7 +3041,7 @@ const _LS = {
     'test.role1':'Trader Forex Intraday · Londra','test.role2':'Trader Macro · Lisbona','test.role3':'Swing Trader · Milano',
     'pricing.eyebrow':'Piani & Prezzi',
     'pricing.h2':'Inizia gratis. Fai upgrade quando sei pronto.',
-    'pricing.sub':'Basic è gratis per sempre. Pro è €40/mese — meno del 2% di quello che costa Bloomberg.',
+    'pricing.sub':'Basic è gratis per sempre. Pro è €40/mese — intelligenza di mercato professionale a prezzo retail.',
     'pricing.monthly':'Mensile','pricing.annual':'Annuale','pricing.save':'3 mesi gratis',
     'plan.basic_badge':'Gratis Per Sempre','plan.no_cc':'Nessuna carta di credito richiesta',
     'plan.basic_desc':'Intelligenza di mercato essenziale per i trader che iniziano. Accedi al terminale completo senza costo, per sempre.',
@@ -3132,7 +3110,7 @@ const _LS = {
     'how.step3_title':'Fai Trading con Fiducia',
     'how.step3_desc':'Attiva Squawk per avvisi vocali hands-free. Monitora il calendario economico. Apri il grafico TradingView integrato — notizie e azione dei prezzi, fianco a fianco.',
     'vs.eyebrow':'Confronto',
-    'vs.h2':'Come ci confrontiamo con Bloomberg<br>& FinancialJuice',
+    'vs.h2':'Come ci confrontiamo con FinancialJuice',
     'vs.sub':'Intelligenza di mercato di livello professionale senza il prezzo professionale.',
     'vs.th_feature':'Funzionalità','vs.th_basic':'TNT Basic — Gratis','vs.th_pro':'TNT Pro — €40/mese',
     'vs.news':'Feed notizie','vs.delay':'Con ritardo','vs.realtime':'Tempo reale',
@@ -3145,6 +3123,7 @@ const _LS = {
     'vs.adfree':'Senza pubblicità','vs.price':'Prezzo mensile','vs.free':'Gratis','vs.limited':'Limitato',
     'faq.eyebrow':'FAQ','faq.h2':'Domande frequenti',
     'faq.sub':'Tutto ciò che devi sapere su Trading News Terminal.',
+    'faq.tab_general':'FAQ Generali','faq.tab_app':'FAQ App',
     'faq.q1':'Che cos\'è Trading News Terminal?','faq.a1':'Trading News Terminal è una piattaforma professionale di notizie finanziarie in tempo reale per trader attivi. Aggrega notizie in diretta da fonti istituzionali in forex, macro, cripto, azioni e materie prime, classifica ogni elemento per impatto di mercato (HIGH, MEDIUM, LOW) e combina con calendario economico, squawk box, grafici TradingView e TV finanziaria.',
     'faq.q2':'Qual è la differenza tra Basic e Pro?','faq.a2':'<p style="margin-bottom:12px;"><strong>Basic (gratis)</strong>: feed con con ritardo, calendario economico, grafici TradingView, watchlist, ricerca intelligente e interfaccia multilingue.</p><p><strong>Pro (€40/mese)</strong> aggiunge: notizie in tempo reale — Hub Macro & Obbligazioni — Calendario Utili — Tracker Banche Centrali — Sentiment — Screener — Squawk — 7 canali TV — senza pubblicità — supporto prioritario.</p>',
     'faq.q3':'Il piano Basic è davvero gratuito?','faq.a3':'Sì. Il piano Basic è gratuito per sempre — nessuna carta di credito, nessun upgrade automatico. Crea un account con la tua email in meno di 30 secondi. Per il Pro, offriamo una prova gratuita di 7 giorni con carta di credito. Dopo 7 giorni ti verranno addebitati €40/mese + IVA. Cancella in qualsiasi momento durante la prova.',
@@ -3152,7 +3131,6 @@ const _LS = {
     'faq.q5':'Quali fonti di notizie aggrega il terminale?','faq.a5':'Aggreghiamo da centinaia di fonti istituzionali e professionali. Il nostro elenco di fonti è riservato per ragioni competitive. Basic copre le fonti ad alto impatto; Pro sblocca la copertura completa.',
     'faq.q6':'Il Trading News Terminal ha grafici in diretta?','faq.a6':'Sì. Il terminale include grafici TradingView per coppie forex, criptovalute, indici principali, metalli e energia, e materie prime agricole.',
     'faq.q7':'Come funziona il calendario economico?','faq.a7':'Il calendario economico mostra 7 giorni di eventi con timer in diretta, valori precedenti e previsioni. Quando vengono pubblicati i dati reali, il risultato viene automaticamente iniettato nel feed con segnali di colore beat/miss.',
-    'faq.q8':'Il Trading News Terminal è un\'alternativa a Bloomberg?','faq.a8':'Sì. Il Bloomberg Terminal costa circa €1.800 al mese. Trading News Terminal Pro offre notizie finanziarie in tempo reale, calendario economico, squawk, 7 canali TV e grafici TradingView per €40/mese.',
     'faq.q9':'Funziona su mobile e tablet?','faq.a9':'Il supporto mobile e tablet è <strong>in arrivo</strong>. Il terminale è attualmente ottimizzato per browser desktop e laptop.',
     'faq.q10':'Come cancello durante la prova gratuita?',
     'faq.a10':'Puoi cancellare in qualsiasi momento dalle impostazioni del tuo account o dal portale di fatturazione. Se cancelli entro 7 giorni, non ti verrà addebitato nulla. Il tuo accesso Pro rimarrà attivo fino alla fine del periodo di prova.',
@@ -3181,7 +3159,7 @@ const _LS = {
     'footer.crypto_news':'Notizie Cripto','footer.macro_bonds':'Macro & Obbligazioni',
     'footer.commodities':'Notizie Materie Prime','footer.econ_cal':'Calendario Economico',
     'footer.col_resources':'Risorse','footer.live_tv':'TV Finanziaria in Diretta',
-    'footer.live_squawk':'Squawk in Diretta','footer.bloomberg_alt':'Alternativa a Bloomberg',
+    'footer.live_squawk':'Squawk in Diretta',
     'footer.terms':'Termini di Utilizzo','footer.privacy':'Informativa sulla Privacy',
     'footer.contact':'Contatto','footer.copyright':'© 2026 Trading News Terminal. Tutti i diritti riservati.',
     'contact.eyebrow':'Contattaci','contact.h2':'Contatto',
@@ -3319,13 +3297,13 @@ window.addEventListener('scroll', () => {
 
 // ── Track landing page visit (admin analytics) ────────────────
 (function(){
-  fetch('https://trading-news-terminal-backend-production.up.railway.app/admin/track/visit?source=landing',
+  fetch('https://api.tradingnewsterminal.com/admin/track/visit?source=landing',
     { method: 'POST' }).catch(()=>{});
 }());
 
 // ── Real-time online heartbeat ─────────────────────────────────
 (function(){
-  const BE = 'https://trading-news-terminal-backend-production.up.railway.app';
+  const BE = 'https://api.tradingnewsterminal.com';
   let _sid = sessionStorage.getItem('_tnt_sid');
   if (!_sid) { _sid = crypto.randomUUID(); sessionStorage.setItem('_tnt_sid', _sid); }
   function _ping() {
@@ -3351,7 +3329,7 @@ async function submitContactForm(e) {
   status.className = 'contact-status';
 
   try {
-    const res = await fetch('https://trading-news-terminal-backend-production.up.railway.app/contact', {
+    const res = await fetch('https://api.tradingnewsterminal.com/contact', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name, email, subject, message }),
@@ -3373,6 +3351,37 @@ async function submitContactForm(e) {
     btn.textContent = _tl('contact.send');
   }
 }
+
+// ─── Geo banner: suggest localised landing for US / BR visitors ──────────
+// Light-touch nudge, dismissible, never shows twice in same session.
+(function _geoLandingBanner() {
+  try {
+    if (sessionStorage.getItem('tnt_geo_banner_dismissed') === '1') return;
+    // Don't show if user already navigated to localised page
+    const path = (location.pathname || '').toLowerCase();
+    if (path === '/us' || path === '/br' || path.endsWith('us.html') || path.endsWith('br.html')) return;
+    fetch('https://api.tradingnewsterminal.com/api/geo', { cache: 'no-store' })
+      .then(function(r) { return r.ok ? r.json() : null; })
+      .then(function(data) {
+        if (!data || !data.country) return;
+        var locale = null;
+        if (data.country === 'US') {
+          locale = { label: '🇺🇸 Built for US traders — FOMC sub-second, SEC EDGAR live, AI earnings summaries', cta: 'View US Edition →', href: '/us' };
+        } else if (data.country === 'BR') {
+          locale = { label: '🇧🇷 Edição Brasil — Copom em sub-segundo, balanços com IA, interface em português', cta: 'Ver Edição BR →', href: '/br' };
+        }
+        if (!locale) return;
+        var bar = document.createElement('div');
+        bar.id = 'tnt-geo-bar';
+        bar.style.cssText = 'position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:#0d1117;border:1px solid rgba(0,212,255,0.4);border-radius:8px;padding:11px 18px;display:flex;align-items:center;gap:14px;z-index:1900;box-shadow:0 6px 28px rgba(0,0,0,0.6);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;max-width:calc(100% - 24px);';
+        bar.innerHTML = '<span style="font-size:13px;color:#e0e8f0;line-height:1.4;">' + locale.label + '</span>' +
+          '<a href="' + locale.href + '" style="background:#00d4ff;color:#002030;font-size:12px;font-weight:700;padding:7px 14px;border-radius:5px;text-decoration:none;letter-spacing:0.04em;flex-shrink:0;white-space:nowrap;">' + locale.cta + '</a>' +
+          '<button onclick="this.parentNode.remove();try{sessionStorage.setItem(\'tnt_geo_banner_dismissed\',\'1\')}catch(e){}" style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);color:#8899aa;font-size:14px;width:24px;height:24px;border-radius:4px;cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0;line-height:1;flex-shrink:0;">×</button>';
+        document.body.appendChild(bar);
+      })
+      .catch(function() {});
+  } catch (_) {}
+})();
 
 </script>
 </body>

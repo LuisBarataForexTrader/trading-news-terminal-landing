@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>US Stock Market News Terminal — FOMC Sub-Second · SEC EDGAR Live · AI Earnings Summaries</title>
+<meta name="description" content="The professional news terminal built for US traders. FOMC decisions in &lt;1 second, SEC EDGAR 8-K/10-Q/13F live, AI earnings call summaries, pre-market & after-hours session tagging, Reddit retail buzz across r/wallstreetbets. Professional news terminal at $44/mo. Free Basic plan, no card required.">
+<meta name="keywords" content="us stock market news terminal, fomc sub-second alerts, sec edgar live feed, 8-k filing alerts, earnings call ai summary, pre-market news, after-hours news feed, reddit retail sentiment tracker, wsb sentiment tracker, day trading news feed, us equities news api, nasdaq nyse news terminal, federal reserve rate decision alerts, professional news terminal us traders">
+<link rel="canonical" href="https://www.tradingnewsterminal.com/us">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/favicon-512x512.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#0a0c0f">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.tradingnewsterminal.com/us">
+<meta property="og:title" content="US Stock Market News Terminal — Built for American Traders">
+<meta property="og:description" content="FOMC sub-second, SEC EDGAR live, AI earnings summaries, pre-market &amp; after-hours session tags, Reddit retail buzz. From $44/mo. Free Basic plan.">
+<meta property="og:image" content="https://www.tradingnewsterminal.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Trading News Terminal">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="US Stock Market News Terminal — Built for American Traders">
+<meta name="twitter:description" content="FOMC sub-second, SEC EDGAR live, AI earnings summaries, pre/after-hours, Reddit buzz. From $44/mo.">
+<meta name="twitter:image" content="https://www.tradingnewsterminal.com/og-image.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "Trading News Terminal — US Edition",
+      "url": "https://www.tradingnewsterminal.com/us",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web Browser",
+      "description": "Professional real-time news terminal for US traders: FOMC sub-second alerts, SEC EDGAR ingestion, AI earnings call summaries, pre-market/after-hours coverage, Reddit retail buzz.",
+      "inLanguage": "en-US",
+      "audience": { "@type": "Audience", "audienceType": "US active traders, prop-funded traders, day traders" },
+      "offers": [
+        { "@type": "Offer", "name": "Basic", "price": "0", "priceCurrency": "USD", "description": "Free forever. Delayed news, economic calendar, SEC EDGAR feed, pre/after-hours session badges." },
+        { "@type": "Offer", "name": "Pro Monthly", "price": "44", "priceCurrency": "USD", "billingIncrement": "P1M", "description": "Zero-delay news, AI earnings summaries, Reddit buzz, live squawk, 7 financial TV channels." },
+        { "@type": "Offer", "name": "Pro Annual", "price": "33", "priceCurrency": "USD", "billingIncrement": "P1M", "description": "Annual plan, billed $396/year — save 25% vs monthly." }
+      ],
+      "featureList": [
+        "FOMC sub-second scraper (Federal Reserve direct)",
+        "ECB / BoE / BoJ / RBA sub-second scrapers",
+        "SEC EDGAR live ingestion (8-K, 10-Q, 10-K, 13F, 13D/G)",
+        "AI 5-bullet earnings call summaries (Alpha Vantage + SEC 8-K fallback)",
+        "Pre-market & after-hours session badges (clickable filter)",
+        "Reddit retail buzz across r/wallstreetbets, r/stocks, r/options",
+        "Live squawk box for HIGH-impact news (multilingual TTS: English, Portuguese BR, Spanish, French, German, Italian)",
+        "7 live financial TV channels embedded in the terminal",
+        "TradingView chart integration",
+        "Historical news archive search",
+        "Telegram bot alerts",
+        "Multi-language UI (6 languages)"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "How fast does TNT pick up FOMC decisions?", "acceptedAnswer": { "@type": "Answer", "text": "Sub-second. Our scrapers hit federalreserve.gov directly the moment the embargo lifts — typically 0.5–1.2 seconds faster than aggregator-based news services that wait for redistribution. Same sub-second framework for ECB, BoE, BoJ, RBA. Comparable to institutional-grade feeds at a fraction of the cost." } },
+        { "@type": "Question", "name": "Is SEC EDGAR data really live or just delayed snapshots?", "acceptedAnswer": { "@type": "Answer", "text": "Live. We poll official SEC atom feeds every 12 minutes for six form types: 8-K (material events including earnings releases), 10-Q (quarterly), 10-K (annual), 13F (institutional holdings), 13D/G (5%+ stake disclosures), and SC 13D/A amendments. Within ~15 minutes of any filing hitting EDGAR, it appears in the feed tagged with the ticker and a clickable ⚖ SEC EDGAR source chip." } },
+        { "@type": "Question", "name": "How does the AI Earnings Summary actually work?", "acceptedAnswer": { "@type": "Answer", "text": "Click any quarter on a US-listed ticker in the company detail modal. The system fetches the earnings call transcript (Alpha Vantage source) or falls back to the 8-K press release filed with the SEC if the transcript isn't published yet. We then run Cerebras (with Groq fallback) to generate a 5-bullet summary covering: guidance changes, margin trends, key business risks flagged by management, most-discussed Q&A topic, and net sentiment. Each bullet is capped at 25 words. Summaries are cached aggressively — repeat views are instant." } },
+        { "@type": "Question", "name": "How does Reddit Social Buzz tracking work?", "acceptedAnswer": { "@type": "Answer", "text": "We aggregate retail mentions across r/wallstreetbets, r/stocks, r/options, r/investing, r/StockMarket, r/pennystocks, r/RobinHoodPennyStocks, and r/Daytrading every 30 minutes via the ApeWisdom aggregation layer. Top 60 tickers are shown with mention count, 🔥 momentum badge, and sentiment derived from 24h mention velocity (accelerating = bullish, decelerating = bearish). Click any chip to filter the news feed by that ticker — useful for confirming whether a Reddit-trending name has corresponding institutional newsflow." } },
+        { "@type": "Question", "name": "How does TNT compare to premium news services at $200+/month?", "acceptedAnswer": { "@type": "Answer", "text": "Pricing: premium news services typically run $200+/month; TNT Pro is $44/month. Coverage: we have FOMC/ECB/BoE/BoJ/RBA sub-second scrapers, full SEC EDGAR ingestion across six form types, AI earnings summaries, and Reddit retail buzz — features that premium services either lack or charge extra for. Trade-off: we don't have a 24-hour human squawk desk yet — if your strategy specifically requires a live human voice operator reading every wire all day, dedicated squawk services may suit you better. For everyone else who wants the same edges at 1/5 the price, TNT is the play." } },
+        { "@type": "Question", "name": "Do you cover pre-market and after-hours sessions?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — comprehensively. News during pre-market (04:00–09:30 ET) gets a 🌅 PRE-MKT badge. News during after-hours (16:00–20:00 ET) gets a 🌙 AFTER-HRS badge. Both badges are clickable filters — click PRE-MKT to instantly filter the feed to only show pre-market headlines. This is critical because earnings beats/misses (AAPL, MSFT, NVDA, GOOG, META, TSLA) and macro releases (NFP at 08:30 ET pre-bell) typically land outside regular hours." } },
+        { "@type": "Question", "name": "Is the news feed really real-time on Pro?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Pro users receive news items via WebSocket push the moment they're ingested. The economic calendar is real-time on both Basic and Pro. Basic plan has a 5-minute delay on the news feed to keep the free tier sustainable — for trading, the delay matters; for awareness, Basic is sufficient." } },
+        { "@type": "Question", "name": "Can I cancel anytime? Any hidden fees?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — Stripe dashboard, one click, no phone calls, no retention games, no hidden fees. Monthly subscriptions cancel at end of cycle. Annual subscriptions have a 30-day money-back guarantee. Basic plan is free forever — we don't downgrade your account if you cancel Pro; you just lose Pro features." } }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.tradingnewsterminal.com/" },
+        { "@type": "ListItem", "position": 2, "name": "US Edition", "item": "https://www.tradingnewsterminal.com/us" }
+      ]
+    }
+  ]
+}
+</script>
+<style>
+  :root {
+    --bg: #0a0c0f; --bg2: #0d1117; --card: #0f1218; --border: #1a2230; --text: #e2e8f0; --text-muted: #6b7d92; --muted: #8899aa;
+    --accent: #00d4ff; --accent2: #00ff9c; --purple: #a78bfa; --green: #10b981; --red: #ef4444; --orange: #f59e0b; --yellow: #fbbf24;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, sans-serif; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .container { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+  /* ── NAV (matches main landing exactly) ── */
+  nav { padding: 18px 32px; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: rgba(10,12,15,0.92); backdrop-filter: blur(8px); z-index: 50; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  .nav-logo { display: flex; align-items: center; gap: 12px; color: var(--text); }
+  .nav-logo-icon { width: 32px; height: 32px; border: 1.5px solid var(--accent); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .nav-logo-icon::before { content: ''; width: 10px; height: 10px; background: var(--accent); animation: tnt-pulse 2s ease-in-out infinite; }
+  @keyframes tnt-pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+  .nav-logo-text { font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; line-height: 1.3; }
+  .nav-logo-text span { color: var(--accent); }
+  .nav-logo-sub { font-size: 9px; color: var(--text-muted); letter-spacing: 0.1em; text-transform: uppercase; }
+  .nav-links { display: flex; gap: 22px; flex-wrap: wrap; }
+  .nav-links a { color: var(--text-muted); font-size: 13px; font-weight: 500; letter-spacing: 0.02em; }
+  .nav-links a:hover { color: var(--accent); text-decoration: none; }
+  /* ── Buttons ── */
+  .btn { display: inline-block; padding: 11px 22px; border-radius: 6px; font-weight: 700; font-size: 13px; letter-spacing: 0.04em; cursor: pointer; transition: transform 0.15s, box-shadow 0.15s; border: none; text-transform: uppercase; }
+  .btn:hover { transform: translateY(-1px); box-shadow: 0 6px 24px rgba(0,212,255,0.2); text-decoration: none; }
+  .btn-primary { background: var(--accent); color: #002030; }
+  .btn-outline { background: transparent; color: var(--text); border: 1px solid var(--border); }
+  .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+  .btn-lg { padding: 15px 32px; font-size: 14px; }
+  /* ── Hero ── */
+  .hero { padding: 92px 0 64px; text-align: center; }
+  .flag-badge { display: inline-flex; align-items: center; gap: 7px; padding: 6px 14px; background: rgba(0,212,255,0.1); border: 1px solid rgba(0,212,255,0.3); color: var(--accent); border-radius: 999px; font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 24px; }
+  h1 { font-size: clamp(36px, 5.8vw, 60px); font-weight: 800; line-height: 1.08; margin-bottom: 24px; letter-spacing: -0.025em; }
+  h1 span { color: var(--accent); }
+  h1 .sub-line { display: block; font-size: clamp(18px, 2.5vw, 23px); font-weight: 500; color: var(--muted); margin-top: 16px; letter-spacing: 0; }
+  .hero-sub { color: var(--muted); font-size: clamp(16px, 2vw, 19px); max-width: 780px; margin: 0 auto 36px; line-height: 1.6; }
+  .hero-sub strong { color: var(--text); font-weight: 600; }
+  .hero-ctas { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .price-note { margin-top: 24px; color: var(--muted); font-size: 13px; }
+  .price-note strong { color: var(--text); }
+  .stats-row { display: flex; justify-content: center; gap: 56px; margin-top: 52px; flex-wrap: wrap; }
+  .stat { text-align: center; }
+  .stat-num { font-size: 30px; font-weight: 800; color: var(--accent); line-height: 1; }
+  .stat-lbl { font-size: 10px; color: var(--muted); letter-spacing: 0.12em; text-transform: uppercase; margin-top: 8px; font-weight: 600; }
+  /* ── Sections ── */
+  section { padding: 72px 0; }
+  section + section { border-top: 1px solid var(--border); }
+  .section-label { display: inline-block; padding: 4px 12px; background: rgba(0,212,255,0.08); border: 1px solid rgba(0,212,255,0.25); color: var(--accent); border-radius: 999px; font-size: 10px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 14px; }
+  h2 { font-size: clamp(26px, 3.8vw, 38px); font-weight: 800; margin-bottom: 18px; color: var(--text); letter-spacing: -0.015em; line-height: 1.2; }
+  .section-intro { color: var(--muted); font-size: 17px; margin-bottom: 48px; max-width: 740px; line-height: 1.65; }
+  .section-intro strong { color: var(--text); }
+  /* ── Cards ── */
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  @media (max-width: 960px) { .cards { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 620px) { .cards { grid-template-columns: 1fr; } }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 28px; transition: border-color 0.2s, transform 0.2s; }
+  .card:hover { border-color: var(--accent); transform: translateY(-3px); }
+  .card-icon { font-size: 30px; margin-bottom: 14px; }
+  .card h3 { font-size: 17px; font-weight: 700; margin-bottom: 10px; color: var(--text); }
+  .card p { font-size: 14px; color: var(--muted); line-height: 1.65; }
+  .card .accent { color: var(--accent); font-weight: 700; }
+  .card .purple { color: var(--purple); font-weight: 700; }
+  .card .orange { color: var(--orange); font-weight: 700; }
+  .card .green { color: var(--green); font-weight: 700; }
+  /* ── Comparison Table ── */
+  .compare-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .compare-table { width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 14px; min-width: 720px; }
+  .compare-table th, .compare-table td { padding: 14px 18px; text-align: left; border-bottom: 1px solid var(--border); }
+  .compare-table th { background: rgba(0,212,255,0.05); color: var(--accent); font-weight: 700; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; }
+  .compare-table td.ours { color: var(--text); font-weight: 600; background: rgba(16,185,129,0.04); }
+  .compare-table td.theirs { color: var(--muted); }
+  .compare-table .yes { color: var(--green); font-weight: 700; }
+  .compare-table .no { color: var(--red); font-weight: 700; }
+  .compare-table .partial { color: var(--orange); font-weight: 700; }
+  /* ── Guide (long-form SEO content) ── */
+  .guide { max-width: 860px; }
+  .guide h3 { font-size: 21px; font-weight: 700; margin: 40px 0 14px; color: var(--text); letter-spacing: -0.01em; }
+  .guide h3:first-child { margin-top: 0; }
+  .guide h4 { font-size: 17px; font-weight: 700; margin: 26px 0 10px; color: var(--text); }
+  .guide p { font-size: 16px; color: var(--muted); line-height: 1.8; margin-bottom: 18px; }
+  .guide ul, .guide ol { margin: 14px 0 22px 24px; }
+  .guide li { font-size: 15px; color: var(--muted); line-height: 1.8; margin-bottom: 10px; }
+  .guide strong { color: var(--text); font-weight: 600; }
+  .guide em { color: var(--accent); font-style: normal; font-weight: 600; }
+  .guide blockquote { border-left: 3px solid var(--accent); padding: 4px 18px; margin: 22px 0; color: var(--muted); font-style: italic; font-size: 16px; line-height: 1.7; }
+  .guide-callout { background: rgba(0,212,255,0.05); border: 1px solid rgba(0,212,255,0.2); border-radius: 8px; padding: 20px 24px; margin: 22px 0; }
+  .guide-callout h4 { margin-top: 0; color: var(--accent); font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 8px; }
+  .guide-callout p { font-size: 14px; color: var(--text); margin: 0; }
+  /* ── Pricing ── */
+  .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 1080px; margin: 0 auto; }
+  @media (max-width: 880px) { .pricing-grid { grid-template-columns: 1fr; max-width: 420px; } }
+  .pricing-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 30px 22px; text-align: center; transition: all 0.2s; }
+  .pricing-card.featured { border-color: var(--accent); position: relative; }
+  .pricing-card.featured::before { content: "Most Popular"; position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--accent); color: #002030; padding: 4px 14px; border-radius: 999px; font-size: 10px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; }
+  .pricing-plan { font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
+  .pricing-price { font-size: 44px; font-weight: 800; color: var(--text); line-height: 1; }
+  .pricing-price .per { font-size: 14px; color: var(--muted); font-weight: 500; }
+  .pricing-sub { font-size: 12px; color: var(--muted); margin: 10px 0 26px; }
+  .pricing-features { list-style: none; text-align: left; margin: 0 0 30px; }
+  .pricing-features li { padding: 7px 0; font-size: 14px; color: var(--text); }
+  .pricing-features li::before { content: "✓ "; color: var(--green); font-weight: 800; margin-right: 6px; }
+  /* ── FAQ ── */
+  .faq { display: grid; gap: 14px; }
+  .faq-item { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 22px 26px; }
+  .faq-item h3 { font-size: 16px; font-weight: 700; margin-bottom: 10px; color: var(--text); }
+  .faq-item p { font-size: 15px; color: var(--muted); line-height: 1.7; }
+  /* ── Explore Grid (internal links) ── */
+  .explore-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+  .explore-link { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 14px 18px; color: var(--text); font-size: 13px; font-weight: 500; display: flex; align-items: center; gap: 8px; transition: border-color 0.2s, color 0.2s; }
+  .explore-link:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+  .explore-link .arrow { color: var(--accent); font-size: 14px; }
+  /* ── Footer CTA ── */
+  .footer-cta { padding: 88px 0; text-align: center; border-bottom: 1px solid var(--border); background: linear-gradient(180deg, var(--bg) 0%, rgba(0,212,255,0.04) 100%); }
+  .footer-cta h2 { font-size: clamp(26px, 4vw, 40px); margin-bottom: 16px; }
+  .footer-cta p { color: var(--muted); font-size: 17px; margin-bottom: 36px; max-width: 580px; margin-left: auto; margin-right: auto; }
+  footer { padding: 32px 0; text-align: center; color: var(--text-muted); font-size: 13px; }
+  footer a { color: var(--text-muted); margin: 0 14px; }
+  footer a:hover { color: var(--accent); }
+  .footer-links { display: flex; gap: 18px; justify-content: center; flex-wrap: wrap; margin-top: 10px; }
+  @media (max-width: 720px) {
+    nav { padding: 16px 18px; }
+    .nav-links { display: none; }
+    .hero { padding: 60px 0 44px; }
+    .hero-ctas { flex-direction: column; align-items: center; }
+    .btn-lg { width: 100%; max-width: 320px; text-align: center; }
+    .stats-row { gap: 32px; }
+    section { padding: 56px 0; }
+  }
+</style>
+</head>
+<body>
+
+<nav role="navigation" aria-label="Main navigation">
+  <a href="/" class="nav-logo" aria-label="Trading News Terminal Home">
+    <div class="nav-logo-icon" aria-hidden="true"></div>
+    <div>
+      <div class="nav-logo-text">Trading <span>News</span> Terminal</div>
+      <div class="nav-logo-sub">Built for US Traders</div>
+    </div>
+  </a>
+  <div class="nav-links">
+    <a href="#features">Features</a>
+    <a href="#compare">Compare</a>
+    <a href="#guide">The Guide</a>
+    <a href="https://app.tradingnewsterminal.com/blog" target="_blank" rel="noopener">Blog</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#faq">FAQ</a>
+    <a href="/" style="color:var(--accent);">Main Site</a>
+  </div>
+  <a href="https://app.tradingnewsterminal.com/?utm_source=landing&utm_medium=organic&utm_campaign=us&utm_content=header" class="btn btn-primary">Try Free →</a>
+</nav>
+
+<section class="hero">
+  <div class="container">
+    <div class="flag-badge">🇺🇸 US Edition · Built for American Traders</div>
+    <h1>
+      The News Terminal <span>Built for US Traders</span>
+      <span class="sub-line">FOMC sub-second · SEC EDGAR live · AI earnings summaries · Reddit retail buzz</span>
+    </h1>
+    <p class="hero-sub">Every NYSE / Nasdaq-moving headline tagged with pre-market or after-hours session. SEC filings within minutes of EDGAR — 8-K, 10-Q, 10-K, 13F, 13D/G. AI-generated 5-bullet summaries of any earnings call. Reddit retail buzz across r/wallstreetbets, r/stocks, r/options. <strong>Institutional-grade intelligence at $44/month.</strong></p>
+    <div class="hero-ctas">
+      <a href="https://app.tradingnewsterminal.com/?utm_source=landing&utm_medium=organic&utm_campaign=us&utm_content=hero" class="btn btn-primary btn-lg">Start Free — No Card</a>
+      <a href="#pricing" class="btn btn-outline btn-lg">See Pricing</a>
+    </div>
+    <p class="price-note">Basic plan is <strong>permanently free</strong> · Pro at <strong>$44/mo</strong> or <strong>$33/mo annual</strong> (save 25%) · Cancel anytime</p>
+    <div class="stats-row">
+      <div class="stat"><div class="stat-num">&lt;1s</div><div class="stat-lbl">FOMC scrape latency</div></div>
+      <div class="stat"><div class="stat-num">6</div><div class="stat-lbl">SEC form types live</div></div>
+      <div class="stat"><div class="stat-num">60</div><div class="stat-lbl">Reddit tickers tracked</div></div>
+      <div class="stat"><div class="stat-num">$0</div><div class="stat-lbl">Cost to start</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="features">
+  <div class="container">
+    <div class="section-label">What You Get</div>
+    <h2>Six edges your current terminal probably doesn't have</h2>
+    <p class="section-intro">Built specifically for how US traders consume markets — the same institutional edges that desks pay $24,000/year for, packaged for $44/month. <strong>No 30-day trials, no credit card on Basic, no upgrade pressure.</strong></p>
+    <div class="cards">
+      <div class="card">
+        <div class="card-icon">🏛️</div>
+        <h3>FOMC Sub-Second</h3>
+        <p>We scrape <span class="accent">federalreserve.gov</span> directly at the embargo lift moment. ~1 second before aggregator services that wait for redistribution. Same sub-second framework for ECB, BoE, BoJ, RBA. Eight rate decisions per year that move trillions — we want you ahead.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">⚖</div>
+        <h3>SEC EDGAR Live</h3>
+        <p>Polling official SEC atom feeds every 12 minutes for <span class="accent">8-K, 10-Q, 10-K, 13F, 13D/G, SC 13D/A</span>. Within ~15 minutes of an 8-K filing, it's in your feed tagged with the ticker. Material events, earnings releases, board changes, M&amp;A — you see them as they hit EDGAR.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">✦</div>
+        <h3>AI Earnings Summaries</h3>
+        <p>Click any quarter on AAPL, NVDA, TSLA, MSFT. We pull the call transcript (or 8-K press release as fallback) and generate a <span class="purple">5-bullet AI summary</span> covering guidance, margins, risks, Q&amp;A topic, and net sentiment. Each bullet ≤25 words. Cached so repeat views are instant.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🌅</div>
+        <h3>Pre-Market &amp; After-Hours</h3>
+        <p>Every headline gets a session badge: <span class="orange">PRE-MKT</span> (04:00–09:30 ET) or <span class="purple">AFTER-HRS</span> (16:00–20:00 ET). Click the badge to filter the feed by session. Critical because most earnings beats/misses and macro releases land outside RTH.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔥</div>
+        <h3>Reddit Retail Buzz</h3>
+        <p>Top 60 tickers by mention count across <span class="accent">r/wallstreetbets, r/stocks, r/options, r/investing</span>. Refreshed every 30 minutes. Sentiment derived from 24h mention velocity (accelerating = bullish, decelerating = bearish). Click any chip to filter the feed.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📡</div>
+        <h3>Smart Virtual Tags</h3>
+        <p>Search box understands <span class="accent">"pre-market"</span>, <span class="accent">"sec edgar"</span>, <span class="accent">"8-k"</span>, <span class="accent">"central bank"</span>. Type once, filter the feed by computed properties — no manual setup, no learning curve. The terminal works the way you think.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="compare">
+  <div class="container">
+    <div class="section-label">Compare</div>
+    <h2>How TNT stacks up against the alternatives</h2>
+    <p class="section-intro">For active retail and prop-funded US traders running their own P&amp;L, paying $200+/month for legacy services rarely justifies the spend. TNT delivers the wins that actually matter — sub-second macro, SEC EDGAR live, AI earnings summaries — at retail pricing.</p>
+    <div class="compare-wrap">
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th>TNT Pro</th>
+          <th>Premium news services<br><span style="font-weight:400;text-transform:none;color:var(--muted);font-size:10px;letter-spacing:0;">($200+/month)</span></th>
+          <th>Mid-tier forex/news sites<br><span style="font-weight:400;text-transform:none;color:var(--muted);font-size:10px;letter-spacing:0;">($30–80/month)</span></th>
+          <th>Free aggregators<br><span style="font-weight:400;text-transform:none;color:var(--muted);font-size:10px;letter-spacing:0;">(ad-supported)</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Price / month</td><td class="ours">$44</td><td class="theirs">$200+</td><td class="theirs">$30–80</td><td class="theirs">$0 (ads)</td></tr>
+        <tr><td>FOMC sub-second alerts</td><td class="ours yes">✓ &lt;1s</td><td class="theirs partial">~2–5s</td><td class="theirs no">✗</td><td class="theirs no">✗ Delayed</td></tr>
+        <tr><td>SEC EDGAR live ingestion</td><td class="ours yes">✓ All 6 forms</td><td class="theirs partial">Subset</td><td class="theirs no">✗</td><td class="theirs no">✗</td></tr>
+        <tr><td>AI earnings call summaries</td><td class="ours yes">✓ 5 bullets</td><td class="theirs no">✗</td><td class="theirs no">✗</td><td class="theirs no">✗</td></tr>
+        <tr><td>Pre-market / after-hours badges</td><td class="ours yes">✓ Clickable filter</td><td class="theirs partial">Mention only</td><td class="theirs no">✗</td><td class="theirs no">✗</td></tr>
+        <tr><td>Reddit retail sentiment</td><td class="ours yes">✓ 60 tickers</td><td class="theirs no">✗</td><td class="theirs no">✗</td><td class="theirs no">✗</td></tr>
+        <tr><td>Live financial TV</td><td class="ours yes">✓ 7 channels</td><td class="theirs no">✗</td><td class="theirs no">✗</td><td class="theirs no">✗</td></tr>
+        <tr><td>Live squawk box</td><td class="ours yes">✓ HIGH-impact</td><td class="theirs yes">✓ Human voice</td><td class="theirs no">✗</td><td class="theirs no">✗</td></tr>
+        <tr><td>Personal Telegram alerts</td><td class="ours yes">✓ DM bot</td><td class="theirs partial">SMS only</td><td class="theirs no">✗</td><td class="theirs no">✗</td></tr>
+        <tr><td>Multi-language interface</td><td class="ours yes">✓ 6 languages</td><td class="theirs no">✗</td><td class="theirs partial">Limited</td><td class="theirs yes">✓</td></tr>
+        <tr><td>Setup time</td><td class="ours">30 seconds</td><td class="theirs">Days</td><td class="theirs">Hours</td><td class="theirs">Instant</td></tr>
+        <tr><td>Free tier</td><td class="ours yes">✓ Permanent Basic</td><td class="theirs no">✗</td><td class="theirs partial">Delayed</td><td class="theirs partial">Ad-supported</td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+</section>
+
+<section id="guide">
+  <div class="container">
+    <div class="section-label">The Guide</div>
+    <h2>The US trader's playbook — what matters and why</h2>
+    <p class="section-intro">A complete breakdown of the US market events that move price, when they happen, how to consume them, and how to interpret the institutional signals before retail catches up.</p>
+    <div class="guide">
+
+      <h3>The structure of the US trading day</h3>
+      <p>The US equity market trades regular hours <strong>09:30–16:00 ET</strong>. But for any active trader, regular hours is only one of three meaningfully tradeable sessions:</p>
+      <ul>
+        <li><strong>Pre-market (04:00–09:30 ET):</strong> Where the day is built. Overnight earnings releases (META, GOOGL, AMZN, AAPL, MSFT, NVDA, TSLA usually report after-hours; banks, retailers, healthcare often pre-market), economic data (NFP at 08:30 ET, CPI at 08:30 ET, Retail Sales at 08:30 ET), and overseas catalyst spillover all hit here. E-mini S&amp;P futures (ES) trade nearly 24 hours and absorb this flow first — by the time the cash market opens at 09:30, the move is often half-done.</li>
+        <li><strong>Regular trading hours (09:30–16:00 ET):</strong> Liquidity is highest, spreads tightest. Most Fed and Treasury officials deliver public remarks during cash hours. The first 30 minutes (09:30–10:00) and last 30 minutes (15:30–16:00) account for 30–40% of daily volume.</li>
+        <li><strong>After-hours (16:00–20:00 ET):</strong> Earnings dump zone. AAPL, MSFT, NVDA, GOOG, META, AMZN, TSLA report at 16:05–16:30 ET on average. Single-stock can gap 5–15% in seconds. Liquidity thins after 18:00 ET.</li>
+      </ul>
+      <p>TNT tags every news item with its session via <span class="accent">🌅 PRE-MKT</span> or <span class="accent">🌙 AFTER-HRS</span> badges. Click the badge and the entire feed filters to that session — instantly see what's moving the tape outside cash hours.</p>
+
+      <h3>The Federal Reserve playbook: FOMC, dot plot, press conferences</h3>
+      <p>Eight times a year the Federal Open Market Committee (FOMC) makes a rate decision. Of those eight meetings, four (March, June, September, December) include a <strong>Summary of Economic Projections (SEP)</strong> with the "dot plot" — the median Fed member's projection of where rates will be at year-end across the next three years. The dot plot can move markets more than the rate decision itself, because rates are usually well-telegraphed but the forward path is not.</p>
+      <p>The statement is released at <strong>14:00 ET</strong>. The Fed Chair's press conference begins at <strong>14:30 ET</strong>. The first 60 seconds of the press conference are when the algorithmic moves happen — the Chair's tone shift in the opening remarks often signals the meeting's posture. The Q&amp;A from 14:35 onward is where institutional positioning rebalances.</p>
+      <div class="guide-callout">
+        <h4>How TNT covers FOMC</h4>
+        <p>Sub-second scraper on federalreserve.gov fires the moment the statement embargo lifts. The headline carries the full statement text. Simultaneously, the SEP PDF is parsed and dot plot changes vs prior meeting are highlighted. Press conference is covered via live financial TV embedded in the terminal.</p>
+      </div>
+
+      <h3>SEC EDGAR: the institutional information layer</h3>
+      <p>SEC filings are how the institutional world communicates material changes. Every US-listed company files reports through EDGAR (Electronic Data Gathering, Analysis, and Retrieval). The forms that matter most for active traders:</p>
+      <ul>
+        <li><strong>8-K (Material Events):</strong> Filed within 4 business days of a material event. Earnings releases, CEO departures, M&amp;A announcements, regulatory actions, customer wins/losses. Item 2.02 = "Results of Operations and Financial Condition" — this is the earnings press release. Item 1.01 = "Entry into Material Definitive Agreement" — often M&amp;A. Item 5.02 = "Departure of Directors or Certain Officers." Read the item codes first, then the body.</li>
+        <li><strong>10-Q (Quarterly Report):</strong> Filed within 40 days of quarter end. Detailed financials with management discussion. Footnote 2 (recent accounting pronouncements) and the legal proceedings section often contain forward-looking risk that the call doesn't cover.</li>
+        <li><strong>10-K (Annual Report):</strong> Filed within 60 days of year-end. Risk factors section is gold — companies disclose what worries them. Read the new risk factors added vs prior year — that's where management is signaling concern.</li>
+        <li><strong>13F (Institutional Holdings):</strong> Filed quarterly by institutional managers with $100M+ AUM. 45-day reporting lag, so positions are old. But useful for spotting concentrated bets — Berkshire's Apple stake, Pershing Square's portfolio rebuilds.</li>
+        <li><strong>13D / 13G (5%+ Stakes):</strong> Within 10 days when an investor crosses 5% ownership. 13D = activist intent (might push for changes). 13G = passive (no intent to influence). Activist 13D filings often coincide with stock pops.</li>
+      </ul>
+      <p>TNT polls all six form types every 12 minutes. New filings appear in the feed within ~15 minutes with the ⚖ SEC EDGAR source chip and ticker tagging. Click the chip to filter the feed to SEC filings only.</p>
+
+      <h3>Earnings season: the highest-information-density period of the year</h3>
+      <p>US corporate earnings season runs four times per year, beginning 2–3 weeks after each quarter closes. The schedule concentrates the most market-moving individual stock events into a 5–6 week window each quarter. What matters:</p>
+      <ul>
+        <li><strong>EPS vs consensus:</strong> Beat by 10%+ = typically 5–15% gap. Miss by 10%+ = 10–25% gap. But the magnitude of the beat matters less than the <em>quality</em> — is it real growth or one-time tax benefits?</li>
+        <li><strong>Forward guidance:</strong> Guidance for the next quarter or year often matters more than the current results. A "beat and lower" (current quarter strong, guidance lowered) = sell. A "miss and raise" (current quarter weak, guidance raised) = buy.</li>
+        <li><strong>Mega-cap leverage:</strong> AAPL, MSFT, NVDA, GOOGL, META, AMZN, TSLA together represent ~30% of the S&amp;P 500 weight. Their individual earnings can move the index 0.5–1.5%.</li>
+        <li><strong>Sector tone:</strong> Banks kick off (JPM, GS, BAC in week 1) and signal credit + economic health. Semis (NVDA, AMD, INTC, AVGO) signal AI / data center demand. Retailers (WMT, TGT, AMZN) signal consumer health.</li>
+      </ul>
+      <div class="guide-callout">
+        <h4>TNT's AI Earnings Summary</h4>
+        <p>Click any quarter on a US-listed ticker in the company detail modal. We fetch the earnings call transcript via Alpha Vantage (broad US coverage) or fall back to the 8-K press release filed with the SEC if the transcript isn't yet published. Then Cerebras AI generates a 5-bullet summary: <strong>(1)</strong> Guidance changes, <strong>(2)</strong> Margin trends, <strong>(3)</strong> Risks management flagged, <strong>(4)</strong> Most-discussed Q&amp;A topic, <strong>(5)</strong> Net sentiment with rationale. Each bullet ≤25 words. Aggressive caching means subsequent views are instant.</p>
+      </div>
+
+      <h3>Reading Reddit retail sentiment without getting trapped</h3>
+      <p>Retail flow moved from message boards to Reddit in 2020 and has been a real factor since the GameStop event. The signal exists, but it's noisy. Useful rules:</p>
+      <ul>
+        <li><strong>Mention velocity matters more than absolute count.</strong> A ticker with 50 mentions trending toward 200 (4x in 24h) is a different signal than a ticker steady at 200/day for weeks.</li>
+        <li><strong>Subreddit weighting matters.</strong> r/wallstreetbets is high noise / momentum-chasing. r/options skews more sophisticated (real positioning). r/investing skews long-term / boring. r/stocks is mixed.</li>
+        <li><strong>Cross-reference with institutional news.</strong> A Reddit-trending ticker with no corresponding institutional newsflow = pump risk. With matching news (earnings beat, SEC filing, analyst upgrade) = high-conviction setup.</li>
+        <li><strong>The fade exists.</strong> Mega-momentum names on WSB often peak within 3–5 days of going viral. Buying the breakout works for 1–2 days; holding past the meme peak is where money gets lost.</li>
+      </ul>
+      <p>TNT shows the top 60 tickers in the Reddit Social Buzz panel (Sentiment tab). Each chip displays mention count + 🔥 momentum badge + sentiment color. Click any chip to filter the news feed by that ticker — the fastest way to confirm whether a Reddit-trending name has corresponding institutional newsflow.</p>
+
+      <h3>The macro calendar: economic data that moves equities most</h3>
+      <p>In approximate order of typical equity market impact:</p>
+      <ol>
+        <li><strong>FOMC rate decision (08 per year, 14:00 ET):</strong> Highest individual event impact. 1–3% intraday equity moves on statement / press conference surprises.</li>
+        <li><strong>Non-Farm Payrolls — NFP (first Friday of month, 08:30 ET):</strong> Strong NFP = mixed signal for equities (growth positive, rate-negative). Weak NFP = rate-cut hopes rally equities. Wage growth component is the most-watched detail post-2022.</li>
+        <li><strong>CPI — Consumer Price Index (mid-month, 08:30 ET):</strong> Hot CPI = sell equities (especially long-duration tech). Soft CPI = buy equities. Core CPI (ex-food and energy) is what the Fed watches.</li>
+        <li><strong>PCE Price Index (last Friday of month, 08:30 ET):</strong> The Fed's preferred inflation gauge. Direct input into rate decisions.</li>
+        <li><strong>GDP (quarterly):</strong> Three releases per quarter (advance, second, final). A big GDP miss raises recession risk and sells equities (especially cyclicals).</li>
+        <li><strong>Retail Sales (mid-month, 08:30 ET):</strong> Direct consumer health proxy. Drives retailer stocks and consumer discretionary sector.</li>
+        <li><strong>ISM Manufacturing &amp; Services PMI (1st &amp; 3rd business day of month, 10:00 ET):</strong> Real economy pulse. ISM &lt; 50 = contraction.</li>
+      </ol>
+      <p>Every one of these is in the TNT economic calendar with countdown, consensus, prior reading, and live release coverage. Pro users get sub-second alerts on the release; Basic users see the release after a 5-minute delay.</p>
+
+      <h3>S&amp;P 500 sector rotation: where the leadership shifts</h3>
+      <p>The S&amp;P 500 isn't a single thing — it's 11 sectors with distinct macro drivers. Understanding sector rotation tells you what the institutional flow is signaling about the next 3–6 months:</p>
+      <ul>
+        <li><strong>Technology (~29% weight):</strong> Rate-sensitive (high-duration cash flows). Outperforms when rates fall, underperforms when rates rise. AI infrastructure (NVDA, AVGO, MSFT, GOOGL) has been the dominant subsector since 2023.</li>
+        <li><strong>Financials (~13%):</strong> Benefits from steeper yield curve + higher rates (better net interest margin). Credit quality concerns dominate in recession scenarios.</li>
+        <li><strong>Healthcare (~12%):</strong> Defensive. Drug pricing policy, FDA approvals, biotech M&amp;A are the catalysts. Often outperforms during equity drawdowns.</li>
+        <li><strong>Consumer Discretionary (~10%):</strong> Cyclical. Tracks consumer confidence, retail sales, credit conditions. AMZN dominates the sector weight (~25% of sector).</li>
+        <li><strong>Communication Services (~9%):</strong> META, GOOGL, NFLX, DIS dominate. Ad spending cycles + content competition drive the sector.</li>
+        <li><strong>Industrials (~8%):</strong> Capex cycle proxy. Defense, aerospace, transports each have distinct catalysts.</li>
+        <li><strong>Consumer Staples (~6%):</strong> Defensive. Pricing power matters most in inflationary periods.</li>
+        <li><strong>Energy (~4%):</strong> Tracks oil. OPEC decisions, geopolitical events, US production levels drive the sector.</li>
+        <li><strong>Utilities, Real Estate, Materials (~10% combined):</strong> Smaller sectors but each can outperform in specific macro regimes.</li>
+      </ul>
+
+    </div>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="container">
+    <div class="section-label">Pricing</div>
+    <h2>Start free, upgrade when you need the edge</h2>
+    <p class="section-intro">No 30-day trials, no credit cards on Basic. The free plan is a real product — not a teaser. Upgrade to Pro when you want zero-delay news, AI earnings summaries, live financial TV, and the Reddit buzz panel.</p>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <div class="pricing-plan">Basic</div>
+        <div class="pricing-price">$0<span class="per">/forever</span></div>
+        <div class="pricing-sub">No credit card required</div>
+        <ul class="pricing-features">
+          <li>News feed (5-min delay)</li>
+          <li>Economic calendar (live)</li>
+          <li>SEC EDGAR feed</li>
+          <li>Pre/after-hours badges</li>
+          <li>Asset watchlist</li>
+          <li>TradingView charts</li>
+          <li>Multi-language UI</li>
+        </ul>
+        <a href="https://app.tradingnewsterminal.com/?utm_source=landing&utm_medium=organic&utm_campaign=us&utm_content=pricing-basic" class="btn btn-outline btn-lg" style="width:100%;">Start Free</a>
+      </div>
+      <div class="pricing-card featured">
+        <div class="pricing-plan">Pro Annual</div>
+        <div class="pricing-price">$33<span class="per">/mo</span></div>
+        <div class="pricing-sub">Billed annually at $396 (save $132)</div>
+        <ul class="pricing-features">
+          <li><strong>Everything in Basic</strong></li>
+          <li>Zero-delay news feed (WebSocket)</li>
+          <li>AI earnings call summaries</li>
+          <li>Reddit retail buzz (60 tickers)</li>
+          <li>Live financial TV (7 channels)</li>
+          <li>Live squawk box</li>
+          <li>Historical search</li>
+          <li>Telegram bot alerts</li>
+          <li>Ad-free experience</li>
+        </ul>
+        <a href="https://app.tradingnewsterminal.com/?utm_source=landing&utm_medium=organic&utm_campaign=us&utm_content=pricing-annual&plan=pro-annual" class="btn btn-primary btn-lg" style="width:100%;">Choose Annual</a>
+      </div>
+      <div class="pricing-card">
+        <div class="pricing-plan">Pro Monthly</div>
+        <div class="pricing-price">$44<span class="per">/mo</span></div>
+        <div class="pricing-sub">Cancel anytime</div>
+        <ul class="pricing-features">
+          <li><strong>Everything in Basic</strong></li>
+          <li>Zero-delay news feed</li>
+          <li>AI earnings summaries</li>
+          <li>Reddit retail buzz</li>
+          <li>Live financial TV (7 ch)</li>
+          <li>Live squawk box</li>
+          <li>Historical search</li>
+          <li>Telegram bot alerts</li>
+          <li>Ad-free experience</li>
+        </ul>
+        <a href="https://app.tradingnewsterminal.com/?utm_source=landing&utm_medium=organic&utm_campaign=us&utm_content=pricing-monthly&plan=pro-monthly" class="btn btn-outline btn-lg" style="width:100%;">Choose Monthly</a>
+      </div>
+    </div>
+    <p style="text-align:center;color:var(--muted);font-size:13px;margin-top:32px;">Billed in USD via Stripe · Cancel anytime from your dashboard · 30-day money-back guarantee on annual plan</p>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="container">
+    <div class="section-label">FAQ</div>
+    <h2>Frequently asked questions</h2>
+    <div class="faq">
+      <div class="faq-item">
+        <h3>How fast does TNT pick up FOMC decisions?</h3>
+        <p>Sub-second. Our scrapers hit federalreserve.gov directly the moment the embargo lifts — typically 0.5–1.2 seconds faster than aggregator-based news services that wait for redistribution. Same sub-second framework for ECB, BoE, BoJ, RBA. Comparable to institutional-grade feeds at a fraction of the cost.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Is SEC EDGAR data really live or just delayed snapshots?</h3>
+        <p>Live. We poll the official SEC atom feeds every 12 minutes for six form types: 8-K, 10-Q, 10-K, 13F, 13D/G, and SC 13D/A amendments. Within ~15 minutes of any filing hitting EDGAR, it appears in the feed tagged with the ticker and a clickable ⚖ SEC EDGAR source chip. Click the chip to filter the feed to SEC filings only.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How does the AI Earnings Summary actually work?</h3>
+        <p>Click any quarter on a US-listed ticker in the company detail modal. The system fetches the earnings call transcript (Alpha Vantage source) or falls back to the 8-K press release if the transcript isn't yet published. We then run Cerebras (with Groq fallback) to generate a 5-bullet summary: guidance changes, margin trends, business risks, Q&A topic, net sentiment. Each bullet capped at 25 words. Summaries are cached — repeat views are instant.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How does Reddit Social Buzz work?</h3>
+        <p>We aggregate retail mentions across r/wallstreetbets, r/stocks, r/options, r/investing, r/StockMarket, r/pennystocks, r/RobinHoodPennyStocks, r/Daytrading every 30 minutes via the ApeWisdom layer. Top 60 tickers shown with mention count and sentiment derived from 24h momentum (accelerating = bullish, decelerating = bearish). Click any chip to filter the news feed.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How does TNT compare to premium news services at $200+/month?</h3>
+        <p>Pricing: premium news services typically run $200+/month; TNT Pro is $44/month. Coverage: we have FOMC/ECB/BoE/BoJ/RBA sub-second scrapers, full SEC EDGAR ingestion across six form types, AI earnings summaries, and Reddit retail buzz — features that premium services either lack or charge extra for. Trade-off: we don't have a 24-hour human squawk desk yet — if your strategy specifically requires a live human voice operator reading every wire all day, dedicated squawk services may suit you better.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Do you cover pre-market and after-hours?</h3>
+        <p>Yes — comprehensively. News during pre-market (04:00–09:30 ET) gets a 🌅 PRE-MKT badge. News during after-hours (16:00–20:00 ET) gets a 🌙 AFTER-HRS badge. Both badges are clickable filters. This is critical because earnings beats/misses (AAPL, MSFT, NVDA) and macro releases (NFP at 08:30 ET pre-bell) typically land outside regular hours.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Is the data really real-time on Pro?</h3>
+        <p>Yes. Pro users receive news items via WebSocket push the moment they're ingested. The economic calendar is real-time on both Basic and Pro. Basic plan has a 5-minute delay on the news feed to keep the free tier sustainable.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Can I cancel anytime?</h3>
+        <p>Yes — Stripe dashboard, one click. No phone calls, no retention games. Monthly subscriptions cancel at end of cycle. Annual subscriptions have a 30-day money-back guarantee. Basic plan stays free forever — we don't downgrade your account if you cancel Pro.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-label">Explore</div>
+    <h2>More tools in the Trading News Terminal</h2>
+    <p class="section-intro">The US Edition is part of the wider Trading News Terminal — every feature you see above plus the standard terminal capabilities for forex, crypto, commodities, central banks, and more.</p>
+    <div class="explore-grid">
+      <a href="/us-stock-market-news" class="explore-link"><span class="arrow">→</span> US Stock Market News</a>
+      <a href="/fed-rate-decision-news" class="explore-link"><span class="arrow">→</span> Fed Rate Decisions</a>
+      <a href="/fomc-minutes-live" class="explore-link"><span class="arrow">→</span> FOMC Minutes Live</a>
+      <a href="/cpi-release-news" class="explore-link"><span class="arrow">→</span> CPI Release Alerts</a>
+      <a href="/nfp-news-feed" class="explore-link"><span class="arrow">→</span> NFP News Feed</a>
+      <a href="/earnings-calendar" class="explore-link"><span class="arrow">→</span> Earnings Calendar</a>
+      <a href="/earnings-season-news" class="explore-link"><span class="arrow">→</span> Earnings Season News</a>
+      <a href="/economic-calendar" class="explore-link"><span class="arrow">→</span> Economic Calendar</a>
+      <a href="/squawk-box" class="explore-link"><span class="arrow">→</span> Live Squawk Box</a>
+      <a href="/live-financial-tv" class="explore-link"><span class="arrow">→</span> Live Financial TV</a>
+      <a href="/central-banks-tracker" class="explore-link"><span class="arrow">→</span> Central Banks Tracker</a>
+      <a href="/forex-news-feed" class="explore-link"><span class="arrow">→</span> Forex News Feed</a>
+      <a href="/crypto-news-feed" class="explore-link"><span class="arrow">→</span> Crypto News Feed</a>
+      <a href="/day-trading-news-feed" class="explore-link"><span class="arrow">→</span> Day Trading News</a>
+      <a href="/options-trading-news" class="explore-link"><span class="arrow">→</span> Options Trading News</a>
+      <a href="/prop-trading-news-feed" class="explore-link"><span class="arrow">→</span> Prop Trading News</a>
+    </div>
+  </div>
+</section>
+
+<section class="footer-cta">
+  <div class="container">
+    <h2>Start trading with US-grade intelligence</h2>
+    <p>Create your free account in 30 seconds — no credit card. FOMC sub-second alerts, SEC EDGAR feed, and pre/after-hours session tagging come with the free Basic tier. Upgrade to Pro when you want AI earnings summaries, Reddit buzz, and zero-delay news.</p>
+    <div class="hero-ctas">
+      <a href="https://app.tradingnewsterminal.com/?utm_source=landing&utm_medium=organic&utm_campaign=us&utm_content=footer" class="btn btn-primary btn-lg">Start Free Now</a>
+      <a href="#pricing" class="btn btn-outline btn-lg">View Pricing</a>
+    </div>
+  </div>
+</section>
+
+<section style="padding:48px 0;border-top:1px solid var(--border);background:rgba(15,18,24,0.4)">
+  <div class="container">
+    <h3 style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--text-muted);margin-bottom:18px;font-weight:700">Popular US coverage</h3>
+    <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:30px">
+      <a href="/sec-edgar-live-alerts" style="background:#0f1218;border:1px solid #1a2230;border-radius:999px;padding:8px 16px;color:#e2e8f0;font-size:13px;text-decoration:none">SEC EDGAR Alerts</a>
+      <a href="/8-k-filing-alerts" style="background:#0f1218;border:1px solid #1a2230;border-radius:999px;padding:8px 16px;color:#e2e8f0;font-size:13px;text-decoration:none">8-K Filings</a>
+      <a href="/13f-filing-tracker" style="background:#0f1218;border:1px solid #1a2230;border-radius:999px;padding:8px 16px;color:#e2e8f0;font-size:13px;text-decoration:none">13F Tracker</a>
+      <a href="/ai-earnings-call-summary" style="background:#0f1218;border:1px solid #1a2230;border-radius:999px;padding:8px 16px;color:#e2e8f0;font-size:13px;text-decoration:none">AI Earnings Summary</a>
+      <a href="/reddit-wsb-sentiment-tracker" style="background:#0f1218;border:1px solid #1a2230;border-radius:999px;padding:8px 16px;color:#e2e8f0;font-size:13px;text-decoration:none">Reddit WSB Sentiment</a>
+      <a href="/pre-market-news-feed" style="background:#0f1218;border:1px solid #1a2230;border-radius:999px;padding:8px 16px;color:#e2e8f0;font-size:13px;text-decoration:none">Pre-Market Feed</a>
+      <a href="/after-hours-earnings-tracker" style="background:#0f1218;border:1px solid #1a2230;border-radius:999px;padding:8px 16px;color:#e2e8f0;font-size:13px;text-decoration:none">After-Hours Earnings</a>
+      <a href="/earnings-calendar" style="background:#0f1218;border:1px solid #1a2230;border-radius:999px;padding:8px 16px;color:#e2e8f0;font-size:13px;text-decoration:none">Earnings Calendar</a>
+      <a href="/economic-calendar" style="background:#0f1218;border:1px solid #1a2230;border-radius:999px;padding:8px 16px;color:#e2e8f0;font-size:13px;text-decoration:none">Economic Calendar</a>
+    </div>
+    <h3 style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--text-muted);margin-bottom:18px;font-weight:700">Top tickers</h3>
+    <div style="display:flex;flex-wrap:wrap;gap:6px">
+      <a href="/ticker/AAPL" style="background:#0f1218;border:1px solid #1a2230;border-radius:6px;padding:6px 12px;color:#00d4ff;font-family:monospace;font-weight:700;font-size:12px;text-decoration:none">AAPL</a>
+      <a href="/ticker/NVDA" style="background:#0f1218;border:1px solid #1a2230;border-radius:6px;padding:6px 12px;color:#00d4ff;font-family:monospace;font-weight:700;font-size:12px;text-decoration:none">NVDA</a>
+      <a href="/ticker/TSLA" style="background:#0f1218;border:1px solid #1a2230;border-radius:6px;padding:6px 12px;color:#00d4ff;font-family:monospace;font-weight:700;font-size:12px;text-decoration:none">TSLA</a>
+      <a href="/ticker/MSFT" style="background:#0f1218;border:1px solid #1a2230;border-radius:6px;padding:6px 12px;color:#00d4ff;font-family:monospace;font-weight:700;font-size:12px;text-decoration:none">MSFT</a>
+      <a href="/ticker/GOOGL" style="background:#0f1218;border:1px solid #1a2230;border-radius:6px;padding:6px 12px;color:#00d4ff;font-family:monospace;font-weight:700;font-size:12px;text-decoration:none">GOOGL</a>
+      <a href="/ticker/META" style="background:#0f1218;border:1px solid #1a2230;border-radius:6px;padding:6px 12px;color:#00d4ff;font-family:monospace;font-weight:700;font-size:12px;text-decoration:none">META</a>
+      <a href="/ticker/AMZN" style="background:#0f1218;border:1px solid #1a2230;border-radius:6px;padding:6px 12px;color:#00d4ff;font-family:monospace;font-weight:700;font-size:12px;text-decoration:none">AMZN</a>
+      <a href="/ticker/AMD" style="background:#0f1218;border:1px solid #1a2230;border-radius:6px;padding:6px 12px;color:#00d4ff;font-family:monospace;font-weight:700;font-size:12px;text-decoration:none">AMD</a>
+      <a href="/ticker/NFLX" style="background:#0f1218;border:1px solid #1a2230;border-radius:6px;padding:6px 12px;color:#00d4ff;font-family:monospace;font-weight:700;font-size:12px;text-decoration:none">NFLX</a>
+      <a href="/ticker/AVGO" style="background:#0f1218;border:1px solid #1a2230;border-radius:6px;padding:6px 12px;color:#00d4ff;font-family:monospace;font-weight:700;font-size:12px;text-decoration:none">AVGO</a>
+      <a href="/ticker/JPM" style="background:#0f1218;border:1px solid #1a2230;border-radius:6px;padding:6px 12px;color:#00d4ff;font-family:monospace;font-weight:700;font-size:12px;text-decoration:none">JPM</a>
+      <a href="/ticker/PLTR" style="background:#0f1218;border:1px solid #1a2230;border-radius:6px;padding:6px 12px;color:#00d4ff;font-family:monospace;font-weight:700;font-size:12px;text-decoration:none">PLTR</a>
+      <a href="/ticker/GME" style="background:#0f1218;border:1px solid #1a2230;border-radius:6px;padding:6px 12px;color:#00d4ff;font-family:monospace;font-weight:700;font-size:12px;text-decoration:none">GME</a>
+      <a href="/ticker/COIN" style="background:#0f1218;border:1px solid #1a2230;border-radius:6px;padding:6px 12px;color:#00d4ff;font-family:monospace;font-weight:700;font-size:12px;text-decoration:none">COIN</a>
+      <a href="/ticker/SMCI" style="background:#0f1218;border:1px solid #1a2230;border-radius:6px;padding:6px 12px;color:#00d4ff;font-family:monospace;font-weight:700;font-size:12px;text-decoration:none">SMCI</a>
+      <a href="/ticker" style="background:transparent;border:1px solid #00d4ff;border-radius:6px;padding:6px 12px;color:#00d4ff;font-size:12px;text-decoration:none;font-weight:600">All tickers →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div>© Trading News Terminal — Real-time market intelligence built for US traders</div>
+    <div class="footer-links">
+      <a href="/">Main Site</a>
+      <a href="/br">🇧🇷 Brasil</a>
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/affiliates">Affiliates</a>
+      <a href="/faq">FAQ</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

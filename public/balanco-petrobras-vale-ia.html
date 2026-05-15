@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Balanço Petrobras e Vale com IA — Resumo em 5 Bullets PT-BR de Qualquer Blue Chip</title>
+<meta name="description" content="Resumo de balanço de Petrobras (PETR4), Vale (VALE3) e qualquer blue chip da B3 gerado por IA em PT-BR. 5 bullets cobrindo receita, EBITDA, produção, dividendos e guidance. Em ~400ms depois do release.">
+<meta name="keywords" content="balanço petrobras resumo, balanço vale resumo, petr4 balanço ia, vale3 balanço ia, resumo balanço b3, balanço empresas brasil, balanço trimestral ia, balanço resumo ai, blue chip brasil balanço">
+<link rel="canonical" href="https://www.tradingnewsterminal.com/balanco-petrobras-vale-ia">
+<meta name="robots" content="index, follow"><link rel="icon" href="/favicon.ico"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><meta name="theme-color" content="#0a0c0f">
+<meta property="og:type" content="website"><meta property="og:url" content="https://www.tradingnewsterminal.com/balanco-petrobras-vale-ia">
+<meta property="og:title" content="Balanço PETR4 + VALE3 com IA — 5 Bullets PT-BR">
+<meta property="og:description" content="Resumo do balanço de Petrobras, Vale e qualquer blue chip da B3 gerado por IA em PT-BR. 5 bullets em ~400ms.">
+<meta property="og:image" content="https://www.tradingnewsterminal.com/og-image.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"SoftwareApplication","name":"Trading News Terminal — Balanço com IA","url":"https://www.tradingnewsterminal.com/balanco-petrobras-vale-ia","inLanguage":"pt-BR","applicationCategory":"FinanceApplication","operatingSystem":"Web Browser","description":"Resumo gerado por IA do balanço trimestral de qualquer blue chip da B3 (PETR4, VALE3, ITUB4, etc.) em 5 bullets PT-BR cobrindo receita, EBITDA, produção/operacional, dividendos e guidance.","offers":[{"@type":"Offer","name":"Pro Mensal","price":"44","priceCurrency":"USD"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"O que é o balanço com IA em PT-BR?","acceptedAnswer":{"@type":"Answer","text":"Quando uma empresa listada na B3 publica seu release de resultados trimestrais (geralmente entre 18:00 e 19:00 horário de Brasília), nosso sistema fetch o release no IPE da CVM/B3, processa via LLM (Cerebras + Groq) com prompt otimizado para análise de balanços brasileiros, e gera um resumo de 5 bullets em PT-BR cobrindo: (1) receita líquida + EBITDA, (2) margens, (3) produção/operacional, (4) dividendos anunciados, (5) guidance para próximo trimestre."}},{"@type":"Question","name":"Quais empresas têm cobertura?","acceptedAnswer":{"@type":"Answer","text":"Todas as ações que publicam release via sistema IPE da CVM/B3 — efetivamente todas as listadas na B3, com foco no Ibovespa: PETR4, VALE3, ITUB4, BBAS3, BBDC4, MGLU3, WEGE3, B3SA3, RENT3, EQTL3, PRIO3, JBSS3, RAIL3, ABEV3, SUZB3 e todas as outras blue chips. Cobertura também para ADRs no NYSE (PBR, VALE, ITUB)."}},{"@type":"Question","name":"Como é gerado o resumo?","acceptedAnswer":{"@type":"Answer","text":"Cerebras (primário) e Groq (fallback) — duas plataformas de inferência LLM state-of-the-art otimizadas para velocidade. Tempo típico de geração: 200-600ms após o fetch do release. Caching agressivo: a mesma versão do release gera o mesmo resumo, servido instantaneamente em requisições posteriores."}},{"@type":"Question","name":"Quão precisos são os números?","acceptedAnswer":{"@type":"Answer","text":"Alta precisão para números fatuais (receita líquida, EBITDA, produção em Mt ou boe/dia, dividendo em R$/ação, guidance percentual) porque o LLM é ancorado no release oficial. Interpretação de sentimento (bullish/bearish, comentários sobre o ambiente) tem mais variância — use o resumo como first-pass, depois clique no link para o release original quando o trade depender disso."}},{"@type":"Question","name":"Quão rápido aparece após o release?","acceptedAnswer":{"@type":"Answer","text":"Detectamos o release via IPE da CVM em menos de 30 segundos. Geração do resumo: 200-600ms. Total: ~30 segundos do release oficial ao resumo lido no app. Versão TTS (squawk) pode falar o resumo em voz neural PT-BR (Thalita, Vitória) ~5 segundos depois para usuários Pro com squawk habilitado."}},{"@type":"Question","name":"É grátis?","acceptedAnswer":{"@type":"Answer","text":"Resumo com IA é feature Pro. Plano Pro é $44/mês ou $33/mês anual. Usuários Basic veem o release no feed (grátis) mas não recebem o resumo sintetizado pela IA. Versão completa também disponível para empresas US-listed (AAPL, NVDA, TSLA, etc.) em /ai-earnings-call-summary."}},{"@type":"Question","name":"Funciona para ADRs como PBR e VALE?","acceptedAnswer":{"@type":"Answer","text":"Sim. Para ADRs no NYSE (PBR, VALE, ITUB) também processamos o 8-K Item 2.02 da SEC + filing Form 6-K. Mesma estrutura de 5 bullets em PT-BR."}}]}]}</script>
+<style>
+  :root{--bg:#0a0c0f;--card:#0f1218;--border:#1a2230;--text:#e2e8f0;--text-muted:#6b7d92;--muted:#8899aa;--accent:#00d4ff;--purple:#a78bfa;--green:#10b981;--orange:#f59e0b;--gold:#fcd34d}
+  *{margin:0;padding:0;box-sizing:border-box}body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Inter","Segoe UI",Roboto,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}.container{max-width:1180px;margin:0 auto;padding:0 24px}
+  nav{padding:18px 32px;border-bottom:1px solid var(--border);position:sticky;top:0;background:rgba(10,12,15,0.92);backdrop-filter:blur(8px);z-index:50;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  .nav-logo{display:flex;align-items:center;gap:12px;color:var(--text)}.nav-logo-icon{width:32px;height:32px;border:1.5px solid var(--accent);display:flex;align-items:center;justify-content:center;flex-shrink:0}.nav-logo-icon::before{content:'';width:10px;height:10px;background:var(--accent);animation:tnt-pulse 2s ease-in-out infinite}@keyframes tnt-pulse{0%,100%{opacity:1}50%{opacity:.4}}
+  .nav-logo-text{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;line-height:1.3}.nav-logo-text span{color:var(--accent)}.nav-logo-sub{font-size:9px;color:var(--text-muted);letter-spacing:.1em;text-transform:uppercase}
+  .btn{display:inline-block;padding:11px 22px;border-radius:6px;font-weight:700;font-size:13px;letter-spacing:.04em;cursor:pointer;transition:all .15s;border:none;text-transform:uppercase}.btn:hover{transform:translateY(-1px);box-shadow:0 6px 24px rgba(0,212,255,.2);text-decoration:none}
+  .btn-primary{background:var(--accent);color:#002030}.btn-outline{background:transparent;color:var(--text);border:1px solid var(--border)}.btn-outline:hover{border-color:var(--accent);color:var(--accent)}.btn-lg{padding:15px 32px;font-size:14px}
+  .hero{padding:84px 0 56px;text-align:center}.topic-badge{display:inline-flex;align-items:center;gap:7px;padding:6px 14px;background:rgba(167,139,250,.1);border:1px solid rgba(167,139,250,.35);color:var(--purple);border-radius:999px;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:24px}
+  h1{font-size:clamp(34px,5.8vw,56px);font-weight:800;line-height:1.08;margin-bottom:22px;letter-spacing:-.025em}h1 span{color:var(--accent)}h1 .sub-line{display:block;font-size:clamp(18px,2.5vw,23px);font-weight:500;color:var(--muted);margin-top:14px}
+  .hero-sub{color:var(--muted);font-size:clamp(16px,2vw,19px);max-width:780px;margin:0 auto 36px}.hero-sub strong{color:var(--text)}.hero-ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+  .price-note{margin-top:22px;color:var(--muted);font-size:13px}.price-note strong{color:var(--text)}
+  .stats-row{display:flex;justify-content:center;gap:56px;margin-top:48px;flex-wrap:wrap}.stat{text-align:center}.stat-num{font-size:28px;font-weight:800;color:var(--accent);line-height:1}.stat-lbl{font-size:10px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;margin-top:8px;font-weight:600}
+  section{padding:64px 0}section+section{border-top:1px solid var(--border)}
+  .section-label{display:inline-block;padding:4px 12px;background:rgba(0,212,255,.08);border:1px solid rgba(0,212,255,.25);color:var(--accent);border-radius:999px;font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;margin-bottom:14px}
+  h2{font-size:clamp(24px,3.8vw,36px);font-weight:800;margin-bottom:18px;letter-spacing:-.015em;line-height:1.2}.section-intro{color:var(--muted);font-size:17px;margin-bottom:44px;max-width:740px;line-height:1.65}.section-intro strong{color:var(--text)}
+  .cards{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}@media(max-width:960px){.cards{grid-template-columns:repeat(2,1fr)}}@media(max-width:620px){.cards{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:22px;transition:all .2s}.card:hover{border-color:var(--accent);transform:translateY(-3px)}.card-num{font-size:30px;font-weight:800;color:var(--purple);margin-bottom:8px}.card h3{font-size:14px;font-weight:700;margin-bottom:6px}.card p{font-size:12.5px;color:var(--muted);line-height:1.6}
+  .demo-box{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:32px;margin-top:32px;max-width:720px;margin-left:auto;margin-right:auto}
+  .demo-box .demo-header{display:flex;align-items:center;gap:10px;padding-bottom:14px;border-bottom:1px solid var(--border);margin-bottom:16px;flex-wrap:wrap}
+  .demo-box .demo-ticker{font-family:monospace;font-weight:800;color:var(--accent);font-size:18px}.demo-box .demo-quarter{color:var(--text);font-size:13px}.demo-box .demo-source-badge{font-size:9px;font-weight:700;letter-spacing:.1em;background:rgba(167,139,250,.18);color:#c4b5fd;padding:3px 8px;border-radius:3px;border:1px solid rgba(167,139,250,.35);text-transform:uppercase}
+  .demo-box .demo-bullet{display:flex;gap:10px;padding:8px 0;font-size:14px;line-height:1.65;color:var(--text)}.demo-box .demo-bullet::before{content:"▸";color:var(--purple);font-weight:800;flex-shrink:0}.demo-box .demo-bullet strong{color:var(--accent)}
+  .guide{max-width:860px}.guide h3{font-size:21px;font-weight:700;margin:40px 0 14px;letter-spacing:-.01em}.guide h3:first-child{margin-top:0}.guide p{font-size:16px;color:var(--muted);line-height:1.8;margin-bottom:18px}.guide ul,.guide ol{margin:14px 0 22px 24px}.guide li{font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:10px}.guide strong{color:var(--text);font-weight:600}.guide em{color:var(--accent);font-style:normal;font-weight:600}
+  .guide-callout{background:rgba(167,139,250,.05);border:1px solid rgba(167,139,250,.2);border-radius:8px;padding:20px 24px;margin:22px 0}.guide-callout h4{margin-top:0;color:var(--purple);font-size:14px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px}.guide-callout p{font-size:14px;color:var(--text);margin:0}
+  .faq{display:grid;gap:14px}.faq-item{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:22px 26px}.faq-item h3{font-size:16px;font-weight:700;margin-bottom:10px}.faq-item p{font-size:15px;color:var(--muted);line-height:1.7}
+  .explore-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}.explore-link{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:14px 18px;color:var(--text);font-size:13px;font-weight:500;display:flex;align-items:center;gap:8px;transition:all .2s}.explore-link:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}.explore-link .arrow{color:var(--accent)}
+  .footer-cta{padding:80px 0;text-align:center;border-bottom:1px solid var(--border);background:linear-gradient(180deg,var(--bg) 0%,rgba(0,212,255,.04) 100%)}.footer-cta h2{font-size:clamp(26px,4vw,40px);margin-bottom:16px}.footer-cta p{color:var(--muted);font-size:17px;margin-bottom:36px;max-width:580px;margin:0 auto 36px}
+  footer{padding:28px 0;text-align:center;color:var(--text-muted);font-size:13px}footer a{color:var(--text-muted);margin:0 14px}footer a:hover{color:var(--accent)}.footer-links{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin-top:10px}
+  @media(max-width:720px){nav{padding:16px 18px}.hero{padding:60px 0 44px}.hero-ctas{flex-direction:column;align-items:center}.btn-lg{width:100%;max-width:320px}section{padding:56px 0}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo"><div class="nav-logo-icon"></div><div><div class="nav-logo-text">Trading <span>News</span> Terminal</div><div class="nav-logo-sub">🇧🇷 Balanço IA</div></div></a>
+  <a href="https://app.tradingnewsterminal.com/?utm_source=seo&utm_campaign=balanco-petrobras-vale-ia&lang=pt" class="btn btn-primary">Testar Grátis →</a>
+</nav>
+
+<section class="hero">
+  <div class="container">
+    <div class="topic-badge">✦ Balanço com IA em PT-BR</div>
+    <h1>Balanço de PETR4 e VALE3 <span>em 5 Bullets</span><span class="sub-line">Resumo gerado por IA em PT-BR · ~400ms após o release · Cerebras + Groq</span></h1>
+    <p class="hero-sub">Quando uma blue chip da B3 publica seu release de resultados (PETR4, VALE3, ITUB4, BBAS3, e todas as outras), nosso sistema processa o documento e <strong>gera um resumo de 5 bullets em PT-BR cobrindo receita, EBITDA, operacional, dividendos e guidance</strong> em ~400ms. A leitura institucional de balanço em 30 segundos, em vez de 25 minutos.</p>
+    <div class="hero-ctas">
+      <a href="https://app.tradingnewsterminal.com/?utm_source=seo&utm_campaign=balanco-petrobras-vale-ia&utm_content=hero&lang=pt" class="btn btn-primary btn-lg">Testar Grátis</a>
+      <a href="#exemplo" class="btn btn-outline btn-lg">Ver Exemplo</a>
+    </div>
+    <p class="price-note">Feature Pro — plano $44/mês ou $33/mês anual · Basic vê o release no feed (grátis) sem o resumo IA</p>
+    <div class="stats-row">
+      <div class="stat"><div class="stat-num">5</div><div class="stat-lbl">Bullets por resumo</div></div>
+      <div class="stat"><div class="stat-num">~400ms</div><div class="stat-lbl">Latência de geração</div></div>
+      <div class="stat"><div class="stat-num">∞</div><div class="stat-lbl">Cobertura B3 + ADRs</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="exemplo">
+  <div class="container">
+    <div class="section-label">Exemplo Real</div>
+    <h2>Como aparece um resumo de PETR4</h2>
+    <p class="section-intro">Exemplo representativo de um release trimestral de Petrobras. O sistema processa o release oficial via IPE da CVM e gera os 5 bullets em ~400ms.</p>
+
+    <div class="demo-box">
+      <div class="demo-header">
+        <span class="demo-ticker">PETR4</span>
+        <span class="demo-quarter">Resultado 1T26 — Release via IPE/CVM</span>
+        <span class="demo-source-badge">✦ Resumo IA PT-BR</span>
+      </div>
+      <div class="demo-bullet">Receita líquida <strong>R$ 132.4B (+8% YoY)</strong>; EBITDA ajustado R$ 62.1B (margem 47%); produção total <strong>2.78 Mboe/dia</strong> (+3% YoY)</div>
+      <div class="demo-bullet">Pré-sal continua sendo motor de crescimento: produção pré-sal <strong>+12% YoY</strong>, representando 79% da produção total da empresa</div>
+      <div class="demo-bullet">Dividendo trimestral <strong>R$ 0.72/ação</strong> (data-com 27/05, pagamento 18/06); dividend yield anualizado ~12%</div>
+      <div class="demo-bullet">CapEx do ano em US$ 16.8B (vs guidance US$ 18.0-21.0B); manutenção do plano de US$ 102B para 2027-2031</div>
+      <div class="demo-bullet">Sentimento: <strong>Bullish</strong> — beat em produção, dividendo sustentado, capex disciplinado; principal risco continua sendo política de preços de combustíveis</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-label">A Estrutura</div>
+    <h2>Os 5 bullets cobrem o que importa</h2>
+    <p class="section-intro">Cada release de balanço de blue chip brasileira gira em torno de 5 perguntas. Nosso prompt força o LLM a responder cada uma explicitamente.</p>
+    <div class="cards">
+      <div class="card"><div class="card-num">1</div><h3>Receita & EBITDA</h3><p>Crescimento YoY, margens, performance vs guidance. Os números top-line que movem preço imediatamente.</p></div>
+      <div class="card"><div class="card-num">2</div><h3>Operacional</h3><p>Produção (boe/dia para PETR4, Mt para VALE3), volumes vendidos, eficiência operacional. O input físico.</p></div>
+      <div class="card"><div class="card-num">3</div><h3>Dividendos</h3><p>Valor anunciado, data-com, pagamento, dividend yield anualizado. O retorno em caixa para o acionista.</p></div>
+      <div class="card"><div class="card-num">4</div><h3>CapEx & Guidance</h3><p>Investimento do trimestre vs guidance anual. Mudança de plano de investimento de longo prazo (5 anos).</p></div>
+      <div class="card"><div class="card-num">5</div><h3>Sentimento + Risco</h3><p>Bullish/Neutral/Bearish com uma frase de justificativa + principal risco material identificado pela gestão.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-label">O Guia</div>
+    <h2>Como o resumo de IA muda o workflow de operação de balanços brasileiros</h2>
+    <p class="section-intro">A B3 tem ~89 empresas no Ibov e dezenas de mid-caps relevantes. Acompanhar todos os balanços trimestrais ao vivo é impossível. O resumo de IA cria escala de cobertura sem perda de qualidade.</p>
+    <div class="guide">
+
+      <h3>Padrão 1: O dia de balanço</h3>
+      <p>PETR4 publica resultados trimestrais geralmente entre 18:00 e 19:00 (horário de Brasília), num dia entre quarta e quinta da semana de reporte. O fluxo padrão:</p>
+      <ol>
+        <li><strong>18:30:</strong> release no IPE da CVM/B3. Feed PETR4 mostra como tag "Balanço".</li>
+        <li><strong>+5 segundos:</strong> nosso sistema fetch o release.</li>
+        <li><strong>+400 milissegundos:</strong> LLM gera os 5 bullets. Aparece no app.</li>
+        <li><strong>+5 segundos (opcional):</strong> TTS lê o resumo em voz neural PT-BR via squawk (Pro).</li>
+        <li><strong>+30 minutos:</strong> teleconferência da empresa com analistas começa. ADR no NYSE (PBR) reage durante after-hours dos EUA.</li>
+        <li><strong>Próximo dia:</strong> abertura à vista no Ibov reflete a digestão do balanço + ADR.</li>
+      </ol>
+      <p>O resumo de IA te dá os 5 pontos críticos antes da maior parte do mercado terminar de ler o release. Edge real para quem opera o move overnight via ADR ou o gap do dia seguinte.</p>
+
+      <h3>Padrão 2: Cobertura de portfolio</h3>
+      <p>Se você acompanha 15-30 empresas no Ibov, atender ao vivo cada release de balanço é impossível. O resumo automático em PT-BR transforma a economia de tempo em escala:</p>
+      <ul>
+        <li><strong>Sem resumo IA:</strong> 25 minutos por release × 15 empresas = 6h15min por temporada</li>
+        <li><strong>Com resumo IA:</strong> 30 segundos por release × 15 empresas = 7.5 minutos por temporada</li>
+      </ul>
+      <p>Multiplicado por 4 temporadas/ano: 25 horas economizadas por ano só em leitura de balanço.</p>
+
+      <h3>Padrão 3: Comparação histórica</h3>
+      <p>Ler o resumo do trimestre atual te diz o que aconteceu. Ler os últimos 4 trimestres em sequência te diz a <em>direção</em>. A gestão raised guidance 4 trimestres consecutivos? O CapEx vs guidance está consistentemente sub ou over? A política de dividendos está estável ou mudou?</p>
+      <p>Como os resumos ficam em cache, você pode clicar trimestre anterior, anterior, anterior em sequência e ler 4 trimestres de evolução em 2 minutos.</p>
+
+      <div class="guide-callout">
+        <h4>Como usar no TNT</h4>
+        <p>Aba <strong>Empresas</strong> no menu lateral. Clique em qualquer ticker (PETR4, VALE3, ITUB4, etc.). No modal de detalhes da empresa, role até "✦ Resumo de Balanço com IA" — você vê os últimos 4 trimestres listados. Clique em qualquer trimestre. Os 5 bullets renderizam em ~400ms após o fetch. Visualizações repetidas são instantâneas via cache.</p>
+      </div>
+
+      <h3>Como o LLM é grounded em fatos</h3>
+      <p>Três safeguards garantem alta precisão dos números:</p>
+      <ul>
+        <li><strong>O LLM tem acesso ao release completo</strong> — não está "alucinando" — está extraindo e parafraseando do texto fonte.</li>
+        <li><strong>Prompt explícito:</strong> "Cite apenas números que aparecem no documento fonte. Se não estiverem presentes, escreva 'não divulgado'."</li>
+        <li><strong>Validação de unidades:</strong> R$ vs US$, Mt vs Mboe, % vs bp. O prompt força explicitamente a unidade correta.</li>
+      </ul>
+      <p>O resultado: precisão alta para números fatuais. Interpretação de sentimento tem mais variância porque é síntese — leia o sentimento como first-pass, depois clique no link para o release original quando o trade depender disso.</p>
+
+      <h3>Por que Cerebras + Groq</h3>
+      <p>Dois LLMs em pipeline com fallback automático:</p>
+      <ul>
+        <li><strong>Cerebras (primário):</strong> latência 100-300ms. Modelo Llama 3.1-70B otimizado para inferência rápida.</li>
+        <li><strong>Groq (fallback):</strong> latência 200-500ms. Backup se Cerebras estiver em manutenção ou rate-limited.</li>
+      </ul>
+      <p>O usuário nunca vê uma falha — se Cerebras falha, Groq assume. Latência média do pipeline completo: ~400ms.</p>
+
+      <h3>E para AAPL, NVDA, TSLA?</h3>
+      <p>Funciona igual para empresas US-listed. Para mega-caps usamos Alpha Vantage transcript (transcrição completa da call). Para o resto, fallback para 8-K Item 2.02 da SEC. Mesma estrutura de 5 bullets, mesma latência. Detalhes em <a href="/ai-earnings-call-summary">/ai-earnings-call-summary</a>.</p>
+
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-label">FAQ</div>
+    <h2>Dúvidas comuns</h2>
+    <div class="faq">
+      <div class="faq-item"><h3>O que é o balanço com IA em PT-BR?</h3><p>Resumo de 5 bullets em PT-BR gerado por IA a partir do release oficial via IPE da CVM/B3. Cobre receita líquida, EBITDA, produção/operacional, dividendos e guidance.</p></div>
+      <div class="faq-item"><h3>Quais empresas têm cobertura?</h3><p>Todas que publicam release via IPE da CVM/B3 — efetivamente todas listadas. Foco no Ibovespa: PETR4, VALE3, ITUB4, BBAS3, BBDC4, MGLU3, WEGE3, etc. ADRs no NYSE (PBR, VALE, ITUB) também.</p></div>
+      <div class="faq-item"><h3>Como é gerado o resumo?</h3><p>Cerebras (primário) + Groq (fallback). 200-600ms de latência típica. Caching agressivo: mesmo release = mesmo resumo, servido instantaneamente.</p></div>
+      <div class="faq-item"><h3>Quão precisos são os números?</h3><p>Alta precisão para números fatuais (receita, EBITDA, produção, dividendo) — ancorados no release. Sentimento tem variância — use como first-pass.</p></div>
+      <div class="faq-item"><h3>Quão rápido aparece?</h3><p>~30 segundos do release oficial à leitura. Squawk TTS PT-BR ~5s depois para Pro.</p></div>
+      <div class="faq-item"><h3>É grátis?</h3><p>Feature Pro — $44/mês ou $33/mês anual. Basic vê o release no feed sem o resumo IA.</p></div>
+      <div class="faq-item"><h3>Funciona para ADRs PBR e VALE?</h3><p>Sim. Processamos 8-K Item 2.02 da SEC + Form 6-K. Mesma estrutura de 5 bullets em PT-BR.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-label">Relacionado</div>
+    <h2>Mais cobertura Brasil</h2>
+    <div class="explore-grid">
+      <a href="/petrobras-noticias-tempo-real" class="explore-link"><span class="arrow">→</span> Petrobras PETR4 News</a>
+      <a href="/vale-noticias-tempo-real" class="explore-link"><span class="arrow">→</span> Vale VALE3 News</a>
+      <a href="/ibovespa-noticias-ao-vivo" class="explore-link"><span class="arrow">→</span> Ibovespa ao Vivo</a>
+      <a href="/dolar-real-noticias" class="explore-link"><span class="arrow">→</span> Dólar/Real Notícias</a>
+      <a href="/copom-decisao-selic-alertas" class="explore-link"><span class="arrow">→</span> Alerta Copom</a>
+      <a href="/copom-calendario-2026" class="explore-link"><span class="arrow">→</span> Calendário Copom 2026</a>
+      <a href="/squawk-em-portugues" class="explore-link"><span class="arrow">→</span> Squawk em Português</a>
+      <a href="/br" class="explore-link"><span class="arrow">→</span> Edição Brasil</a>
+      <a href="/ai-earnings-call-summary" class="explore-link"><span class="arrow">→</span> AI Earnings (US)</a>
+      <a href="/earnings-calendar" class="explore-link"><span class="arrow">→</span> Earnings Calendar</a>
+      <a href="/sec-edgar-live-alerts" class="explore-link"><span class="arrow">→</span> SEC EDGAR Alerts</a>
+      <a href="/us" class="explore-link"><span class="arrow">→</span> US Edition</a>
+    </div>
+  </div>
+</section>
+
+<section class="footer-cta">
+  <div class="container">
+    <h2>Próximo balanço já tem resumo IA esperando</h2>
+    <p>Abra o app, vá em Empresas, clique em PETR4 ou VALE3. Resumo dos últimos trimestres em ~400ms cada.</p>
+    <div class="hero-ctas">
+      <a href="https://app.tradingnewsterminal.com/?utm_source=seo&utm_campaign=balanco-petrobras-vale-ia&utm_content=footer&lang=pt" class="btn btn-primary btn-lg">Abrir Trading News Terminal →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div>© Trading News Terminal — Resumo de balanço de blue chips brasileiras em 5 bullets PT-BR via IA</div>
+    <div class="footer-links">
+      <a href="/">Site Principal</a><a href="/br">🇧🇷 Edição Brasil</a><a href="/us">🇺🇸 US Edition</a><a href="/terms">Termos</a><a href="/privacy">Privacidade</a><a href="/faq">FAQ</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
