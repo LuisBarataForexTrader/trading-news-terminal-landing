@@ -8,6 +8,16 @@
   ],
   "redirects": [
     {
+      "source": "/telegram",
+      "destination": "https://app.tradingnewsterminal.com/telegram",
+      "permanent": false
+    },
+    {
+      "source": "/telegram.html",
+      "destination": "https://app.tradingnewsterminal.com/telegram",
+      "permanent": false
+    },
+    {
       "source": "/login.html",
       "destination": "/login",
       "permanent": true
