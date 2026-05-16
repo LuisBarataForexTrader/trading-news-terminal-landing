@@ -500,8 +500,15 @@ section { padding:100px 24px; }
 .bill-save{background:rgba(16,185,129,0.15);border:1px solid var(--low-border);color:var(--low);font-size:9px;font-weight:700;letter-spacing:0.12em;padding:2px 7px;border-radius:2px;}
 
 /* ── PRICING ── */
-.pricing-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:56px;max-width:900px;margin-left:auto;margin-right:auto;border:1px solid var(--border2);border-radius:6px;overflow:hidden;}
+.pricing-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;margin-top:56px;max-width:1180px;margin-left:auto;margin-right:auto;border:1px solid var(--border2);border-radius:6px;overflow:hidden;}
+@media(max-width:1024px){.pricing-grid{grid-template-columns:1fr 1fr;}}
 @media(max-width:768px){.pricing-grid{grid-template-columns:1fr;}}
+.plan-card-tgpremium{background:linear-gradient(180deg,rgba(0,212,255,0.04),transparent 60%);border-left:1px solid var(--border2);position:relative;}
+.plan-badge-tgpremium{display:inline-block;font-size:9px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:#000;background:var(--accent);padding:6px 12px;border-radius:2px;margin-bottom:18px;}
+.plan-name-tgpremium{color:var(--accent);}
+.plan-price-tgpremium{color:var(--accent);}
+.plan-btn-tgpremium{background:linear-gradient(135deg,var(--accent),#a78bfa);color:#000;border:none;}
+.plan-btn-tgpremium:hover{transform:translateY(-1px);box-shadow:0 8px 24px rgba(0,212,255,0.25);}
 .plan-card{background:var(--bg3);padding:44px 40px;position:relative;display:flex;flex-direction:column;}
 .plan-card-basic{border-right:1px solid var(--border2);}
 .plan-card-pro{background:linear-gradient(160deg,#0f1420 0%,#110d1e 100%);border-left:1px solid var(--pro-border);}
@@ -1311,7 +1318,7 @@ footer { background:var(--bg2); border-top:1px solid var(--border); padding:64px
   <div class="container">
     <div class="section-eyebrow" data-i18n="pricing.eyebrow">Plans &amp; Pricing</div>
     <h2 class="section-title" id="pricing-heading" data-i18n="pricing.h2">Start free. Upgrade when you're ready.</h2>
-    <p class="section-sub" data-i18n="pricing.sub">Basic is free forever. Pro is €40/month — professional-grade market intelligence at a retail price.</p>
+    <p class="section-sub" data-i18n="pricing.sub">Basic is free forever. Pro is €40/month — full terminal access. Telegram Premium is a standalone €19/month add-on for real-time alerts on your phone.</p>
 
     <div class="billing-toggle" role="group" aria-label="Billing period">
       <button class="bill-btn bill-active" id="bill-monthly" onclick="setBilling('monthly')" data-i18n="pricing.monthly">Monthly</button>
@@ -1365,7 +1372,6 @@ footer { background:var(--bg2); border-top:1px solid var(--border); padding:64px
           <li class="pf-yes pf-pro-item" data-i18n-html="ppf.centralbanks"><strong>Central Banks Tracker</strong> — Fed, ECB, BOE, BOJ…</li>
           <li class="pf-yes pf-pro-item" data-i18n-html="ppf.sentiment"><strong>Market Sentiment</strong> — risk-on / risk-off</li>
           <li class="pf-yes pf-pro-item" data-i18n-html="ppf.squawk"><strong>Live Squawk</strong> — hands-free voice alerts</li>
-          <li class="pf-yes pf-pro-item" data-i18n-html="ppf.telegram"><strong>Telegram Alerts</strong> — HIGH impact on mobile</li>
           <li class="pf-yes pf-pro-item" data-i18n-html="ppf.tv"><strong>Live Financial TV</strong> — 7 channels</li>
           <li class="pf-yes pf-pro-item" data-i18n-html="ppf.screener"><strong>Market Screener</strong> — Forex, Stocks, Crypto, Indices…</li>
           <li class="pf-yes pf-pro-item" data-i18n-html="ppf.ai"><strong>✦ AI News Analysis</strong> — full article · asset impact</li>
@@ -1379,6 +1385,30 @@ footer { background:var(--bg2); border-top:1px solid var(--border); padding:64px
         <a href="/login?plan=pro" class="plan-btn plan-btn-pro" id="pro-cta" data-i18n="plan.pro_btn">Get Pro Access →</a>
         <div style="font-size:12px;color:rgba(255,255,255,0.5);margin-top:8px;text-align:center" data-i18n="pricing.trial_note">€40/month + VAT · Cancel anytime</div>
         <a href="/login?plan=trial" style="display:block;text-align:center;font-size:12px;color:var(--accent);margin-top:8px;text-decoration:underline;opacity:0.7" data-i18n="pricing.subscribe_now">Or try free for 7 days →</a>
+      </div>
+
+      <!-- TELEGRAM PREMIUM (standalone €19/mo SKU — separate from TNT Pro) -->
+      <div class="plan-card plan-card-tgpremium" itemscope itemtype="https://schema.org/Offer">
+        <div class="plan-badge-tgpremium" data-i18n="plan.tgp_badge">📲 Standalone Add-on</div>
+        <div class="plan-name plan-name-tgpremium" itemprop="name">Telegram Premium</div>
+        <div class="plan-price plan-price-tgpremium">€<span itemprop="price">19</span></div>
+        <div class="plan-price-sub" data-i18n="plan.per_month">/month</div>
+        <div class="plan-annual-note" data-i18n="plan.tgp_note">Cancel anytime · 1-click via Stripe</div>
+        <div class="plan-vat-note" data-i18n="plan.tgp_vat">Local taxes calculated at checkout</div>
+        <div class="plan-divider"></div>
+        <p class="plan-desc" data-i18n="plan.tgp_desc">Real-time market headlines on your phone. Stand-alone product — works without TNT Pro. Sub-second delivery on every central bank decision and macro release.</p>
+        <ul class="plan-features" aria-label="Telegram Premium features">
+          <li class="pf-yes pf-pro-item" data-i18n-html="tgpf.subsec"><strong>Sub-second delivery</strong> on FOMC, ECB, BoE, BoJ, RBA, Copom, EIA</li>
+          <li class="pf-yes pf-pro-item" data-i18n="tgpf.macro">NFP · CPI · macro releases included</li>
+          <li class="pf-yes pf-pro-item" data-i18n-html="tgpf.zero"><strong>Zero ads</strong> · zero delay · zero filler</li>
+          <li class="pf-yes pf-pro-item" data-i18n="tgpf.watchlist">Personal watchlist — only your assets</li>
+          <li class="pf-yes pf-pro-item" data-i18n-html="tgpf.unlim"><strong>Unlimited alerts</strong> — no daily cap</li>
+          <li class="pf-yes pf-pro-item" data-i18n="tgpf.direct">Direct line to the team</li>
+          <li class="pf-no" data-i18n="tgpf.no_terminal">Does not include terminal access</li>
+        </ul>
+        <a href="https://app.tradingnewsterminal.com/telegram" class="plan-btn plan-btn-tgpremium" data-i18n="plan.tgp_btn">⚡ Subscribe — €19/mo</a>
+        <div style="font-size:12px;color:rgba(255,255,255,0.5);margin-top:8px;text-align:center" data-i18n="plan.tgp_foot">Separate from TNT Pro · most pros use both</div>
+        <a href="https://t.me/tradingnewsterminal" target="_blank" rel="noopener" style="display:block;text-align:center;font-size:12px;color:var(--accent);margin-top:8px;text-decoration:underline;opacity:0.7" data-i18n="plan.tgp_free">Or join the free channel (30-min delay) →</a>
       </div>
     </div>
   </div>
