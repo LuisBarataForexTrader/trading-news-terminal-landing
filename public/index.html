@@ -442,6 +442,7 @@ section { padding:100px 24px; }
 .feature-tag { display:inline-block; margin-top:14px; font-size:9px; font-weight:700; letter-spacing:0.18em; text-transform:uppercase; padding:3px 9px; border-radius:2px; }
 .tag-free { background:rgba(16,185,129,0.1); border:1px solid var(--low-border); color:var(--low); }
 .tag-pro { background:rgba(167,139,250,0.1); border:1px solid rgba(167,139,250,0.25); color:#a78bfa; }
+.tag-tgp { background:rgba(0,212,255,0.1); border:1px solid rgba(0,212,255,0.3); color:var(--accent); }
 
 /* ── CHARTS SHOWCASE ── */
 .charts-section { background:var(--bg2); }
@@ -1125,8 +1126,8 @@ footer { background:var(--bg2); border-top:1px solid var(--border); padding:64px
       <div class="feature-card" role="listitem">
         <div class="feature-icon" aria-hidden="true" style="background:rgba(0,212,255,0.08);border-color:rgba(0,212,255,0.25);">📲</div>
         <h3 class="feature-title" data-i18n="fc15.title">Telegram Mobile Alerts</h3>
-        <p class="feature-desc" data-i18n="fc15.desc">Get instant HIGH impact news alerts directly on your phone via Telegram — even when the terminal is closed. Pro users receive alerts in real-time with a choice of up to 100 per day. Basic users get the same alerts with a short delay. Never miss a market-moving headline again.</p>
-        <span class="feature-tag tag-pro" data-i18n="tag.pro_only">Pro Only</span>
+        <p class="feature-desc" data-i18n="fc15.desc">Every HIGH impact headline pushed to your phone via Telegram. Free public channel delivers all news with a 30-minute delay and broker-partner ads. Telegram Premium (€19/mo) delivers sub-second, ad-free, with optional watchlist filtering and unlimited daily alerts. Standalone product, works without TNT Pro.</p>
+        <span class="feature-tag tag-tgp" data-i18n="tag.tgp_standalone">Standalone €19/mo</span>
       </div>
     </div>
   </div>
@@ -2066,7 +2067,8 @@ const _LS = {
     'fc14.title':'AI News Analysis',
     'fc14.desc':'One click on any headline triggers a full AI analysis: reads the complete article, identifies which assets are affected (bullish / bearish / neutral), rates the confidence level and flags key price levels to watch. Built for speed — results in under 5 seconds.',
     'fc15.title':'Telegram Mobile Alerts',
-    'fc15.desc':'Get instant HIGH impact news alerts directly on your phone via Telegram — even when the terminal is closed. Pro users receive alerts in real-time. Basic users get the same alerts with a short delay. Never miss a market-moving headline again.',
+    'fc15.desc':'Every HIGH impact headline pushed to your phone via Telegram. Free public channel delivers all news with a 30-minute delay and broker-partner ads. Telegram Premium (€19/mo) delivers sub-second, ad-free, with optional watchlist filtering and unlimited daily alerts. Standalone product, works without TNT Pro.',
+    'tag.tgp_standalone':'Standalone €19/mo',
     'ai.eyebrow':'AI News Analysis',
     'ai.h2':'Reads the article.<br>Tells you what moves.',
     'ai.sub':'Click ✦ AI on any headline and get a full structured analysis in under 5 seconds — market impact per asset, confidence rating and key price levels. No more guessing which pair to watch.',
@@ -2297,7 +2299,8 @@ const _LS = {
     'fc14.title':'Análise AI de Notícias',
     'fc14.desc':'Um clique em qualquer notícia desencadeia uma análise completa por IA: lê o artigo completo, identifica quais os ativos afetados (bullish / bearish / neutro), avalia o nível de confiança e assinala os níveis de preço a observar. Feito para ser rápido — resultados em menos de 5 segundos.',
     'fc15.title':'Alertas Telegram no Telemóvel',
-    'fc15.desc':'Recebe alertas de notícias de impacto ALTO diretamente no teu telemóvel via Telegram — mesmo quando o terminal está fechado. Utilizadores Pro recebem alertas em tempo real. Utilizadores Basic recebem os mesmos alertas com um pequeno atraso. Nunca percas uma notícia que move os mercados.',
+    'fc15.desc':'Cada manchete HIGH impact enviada para o telemóvel via Telegram. O canal grátis público entrega todas as notícias com 30 min de atraso e anúncios de parceiros brokers. O Telegram Premium (€19/mês) entrega sub-segundo, sem anúncios, com filtro opcional por watchlist e alertas diários ilimitados. Produto independente, funciona sem TNT Pro.',
+    'tag.tgp_standalone':'Independente €19/mês',
     'ai.eyebrow':'Análise AI de Notícias',
     'ai.h2':'Lê o artigo.<br>Diz-te o que move.',
     'ai.sub':'Clica ✦ AI em qualquer notícia e obtém uma análise estruturada completa em menos de 5 segundos — impacto por ativo, nível de confiança e níveis de preço a observar.',
@@ -2523,7 +2526,8 @@ const _LS = {
     'sfc3.desc':'Filtra por sector, capitalización, señal, RSI, P/E, beta y más. Las acciones tienen 4 vistas: General, Rendimiento, Valoración y Dividendos. Todas las columnas son ordenables.',
     'fc14.title':'Análisis AI de Noticias',
     'fc15.title':'Alertas Telegram en Móvil',
-    'fc15.desc':'Recibe alertas de noticias de alto impacto directamente en tu móvil vía Telegram — incluso con el terminal cerrado. Los usuarios Pro reciben alertas en tiempo real. Los usuarios Basic reciben las mismas alertas con un breve retraso. Nunca pierdas una noticia que mueva los mercados.',
+    'fc15.desc':'Cada titular HIGH impact enviado a tu móvil vía Telegram. El canal gratis público entrega todas las noticias con 30 min de retraso y anuncios de socios brokers. Telegram Premium (€19/mes) entrega sub-segundo, sin anuncios, con filtro opcional por watchlist y alertas diarias ilimitadas. Producto independiente, funciona sin TNT Pro.',
+    'tag.tgp_standalone':'Independiente €19/mes',
     'fc14.desc':'Un clic en cualquier titular activa un análisis completo de IA: lee el artículo completo, identifica los activos afectados (alcista / bajista / neutral), evalúa el nivel de confianza y señala los niveles de precio a vigilar. Resultados en menos de 5 segundos.',
     'ai.eyebrow':'Análisis AI de Noticias',
     'ai.h2':'Lee el artículo.<br>Te dice qué mueve.',
@@ -2743,7 +2747,8 @@ const _LS = {
     'sfc3.desc':'Filtrez par secteur, capitalisation, signal, RSI, P/E, beta et plus. Les actions offrent 4 vues : Aperçu, Performance, Valorisation et Dividendes. Chaque colonne est triable.',
     'fc14.title':'Analyse AI des Actualités',
     'fc15.title':'Alertes Telegram sur Mobile',
-    'fc15.desc':'Recevez des alertes d\'actualités à fort impact directement sur votre téléphone via Telegram — même lorsque le terminal est fermé. Les utilisateurs Pro reçoivent les alertes en temps réel. Les utilisateurs Basic reçoivent les mêmes alertes avec un léger délai. Ne manquez jamais une actualité qui fait bouger les marchés.',
+    'fc15.desc':'Chaque titre HIGH impact envoyé sur votre mobile via Telegram. Le canal gratuit public livre toutes les actualités avec 30 min de délai et des publicités de partenaires brokers. Telegram Premium (19€/mois) livre sub-seconde, sans pub, avec filtre watchlist optionnel et alertes quotidiennes illimitées. Produit autonome, fonctionne sans TNT Pro.',
+    'tag.tgp_standalone':'Autonome 19€/mois',
     'fc14.desc':'Un clic sur n\'importe quel titre déclenche une analyse IA complète : lit l\'article complet, identifie les actifs affectés (haussier / baissier / neutre), évalue le niveau de confiance et signale les niveaux de prix à surveiller. Résultats en moins de 5 secondes.',
     'ai.eyebrow':'Analyse AI des Actualités',
     'ai.h2':'Lit l\'article.<br>Vous dit ce qui bouge.',
@@ -2962,7 +2967,8 @@ const _LS = {
     'sfc3.desc':'Filtere nach Sektor, Marktkapitalisierung, Signal, RSI, KGV, Beta und mehr. Aktien bieten 4 Ansichten: Übersicht, Performance, Bewertung und Dividenden. Alle Spalten sortierbar.',
     'fc14.title':'KI-Nachrichtenanalyse',
     'fc15.title':'Telegram-Mobilbenachrichtigungen',
-    'fc15.desc':'Erhalten Sie sofortige Nachrichten mit HOHER Auswirkung direkt auf Ihr Handy über Telegram — auch wenn das Terminal geschlossen ist. Pro-Nutzer erhalten Benachrichtigungen in Echtzeit. Basic-Nutzer erhalten dieselben Benachrichtigungen mit kurzer Verzögerung. Verpassen Sie nie wieder eine marktbewegende Nachricht.',
+    'fc15.desc':'Jede HIGH-Impact-Schlagzeile auf dein Handy über Telegram. Der kostenlose öffentliche Kanal liefert alle News mit 30 Min. Verzögerung und Werbung von Broker-Partnern. Telegram Premium (19€/Monat) liefert Sub-Sekunde, werbefrei, mit optionalem Watchlist-Filter und unbegrenzten Tages-Alerts. Eigenständiges Produkt, funktioniert ohne TNT Pro.',
+    'tag.tgp_standalone':'Eigenständig 19€/Mon',
     'fc14.desc':'Ein Klick auf eine Schlagzeile startet eine vollständige KI-Analyse: liest den kompletten Artikel, identifiziert betroffene Assets (bullish / bearish / neutral), bewertet das Konfidenzniveau und markiert wichtige Preisniveaus. Ergebnisse in unter 5 Sekunden.',
     'ai.eyebrow':'KI-Nachrichtenanalyse',
     'ai.h2':'Liest den Artikel.<br>Sagt was sich bewegt.',
@@ -3181,7 +3187,8 @@ const _LS = {
     'sfc3.desc':'Filtra per settore, capitalizzazione, segnale, RSI, P/E, beta e altro. Le azioni offrono 4 viste: Panoramica, Performance, Valutazione e Dividendi. Ogni colonna è ordinabile.',
     'fc14.title':'Analisi AI delle Notizie',
     'fc15.title':'Avvisi Telegram su Mobile',
-    'fc15.desc':'Ricevi avvisi di notizie ad ALTO impatto direttamente sul tuo telefono via Telegram — anche quando il terminale è chiuso. Gli utenti Pro ricevono avvisi in tempo reale. Gli utenti Basic ricevono gli stessi avvisi con un breve ritardo. Non perdere mai una notizia che muove i mercati.',
+    'fc15.desc':'Ogni titolo HIGH impact inviato al tuo cellulare via Telegram. Il canale gratuito pubblico consegna tutte le notizie con 30 min di ritardo e pubblicità di partner broker. Telegram Premium (19€/mese) consegna sub-secondo, senza pubblicità, con filtro watchlist opzionale e avvisi giornalieri illimitati. Prodotto autonomo, funziona senza TNT Pro.',
+    'tag.tgp_standalone':'Autonomo 19€/mese',
     'fc14.desc':'Un clic su qualsiasi titolo avvia un\'analisi AI completa: legge l\'articolo completo, identifica gli asset interessati (rialzista / ribassista / neutro), valuta il livello di confidenza e segnala i livelli di prezzo chiave. Risultati in meno di 5 secondi.',
     'ai.eyebrow':'Analisi AI delle Notizie',
     'ai.h2':'Legge l\'articolo.<br>Ti dice cosa si muove.',
