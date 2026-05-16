@@ -533,11 +533,15 @@ section { padding:100px 24px; }
 .pf-no::before{content:'—';color:var(--border2);font-weight:400;flex-shrink:0;margin-top:1px;}
 .pf-no{color:var(--text-muted);}
 .pf-note{color:var(--text-muted);font-size:11px;}
-.plan-btn{display:block;text-align:center;padding:15px;font-size:12px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;border-radius:3px;transition:all .2s;margin-top:auto;}
+.plan-btn{display:block;text-align:center;padding:15px;font-size:12px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;border-radius:3px;transition:all .2s;}
 .plan-btn-free{background:transparent;border:1px solid var(--border2);color:var(--text-dim);}
 .plan-btn-free:hover{border-color:var(--accent);color:var(--accent);}
 .plan-btn-pro{background:linear-gradient(135deg,#7c3aed,var(--pro));color:#fff;border:none;box-shadow:0 4px 24px rgba(167,139,250,0.3);}
 .plan-btn-pro:hover{box-shadow:0 6px 32px rgba(167,139,250,0.5);transform:translateY(-1px);}
+.plan-foot{margin-top:auto;display:flex;flex-direction:column;gap:8px;}
+.plan-cta-note{font-size:12px;color:rgba(255,255,255,0.5);text-align:center;line-height:1.4;}
+.plan-cta-link{display:block;text-align:center;font-size:12px;color:var(--accent);text-decoration:underline;opacity:0.7;}
+.plan-cta-link:hover{opacity:1;}
 
 /* ── SCREENER TEASER ── */
 .screener-section{background:var(--bg);}
@@ -1332,26 +1336,22 @@ footer { background:var(--bg2); border-top:1px solid var(--border); padding:64px
         <div class="plan-name plan-name-basic" itemprop="name">Basic</div>
         <div class="plan-price plan-price-basic" itemprop="price" content="0">€0</div>
         <div class="plan-price-sub" data-i18n="plan.no_cc">No credit card required</div>
+        <div class="plan-vat-note" data-i18n="plan.basic_vat">Forever free, no commitment</div>
         <div class="plan-divider"></div>
-        <p class="plan-desc" data-i18n="plan.basic_desc">Essential market intelligence for traders getting started. Access the full terminal and stay informed on what moves the markets — at no cost, forever.</p>
+        <p class="plan-desc" data-i18n="plan.basic_desc">Essential market intelligence for traders getting started. Full terminal access at no cost, forever.</p>
         <ul class="plan-features" aria-label="Basic plan features">
-          <li class="pf-yes pf-basic" data-i18n-html="pf.news_delay">News feed <span class="pf-note">(delayed)</span></li>
+          <li class="pf-yes pf-basic" data-i18n-html="pf.news_delay">News feed <span class="pf-note">(15 min delay)</span></li>
           <li class="pf-yes pf-basic" data-i18n="pf.calendar">Economic calendar with live releases</li>
-          <li class="pf-no" data-i18n="pf.screener">Market screener</li>
           <li class="pf-yes pf-basic" data-i18n="pf.charts">TradingView charts</li>
-          <li class="pf-yes pf-basic" data-i18n="pf.watchlist">Asset watchlist &amp; smart search</li>
-          <li class="pf-yes pf-basic" data-i18n="pf.sound">Sound alerts</li>
-          <li class="pf-yes pf-basic" data-i18n="pf.multilingual">Multilingual</li>
-          <li class="pf-no" data-i18n="pf.realtime">Real-time zero-delay news</li>
-          <li class="pf-no" data-i18n="pf.macro">Macro &amp; bonds hub</li>
-          <li class="pf-no" data-i18n="pf.earnings">Earnings calendar</li>
-          <li class="pf-no" data-i18n="pf.centralbanks">Central banks tracker</li>
-          <li class="pf-no" data-i18n="pf.sentiment">Market sentiment analysis</li>
-          <li class="pf-no" data-i18n="pf.squawk">Live squawk</li>
-          <li class="pf-no" data-i18n="pf.tv">Live financial TV (7 channels)</li>
-          <li class="pf-no" data-i18n="pf.adfree">Ad-free experience</li>
+          <li class="pf-yes pf-basic" data-i18n="pf.watchlist">Asset watchlist and smart search</li>
+          <li class="pf-yes pf-basic" data-i18n="pf.sound">Sound alerts on impact news</li>
+          <li class="pf-yes pf-basic" data-i18n="pf.multilingual">Interface in 6 languages</li>
         </ul>
-        <a href="/signup" class="plan-btn plan-btn-free" data-i18n="plan.basic_btn">Get Started Free →</a>
+        <div class="plan-foot">
+          <a href="/signup" class="plan-btn plan-btn-free" data-i18n="plan.basic_btn">Get Started Free</a>
+          <div class="plan-cta-note" data-i18n="plan.basic_note">No card, no commitment</div>
+          <a href="#pricing" class="plan-cta-link" data-i18n="plan.basic_link">Or see what Pro adds</a>
+        </div>
       </div>
 
       <!-- PRO -->
@@ -1360,55 +1360,58 @@ footer { background:var(--bg2); border-top:1px solid var(--border); padding:64px
         <div class="plan-name plan-name-pro" itemprop="name">Pro</div>
         <div class="plan-price plan-price-pro">€<span id="pro-price" itemprop="price">40</span></div>
         <div class="plan-price-sub" id="pro-period" data-i18n="plan.per_month">/month</div>
-        <div class="plan-annual-note" id="pro-annual-note" data-i18n="plan.annual_note">3 months free · €360/year vs €480 monthly (save €120)</div>
-        <div class="plan-vat-note" data-i18n="plan.vat_note">excl. VAT where applicable · Billed in EUR</div>
+        <div class="plan-annual-note" id="pro-annual-note" data-i18n="plan.annual_note">3 months free, €360/year vs €480 monthly (save €120)</div>
+        <div class="plan-vat-note" data-i18n="plan.vat_note">VAT added at checkout where applicable · Billed in EUR</div>
         <div class="plan-divider plan-divider-pro"></div>
-        <p class="plan-desc" data-i18n="plan.pro_desc">Institutional-grade coverage with zero compromise. Every feature, every source, zero-delay real-time news — built for traders who can't afford to miss a move.</p>
+        <p class="plan-desc" data-i18n="plan.pro_desc">Institutional-grade coverage with zero compromise. Every feature, every source, zero-delay real-time news. Built for traders who can't afford to miss a move.</p>
         <ul class="plan-features" aria-label="Pro plan features">
           <li class="pf-yes pf-pro-item" data-i18n="ppf.everything">Everything in Basic</li>
           <li class="pf-yes pf-pro-item" data-i18n-html="ppf.realtime"><strong>Real-time</strong> zero-delay news feed</li>
-          <li class="pf-yes pf-pro-item" data-i18n-html="ppf.macro"><strong>Macro &amp; Bonds Hub</strong> — GDP, PMI, yields</li>
-          <li class="pf-yes pf-pro-item" data-i18n-html="ppf.earnings"><strong>Earnings Calendar</strong> — EPS beat/miss live</li>
-          <li class="pf-yes pf-pro-item" data-i18n-html="ppf.centralbanks"><strong>Central Banks Tracker</strong> — Fed, ECB, BOE, BOJ…</li>
-          <li class="pf-yes pf-pro-item" data-i18n-html="ppf.sentiment"><strong>Market Sentiment</strong> — risk-on / risk-off</li>
-          <li class="pf-yes pf-pro-item" data-i18n-html="ppf.squawk"><strong>Live Squawk</strong> — hands-free voice alerts</li>
-          <li class="pf-yes pf-pro-item" data-i18n-html="ppf.tv"><strong>Live Financial TV</strong> — 7 channels</li>
-          <li class="pf-yes pf-pro-item" data-i18n-html="ppf.screener"><strong>Market Screener</strong> — Forex, Stocks, Crypto, Indices…</li>
-          <li class="pf-yes pf-pro-item" data-i18n-html="ppf.ai"><strong>✦ AI News Analysis</strong> — full article · asset impact</li>
-          <li class="pf-yes pf-pro-item" data-i18n-html="ppf.hsearch"><strong>Historical News Search</strong> — by keyword, asset, date</li>
-          <li class="pf-yes pf-pro-item" data-i18n-html="ppf.insiders"><strong>Insider Trades</strong> — SEC Form 4 · CEO/CFO buys &amp; sells</li>
-          <li class="pf-yes pf-pro-item" data-i18n-html="ppf.playbook"><strong>✦ AI Daily Playbook</strong> — 3-5 trade setups every morning</li>
-          <li class="pf-yes pf-pro-item" data-i18n="ppf.sources">Comprehensive source coverage</li>
-          <li class="pf-yes pf-pro-item" data-i18n="ppf.adfree">100% ad-free · No upgrade prompts</li>
+          <li class="pf-yes pf-pro-item" data-i18n-html="ppf.macro"><strong>Macro and Bonds Hub</strong> with GDP, PMI and yield data</li>
+          <li class="pf-yes pf-pro-item" data-i18n-html="ppf.earnings"><strong>Earnings Calendar</strong> with live EPS beat/miss tracking</li>
+          <li class="pf-yes pf-pro-item" data-i18n-html="ppf.centralbanks"><strong>Central Banks Tracker</strong> (Fed, ECB, BoE, BoJ, BoC, RBA, RBNZ, SNB)</li>
+          <li class="pf-yes pf-pro-item" data-i18n-html="ppf.sentiment"><strong>Market Sentiment</strong> with risk-on / risk-off signal</li>
+          <li class="pf-yes pf-pro-item" data-i18n-html="ppf.squawk"><strong>Live Squawk</strong> for hands-free voice alerts</li>
+          <li class="pf-yes pf-pro-item" data-i18n-html="ppf.tv"><strong>Live Financial TV</strong> across 7 channels</li>
+          <li class="pf-yes pf-pro-item" data-i18n-html="ppf.screener"><strong>Market Screener</strong> (Forex, Stocks, Crypto, Indices, Commodities, Bonds)</li>
+          <li class="pf-yes pf-pro-item" data-i18n-html="ppf.ai"><strong>AI News Analysis</strong> with full-article impact summary</li>
+          <li class="pf-yes pf-pro-item" data-i18n-html="ppf.hsearch"><strong>Historical News Search</strong> by keyword, asset and date</li>
+          <li class="pf-yes pf-pro-item" data-i18n-html="ppf.insiders"><strong>Insider Trades</strong> from SEC Form 4 (CEO and CFO buys, sells)</li>
+          <li class="pf-yes pf-pro-item" data-i18n-html="ppf.playbook"><strong>AI Daily Playbook</strong> with 3 to 5 trade setups every morning</li>
+          <li class="pf-yes pf-pro-item" data-i18n="ppf.adfree">100% ad-free, no upgrade prompts</li>
           <li class="pf-yes pf-pro-item" data-i18n="ppf.support">Priority support</li>
         </ul>
-        <a href="/login?plan=pro" class="plan-btn plan-btn-pro" id="pro-cta" data-i18n="plan.pro_btn">Get Pro Access →</a>
-        <div style="font-size:12px;color:rgba(255,255,255,0.5);margin-top:8px;text-align:center" data-i18n="pricing.trial_note">€40/month + VAT · Cancel anytime</div>
-        <a href="/login?plan=trial" style="display:block;text-align:center;font-size:12px;color:var(--accent);margin-top:8px;text-decoration:underline;opacity:0.7" data-i18n="pricing.subscribe_now">Or try free for 7 days →</a>
+        <div class="plan-foot">
+          <a href="/login?plan=pro" class="plan-btn plan-btn-pro" id="pro-cta" data-i18n="plan.pro_btn">Get Pro Access</a>
+          <div class="plan-cta-note" data-i18n="pricing.trial_note">€40/month + VAT · Cancel anytime</div>
+          <a href="/login?plan=trial" class="plan-cta-link" data-i18n="pricing.subscribe_now">Or try free for 7 days</a>
+        </div>
       </div>
 
-      <!-- TELEGRAM PREMIUM (standalone €19/mo SKU — separate from TNT Pro) -->
+      <!-- TELEGRAM PREMIUM (standalone €19/mo SKU, separate from TNT Pro) -->
       <div class="plan-card plan-card-tgpremium" itemscope itemtype="https://schema.org/Offer">
         <div class="plan-badge-tgpremium" data-i18n="plan.tgp_badge">📲 Standalone Add-on</div>
         <div class="plan-name plan-name-tgpremium" itemprop="name">Telegram Premium</div>
         <div class="plan-price plan-price-tgpremium">€<span itemprop="price">19</span></div>
         <div class="plan-price-sub" data-i18n="plan.per_month">/month</div>
-        <div class="plan-annual-note" data-i18n="plan.tgp_note">Cancel anytime · 1-click via Stripe</div>
-        <div class="plan-vat-note" data-i18n="plan.tgp_vat">Local taxes calculated at checkout</div>
+        <div class="plan-annual-note" data-i18n="plan.tgp_note">Cancel anytime, 1-click via Stripe</div>
+        <div class="plan-vat-note" data-i18n="plan.vat_note">VAT added at checkout where applicable · Billed in EUR</div>
         <div class="plan-divider"></div>
-        <p class="plan-desc" data-i18n="plan.tgp_desc">Real-time market headlines on your phone. Stand-alone product — works without TNT Pro. Sub-second delivery on every central bank decision and macro release.</p>
+        <p class="plan-desc" data-i18n="plan.tgp_desc">Every real-time market headline pushed to your phone. Standalone product, works without TNT Pro. Sub-second delivery on central bank and macro releases.</p>
         <ul class="plan-features" aria-label="Telegram Premium features">
-          <li class="pf-yes pf-pro-item" data-i18n-html="tgpf.subsec"><strong>Sub-second delivery</strong> on FOMC, ECB, BoE, BoJ, RBA, Copom, EIA</li>
-          <li class="pf-yes pf-pro-item" data-i18n="tgpf.macro">NFP · CPI · macro releases included</li>
-          <li class="pf-yes pf-pro-item" data-i18n-html="tgpf.zero"><strong>Zero ads</strong> · zero delay · zero filler</li>
-          <li class="pf-yes pf-pro-item" data-i18n="tgpf.watchlist">Personal watchlist — only your assets</li>
-          <li class="pf-yes pf-pro-item" data-i18n-html="tgpf.unlim"><strong>Unlimited alerts</strong> — no daily cap</li>
+          <li class="pf-yes pf-pro-item" data-i18n-html="tgpf.all"><strong>Every HIGH-impact headline</strong> from 30+ sources, no filtering</li>
+          <li class="pf-yes pf-pro-item" data-i18n-html="tgpf.subsec"><strong>Sub-second delivery</strong> on FOMC, ECB, BoE, BoJ, RBA, Copom and EIA</li>
+          <li class="pf-yes pf-pro-item" data-i18n="tgpf.macro">NFP, CPI and macro release coverage</li>
+          <li class="pf-yes pf-pro-item" data-i18n-html="tgpf.zero"><strong>Zero ads, zero delay, zero filler</strong></li>
+          <li class="pf-yes pf-pro-item" data-i18n="tgpf.watchlist">Optional personal watchlist filter</li>
+          <li class="pf-yes pf-pro-item" data-i18n-html="tgpf.unlim"><strong>Unlimited alerts</strong> with no daily cap</li>
           <li class="pf-yes pf-pro-item" data-i18n="tgpf.direct">Direct line to the team</li>
-          <li class="pf-no" data-i18n="tgpf.no_terminal">Does not include terminal access</li>
         </ul>
-        <a href="https://app.tradingnewsterminal.com/telegram" class="plan-btn plan-btn-tgpremium" data-i18n="plan.tgp_btn">⚡ Subscribe — €19/mo</a>
-        <div style="font-size:12px;color:rgba(255,255,255,0.5);margin-top:8px;text-align:center" data-i18n="plan.tgp_foot">Separate from TNT Pro · most pros use both</div>
-        <a href="https://t.me/tradingnewsterminal" target="_blank" rel="noopener" style="display:block;text-align:center;font-size:12px;color:var(--accent);margin-top:8px;text-decoration:underline;opacity:0.7" data-i18n="plan.tgp_free">Or join the free channel (30-min delay) →</a>
+        <div class="plan-foot">
+          <a href="https://app.tradingnewsterminal.com/telegram" class="plan-btn plan-btn-tgpremium" data-i18n="plan.tgp_btn">Subscribe €19/mo</a>
+          <div class="plan-cta-note" data-i18n="plan.tgp_foot">Separate from TNT Pro, most pros use both</div>
+          <a href="https://t.me/tradingnewsterminal" target="_blank" rel="noopener" class="plan-cta-link" data-i18n="plan.tgp_free">Or join the free channel (30 min delay)</a>
+        </div>
       </div>
     </div>
   </div>
@@ -2009,49 +2012,46 @@ const _LS = {
     'pricing.sub':'Basic is free forever. Pro is €40/month — professional-grade market intelligence at a retail price.',
     'pricing.monthly':'Monthly','pricing.annual':'Annual','pricing.save':'3 months free',
     'plan.basic_badge':'Free Forever','plan.no_cc':'No credit card required',
-    'plan.basic_desc':'Essential market intelligence for traders getting started. Access the full terminal and stay informed on what moves the markets — at no cost, forever.',
+    'plan.basic_desc':'Essential market intelligence for traders getting started. Full terminal access at no cost, forever.',
+    'plan.basic_vat':'Forever free, no commitment',
+    'plan.basic_note':'No card, no commitment',
+    'plan.basic_link':'Or see what Pro adds',
     'plan.pro_badge':'Most Powerful','plan.per_month':'/month',
-    'plan.annual_note':'3 months free · €360/year vs €480 monthly (save €120)',
-    'plan.vat_note':'excl. VAT where applicable · Billed in EUR',
-    'plan.pro_desc':"Institutional-grade coverage with zero compromise. Every feature, every source, zero-delay real-time news — built for traders who can't afford to miss a move.",
-    'plan.basic_btn':'Get Started Free →','plan.pro_btn':'Get Pro Access →',
-    'pf.news_delay':'News feed <span class="pf-note">(delayed)</span>',
-    'pf.calendar':'Economic calendar with live releases','pf.screener':'Market screener',
-    'pf.charts':'TradingView charts','pf.watchlist':'Asset watchlist & smart search',
-    'pf.sound':'Sound alerts','pf.multilingual':'Multilingual',
-    'pf.realtime':'Real-time zero-delay news','pf.macro':'Macro & bonds hub',
-    'pf.earnings':'Earnings calendar','pf.centralbanks':'Central banks tracker',
-    'pf.sentiment':'Market sentiment analysis','pf.squawk':'Live squawk',
-    'pf.tv':'Live financial TV (7 channels)','pf.adfree':'Ad-free experience',
+    'plan.annual_note':'3 months free, €360/year vs €480 monthly (save €120)',
+    'plan.vat_note':'VAT added at checkout where applicable · Billed in EUR',
+    'plan.pro_desc':"Institutional-grade coverage with zero compromise. Every feature, every source, zero-delay real-time news. Built for traders who can't afford to miss a move.",
+    'plan.basic_btn':'Get Started Free','plan.pro_btn':'Get Pro Access',
+    'pf.news_delay':'News feed <span class="pf-note">(15 min delay)</span>',
+    'pf.calendar':'Economic calendar with live releases',
+    'pf.charts':'TradingView charts','pf.watchlist':'Asset watchlist and smart search',
+    'pf.sound':'Sound alerts on impact news','pf.multilingual':'Interface in 6 languages',
     'ppf.everything':'Everything in Basic',
     'ppf.realtime':'<strong>Real-time</strong> zero-delay news feed',
-    'ppf.macro':'<strong>Macro & Bonds Hub</strong> — GDP, PMI, yields',
-    'ppf.earnings':'<strong>Earnings Calendar</strong> — EPS beat/miss live',
-    'ppf.centralbanks':'<strong>Central Banks Tracker</strong> — Fed, ECB, BOE, BOJ…',
-    'ppf.sentiment':'<strong>Market Sentiment</strong> — risk-on / risk-off',
-    'ppf.squawk':'<strong>Live Squawk</strong> — hands-free voice alerts',
-    'ppf.tv':'<strong>Live Financial TV</strong> — 7 channels',
-    'ppf.screener':'<strong>Market Screener</strong> — Forex, Stocks, Crypto, Indices…',
-    'ppf.ai':'<strong>✦ AI News Analysis</strong> — full article · asset impact',
-    'ppf.hsearch':'<strong>Historical News Search</strong> — by keyword, asset, date',
-    'ppf.insiders':'<strong>Insider Trades</strong> — SEC Form 4 · CEO/CFO buys &amp; sells',
-    'ppf.playbook':'<strong>✦ AI Daily Playbook</strong> — 3-5 trade setups every morning',
-    'ppf.sources':'Comprehensive source coverage',
-    'ppf.adfree':'100% ad-free · No upgrade prompts','ppf.support':'Priority support',
+    'ppf.macro':'<strong>Macro and Bonds Hub</strong> with GDP, PMI and yield data',
+    'ppf.earnings':'<strong>Earnings Calendar</strong> with live EPS beat/miss tracking',
+    'ppf.centralbanks':'<strong>Central Banks Tracker</strong> (Fed, ECB, BoE, BoJ, BoC, RBA, RBNZ, SNB)',
+    'ppf.sentiment':'<strong>Market Sentiment</strong> with risk-on / risk-off signal',
+    'ppf.squawk':'<strong>Live Squawk</strong> for hands-free voice alerts',
+    'ppf.tv':'<strong>Live Financial TV</strong> across 7 channels',
+    'ppf.screener':'<strong>Market Screener</strong> (Forex, Stocks, Crypto, Indices, Commodities, Bonds)',
+    'ppf.ai':'<strong>AI News Analysis</strong> with full-article impact summary',
+    'ppf.hsearch':'<strong>Historical News Search</strong> by keyword, asset and date',
+    'ppf.insiders':'<strong>Insider Trades</strong> from SEC Form 4 (CEO and CFO buys, sells)',
+    'ppf.playbook':'<strong>AI Daily Playbook</strong> with 3 to 5 trade setups every morning',
+    'ppf.adfree':'100% ad-free, no upgrade prompts','ppf.support':'Priority support',
     'plan.tgp_badge':'📲 Standalone Add-on',
-    'plan.tgp_note':'Cancel anytime · 1-click via Stripe',
-    'plan.tgp_vat':'Local taxes calculated at checkout',
-    'plan.tgp_desc':'Real-time market headlines on your phone. Stand-alone product — works without TNT Pro. Sub-second delivery on every central bank decision and macro release.',
-    'plan.tgp_btn':'⚡ Subscribe — €19/mo',
-    'plan.tgp_foot':'Separate from TNT Pro · most pros use both',
-    'plan.tgp_free':'Or join the free channel (30-min delay) →',
-    'tgpf.subsec':'<strong>Sub-second delivery</strong> on FOMC, ECB, BoE, BoJ, RBA, Copom, EIA',
-    'tgpf.macro':'NFP · CPI · macro releases included',
-    'tgpf.zero':'<strong>Zero ads</strong> · zero delay · zero filler',
-    'tgpf.watchlist':'Personal watchlist — only your assets',
-    'tgpf.unlim':'<strong>Unlimited alerts</strong> — no daily cap',
+    'plan.tgp_note':'Cancel anytime, 1-click via Stripe',
+    'plan.tgp_desc':'Every real-time market headline pushed to your phone. Standalone product, works without TNT Pro. Sub-second delivery on central bank and macro releases.',
+    'plan.tgp_btn':'Subscribe €19/mo',
+    'plan.tgp_foot':'Separate from TNT Pro, most pros use both',
+    'plan.tgp_free':'Or join the free channel (30 min delay)',
+    'tgpf.all':'<strong>Every HIGH-impact headline</strong> from 30+ sources, no filtering',
+    'tgpf.subsec':'<strong>Sub-second delivery</strong> on FOMC, ECB, BoE, BoJ, RBA, Copom and EIA',
+    'tgpf.macro':'NFP, CPI and macro release coverage',
+    'tgpf.zero':'<strong>Zero ads, zero delay, zero filler</strong>',
+    'tgpf.watchlist':'Optional personal watchlist filter',
+    'tgpf.unlim':'<strong>Unlimited alerts</strong> with no daily cap',
     'tgpf.direct':'Direct line to the team',
-    'tgpf.no_terminal':'Does not include terminal access',
     'sc.eyebrow':'Market Screener',
     'sc.h2':'Scan every market.<br>Spot the move first.',
     'sc.desc':'The built-in market screener lets you scan Forex, Stocks, Crypto, Indices, Commodities and Bonds in one place — ranked by news activity, economic event proximity and market impact.',
@@ -2243,49 +2243,46 @@ const _LS = {
     'pricing.sub':'O Basic é gratuito para sempre. O Pro é €40/mês — inteligência de mercado profissional a um preço retail.',
     'pricing.monthly':'Mensal','pricing.annual':'Anual','pricing.save':'3 meses grátis',
     'plan.basic_badge':'Grátis Para Sempre','plan.no_cc':'Sem cartão de crédito',
-    'plan.basic_desc':'Inteligência de mercado essencial para traders que estão a começar. Acede ao terminal completo e mantém-te informado sobre o que move os mercados — sem custo, para sempre.',
+    'plan.basic_desc':'Inteligência de mercado essencial para traders que estão a começar. Acesso completo ao terminal sem custo, para sempre.',
+    'plan.basic_vat':'Sempre grátis, sem compromisso',
+    'plan.basic_note':'Sem cartão, sem compromisso',
+    'plan.basic_link':'Ou vê o que o Pro acrescenta',
     'plan.pro_badge':'O Mais Poderoso','plan.per_month':'/mês',
-    'plan.annual_note':'3 meses grátis · €360/ano vs €480 mensal (poupa €120)',
-    'plan.vat_note':'excl. IVA onde aplicável · Faturado em EUR',
-    'plan.pro_desc':'Cobertura de nível institucional sem compromissos. Todas as funcionalidades, todas as fontes, notícias em tempo real sem atraso.',
-    'plan.basic_btn':'Começar Grátis →','plan.pro_btn':'Obter Acesso Pro →',
-    'pf.news_delay':'Feed de notícias <span class="pf-note">(com atraso)</span>',
-    'pf.calendar':'Calendário económico com releases ao vivo','pf.screener':'Screener de mercado',
-    'pf.charts':'Gráficos TradingView','pf.watchlist':'Watchlist de ativos & pesquisa',
-    'pf.sound':'Alertas sonoros','pf.multilingual':'Multilingue',
-    'pf.realtime':'Notícias em tempo real sem atraso','pf.macro':'Hub macro & obrigações',
-    'pf.earnings':'Calendário de resultados','pf.centralbanks':'Tracker de bancos centrais',
-    'pf.sentiment':'Análise de sentimento de mercado','pf.squawk':'Squawk ao vivo',
-    'pf.tv':'TV financeira ao vivo (7 canais)','pf.adfree':'Sem anúncios',
+    'plan.annual_note':'3 meses grátis, €360/ano vs €480 mensal (poupa €120)',
+    'plan.vat_note':'IVA adicionado no checkout quando aplicável · Faturado em EUR',
+    'plan.pro_desc':'Cobertura de nível institucional sem compromissos. Todas as funcionalidades, todas as fontes, notícias em tempo real sem atraso. Construído para traders que não podem perder um movimento.',
+    'plan.basic_btn':'Começar Grátis','plan.pro_btn':'Obter Acesso Pro',
+    'pf.news_delay':'Feed de notícias <span class="pf-note">(15 min de atraso)</span>',
+    'pf.calendar':'Calendário económico com releases ao vivo',
+    'pf.charts':'Gráficos TradingView','pf.watchlist':'Watchlist de ativos e pesquisa',
+    'pf.sound':'Alertas sonoros em news de impacto','pf.multilingual':'Interface em 6 línguas',
     'ppf.everything':'Tudo no Basic',
     'ppf.realtime':'Feed de notícias <strong>em tempo real</strong> sem atraso',
-    'ppf.macro':'<strong>Hub Macro & Obrigações</strong> — PIB, PMI, yields',
-    'ppf.earnings':'<strong>Calendário de Resultados</strong> — EPS beat/miss ao vivo',
-    'ppf.centralbanks':'<strong>Tracker de Bancos Centrais</strong> — Fed, BCE, BOE, BOJ…',
-    'ppf.sentiment':'<strong>Sentimento de Mercado</strong> — risk-on / risk-off',
-    'ppf.squawk':'<strong>Squawk Ao Vivo</strong> — alertas de voz mãos-livres',
-    'ppf.tv':'<strong>TV Financeira Ao Vivo</strong> — 7 canais',
-    'ppf.screener':'<strong>Screener de Mercado</strong> — Forex, Ações, Cripto, Índices…',
-    'ppf.ai':'<strong>✦ Análise AI de Notícias</strong> — artigo completo · impacto por ativo',
-    'ppf.hsearch':'<strong>Pesquisa Histórica</strong> — por palavra-chave, ativo, data',
-    'ppf.insiders':'<strong>Trades de Insiders</strong> — SEC Form 4 · compras &amp; vendas CEO/CFO',
-    'ppf.playbook':'<strong>✦ AI Playbook Diário</strong> — 3-5 setups de trade todas as manhãs',
-    'ppf.sources':'Cobertura abrangente de fontes',
-    'ppf.adfree':'100% sem anúncios · Sem pedidos de upgrade','ppf.support':'Suporte prioritário',
+    'ppf.macro':'<strong>Hub Macro e Obrigações</strong> com dados de PIB, PMI e yields',
+    'ppf.earnings':'<strong>Calendário de Resultados</strong> com tracking EPS beat/miss ao vivo',
+    'ppf.centralbanks':'<strong>Tracker de Bancos Centrais</strong> (Fed, BCE, BoE, BoJ, BoC, RBA, RBNZ, SNB)',
+    'ppf.sentiment':'<strong>Sentimento de Mercado</strong> com sinal risk-on / risk-off',
+    'ppf.squawk':'<strong>Squawk Ao Vivo</strong> para alertas de voz mãos-livres',
+    'ppf.tv':'<strong>TV Financeira Ao Vivo</strong> em 7 canais',
+    'ppf.screener':'<strong>Screener de Mercado</strong> (Forex, Ações, Cripto, Índices, Commodities, Obrigações)',
+    'ppf.ai':'<strong>Análise AI de Notícias</strong> com resumo de impacto do artigo completo',
+    'ppf.hsearch':'<strong>Pesquisa Histórica de Notícias</strong> por palavra-chave, ativo e data',
+    'ppf.insiders':'<strong>Trades de Insiders</strong> do SEC Form 4 (compras e vendas de CEO e CFO)',
+    'ppf.playbook':'<strong>AI Playbook Diário</strong> com 3 a 5 setups de trade todas as manhãs',
+    'ppf.adfree':'100% sem anúncios, sem pedidos de upgrade','ppf.support':'Suporte prioritário',
     'plan.tgp_badge':'📲 Add-on Independente',
-    'plan.tgp_note':'Cancela quando quiseres · 1-click via Stripe',
-    'plan.tgp_vat':'Impostos locais calculados no checkout',
-    'plan.tgp_desc':'Manchetes de mercado em tempo real no telemóvel. Produto independente — funciona sem TNT Pro. Entrega sub-segundo em todas as decisões de bancos centrais e releases macro.',
-    'plan.tgp_btn':'⚡ Subscrever — €19/mês',
-    'plan.tgp_foot':'Separado do TNT Pro · a maioria dos profissionais usa ambos',
-    'plan.tgp_free':'Ou junta-te ao canal grátis (30 min de atraso) →',
-    'tgpf.subsec':'<strong>Entrega sub-segundo</strong> em FOMC, BCE, BoE, BoJ, RBA, Copom, EIA',
-    'tgpf.macro':'NFP · CPI · releases macro incluídos',
-    'tgpf.zero':'<strong>Zero anúncios</strong> · zero atraso · zero ruído',
-    'tgpf.watchlist':'Watchlist pessoal — só os teus activos',
-    'tgpf.unlim':'<strong>Alertas ilimitados</strong> — sem cap diário',
+    'plan.tgp_note':'Cancela quando quiseres, 1-click via Stripe',
+    'plan.tgp_desc':'Cada manchete de mercado em tempo real enviada para o telemóvel. Produto independente, funciona sem TNT Pro. Entrega sub-segundo em decisões de bancos centrais e releases macro.',
+    'plan.tgp_btn':'Subscrever €19/mês',
+    'plan.tgp_foot':'Separado do TNT Pro, a maioria dos profissionais usa ambos',
+    'plan.tgp_free':'Ou junta-te ao canal grátis (30 min de atraso)',
+    'tgpf.all':'<strong>Cada manchete HIGH impact</strong> de 30+ fontes, sem filtros',
+    'tgpf.subsec':'<strong>Entrega sub-segundo</strong> em FOMC, BCE, BoE, BoJ, RBA, Copom e EIA',
+    'tgpf.macro':'Cobertura de NFP, CPI e releases macro',
+    'tgpf.zero':'<strong>Zero anúncios, zero atraso, zero ruído</strong>',
+    'tgpf.watchlist':'Filtro de watchlist pessoal opcional',
+    'tgpf.unlim':'<strong>Alertas ilimitados</strong> sem cap diário',
     'tgpf.direct':'Linha directa para a equipa',
-    'tgpf.no_terminal':'Não inclui acesso ao terminal',
     'sc.eyebrow':'Screener de Mercado',
     'sc.h2':'Analisa todos os mercados.<br>Identifica o movimento primeiro.',
     'sc.desc':'O screener integrado permite-te analisar Forex, Ações, Cripto, Índices, Commodities e Obrigações num só lugar — ordenado por atividade de notícias, proximidade de eventos económicos e impacto de mercado.',
@@ -2473,49 +2470,46 @@ const _LS = {
     'pricing.sub':'Basic es gratis para siempre. Pro es €40/mes — inteligencia de mercado profesional a precio retail.',
     'pricing.monthly':'Mensual','pricing.annual':'Anual','pricing.save':'3 meses gratis',
     'plan.basic_badge':'Gratis Para Siempre','plan.no_cc':'Sin tarjeta de crédito',
-    'plan.basic_desc':'Inteligencia de mercado esencial para traders que empiezan. Accede al terminal completo sin costo, para siempre.',
+    'plan.basic_desc':'Inteligencia de mercado esencial para traders que empiezan. Acceso completo al terminal sin costo, para siempre.',
+    'plan.basic_vat':'Siempre gratis, sin compromiso',
+    'plan.basic_note':'Sin tarjeta, sin compromiso',
+    'plan.basic_link':'O ve lo que Pro añade',
     'plan.pro_badge':'El Más Potente','plan.per_month':'/mes',
-    'plan.annual_note':'3 meses gratis · €360/año vs €480 mensual (ahorra €120)',
-    'plan.vat_note':'excl. IVA donde aplique · Facturado en EUR',
-    'plan.pro_desc':'Cobertura de nivel institucional sin compromisos. Todas las funciones, todas las fuentes, noticias en tiempo real.',
-    'plan.basic_btn':'Empezar Gratis →','plan.pro_btn':'Obtener Acceso Pro →',
-    'pf.news_delay':'Feed de noticias <span class="pf-note">(con retraso)</span>',
-    'pf.calendar':'Calendario económico con publicaciones en vivo','pf.screener':'Screener de mercado',
-    'pf.charts':'Gráficos TradingView','pf.watchlist':'Lista de activos & búsqueda inteligente',
-    'pf.sound':'Alertas sonoras','pf.multilingual':'Multilingüe',
-    'pf.realtime':'Noticias en tiempo real sin retraso','pf.macro':'Hub macro & bonos',
-    'pf.earnings':'Calendario de resultados','pf.centralbanks':'Tracker de bancos centrales',
-    'pf.sentiment':'Análisis de sentimiento de mercado','pf.squawk':'Squawk en vivo',
-    'pf.tv':'TV financiera en vivo (7 canales)','pf.adfree':'Sin anuncios',
+    'plan.annual_note':'3 meses gratis, €360/año vs €480 mensual (ahorra €120)',
+    'plan.vat_note':'IVA añadido en checkout cuando aplique · Facturado en EUR',
+    'plan.pro_desc':'Cobertura de nivel institucional sin compromisos. Todas las funciones, todas las fuentes, noticias en tiempo real sin retraso. Construido para traders que no pueden perderse un movimiento.',
+    'plan.basic_btn':'Empezar Gratis','plan.pro_btn':'Obtener Acceso Pro',
+    'pf.news_delay':'Feed de noticias <span class="pf-note">(15 min de retraso)</span>',
+    'pf.calendar':'Calendario económico con publicaciones en vivo',
+    'pf.charts':'Gráficos TradingView','pf.watchlist':'Lista de activos y búsqueda',
+    'pf.sound':'Alertas sonoras en noticias de impacto','pf.multilingual':'Interfaz en 6 idiomas',
     'ppf.everything':'Todo en Basic',
     'ppf.realtime':'Feed de noticias <strong>en tiempo real</strong> sin retraso',
-    'ppf.macro':'<strong>Hub Macro & Bonos</strong> — PIB, PMI, rendimientos',
-    'ppf.earnings':'<strong>Calendario de Resultados</strong> — EPS beat/miss en vivo',
-    'ppf.centralbanks':'<strong>Tracker Bancos Centrales</strong> — Fed, BCE, BOE, BOJ…',
-    'ppf.sentiment':'<strong>Sentimiento de Mercado</strong> — risk-on / risk-off',
-    'ppf.squawk':'<strong>Squawk en Vivo</strong> — alertas de voz manos libres',
-    'ppf.tv':'<strong>TV Financiera en Vivo</strong> — 7 canales',
-    'ppf.screener':'<strong>Screener de Mercado</strong> — Forex, Acciones, Cripto, Índices…',
-    'ppf.ai':'<strong>✦ Análisis AI de Noticias</strong> — artículo completo · impacto por activo',
-    'ppf.hsearch':'<strong>Búsqueda Histórica</strong> — por palabra clave, activo, fecha',
-    'ppf.insiders':'<strong>Trades de Insiders</strong> — SEC Form 4 · compras &amp; ventas CEO/CFO',
-    'ppf.playbook':'<strong>✦ AI Playbook Diario</strong> — 3-5 setups de trade cada mañana',
-    'ppf.sources':'Cobertura completa de fuentes',
-    'ppf.adfree':'100% sin anuncios · Sin solicitudes de upgrade','ppf.support':'Soporte prioritario',
+    'ppf.macro':'<strong>Hub Macro y Bonos</strong> con datos de PIB, PMI y rendimientos',
+    'ppf.earnings':'<strong>Calendario de Resultados</strong> con tracking EPS beat/miss en vivo',
+    'ppf.centralbanks':'<strong>Tracker Bancos Centrales</strong> (Fed, BCE, BoE, BoJ, BoC, RBA, RBNZ, SNB)',
+    'ppf.sentiment':'<strong>Sentimiento de Mercado</strong> con señal risk-on / risk-off',
+    'ppf.squawk':'<strong>Squawk en Vivo</strong> para alertas de voz manos libres',
+    'ppf.tv':'<strong>TV Financiera en Vivo</strong> en 7 canales',
+    'ppf.screener':'<strong>Screener de Mercado</strong> (Forex, Acciones, Cripto, Índices, Commodities, Bonos)',
+    'ppf.ai':'<strong>Análisis AI de Noticias</strong> con resumen de impacto del artículo completo',
+    'ppf.hsearch':'<strong>Búsqueda Histórica de Noticias</strong> por palabra clave, activo y fecha',
+    'ppf.insiders':'<strong>Trades de Insiders</strong> del SEC Form 4 (compras y ventas de CEO y CFO)',
+    'ppf.playbook':'<strong>AI Playbook Diario</strong> con 3 a 5 setups de trade cada mañana',
+    'ppf.adfree':'100% sin anuncios, sin solicitudes de upgrade','ppf.support':'Soporte prioritario',
     'plan.tgp_badge':'📲 Add-on Independiente',
-    'plan.tgp_note':'Cancela cuando quieras · 1-click vía Stripe',
-    'plan.tgp_vat':'Impuestos locales calculados en checkout',
-    'plan.tgp_desc':'Titulares de mercado en tiempo real en tu móvil. Producto independiente — funciona sin TNT Pro. Entrega sub-segundo en cada decisión de banco central y release macro.',
-    'plan.tgp_btn':'⚡ Suscribirse — €19/mes',
-    'plan.tgp_foot':'Separado de TNT Pro · la mayoría de los pros usa ambos',
-    'plan.tgp_free':'O únete al canal gratis (30 min de retraso) →',
-    'tgpf.subsec':'<strong>Entrega sub-segundo</strong> en FOMC, BCE, BoE, BoJ, RBA, Copom, EIA',
-    'tgpf.macro':'NFP · CPI · releases macro incluidos',
-    'tgpf.zero':'<strong>Cero anuncios</strong> · cero retraso · cero ruido',
-    'tgpf.watchlist':'Watchlist personal — solo tus activos',
-    'tgpf.unlim':'<strong>Alertas ilimitadas</strong> — sin cap diario',
+    'plan.tgp_note':'Cancela cuando quieras, 1-click vía Stripe',
+    'plan.tgp_desc':'Cada titular de mercado en tiempo real enviado a tu móvil. Producto independiente, funciona sin TNT Pro. Entrega sub-segundo en decisiones de bancos centrales y releases macro.',
+    'plan.tgp_btn':'Suscribirse €19/mes',
+    'plan.tgp_foot':'Separado de TNT Pro, la mayoría de los pros usa ambos',
+    'plan.tgp_free':'O únete al canal gratis (30 min de retraso)',
+    'tgpf.all':'<strong>Cada titular HIGH impact</strong> de 30+ fuentes, sin filtros',
+    'tgpf.subsec':'<strong>Entrega sub-segundo</strong> en FOMC, BCE, BoE, BoJ, RBA, Copom y EIA',
+    'tgpf.macro':'Cobertura de NFP, CPI y releases macro',
+    'tgpf.zero':'<strong>Cero anuncios, cero retraso, cero ruido</strong>',
+    'tgpf.watchlist':'Filtro de watchlist personal opcional',
+    'tgpf.unlim':'<strong>Alertas ilimitadas</strong> sin cap diario',
     'tgpf.direct':'Línea directa con el equipo',
-    'tgpf.no_terminal':'No incluye acceso al terminal',
     'sc.eyebrow':'Screener de Mercado',
     'sc.h2':'Analiza todos los mercados.<br>Detecta el movimiento primero.',
     'sc.desc':'El screener integrado te permite analizar Forex, Acciones, Cripto, Índices, Materias Primas y Bonos en un solo lugar — ordenado por actividad de noticias, proximidad de eventos económicos e impacto de mercado.',
@@ -2695,49 +2689,47 @@ const _LS = {
     'pricing.sub':'Basic est gratuit pour toujours. Pro est €40/mois — intelligence de marché professionnelle au prix retail.',
     'pricing.monthly':'Mensuel','pricing.annual':'Annuel','pricing.save':'3 mois gratuits',
     'plan.basic_badge':'Gratuit Pour Toujours','plan.no_cc':'Sans carte de crédit',
-    'plan.basic_desc':'Intelligence de marché essentielle pour les traders débutants. Accédez au terminal complet gratuitement, pour toujours.',
+    'plan.basic_desc':'Intelligence de marché essentielle pour les traders débutants. Accès complet au terminal gratuitement, pour toujours.',
+    'plan.basic_vat':'Toujours gratuit, sans engagement',
+    'plan.basic_note':'Sans carte, sans engagement',
+    'plan.basic_link':'Ou voir ce que Pro ajoute',
     'plan.pro_badge':'Le Plus Puissant','plan.per_month':'/mois',
-    'plan.annual_note':'3 mois gratuits · €360/an vs €480 mensuel (économisez €120)',
-    'plan.vat_note':'TVA excl. si applicable · Facturé en EUR',
-    'plan.pro_desc':'Couverture de niveau institutionnel sans compromis. Toutes les fonctionnalités, toutes les sources, actualités en temps réel.',
-    'plan.basic_btn':'Commencer Gratuitement →','plan.pro_btn':'Obtenir l\'Accès Pro →',
-    'pf.news_delay':'Flux d\'actualités <span class="pf-note">(avec délai)</span>',
-    'pf.calendar':'Calendrier économique avec publications en direct','pf.screener':'Screener de marché',
-    'pf.charts':'Graphiques TradingView','pf.watchlist':'Liste d\'actifs & recherche intelligente',
-    'pf.sound':'Alertes sonores','pf.multilingual':'Multilingue',
-    'pf.realtime':'Actualités en temps réel sans délai','pf.macro':'Hub macro & obligations',
-    'pf.earnings':'Calendrier des résultats','pf.centralbanks':'Suivi banques centrales',
-    'pf.sentiment':'Analyse du sentiment de marché','pf.squawk':'Squawk en direct',
-    'pf.tv':'TV financière en direct (7 chaînes)','pf.adfree':'Sans publicité',
+    'plan.annual_note':'3 mois gratuits, €360/an vs €480 mensuel (économisez €120)',
+    'plan.vat_note':'TVA ajoutée au paiement si applicable · Facturé en EUR',
+    'plan.pro_desc':'Couverture de niveau institutionnel sans compromis. Toutes les fonctionnalités, toutes les sources, actualités en temps réel sans délai. Construit pour les traders qui ne peuvent pas se permettre de manquer un mouvement.',
+    'plan.basic_btn':'Commencer Gratuitement','plan.pro_btn':'Obtenir l\'Accès Pro',
+    'pf.news_delay':'Flux d\'actualités <span class="pf-note">(15 min de délai)</span>',
+    'pf.calendar':'Calendrier économique avec publications en direct',
+    'pf.charts':'Graphiques TradingView','pf.watchlist':'Liste d\'actifs et recherche',
+    'pf.sound':'Alertes sonores sur news à impact','pf.multilingual':'Interface en 6 langues',
     'ppf.everything':'Tout dans Basic',
     'ppf.realtime':'Flux <strong>en temps réel</strong> sans délai',
-    'ppf.macro':'<strong>Hub Macro & Obligations</strong> — PIB, PMI, rendements',
-    'ppf.earnings':'<strong>Calendrier des Résultats</strong> — BPA beat/miss en direct',
-    'ppf.centralbanks':'<strong>Suivi Banques Centrales</strong> — Fed, BCE, BOE, BOJ…',
-    'ppf.sentiment':'<strong>Sentiment de Marché</strong> — risk-on / risk-off',
-    'ppf.squawk':'<strong>Squawk en Direct</strong> — alertes vocales mains libres',
-    'ppf.tv':'<strong>TV Financière en Direct</strong> — 7 chaînes',
-    'ppf.screener':'<strong>Screener de Marché</strong> — Forex, Actions, Crypto, Indices…',
-    'ppf.ai':'<strong>✦ Analyse AI des Actualités</strong> — article complet · impact par actif',
-    'ppf.hsearch':'<strong>Recherche Historique</strong> — par mot-clé, actif, date',
-    'ppf.insiders':'<strong>Trades d\'Initiés</strong> — SEC Form 4 · achats &amp; ventes CEO/CFO',
-    'ppf.playbook':'<strong>✦ AI Playbook Quotidien</strong> — 3-5 setups de trade chaque matin',
+    'ppf.macro':'<strong>Hub Macro et Obligations</strong> avec données PIB, PMI et rendements',
+    'ppf.earnings':'<strong>Calendrier des Résultats</strong> avec tracking BPA beat/miss en direct',
+    'ppf.centralbanks':'<strong>Suivi Banques Centrales</strong> (Fed, BCE, BoE, BoJ, BoC, RBA, RBNZ, SNB)',
+    'ppf.sentiment':'<strong>Sentiment de Marché</strong> avec signal risk-on / risk-off',
+    'ppf.squawk':'<strong>Squawk en Direct</strong> pour alertes vocales mains libres',
+    'ppf.tv':'<strong>TV Financière en Direct</strong> sur 7 chaînes',
+    'ppf.screener':'<strong>Screener de Marché</strong> (Forex, Actions, Crypto, Indices, Commodities, Obligations)',
+    'ppf.ai':'<strong>Analyse AI des Actualités</strong> avec résumé d\'impact de l\'article complet',
+    'ppf.hsearch':'<strong>Recherche Historique d\'Actualités</strong> par mot-clé, actif et date',
+    'ppf.insiders':'<strong>Trades d\'Initiés</strong> du SEC Form 4 (achats et ventes CEO et CFO)',
+    'ppf.playbook':'<strong>AI Playbook Quotidien</strong> avec 3 à 5 setups de trade chaque matin',
     'ppf.sources':'Couverture complète des sources',
-    'ppf.adfree':'100% sans publicité · Sans sollicitations','ppf.support':'Support prioritaire',
+    'ppf.adfree':'100% sans publicité, sans sollicitations','ppf.support':'Support prioritaire',
     'plan.tgp_badge':'📲 Module Complémentaire',
-    'plan.tgp_note':'Annulez à tout moment · 1-clic via Stripe',
-    'plan.tgp_vat':'Taxes locales calculées au paiement',
-    'plan.tgp_desc':'Titres de marché en temps réel sur votre mobile. Produit autonome — fonctionne sans TNT Pro. Livraison sub-seconde sur chaque décision de banque centrale et release macro.',
-    'plan.tgp_btn':'⚡ S\'abonner — 19€/mois',
-    'plan.tgp_foot':'Séparé de TNT Pro · la plupart des pros utilisent les deux',
-    'plan.tgp_free':'Ou rejoignez le canal gratuit (30 min de délai) →',
-    'tgpf.subsec':'<strong>Livraison sub-seconde</strong> sur FOMC, BCE, BoE, BoJ, RBA, Copom, EIA',
-    'tgpf.macro':'NFP · CPI · releases macro inclus',
-    'tgpf.zero':'<strong>Zéro pub</strong> · zéro délai · zéro bruit',
-    'tgpf.watchlist':'Watchlist personnelle — seulement vos actifs',
-    'tgpf.unlim':'<strong>Alertes illimitées</strong> — pas de cap quotidien',
+    'plan.tgp_note':'Annulez à tout moment, 1-clic via Stripe',
+    'plan.tgp_desc':'Chaque titre de marché en temps réel envoyé sur votre mobile. Produit autonome, fonctionne sans TNT Pro. Livraison sub-seconde sur les décisions de banques centrales et releases macro.',
+    'plan.tgp_btn':'S\'abonner 19€/mois',
+    'plan.tgp_foot':'Séparé de TNT Pro, la plupart des pros utilisent les deux',
+    'plan.tgp_free':'Ou rejoignez le canal gratuit (30 min de délai)',
+    'tgpf.all':'<strong>Chaque titre HIGH impact</strong> de 30+ sources, sans filtre',
+    'tgpf.subsec':'<strong>Livraison sub-seconde</strong> sur FOMC, BCE, BoE, BoJ, RBA, Copom et EIA',
+    'tgpf.macro':'Couverture NFP, CPI et releases macro',
+    'tgpf.zero':'<strong>Zéro pub, zéro délai, zéro bruit</strong>',
+    'tgpf.watchlist':'Filtre watchlist personnel optionnel',
+    'tgpf.unlim':'<strong>Alertes illimitées</strong> sans cap quotidien',
     'tgpf.direct':'Ligne directe avec l\'équipe',
-    'tgpf.no_terminal':'Ne comprend pas l\'accès au terminal',
     'sc.eyebrow':'Screener de Marché',
     'sc.h2':'Scannez tous les marchés.<br>Repérez le mouvement en premier.',
     'sc.desc':'Le screener intégré vous permet de scanner Forex, Actions, Crypto, Indices, Matières Premières et Obligations en un seul endroit.',
@@ -2917,49 +2909,46 @@ const _LS = {
     'pricing.sub':'Basic ist kostenlos für immer. Pro ist €40/Monat — professionelle Marktintelligenz zum Retail-Preis.',
     'pricing.monthly':'Monatlich','pricing.annual':'Jährlich','pricing.save':'3 Monate gratis',
     'plan.basic_badge':'Für immer kostenlos','plan.no_cc':'Keine Kreditkarte erforderlich',
-    'plan.basic_desc':'Wesentliche Marktintelligenz für Trader, die anfangen. Greife kostenlos für immer auf das vollständige Terminal zu.',
+    'plan.basic_desc':'Wesentliche Marktintelligenz für Trader, die anfangen. Vollständiger Terminal-Zugang kostenlos, für immer.',
+    'plan.basic_vat':'Für immer kostenlos, keine Verpflichtung',
+    'plan.basic_note':'Keine Karte, keine Verpflichtung',
+    'plan.basic_link':'Oder sehen was Pro hinzufügt',
     'plan.pro_badge':'Am leistungsstärksten','plan.per_month':'/Monat',
-    'plan.annual_note':'3 Monate gratis · €360/Jahr vs. €480 monatlich (spare €120)',
-    'plan.vat_note':'zzgl. MwSt. wo anwendbar · In EUR abgerechnet',
-    'plan.pro_desc':'Institutionelle Abdeckung ohne Kompromisse. Alle Funktionen, alle Quellen, Echtzeit-Nachrichten.',
-    'plan.basic_btn':'Kostenlos starten →','plan.pro_btn':'Pro-Zugang holen →',
-    'pf.news_delay':'Nachrichtenfeed <span class="pf-note">(2 Min. Verzögerung)</span>',
-    'pf.calendar':'Wirtschaftskalender mit Live-Veröffentlichungen','pf.screener':'Marktscreener',
-    'pf.charts':'TradingView-Charts','pf.watchlist':'Asset-Watchlist & intelligente Suche',
-    'pf.sound':'Tonalarme','pf.multilingual':'Mehrsprachig',
-    'pf.realtime':'Echtzeit-Nachrichten ohne Verzögerung','pf.macro':'Makro & Anleihen Hub',
-    'pf.earnings':'Ergebniskalender','pf.centralbanks':'Zentralbank-Tracker',
-    'pf.sentiment':'Marktsentiment-Analyse','pf.squawk':'Live-Squawk',
-    'pf.tv':'Live-Finanz-TV (7 Kanäle)','pf.adfree':'Werbefreie Erfahrung',
+    'plan.annual_note':'3 Monate gratis, €360/Jahr vs. €480 monatlich (spare €120)',
+    'plan.vat_note':'MwSt. beim Checkout hinzugefügt wo anwendbar · In EUR abgerechnet',
+    'plan.pro_desc':'Institutionelle Abdeckung ohne Kompromisse. Alle Funktionen, alle Quellen, Echtzeit-Nachrichten ohne Verzögerung. Gebaut für Trader, die keine Bewegung verpassen dürfen.',
+    'plan.basic_btn':'Kostenlos starten','plan.pro_btn':'Pro-Zugang holen',
+    'pf.news_delay':'Nachrichtenfeed <span class="pf-note">(15 Min. Verzögerung)</span>',
+    'pf.calendar':'Wirtschaftskalender mit Live-Veröffentlichungen',
+    'pf.charts':'TradingView-Charts','pf.watchlist':'Asset-Watchlist und intelligente Suche',
+    'pf.sound':'Tonalarme bei Impact-Nachrichten','pf.multilingual':'Oberfläche in 6 Sprachen',
     'ppf.everything':'Alles in Basic',
     'ppf.realtime':'<strong>Echtzeit</strong>-Nachrichtenfeed ohne Verzögerung',
-    'ppf.macro':'<strong>Makro & Anleihen Hub</strong> — BIP, PMI, Renditen',
-    'ppf.earnings':'<strong>Ergebniskalender</strong> — EPS beat/miss live',
-    'ppf.centralbanks':'<strong>Zentralbank-Tracker</strong> — Fed, EZB, BOE, BOJ…',
-    'ppf.sentiment':'<strong>Marktsentiment</strong> — Risk-on / Risk-off',
-    'ppf.squawk':'<strong>Live-Squawk</strong> — freihändige Sprachalarme',
-    'ppf.tv':'<strong>Live-Finanz-TV</strong> — 7 Kanäle',
-    'ppf.screener':'<strong>Marktscreener</strong> — Forex, Aktien, Krypto, Indizes…',
-    'ppf.ai':'<strong>✦ KI-Nachrichtenanalyse</strong> — vollständiger Artikel · Asset-Impact',
-    'ppf.hsearch':'<strong>Historische Nachrichtensuche</strong> — nach Stichwort, Asset, Datum',
-    'ppf.insiders':'<strong>Insider-Trades</strong> — SEC Form 4 · CEO/CFO Käufe &amp; Verkäufe',
-    'ppf.playbook':'<strong>✦ KI Tägliches Playbook</strong> — 3-5 Trade-Setups jeden Morgen',
-    'ppf.sources':'Umfassende Quellenabdeckung',
-    'ppf.adfree':'100% werbefrei · Keine Upgrade-Aufforderungen','ppf.support':'Prioritätssupport',
+    'ppf.macro':'<strong>Makro und Anleihen Hub</strong> mit BIP, PMI und Renditen-Daten',
+    'ppf.earnings':'<strong>Ergebniskalender</strong> mit Live EPS beat/miss Tracking',
+    'ppf.centralbanks':'<strong>Zentralbank-Tracker</strong> (Fed, EZB, BoE, BoJ, BoC, RBA, RBNZ, SNB)',
+    'ppf.sentiment':'<strong>Marktsentiment</strong> mit Risk-on / Risk-off Signal',
+    'ppf.squawk':'<strong>Live-Squawk</strong> für freihändige Sprachalarme',
+    'ppf.tv':'<strong>Live-Finanz-TV</strong> auf 7 Kanälen',
+    'ppf.screener':'<strong>Marktscreener</strong> (Forex, Aktien, Krypto, Indizes, Rohstoffe, Anleihen)',
+    'ppf.ai':'<strong>KI-Nachrichtenanalyse</strong> mit vollständiger Artikel-Impact-Zusammenfassung',
+    'ppf.hsearch':'<strong>Historische Nachrichtensuche</strong> nach Stichwort, Asset und Datum',
+    'ppf.insiders':'<strong>Insider-Trades</strong> aus SEC Form 4 (CEO und CFO Käufe und Verkäufe)',
+    'ppf.playbook':'<strong>KI Tägliches Playbook</strong> mit 3 bis 5 Trade-Setups jeden Morgen',
+    'ppf.adfree':'100% werbefrei, keine Upgrade-Aufforderungen','ppf.support':'Prioritätssupport',
     'plan.tgp_badge':'📲 Eigenständiges Add-on',
-    'plan.tgp_note':'Jederzeit kündbar · 1-Klick via Stripe',
-    'plan.tgp_vat':'Lokale Steuern werden beim Checkout berechnet',
-    'plan.tgp_desc':'Echtzeit-Markt-Schlagzeilen auf deinem Handy. Eigenständiges Produkt — funktioniert ohne TNT Pro. Sub-Sekunden-Lieferung bei jeder Zentralbank-Entscheidung und Makro-Release.',
-    'plan.tgp_btn':'⚡ Abonnieren — 19€/Monat',
-    'plan.tgp_foot':'Separat von TNT Pro · die meisten Profis nutzen beides',
-    'plan.tgp_free':'Oder dem kostenlosen Kanal beitreten (30 Min Verzögerung) →',
-    'tgpf.subsec':'<strong>Sub-Sekunden-Lieferung</strong> bei FOMC, EZB, BoE, BoJ, RBA, Copom, EIA',
-    'tgpf.macro':'NFP · CPI · Makro-Releases inklusive',
-    'tgpf.zero':'<strong>Null Werbung</strong> · null Verzögerung · null Füller',
-    'tgpf.watchlist':'Persönliche Watchlist — nur deine Assets',
-    'tgpf.unlim':'<strong>Unbegrenzte Alerts</strong> — kein Tageslimit',
+    'plan.tgp_note':'Jederzeit kündbar, 1-Klick via Stripe',
+    'plan.tgp_desc':'Jede Echtzeit-Markt-Schlagzeile auf deinem Handy. Eigenständiges Produkt, funktioniert ohne TNT Pro. Sub-Sekunden-Lieferung bei Zentralbank-Entscheidungen und Makro-Releases.',
+    'plan.tgp_btn':'Abonnieren 19€/Monat',
+    'plan.tgp_foot':'Separat von TNT Pro, die meisten Profis nutzen beides',
+    'plan.tgp_free':'Oder dem kostenlosen Kanal beitreten (30 Min Verzögerung)',
+    'tgpf.all':'<strong>Jede HIGH-Impact-Schlagzeile</strong> aus 30+ Quellen, ohne Filter',
+    'tgpf.subsec':'<strong>Sub-Sekunden-Lieferung</strong> bei FOMC, EZB, BoE, BoJ, RBA, Copom und EIA',
+    'tgpf.macro':'NFP, CPI und Makro-Release-Abdeckung',
+    'tgpf.zero':'<strong>Null Werbung, null Verzögerung, null Füller</strong>',
+    'tgpf.watchlist':'Optionaler persönlicher Watchlist-Filter',
+    'tgpf.unlim':'<strong>Unbegrenzte Alerts</strong> ohne Tageslimit',
     'tgpf.direct':'Direkter Draht zum Team',
-    'tgpf.no_terminal':'Beinhaltet keinen Terminal-Zugang',
     'sc.eyebrow':'Marktscreener',
     'sc.h2':'Alle Märkte scannen.<br>Die Bewegung zuerst erkennen.',
     'sc.desc':'Der integrierte Marktscreener ermöglicht das Scannen von Forex, Aktien, Krypto, Indizes, Rohstoffen und Anleihen an einem Ort.',
@@ -3139,49 +3128,46 @@ const _LS = {
     'pricing.sub':'Basic è gratis per sempre. Pro è €40/mese — intelligenza di mercato professionale a prezzo retail.',
     'pricing.monthly':'Mensile','pricing.annual':'Annuale','pricing.save':'3 mesi gratis',
     'plan.basic_badge':'Gratis Per Sempre','plan.no_cc':'Nessuna carta di credito richiesta',
-    'plan.basic_desc':'Intelligenza di mercato essenziale per i trader che iniziano. Accedi al terminale completo senza costo, per sempre.',
+    'plan.basic_desc':'Intelligenza di mercato essenziale per i trader che iniziano. Accesso completo al terminale senza costo, per sempre.',
+    'plan.basic_vat':'Sempre gratis, senza impegno',
+    'plan.basic_note':'Nessuna carta, nessun impegno',
+    'plan.basic_link':'O vedi cosa aggiunge Pro',
     'plan.pro_badge':'Il Più Potente','plan.per_month':'/mese',
-    'plan.annual_note':'3 mesi gratis · €360/anno vs €480 mensile (risparmia €120)',
-    'plan.vat_note':'IVA esclusa dove applicabile · Fatturato in EUR',
-    'plan.pro_desc':'Copertura di livello istituzionale senza compromessi. Tutte le funzionalità, tutte le fonti, notizie in tempo reale.',
-    'plan.basic_btn':'Inizia Gratis →','plan.pro_btn':'Ottieni Accesso Pro →',
-    'pf.news_delay':'Feed notizie <span class="pf-note">(con ritardo)</span>',
-    'pf.calendar':'Calendario economico con pubblicazioni in diretta','pf.screener':'Screener di mercato',
-    'pf.charts':'Grafici TradingView','pf.watchlist':'Watchlist attivi & ricerca intelligente',
-    'pf.sound':'Avvisi sonori','pf.multilingual':'Multilingue',
-    'pf.realtime':'Notizie in tempo reale senza ritardo','pf.macro':'Hub macro & obbligazioni',
-    'pf.earnings':'Calendario utili','pf.centralbanks':'Tracker banche centrali',
-    'pf.sentiment':'Analisi sentiment di mercato','pf.squawk':'Squawk in diretta',
-    'pf.tv':'TV finanziaria in diretta (7 canali)','pf.adfree':'Esperienza senza pubblicità',
+    'plan.annual_note':'3 mesi gratis, €360/anno vs €480 mensile (risparmia €120)',
+    'plan.vat_note':'IVA aggiunta al checkout dove applicabile · Fatturato in EUR',
+    'plan.pro_desc':'Copertura di livello istituzionale senza compromessi. Tutte le funzionalità, tutte le fonti, notizie in tempo reale senza ritardo. Costruito per trader che non possono permettersi di perdere un movimento.',
+    'plan.basic_btn':'Inizia Gratis','plan.pro_btn':'Ottieni Accesso Pro',
+    'pf.news_delay':'Feed notizie <span class="pf-note">(15 min di ritardo)</span>',
+    'pf.calendar':'Calendario economico con pubblicazioni in diretta',
+    'pf.charts':'Grafici TradingView','pf.watchlist':'Watchlist attivi e ricerca',
+    'pf.sound':'Avvisi sonori su notizie di impatto','pf.multilingual':'Interfaccia in 6 lingue',
     'ppf.everything':'Tutto in Basic',
     'ppf.realtime':'Feed notizie <strong>in tempo reale</strong> senza ritardo',
-    'ppf.macro':'<strong>Hub Macro & Obbligazioni</strong> — PIL, PMI, rendimenti',
-    'ppf.earnings':'<strong>Calendario Utili</strong> — EPS beat/miss in diretta',
-    'ppf.centralbanks':'<strong>Tracker Banche Centrali</strong> — Fed, BCE, BOE, BOJ…',
-    'ppf.sentiment':'<strong>Sentiment di Mercato</strong> — risk-on / risk-off',
-    'ppf.squawk':'<strong>Squawk in Diretta</strong> — avvisi vocali hands-free',
-    'ppf.tv':'<strong>TV Finanziaria in Diretta</strong> — 7 canali',
-    'ppf.screener':'<strong>Screener di Mercato</strong> — Forex, Azioni, Cripto, Indici…',
-    'ppf.ai':'<strong>✦ Analisi AI delle Notizie</strong> — articolo completo · impatto per asset',
-    'ppf.hsearch':'<strong>Ricerca Storica</strong> — per parola chiave, asset, data',
-    'ppf.insiders':'<strong>Trade degli Insider</strong> — SEC Form 4 · acquisti &amp; vendite CEO/CFO',
-    'ppf.playbook':'<strong>✦ AI Playbook Giornaliero</strong> — 3-5 setup di trade ogni mattina',
-    'ppf.sources':'Copertura completa delle fonti',
-    'ppf.adfree':'100% senza pubblicità · Nessuna sollecitazione di upgrade','ppf.support':'Supporto prioritario',
+    'ppf.macro':'<strong>Hub Macro e Obbligazioni</strong> con dati PIL, PMI e rendimenti',
+    'ppf.earnings':'<strong>Calendario Utili</strong> con tracking EPS beat/miss in diretta',
+    'ppf.centralbanks':'<strong>Tracker Banche Centrali</strong> (Fed, BCE, BoE, BoJ, BoC, RBA, RBNZ, SNB)',
+    'ppf.sentiment':'<strong>Sentiment di Mercato</strong> con segnale risk-on / risk-off',
+    'ppf.squawk':'<strong>Squawk in Diretta</strong> per avvisi vocali hands-free',
+    'ppf.tv':'<strong>TV Finanziaria in Diretta</strong> su 7 canali',
+    'ppf.screener':'<strong>Screener di Mercato</strong> (Forex, Azioni, Cripto, Indici, Commodities, Obbligazioni)',
+    'ppf.ai':'<strong>Analisi AI delle Notizie</strong> con riassunto di impatto dell\'articolo completo',
+    'ppf.hsearch':'<strong>Ricerca Storica Notizie</strong> per parola chiave, asset e data',
+    'ppf.insiders':'<strong>Trade degli Insider</strong> dal SEC Form 4 (acquisti e vendite CEO e CFO)',
+    'ppf.playbook':'<strong>AI Playbook Giornaliero</strong> con 3 a 5 setup di trade ogni mattina',
+    'ppf.adfree':'100% senza pubblicità, nessuna sollecitazione di upgrade','ppf.support':'Supporto prioritario',
     'plan.tgp_badge':'📲 Add-on Indipendente',
-    'plan.tgp_note':'Cancella quando vuoi · 1-click via Stripe',
-    'plan.tgp_vat':'Tasse locali calcolate al checkout',
-    'plan.tgp_desc':'Titoli di mercato in tempo reale sul tuo cellulare. Prodotto autonomo — funziona senza TNT Pro. Consegna sub-secondo su ogni decisione di banca centrale e release macro.',
-    'plan.tgp_btn':'⚡ Abbonati — 19€/mese',
-    'plan.tgp_foot':'Separato da TNT Pro · la maggior parte dei pro usa entrambi',
-    'plan.tgp_free':'O unisciti al canale gratuito (30 min di ritardo) →',
-    'tgpf.subsec':'<strong>Consegna sub-secondo</strong> su FOMC, BCE, BoE, BoJ, RBA, Copom, EIA',
-    'tgpf.macro':'NFP · CPI · release macro inclusi',
-    'tgpf.zero':'<strong>Zero pubblicità</strong> · zero ritardo · zero rumore',
-    'tgpf.watchlist':'Watchlist personale — solo i tuoi asset',
-    'tgpf.unlim':'<strong>Avvisi illimitati</strong> — nessun cap giornaliero',
+    'plan.tgp_note':'Cancella quando vuoi, 1-click via Stripe',
+    'plan.tgp_desc':'Ogni titolo di mercato in tempo reale inviato al tuo cellulare. Prodotto autonomo, funziona senza TNT Pro. Consegna sub-secondo su decisioni di banche centrali e release macro.',
+    'plan.tgp_btn':'Abbonati 19€/mese',
+    'plan.tgp_foot':'Separato da TNT Pro, la maggior parte dei pro usa entrambi',
+    'plan.tgp_free':'O unisciti al canale gratuito (30 min di ritardo)',
+    'tgpf.all':'<strong>Ogni titolo HIGH impact</strong> da 30+ fonti, senza filtri',
+    'tgpf.subsec':'<strong>Consegna sub-secondo</strong> su FOMC, BCE, BoE, BoJ, RBA, Copom e EIA',
+    'tgpf.macro':'Copertura NFP, CPI e release macro',
+    'tgpf.zero':'<strong>Zero pubblicità, zero ritardo, zero rumore</strong>',
+    'tgpf.watchlist':'Filtro watchlist personale opzionale',
+    'tgpf.unlim':'<strong>Avvisi illimitati</strong> senza cap giornaliero',
     'tgpf.direct':'Linea diretta con il team',
-    'tgpf.no_terminal':'Non include accesso al terminale',
     'sc.eyebrow':'Screener di Mercato',
     'sc.h2':'Analizza tutti i mercati.<br>Individua il movimento per primo.',
     'sc.desc':'Lo screener integrato ti permette di analizzare Forex, Azioni, Cripto, Indici, Materie Prime e Obbligazioni in un unico posto.',
