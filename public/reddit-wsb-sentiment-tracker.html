@@ -3,15 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Reddit WSB Sentiment Tracker — Live Retail Mention Momentum on Every US Ticker</title>
-<meta name="description" content="Real-time retail sentiment from Reddit's biggest investing communities. Mention counts, momentum delta, upvote-weighted ranking — see what retail is piling into before it shows up on price charts.">
+<title>Reddit WSB Sentiment Tracker: Live Retail Mention Momentum on Every US Ticker</title>
+<meta name="description" content="Real-time retail sentiment from Reddit's biggest investing communities. Mention counts, momentum delta, upvote-weighted ranking: see what retail is piling into before it shows up on price charts.">
 <meta name="keywords" content="reddit wsb sentiment tracker, wallstreetbets sentiment, reddit stock sentiment, wsb mention tracker, retail sentiment momentum, apewisdom alternative, reddit ticker mentions, meme stock tracker, retail flow indicator, social sentiment trading">
 <link rel="canonical" href="https://www.tradingnewsterminal.com/reddit-wsb-sentiment-tracker">
-<meta name="robots" content="index, follow"><link rel="icon" href="/favicon.ico"><link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Luís Barata, Trading News Terminal">
+<meta property="article:author" content="Luís Barata">
+<meta property="article:modified_time" content="2026-05-27T00:00:00Z"><link rel="icon" href="/favicon.ico"><link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><meta name="theme-color" content="#0a0c0f">
 <meta property="og:type" content="website"><meta property="og:url" content="https://www.tradingnewsterminal.com/reddit-wsb-sentiment-tracker">
-<meta property="og:title" content="Reddit WSB Sentiment Tracker — Live Retail Mention Momentum">
-<meta property="og:description" content="See which tickers retail is piling into in real time — mention counts, momentum delta, upvote-weighted ranking from r/wallstreetbets and the rest of the retail Reddit ecosystem.">
+<meta property="og:title" content="Reddit WSB Sentiment Tracker: Live Retail Mention Momentum">
+<meta property="og:description" content="See which tickers retail is piling into in real time: mention counts, momentum delta, upvote-weighted ranking from r/wallstreetbets and the rest of the retail Reddit ecosystem.">
 <meta property="og:image" content="https://www.tradingnewsterminal.com/og-image.png">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Reddit WSB Sentiment Tracker"><meta name="twitter:description" content="Real-time retail mention momentum on every US ticker."><meta name="twitter:image" content="https://www.tradingnewsterminal.com/og-image.png">
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"SoftwareApplication","name":"Trading News Terminal — Reddit WSB Sentiment Tracker","url":"https://www.tradingnewsterminal.com/reddit-wsb-sentiment-tracker","applicationCategory":"FinanceApplication","operatingSystem":"Web Browser","description":"Real-time retail mention momentum tracker across Reddit's investing communities. Mention counts, 24h delta, upvote-weighted ranking. Helps traders see what retail is piling into before price moves.","offers":[{"@type":"Offer","name":"Pro Monthly","price":"44","priceCurrency":"USD","billingIncrement":"P1M"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the Reddit WSB Sentiment Tracker?","acceptedAnswer":{"@type":"Answer","text":"A live ranking of US-listed tickers by mention volume across Reddit's biggest investing communities — r/wallstreetbets, r/stocks, r/investing, r/options, r/SecurityAnalysis and others. Each ticker shows: total mentions in the last 24 hours, percentage change vs the previous 24h, upvote-weighted score, and a bullish/bearish lean score derived from comment tone."}},{"@type":"Question","name":"Why is retail Reddit sentiment a useful trading signal?","acceptedAnswer":{"@type":"Answer","text":"Retail flow has measurably moved single-name equity prices since 2021 — particularly in small-cap, meme, and high-short-interest names. Mention momentum (24h delta) is a leading indicator of retail order flow: a ticker going from 50 to 500 mentions overnight will frequently see a 5-15% gap on next open. Use it as a confluence signal — not as a primary entry trigger."}},{"@type":"Question","name":"How fresh is the data?","acceptedAnswer":{"@type":"Answer","text":"Updated every 30 minutes. We aggregate via the ApeWisdom data layer which scrapes Reddit's public API across 8+ investing subreddits and normalises ticker mentions, filters out false positives (common words that match ticker symbols), and produces upvote-weighted counts."}},{"@type":"Question","name":"Which subreddits are tracked?","acceptedAnswer":{"@type":"Answer","text":"r/wallstreetbets (largest weight, ~14M members), r/stocks, r/investing, r/options, r/SecurityAnalysis, r/StockMarket, r/pennystocks, and r/Daytrading. The mention count is the union across all of them, with WSB carrying the strongest predictive signal for short-term price action and SecurityAnalysis carrying more signal for fundamentals-driven moves."}},{"@type":"Question","name":"How do I use the momentum delta?","acceptedAnswer":{"@type":"Answer","text":"The 24h delta is the percentage change in mention count from the previous 24-hour window. A +300% delta means the ticker is being talked about 4x more than yesterday — typically driven by a catalyst (earnings beat, FDA approval, viral DD post). Combine with the bullish/bearish lean: high-positive delta + bullish lean = retail piling in long. High delta + bearish lean = retail shorting or panicking out."}},{"@type":"Question","name":"Does this work for shorting?","acceptedAnswer":{"@type":"Answer","text":"Yes — high retail mention momentum on overextended names is a classic fade setup. When a small-cap has run 200% in 3 days on retail mentions alone (with no earnings catalyst), the unwind tends to be sharp. Use the bearish lean and the rate of mention decay as your exit signal."}},{"@type":"Question","name":"Is this feature free?","acceptedAnswer":{"@type":"Answer","text":"Yes — the Reddit Sentiment ranking is available on the free Basic plan with 30-minute refresh. Pro users get 1-minute refresh, per-ticker drilldowns (mention timelines per subreddit, top comments), and webhook alerts when a watchlist ticker crosses a mention threshold."}},{"@type":"Question","name":"What about Twitter/X sentiment?","acceptedAnswer":{"@type":"Answer","text":"X (formerly Twitter) sentiment is a roadmap item — it requires a paid X API tier post-2024 changes. For now Reddit remains the most reliable free-tier retail sentiment signal because the data is public and structured. We'll layer in StockTwits as a complementary view in the next release."}}]}]}</script>
@@ -47,6 +50,42 @@
   footer{padding:28px 0;text-align:center;color:var(--text-muted);font-size:13px}footer a{color:var(--text-muted);margin:0 14px}footer a:hover{color:var(--accent)}.footer-links{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin-top:10px}
   @media(max-width:720px){nav{padding:16px 18px}.hero{padding:60px 0 44px}.hero-ctas{flex-direction:column;align-items:center}.btn-lg{width:100%;max-width:320px}section{padding:56px 0}.rank-row,.rank-header{grid-template-columns:28px 70px 1fr 60px;font-size:12px}.rank-row .rank-lean,.rank-header div:nth-child(5){display:none}}
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Reddit WSB Sentiment Tracker: Live Retail Mention Momentum on Every US Ticker",
+  "description": "Real-time retail sentiment from Reddit's biggest investing communities. Mention counts, momentum delta, upvote-weighted ranking: see what retail is piling into before it shows up on price charts.",
+  "url": "https://www.tradingnewsterminal.com/reddit-wsb-sentiment-tracker",
+  "datePublished": "2025-06-15T00:00:00Z",
+  "dateModified": "2026-05-27T00:00:00Z",
+  "inLanguage": "en",
+  "author": {
+    "@type": "Person",
+    "name": "Luís Barata",
+    "jobTitle": "Founder, Trading News Terminal",
+    "url": "https://www.tradingnewsterminal.com/about",
+    "sameAs": [
+      "https://www.linkedin.com/in/luisbarata-forex-trader",
+      "https://luisbarataforextrader.com"
+    ],
+    "knowsAbout": ["Forex trading", "Macroeconomics", "Central bank policy", "Market news analysis"]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Trading News Terminal",
+    "url": "https://www.tradingnewsterminal.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.tradingnewsterminal.com/favicon-512x512.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.tradingnewsterminal.com/reddit-wsb-sentiment-tracker"
+  }
+}
+</script>
 </head>
 <body>
 
@@ -60,6 +99,11 @@
     <div class="topic-badge">🦍 Reddit WSB Sentiment Tracker</div>
     <h1>Live <span>Retail Mention Momentum</span><span class="sub-line">See what retail is piling into before it shows up on price charts</span></h1>
     <p class="hero-sub">Real-time ranking of US-listed tickers by Reddit mention volume across <strong>r/wallstreetbets, r/stocks, r/investing, r/options, r/SecurityAnalysis</strong> and 4 more. Mention counts, 24h momentum delta, upvote-weighted score, bullish/bearish lean. The retail flow signal you can't see on any broker terminal.</p>
+    
+    <p class="byline" style="font-size:13px;color:var(--muted, #8899aa);margin:18px auto 28px;max-width:640px;line-height:1.6;text-align:center;">
+      <span style="color:var(--accent, #00d4ff);font-weight:600;">Updated 27 May 2026</span>
+      &nbsp;·&nbsp; By <a href="https://www.tradingnewsterminal.com/about" style="color:var(--text);text-decoration:underline;text-decoration-color:rgba(0,212,255,0.35);text-underline-offset:3px;">Luís Barata</a>, founder of Trading News Terminal · 13+ years in macro & FX markets
+    </p>
     <div class="hero-ctas">
       <a href="https://app.tradingnewsterminal.com/?utm_source=seo&utm_campaign=reddit-wsb-sentiment-tracker&utm_content=hero" class="btn btn-primary btn-lg">Open Sentiment Tracker</a>
       <a href="#example" class="btn btn-outline btn-lg">See Ranking</a>
