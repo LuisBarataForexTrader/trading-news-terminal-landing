@@ -588,12 +588,27 @@
   ],
   "headers": [
     {
-      "source": "/(.*).html",
+      "source": "/(login|signin|signup|reset-password|verify-email|admin)(.*)",
       "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "no-store, no-cache, must-revalidate"
-        }
+        { "key": "Cache-Control", "value": "no-store, no-cache, must-revalidate, max-age=0" }
+      ]
+    },
+    {
+      "source": "/(sitemap|sitemap-articles|sitemap-news|sitemap-news-pt|sitemap-news-es)\\.xml",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=300, s-maxage=3600, stale-while-revalidate=86400" }
+      ]
+    },
+    {
+      "source": "/(favicon|favicon-16x16|favicon-32x32|favicon-192x192|favicon-512x512|apple-touch-icon)\\.(ico|png|svg)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=604800, immutable" }
+      ]
+    },
+    {
+      "source": "/(.+)\\.html",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=600, s-maxage=86400, stale-while-revalidate=604800" }
       ]
     }
   ]
