@@ -610,6 +610,12 @@
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=600, s-maxage=86400, stale-while-revalidate=604800" }
       ]
+    },
+    {
+      "source": "/:slug((?!api|news|pt|es|blog|sitemap|admin|signin|signup|login|reset-password|verify-email|favicon|apple-touch-icon|robots|us\\.|br\\.|index|partners/|affiliates/verify|google).+)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=600, s-maxage=86400, stale-while-revalidate=604800" }
+      ]
     }
   ]
 }
