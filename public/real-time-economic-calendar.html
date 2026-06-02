@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Real-Time Economic Calendar with NOW Marker — Free</title>
+  <meta name="description" content="Free economic calendar with a blue NOW line marker showing exact current time. Auto-scrolls to nearest event on open. 50+ countries, 19 asset filters, push/Telegram alerts.">
+  <link rel="canonical" href="https://www.tradingnewsterminal.com/real-time-economic-calendar">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512x512.png">
+  <meta property="og:title" content="Real-Time Economic Calendar with NOW Marker — Free">
+  <meta property="og:description" content="Free economic calendar with a blue NOW line marker showing exact current time. Auto-scrolls to nearest event on open. 50+ countries, 19 asset filters, push/Telegram alerts.">
+  <meta property="og:url" content="https://www.tradingnewsterminal.com/real-time-economic-calendar">
+  <meta property="og:image" content="https://www.tradingnewsterminal.com/og-image.png">
+  <meta property="og:type" content="website">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Luís Barata, Trading News Terminal">
+  <meta property="article:author" content="Luís Barata">
+  <meta property="article:modified_time" content="2026-05-31T00:00:00Z">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Real-Time Economic Calendar with NOW Marker — Free">
+  <meta name="twitter:description" content="Free economic calendar with a blue NOW line marker showing exact current time. Auto-scrolls to nearest event on open. 50+ countries, 19 asset filters, push/Telegram alerts.">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Trading News Terminal",
+      "url": "https://www.tradingnewsterminal.com",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "description": "Free economic calendar with a blue NOW line marker showing exact current time. Auto-scrolls to nearest event on open. 50+ countries, 19 asset filters, push/Telegram alerts.",
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Basic",
+          "price": "0",
+          "priceCurrency": "EUR",
+          "description": "Free tier with delayed news, economic calendar, and limited features."
+        },
+        {
+          "@type": "Offer",
+          "name": "Pro",
+          "price": "40",
+          "priceCurrency": "EUR",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "billingDuration": "P1M"
+          },
+          "description": "Full professional terminal: zero-delay news, squawk box, live TV, all features."
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is this calendar really free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes \u2014 the calendar (with NOW marker, asset filter, and 5-minute alerts) is part of the Basic plan, which is free forever. Pro plan adds 1-minute alerts and zero-delay news."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where does the calendar data come from?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We aggregate from multiple sources including official central bank schedules, BLS, Eurostat, ONS, ABS, and DBPedia. Cross-verified daily."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How often is the calendar updated?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Every 6 hours for new events; every minute for impact changes and timing shifts. Surprise actuals (when released) appear within 1\u20135 seconds."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I set alerts for specific keywords?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes \u2014 Pro plan lets you create unlimited custom keyword alerts (e.g., \"Lagarde\", \"emergency\", \"unscheduled\"). They fire via Telegram, push, or email."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does the NOW line update every second?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Modern markets move on milliseconds. The 1-second update gives you a precise visual reference for events that release on the half-second (US data) or on exact 0/15/30/45 minutes (European data)."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+  <style>
+  :root {
+    --bg: #0a0e14; --card: #0d1117; --border: #1e2a3a; --text: #e0e8f0; --muted: #8899aa;
+    --accent: #00d4ff; --accent2: #00ff9c; --green: #10b981; --red: #ef4444;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+  header { padding: 20px 0; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: rgba(10,14,20,0.92); backdrop-filter: blur(8px); z-index: 50; }
+  header .container { display: flex; align-items: center; justify-content: space-between; }
+  .nav-logo { display: flex; align-items: center; gap: 10px; color: var(--text); }
+  .nav-logo-icon { width: 32px; height: 32px; background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%); border-radius: 6px; }
+  .nav-logo-text { font-weight: 800; font-size: 17px; letter-spacing: 0.02em; }
+  .nav-logo-text span { color: var(--accent); }
+  .nav-logo-sub { font-size: 10px; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; margin-top: 1px; }
+  .btn { display: inline-block; padding: 11px 22px; border-radius: 6px; font-weight: 700; font-size: 14px; letter-spacing: 0.02em; cursor: pointer; transition: transform 0.15s, box-shadow 0.15s; border: none; }
+  .btn:hover { transform: translateY(-1px); box-shadow: 0 6px 24px rgba(0,212,255,0.2); text-decoration: none; }
+  .btn-primary { background: var(--accent); color: #002030; }
+  .btn-outline { background: transparent; color: var(--text); border: 1px solid var(--border); }
+  .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+  .btn-lg { padding: 14px 28px; font-size: 15px; }
+  .hero { padding: 72px 0 56px; text-align: center; }
+  .hero-badge { display: inline-block; padding: 5px 12px; background: rgba(0,212,255,0.1); border: 1px solid rgba(0,212,255,0.3); color: var(--accent); border-radius: 999px; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 20px; }
+  h1 { font-size: clamp(32px, 5.5vw, 52px); font-weight: 800; line-height: 1.12; margin-bottom: 20px; letter-spacing: -0.02em; }
+  h1 span { color: var(--accent); }
+  .hero-sub { color: var(--muted); font-size: clamp(16px, 2vw, 19px); max-width: 780px; margin: 0 auto 32px; }
+  .hero-ctas { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .price-note { margin-top: 22px; color: var(--muted); font-size: 13px; }
+  .price-note strong { color: var(--text); }
+  section { padding: 56px 0; }
+  section + section { border-top: 1px solid var(--border); }
+  .section-label { display: inline-block; padding: 3px 10px; background: rgba(0,212,255,0.08); border: 1px solid rgba(0,212,255,0.25); color: var(--accent); border-radius: 999px; font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 12px; }
+  h2 { font-size: clamp(22px, 3.5vw, 32px); font-weight: 700; margin-bottom: 16px; color: var(--text); }
+  .section-intro { color: var(--muted); font-size: 17px; margin-bottom: 40px; max-width: 700px; }
+  .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 24px; transition: border-color 0.2s; }
+  .card:hover { border-color: var(--accent); }
+  .card-icon { font-size: 28px; margin-bottom: 14px; }
+  .card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; color: var(--text); }
+  .card p { font-size: 14px; color: var(--muted); line-height: 1.6; }
+  .faq { display: grid; gap: 16px; }
+  .faq-item { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 20px 24px; }
+  .faq-item h3 { font-size: 16px; font-weight: 700; margin-bottom: 10px; color: var(--text); }
+  .faq-item p { font-size: 15px; color: var(--muted); line-height: 1.65; }
+  .guide-content { max-width: 820px; }
+  .guide-content h3 { font-size: 19px; font-weight: 700; margin: 36px 0 12px; color: var(--text); }
+  .guide-content p { font-size: 16px; color: var(--muted); line-height: 1.8; margin-bottom: 16px; }
+  .guide-content ul { margin: 12px 0 20px 22px; }
+  .guide-content li { font-size: 15px; color: var(--muted); line-height: 1.75; margin-bottom: 8px; }
+  .guide-content strong { color: var(--text); }
+  .guide-content code { background: rgba(0,212,255,0.08); color: var(--accent); padding: 2px 6px; border-radius: 3px; font-size: 14px; }
+  .explore-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
+  .explore-link { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 14px 18px; color: var(--text); font-size: 14px; font-weight: 500; display: flex; align-items: center; gap: 8px; transition: border-color 0.2s, color 0.2s; }
+  .explore-link:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+  .explore-link .arrow { color: var(--accent); font-size: 16px; }
+  .footer-cta { padding: 72px 0; text-align: center; border-bottom: 1px solid var(--border); background: linear-gradient(180deg, var(--bg) 0%, rgba(0,212,255,0.03) 100%); }
+  .footer-cta h2 { font-size: clamp(24px, 4vw, 38px); margin-bottom: 16px; }
+  .footer-cta p { color: var(--muted); font-size: 17px; margin-bottom: 36px; max-width: 560px; margin-left: auto; margin-right: auto; }
+  footer { padding: 28px 0; text-align: center; color: var(--muted); font-size: 13px; }
+  footer a { color: var(--muted); }
+  footer a:hover { color: var(--accent); }
+  .footer-links { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 8px; }
+  @media (max-width: 600px) { .hero { padding: 48px 0 40px; } .hero-ctas { flex-direction: column; align-items: center; } .btn-lg { width: 100%; max-width: 320px; text-align: center; } }
+  </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Real-Time Economic Calendar with NOW Marker \u2014 Free",
+  "description": "Free economic calendar with a blue NOW line marker showing exact current time. Auto-scrolls to nearest event on open. 50+ countries, 19 asset filters, push/Telegram alerts.",
+  "url": "https://www.tradingnewsterminal.com/real-time-economic-calendar",
+  "datePublished": "2026-05-31T00:00:00Z",
+  "dateModified": "2026-05-31T00:00:00Z",
+  "inLanguage": "en",
+  "author": {
+    "@type": "Person",
+    "name": "Lu\u00eds Barata",
+    "jobTitle": "Founder, Trading News Terminal",
+    "url": "https://www.tradingnewsterminal.com/about",
+    "sameAs": [
+      "https://www.linkedin.com/in/luisbarata-forex-trader",
+      "https://luisbarataforextrader.com"
+    ],
+    "knowsAbout": [
+      "Forex trading",
+      "Macroeconomics",
+      "Central bank policy",
+      "Market news analysis"
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Trading News Terminal",
+    "url": "https://www.tradingnewsterminal.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.tradingnewsterminal.com/favicon-512x512.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.tradingnewsterminal.com/real-time-economic-calendar"
+  }
+}
+</script>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <a href="https://www.tradingnewsterminal.com/?utm_source=seo&utm_medium=organic&utm_campaign=real-time-economic-calendar&utm_content=header" class="nav-logo">
+      <div class="nav-logo-icon"></div>
+      <div>
+        <div class="nav-logo-text">Trading <span>News</span> Terminal</div>
+        <div class="nav-logo-sub">Real-time Market Intelligence</div>
+      </div>
+    </a>
+    <a href="https://www.tradingnewsterminal.com/login?plan=trial&utm_source=seo&utm_medium=organic&utm_campaign=real-time-economic-calendar&utm_content=header" class="btn btn-primary">Try Free →</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-badge">Free Feature</div>
+    <h1>Real-Time <span>Economic Calendar</span> with NOW Marker</h1>
+    <p class="hero-sub">The only free economic calendar with a live blue NOW line that shows exactly where you are in the day. Auto-scrolls to the next event on open. 50+ countries, 19 asset filters, 1-minute push/Telegram alerts.</p>
+
+    <p class="byline" style="font-size:13px;color:var(--muted, #8899aa);margin:18px auto 28px;max-width:640px;line-height:1.6;text-align:center;">
+      <span style="color:var(--accent, #00d4ff);font-weight:600;">Updated 31 May 2026</span>
+      &nbsp;·&nbsp; By <a href="https://www.tradingnewsterminal.com/about" style="color:var(--text);text-decoration:underline;text-decoration-color:rgba(0,212,255,0.35);text-underline-offset:3px;">Luís Barata</a>, founder of Trading News Terminal · 13+ years in macro &amp; FX markets
+    </p>
+    <div class="hero-ctas">
+      <a href="https://www.tradingnewsterminal.com/login?plan=trial&utm_source=seo&utm_medium=organic&utm_campaign=real-time-economic-calendar&utm_content=hero" class="btn btn-primary btn-lg">Start Free Trial</a>
+      <a href="https://www.tradingnewsterminal.com/signup?utm_source=seo&utm_medium=organic&utm_campaign=real-time-economic-calendar&utm_content=hero" class="btn btn-outline btn-lg">Open Free Terminal</a>
+    </div>
+    <p class="price-note">Basic plan is <strong>permanently free</strong> · No credit card required · Pro at <strong>€40/month</strong></p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-label">What You Get</div>
+    <h2>Built for professional traders</h2>
+    <div class="cards">
+      <div class="card"><div class="card-icon">🕐</div><h3>Live NOW Marker</h3><p>Animated blue line shows current time across the day grid. Updates every second. Calendar auto-scrolls to the line on open so the next event is always visible.</p></div>
+<div class="card"><div class="card-icon">🌍</div><h3>50+ Countries</h3><p>US, EU, UK, JP, AU, CA, CN, DE, FR, BR, MX, IN, KR, CH, SE, NO, NZ, ZA, RU, TR and 30+ more. Filter by country or asset class.</p></div>
+<div class="card"><div class="card-icon">🎯</div><h3>Asset-Specific Filter</h3><p>19 asset classes including USD, EUR, GBP, GOLD, OIL, SP500, NDX, BTC, ETH. See only the events that move your portfolio.</p></div>
+<div class="card"><div class="card-icon">🔔</div><h3>Pre-Event Alerts</h3><p>Get push, email, or Telegram alerts 5 / 15 / 60 minutes before HIGH impact events. Set custom keywords for niche events.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="guide-content">
+      <h3>Why a NOW marker matters for event-driven traders</h3>
+<p>Most economic calendars (Investing.com, Forex Factory, MyFXBook) show a list of events with timestamps but force you to mentally calculate "how far away is now from this event?" That cognitive load adds friction. <strong>Trading News Terminal's NOW marker</strong> is a thin blue line drawn across the day's grid, updated every second. The moment you open the calendar, the view auto-scrolls so the line — and therefore the next event — is centered. Zero mental math.</p>
+
+<h3>Auto-scroll on open: never miss an imminent release</h3>
+<p>When you switch to the Calendar tab, JavaScript computes the offset to position the NOW line at the top of the visible viewport. Three events later in the day appear immediately below. Three events earlier appear above (in case you need to reference a release that just printed). This solves the #1 UX problem with traditional calendars: scrolling through 200+ past events to find what's next.</p>
+
+<h3>HIGH / MEDIUM / LOW impact color coding</h3>
+<p>Each event is color-coded by Investing.com-equivalent impact score:</p>
+<ul><li><strong>HIGH (red bar):</strong> NFP, CPI, FOMC, ECB rate decision, GDP, PMI. Expect 30–80 pip USD moves.</li><li><strong>MEDIUM (orange bar):</strong> Retail Sales, Industrial Production, PPI, Confidence indices. 10–30 pip moves typical.</li><li><strong>LOW (yellow bar):</strong> Speeches, secondary data, regional indices. Usually no immediate move but worth context.</li></ul>
+<h3>Asset-specific filtering — see only what trades you care about</h3>
+<p>Forex traders typically don't care about Chinese manufacturing PMI unless they trade AUD/USD. The asset filter restricts the calendar to events that historically move a specific instrument. Filter by USD and you see NFP, CPI, FOMC, retail sales, ISM, PCE, JOLTS — not ECB or BoJ. Filter by GOLD and you see real yields, USD strength, geopolitical events, central bank gold reserves data.</p>
+
+<h3>Telegram + push alerts at customizable lead times</h3>
+<p>For each event tier (HIGH/MEDIUM/LOW) you set your preferred lead time: 5 min, 15 min, 1 hour, or 1 day before. The alert fires automatically via your chosen channel: browser push, email, or Telegram bot DM. Add custom keyword alerts (e.g., "Powell", "unscheduled", "emergency rate") for events that don't fit standard categories.</p>
+
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-label">Frequently Asked Questions</div>
+    <h2>Common Questions</h2>
+    <div class="faq">
+      <div class="faq-item"><h3>Is this calendar really free?</h3><p>Yes — the calendar (with NOW marker, asset filter, and 5-minute alerts) is part of the Basic plan, which is free forever. Pro plan adds 1-minute alerts and zero-delay news.</p></div>
+<div class="faq-item"><h3>Where does the calendar data come from?</h3><p>We aggregate from multiple sources including official central bank schedules, BLS, Eurostat, ONS, ABS, and DBPedia. Cross-verified daily.</p></div>
+<div class="faq-item"><h3>How often is the calendar updated?</h3><p>Every 6 hours for new events; every minute for impact changes and timing shifts. Surprise actuals (when released) appear within 1–5 seconds.</p></div>
+<div class="faq-item"><h3>Can I set alerts for specific keywords?</h3><p>Yes — Pro plan lets you create unlimited custom keyword alerts (e.g., &quot;Lagarde&quot;, &quot;emergency&quot;, &quot;unscheduled&quot;). They fire via Telegram, push, or email.</p></div>
+<div class="faq-item"><h3>Why does the NOW line update every second?</h3><p>Modern markets move on milliseconds. The 1-second update gives you a precise visual reference for events that release on the half-second (US data) or on exact 0/15/30/45 minutes (European data).</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-label">Explore More</div>
+    <h2>Everything in the Trading News Terminal</h2>
+    <div class="explore-grid">
+      <a href="/free-options-chain-greeks" class="explore-link"><span class="arrow">→</span> Free Options Chain</a>
+<a href="/fed-rate-decision-news" class="explore-link"><span class="arrow">→</span> Fed Rate Decision News</a>
+<a href="/fomc-minutes-live" class="explore-link"><span class="arrow">→</span> FOMC Minutes Live</a>
+<a href="/central-banks-tracker" class="explore-link"><span class="arrow">→</span> Central Banks Tracker</a>
+<a href="/forex-news-feed" class="explore-link"><span class="arrow">→</span> Forex News Feed</a>
+<a href="/cot-report-chart-free" class="explore-link"><span class="arrow">→</span> COT 52W Trend Chart</a>
+<a href="/commodities-news-feed" class="explore-link"><span class="arrow">→</span> Commodities News Feed</a>
+<a href="/earnings-calendar" class="explore-link"><span class="arrow">→</span> Earnings Calendar</a>
+    </div>
+  </div>
+</section>
+
+<section class="footer-cta">
+  <div class="container">
+    <h2>Start Trading with Professional Intelligence</h2>
+    <p>Create your free account in under 30 seconds — no credit card required. Upgrade to Pro when you need zero-delay news, squawk box, live financial TV, and the full options/sentiment suite.</p>
+    <div class="hero-ctas">
+      <a href="https://www.tradingnewsterminal.com/login?plan=trial&utm_source=seo&utm_medium=organic&utm_campaign=real-time-economic-calendar&utm_content=footer" class="btn btn-primary btn-lg">Start Free Trial</a>
+      <a href="https://www.tradingnewsterminal.com/signup?utm_source=seo&utm_medium=organic&utm_campaign=real-time-economic-calendar&utm_content=footer" class="btn btn-outline btn-lg">Open Free Terminal</a>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="container">
+    <div>© Trading News Terminal — real-time market intelligence for professional traders.</div>
+    <div class="footer-links">
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/affiliates">Affiliates</a>
+      <a href="/economic-calendar">Economic Calendar</a>
+    </div>
+  </div>
+</footer>
+
+
+</body>
+</html>
