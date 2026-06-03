@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SEC Filings News Feed — Real-Time 10-K, 10-Q, 8-K, 13F &amp; 4 Alerts</title>
+  <meta name="description" content="Live SEC filings news feed. 10-K annual reports, 10-Q quarterly, 8-K material events, 13F institutional holdings, Form 4 insider trades — sub-second EDGAR parsing.">
+  <link rel="canonical" href="https://www.tradingnewsterminal.com/sec-filings-news-feed">
+<link rel="alternate" hreflang="en" href="https://www.tradingnewsterminal.com/sec-filings-news-feed">
+<link rel="alternate" hreflang="en-US" href="https://www.tradingnewsterminal.com/sec-filings-news-feed">
+<link rel="alternate" hreflang="en-GB" href="https://www.tradingnewsterminal.com/sec-filings-news-feed">
+<link rel="alternate" hreflang="x-default" href="https://www.tradingnewsterminal.com/sec-filings-news-feed">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512x512.png">
+  <meta property="og:title" content="SEC Filings News Feed — Real-Time 10-K, 10-Q, 8-K, 13F &amp; 4 Alerts">
+  <meta property="og:description" content="Live SEC filings news feed. 10-K annual reports, 10-Q quarterly, 8-K material events, 13F institutional holdings, Form 4 insider trades — sub-second EDGAR parsing.">
+  <meta property="og:url" content="https://www.tradingnewsterminal.com/sec-filings-news-feed">
+  <meta property="og:image" content="https://www.tradingnewsterminal.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:type" content="website">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <meta name="author" content="Luís Barata, Trading News Terminal">
+  <meta property="article:author" content="Luís Barata">
+  <meta property="article:modified_time" content="2026-06-03T00:00:00Z">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="SEC Filings News Feed — Real-Time 10-K, 10-Q, 8-K, 13F &amp; 4 Alerts">
+  <meta name="twitter:description" content="Live SEC filings news feed. 10-K annual reports, 10-Q quarterly, 8-K material events, 13F institutional holdings, Form 4 insider trades — sub-second EDGAR parsing.">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Trading News Terminal",
+      "url": "https://www.tradingnewsterminal.com",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Web",
+      "description": "Live SEC filings news feed. 10-K annual reports, 10-Q quarterly, 8-K material events, 13F institutional holdings, Form 4 insider trades — sub-second EDGAR parsing.",
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Basic",
+          "price": "0",
+          "priceCurrency": "EUR",
+          "description": "Free tier."
+        },
+        {
+          "@type": "Offer",
+          "name": "Pro",
+          "price": "40",
+          "priceCurrency": "EUR",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "billingDuration": "P1M"
+          },
+          "description": "Zero-delay full terminal."
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.tradingnewsterminal.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "SEC Filings News Feed",
+          "item": "https://www.tradingnewsterminal.com/sec-filings-news-feed"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How fast is the SEC filing alert?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pro subscribers receive 8-K and Form 4 alerts within ~500 milliseconds of EDGAR publication. Larger filings (10-K, 13F) parse in 2–8 seconds depending on file size."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you cover all 10,000+ SEC filers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. EDGAR carries all SEC registrants. We apply impact filtering so subscribers see HIGH-impact events without inbox overload — but full feed is available with appropriate filters."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How are filings classified?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We use a combination of filing type, company market cap, ticker liquidity, content keywords (e.g. 'going concern', 'material weakness', 'departure') and our AI scoring. Critical bank/large-cap filings get HIGH automatically; routine S-8 amendments get LOW."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I filter by ticker?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Set tickers in your watchlist; only filings for those companies (and the sector ETFs they belong to) will alert you. Filter by filing type (8-K only, Form 4 only) also available."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is SEC EDGAR free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "EDGAR itself is free. But raw EDGAR is overwhelming and unstructured. TNT's value is the parsing, classification and asset tagging layer on top."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+  <style>
+    *{box-sizing:border-box}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#0a0c0f;color:#e8eaed;line-height:1.65}
+    .container{max-width:760px;margin:0 auto;padding:48px 24px}
+    h1{font-size:34px;line-height:1.2;margin:0 0 16px;background:linear-gradient(135deg,#5d9eff 0%,#ff58b8 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .lede{font-size:18px;color:#b8bdc4;margin:0 0 32px}
+    .block{margin:32px 0;padding:24px 0;border-top:1px solid #1f2229}
+    h2{font-size:22px;color:#fff;margin:0 0 12px}h3{font-size:18px;color:#e8eaed;margin:18px 0 8px}
+    p,li{color:#c8ccd1}ul{padding-left:22px;margin:8px 0}
+    .cta{background:#5d9eff;color:#000;padding:14px 28px;border-radius:8px;font-weight:700;text-decoration:none;display:inline-block;margin:20px 0}
+    .faq{margin:10px 0;padding:14px 18px;background:#12141a;border-radius:8px;border:1px solid #1f2229}
+    .faq summary{cursor:pointer;color:#fff;font-weight:600}.faq p{margin:10px 0 0;color:#c8ccd1}
+    a{color:#5d9eff}.breadcrumb{font-size:13px;color:#7a7f87;margin-bottom:24px}.breadcrumb a{color:#7a7f87}
+  </style>
+</head>
+<body>
+  <main class="container">
+    <nav class="breadcrumb"><a href="/">Home</a> &rsaquo; <span>SEC Filings News Feed</span></nav>
+    <h1>SEC Filings News Feed — Real-Time EDGAR Tracker</h1>
+    <p class="lede">The SEC EDGAR system publishes thousands of filings daily. Most matter only to the filing company; a few move markets violently. Trading News Terminal parses EDGAR sub-second and surfaces the high-impact filings.</p>
+<section class="block"><h2>Filings we track in real time</h2><ul><li><strong>10-K</strong> — annual report. Comprehensive financials, risk factors, management discussion. Market-moving on earnings revisions and going-concern flags.</li><li><strong>10-Q</strong> — quarterly report. Lighter than 10-K but still material; sometimes leaked early via XBRL parsing.</li><li><strong>8-K</strong> — material event report. Within 4 business days of event. M&A, CEO/CFO departure, restructuring, bankruptcy, ratings actions.</li><li><strong>13F-HR</strong> — institutional manager holdings, quarterly. 45 days after quarter-end. Berkshire, Renaissance, Citadel positions revealed.</li><li><strong>Form 4</strong> — insider trades. CEOs/CFOs/directors selling or buying. Within 2 business days.</li><li><strong>S-1, S-3, S-8</strong> — registration statements (IPOs, secondaries, ESOPs).</li><li><strong>13D / 13G</strong> — beneficial owner crossing 5% threshold. Activist signal.</li><li><strong>SC 13D Amendment</strong> — activist update letters.</li></ul></section>
+<section class="block"><h2>Why this matters for traders</h2><p>SEC filings are a leading indicator. By the time a 10-K hits Bloomberg, EDGAR has been carrying it for minutes. By the time a Form 4 appears in headlines, sophisticated traders have already digested the implications. We get you to parity with institutional desks.</p><p>Example impact:</p><ul><li><strong>August 2024 — Buffett Apple 13F:</strong> Berkshire trimmed Apple by 50%. AAPL gapped down $7 next session. 13F was filed 14:00 ET; published on EDGAR within 60 seconds.</li><li><strong>October 2024 — Boeing 8-K (CEO departure):</strong> Filed 16:32 ET. BA -4% in after-hours within 90 seconds.</li><li><strong>Multiple 2024 8-Ks for bank stress:</strong> Each filing moved relevant bank ticker 2–6% within 5 minutes.</li></ul></section>
+<section class="block"><h2>How TNT differs from raw EDGAR</h2><ul><li>AI classification: each filing tagged HIGH/MEDIUM/LOW impact based on filing type + company size + content keywords.</li><li>Asset tagging: filings link to ticker + sector ETF (XLF for banks, XLK for tech).</li><li>Insider trade aggregation: Form 4 batched per company per week — separates routine vesting from large open-market sales.</li><li>Activist tracking: 13D filings monitored for known activist managers (Icahn, Elliott, ValueAct, Pershing Square).</li><li>Cross-reference with news: filing alerts annotated with related news context.</li></ul></section>
+<section class="block"><h2>Related TNT pages</h2><ul><li><a href="/earnings-call-transcripts-free">Earnings call transcripts</a></li><li><a href="/earnings-calendar">Earnings calendar</a></li><li><a href="/news/category/equities">US equities news</a></li><li><a href="/market-screener">Market screener</a></li></ul></section>
+    <section class="block"><h2>FAQ</h2><details class="faq"><summary>How fast is the SEC filing alert?</summary><p>Pro subscribers receive 8-K and Form 4 alerts within ~500 milliseconds of EDGAR publication. Larger filings (10-K, 13F) parse in 2–8 seconds depending on file size.</p></details>
+<details class="faq"><summary>Do you cover all 10,000+ SEC filers?</summary><p>Yes. EDGAR carries all SEC registrants. We apply impact filtering so subscribers see HIGH-impact events without inbox overload — but full feed is available with appropriate filters.</p></details>
+<details class="faq"><summary>How are filings classified?</summary><p>We use a combination of filing type, company market cap, ticker liquidity, content keywords (e.g. &#x27;going concern&#x27;, &#x27;material weakness&#x27;, &#x27;departure&#x27;) and our AI scoring. Critical bank/large-cap filings get HIGH automatically; routine S-8 amendments get LOW.</p></details>
+<details class="faq"><summary>Can I filter by ticker?</summary><p>Yes. Set tickers in your watchlist; only filings for those companies (and the sector ETFs they belong to) will alert you. Filter by filing type (8-K only, Form 4 only) also available.</p></details>
+<details class="faq"><summary>Is SEC EDGAR free?</summary><p>EDGAR itself is free. But raw EDGAR is overwhelming and unstructured. TNT&#x27;s value is the parsing, classification and asset tagging layer on top.</p></details></section>
+    <section class="block">
+      <h2>Open Trading News Terminal</h2>
+      <p>Free Basic plan delivers 2-minute delayed news with AI impact classification. Pro removes the delay and adds Telegram alerts, squawk box and live financial TV.</p>
+      <a href="/" class="cta">Get started &rarr;</a>
+    </section>
+  </main>
+</body>
+</html>
