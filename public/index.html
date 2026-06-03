@@ -13,6 +13,16 @@
 <meta name="google-site-verification" content="24taSmSdA2Wk7xXlpjkx_1-dfVN8ii0u0gvhDeczRrk">
 <link rel="canonical" href="https://www.tradingnewsterminal.com/">
 
+<!-- ── hreflang — fixes 95% drop in US search impressions traced to Google
+     not knowing which variant to serve. The /us page is the US-CTR-optimised
+     copy; /br is the Brazilian Portuguese variant; x-default falls back to
+     the generic EN homepage for any locale we don't explicitly target. -->
+<link rel="alternate" hreflang="en" href="https://www.tradingnewsterminal.com/">
+<link rel="alternate" hreflang="en-US" href="https://www.tradingnewsterminal.com/us">
+<link rel="alternate" hreflang="en-GB" href="https://www.tradingnewsterminal.com/">
+<link rel="alternate" hreflang="pt-BR" href="https://www.tradingnewsterminal.com/br">
+<link rel="alternate" hreflang="x-default" href="https://www.tradingnewsterminal.com/">
+
 <!-- ── Favicons — 192/512 explicitly declared so Google SERP picks the large
      icon instead of scaling the .ico (Google favicon requires ≥48×48 source). -->
 <link rel="icon" href="/favicon.ico" sizes="any">
