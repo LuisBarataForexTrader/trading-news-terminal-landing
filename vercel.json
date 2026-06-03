@@ -582,6 +582,38 @@
       "destination": "https://api.tradingnewsterminal.com/fr/google:code.html"
     },
     {
+      "source": "/ar/news",
+      "destination": "https://api.tradingnewsterminal.com/ar/news"
+    },
+    {
+      "source": "/ar/news/category/:cat",
+      "destination": "https://api.tradingnewsterminal.com/ar/news/category/:cat"
+    },
+    {
+      "source": "/ar/news/:year(\\d{4})/:month(\\d{2})/:day(\\d{2})/:slug",
+      "destination": "https://api.tradingnewsterminal.com/ar/news/:year/:month/:day/:slug"
+    },
+    {
+      "source": "/ar/news/google:code(\\w[\\w-]{7,63})",
+      "destination": "https://api.tradingnewsterminal.com/ar/news/google:code.html"
+    },
+    {
+      "source": "/ar/news/google:code(\\w[\\w-]{7,63}).html",
+      "destination": "https://api.tradingnewsterminal.com/ar/news/google:code.html"
+    },
+    {
+      "source": "/ar/google:code(\\w[\\w-]{7,63})",
+      "destination": "https://api.tradingnewsterminal.com/ar/google:code.html"
+    },
+    {
+      "source": "/ar/google:code(\\w[\\w-]{7,63}).html",
+      "destination": "https://api.tradingnewsterminal.com/ar/google:code.html"
+    },
+    {
+      "source": "/sitemap-news-ar.xml",
+      "destination": "https://api.tradingnewsterminal.com/sitemap-news-ar.xml"
+    },
+    {
       "source": "/sitemap-news-fr.xml",
       "destination": "https://api.tradingnewsterminal.com/sitemap-news-fr.xml"
     },
