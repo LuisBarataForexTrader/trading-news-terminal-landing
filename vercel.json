@@ -522,6 +522,10 @@
       "destination": "https://api.tradingnewsterminal.com/google:code.html"
     },
     {
+      "source": "/wsb-market-news",
+      "destination": "/wsb-market-news.html"
+    },
+    {
       "source": "/pt/news/google:code(\\w[\\w-]{7,63})",
       "destination": "https://api.tradingnewsterminal.com/pt/news/google:code.html"
     },
