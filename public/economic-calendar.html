@@ -339,7 +339,7 @@
         <span style="width:10px;height:10px;border-radius:50%;background:#ff3d57;display:inline-block;"></span>
         <span style="width:10px;height:10px;border-radius:50%;background:#ffc107;display:inline-block;"></span>
         <span style="width:10px;height:10px;border-radius:50%;background:#00c853;display:inline-block;"></span>
-        <span style="color:#556677;margin-left:8px;font-size:11px;letter-spacing:0.08em;">ECONOMIC CALENDAR · TODAY · ALL ECONOMIES</span>
+        <span style="color:#556677;margin-left:8px;font-size:11px;letter-spacing:0.08em;"><span id="tnt-cal-status">ECONOMIC CALENDAR · LIVE · NEXT 7 DAYS</span></span>
       </div>
       <div style="overflow-x:auto;">
         <table style="width:100%;border-collapse:collapse;min-width:560px;">
@@ -352,7 +352,7 @@
             <th style="padding:9px 12px;text-align:right;color:#556677;font-weight:600;border-bottom:1px solid #1e2a3a;">FCST</th>
             <th style="padding:9px 12px;text-align:right;color:#556677;font-weight:600;border-bottom:1px solid #1e2a3a;">ACTUAL</th>
           </tr></thead>
-          <tbody>
+          <tbody id="tnt-cal-body">
             <tr style="border-bottom:1px solid #1e2a3a;">
               <td style="padding:10px 12px;color:#8899aa;">08:30</td>
               <td style="padding:10px 12px;color:#e0e8f0;">🇺🇸 USD</td>
@@ -987,6 +987,53 @@ function setLang(l){document.getElementById('langMenu').style.display='none';_ap
   });
 })();
 
+</script>
+<!-- Live economic calendar widget: replaces the static preview with real upcoming
+     events from the TNT API. Falls back to the static rows if the fetch fails. -->
+<script>
+(function(){
+  var BE='https://api.tradingnewsterminal.com';
+  var FLAG={US:'🇺🇸',EU:'🇪🇺',GB:'🇬🇧',UK:'🇬🇧',JP:'🇯🇵',CA:'🇨🇦',AU:'🇦🇺',NZ:'🇳🇿',CH:'🇨🇭',CN:'🇨🇳',DE:'🇩🇪',FR:'🇫🇷',IT:'🇮🇹',ES:'🇪🇸',IN:'🇮🇳',BR:'🇧🇷',KR:'🇰🇷',MX:'🇲🇽',ZA:'🇿🇦',SE:'🇸🇪',NO:'🇳🇴',SG:'🇸🇬',HK:'🇭🇰'};
+  var LINK=[[/ecb|european central bank/i,'/ecb-rate-decision-news'],[/fomc|federal reserve|fed funds|fed interest/i,'/fed-rate-decision-news'],[/non.?farm|payroll/i,'/nfp-news-feed'],[/\bcpi\b|inflation rate/i,'/cpi-release-news']];
+  function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function num(v){return (v==null||v==='')?'—':esc(v);}
+  function p2(n){return (n<10?'0':'')+n;}
+  function render(events){
+    var now=Date.now();
+    var up=events.filter(function(e){var t=Date.parse(e.date); return e.importance>=0 && t && t>=now-2*3600000;})
+                 .sort(function(a,b){return Date.parse(a.date)-Date.parse(b.date);}).slice(0,12);
+    if(!up.length) return;
+    var today=new Date(); var tkey=today.getFullYear()+'-'+p2(today.getMonth()+1)+'-'+p2(today.getDate());
+    var rows=up.map(function(e){
+      var d=new Date(e.date);
+      var key=d.getFullYear()+'-'+p2(d.getMonth()+1)+'-'+p2(d.getDate());
+      var tm=p2(d.getHours())+':'+p2(d.getMinutes());
+      var when=(key===tkey)?tm:(p2(d.getMonth()+1)+'/'+p2(d.getDate())+' '+tm);
+      var imp=e.importance>=1?['HIGH','#ff3d57']:['MED','#ffc107'];
+      var flag=FLAG[(e.country||'').toUpperCase()]||'';
+      var title=esc(e.title);
+      for(var i=0;i<LINK.length;i++){ if(LINK[i][0].test(e.title||'')){ title='<a href="'+LINK[i][1]+'" style="color:inherit;">'+title+'</a>'; break; } }
+      var last=e.actual!=null?'<span style="color:#e0e8f0;font-weight:700;">'+num(e.actual)+'</span>':'<span style="color:#00d4ff;font-weight:700;">upcoming</span>';
+      return '<tr style="border-bottom:1px solid #1e2a3a;">'
+        +'<td style="padding:10px 12px;color:#8899aa;white-space:nowrap;">'+when+'</td>'
+        +'<td style="padding:10px 12px;color:#e0e8f0;white-space:nowrap;">'+flag+' '+esc(e.currency||e.country||'')+'</td>'
+        +'<td style="padding:10px 12px;color:#e0e8f0;font-weight:600;">'+title+'</td>'
+        +'<td style="padding:10px 12px;text-align:center;"><span style="color:'+imp[1]+';font-weight:700;">'+imp[0]+'</span></td>'
+        +'<td style="padding:10px 12px;text-align:right;color:#556677;">'+num(e.previous)+'</td>'
+        +'<td style="padding:10px 12px;text-align:right;color:#556677;">'+num(e.forecast)+'</td>'
+        +'<td style="padding:10px 12px;text-align:right;">'+last+'</td>'
+        +'</tr>';
+    }).join('');
+    var body=document.getElementById('tnt-cal-body'); if(body){ body.innerHTML=rows; }
+    var st=document.getElementById('tnt-cal-status'); if(st){ st.textContent='ECONOMIC CALENDAR · LIVE · NEXT 7 DAYS · '+up.length+' EVENTS · YOUR LOCAL TIME'; }
+  }
+  function load(){
+    fetch(BE+'/calendar?days=7&lang=en').then(function(r){return r.ok?r.json():null;}).then(function(d){
+      if(d&&d.events&&d.events.length) render(d.events);
+    }).catch(function(){});
+  }
+  if(document.readyState!=='loading'){load();}else{document.addEventListener('DOMContentLoaded',load);}
+})();
 </script>
 </body>
 </html>
