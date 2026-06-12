@@ -964,6 +964,7 @@ var _tnt={
   });
   try{history.replaceState(null,'',location.pathname+'?lang='+l);}catch(e){}
   localStorage.setItem('tnt_lang',l);
+  if(window._tntCalReload)window._tntCalReload();
 }
 function setLang(l){document.getElementById('langMenu').style.display='none';_applyLang(l);}
 (function(){
@@ -993,6 +994,9 @@ function setLang(l){document.getElementById('langMenu').style.display='none';_ap
 <script>
 (function(){
   var BE='https://api.tradingnewsterminal.com';
+  function curLang(){try{return new URLSearchParams(location.search).get('lang')||localStorage.getItem('tnt_lang')||'en';}catch(e){return 'en';}}
+  var L18={en:{up:'upcoming',st:'ECONOMIC CALENDAR · LIVE · NEXT 7 DAYS · {n} EVENTS · YOUR LOCAL TIME'},pt:{up:'em breve',st:'CALENDÁRIO ECONÓMICO · AO VIVO · PRÓXIMOS 7 DIAS · {n} EVENTOS · HORA LOCAL'},es:{up:'próximo',st:'CALENDARIO ECONÓMICO · EN VIVO · PRÓXIMOS 7 DÍAS · {n} EVENTOS · HORA LOCAL'},fr:{up:'à venir',st:'CALENDRIER ÉCONOMIQUE · EN DIRECT · 7 PROCHAINS JOURS · {n} ÉVÉNEMENTS · HEURE LOCALE'},de:{up:'demnächst',st:'WIRTSCHAFTSKALENDER · LIVE · NÄCHSTE 7 TAGE · {n} TERMINE · ORTSZEIT'},it:{up:'in arrivo',st:'CALENDARIO ECONOMICO · LIVE · PROSSIMI 7 GIORNI · {n} EVENTI · ORA LOCALE'}};
+  function _t(){return L18[curLang()]||L18.en;}
   var FLAG={US:'🇺🇸',EU:'🇪🇺',GB:'🇬🇧',UK:'🇬🇧',JP:'🇯🇵',CA:'🇨🇦',AU:'🇦🇺',NZ:'🇳🇿',CH:'🇨🇭',CN:'🇨🇳',DE:'🇩🇪',FR:'🇫🇷',IT:'🇮🇹',ES:'🇪🇸',IN:'🇮🇳',BR:'🇧🇷',KR:'🇰🇷',MX:'🇲🇽',ZA:'🇿🇦',SE:'🇸🇪',NO:'🇳🇴',SG:'🇸🇬',HK:'🇭🇰'};
   var LINK=[[/ecb|european central bank/i,'/ecb-rate-decision-news'],[/fomc|federal reserve|fed funds|fed interest/i,'/fed-rate-decision-news'],[/non.?farm|payroll/i,'/nfp-news-feed'],[/\bcpi\b|inflation rate/i,'/cpi-release-news']];
   function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
@@ -1012,8 +1016,8 @@ function setLang(l){document.getElementById('langMenu').style.display='none';_ap
       var imp=e.importance>=1?['HIGH','#ff3d57']:['MED','#ffc107'];
       var flag=FLAG[(e.country||'').toUpperCase()]||'';
       var title=esc(e.title);
-      for(var i=0;i<LINK.length;i++){ if(LINK[i][0].test(e.title||'')){ title='<a href="'+LINK[i][1]+'" style="color:inherit;">'+title+'</a>'; break; } }
-      var last=e.actual!=null?'<span style="color:#e0e8f0;font-weight:700;">'+num(e.actual)+'</span>':'<span style="color:#00d4ff;font-weight:700;">upcoming</span>';
+      if(curLang()==='en'){for(var i=0;i<LINK.length;i++){ if(LINK[i][0].test(e.title||'')){ title='<a href="'+LINK[i][1]+'" style="color:inherit;">'+title+'</a>'; break; } }}
+      var last=e.actual!=null?'<span style="color:#e0e8f0;font-weight:700;">'+num(e.actual)+'</span>':'<span style="color:#00d4ff;font-weight:700;">'+_t().up+'</span>';
       return '<tr style="border-bottom:1px solid #1e2a3a;">'
         +'<td style="padding:10px 12px;color:#8899aa;white-space:nowrap;">'+when+'</td>'
         +'<td style="padding:10px 12px;color:#e0e8f0;white-space:nowrap;">'+flag+' '+esc(e.currency||e.country||'')+'</td>'
@@ -1025,13 +1029,14 @@ function setLang(l){document.getElementById('langMenu').style.display='none';_ap
         +'</tr>';
     }).join('');
     var body=document.getElementById('tnt-cal-body'); if(body){ body.innerHTML=rows; }
-    var st=document.getElementById('tnt-cal-status'); if(st){ st.textContent='ECONOMIC CALENDAR · LIVE · NEXT 7 DAYS · '+up.length+' EVENTS · YOUR LOCAL TIME'; }
+    var st=document.getElementById('tnt-cal-status'); if(st){ st.textContent=_t().st.replace('{n}',up.length); }
   }
   function load(){
-    fetch(BE+'/calendar?days=7&lang=en').then(function(r){return r.ok?r.json():null;}).then(function(d){
+    fetch(BE+'/calendar?days=7&lang='+curLang()).then(function(r){return r.ok?r.json():null;}).then(function(d){
       if(d&&d.events&&d.events.length) render(d.events);
     }).catch(function(){});
   }
+  window._tntCalReload=load;
   if(document.readyState!=='loading'){load();}else{document.addEventListener('DOMContentLoaded',load);}
 })();
 </script>
