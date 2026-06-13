@@ -2,8 +2,12 @@
 # Updated 2026-05-28: blocked AI/scraper bots that consume CDN bandwidth without
 # contributing to Google/Bing SEO. Standard search engine crawlers remain allowed.
 
+# Content Signals (contentsignals.org): search indexing & AI search/citation are
+# allowed, but AI model TRAINING is not. This is an express reservation of rights
+# under Article 4 of EU Directive 2019/790 (Copyright in the Digital Single Market).
 # Default: allow all standard crawlers
 User-agent: *
+Content-Signal: search=yes, ai-train=no
 Allow: /
 Disallow: /admin
 Disallow: /signin
