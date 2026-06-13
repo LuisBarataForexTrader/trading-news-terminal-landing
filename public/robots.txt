@@ -12,34 +12,14 @@ Disallow: /login
 Disallow: /reset-password
 Disallow: /verify-email
 
-# AI training crawlers — blocked (no SEO benefit, consume bandwidth)
-User-agent: GPTBot
-Disallow: /
+# AI search / answer engines — ALLOWED (intentional 2026-06-13).
+# These crawlers read content to cite it in AI answers (ChatGPT, Google AI Overviews,
+# Perplexity, Claude). Allowing them is a discovery/visibility channel. Training rights
+# are still reserved via the Content-Signal (search=yes, ai-train=no) declaration.
+# Allowed by falling under "User-agent: *" above: GPTBot, OAI-SearchBot, ChatGPT-User,
+# Google-Extended, ClaudeBot, Claude-Web, anthropic-ai, PerplexityBot, Perplexity-User.
 
-User-agent: ChatGPT-User
-Disallow: /
-
-User-agent: OAI-SearchBot
-Disallow: /
-
-User-agent: ClaudeBot
-Disallow: /
-
-User-agent: Claude-Web
-Disallow: /
-
-User-agent: anthropic-ai
-Disallow: /
-
-User-agent: Google-Extended
-Disallow: /
-
-User-agent: PerplexityBot
-Disallow: /
-
-User-agent: Perplexity-User
-Disallow: /
-
+# Pure scrapers / training-only bots with no citation value — blocked (bandwidth only)
 User-agent: CCBot
 Disallow: /
 
