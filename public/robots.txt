@@ -77,5 +77,3 @@ Sitemap: https://www.tradingnewsterminal.com/sitemap-news-pt.xml
 Sitemap: https://www.tradingnewsterminal.com/sitemap-news-es.xml
 Sitemap: https://www.tradingnewsterminal.com/sitemap-news-fr.xml
 Sitemap: https://www.tradingnewsterminal.com/sitemap-news-de.xml
-Sitemap: https://www.tradingnewsterminal.com/sitemap-news-ar.xml
-Sitemap: https://www.tradingnewsterminal.com/sitemap-articles.xml
