@@ -153,15 +153,38 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Trading News Terminal",
-  "url": "https://www.tradingnewsterminal.com",
-  "logo": "https://www.tradingnewsterminal.com/og-image.png",
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "email": "support@tradingnewsterminal.com",
-    "contactType": "customer support"
-  }
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.tradingnewsterminal.com/#organization",
+      "name": "Trading News Terminal",
+      "alternateName": "TNT",
+      "url": "https://www.tradingnewsterminal.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.tradingnewsterminal.com/favicon-512x512.png",
+        "width": 512,
+        "height": 512
+      },
+      "description": "Professional real-time financial news terminal for forex, crypto and macro traders — live news feed, economic calendar, squawk box, central banks tracker and TradingView charts in one interface.",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "support@tradingnewsterminal.com",
+        "contactType": "customer support"
+      },
+      "sameAs": [
+        "https://t.me/tradingnewsterminal"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.tradingnewsterminal.com/#website",
+      "url": "https://www.tradingnewsterminal.com",
+      "name": "Trading News Terminal",
+      "inLanguage": "en",
+      "publisher": { "@id": "https://www.tradingnewsterminal.com/#organization" }
+    }
+  ]
 }
 </script>
 

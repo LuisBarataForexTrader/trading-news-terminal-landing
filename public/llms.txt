@@ -1,0 +1,45 @@
+# Trading News Terminal
+
+> Professional real-time financial news terminal for active traders. Live market-moving news (forex, crypto, stocks, commodities, macro), economic calendar, squawk box, central banks tracker and TradingView charts in one zero-clutter interface. Basic is free forever; Pro is €40/month.
+
+Trading News Terminal (TNT) delivers institutional-grade market news the moment it crosses the wire, plus the tools traders use to act on it. It is built for active forex, futures, crypto and macro traders who need speed and signal over noise. Founded by Luís Barata, a forex and macro trader with 13+ years in the markets.
+
+## What it is
+- Real-time financial news feed — zero delay on Pro; ~5-minute delay on the free Basic plan.
+- HIGH / MEDIUM / LOW impact classification so traders see what actually moves markets.
+- Coverage across forex, indices, stocks, commodities, crypto, bonds and macro.
+
+## Core features
+- Live economic calendar (NFP, CPI, FOMC, ECB, GDP, PMI) with countdown timers and beat/miss signals.
+- Squawk Box — live audio alerts of breaking headlines.
+- Central Banks Tracker (Fed, ECB, BOE, BOJ, SNB, BOC, RBA, RBNZ).
+- Earnings calendar, Market Screener, Market Sentiment (risk-on/risk-off), Macro & Bonds Hub.
+- 7 live financial TV channels.
+- Telegram alerts + custom keyword alerts.
+- AI-assisted market analysis.
+
+## Pricing
+- Basic: Free forever, no credit card.
+- Pro: €40/month (cheaper billed annually), no commitment, cancel anytime.
+
+## Key pages
+- Homepage: https://www.tradingnewsterminal.com/
+- Economic calendar: https://www.tradingnewsterminal.com/economic-calendar
+- Forex news feed: https://www.tradingnewsterminal.com/forex-news-feed
+- Crypto news feed: https://www.tradingnewsterminal.com/crypto-news-feed
+- Fed rate decision news: https://www.tradingnewsterminal.com/fed-rate-decision-news
+- ECB rate decision news: https://www.tradingnewsterminal.com/ecb-rate-decision-news
+- Squawk box: https://www.tradingnewsterminal.com/squawk-box
+- Live financial TV: https://www.tradingnewsterminal.com/live-financial-tv
+- About: https://www.tradingnewsterminal.com/about
+
+## Guides
+- CME Futures Roll Calendar 2026: https://app.tradingnewsterminal.com/blog/guide/cme-futures-roll-dates-2026
+- How to trade the EIA crude inventory release: https://app.tradingnewsterminal.com/blog/guide/how-to-trade-eia-crude-inventory
+- Best US futures prop firms comparison 2026: https://app.tradingnewsterminal.com/blog/guide/best-us-futures-prop-firms-comparison-2026
+
+## Languages
+Interface and key landing pages available in English, Português, Español, Français, Deutsch and Italiano.
+
+## Contact
+support@tradingnewsterminal.com · Telegram: https://t.me/tradingnewsterminal
