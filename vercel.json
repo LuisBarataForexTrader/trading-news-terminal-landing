@@ -682,10 +682,6 @@
       "destination": "https://api.tradingnewsterminal.com/sitemap-news-es.xml"
     },
     {
-      "source": "/sitemap-articles.xml",
-      "destination": "https://api.tradingnewsterminal.com/sitemap-articles.xml"
-    },
-    {
       "source": "/blog/sitemap.xml",
       "destination": "https://api.tradingnewsterminal.com/blog/sitemap.xml"
     },
