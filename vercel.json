@@ -8,6 +8,22 @@
   ],
   "redirects": [
     {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "tradingnewsterminal.com"
+        }
+      ],
+      "destination": "https://www.tradingnewsterminal.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/de/forex-nachrichten",
+      "destination": "/forex-nachrichten",
+      "permanent": true
+    },
+    {
       "source": "/telegram",
       "destination": "https://app.tradingnewsterminal.com/telegram",
       "permanent": false
