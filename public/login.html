@@ -75,7 +75,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);-webkit-font
   position:relative;z-index:2;
   padding:32px 36px 0;
 }
-.panel-logo-link{display:flex;align-items:center;gap:12px;text-decoration:none;}
+.panel-logo-link{display:flex;align-items:center;gap:12px;text-decoration:none;color:#fff;}
 .panel-logo-icon{width:32px;height:32px;border:1.5px solid var(--panel-accent);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
 .panel-logo-icon::before{content:'';width:10px;height:10px;background:var(--panel-accent);animation:pulse 2s ease-in-out infinite;}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.4;transform:scale(0.7)}}
@@ -555,6 +555,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);-webkit-font
 try { if(!localStorage.getItem('tnt_lang')){ var _nl=(navigator.language||'en').slice(0,2).toLowerCase(); if(['pt','es','fr','de','it'].indexOf(_nl)>=0) localStorage.setItem('tnt_lang', _nl); } } catch(_e){}
 const _AUTH_STR = {
   en: {
+    'panel.badge.trial':'7-DAY FREE TRIAL','panel.title.trial':'Try Pro free for 7 days','panel.desc.trial':'Full access to all Pro features','panel.stat.days.label':'for 7 days','panel.note.trial':'Then €40/month + VAT · Cancel anytime',
     'logo.sub':'Real-time Market Intelligence','topbar.back':'← Back to tradingnewsterminal.com',
     'panel.badge.basic':'Free Access · No Credit Card','panel.title.basic':'Your edge in<br><span>financial markets.</span>',
     'panel.desc.basic':'Real-time news, live economic calendar, TradingView charts and more — all in one terminal built for active traders.',
@@ -600,6 +601,7 @@ const _AUTH_STR = {
     'footer.terms':'Terms','footer.privacy':'Privacy','footer.pricing':'Pricing','signin.badge':'Live Market Intelligence',
   },
   pt: {
+    'panel.badge.trial':'TRIAL GRÁTIS DE 7 DIAS','panel.title.trial':'Experimenta o Pro grátis durante 7 dias','panel.desc.trial':'Acesso total a todas as funcionalidades Pro','panel.stat.days.label':'por 7 dias','panel.note.trial':'Depois €40/mês + IVA · Cancela quando quiseres',
     'logo.sub':'Inteligência de Mercado em Tempo Real','topbar.back':'← Voltar para tradingnewsterminal.com',
     'panel.badge.basic':'Acesso Gratuito · Sem Cartão','panel.title.basic':'A tua vantagem nos<br><span>mercados financeiros.</span>',
     'panel.desc.basic':'Notícias em tempo real, calendário económico, gráficos TradingView e muito mais — tudo num terminal para traders ativos.',
@@ -645,6 +647,7 @@ const _AUTH_STR = {
     'footer.terms':'Termos','footer.privacy':'Privacidade','footer.pricing':'Preços','signin.badge':'Inteligência de Mercado ao Vivo',
   },
   es: {
+    'panel.badge.trial':'PRUEBA GRATIS DE 7 DÍAS','panel.title.trial':'Prueba Pro gratis durante 7 días','panel.desc.trial':'Acceso total a todas las funciones Pro','panel.stat.days.label':'por 7 días','panel.note.trial':'Luego €40/mes + IVA · Cancela cuando quieras',
     'logo.sub':'Inteligencia de Mercado en Tiempo Real','topbar.back':'← Volver a tradingnewsterminal.com',
     'panel.badge.basic':'Acceso Gratuito · Sin Tarjeta','panel.title.basic':'Tu ventaja en los<br><span>mercados financieros.</span>',
     'panel.desc.basic':'Noticias en tiempo real, calendario económico en directo, gráficos TradingView y más — todo en un terminal para traders activos.',
@@ -690,6 +693,7 @@ const _AUTH_STR = {
     'footer.terms':'Términos','footer.privacy':'Privacidad','footer.pricing':'Precios','signin.badge':'Inteligencia de Mercado en Directo',
   },
   fr: {
+    'panel.badge.trial':'ESSAI GRATUIT DE 7 JOURS','panel.title.trial':'Essayez Pro gratuitement pendant 7 jours','panel.desc.trial':'Accès complet à toutes les fonctionnalités Pro','panel.stat.days.label':'pendant 7 jours','panel.note.trial':'Puis 40 €/mois + TVA · Annulez à tout moment',
     'logo.sub':'Intelligence de Marché en Temps Réel','topbar.back':'← Retour à tradingnewsterminal.com',
     'panel.badge.basic':'Accès Gratuit · Sans Carte','panel.title.basic':'Votre avantage sur<br><span>les marchés financiers.</span>',
     'panel.desc.basic':'Actualités en temps réel, calendrier économique, graphiques TradingView et plus — tout dans un terminal pour traders actifs.',
@@ -735,6 +739,7 @@ const _AUTH_STR = {
     'footer.terms':'Conditions','footer.privacy':'Confidentialité','footer.pricing':'Tarifs','signin.badge':'Intelligence de Marché en Direct',
   },
   de: {
+    'panel.badge.trial':'7 TAGE KOSTENLOS TESTEN','panel.title.trial':'Teste Pro 7 Tage kostenlos','panel.desc.trial':'Voller Zugriff auf alle Pro-Funktionen','panel.stat.days.label':'für 7 Tage','panel.note.trial':'Danach 40 €/Monat + MwSt. · Jederzeit kündbar',
     'logo.sub':'Echtzeit-Marktintelligenz','topbar.back':'← Zurück zu tradingnewsterminal.com',
     'panel.badge.basic':'Kostenloser Zugang · Keine Karte','panel.title.basic':'Dein Vorteil auf<br><span>den Finanzmärkten.</span>',
     'panel.desc.basic':'Echtzeit-Nachrichten, Live-Wirtschaftskalender, TradingView-Charts und mehr — alles in einem Terminal für aktive Trader.',
@@ -780,6 +785,7 @@ const _AUTH_STR = {
     'footer.terms':'Bedingungen','footer.privacy':'Datenschutz','footer.pricing':'Preise','signin.badge':'Live Marktintelligenz',
   },
   it: {
+    'panel.badge.trial':'PROVA GRATUITA DI 7 GIORNI','panel.title.trial':'Prova Pro gratis per 7 giorni','panel.desc.trial':'Accesso completo a tutte le funzionalità Pro','panel.stat.days.label':'per 7 giorni','panel.note.trial':'Poi 40 €/mese + IVA · Disdici quando vuoi',
     'logo.sub':'Intelligence di Mercato in Tempo Reale','topbar.back':'← Torna a tradingnewsterminal.com',
     'panel.badge.basic':'Accesso Gratuito · Nessuna Carta','panel.title.basic':'Il tuo vantaggio nei<br><span>mercati finanziari.</span>',
     'panel.desc.basic':'Notizie in tempo reale, calendario economico in diretta, grafici TradingView e altro — tutto in un terminal per trader attivi.',
@@ -911,19 +917,19 @@ function _initProFlow() {
   document.getElementById('auth-layout').classList.add('pro-flow');
   // Update left panel
   if (TRIAL_FROM_URL) {
-    document.getElementById('panel-badge').textContent = '7-DAY FREE TRIAL';
-    document.getElementById('panel-title').innerHTML = 'Try Pro free for 7 days';
-    document.getElementById('panel-desc').textContent = 'Full access to all Pro features';
+    document.getElementById('panel-badge').textContent = _tl('panel.badge.trial');
+    document.getElementById('panel-title').innerHTML = _tl('panel.title.trial');
+    document.getElementById('panel-desc').textContent = _tl('panel.desc.trial');
     document.getElementById('panel-features').innerHTML = _buildProFeaturesHTML();
     document.getElementById('panel-stats').innerHTML = `
-      <div class="panel-stat"><div class="panel-stat-num">€0</div><div class="panel-stat-label">for 7 days</div></div>
+      <div class="panel-stat"><div class="panel-stat-num">€0</div><div class="panel-stat-label">${_tl('panel.stat.days.label')}</div></div>
       <div class="panel-stat"><div class="panel-stat-num">6</div><div class="panel-stat-label">${_tl('panel.stat.assets.label')}</div></div>
       <div class="panel-stat"><div class="panel-stat-num">7</div><div class="panel-stat-label">${_tl('panel.stat.tv.label')}</div></div>`;
     // Add note below stats
     const statsEl = document.getElementById('panel-stats');
     const noteEl = document.createElement('div');
     noteEl.style.cssText = 'text-align:center;font-size:0.85rem;color:rgba(255,255,255,0.7);margin-top:0.5rem;';
-    noteEl.textContent = 'Then €40/month + VAT \u00b7 Cancel anytime';
+    noteEl.textContent = _tl('panel.note.trial');
     statsEl.parentNode.insertBefore(noteEl, statsEl.nextSibling);
   } else {
     document.getElementById('panel-badge').textContent = _tl('panel.badge.pro');
