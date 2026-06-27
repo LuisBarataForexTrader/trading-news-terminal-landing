@@ -370,8 +370,21 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);-webkit-font
   <!-- ── RIGHT FORM AREA ── -->
   <div class="auth-form-area">
 
-    <div class="form-topbar">
+    <div class="form-topbar" style="display:flex;align-items:center;justify-content:space-between;gap:12px;">
       <a href="/" class="form-topbar-link">← Back to tradingnewsterminal.com</a>
+      <div style="position:relative;flex-shrink:0;" id="langPicker">
+        <button type="button" onclick="var m=document.getElementById('langMenu');m.style.display=m.style.display==='block'?'none':'block';return false;" style="display:flex;align-items:center;gap:6px;padding:6px 10px;background:#111827;border:1px solid #1e2a3a;color:#e0e8f0;font-size:11px;font-weight:600;letter-spacing:0.06em;cursor:pointer;border-radius:4px;">
+          <img src="https://twemoji.maxcdn.com/v/latest/svg/1f1fa-1f1f8.svg" width="16" height="16" alt="" style="vertical-align:middle;"> <span>EN</span>
+        </button>
+        <div id="langMenu" style="display:none;position:absolute;right:0;top:calc(100% + 5px);background:#111827;border:1px solid #1e2a3a;border-radius:5px;min-width:142px;z-index:300;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.5);">
+          <a href="#" data-lang="en" onclick="setLang('en');return false;" style="display:flex;align-items:center;gap:8px;padding:9px 14px;color:#8899aa;font-size:12px;text-decoration:none;"><img src="https://twemoji.maxcdn.com/v/latest/svg/1f1fa-1f1f8.svg" width="16" height="16" alt=""> English</a>
+          <a href="#" data-lang="pt" onclick="setLang('pt');return false;" style="display:flex;align-items:center;gap:8px;padding:9px 14px;color:#8899aa;font-size:12px;text-decoration:none;"><img src="https://twemoji.maxcdn.com/v/latest/svg/1f1f5-1f1f9.svg" width="16" height="16" alt=""> Português</a>
+          <a href="#" data-lang="es" onclick="setLang('es');return false;" style="display:flex;align-items:center;gap:8px;padding:9px 14px;color:#8899aa;font-size:12px;text-decoration:none;"><img src="https://twemoji.maxcdn.com/v/latest/svg/1f1ea-1f1f8.svg" width="16" height="16" alt=""> Español</a>
+          <a href="#" data-lang="fr" onclick="setLang('fr');return false;" style="display:flex;align-items:center;gap:8px;padding:9px 14px;color:#8899aa;font-size:12px;text-decoration:none;"><img src="https://twemoji.maxcdn.com/v/latest/svg/1f1eb-1f1f7.svg" width="16" height="16" alt=""> Français</a>
+          <a href="#" data-lang="de" onclick="setLang('de');return false;" style="display:flex;align-items:center;gap:8px;padding:9px 14px;color:#8899aa;font-size:12px;text-decoration:none;"><img src="https://twemoji.maxcdn.com/v/latest/svg/1f1e9-1f1ea.svg" width="16" height="16" alt=""> Deutsch</a>
+          <a href="#" data-lang="it" onclick="setLang('it');return false;" style="display:flex;align-items:center;gap:8px;padding:9px 14px;color:#8899aa;font-size:12px;text-decoration:none;"><img src="https://twemoji.maxcdn.com/v/latest/svg/1f1ee-1f1f9.svg" width="16" height="16" alt=""> Italiano</a>
+        </div>
+      </div>
     </div>
 
     <div class="form-center">
@@ -539,6 +552,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);-webkit-font
 
 <script>
 // ── AUTH i18n ────────────────────────────────────────────────────────────────
+try { if(!localStorage.getItem('tnt_lang')){ var _nl=(navigator.language||'en').slice(0,2).toLowerCase(); if(['pt','es','fr','de','it'].indexOf(_nl)>=0) localStorage.setItem('tnt_lang', _nl); } } catch(_e){}
 const _AUTH_STR = {
   en: {
     'logo.sub':'Real-time Market Intelligence','topbar.back':'← Back to tradingnewsterminal.com',
@@ -815,6 +829,19 @@ function _tl(key) {
   const lang = localStorage.getItem('tnt_lang') || 'en';
   return (_AUTH_STR[lang] || _AUTH_STR.en)[key] || _AUTH_STR.en[key] || key;
 }
+function setLang(l){ try{ localStorage.setItem('tnt_lang', l); }catch(e){} try{ location.reload(); }catch(e){ location.href=location.href; } }
+(function(){
+  var FL={en:'1f1fa-1f1f8',pt:'1f1f5-1f1f9',es:'1f1ea-1f1f8',fr:'1f1eb-1f1f7',de:'1f1e9-1f1ea',it:'1f1ee-1f1f9'};
+  var LB={en:'EN',pt:'PT',es:'ES',fr:'FR',de:'DE',it:'IT'};
+  function _hiLang(){
+    var l=(localStorage.getItem('tnt_lang')||'en'); if(!FL[l]) l='en';
+    var btn=document.querySelector('#langPicker>button');
+    if(btn) btn.innerHTML='<img src="https://twemoji.maxcdn.com/v/latest/svg/'+FL[l]+'.svg" width="16" height="16" style="vertical-align:middle;"> <span>'+LB[l]+'</span>';
+    document.querySelectorAll('#langMenu a').forEach(function(a){ var on=a.getAttribute('data-lang')===l; a.style.color=on?'#00d4ff':'#8899aa'; a.style.background=on?'rgba(0,212,255,0.08)':''; });
+  }
+  if(document.readyState!=='loading') _hiLang(); else document.addEventListener('DOMContentLoaded', _hiLang);
+  document.addEventListener('click', function(e){ var m=document.getElementById('langMenu'); var p=document.getElementById('langPicker'); if(m&&p&&!p.contains(e.target)) m.style.display='none'; });
+})();
 
 const BACKEND = 'https://api.tradingnewsterminal.com';
 const APP_URL = 'https://app.tradingnewsterminal.com';
