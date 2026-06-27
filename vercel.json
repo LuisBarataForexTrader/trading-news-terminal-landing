@@ -206,6 +206,38 @@
   ],
   "rewrites": [
     {
+      "source": "/pt/sitemap.xml",
+      "destination": "https://api.tradingnewsterminal.com/pt/sitemap.xml"
+    },
+    {
+      "source": "/pt/noticias-mercado-financeiro-tempo-real",
+      "destination": "https://api.tradingnewsterminal.com/pt/noticias-mercado-financeiro-tempo-real"
+    },
+    {
+      "source": "/pt/noticias-financeiras-portugal",
+      "destination": "https://api.tradingnewsterminal.com/pt/noticias-financeiras-portugal"
+    },
+    {
+      "source": "/pt/mercados-financeiros-hoje",
+      "destination": "https://api.tradingnewsterminal.com/pt/mercados-financeiros-hoje"
+    },
+    {
+      "source": "/pt/noticias-economia",
+      "destination": "https://api.tradingnewsterminal.com/pt/noticias-economia"
+    },
+    {
+      "source": "/pt/noticias-financeiras-hoje",
+      "destination": "https://api.tradingnewsterminal.com/pt/noticias-financeiras-hoje"
+    },
+    {
+      "source": "/pt/noticias-financeiras-mundo",
+      "destination": "https://api.tradingnewsterminal.com/pt/noticias-financeiras-mundo"
+    },
+    {
+      "source": "/pt/noticias-financeiras-ao-minuto",
+      "destination": "https://api.tradingnewsterminal.com/pt/noticias-financeiras-ao-minuto"
+    },
+    {
       "source": "/login",
       "destination": "/login.html"
     },
