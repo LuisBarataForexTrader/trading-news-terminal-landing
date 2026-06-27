@@ -19,6 +19,11 @@
       "permanent": true
     },
     {
+      "source": "/signin",
+      "destination": "/login",
+      "permanent": false
+    },
+    {
       "source": "/signup",
       "destination": "/login?plan=trial",
       "permanent": false
@@ -45,7 +50,7 @@
     },
     {
       "source": "/signin.html",
-      "destination": "/signin",
+      "destination": "/login",
       "permanent": true
     },
     {
@@ -245,10 +250,6 @@
     {
       "source": "/login",
       "destination": "/login.html"
-    },
-    {
-      "source": "/signin",
-      "destination": "/signin.html"
     },
     {
       "source": "/terms",
