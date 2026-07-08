@@ -92,62 +92,14 @@
     "Asset watchlist and smart search",
     "Multilingual interface"
   ],
-  "screenshot": "https://www.tradingnewsterminal.com/og-image.png",
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.8",
-    "ratingCount": "47",
-    "bestRating": "5"
-  }
+  "screenshot": "https://www.tradingnewsterminal.com/og-image.png"
 }
 </script>
 
-<!-- ── Structured Data: Reviews — each review MUST have itemReviewed + author
-     as Person (not Thing) to satisfy Google's Rich Results validator. The old
-     inline microdata emitted itemReviewed=missing and author=Thing. -->
-<script type="application/ld+json">
-[
-  {
-    "@context": "https://schema.org",
-    "@type": "Review",
-    "itemReviewed": {
-      "@type": "SoftwareApplication",
-      "name": "Trading News Terminal",
-      "applicationCategory": "FinanceApplication",
-      "operatingSystem": "Web Browser"
-    },
-    "author": { "@type": "Person", "name": "James K." },
-    "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-    "reviewBody": "I was paying over €150/month for a standalone squawk service. TNT Pro gives me squawk, real-time live news, economic calendar injections and live financial TV for a fraction of that. It's the only terminal I have open all day."
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "Review",
-    "itemReviewed": {
-      "@type": "SoftwareApplication",
-      "name": "Trading News Terminal",
-      "applicationCategory": "FinanceApplication",
-      "operatingSystem": "Web Browser"
-    },
-    "author": { "@type": "Person", "name": "Sofia R." },
-    "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-    "reviewBody": "The economic calendar integration is what sold me. When a data release hits, it appears in the news feed instantly with the actual vs forecast comparison. Combined with the TradingView chart right there — reaction time is completely different."
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "Review",
-    "itemReviewed": {
-      "@type": "SoftwareApplication",
-      "name": "Trading News Terminal",
-      "applicationCategory": "FinanceApplication",
-      "operatingSystem": "Web Browser"
-    },
-    "author": { "@type": "Person", "name": "Marco T." },
-    "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
-    "reviewBody": "I use the free plan daily to monitor macro news and the economic calendar. The HIGH/MEDIUM/LOW classification means I can instantly see what actually matters. I filter by EUR and USD and it's perfect for trading EUR/USD news events."
-  }
-]
-</script>
+<!-- Structured-data Reviews + aggregateRating removed 2026-07-08: they were self-declared
+     (invented authors, no real source). Google discounts self-serving ratings and it is against
+     their guidelines. Re-add ONLY with genuine, verifiable reviews (e.g. from a real Trustpilot
+     or Forex Peace Army profile), never fabricated. -->
 
 <!-- ── Structured Data: Organization ── -->
 <script type="application/ld+json">
@@ -1271,60 +1223,10 @@ footer { background:var(--bg2); border-top:1px solid var(--border); padding:64px
   </div>
 </section>
 
-<!-- ── TESTIMONIALS ── -->
-<section class="testimonials-section" aria-labelledby="testimonials-heading">
-  <div class="container">
-    <div class="section-eyebrow" data-i18n="test.eyebrow">Traders using TNT</div>
-    <h2 class="section-title" id="testimonials-heading" data-i18n-html="test.h2">Trusted by independent<br>traders worldwide</h2>
+<!-- Testimonials section removed 2026-07-08: the testimonials were fabricated (invented names,
+     Unsplash stock-photo avatars, same text as the removed fake review schema). Re-add only with
+     real, consented customer reviews. -->
 
-    <div class="testimonials-grid" role="list">
-      <div class="testimonial-card" role="listitem">
-        <div class="testimonial-stars" aria-label="5 out of 5 stars">
-          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-        </div>
-        <p class="testimonial-text">"I was paying over €150/month for a standalone squawk service. TNT Pro gives me squawk, real-time live news, economic calendar injections and live financial TV for a fraction of that. It's the only terminal I have open all day."</p>
-        <div class="testimonial-author">
-          <img class="testimonial-avatar" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop&crop=face&q=80" alt="James K. — Forex day trader, London" loading="lazy" width="40" height="40">
-          <div>
-            <div class="testimonial-name">James K.</div>
-            <div class="testimonial-role" data-i18n="test.role1">Forex Day Trader · London</div>
-            <span class="testimonial-badge tb-pro">Pro</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="testimonial-card" role="listitem">
-        <div class="testimonial-stars" aria-label="5 out of 5 stars">
-          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-        </div>
-        <p class="testimonial-text">"The economic calendar integration is what sold me. When a data release hits, it appears in the news feed instantly with the actual vs forecast comparison. Combined with the TradingView chart right there — reaction time is completely different."</p>
-        <div class="testimonial-author">
-          <img class="testimonial-avatar" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&crop=face&q=80" alt="Sofia R. — Macro trader, Lisbon" loading="lazy" width="40" height="40">
-          <div>
-            <div class="testimonial-name">Sofia R.</div>
-            <div class="testimonial-role" data-i18n="test.role2">Macro Trader · Lisbon</div>
-            <span class="testimonial-badge tb-pro">Pro</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="testimonial-card" role="listitem">
-        <div class="testimonial-stars" aria-label="5 out of 5 stars">
-          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-        </div>
-        <p class="testimonial-text">"I use the free plan daily to monitor macro news and the economic calendar. The HIGH/MEDIUM/LOW classification means I can instantly see what actually matters. I filter by EUR and USD and it's perfect for trading EUR/USD news events."</p>
-        <div class="testimonial-author">
-          <img class="testimonial-avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&h=80&fit=crop&crop=face&q=80" alt="Marco T. — Swing trader, Milan" loading="lazy" width="40" height="40">
-          <div>
-            <div class="testimonial-name">Marco T.</div>
-            <div class="testimonial-role" data-i18n="test.role3">Swing Trader · Milan</div>
-            <span class="testimonial-badge tb-free">Basic</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- ── PRICING ── -->
 <section id="pricing" style="background:var(--bg3);padding:100px 24px;" aria-labelledby="pricing-heading">
