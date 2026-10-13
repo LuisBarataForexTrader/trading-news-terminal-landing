@@ -1,0 +1,48 @@
+# Cloudflare Pages redirects (replica os "redirects" do vercel.json).
+# NOTA: apex -> www e o proxy do /blog /news /pt/* /og /sitemaps são tratados em functions/_middleware.js.
+# As clean-URLs (/login -> login.html etc.) são servidas automaticamente pelo Pages.
+
+# auth / clean-url 301s
+/login.html            /login            301
+/signin                /login            302
+/signin.html           /login            301
+/signup                /login?plan=trial 302
+/signup.html           /signup           301
+/terms.html            /terms            301
+/privacy.html          /privacy          301
+/reset-password.html   /reset-password   301
+/verify-email.html     /verify-email     301
+/admin.html            /admin            301
+/affiliates.html       /affiliates       301
+/faq.html              /faq              301
+/afiliates             /affiliates       301
+/afiliates.html        /affiliates       301
+/de/forex-nachrichten  /forex-nachrichten 301
+
+# external
+/telegram       https://app.tradingnewsterminal.com/telegram  302
+/telegram.html  https://app.tradingnewsterminal.com/telegram  302
+
+# retired competitor pages -> home
+/bloomberg-alternative              /  301
+/bloomberg-alternative.html         /  301
+/reuters-eikon-alternative          /  301
+/reuters-eikon-alternative.html     /  301
+/refinitiv-workspace-alternative    /  301
+/refinitiv-workspace-alternative.html /  301
+/benzinga-pro-alternative           /  301
+/benzinga-pro-alternative.html      /  301
+/fxstreet-alternative               /  301
+/fxstreet-alternative.html          /  301
+/forexlive-alternative              /  301
+/forexlive-alternative.html         /  301
+/investing-com-alternative          /  301
+/investing-com-alternative.html     /  301
+/finviz-alternative                 /  301
+/finviz-alternative.html            /  301
+/tradingview-news-alternative       /  301
+/tradingview-news-alternative.html  /  301
+/seeking-alpha-alternative          /  301
+/seeking-alpha-alternative.html     /  301
+/marketwatch-alternative            /  301
+/marketwatch-alternative.html       /  301
