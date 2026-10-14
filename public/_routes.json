@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "include": [
+    "/news",
+    "/news/*",
+    "/blog",
+    "/blog/*",
+    "/og/*",
+    "/pt/*",
+    "/es/news",
+    "/es/news/*",
+    "/fr/news",
+    "/fr/news/*",
+    "/de/news",
+    "/de/news/*",
+    "/ar/news",
+    "/ar/news/*",
+    "/sitemap-news.xml",
+    "/sitemap-news-pt.xml",
+    "/sitemap-news-es.xml",
+    "/sitemap-news-fr.xml",
+    "/sitemap-news-de.xml",
+    "/sitemap-news-ar.xml",
+    "/affiliates/verify"
+  ],
+  "exclude": []
+}
