@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Affiliate Program Terms — Trading News Terminal</title>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/favicon-512x512.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#0a0c0f">
+<meta name="description" content="Affiliate Program Terms for Trading News Terminal. Commissions, attribution, discount codes, payouts, prohibited conduct and more.">
+<meta name="robots" content="noindex,follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0c0f;--bg2:#0f1217;--bg3:#141820;
+  --border:#1e2530;--border2:#2a3444;
+  --text:#ffffff;--text-dim:#c8d8e8;--text-muted:#7a9ab0;
+  --accent:#00d4ff;--accent2:#0099cc;
+  --font:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+  --font-mono:'IBM Plex Mono','Courier New',monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;overflow-x:hidden;max-width:100%;}
+body{background:var(--bg);color:var(--text);font-family:var(--font);-webkit-font-smoothing:antialiased;min-height:100vh;overflow-x:hidden;}
+
+/* ── NAV ── */
+nav{background:rgba(10,12,15,0.96);border-bottom:1px solid var(--border);padding:0 32px;height:64px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;backdrop-filter:blur(12px);}
+.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none;}
+.nav-logo-icon{width:32px;height:32px;border:1.5px solid var(--accent);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.nav-logo-icon::before{content:'';width:10px;height:10px;background:var(--accent);animation:pulse 2s ease-in-out infinite;}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.4;transform:scale(0.7)}}
+.nav-logo-text{font-size:13px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;line-height:1.3;}
+.nav-logo-text span{color:var(--accent);}
+.nav-logo-sub{font-size:9px;color:var(--text-muted);letter-spacing:0.1em;text-transform:uppercase;}
+.nav-back{font-size:12px;color:var(--text-muted);text-decoration:none;transition:color .15s;display:flex;align-items:center;gap:6px;}
+.nav-back:hover{color:var(--accent);}
+
+/* ── LAYOUT ── */
+.page-wrap{display:grid;grid-template-columns:260px 1fr;max-width:1080px;margin:0 auto;padding:56px 32px 80px;gap:64px;align-items:start;}
+
+/* ── SIDEBAR ── */
+.sidebar{position:sticky;top:88px;max-height:calc(100vh - 108px);display:flex;flex-direction:column;}
+.sidebar-scroll{flex:1;min-height:0;overflow-y:auto;scrollbar-width:none;}
+.sidebar-scroll::-webkit-scrollbar{display:none;}
+.sidebar-label{font-size:10px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-muted);margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--border);}
+.sidebar-nav{display:flex;flex-direction:column;gap:2px;}
+.sidebar-link{font-size:12px;color:var(--text-muted);text-decoration:none;padding:6px 10px;border-radius:3px;transition:all .15s;border-left:2px solid transparent;}
+.sidebar-link:hover{color:var(--text-dim);background:rgba(255,255,255,0.03);border-left-color:var(--border2);}
+.sidebar-link.active{color:var(--accent);border-left-color:var(--accent);background:rgba(0,212,255,0.04);}
+.sidebar-footer{flex-shrink:0;border-top:1px solid var(--border);padding-top:16px;margin-top:16px;}
+.sidebar-meta p{font-size:11px;color:var(--text-muted);line-height:1.6;margin-bottom:8px;}
+.sidebar-meta a{color:var(--accent);text-decoration:none;font-size:11px;}
+
+/* ── CONTENT ── */
+.legal-content{}
+.legal-header{margin-bottom:48px;padding-bottom:32px;border-bottom:1px solid var(--border);}
+.legal-badge{display:inline-flex;align-items:center;gap:8px;font-size:10px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);border:1px solid rgba(0,212,255,0.2);padding:5px 12px;border-radius:2px;background:rgba(0,212,255,0.04);margin-bottom:20px;}
+.legal-title{font-size:clamp(28px,4vw,40px);font-weight:800;letter-spacing:-0.02em;margin-bottom:12px;line-height:1.1;}
+.legal-subtitle{font-size:15px;color:var(--text-dim);line-height:1.6;max-width:580px;margin-bottom:20px;}
+.legal-updated{font-size:12px;color:var(--text-muted);font-family:var(--font-mono);}
+
+/* sections */
+.legal-section{margin-bottom:48px;scroll-margin-top:96px;}
+.legal-section h2{font-size:18px;font-weight:700;letter-spacing:-0.01em;color:var(--text);margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px;}
+.section-num{font-size:11px;font-weight:700;font-family:var(--font-mono);color:var(--accent);background:rgba(0,212,255,0.08);border:1px solid rgba(0,212,255,0.15);padding:3px 7px;border-radius:2px;}
+.legal-section h3{font-size:14px;font-weight:700;color:var(--text-dim);margin:20px 0 10px;letter-spacing:0.02em;}
+.legal-section p{font-size:14px;color:var(--text-dim);line-height:1.75;margin-bottom:14px;}
+.legal-section ul,.legal-section ol{padding-left:20px;margin-bottom:14px;}
+.legal-section li{font-size:14px;color:var(--text-dim);line-height:1.75;margin-bottom:6px;}
+.legal-section a{color:var(--accent);text-decoration:none;}
+.legal-section a:hover{text-decoration:underline;}
+.legal-section strong{color:var(--text);font-weight:600;}
+
+/* callout boxes */
+.callout{border-radius:4px;padding:16px 20px;margin:20px 0;border-left:3px solid;}
+.callout-warning{background:rgba(255,179,0,0.06);border-color:#f59e0b;}
+.callout-warning p{color:#fcd34d;margin:0;font-size:13px;line-height:1.6;}
+.callout-info{background:rgba(0,212,255,0.05);border-color:var(--accent);}
+.callout-info p{color:var(--text-dim);margin:0;font-size:13px;line-height:1.6;}
+.callout-title{font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:6px;}
+.callout-warning .callout-title{color:#f59e0b;}
+.callout-info .callout-title{color:var(--accent);}
+
+/* plan table */
+.plan-table{width:100%;border-collapse:collapse;margin:16px 0 20px;font-size:13px;}
+.plan-table th{text-align:left;padding:10px 14px;font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-muted);border-bottom:1px solid var(--border2);background:var(--bg2);}
+.plan-table td{padding:11px 14px;color:var(--text-dim);border-bottom:1px solid var(--border);vertical-align:top;}
+.plan-table tr:last-child td{border-bottom:none;}
+.plan-table tr:hover td{background:rgba(255,255,255,0.015);}
+
+/* footer */
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:24px 32px;text-align:center;font-size:11px;color:var(--text-muted);}
+footer a{color:var(--text-muted);text-decoration:none;margin:0 8px;}
+footer a:hover{color:var(--accent);}
+
+/* responsive */
+@media(max-width:800px){
+  .page-wrap{grid-template-columns:1fr;gap:0;padding:40px 24px 64px;}
+  .sidebar{display:none;}
+  nav{padding:0 20px;}
+}
+@media(max-width:600px){
+  nav{padding:0 16px;height:56px;}
+  .nav-logo-sub{display:none;}
+  .page-wrap{padding:28px 16px 52px;}
+  .legal-header{margin-bottom:32px;padding-bottom:24px;}
+  .legal-title{font-size:clamp(22px,7vw,34px);}
+  .legal-subtitle{font-size:14px;}
+  .legal-section{margin-bottom:32px;}
+  .legal-section h2{font-size:16px;}
+  .plan-table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;}
+  .callout{padding:12px 14px;}
+  footer{padding:20px 16px;}
+  footer a{display:inline-block;margin:4px 5px;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">
+    <div class="nav-logo-icon"></div>
+    <div>
+      <div class="nav-logo-text">Trading <span>News</span> Terminal</div>
+      <div class="nav-logo-sub" id="logo-sub">Real-time Market Intelligence</div>
+    </div>
+  </a>
+  <a href="/affiliates" class="nav-back" id="nav-back">← Back to affiliates</a>
+</nav>
+<div id="lang-notice" style="display:none;background:rgba(0,212,255,0.06);border-bottom:1px solid rgba(0,212,255,0.15);padding:10px 32px;font-size:12px;color:var(--text-dim);text-align:center;"></div>
+
+<div class="page-wrap">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-scroll">
+      <div class="sidebar-label" id="sidebar-label">Contents</div>
+      <nav class="sidebar-nav" id="sidebar-nav">
+        <a href="#acceptance" class="sidebar-link">1. Acceptance & Eligibility</a>
+        <a href="#enrollment" class="sidebar-link">2. Enrollment & Approval</a>
+        <a href="#commissions" class="sidebar-link">3. Commission Structure</a>
+        <a href="#attribution" class="sidebar-link">4. Attribution & Tracking</a>
+        <a href="#codes" class="sidebar-link">5. Discount Codes</a>
+        <a href="#payments" class="sidebar-link">6. Payments & Payouts</a>
+        <a href="#prohibited" class="sidebar-link">7. Prohibited Conduct</a>
+        <a href="#brand" class="sidebar-link">8. Brand & Marketing</a>
+        <a href="#relationship" class="sidebar-link">9. Relationship of the Parties</a>
+        <a href="#no-guarantee" class="sidebar-link">10. No Earnings Guarantee</a>
+        <a href="#termination" class="sidebar-link">11. Term & Termination</a>
+        <a href="#liability" class="sidebar-link">12. Liability & Indemnity</a>
+        <a href="#governing-law" class="sidebar-link">13. Governing Law & Changes</a>
+        <a href="#contact" class="sidebar-link">14. Contact</a>
+      </nav>
+    </div>
+    <div class="sidebar-footer">
+      <div class="sidebar-meta">
+        <p id="sidebar-dates">Effective: 25 August 2026<br>Last updated: 25 August 2026</p>
+        <a href="/terms" id="sidebar-terms">→ Terms of Use</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main content -->
+  <main class="legal-content">
+
+    <div class="legal-header">
+      <div class="legal-badge" id="legal-badge">Legal Document</div>
+      <h1 class="legal-title" id="legal-title">Affiliate Program Terms</h1>
+      <p class="legal-subtitle" id="legal-subtitle">These terms govern your participation in the Trading News Terminal affiliate program. By applying to or participating in the program, you agree to be bound by them.</p>
+      <div class="legal-updated" id="legal-updated">Last updated: 25 August 2026 · Version 1.0</div>
+    </div>
+
+    <!-- 1 -->
+    <section class="legal-section" id="acceptance">
+      <h2><span class="section-num">01</span> Acceptance & Eligibility</h2>
+      <p>These Affiliate Program Terms ("Affiliate Terms") form a legally binding agreement between you ("Affiliate", "you") and Trading News Terminal ("Company", "we", "us", "our") governing your participation in our affiliate program (the "Program"). They incorporate our <a href="/terms">Terms of Use</a> and <a href="/privacy">Privacy Policy</a> by reference. Where these Affiliate Terms conflict with the Terms of Use in respect of the Program, these Affiliate Terms prevail.</p>
+      <p>To take part in the Program you must be at least 18 years old and legally able to enter into a binding contract. You must provide accurate registration and payout details and keep them current. We may decline any application at our discretion.</p>
+    </section>
+
+    <!-- 2 -->
+    <section class="legal-section" id="enrollment">
+      <h2><span class="section-num">02</span> Enrollment & Approval</h2>
+      <p>Participation begins only after you apply, verify your email address, and we approve your account. Approval is at our sole discretion, and we may set individual conditions (including your commission tier and any discount code) on a case-by-case basis.</p>
+      <p>Upon approval you receive a unique referral link containing your affiliate code (for example, <span style="font-family:var(--font-mono)">https://tradingnewsterminal.com?ref=YOURCODE</span>). Your referral link is the only mechanism that attributes a customer to you. You are responsible for all activity conducted under your account and for keeping your login credentials secure.</p>
+    </section>
+
+    <!-- 3 -->
+    <section class="legal-section" id="commissions">
+      <h2><span class="section-num">03</span> Commission Structure</h2>
+      <p>Commissions are earned on qualifying paid subscriptions to Trading News Terminal Pro that are correctly attributed to your referral link. Tiers are based on your number of active referred customers and unlock as follows:</p>
+      <table class="plan-table">
+        <thead>
+          <tr>
+            <th>Tier</th>
+            <th>Requirement</th>
+            <th>First payment</th>
+            <th>Renewals</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Tier 1 — Standard</strong></td>
+            <td>0–9 referred customers</td>
+            <td>20%</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td><strong>Tier 2</strong></td>
+            <td>10+ referred customers</td>
+            <td>30%</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td><strong>Tier 3</strong></td>
+            <td>50+ referred customers</td>
+            <td>30%</td>
+            <td>10%</td>
+          </tr>
+        </tbody>
+      </table>
+      <p><strong>Commission basis.</strong> Commission is calculated on the <strong>net amount actually paid by the customer, excluding VAT and other taxes and after any discount applied</strong>. It is not calculated on the list price or on the tax portion.</p>
+      <p><strong>First payment.</strong> The "first payment" is the customer's first successful paid invoice for a Pro subscription. Where a subscription starts with a free trial, the first payment is the first real charge after the trial ends.</p>
+      <p><strong>Tier upgrades.</strong> Tier thresholds are measured by your count of active referred customers. Upgrades take effect once approved by us and apply to conversions occurring after the upgrade; they are not applied retroactively.</p>
+      <div class="callout callout-info">
+        <div class="callout-title">Example</div>
+        <p>A customer subscribes to Pro at €40/month and uses your 15% code. They pay €34 net of tax. At Tier 1 your commission is 20% of €34 = €6.80 on that first payment.</p>
+      </div>
+    </section>
+
+    <!-- 4 -->
+    <section class="legal-section" id="attribution">
+      <h2><span class="section-num">04</span> Attribution & Tracking</h2>
+      <p>A sale is credited to you only when the customer reaches Trading News Terminal <strong>through your referral link</strong>. Attribution is recorded in the visitor's browser when they arrive via your link and is carried through sign-up and checkout, where it is credited on the first successful payment.</p>
+      <p>The Program uses <strong>last-referral attribution</strong>: if a visitor later arrives through a different affiliate's link, the most recent link is credited. Attribution may be lost or reassigned if the visitor clears their browser storage, switches device or browser, blocks tracking, or arrives through another affiliate. We do not guarantee that every sale you influence will be attributed.</p>
+      <p><strong>Self-referrals are not eligible.</strong> You may not earn commission on your own purchases or on purchases made using your own details.</p>
+      <p>Commissions are recorded as <strong>pending</strong> when a payment succeeds and become payable only after they have cleared the holding period in Section 6. We reserve the right to review, adjust, or reverse any commission that we reasonably believe results from error, fraud, abuse, or a breach of these Affiliate Terms.</p>
+    </section>
+
+    <!-- 5 -->
+    <section class="legal-section" id="codes">
+      <h2><span class="section-num">05</span> Discount Codes</h2>
+      <p>At our discretion we may issue a discount code linked to your account for your audience. Any such code, its discount amount, and its duration are set by us and may be changed or withdrawn at any time.</p>
+      <div class="callout callout-warning">
+        <div class="callout-title">Codes do not attribute commission on their own</div>
+        <p>A discount code reduces the customer's price. It does not, by itself, credit a commission to you. Commissions are credited through your referral link only. To be credited, the customer must arrive through your link, whether or not they also use a code.</p>
+      </div>
+      <p>You must not misrepresent a code, present expired or invented offers, alter the code, or combine it with unauthorised incentives. You must not imply that a code is endorsed by us beyond the terms we have communicated to you.</p>
+    </section>
+
+    <!-- 6 -->
+    <section class="legal-section" id="payments">
+      <h2><span class="section-num">06</span> Payments & Payouts</h2>
+      <h3>Held and available balances</h3>
+      <p>Every commission is first recorded as <strong>held</strong>. A held commission is not yet payable and is shown separately in your affiliate dashboard while the customer's refund, cancellation, and withdrawal period is still open.</p>
+      <p>A commission becomes <strong>available</strong> (valid for payout) only after a clearance period of <strong>30 days</strong> from the date of the underlying customer payment, provided that period has passed without a refund, cancellation, or chargeback. Until then it stays held and cannot be withdrawn. The figure shown as your available balance is therefore only the amount that has already cleared this period; the remainder is displayed as held.</p>
+      <div class="callout callout-warning">
+        <div class="callout-title">We may not pay a commission if the customer is refunded</div>
+        <p>If a customer is refunded, cancels under a right of withdrawal, or charges back their payment, we may withhold and cancel the related commission, whether or not the clearance period has ended. Only commissions on payments that have cleared this period and remain fully paid are treated as valid and payable to you.</p>
+      </div>
+      <h3>Minimum balance & requests</h3>
+      <p>You may request a payout once your <strong>available</strong> balance reaches a minimum of <strong>€50</strong>. Held amounts do not count toward this minimum and cannot be requested. Payouts are made in <strong>EUR</strong> by bank transfer to the details you provide, normally within 15 business days of an approved request.</p>
+      <h3>Refunds & chargebacks after payout</h3>
+      <p>If a payment that generated a commission already paid to you is later refunded, reversed, cancelled, or charged back (which can occur after the clearance period), the corresponding commission is cancelled, and we may offset it against your future commissions or request its return.</p>
+      <h3>Taxes</h3>
+      <p>You are solely responsible for any taxes, social contributions, or duties arising on your commissions. Commissions are stated gross of any tax you may owe. Where you are a business required to issue invoices, you agree to invoice us for approved amounts before payment.</p>
+    </section>
+
+    <!-- 7 -->
+    <section class="legal-section" id="prohibited">
+      <h2><span class="section-num">07</span> Prohibited Conduct</h2>
+      <p>You must not:</p>
+      <ul>
+        <li>Refer yourself or generate commissions through your own purchases</li>
+        <li>Bid on our brand names, trademarks, or common misspellings in paid search, or use them in ad copy or domains in a way likely to mislead</li>
+        <li>Send spam or unsolicited messages, or promote the Program in violation of any platform's rules or applicable law</li>
+        <li>Make false, misleading, or exaggerated claims about the Service, its features, pricing, or results, or promise any financial or investment return</li>
+        <li>Use cookie stuffing, forced clicks, hidden frames, malware, or any method that artificially inflates clicks or conversions</li>
+        <li>Offer unauthorised cash rebates, or discounts beyond a code we have approved for you</li>
+        <li>Register domain names, social handles, or accounts that impersonate us or suggest you are us</li>
+        <li>Promote the Service through content that is unlawful, deceptive, adult, hateful, or otherwise damaging to our reputation</li>
+      </ul>
+      <p>Breach of this section may result in withheld or forfeited commissions and immediate termination.</p>
+    </section>
+
+    <!-- 8 -->
+    <section class="legal-section" id="brand">
+      <h2><span class="section-num">08</span> Brand & Marketing</h2>
+      <p>We grant you a limited, non-exclusive, revocable, non-transferable licence to use our name and logo solely to promote the Service under the Program, in line with any brand guidance we provide. This licence ends when your participation ends.</p>
+      <p>You must present the Service accurately and, where required by law, clearly disclose that your links and codes are affiliate links from which you may earn a commission. You must not modify our logo or brand assets or use them to imply a partnership beyond the affiliate relationship.</p>
+    </section>
+
+    <!-- 9 -->
+    <section class="legal-section" id="relationship">
+      <h2><span class="section-num">09</span> Relationship of the Parties</h2>
+      <p>You participate as an independent contractor. Nothing in these Affiliate Terms creates an employment, agency, partnership, or joint-venture relationship between you and us. You have no authority to bind us, incur obligations on our behalf, or make representations for us. You are responsible for your own costs and equipment.</p>
+    </section>
+
+    <!-- 10 -->
+    <section class="legal-section" id="no-guarantee">
+      <h2><span class="section-num">10</span> No Earnings Guarantee</h2>
+      <p>We make no representation or guarantee about the level of traffic, conversions, or earnings you may achieve through the Program. Your results depend on your own efforts and factors outside our control. Past or example figures are illustrative only and are not a promise of future income.</p>
+    </section>
+
+    <!-- 11 -->
+    <section class="legal-section" id="termination">
+      <h2><span class="section-num">11</span> Term & Termination</h2>
+      <p>Either party may end participation at any time, with or without cause, by written notice (email is sufficient). We may also suspend your account while we investigate a suspected breach.</p>
+      <p><strong>Effect of termination without cause.</strong> Approved commissions above the minimum balance are paid on the normal schedule, and pending commissions are paid once they have cleared, subject to Section 6.</p>
+      <p><strong>Effect of termination for breach or fraud.</strong> All unpaid commissions, whether pending or approved, may be forfeited, and we may reclaim commissions already paid that relate to the breach or fraud.</p>
+      <p>Sections that by their nature should survive termination (including Sections 6, 7, 9, 12, and 13) continue to apply.</p>
+    </section>
+
+    <!-- 12 -->
+    <section class="legal-section" id="liability">
+      <h2><span class="section-num">12</span> Liability & Indemnity</h2>
+      <p>To the fullest extent permitted by law, our total aggregate liability to you arising out of or in connection with the Program is limited to the total commissions payable to you in the three (3) months preceding the event giving rise to the claim. We are not liable for indirect, incidental, special, or consequential losses, or for lost profits or opportunities.</p>
+      <p>You agree to indemnify and hold us harmless from any claims, damages, losses, and expenses (including reasonable legal fees) arising out of your participation in the Program, your marketing activities, or your breach of these Affiliate Terms or of any applicable law.</p>
+    </section>
+
+    <!-- 13 -->
+    <section class="legal-section" id="governing-law">
+      <h2><span class="section-num">13</span> Governing Law & Changes</h2>
+      <p>These Affiliate Terms are governed by the laws of <strong>Portugal</strong>, without regard to conflict-of-law rules. Any dispute is subject to the exclusive jurisdiction of the competent courts of Lisbon, Portugal, unless mandatory law in your country of residence requires otherwise.</p>
+      <p>We may update these Affiliate Terms or the Program (including commission rates, tiers, thresholds, and payout terms) at any time. We will give notice of material changes by email or within your dashboard. Your continued participation after a change takes effect constitutes acceptance. If you do not agree, you must stop participating in the Program.</p>
+    </section>
+
+    <!-- 14 -->
+    <section class="legal-section" id="contact">
+      <h2><span class="section-num">14</span> Contact</h2>
+      <p>Questions about the Program or these Affiliate Terms:</p>
+      <ul>
+        <li><strong>Email:</strong> <a href="mailto:support@tradingnewsterminal.com">support@tradingnewsterminal.com</a></li>
+        <li><strong>Website:</strong> <a href="https://tradingnewsterminal.com">tradingnewsterminal.com</a></li>
+      </ul>
+      <p>We aim to respond to Program enquiries within 10 business days.</p>
+    </section>
+
+  </main>
+</div>
+
+<footer>
+  <span id="footer-copy">© 2026 Trading News Terminal. All rights reserved.</span>
+  <span>
+    <a href="/affiliates" id="footer-affiliates">Affiliates</a>
+    <a href="/terms" id="footer-terms">Terms of Use</a>
+    <a href="/privacy" id="footer-privacy">Privacy Policy</a>
+    <a href="/" id="footer-home">Home</a>
+  </span>
+<div class="footer-yt" style="text-align:center;padding:14px 16px;font-size:12px;opacity:.75"><a href="https://www.youtube.com/@tradingnewsterminal" target="_blank" rel="noopener" style="color:inherit">Trading News Terminal on YouTube</a></div>
+</footer>
+
+<script>
+// ── AFFILIATE TERMS i18n (chrome only; legal body stays English & binding) ──
+const _T = {
+  en:{
+    'nav.back':'← Back to affiliates','logo.sub':'Real-time Market Intelligence',
+    'sidebar.label':'Contents',
+    'sidebar.dates':'Effective: 25 August 2026<br>Last updated: 25 August 2026',
+    'sidebar.terms':'→ Terms of Use',
+    'legal.badge':'Legal Document','legal.title':'Affiliate Program Terms',
+    'legal.subtitle':'These terms govern your participation in the Trading News Terminal affiliate program. By applying to or participating in the program, you agree to be bound by them.',
+    'legal.updated':'Last updated: 25 August 2026 · Version 1.0',
+    's1':'Acceptance & Eligibility','s2':'Enrollment & Approval','s3':'Commission Structure',
+    's4':'Attribution & Tracking','s5':'Discount Codes','s6':'Payments & Payouts',
+    's7':'Prohibited Conduct','s8':'Brand & Marketing','s9':'Relationship of the Parties',
+    's10':'No Earnings Guarantee','s11':'Term & Termination','s12':'Liability & Indemnity',
+    's13':'Governing Law & Changes','s14':'Contact',
+    'footer.copy':'© 2026 Trading News Terminal. All rights reserved.',
+    'footer.affiliates':'Affiliates','footer.terms':'Terms of Use','footer.privacy':'Privacy Policy','footer.home':'Home',
+    'notice':'',
+  },
+  pt:{
+    'nav.back':'← Voltar aos afiliados','logo.sub':'Inteligência de Mercado em Tempo Real',
+    'sidebar.label':'Índice',
+    'sidebar.dates':'Em vigor: 25 de agosto de 2026<br>Última atualização: 25 de agosto de 2026',
+    'sidebar.terms':'→ Termos de Utilização',
+    'legal.badge':'Documento Legal','legal.title':'Termos do Programa de Afiliados',
+    'legal.subtitle':'Estes termos regem a tua participação no programa de afiliados do Trading News Terminal. Ao candidatares-te ou participares no programa, concordas em ficar vinculado a eles.',
+    'legal.updated':'Última atualização: 25 de agosto de 2026 · Versão 1.0',
+    's1':'Aceitação e Elegibilidade','s2':'Adesão e Aprovação','s3':'Estrutura de Comissões',
+    's4':'Atribuição e Rastreio','s5':'Códigos de Desconto','s6':'Pagamentos e Payouts',
+    's7':'Condutas Proibidas','s8':'Marca e Marketing','s9':'Relação entre as Partes',
+    's10':'Sem Garantia de Ganhos','s11':'Vigência e Cessação','s12':'Responsabilidade e Indemnização',
+    's13':'Lei Aplicável e Alterações','s14':'Contacto',
+    'footer.copy':'© 2026 Trading News Terminal. Todos os direitos reservados.',
+    'footer.affiliates':'Afiliados','footer.terms':'Termos de Utilização','footer.privacy':'Política de Privacidade','footer.home':'Início',
+    'notice':'ℹ Este documento legal está disponível em inglês. A versão em inglês é a versão juridicamente vinculativa.',
+  },
+  es:{
+    'nav.back':'← Volver a afiliados','logo.sub':'Inteligencia de Mercado en Tiempo Real',
+    'sidebar.label':'Contenido',
+    'sidebar.dates':'En vigor: 25 de agosto de 2026<br>Última actualización: 25 de agosto de 2026',
+    'sidebar.terms':'→ Términos de Uso',
+    'legal.badge':'Documento Legal','legal.title':'Términos del Programa de Afiliados',
+    'legal.subtitle':'Estos términos rigen tu participación en el programa de afiliados de Trading News Terminal. Al solicitar o participar en el programa, aceptas quedar vinculado por ellos.',
+    'legal.updated':'Última actualización: 25 de agosto de 2026 · Versión 1.0',
+    's1':'Aceptación y Elegibilidad','s2':'Alta y Aprobación','s3':'Estructura de Comisiones',
+    's4':'Atribución y Seguimiento','s5':'Códigos de Descuento','s6':'Pagos y Liquidaciones',
+    's7':'Conductas Prohibidas','s8':'Marca y Marketing','s9':'Relación entre las Partes',
+    's10':'Sin Garantía de Ingresos','s11':'Vigencia y Terminación','s12':'Responsabilidad e Indemnización',
+    's13':'Ley Aplicable y Cambios','s14':'Contacto',
+    'footer.copy':'© 2026 Trading News Terminal. Todos los derechos reservados.',
+    'footer.affiliates':'Afiliados','footer.terms':'Términos de Uso','footer.privacy':'Política de Privacidad','footer.home':'Inicio',
+    'notice':'ℹ Este documento legal está disponible en inglés. La versión en inglés es la versión jurídicamente vinculante.',
+  },
+  fr:{
+    'nav.back':'← Retour aux affiliés','logo.sub':'Intelligence de Marché en Temps Réel',
+    'sidebar.label':'Sommaire',
+    'sidebar.dates':'En vigueur : 25 août 2026<br>Dernière mise à jour : 25 août 2026',
+    'sidebar.terms':'→ Conditions d\'utilisation',
+    'legal.badge':'Document Légal','legal.title':'Conditions du programme d\'affiliation',
+    'legal.subtitle':'Ces conditions régissent votre participation au programme d\'affiliation de Trading News Terminal. En postulant ou en participant au programme, vous acceptez d\'être lié par elles.',
+    'legal.updated':'Dernière mise à jour : 25 août 2026 · Version 1.0',
+    's1':'Acceptation et éligibilité','s2':'Adhésion et approbation','s3':'Structure des commissions',
+    's4':'Attribution et suivi','s5':'Codes de réduction','s6':'Paiements et versements',
+    's7':'Conduites interdites','s8':'Marque et marketing','s9':'Relation entre les parties',
+    's10':'Aucune garantie de gains','s11':'Durée et résiliation','s12':'Responsabilité et indemnisation',
+    's13':'Droit applicable et modifications','s14':'Contact',
+    'footer.copy':'© 2026 Trading News Terminal. Tous droits réservés.',
+    'footer.affiliates':'Affiliés','footer.terms':'Conditions d\'utilisation','footer.privacy':'Politique de confidentialité','footer.home':'Accueil',
+    'notice':'ℹ Ce document légal est disponible en anglais. La version anglaise est la version juridiquement contraignante.',
+  },
+  de:{
+    'nav.back':'← Zurück zu Partnern','logo.sub':'Echtzeit-Marktintelligenz',
+    'sidebar.label':'Inhalt',
+    'sidebar.dates':'Gültig ab: 25. August 2026<br>Zuletzt aktualisiert: 25. August 2026',
+    'sidebar.terms':'→ Nutzungsbedingungen',
+    'legal.badge':'Rechtliches Dokument','legal.title':'Bedingungen des Partnerprogramms',
+    'legal.subtitle':'Diese Bedingungen regeln deine Teilnahme am Partnerprogramm von Trading News Terminal. Mit der Bewerbung oder Teilnahme am Programm erklärst du dich mit ihnen einverstanden.',
+    'legal.updated':'Zuletzt aktualisiert: 25. August 2026 · Version 1.0',
+    's1':'Annahme und Teilnahmeberechtigung','s2':'Anmeldung und Genehmigung','s3':'Provisionsstruktur',
+    's4':'Zuordnung und Tracking','s5':'Rabattcodes','s6':'Zahlungen und Auszahlungen',
+    's7':'Verbotene Handlungen','s8':'Marke und Marketing','s9':'Verhältnis der Parteien',
+    's10':'Keine Verdienstgarantie','s11':'Laufzeit und Kündigung','s12':'Haftung und Freistellung',
+    's13':'Anwendbares Recht und Änderungen','s14':'Kontakt',
+    'footer.copy':'© 2026 Trading News Terminal. Alle Rechte vorbehalten.',
+    'footer.affiliates':'Partner','footer.terms':'Nutzungsbedingungen','footer.privacy':'Datenschutzrichtlinie','footer.home':'Startseite',
+    'notice':'ℹ Dieses Rechtsdokument ist auf Englisch verfügbar. Die englische Version ist die rechtsverbindliche Version.',
+  },
+  it:{
+    'nav.back':'← Torna agli affiliati','logo.sub':'Intelligence di Mercato in Tempo Reale',
+    'sidebar.label':'Indice',
+    'sidebar.dates':'In vigore: 25 agosto 2026<br>Ultimo aggiornamento: 25 agosto 2026',
+    'sidebar.terms':'→ Termini di Utilizzo',
+    'legal.badge':'Documento Legale','legal.title':'Termini del Programma di Affiliazione',
+    'legal.subtitle':'Questi termini regolano la tua partecipazione al programma di affiliazione di Trading News Terminal. Candidandoti o partecipando al programma, accetti di esserne vincolato.',
+    'legal.updated':'Ultimo aggiornamento: 25 agosto 2026 · Versione 1.0',
+    's1':'Accettazione e Idoneità','s2':'Iscrizione e Approvazione','s3':'Struttura delle Commissioni',
+    's4':'Attribuzione e Tracciamento','s5':'Codici Sconto','s6':'Pagamenti e Liquidazioni',
+    's7':'Condotte Vietate','s8':'Marchio e Marketing','s9':'Rapporto tra le Parti',
+    's10':'Nessuna Garanzia di Guadagni','s11':'Durata e Risoluzione','s12':'Responsabilità e Indennizzo',
+    's13':'Legge Applicabile e Modifiche','s14':'Contatto',
+    'footer.copy':'© 2026 Trading News Terminal. Tutti i diritti riservati.',
+    'footer.affiliates':'Affiliati','footer.terms':'Termini di Utilizzo','footer.privacy':'Informativa sulla Privacy','footer.home':'Home',
+    'notice':'ℹ Questo documento legale è disponibile in inglese. La versione inglese è quella giuridicamente vincolante.',
+  }
+};
+function _tl(k){ const l=localStorage.getItem('tnt_lang')||'en'; return (_T[l]||_T.en)[k]||_T.en[k]||k; }
+
+function _applyAffTermsTranslations() {
+  const gi = (id) => document.getElementById(id);
+  const qs = (s) => document.querySelector(s);
+
+  gi('nav-back').textContent     = _tl('nav.back');
+  gi('logo-sub').textContent     = _tl('logo.sub');
+
+  gi('sidebar-label').textContent   = _tl('sidebar.label');
+  gi('sidebar-dates').innerHTML     = _tl('sidebar.dates');
+  gi('sidebar-terms').textContent   = _tl('sidebar.terms');
+
+  const sLinks = [
+    ['#acceptance','s1'],['#enrollment','s2'],['#commissions','s3'],['#attribution','s4'],
+    ['#codes','s5'],['#payments','s6'],['#prohibited','s7'],['#brand','s8'],
+    ['#relationship','s9'],['#no-guarantee','s10'],['#termination','s11'],
+    ['#liability','s12'],['#governing-law','s13'],['#contact','s14']
+  ];
+  sLinks.forEach(([href, key], i) => {
+    const a = qs(`#sidebar-nav a[href="${href}"]`);
+    if(a) a.textContent = `${i+1}. ${_tl(key)}`;
+  });
+
+  gi('legal-badge').textContent    = _tl('legal.badge');
+  gi('legal-title').textContent    = _tl('legal.title');
+  gi('legal-subtitle').textContent = _tl('legal.subtitle');
+  gi('legal-updated').textContent  = _tl('legal.updated');
+
+  const sections = [
+    ['acceptance','01','s1'],['enrollment','02','s2'],['commissions','03','s3'],
+    ['attribution','04','s4'],['codes','05','s5'],['payments','06','s6'],
+    ['prohibited','07','s7'],['brand','08','s8'],['relationship','09','s9'],
+    ['no-guarantee','10','s10'],['termination','11','s11'],['liability','12','s12'],
+    ['governing-law','13','s13'],['contact','14','s14']
+  ];
+  sections.forEach(([id, num, key]) => {
+    const h2 = qs(`#${id} h2`);
+    if(h2) h2.innerHTML = `<span class="section-num">${num}</span> ${_tl(key)}`;
+  });
+
+  const notice = gi('lang-notice');
+  const _lang = localStorage.getItem('tnt_lang')||'en';
+  const noticeText = ((_T[_lang]||_T.en)['notice']) || '';   // sem fallback-para-chave: '' fica vazio
+  if(notice) { notice.textContent = noticeText; notice.style.display = noticeText ? 'block' : 'none'; }
+
+  gi('footer-copy').textContent       = _tl('footer.copy');
+  gi('footer-affiliates').textContent = _tl('footer.affiliates');
+  gi('footer-terms').textContent      = _tl('footer.terms');
+  gi('footer-privacy').textContent    = _tl('footer.privacy');
+  gi('footer-home').textContent       = _tl('footer.home');
+}
+
+_applyAffTermsTranslations();
+
+const _affSections = document.querySelectorAll('.legal-section');
+const _affLinks = document.querySelectorAll('.sidebar-link');
+const _affObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const id = entry.target.id;
+      _affLinks.forEach(l => {
+        l.classList.toggle('active', l.getAttribute('href') === '#'+id);
+      });
+    }
+  });
+}, { rootMargin:'-20% 0px -70% 0px' });
+_affSections.forEach(s => _affObserver.observe(s));
+</script>
+</body>
+</html>

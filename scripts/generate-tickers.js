@@ -373,7 +373,7 @@ function renderPage(t, allTickers) {
   <div class="container">
     <div>${c.footer_copy(symbol, name)}</div>
     <div class="footer-links">
-      <a href="/">${c.footer_links[0]}</a><a href="/br">${c.footer_links[1]}</a><a href="/us">${c.footer_links[2]}</a><a href="/terms">${c.footer_links[3]}</a><a href="/privacy">${c.footer_links[4]}</a><a href="/faq">${c.footer_links[5]}</a>
+      <a href="/">${c.footer_links[0]}</a><a href="/br">${c.footer_links[1]}</a><a href="/us">${c.footer_links[2]}</a><a href="/terms">${c.footer_links[3]}</a><a href="/privacy">${c.footer_links[4]}</a><a href="/faq">${c.footer_links[5]}</a><a href="https://www.youtube.com/@tradingnewsterminal" target="_blank" rel="noopener">YouTube</a>
     </div>
   </div>
 </footer>

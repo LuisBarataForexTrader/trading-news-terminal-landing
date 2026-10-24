@@ -871,12 +871,13 @@ let _lastUnverifiedEmail = '';
 const _params = new URLSearchParams(location.search);
 const PRO_FROM_URL   = _params.get('plan') === 'pro';
 const TRIAL_FROM_URL = _params.get('plan') === 'trial';
+const ANNUAL_FROM_URL = (_params.get('checkout') || '').toLowerCase() === 'annual';  // ?checkout=annual -> checkout Pro ANUAL apos login
 const PRO_PENDING    = localStorage.getItem('pendingPro') === '1';
 const TRIAL_PENDING  = localStorage.getItem('pendingTrial') === '1';
-// Visual Pro theme ONLY shown when ?plan=pro or ?plan=trial is in the URL
+// Visual Pro theme ONLY shown when ?plan=pro / ?plan=trial / ?checkout=annual is in the URL
 // Checkout redirect also fires if pendingPro/pendingTrial is saved (returning after email verification)
-const PRO_FLOW    = PRO_FROM_URL || TRIAL_FROM_URL;
-const PRO_CHECKOUT = PRO_FROM_URL || TRIAL_FROM_URL || PRO_PENDING || TRIAL_PENDING;
+const PRO_FLOW    = PRO_FROM_URL || TRIAL_FROM_URL || ANNUAL_FROM_URL;
+const PRO_CHECKOUT = PRO_FROM_URL || TRIAL_FROM_URL || ANNUAL_FROM_URL || PRO_PENDING || TRIAL_PENDING;
 
 function _buildProFeaturesHTML() {
   return `
@@ -1130,8 +1131,8 @@ async function handleLogin(e) {
       // Show plan picker so user can choose Trial / Monthly / Annual
       localStorage.removeItem('pendingTrial');
       _showPlanPicker(data.token);
-    } else if (PRO_CHECKOUT && !alreadyPro && PRO_FROM_URL) {
-      await _redirectToCheckout(data.token, false, null);
+    } else if (PRO_CHECKOUT && !alreadyPro && (PRO_FROM_URL || ANNUAL_FROM_URL)) {
+      await _redirectToCheckout(data.token, false, ANNUAL_FROM_URL ? 'price_1THo41PgXWxcInoUF3o6fKDh' : null);
     } else {
       localStorage.removeItem('pendingPro');
       localStorage.removeItem('pendingTrial');
@@ -1298,7 +1299,8 @@ _applyAuthTranslations();
 
 // ── Track login page visit (admin analytics) ──────────────────
 (function(){
-  fetch('https://api.tradingnewsterminal.com/admin/track/visit?source=login',
+  var _rf='';try{if(document.referrer){var _rh=new URL(document.referrer).hostname.replace(/^www\./,'');if(_rh&&_rh.indexOf('tradingnewsterminal.com')<0)_rf=_rh;}}catch(_){}
+  fetch('https://api.tradingnewsterminal.com/admin/track/visit?source=login'+(_rf?('&ref='+encodeURIComponent(_rf)):''),
     { method: 'POST' }).catch(()=>{});
 }());
 

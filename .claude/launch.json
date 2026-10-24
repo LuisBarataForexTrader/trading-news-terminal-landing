@@ -4,7 +4,7 @@
     {
       "name": "Landing Page",
       "runtimeExecutable": "/Library/Frameworks/Python.framework/Versions/3.13/bin/python3",
-      "runtimeArgs": ["-m", "http.server", "3000", "--directory", "/Users/luisbarata/Desktop/tracker-fx-news-terminal-landing/public"],
+      "runtimeArgs": ["-m", "http.server", "3000", "--directory", "/Users/luisbarata/code/tnt-landing/public"],
       "port": 3000
     }
   ]
