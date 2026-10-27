@@ -23,21 +23,15 @@
 /telegram       https://app.tradingnewsterminal.com/telegram  302
 /telegram.html  https://app.tradingnewsterminal.com/telegram  302
 
-# retired competitor pages -> home
-/bloomberg-alternative              /  301
-/bloomberg-alternative.html         /  301
+# GEO comparison pages (LIVE 2026-10-27): bloomberg / benzinga-pro / fxstreet / forexlive / investing-com
+# alternatives are now real pages (public/*.html) — redirects removed so Pages serves them.
+# newsquawk / financialjuice / koyfin alternatives + best-financial-news-terminals-2026 are new pages too.
+
+# retired competitor pages still without a page -> home (rebuild + remove the line when a page ships)
 /reuters-eikon-alternative          /  301
 /reuters-eikon-alternative.html     /  301
 /refinitiv-workspace-alternative    /  301
 /refinitiv-workspace-alternative.html /  301
-/benzinga-pro-alternative           /  301
-/benzinga-pro-alternative.html      /  301
-/fxstreet-alternative               /  301
-/fxstreet-alternative.html          /  301
-/forexlive-alternative              /  301
-/forexlive-alternative.html         /  301
-/investing-com-alternative          /  301
-/investing-com-alternative.html     /  301
 /finviz-alternative                 /  301
 /finviz-alternative.html            /  301
 /tradingview-news-alternative       /  301
