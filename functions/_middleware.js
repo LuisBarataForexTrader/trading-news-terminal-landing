@@ -15,8 +15,9 @@ function isProxied(p) {
   for (const l of LANGS) {
     if (p === "/" + l + "/news" || p.startsWith("/" + l + "/news/")) return true;
   }
-  // pt SEO landing pages served by the backend
-  if (p.startsWith("/pt/") && /(noticias|mercados|economia|sitemap\.xml)/.test(p)) return true;
+  // pt sitemap is backend-generated; the /pt/*.html SEO landing pages are STATIC (served by next()).
+  // (A former substring rule proxied /pt/noticias-*, /pt/*mercados* etc to the backend -> 404.)
+  if (p === "/pt/sitemap.xml") return true;
   // google site-verification (optionally language-prefixed, optionally under /news)
   if (/^\/(?:(?:pt|es|fr|de|ar)\/)?(?:news\/)?google[\w-]{7,63}(?:\.html)?$/.test(p)) return true;
   return false;

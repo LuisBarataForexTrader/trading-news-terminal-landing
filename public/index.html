@@ -76,11 +76,19 @@
     },
     {
       "@type": "Offer",
-      "name": "Pro Plan",
+      "name": "Pro Plan (monthly)",
       "price": "40",
       "priceCurrency": "EUR",
       "billingIncrement": "P1M",
-      "description": "Real-time news, live squawk, 7 live financial TV channels, ad-free, TradingView charts."
+      "description": "Real-time news, live squawk, 7 live financial TV channels, ad-free, TradingView charts. 7-day free trial."
+    },
+    {
+      "@type": "Offer",
+      "name": "Pro Plan (annual)",
+      "price": "360",
+      "priceCurrency": "EUR",
+      "billingIncrement": "P1Y",
+      "description": "Pro billed annually — €360/year vs €480 monthly (3 months free)."
     }
   ],
   "featureList": [
@@ -126,7 +134,8 @@
         "contactType": "customer support"
       },
       "sameAs": [
-        "https://t.me/tradingnewsterminal"
+        "https://t.me/tradingnewsterminal",
+        "https://www.youtube.com/@tradingnewsterminal"
       ]
     },
     {
@@ -208,7 +217,7 @@
       "name": "Does it work on mobile and tablet?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Mobile and tablet support is coming soon. The terminal is currently optimised for desktop and laptop browsers. A fully native mobile experience is in development."
+        "text": "Yes. Trading News Terminal works in any modern mobile or tablet browser and is installable as a PWA (progressive web app) — add it to your home screen for push notifications and an app-like experience. We continue to refine the mobile layout."
       }
     }
   ]
@@ -627,7 +636,7 @@ section { padding:100px 24px; }
 
 /* ── FOOTER ── */
 footer { background:var(--bg2); border-top:1px solid var(--border); padding:64px 24px 40px; }
-.footer-grid { max-width:var(--max); margin:0 auto; display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:48px; margin-bottom:56px; }
+.footer-grid { max-width:var(--max); margin:0 auto; display:grid; grid-template-columns:1.6fr 1fr 1fr 1fr 1fr; gap:40px; margin-bottom:56px; }
 .footer-brand .footer-logo-text { font-size:13px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; margin-bottom:12px; }
 .footer-brand .footer-logo-text span { color:var(--accent); }
 .footer-brand p { font-size:13px; color:var(--text-muted); line-height:1.7; max-width:280px; }
@@ -922,7 +931,7 @@ footer { background:var(--bg2); border-top:1px solid var(--border); padding:64px
         <div class="mockup-item high">
           <div class="mi-time">14:23:05</div>
           <div>
-            <div class="mi-headline">🔴 Fed's Powell: Further rate hikes appropriate if inflation does not cool — prepared to act<span class="mi-new">NEW</span></div>
+            <div class="mi-headline">🔴 Fed's Warsh: Further rate hikes appropriate if inflation does not cool — prepared to act<span class="mi-new">NEW</span></div>
             <div class="mi-meta"><span class="mi-source">News Wire</span><span class="mi-tag">USD</span><span class="mi-tag">SP500</span></div>
           </div>
           <div class="mi-badge high"><span>HIGH</span></div>
@@ -1252,7 +1261,7 @@ footer { background:var(--bg2); border-top:1px solid var(--border); padding:64px
         <div class="plan-divider"></div>
         <p class="plan-desc" data-i18n="plan.basic_desc">Essential market intelligence for traders getting started. Full terminal access at no cost, forever.</p>
         <ul class="plan-features" aria-label="Basic plan features">
-          <li class="pf-yes pf-basic" data-i18n-html="pf.news_delay">News feed <span class="pf-note">(15 min delay)</span></li>
+          <li class="pf-yes pf-basic" data-i18n-html="pf.news_delay">News feed <span class="pf-note">(5 min delay)</span></li>
           <li class="pf-yes pf-basic" data-i18n="pf.calendar">Economic calendar with live releases</li>
           <li class="pf-yes pf-basic" data-i18n="pf.charts">TradingView charts</li>
           <li class="pf-yes pf-basic" data-i18n="pf.watchlist">Asset watchlist and smart search</li>
@@ -1391,7 +1400,7 @@ footer { background:var(--bg2); border-top:1px solid var(--border); padding:64px
           <!-- headline row -->
           <div class="ai-headline-row">
             <span class="ai-hl-tag">HIGH</span>
-            <span class="ai-hl-text">Fed Chair Powell signals rate cut timeline may shift amid persistent inflation data</span>
+            <span class="ai-hl-text">Fed Chair Warsh signals rate cut timeline may shift amid persistent inflation data</span>
             <span class="ai-hl-btn">✦ AI ✦</span>
           </div>
           <!-- AI result panel mock -->
@@ -1610,7 +1619,7 @@ footer { background:var(--bg2); border-top:1px solid var(--border); padding:64px
         <span data-i18n="faq.q1">What is Trading News Terminal?</span>
         <span class="faq-icon" aria-hidden="true">+</span>
       </div>
-      <div class="faq-a" data-nosnippet data-i18n="faq.a1" data-nosnippet>Trading News Terminal is a professional real-time financial news platform for active traders. It aggregates live news from institutional sources across forex, macro, crypto, equities and commodities, classifies each item by market impact (HIGH, MEDIUM, LOW), and combines it with a live economic calendar, squawk box, TradingView charts and financial TV — all in one zero-clutter web interface.</div>
+      <div class="faq-a" data-i18n="faq.a1">Trading News Terminal is a professional real-time financial news platform for active traders. It aggregates live news from institutional sources across forex, macro, crypto, equities and commodities, classifies each item by market impact (HIGH, MEDIUM, LOW), and combines it with a live economic calendar, squawk box, TradingView charts and financial TV — all in one zero-clutter web interface.</div>
     </div>
 
     <div class="faq-item" role="listitem">
@@ -1618,7 +1627,7 @@ footer { background:var(--bg2); border-top:1px solid var(--border); padding:64px
         <span data-i18n="faq.q2">What is the difference between Basic and Pro?</span>
         <span class="faq-icon" aria-hidden="true">+</span>
       </div>
-      <div class="faq-a" data-nosnippet data-i18n-html="faq.a2">
+      <div class="faq-a" data-i18n-html="faq.a2">
         <p style="margin-bottom:12px;"><strong>Basic (free)</strong> includes: delayed news feed, live economic calendar, TradingView charts, asset watchlist, smart search and multilingual interface.</p>
         <p><strong>Pro (€40/month)</strong> adds everything in Basic plus: <strong>Real-time zero-delay news feed</strong> — <strong>Macro &amp; Bonds Hub</strong> (GDP, PMI, yields) — <strong>Earnings Calendar</strong> (EPS beat/miss live) — <strong>Central Banks Tracker</strong> (Fed, ECB, BOE, BOJ, SNB…) — <strong>Market Sentiment</strong> (risk-on / risk-off) — <strong>Market Screener</strong> (Forex, Stocks, Crypto, Indices, Commodities &amp; Bonds) — <strong>Live Squawk</strong> (hands-free voice alerts) — <strong>Telegram mobile alerts</strong> (HIGH impact news on your phone, with asset filters) — <strong>7 Live Financial TV channels</strong> — comprehensive source coverage — 100% ad-free — no upgrade prompts — priority support.</p>
       </div>
@@ -1629,7 +1638,7 @@ footer { background:var(--bg2); border-top:1px solid var(--border); padding:64px
         <span data-i18n="faq.q3">Is the Basic plan really free?</span>
         <span class="faq-icon" aria-hidden="true">+</span>
       </div>
-      <div class="faq-a" data-nosnippet data-i18n="faq.a3">Yes. The Basic plan is free forever — no credit card required, no auto-upgrade. Simply create an account with your email address in under 30 seconds and get immediate access to the full terminal. For Pro, we offer a 7-day free trial with credit card. After 7 days you're charged €40/month + VAT. Cancel anytime during the trial.</div>
+      <div class="faq-a" data-i18n="faq.a3">Yes. The Basic plan is free forever — no credit card required, no auto-upgrade. Simply create an account with your email address in under 30 seconds and get immediate access to the full terminal. For Pro, we offer a 7-day free trial with credit card. After 7 days you're charged €40/month + VAT. Cancel anytime during the trial.</div>
     </div>
 
     <div class="faq-item" role="listitem">
@@ -1637,7 +1646,7 @@ footer { background:var(--bg2); border-top:1px solid var(--border); padding:64px
         <span data-i18n="faq.q4">What is the Squawk feature?</span>
         <span class="faq-icon" aria-hidden="true">+</span>
       </div>
-      <div class="faq-a" data-nosnippet data-i18n="faq.a4">Squawk uses your browser's Web Speech API to read every new headline aloud as it arrives — just like a professional trading desk squawk box. Enable it with one click. The terminal highlights the card being read in real time, so you never miss breaking news while watching charts. Squawk is a Pro-only feature.</div>
+      <div class="faq-a" data-i18n="faq.a4">Squawk uses your browser's Web Speech API to read every new headline aloud as it arrives — just like a professional trading desk squawk box. Enable it with one click. The terminal highlights the card being read in real time, so you never miss breaking news while watching charts. Squawk is a Pro-only feature.</div>
     </div>
 
     <div class="faq-item" role="listitem">
@@ -1645,7 +1654,7 @@ footer { background:var(--bg2); border-top:1px solid var(--border); padding:64px
         <span data-i18n="faq.q5">Which news sources does the terminal aggregate?</span>
         <span class="faq-icon" aria-hidden="true">+</span>
       </div>
-      <div class="faq-a" data-nosnippet data-i18n="faq.a5">We aggregate from hundreds of institutional and professional news sources across forex, macro, equities, crypto and commodities. We keep our source list confidential for competitive reasons. The Basic plan covers the highest-impact sources; the Pro plan unlocks full comprehensive coverage across every category and asset class.</div>
+      <div class="faq-a" data-i18n="faq.a5">We aggregate from hundreds of institutional and professional news sources across forex, macro, equities, crypto and commodities. We keep our source list confidential for competitive reasons. The Basic plan covers the highest-impact sources; the Pro plan unlocks full comprehensive coverage across every category and asset class.</div>
     </div>
 
     <div class="faq-item" role="listitem">
@@ -1653,7 +1662,7 @@ footer { background:var(--bg2); border-top:1px solid var(--border); padding:64px
         <span data-i18n="faq.q6">Does Trading News Terminal have live charts?</span>
         <span class="faq-icon" aria-hidden="true">+</span>
       </div>
-      <div class="faq-a" data-nosnippet data-i18n="faq.a6">Yes. The terminal includes embedded TradingView charts for forex pairs (EUR/USD, GBP/USD, USD/JPY and more), cryptocurrencies (BTC, ETH, XRP), major indices (S&amp;P 500, DAX, Nikkei, FTSE), metals and energy (Gold, Silver, WTI, Brent, Natural Gas), and agricultural commodities (Corn, Wheat, Soybeans, Coffee, Cocoa, Cotton). Charts are available on both Basic and Pro plans.</div>
+      <div class="faq-a" data-i18n="faq.a6">Yes. The terminal includes embedded TradingView charts for forex pairs (EUR/USD, GBP/USD, USD/JPY and more), cryptocurrencies (BTC, ETH, XRP), major indices (S&amp;P 500, DAX, Nikkei, FTSE), metals and energy (Gold, Silver, WTI, Brent, Natural Gas), and agricultural commodities (Corn, Wheat, Soybeans, Coffee, Cocoa, Cotton). Charts are available on both Basic and Pro plans.</div>
     </div>
 
     <div class="faq-item" role="listitem">
@@ -1661,7 +1670,7 @@ footer { background:var(--bg2); border-top:1px solid var(--border); padding:64px
         <span data-i18n="faq.q7">How does the economic calendar work?</span>
         <span class="faq-icon" aria-hidden="true">+</span>
       </div>
-      <div class="faq-a" data-nosnippet data-i18n="faq.a7">The economic calendar shows 7 days of upcoming events with live countdown timers, previous values and forecasts. When actual data is published, the result is automatically injected into the news feed with colour-coded beat/miss signals. HIGH impact events trigger an audio alert and Squawk reading (on Pro). The calendar covers all major currencies and economies globally.</div>
+      <div class="faq-a" data-i18n="faq.a7">The economic calendar shows 7 days of upcoming events with live countdown timers, previous values and forecasts. When actual data is published, the result is automatically injected into the news feed with colour-coded beat/miss signals. HIGH impact events trigger an audio alert and Squawk reading (on Pro). The calendar covers all major currencies and economies globally.</div>
     </div>
 
     <div class="faq-item" role="listitem">
@@ -1669,7 +1678,7 @@ footer { background:var(--bg2); border-top:1px solid var(--border); padding:64px
         <span data-i18n="faq.q9">Does it work on mobile and tablet?</span>
         <span class="faq-icon" aria-hidden="true">+</span>
       </div>
-      <div class="faq-a" data-nosnippet data-i18n-html="faq.a9">Mobile and tablet support is <strong>coming soon</strong>. The terminal is currently optimised for desktop and laptop browsers. A fully native mobile experience is in development.</div>
+      <div class="faq-a" data-i18n-html="faq.a9">Yes — Trading News Terminal is installable as a <strong>PWA</strong> (progressive web app): open it in your mobile or tablet browser and add it to your home screen for push notifications and an app-like experience. We continue to refine the mobile layout.</div>
     </div>
 
     <div class="faq-item" role="listitem">
@@ -1677,7 +1686,7 @@ footer { background:var(--bg2); border-top:1px solid var(--border); padding:64px
         <span data-i18n="faq.q10">How do I cancel during the free trial?</span>
         <span class="faq-icon" aria-hidden="true">+</span>
       </div>
-      <div class="faq-a" data-nosnippet data-i18n="faq.a10">You can cancel anytime from your account settings or billing portal. If you cancel within 7 days, you won't be charged. Your Pro access will remain until the trial period ends.</div>
+      <div class="faq-a" data-i18n="faq.a10">You can cancel anytime from your account settings or billing portal. If you cancel within 7 days, you won't be charged. Your Pro access will remain until the trial period ends.</div>
     </div>
 
   </div>
@@ -1782,19 +1791,29 @@ footer { background:var(--bg2); border-top:1px solid var(--border); padding:64px
     </div>
     <div class="footer-col">
       <h4 data-i18n="footer.col_markets">Markets</h4>
-      <a href="/signup" data-i18n="footer.forex_news">Forex News</a>
-      <a href="/signup" data-i18n="footer.crypto_news">Crypto News</a>
-      <a href="/signup" data-i18n="footer.macro_bonds">Macro &amp; Bonds</a>
-      <a href="/signup" data-i18n="footer.commodities">Commodities News</a>
-      <a href="/signup" data-i18n="footer.econ_cal">Economic Calendar</a>
+      <a href="/forex-news-feed" data-i18n="footer.forex_news">Forex News</a>
+      <a href="/crypto-news-feed" data-i18n="footer.crypto_news">Crypto News</a>
+      <a href="/macro-bonds-hub" data-i18n="footer.macro_bonds">Macro &amp; Bonds</a>
+      <a href="/commodities-news-feed" data-i18n="footer.commodities">Commodities News</a>
+      <a href="/economic-calendar" data-i18n="footer.econ_cal">Economic Calendar</a>
+      <a href="/stock-market-news-feed">Stock Market News</a>
+    </div>
+    <div class="footer-col">
+      <h4>Compare</h4>
+      <a href="/benzinga-pro-alternative">Benzinga Pro Alternative</a>
+      <a href="/bloomberg-alternative">Bloomberg Alternative</a>
+      <a href="/newsquawk-alternative">Newsquawk Alternative</a>
+      <a href="/investing-com-alternative">Investing.com Alternative</a>
+      <a href="/best-financial-news-terminals-2026">Best Terminals 2026</a>
     </div>
     <div class="footer-col">
       <h4 data-i18n="footer.col_resources">Resources</h4>
-      <a href="#faq" data-i18n="nav.faq">FAQ</a>
+      <a href="/about">About</a>
+      <a href="/faq" data-i18n="nav.faq">FAQ</a>
+      <a href="/live-financial-tv" data-i18n="footer.live_tv">Live Financial TV</a>
+      <a href="/squawk-box" data-i18n="footer.live_squawk">Live Squawk</a>
       <a href="/affiliates" data-i18n="nav.affiliates" target="_blank" rel="noopener">Affiliates</a>
       <a href="/partners">Partners</a>
-      <a href="/signup" data-i18n="footer.live_tv">Live Financial TV</a>
-      <a href="/signup" data-i18n="footer.live_squawk">Live Squawk</a>
       <a href="/terms" data-i18n="footer.terms">Terms of Use</a>
       <a href="/privacy" data-i18n="footer.privacy">Privacy Policy</a>
       <a href="mailto:support@tradingnewsterminal.com" data-i18n="footer.contact">Contact</a>
@@ -1934,7 +1953,7 @@ const _LS = {
     'plan.vat_note':'VAT added at checkout where applicable · Billed in EUR',
     'plan.pro_desc':"Institutional-grade coverage with zero compromise. Every feature, every source, zero-delay real-time news. Built for traders who can't afford to miss a move.",
     'plan.basic_btn':'Get Started Free','plan.pro_btn':'Get Pro Access',
-    'pf.news_delay':'News feed <span class="pf-note">(15 min delay)</span>',
+    'pf.news_delay':'News feed <span class="pf-note">(5 min delay)</span>',
     'pf.calendar':'Economic calendar with live releases',
     'pf.charts':'TradingView charts','pf.watchlist':'Asset watchlist and smart search',
     'pf.sound':'Sound alerts on impact news','pf.multilingual':'Interface in 6 languages',
@@ -2031,7 +2050,7 @@ const _LS = {
     'faq.q7':'How does the economic calendar work?',
     'faq.a7':'The economic calendar shows 7 days of upcoming events with live countdown timers, previous values and forecasts. When actual data is published, the result is automatically injected into the news feed with colour-coded beat/miss signals. HIGH impact events trigger an audio alert and Squawk reading (on Pro).',
     'faq.q9':'Does it work on mobile and tablet?',
-    'faq.a9':'Mobile and tablet support is <strong>coming soon</strong>. The terminal is currently optimised for desktop and laptop browsers. A fully native mobile experience is in development.',
+    'faq.a9':'Yes — Trading News Terminal is installable as a <strong>PWA</strong> (progressive web app): open it in your mobile or tablet browser and add it to your home screen for push notifications and an app-like experience. We continue to refine the mobile layout.',
     'faq.q10':'How do I cancel during the free trial?',
     'faq.a10':'You can cancel anytime from your account settings or billing portal. If you cancel within 7 days, you won\'t be charged. Your Pro access will remain until the trial period ends.',
     'pricing.trial_btn':'Start 7-Day Free Trial →',
@@ -2166,7 +2185,7 @@ const _LS = {
     'plan.vat_note':'IVA adicionado no checkout quando aplicável · Faturado em EUR',
     'plan.pro_desc':'Cobertura de nível institucional sem compromissos. Todas as funcionalidades, todas as fontes, notícias em tempo real sem atraso. Construído para traders que não podem perder um movimento.',
     'plan.basic_btn':'Começar Grátis','plan.pro_btn':'Obter Acesso Pro',
-    'pf.news_delay':'Feed de notícias <span class="pf-note">(15 min de atraso)</span>',
+    'pf.news_delay':'Feed de notícias <span class="pf-note">(5 min de atraso)</span>',
     'pf.calendar':'Calendário económico com releases ao vivo',
     'pf.charts':'Gráficos TradingView','pf.watchlist':'Watchlist de ativos e pesquisa',
     'pf.sound':'Alertas sonoros em news de impacto','pf.multilingual':'Interface em 6 línguas',
@@ -2263,7 +2282,7 @@ const _LS = {
     'faq.q7':'Como funciona o calendário económico?',
     'faq.a7':'O calendário económico mostra 7 dias de eventos próximos com temporizadores ao vivo, valores anteriores e previsões. Quando os dados reais são publicados, o resultado é automaticamente injetado no feed com sinais de cor beat/miss. Eventos HIGH disparam alertas de áudio e leitura de Squawk (no Pro).',
     'faq.q9':'Funciona em mobile e tablet?',
-    'faq.a9':'Suporte mobile e tablet está <strong>a chegar em breve</strong>. O terminal está atualmente otimizado para browsers de desktop e laptop. Uma experiência mobile nativa completa está em desenvolvimento.',
+    'faq.a9':'Sim — o Trading News Terminal é instalável como <strong>PWA</strong> (progressive web app): abre no browser do telemóvel ou tablet e adiciona ao ecrã inicial para notificações push e uma experiência tipo app. Continuamos a melhorar o layout mobile.',
     'faq.q10':'Como cancelo durante o período de teste grátis?',
     'faq.a10':'Podes cancelar a qualquer momento nas definições da tua conta ou portal de faturação. Se cancelares dentro de 7 dias, não serás cobrado. O teu acesso Pro continua até ao fim do período de teste.',
     'pricing.trial_btn':'Iniciar 7 Dias Grátis →',
@@ -2394,7 +2413,7 @@ const _LS = {
     'plan.vat_note':'IVA añadido en checkout cuando aplique · Facturado en EUR',
     'plan.pro_desc':'Cobertura de nivel institucional sin compromisos. Todas las funciones, todas las fuentes, noticias en tiempo real sin retraso. Construido para traders que no pueden perderse un movimiento.',
     'plan.basic_btn':'Empezar Gratis','plan.pro_btn':'Obtener Acceso Pro',
-    'pf.news_delay':'Feed de noticias <span class="pf-note">(15 min de retraso)</span>',
+    'pf.news_delay':'Feed de noticias <span class="pf-note">(5 min de retraso)</span>',
     'pf.calendar':'Calendario económico con publicaciones en vivo',
     'pf.charts':'Gráficos TradingView','pf.watchlist':'Lista de activos y búsqueda',
     'pf.sound':'Alertas sonoras en noticias de impacto','pf.multilingual':'Interfaz en 6 idiomas',
@@ -2614,7 +2633,7 @@ const _LS = {
     'plan.vat_note':'TVA ajoutée au paiement si applicable · Facturé en EUR',
     'plan.pro_desc':'Couverture de niveau institutionnel sans compromis. Toutes les fonctionnalités, toutes les sources, actualités en temps réel sans délai. Construit pour les traders qui ne peuvent pas se permettre de manquer un mouvement.',
     'plan.basic_btn':'Commencer Gratuitement','plan.pro_btn':'Obtenir l\'Accès Pro',
-    'pf.news_delay':'Flux d\'actualités <span class="pf-note">(15 min de délai)</span>',
+    'pf.news_delay':'Flux d\'actualités <span class="pf-note">(5 min de délai)</span>',
     'pf.calendar':'Calendrier économique avec publications en direct',
     'pf.charts':'Graphiques TradingView','pf.watchlist':'Liste d\'actifs et recherche',
     'pf.sound':'Alertes sonores sur news à impact','pf.multilingual':'Interface en 6 langues',
@@ -2835,7 +2854,7 @@ const _LS = {
     'plan.vat_note':'MwSt. beim Checkout hinzugefügt wo anwendbar · In EUR abgerechnet',
     'plan.pro_desc':'Institutionelle Abdeckung ohne Kompromisse. Alle Funktionen, alle Quellen, Echtzeit-Nachrichten ohne Verzögerung. Gebaut für Trader, die keine Bewegung verpassen dürfen.',
     'plan.basic_btn':'Kostenlos starten','plan.pro_btn':'Pro-Zugang holen',
-    'pf.news_delay':'Nachrichtenfeed <span class="pf-note">(15 Min. Verzögerung)</span>',
+    'pf.news_delay':'Nachrichtenfeed <span class="pf-note">(5 Min. Verzögerung)</span>',
     'pf.calendar':'Wirtschaftskalender mit Live-Veröffentlichungen',
     'pf.charts':'TradingView-Charts','pf.watchlist':'Asset-Watchlist und intelligente Suche',
     'pf.sound':'Tonalarme bei Impact-Nachrichten','pf.multilingual':'Oberfläche in 6 Sprachen',
@@ -2906,7 +2925,7 @@ const _LS = {
     'vs.h2':'Wie wir uns mit FinancialJuice vergleichen',
     'vs.sub':'Marktintelligenz auf Profi-Niveau ohne den Profi-Preis.',
     'vs.th_feature':'Funktion','vs.th_basic':'TNT Basic — Kostenlos','vs.th_pro':'TNT Pro — €40/Monat',
-    'vs.news':'Nachrichtenfeed','vs.delay':'2 Min. Verzögerung','vs.realtime':'Echtzeit',
+    'vs.news':'Nachrichtenfeed','vs.delay':'5 Min. Verzögerung','vs.realtime':'Echtzeit',
     'vs.calendar':'Wirtschaftskalender','vs.live_releases':'Live-Veröffentlichungen',
     'vs.macro':'Makro & Anleihen Hub','vs.centralbanks':'Zentralbank-Tracker',
     'vs.earnings':'Ergebniskalender','vs.screener':'Marktscreener',
@@ -2918,7 +2937,7 @@ const _LS = {
     'faq.sub':'Alles, was du über Trading News Terminal wissen musst.',
     'faq.tab_general':'Allgemeine FAQ','faq.tab_app':'App-FAQ',
     'faq.q1':'Was ist Trading News Terminal?','faq.a1':'Trading News Terminal ist eine professionelle Echtzeit-Finanznachrichtenplattform für aktive Trader. Es aggregiert Live-Nachrichten aus institutionellen Quellen in Forex, Makro, Krypto, Aktien und Rohstoffen und kombiniert sie mit Live-Wirtschaftskalender, Squawk-Box, TradingView-Charts und Finanz-TV.',
-    'faq.q2':'Was ist der Unterschied zwischen Basic und Pro?','faq.a2':'<p style="margin-bottom:12px;"><strong>Basic (kostenlos)</strong>: Feed mit 2 Min. Verzögerung, Live-Wirtschaftskalender, TradingView-Charts, Watchlist, intelligente Suche und mehrsprachige Oberfläche.</p><p><strong>Pro (€40/Monat)</strong> fügt hinzu: Echtzeit-Nachrichten — Makro & Anleihen Hub — Ergebniskalender — Zentralbank-Tracker — Marktsentiment — Marktscreener — Live-Squawk — 7 TV-Kanäle — werbefrei — Prioritätssupport.</p>',
+    'faq.q2':'Was ist der Unterschied zwischen Basic und Pro?','faq.a2':'<p style="margin-bottom:12px;"><strong>Basic (kostenlos)</strong>: Feed mit 5 Min. Verzögerung, Live-Wirtschaftskalender, TradingView-Charts, Watchlist, intelligente Suche und mehrsprachige Oberfläche.</p><p><strong>Pro (€40/Monat)</strong> fügt hinzu: Echtzeit-Nachrichten — Makro & Anleihen Hub — Ergebniskalender — Zentralbank-Tracker — Marktsentiment — Marktscreener — Live-Squawk — 7 TV-Kanäle — werbefrei — Prioritätssupport.</p>',
     'faq.q3':'Ist der Basic-Plan wirklich kostenlos?','faq.a3':'Ja. Der Basic-Plan ist für immer kostenlos — keine Kreditkarte, kein automatisches Upgrade. Erstelle ein Konto mit deiner E-Mail in unter 30 Sekunden. Für Pro bieten wir eine 7-tägige kostenlose Testphase mit Kreditkarte. Nach 7 Tagen wird dir €40/Monat + MwSt berechnet. Jederzeit während der Testphase kündbar.',
     'faq.q4':'Was ist die Squawk-Funktion?','faq.a4':'Squawk verwendet die Web Speech API deines Browsers, um jede neue Schlagzeile laut vorzulesen — genau wie eine professionelle Trading-Squawk-Box. Mit einem Klick aktivieren. Squawk ist eine exklusive Pro-Funktion.',
     'faq.q5':'Welche Nachrichtenquellen aggregiert das Terminal?','faq.a5':'Wir aggregieren aus Hunderten von institutionellen und professionellen Nachrichtenquellen. Unsere Quellenliste ist aus Wettbewerbsgründen vertraulich. Basic deckt die wirkungsvollsten Quellen ab; Pro schaltet vollständige Abdeckung frei.',
@@ -2934,7 +2953,7 @@ const _LS = {
     'cta.sub':'Kostenlos starten. Upgraden zu Pro wenn du mehr benötigst.',
     'cta.free_badge':'Basic — Kostenlos','cta.forever':'/ für immer',
     'cta.free_desc':'Alles, was du brauchst, um Märkte zu verfolgen. Keine Kreditkarte, kein Ablaufdatum.',
-    'cta.f1':'Nachrichtenfeed (2 Min. Verzögerung)','cta.f2':'Live-Wirtschaftskalender',
+    'cta.f1':'Nachrichtenfeed (5 Min. Verzögerung)','cta.f2':'Live-Wirtschaftskalender',
     'cta.f3':'TradingView-Charts','cta.f4':'Asset-Watchlist & intelligente Suche',
     'cta.f5':'Tonalarme · Mehrsprachig',
     'cta.pro_badge':'Pro — €40/Monat','cta.per_month':'/ Monat',
@@ -3055,7 +3074,7 @@ const _LS = {
     'plan.vat_note':'IVA aggiunta al checkout dove applicabile · Fatturato in EUR',
     'plan.pro_desc':'Copertura di livello istituzionale senza compromessi. Tutte le funzionalità, tutte le fonti, notizie in tempo reale senza ritardo. Costruito per trader che non possono permettersi di perdere un movimento.',
     'plan.basic_btn':'Inizia Gratis','plan.pro_btn':'Ottieni Accesso Pro',
-    'pf.news_delay':'Feed notizie <span class="pf-note">(15 min di ritardo)</span>',
+    'pf.news_delay':'Feed notizie <span class="pf-note">(5 min di ritardo)</span>',
     'pf.calendar':'Calendario economico con pubblicazioni in diretta',
     'pf.charts':'Grafici TradingView','pf.watchlist':'Watchlist attivi e ricerca',
     'pf.sound':'Avvisi sonori su notizie di impatto','pf.multilingual':'Interfaccia in 6 lingue',

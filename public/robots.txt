@@ -55,10 +55,10 @@ User-agent: omgilibot
 Disallow: /
 
 # Sitemaps
+# News sitemaps (sitemap-news*.xml) are intentionally NOT advertised here: the
+# individual /news/<article> pages are noindex (they serve the HTML portal and
+# must not leak raw sources), so listing them in a sitemap only produced
+# "Submitted URL marked noindex" errors in Search Console. The main sitemap
+# covers every indexable marketing/SEO page.
 Sitemap: https://www.tradingnewsterminal.com/sitemap.xml
-Sitemap: https://www.tradingnewsterminal.com/sitemap-news.xml
-Sitemap: https://www.tradingnewsterminal.com/sitemap-news-pt.xml
-Sitemap: https://www.tradingnewsterminal.com/sitemap-news-es.xml
-Sitemap: https://www.tradingnewsterminal.com/sitemap-news-fr.xml
-Sitemap: https://www.tradingnewsterminal.com/sitemap-news-de.xml
 Sitemap: https://api.tradingnewsterminal.com/blog/sitemap.xml
