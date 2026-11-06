@@ -1,0 +1,5 @@
+# Trading News Terminal — security contact (RFC 9116)
+Contact: mailto:support@tradingnewsterminal.com
+Expires: 2027-12-31T23:59:59Z
+Preferred-Languages: en, pt
+Canonical: https://www.tradingnewsterminal.com/.well-known/security.txt

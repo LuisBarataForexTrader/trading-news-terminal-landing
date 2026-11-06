@@ -18,9 +18,33 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           command: pages deploy public --project-name=tnt-landing --branch=main --commit-dirty=true
+
+      # Avisa os motores (Bing/Yandex/Seznam) das paginas HTML alteradas neste push,
+      # para indexacao rapida sem esperar pelo re-crawl. Chave hospedada em public/<key>.txt.
+      - name: Submit changed URLs to IndexNow
+        if: github.event_name == 'push'
+        env:
+          INDEXNOW_KEY: ea79489657a4867277e01e156f6c4adc
+          HOST: www.tradingnewsterminal.com
+        run: |
+          set -e
+          CHANGED=$(git diff --name-only --diff-filter=ACM HEAD~1 HEAD -- 'public/**/*.html' || true)
+          if [ -z "$CHANGED" ]; then echo "Sem HTML alterado; IndexNow ignorado."; exit 0; fi
+          URLS=$(echo "$CHANGED" | while read -r f; do
+            p="${f#public/}"; p="${p%.html}"
+            if [ "$p" = "index" ]; then p=""; elif [ "${p##*/}" = "index" ]; then p="${p%index}"; fi
+            printf '"https://%s/%s",' "$HOST" "$p"
+          done | sed 's/,$//')
+          BODY=$(printf '{"host":"%s","key":"%s","keyLocation":"https://%s/%s.txt","urlList":[%s]}' \
+            "$HOST" "$INDEXNOW_KEY" "$HOST" "$INDEXNOW_KEY" "$URLS")
+          echo "IndexNow payload: $BODY"
+          curl -sS -X POST "https://api.indexnow.org/indexnow" \
+            -H "Content-Type: application/json" -d "$BODY" -w "\nIndexNow HTTP %{http_code}\n" || true

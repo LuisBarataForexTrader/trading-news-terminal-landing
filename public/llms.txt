@@ -19,8 +19,9 @@ Trading News Terminal (TNT) delivers institutional-grade market news the moment 
 - AI-assisted market analysis.
 
 ## Pricing
-- Basic: Free forever, no credit card.
-- Pro: €40/month (cheaper billed annually), no commitment, cancel anytime.
+- Basic: Free forever, no credit card. News feed with a ~5-minute delay.
+- Pro: €40/month, or €360/year (3 months free vs monthly). 7-day free trial, cancel anytime. Removes the news delay and unlocks Squawk, 7 live TV channels, Market Screener, Central Banks Tracker, Market Sentiment and the Macro & Bonds Hub.
+- Telegram Premium: €19/month — unlimited real-time HIGH-impact alerts, ad-free.
 
 ## Key pages
 - Homepage: https://www.tradingnewsterminal.com/
@@ -32,6 +33,17 @@ Trading News Terminal (TNT) delivers institutional-grade market news the moment 
 - Squawk box: https://www.tradingnewsterminal.com/squawk-box
 - Live financial TV: https://www.tradingnewsterminal.com/live-financial-tv
 - About: https://www.tradingnewsterminal.com/about
+
+## Compare (TNT vs other tools)
+- TNT vs Benzinga Pro: https://www.tradingnewsterminal.com/benzinga-pro-alternative
+- TNT vs Bloomberg Terminal: https://www.tradingnewsterminal.com/bloomberg-alternative
+- TNT vs Newsquawk: https://www.tradingnewsterminal.com/newsquawk-alternative
+- TNT vs Investing.com: https://www.tradingnewsterminal.com/investing-com-alternative
+- TNT vs FinancialJuice: https://www.tradingnewsterminal.com/financialjuice-alternative
+- TNT vs ForexLive: https://www.tradingnewsterminal.com/forexlive-alternative
+- TNT vs FXStreet: https://www.tradingnewsterminal.com/fxstreet-alternative
+- TNT vs Koyfin: https://www.tradingnewsterminal.com/koyfin-alternative
+- Best financial news terminals 2026: https://www.tradingnewsterminal.com/best-financial-news-terminals-2026
 
 ## Guides
 - CME Futures Roll Calendar 2026: https://app.tradingnewsterminal.com/blog/guide/cme-futures-roll-dates-2026
