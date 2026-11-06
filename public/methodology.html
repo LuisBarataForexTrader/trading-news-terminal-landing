@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Methodology — How Trading News Terminal Measures Speed, Impact & Accuracy</title>
+  <meta name="description" content="How Trading News Terminal measures delivery speed against the official source timestamp, classifies market impact (HIGH/MEDIUM/LOW), verifies economic-release data against the issuing agency, and handles corrections. Written by founder and trader Luís Barata.">
+  <link rel="canonical" href="https://www.tradingnewsterminal.com/methodology">
+  <link rel="alternate" hreflang="en" href="https://www.tradingnewsterminal.com/methodology">
+  <link rel="alternate" hreflang="x-default" href="https://www.tradingnewsterminal.com/methodology">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512x512.png">
+  <meta property="og:title" content="Methodology — How Trading News Terminal Measures Speed, Impact & Accuracy">
+  <meta property="og:description" content="How we measure delivery speed against the official source timestamp, classify market impact, and verify economic data against the issuing agency.">
+  <meta property="og:url" content="https://www.tradingnewsterminal.com/methodology">
+  <meta property="og:image" content="https://www.tradingnewsterminal.com/og-image.png">
+  <meta property="og:type" content="website">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Luís Barata, Trading News Terminal">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How Trading News Terminal Measures Speed, Impact & Accuracy">
+  <meta name="twitter:description" content="Our methodology: speed vs the official timestamp, impact classification, and data verification.">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.tradingnewsterminal.com/methodology#webpage",
+      "url": "https://www.tradingnewsterminal.com/methodology",
+      "name": "Methodology — How Trading News Terminal Measures Speed, Impact & Accuracy",
+      "description": "How Trading News Terminal measures delivery speed, classifies market impact, and verifies economic-release data.",
+      "isPartOf": { "@id": "https://www.tradingnewsterminal.com/#website" },
+      "about": { "@id": "https://www.tradingnewsterminal.com/#organization" },
+      "author": { "@id": "https://www.tradingnewsterminal.com/about#luis-barata" },
+      "reviewedBy": { "@id": "https://www.tradingnewsterminal.com/about#luis-barata" },
+      "lastReviewed": "2026-11-06"
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.tradingnewsterminal.com/#organization",
+      "name": "Trading News Terminal",
+      "alternateName": "TNT",
+      "url": "https://www.tradingnewsterminal.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.tradingnewsterminal.com/favicon-512x512.png",
+        "width": 512,
+        "height": 512
+      },
+      "sameAs": [
+        "https://t.me/tradingnewsterminal",
+        "https://www.youtube.com/@tradingnewsterminal"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.tradingnewsterminal.com/about#luis-barata",
+      "name": "Luís Barata",
+      "jobTitle": "Founder, Trading News Terminal",
+      "description": "Forex and macro trader with 13+ years of experience trading European session opens and U.S. data releases.",
+      "url": "https://www.tradingnewsterminal.com/about",
+      "sameAs": [
+        "https://luisbarataforextrader.com",
+        "https://www.linkedin.com/in/luisbarata-forex-trader"
+      ],
+      "knowsAbout": ["Forex trading", "Macroeconomics", "Central bank policy", "Futures markets", "Market news analysis"]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.tradingnewsterminal.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Methodology", "item": "https://www.tradingnewsterminal.com/methodology" }
+      ]
+    }
+  ]
+}
+  </script>
+  <style>
+  :root {
+    --bg: #0a0e14; --card: #0d1117; --border: #1e2a3a; --text: #e0e8f0; --muted: #8899aa;
+    --accent: #00d4ff; --accent2: #00ff9c; --green: #10b981; --red: #ef4444;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+  header { padding: 20px 0; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: rgba(10,14,20,0.92); backdrop-filter: blur(8px); z-index: 50; }
+  header .container { display: flex; align-items: center; justify-content: space-between; }
+  .nav-logo { display: flex; align-items: center; gap: 10px; color: var(--text); }
+  .nav-logo-icon { width: 32px; height: 32px; border: 1.5px solid var(--accent); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .nav-logo-icon::before { content: ''; width: 10px; height: 10px; background: var(--accent); animation: pulse 2s ease-in-out infinite; }
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.4;transform:scale(0.7)} }
+  .nav-logo-text { font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; line-height: 1.3; }
+  .nav-logo-text span { color: var(--accent); }
+  .nav-logo-sub { font-size: 9px; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; }
+  .btn { display: inline-block; padding: 11px 22px; border-radius: 6px; font-weight: 700; font-size: 14px; letter-spacing: 0.02em; cursor: pointer; transition: transform 0.15s, box-shadow 0.15s; border: none; }
+  .btn:hover { transform: translateY(-1px); box-shadow: 0 6px 24px rgba(0,212,255,0.2); text-decoration: none; }
+  .btn-primary { background: var(--accent); color: #002030; }
+  .btn-outline { background: transparent; color: var(--text); border: 1px solid var(--border); }
+  .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+  .btn-lg { padding: 14px 28px; font-size: 15px; }
+  .hero { padding: 64px 0 40px; text-align: center; }
+  .hero-badge { display: inline-block; padding: 5px 12px; background: rgba(0,212,255,0.1); border: 1px solid rgba(0,212,255,0.3); color: var(--accent); border-radius: 999px; font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 20px; }
+  h1 { font-size: clamp(30px, 5vw, 46px); font-weight: 800; line-height: 1.14; margin-bottom: 18px; letter-spacing: -0.02em; }
+  h1 span { color: var(--accent); }
+  .hero-sub { color: var(--muted); font-size: clamp(16px, 2vw, 19px); max-width: 760px; margin: 0 auto; }
+  section { padding: 48px 0; }
+  section + section { border-top: 1px solid var(--border); }
+  .section-label { display: inline-block; padding: 3px 10px; background: rgba(0,212,255,0.08); border: 1px solid rgba(0,212,255,0.25); color: var(--accent); border-radius: 999px; font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 12px; }
+  h2 { font-size: clamp(22px, 3.5vw, 30px); font-weight: 700; margin-bottom: 16px; color: var(--text); }
+  .prose { max-width: 820px; }
+  .prose h3 { font-size: 19px; font-weight: 700; margin: 30px 0 10px; color: var(--text); }
+  .prose p { font-size: 16px; color: var(--muted); line-height: 1.8; margin-bottom: 16px; }
+  .prose ul { margin: 12px 0 20px 22px; }
+  .prose li { font-size: 15px; color: var(--muted); line-height: 1.75; margin-bottom: 8px; }
+  .prose strong { color: var(--text); }
+  .founder { display: flex; gap: 24px; align-items: flex-start; background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 28px; max-width: 820px; }
+  .founder-avatar { flex: 0 0 72px; width: 72px; height: 72px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), var(--accent2)); display: flex; align-items: center; justify-content: center; font-size: 28px; font-weight: 800; color: #002030; }
+  .founder h3 { font-size: 19px; margin-bottom: 4px; color: var(--text); }
+  .founder .role { color: var(--accent); font-size: 13px; font-weight: 600; margin-bottom: 12px; }
+  .founder p { color: var(--muted); font-size: 15px; line-height: 1.75; margin-bottom: 12px; }
+  .disclaimer { max-width: 820px; font-size: 13px; color: var(--muted); border-left: 3px solid var(--border); padding: 8px 0 8px 16px; margin-top: 8px; }
+  .reviewed { max-width: 820px; font-size: 13px; color: var(--muted); margin-top: 8px; }
+  .footer-cta { padding: 64px 0; text-align: center; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: linear-gradient(180deg, var(--bg) 0%, rgba(0,212,255,0.03) 100%); }
+  .footer-cta h2 { font-size: clamp(22px, 4vw, 34px); margin-bottom: 14px; }
+  .footer-cta p { color: var(--muted); font-size: 16px; margin-bottom: 30px; max-width: 540px; margin-left: auto; margin-right: auto; }
+  .hero-ctas { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  footer { padding: 28px 0; text-align: center; color: var(--muted); font-size: 13px; }
+  footer a { color: var(--muted); }
+  footer a:hover { color: var(--accent); }
+  .footer-links { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 8px; }
+  @media (max-width: 600px) { .founder { flex-direction: column; } .hero-ctas { flex-direction: column; align-items: center; } .btn-lg { width: 100%; max-width: 320px; text-align: center; } }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <a href="https://www.tradingnewsterminal.com/?utm_source=seo&utm_medium=organic&utm_campaign=methodology&utm_content=header" class="nav-logo">
+      <div class="nav-logo-icon"></div>
+      <div>
+        <div class="nav-logo-text">Trading <span>News</span> Terminal</div>
+        <div class="nav-logo-sub">Real-Time Market Intelligence</div>
+      </div>
+    </a>
+    <a href="https://www.tradingnewsterminal.com/signup?utm_source=seo&utm_medium=organic&utm_campaign=methodology&utm_content=header" class="btn btn-primary">Open the terminal →</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-badge">Methodology</div>
+    <h1>How we measure <span>speed, impact and accuracy</span></h1>
+    <p class="hero-sub">Financial information is only useful if you can trust how it is produced. This page explains, in plain terms, how Trading News Terminal times, classifies and verifies the news and data in the terminal.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-label">Speed</div>
+    <h2>How we measure delivery speed</h2>
+    <div class="prose">
+      <p>Speed on a news terminal is easy to claim and hard to prove. We hold ourselves to a single, falsifiable benchmark: <strong>we measure delivery against the official timestamp published by the issuing source</strong> — the exchange, the statistical agency or the central bank — not against other news vendors.</p>
+      <p>For a scheduled economic release, that means the clock starts at the moment the issuing agency publishes the figure, and we record how quickly the result reaches the terminal. For a breaking headline, the item is surfaced as it crosses the professional wire. We deliberately do not benchmark ourselves against competing aggregators, because the only reference that cannot be gamed is the primary source itself.</p>
+      <ul>
+        <li><strong>Pro</strong> delivers the feed in real time, with no added delay.</li>
+        <li><strong>Basic</strong> applies a fixed ~5-minute delay to the same feed — the figures and classification are identical, only the timing differs.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-label">Impact</div>
+    <h2>How we classify market impact (HIGH / MEDIUM / LOW)</h2>
+    <div class="prose">
+      <p>Every headline and calendar event is tagged with an impact rating so you can react to what moves price and ignore what doesn't. The rating is not a popularity score — it is an estimate of how much the item is likely to move the instruments it touches.</p>
+      <h3>What goes into the rating</h3>
+      <ul>
+        <li><strong>Event type.</strong> Rate decisions, NFP, CPI, GDP and central-bank communications carry structurally higher impact than second-tier data.</li>
+        <li><strong>Surprise versus consensus.</strong> A release that lands far from the forecast is weighted up; an in-line print is weighted down.</li>
+        <li><strong>Affected assets.</strong> We tag the currency pairs, indices, commodities and tickers a headline touches, so impact is assessed per market rather than in the abstract.</li>
+      </ul>
+      <p>Classification combines rules-based logic with AI-assisted tagging, and is kept aligned with how the market actually reacts rather than left to run unchecked. The rating is a decision aid, not a signal to trade.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-label">Accuracy</div>
+    <h2>How we verify economic-release data</h2>
+    <div class="prose">
+      <p>Calendar figures are drawn from official statistical agencies and cross-checked against the issuing agency before they reach the feed. When the actual number publishes, it is shown against the consensus forecast with a colour-coded beat/miss signal and injected into the live news feed.</p>
+      <ul>
+        <li><strong>US BLS / BEA</strong> — <a href="https://www.bls.gov/schedule/news_release/empsit.htm" rel="noopener">BLS NFP / CPI</a>, <a href="https://www.bea.gov/news/schedule" rel="noopener">BEA GDP / PCE</a></li>
+        <li><strong>Federal Reserve</strong> — <a href="https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm" rel="noopener">FOMC calendar</a></li>
+        <li><strong>Eurostat / ECB</strong> — <a href="https://www.ecb.europa.eu/press/calendars/statscal/html/index.en.html" rel="noopener">ECB statistics calendar</a></li>
+        <li><strong>UK ONS / Bank of England</strong> — <a href="https://www.ons.gov.uk/releasecalendar" rel="noopener">ONS release calendar</a></li>
+      </ul>
+      <p>Consensus estimates are revised during the 24 hours before a release to track the poll closest to publication time.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-label">Sources &amp; oversight</div>
+    <h2>Source standards and editorial oversight</h2>
+    <div class="prose">
+      <p>News inside the terminal comes from established financial news agencies, official regulatory feeds (for example SEC EDGAR) and central-bank communications. We keep the full source list confidential for competitive reasons, but the standard is constant: items are surfaced as they are published, not rewritten, and anything that cannot be attributed to a credible source is not shown as fact.</p>
+      <p>The product and its editorial guides are overseen by the founder, an active trader, rather than generated and left unchecked. When we get something wrong, we correct it and say so.</p>
+      <p class="reviewed"><strong>Page last reviewed:</strong> 6 November 2026 · <strong>Corrections:</strong> <a href="mailto:editor@tradingnewsterminal.com">editor@tradingnewsterminal.com</a></p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-label">Who's behind it</div>
+    <h2>Who writes and reviews this</h2>
+    <div class="founder" id="luis-barata">
+      <div class="founder-avatar">LB</div>
+      <div>
+        <h3>Luís Barata</h3>
+        <div class="role">Founder, Trading News Terminal</div>
+        <p>Luís is a forex and macro trader with <strong>13+ years of experience</strong> trading European session opens and U.S. data releases. He defines how the terminal sources, times and classifies the news, and reviews this methodology. Read more at <a href="https://luisbarataforextrader.com" rel="noopener">luisbarataforextrader.com</a> or on <a href="https://www.linkedin.com/in/luisbarata-forex-trader" rel="noopener">LinkedIn</a>.</p>
+      </div>
+    </div>
+    <p class="disclaimer"><strong>Disclaimer:</strong> Trading News Terminal provides news, data and educational content. Nothing on this site is investment advice or a recommendation to buy or sell any instrument. Trading forex, futures and other leveraged products involves substantial risk, including losses that can exceed your deposit. Always do your own research and consult a licensed financial advisor.</p>
+  </div>
+</section>
+
+<section class="footer-cta">
+  <div class="container">
+    <h2>See the terminal for yourself</h2>
+    <p>Create a free account in under 30 seconds — no credit card required.</p>
+    <div class="hero-ctas">
+      <a href="https://www.tradingnewsterminal.com/signup?utm_source=seo&utm_medium=organic&utm_campaign=methodology&utm_content=footer" class="btn btn-primary btn-lg">Open the terminal free</a>
+      <a href="https://www.tradingnewsterminal.com/economic-calendar" class="btn btn-outline btn-lg">See the live calendar</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p style="font-size:12px;color:var(--muted);max-width:760px;margin:0 auto 14px;line-height:1.6">Disclaimer: Trading News Terminal provides real-time news, data and educational content only — not investment advice or a recommendation to trade. Trading forex, futures and other leveraged products carries substantial risk of loss. Always do your own research.</p>
+    <div>© Trading News Terminal — Real-time market intelligence for professional traders.</div>
+    <div class="footer-links">
+      <a href="/about">About</a>
+      <a href="/terms">Terms</a>
+      <a href="/privacy">Privacy</a>
+      <a href="/economic-calendar">Economic Calendar</a>
+    </div>
+  </div>
+<div class="footer-yt" style="text-align:center;padding:14px 16px;font-size:12px;opacity:.75"><a href="https://www.youtube.com/@tradingnewsterminal" target="_blank" rel="noopener" style="color:inherit">Trading News Terminal on YouTube</a></div>
+</footer>
+
+</body>
+</html>
