@@ -36,7 +36,7 @@ jobs:
           HOST: www.tradingnewsterminal.com
         run: |
           set -e
-          CHANGED=$(git diff --name-only --diff-filter=ACM HEAD~1 HEAD -- 'public/**/*.html' || true)
+          CHANGED=$(git diff --name-only --diff-filter=ACM HEAD~1 HEAD -- public | grep -E '\.html$' || true)
           if [ -z "$CHANGED" ]; then echo "Sem HTML alterado; IndexNow ignorado."; exit 0; fi
           URLS=$(echo "$CHANGED" | while read -r f; do
             p="${f#public/}"; p="${p%.html}"
