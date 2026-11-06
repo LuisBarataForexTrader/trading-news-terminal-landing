@@ -19,7 +19,7 @@
 <meta property="og:description" content="See which tickers retail is piling into in real time: mention counts, momentum delta, upvote-weighted ranking from r/wallstreetbets and the rest of the retail Reddit ecosystem.">
 <meta property="og:image" content="https://www.tradingnewsterminal.com/og-image.png">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Reddit WSB Sentiment Tracker"><meta name="twitter:description" content="Real-time retail mention momentum on every US ticker."><meta name="twitter:image" content="https://www.tradingnewsterminal.com/og-image.png">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"SoftwareApplication","name":"Trading News Terminal — Reddit WSB Sentiment Tracker","url":"https://www.tradingnewsterminal.com/reddit-wsb-sentiment-tracker","applicationCategory":"FinanceApplication","operatingSystem":"Web Browser","description":"Real-time retail mention momentum tracker across Reddit's investing communities. Mention counts, 24h delta, upvote-weighted ranking. Helps traders see what retail is piling into before price moves.","offers":[{"@type":"Offer","name":"Pro Monthly","price":"44","priceCurrency":"USD","billingIncrement":"P1M"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the Reddit WSB Sentiment Tracker?","acceptedAnswer":{"@type":"Answer","text":"A live ranking of US-listed tickers by mention volume across Reddit's biggest investing communities — r/wallstreetbets, r/stocks, r/investing, r/options, r/SecurityAnalysis and others. Each ticker shows: total mentions in the last 24 hours, percentage change vs the previous 24h, upvote-weighted score, and a bullish/bearish lean score derived from comment tone."}},{"@type":"Question","name":"Why is retail Reddit sentiment a useful trading signal?","acceptedAnswer":{"@type":"Answer","text":"Retail flow has measurably moved single-name equity prices since 2021 — particularly in small-cap, meme, and high-short-interest names. Mention momentum (24h delta) is a leading indicator of retail order flow: a ticker going from 50 to 500 mentions overnight will frequently see a 5-15% gap on next open. Use it as a confluence signal — not as a primary entry trigger."}},{"@type":"Question","name":"How fresh is the data?","acceptedAnswer":{"@type":"Answer","text":"Updated every 30 minutes. We aggregate via the ApeWisdom data layer which scrapes Reddit's public API across 8+ investing subreddits and normalises ticker mentions, filters out false positives (common words that match ticker symbols), and produces upvote-weighted counts."}},{"@type":"Question","name":"Which subreddits are tracked?","acceptedAnswer":{"@type":"Answer","text":"r/wallstreetbets (largest weight, ~14M members), r/stocks, r/investing, r/options, r/SecurityAnalysis, r/StockMarket, r/pennystocks, and r/Daytrading. The mention count is the union across all of them, with WSB carrying the strongest predictive signal for short-term price action and SecurityAnalysis carrying more signal for fundamentals-driven moves."}},{"@type":"Question","name":"How do I use the momentum delta?","acceptedAnswer":{"@type":"Answer","text":"The 24h delta is the percentage change in mention count from the previous 24-hour window. A +300% delta means the ticker is being talked about 4x more than yesterday — typically driven by a catalyst (earnings beat, FDA approval, viral DD post). Combine with the bullish/bearish lean: high-positive delta + bullish lean = retail piling in long. High delta + bearish lean = retail shorting or panicking out."}},{"@type":"Question","name":"Does this work for shorting?","acceptedAnswer":{"@type":"Answer","text":"Yes — high retail mention momentum on overextended names is a classic fade setup. When a small-cap has run 200% in 3 days on retail mentions alone (with no earnings catalyst), the unwind tends to be sharp. Use the bearish lean and the rate of mention decay as your exit signal."}},{"@type":"Question","name":"Is this feature free?","acceptedAnswer":{"@type":"Answer","text":"Yes — the Reddit Sentiment ranking is available on the free Basic plan with 30-minute refresh. Pro users get 1-minute refresh, per-ticker drilldowns (mention timelines per subreddit, top comments), and webhook alerts when a watchlist ticker crosses a mention threshold."}},{"@type":"Question","name":"What about Twitter/X sentiment?","acceptedAnswer":{"@type":"Answer","text":"X (formerly Twitter) sentiment is a roadmap item — it requires a paid X API tier post-2024 changes. For now Reddit remains the most reliable free-tier retail sentiment signal because the data is public and structured. We'll layer in StockTwits as a complementary view in the next release."}}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"SoftwareApplication","name":"Trading News Terminal - Reddit WSB Sentiment Tracker","url":"https://www.tradingnewsterminal.com/reddit-wsb-sentiment-tracker","applicationCategory":"FinanceApplication","operatingSystem":"Web Browser","description":"Real-time retail mention momentum tracker across Reddit's investing communities. Mention counts, 24h delta, upvote-weighted ranking. Helps traders see what retail is piling into before price moves.","offers":[{"@type":"Offer","name":"Pro Monthly","price":"44","priceCurrency":"USD","billingIncrement":"P1M"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the Reddit WSB Sentiment Tracker?","acceptedAnswer":{"@type":"Answer","text":"A live ranking of US-listed tickers by mention volume across Reddit's biggest investing communities - r/wallstreetbets, r/stocks, r/investing, r/options, r/SecurityAnalysis and others. Each ticker shows: total mentions in the last 24 hours, percentage change vs the previous 24h, upvote-weighted score, and a bullish/bearish lean score derived from comment tone."}},{"@type":"Question","name":"Why is retail Reddit sentiment a useful trading signal?","acceptedAnswer":{"@type":"Answer","text":"Retail flow has measurably moved single-name equity prices since 2021 - particularly in small-cap, meme, and high-short-interest names. Mention momentum (24h delta) is a leading indicator of retail order flow: a ticker going from 50 to 500 mentions overnight will frequently see a 5-15% gap on next open. Use it as a confluence signal - not as a primary entry trigger."}},{"@type":"Question","name":"How fresh is the data?","acceptedAnswer":{"@type":"Answer","text":"Updated every 30 minutes. We aggregate via the ApeWisdom data layer which scrapes Reddit's public API across 8+ investing subreddits and normalises ticker mentions, filters out false positives (common words that match ticker symbols), and produces upvote-weighted counts."}},{"@type":"Question","name":"Which subreddits are tracked?","acceptedAnswer":{"@type":"Answer","text":"r/wallstreetbets (largest weight, ~14M members), r/stocks, r/investing, r/options, r/SecurityAnalysis, r/StockMarket, r/pennystocks, and r/Daytrading. The mention count is the union across all of them, with WSB carrying the strongest predictive signal for short-term price action and SecurityAnalysis carrying more signal for fundamentals-driven moves."}},{"@type":"Question","name":"How do I use the momentum delta?","acceptedAnswer":{"@type":"Answer","text":"The 24h delta is the percentage change in mention count from the previous 24-hour window. A +300% delta means the ticker is being talked about 4x more than yesterday - typically driven by a catalyst (earnings beat, FDA approval, viral DD post). Combine with the bullish/bearish lean: high-positive delta + bullish lean = retail piling in long. High delta + bearish lean = retail shorting or panicking out."}},{"@type":"Question","name":"Does this work for shorting?","acceptedAnswer":{"@type":"Answer","text":"Yes - high retail mention momentum on overextended names is a classic fade setup. When a small-cap has run 200% in 3 days on retail mentions alone (with no earnings catalyst), the unwind tends to be sharp. Use the bearish lean and the rate of mention decay as your exit signal."}},{"@type":"Question","name":"Is this feature free?","acceptedAnswer":{"@type":"Answer","text":"Yes - the Reddit Sentiment ranking is available on the free Basic plan with 30-minute refresh. Pro users get 1-minute refresh, per-ticker drilldowns (mention timelines per subreddit, top comments), and webhook alerts when a watchlist ticker crosses a mention threshold."}},{"@type":"Question","name":"What about Twitter/X sentiment?","acceptedAnswer":{"@type":"Answer","text":"X (formerly Twitter) sentiment is a roadmap item - it requires a paid X API tier post-2024 changes. For now Reddit remains the most reliable free-tier retail sentiment signal because the data is public and structured. We'll layer in StockTwits as a complementary view in the next release."}}]}]}</script>
 <style>
   :root{--bg:#0a0c0f;--card:#0f1218;--border:#1a2230;--text:#e2e8f0;--text-muted:#6b7d92;--muted:#8899aa;--accent:#00d4ff;--purple:#a78bfa;--green:#10b981;--orange:#f59e0b;--red:#ef4444}
   *{margin:0;padding:0;box-sizing:border-box}body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Inter","Segoe UI",Roboto,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
@@ -154,10 +154,10 @@
   <div class="container">
     <div class="section-label">Example Ranking</div>
     <h2>What the sentiment ranking looks like in the app</h2>
-    <p class="section-intro">Top-10 tickers by Reddit mentions over the last 24 hours. The <strong>delta column</strong> is the change vs the previous 24h window — that's the leading signal. <strong>Lean column</strong> is comment tone analysis.</p>
+    <p class="section-intro">Top-10 tickers by Reddit mentions over the last 24 hours. The <strong>delta column</strong> is the change vs the previous 24h window - that's the leading signal. <strong>Lean column</strong> is comment tone analysis.</p>
 
     <div class="demo-box">
-      <h4>🦍 Top mentions — last 24h (representative)</h4>
+      <h4>🦍 Top mentions - last 24h (representative)</h4>
       <div class="rank-header">
         <div>#</div><div>Ticker</div><div>Mentions 24h</div><div>Δ vs prev</div><div>Lean</div>
       </div>
@@ -179,14 +179,14 @@
   <div class="container">
     <div class="section-label">What You Get</div>
     <h2>Six signals you can act on</h2>
-    <p class="section-intro">The tracker isn't just a leaderboard — every ticker carries four directional signals, two contextual ones.</p>
+    <p class="section-intro">The tracker isn't just a leaderboard - every ticker carries four directional signals, two contextual ones.</p>
     <div class="cards">
       <div class="card"><div class="card-icon">📈</div><h3>Mention count</h3><p>Total mentions across 8+ investing subreddits in the last 24 hours. Upvote-weighted so a single 5,000-upvote DD post outweighs 50 throwaway comments.</p></div>
-      <div class="card"><div class="card-icon">⚡</div><h3>24h momentum delta</h3><p>Percentage change vs the prior 24h window. This is the leading signal — a ticker going from 50 to 500 mentions overnight is usually a 5-15% gap setup.</p></div>
-      <div class="card"><div class="card-icon">🎯</div><h3>Bullish / Bearish lean</h3><p>Comment-tone analysis — what fraction of mentions are positive vs negative. Combined with mention delta to triangulate retail intent.</p></div>
-      <div class="card"><div class="card-icon">📰</div><h3>Subreddit breakdown</h3><p>Per-ticker view of which subreddits are driving the mentions. WSB-dominated ≠ SecurityAnalysis-dominated — different prediction profiles.</p></div>
+      <div class="card"><div class="card-icon">⚡</div><h3>24h momentum delta</h3><p>Percentage change vs the prior 24h window. This is the leading signal - a ticker going from 50 to 500 mentions overnight is usually a 5-15% gap setup.</p></div>
+      <div class="card"><div class="card-icon">🎯</div><h3>Bullish / Bearish lean</h3><p>Comment-tone analysis - what fraction of mentions are positive vs negative. Combined with mention delta to triangulate retail intent.</p></div>
+      <div class="card"><div class="card-icon">📰</div><h3>Subreddit breakdown</h3><p>Per-ticker view of which subreddits are driving the mentions. WSB-dominated ≠ SecurityAnalysis-dominated - different prediction profiles.</p></div>
       <div class="card"><div class="card-icon">🔔</div><h3>Threshold alerts</h3><p>Pro: webhook + Telegram alerts when a watchlist ticker crosses your custom mention threshold or delta percentile.</p></div>
-      <div class="card"><div class="card-icon">🔗</div><h3>Source links</h3><p>Click any ticker to see the top 5 Reddit posts driving the spike — direct links to the threads and comments. Verify before acting.</p></div>
+      <div class="card"><div class="card-icon">🔗</div><h3>Source links</h3><p>Click any ticker to see the top 5 Reddit posts driving the spike - direct links to the threads and comments. Verify before acting.</p></div>
     </div>
   </div>
 </section>
@@ -199,9 +199,9 @@
     <div class="guide">
 
       <h3>Why retail Reddit sentiment is a tradeable signal</h3>
-      <p>Pre-2021, retail flow was statistically irrelevant for single-name pricing in liquid US equities. That changed permanently. GME, AMC, BBBY, and dozens of follow-on names demonstrated that coordinated retail attention — driven by Reddit threads — can produce dislocations of 50-500% in days, particularly in small-caps, high-short-interest names, and recent IPOs.</p>
+      <p>Pre-2021, retail flow was statistically irrelevant for single-name pricing in liquid US equities. That changed permanently. GME, AMC, BBBY, and dozens of follow-on names demonstrated that coordinated retail attention - driven by Reddit threads - can produce dislocations of 50-500% in days, particularly in small-caps, high-short-interest names, and recent IPOs.</p>
       <p>Even outside meme events, retail mentions <em>correlate with</em> next-day price movement in single names. Multiple academic studies (e.g. Bradley et al. 2022; Long et al. 2023) found measurable predictive value in WSB mention counts and lean scores, particularly when combined with traditional flow indicators.</p>
-      <p>This isn't a magic signal — it's a confluence input. Use it alongside your existing setups, not as a primary entry trigger.</p>
+      <p>This isn't a magic signal - it's a confluence input. Use it alongside your existing setups, not as a primary entry trigger.</p>
 
       <h3>Pattern 1: The momentum entry</h3>
       <p>The classic setup. A ticker goes from baseline 50 mentions/day to 500+ mentions/day overnight, driven by a catalyst:</p>
@@ -212,20 +212,20 @@
         <li>Short squeeze setup (high SI + low float)</li>
         <li>Macro narrative (AI buildout, EV demand, etc.)</li>
       </ul>
-      <p>The momentum entry is taking a position in the direction of the mention spike, sized to the delta. Bigger delta = bigger conviction = bigger size. Risk-managed with a hard stop at the pre-spike base. The R/R is asymmetric because retail flow tends to overshoot — the move that looks "too far" often goes another 30% before the exhaustion.</p>
+      <p>The momentum entry is taking a position in the direction of the mention spike, sized to the delta. Bigger delta = bigger conviction = bigger size. Risk-managed with a hard stop at the pre-spike base. The R/R is asymmetric because retail flow tends to overshoot - the move that looks "too far" often goes another 30% before the exhaustion.</p>
 
       <h3>Pattern 2: The exhaustion fade</h3>
-      <p>The inverse. When a small-cap has run 200% in 3 days on retail mentions alone — no earnings, no FDA, no fundamental catalyst — the unwind tends to be sharp. Three signals to look for:</p>
+      <p>The inverse. When a small-cap has run 200% in 3 days on retail mentions alone - no earnings, no FDA, no fundamental catalyst - the unwind tends to be sharp. Three signals to look for:</p>
       <ul>
-        <li><strong>Mention growth decelerating:</strong> day 1 mentions 5x base, day 2 7x base, day 3 only 6x — the rate of new attention has peaked.</li>
-        <li><strong>Lean shifting from bullish to mixed:</strong> the comments are moving from "BUY!! 🚀" to "anyone else seeing weakness?" — early profit-taking signal.</li>
+        <li><strong>Mention growth decelerating:</strong> day 1 mentions 5x base, day 2 7x base, day 3 only 6x - the rate of new attention has peaked.</li>
+        <li><strong>Lean shifting from bullish to mixed:</strong> the comments are moving from "BUY!! 🚀" to "anyone else seeing weakness?" - early profit-taking signal.</li>
         <li><strong>Price action divergence:</strong> mentions still high but price stops making new highs intraday. Classic distribution.</li>
       </ul>
-      <p>The fade entry is short via puts or short shares with the unwind levels as targets — usually a 30-60% retracement of the run.</p>
+      <p>The fade entry is short via puts or short shares with the unwind levels as targets - usually a 30-60% retracement of the run.</p>
 
       <h3>Pattern 3: The contrarian read</h3>
       <p>Sometimes retail is right; sometimes retail is the exit liquidity. The contrarian read is using extreme bullish lean on a large-cap as a tactical warning signal.</p>
-      <p>If NVDA mentions are 5,000+ per day with 95% bullish lean for a sustained week, you're often near a local top. Not because retail is structurally wrong — but because by the time retail conviction is unanimous, the smart money positioning is largely complete. The trade isn't necessarily to short — it's to take profit on existing longs and tighten risk.</p>
+      <p>If NVDA mentions are 5,000+ per day with 95% bullish lean for a sustained week, you're often near a local top. Not because retail is structurally wrong - but because by the time retail conviction is unanimous, the smart money positioning is largely complete. The trade isn't necessarily to short - it's to take profit on existing longs and tighten risk.</p>
 
       <div class="guide-callout">
         <h4>How to use the tracker in TNT</h4>
@@ -235,29 +235,29 @@
       <h3>Which subreddits actually predict price?</h3>
       <p>Not all retail attention is created equal:</p>
       <ul>
-        <li><strong>r/wallstreetbets (14M+ members):</strong> Strongest signal for short-term price action, particularly in single-name options flow and small-caps. Highest noise — most predictive when mention count is 10x+ baseline.</li>
+        <li><strong>r/wallstreetbets (14M+ members):</strong> Strongest signal for short-term price action, particularly in single-name options flow and small-caps. Highest noise - most predictive when mention count is 10x+ baseline.</li>
         <li><strong>r/stocks (3M+ members):</strong> Slower-moving discussion, less momentum-driven. Better for identifying gradually-emerging themes than acute catalysts.</li>
         <li><strong>r/SecurityAnalysis (300k members):</strong> Fundamentals-focused. Useful for surfacing under-followed small-caps with deep DD posts. Smaller mention counts but higher per-mention quality.</li>
-        <li><strong>r/options (1M+ members):</strong> Predictive for unusual options flow context — when retail is loading 0DTE on a name, the volume often spills into IV expansion.</li>
+        <li><strong>r/options (1M+ members):</strong> Predictive for unusual options flow context - when retail is loading 0DTE on a name, the volume often spills into IV expansion.</li>
         <li><strong>r/pennystocks (2M+ members):</strong> Predictive for sub-$5 names. Volume here often precedes momentum spikes in micro-caps.</li>
       </ul>
 
       <h3>What about false positives?</h3>
       <p>Ticker symbol collisions with common words are the biggest data hygiene problem in retail sentiment tracking. Examples:</p>
       <ul>
-        <li><strong>A</strong> (Agilent) — collides with the indefinite article. Filtered out.</li>
-        <li><strong>ALL</strong> (Allstate) — filtered.</li>
-        <li><strong>GO</strong> (Grocery Outlet) — filtered unless in $GO format.</li>
-        <li><strong>ON</strong> (ON Semiconductor) — filtered.</li>
+        <li><strong>A</strong> (Agilent) - collides with the indefinite article. Filtered out.</li>
+        <li><strong>ALL</strong> (Allstate) - filtered.</li>
+        <li><strong>GO</strong> (Grocery Outlet) - filtered unless in $GO format.</li>
+        <li><strong>ON</strong> (ON Semiconductor) - filtered.</li>
       </ul>
       <p>The ApeWisdom layer we use applies a configurable filter list and prioritises $-prefixed mentions ($NVDA, $TSLA) which carry near-zero false positive rate. The result is a mention count that's >95% precision for any non-trivially-named ticker.</p>
 
       <h3>What about Twitter/X sentiment?</h3>
-      <p>X (formerly Twitter) sentiment is a logical next layer — it carries similar predictive value, particularly for FX and crypto. The blocker is the API. Post-2024 changes, the X API costs $5,000+/month for usable historical access, which kills the unit economics of including it on a free tier.</p>
+      <p>X (formerly Twitter) sentiment is a logical next layer - it carries similar predictive value, particularly for FX and crypto. The blocker is the API. Post-2024 changes, the X API costs $5,000+/month for usable historical access, which kills the unit economics of including it on a free tier.</p>
       <p>For now Reddit remains the highest signal-to-cost retail sentiment source. We're evaluating StockTwits as a free-tier complement and will surface a unified retail sentiment score combining both sources when we ship it.</p>
 
       <h3>Sizing and risk</h3>
-      <p>Retail momentum trades have a high failure rate per trade — call it 40-50% — offset by asymmetric winners. Sizing rules to survive the variance:</p>
+      <p>Retail momentum trades have a high failure rate per trade - call it 40-50% - offset by asymmetric winners. Sizing rules to survive the variance:</p>
       <ul>
         <li>Risk no more than 1% of equity per individual momentum entry.</li>
         <li>Pre-define your stop before entry. Pre-spike base or -8% from entry, whichever is closer.</li>
@@ -275,13 +275,13 @@
     <h2>Frequently asked questions</h2>
     <div class="faq">
       <div class="faq-item"><h3>What is the Reddit WSB Sentiment Tracker?</h3><p>A live ranking of US-listed tickers by mention volume across r/wallstreetbets, r/stocks, r/investing, r/options, r/SecurityAnalysis, r/StockMarket, r/pennystocks, and r/Daytrading. Each ticker shows 24h mentions, delta vs prior 24h, upvote-weighted score, and bullish/bearish lean.</p></div>
-      <div class="faq-item"><h3>Why is retail Reddit sentiment a useful trading signal?</h3><p>Retail flow has measurably moved single-name equity prices since 2021. Mention momentum is a leading indicator of retail order flow. Use as a confluence signal — not as primary entry trigger.</p></div>
+      <div class="faq-item"><h3>Why is retail Reddit sentiment a useful trading signal?</h3><p>Retail flow has measurably moved single-name equity prices since 2021. Mention momentum is a leading indicator of retail order flow. Use as a confluence signal - not as primary entry trigger.</p></div>
       <div class="faq-item"><h3>How fresh is the data?</h3><p>30-minute refresh on Basic plan, 1-minute refresh on Pro. We aggregate via the ApeWisdom data layer which scrapes Reddit's public API across 8+ investing subreddits.</p></div>
       <div class="faq-item"><h3>Which subreddits are tracked?</h3><p>r/wallstreetbets (largest weight), r/stocks, r/investing, r/options, r/SecurityAnalysis, r/StockMarket, r/pennystocks, r/Daytrading. Mention count is the union with WSB carrying strongest predictive signal for short-term moves.</p></div>
-      <div class="faq-item"><h3>How do I use the momentum delta?</h3><p>Delta is the percentage change in mention count vs the previous 24h window. +300% delta = ticker talked about 4x more than yesterday — typically driven by a catalyst. Combine with bullish/bearish lean to triangulate retail intent.</p></div>
-      <div class="faq-item"><h3>Does this work for shorting?</h3><p>Yes — high mention momentum on overextended names is a classic fade setup. When a small-cap runs 200% in 3 days on retail mentions alone, the unwind tends to be sharp. Use bearish lean shift and mention decay as exit signals.</p></div>
+      <div class="faq-item"><h3>How do I use the momentum delta?</h3><p>Delta is the percentage change in mention count vs the previous 24h window. +300% delta = ticker talked about 4x more than yesterday - typically driven by a catalyst. Combine with bullish/bearish lean to triangulate retail intent.</p></div>
+      <div class="faq-item"><h3>Does this work for shorting?</h3><p>Yes - high mention momentum on overextended names is a classic fade setup. When a small-cap runs 200% in 3 days on retail mentions alone, the unwind tends to be sharp. Use bearish lean shift and mention decay as exit signals.</p></div>
       <div class="faq-item"><h3>Is this feature free?</h3><p>Reddit Sentiment ranking is free on the Basic plan with 30-minute refresh. Pro adds 1-minute refresh, per-ticker drilldowns (timelines, top posts, lean histograms), and webhook + Telegram alerts.</p></div>
-      <div class="faq-item"><h3>What about Twitter/X sentiment?</h3><p>Roadmap — requires paid X API tier post-2024 changes. For now Reddit remains the most reliable free-tier retail sentiment signal. StockTwits as a complementary view is in evaluation.</p></div>
+      <div class="faq-item"><h3>What about Twitter/X sentiment?</h3><p>Roadmap - requires paid X API tier post-2024 changes. For now Reddit remains the most reliable free-tier retail sentiment signal. StockTwits as a complementary view is in evaluation.</p></div>
     </div>
   </div>
 </section>
@@ -319,8 +319,8 @@
 
 <footer>
   <div class="container">
-    <p style="font-size:12px;color:var(--muted);max-width:760px;margin:0 auto 14px;line-height:1.6">Disclaimer: Trading News Terminal provides real-time news, data and educational content only — not investment advice or a recommendation to trade. Trading forex, futures and other leveraged products carries substantial risk of loss. Always do your own research.</p>
-    <div>© Trading News Terminal — Real-time retail mention momentum across Reddit's investing communities</div>
+    <p style="font-size:12px;color:var(--muted);max-width:760px;margin:0 auto 14px;line-height:1.6">Disclaimer: Trading News Terminal provides real-time news, data and educational content only - not investment advice or a recommendation to trade. Trading forex, futures and other leveraged products carries substantial risk of loss. Always do your own research.</p>
+    <div>© Trading News Terminal - Real-time retail mention momentum across Reddit's investing communities</div>
     <div class="footer-links">
       <a href="/">Main Site</a><a href="/us">🇺🇸 US Edition</a><a href="/br">🇧🇷 Edição Brasil</a><a href="/terms">Terms</a><a href="/privacy">Privacy</a><a href="/faq">FAQ</a>
     </div>

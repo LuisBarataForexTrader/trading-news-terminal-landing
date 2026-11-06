@@ -1,4 +1,4 @@
-# Trading News Terminal — robots.txt
+# Trading News Terminal - robots.txt
 # Updated 2026-05-28: blocked AI/scraper bots that consume CDN bandwidth without
 # contributing to Google/Bing SEO. Standard search engine crawlers remain allowed.
 
@@ -16,14 +16,14 @@ Disallow: /login
 Disallow: /reset-password
 Disallow: /verify-email
 
-# AI search / answer engines — ALLOWED (intentional 2026-06-13).
+# AI search / answer engines - ALLOWED (intentional 2026-06-13).
 # These crawlers read content to cite it in AI answers (ChatGPT, Google AI Overviews,
 # Perplexity, Claude). Allowing them is a discovery/visibility channel. Training rights
 # are still reserved via the Content-Signal (search=yes, ai-train=no) declaration.
 # Allowed by falling under "User-agent: *" above: GPTBot, OAI-SearchBot, ChatGPT-User,
 # Google-Extended, ClaudeBot, Claude-Web, anthropic-ai, PerplexityBot, Perplexity-User.
 
-# Pure scrapers / training-only bots with no citation value — blocked (bandwidth only)
+# Pure scrapers / training-only bots with no citation value - blocked (bandwidth only)
 User-agent: CCBot
 Disallow: /
 

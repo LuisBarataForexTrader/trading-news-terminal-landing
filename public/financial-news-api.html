@@ -63,7 +63,7 @@
           "name": "Is the API publicly available?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Currently in private beta — contact support@tradingnewsterminal.com with your use case and expected request volume."
+            "text": "Currently in private beta - contact support@tradingnewsterminal.com with your use case and expected request volume."
           }
         },
         {
@@ -79,7 +79,7 @@
           "name": "Are rate limits reasonable?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes — starter tiers cover typical personal-trading-bot workloads. Institutional tiers scale to thousands of requests/minute."
+            "text": "Yes - starter tiers cover typical personal-trading-bot workloads. Institutional tiers scale to thousands of requests/minute."
           }
         },
         {
@@ -87,7 +87,7 @@
           "name": "Can I filter by asset class at the API?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes — query params let you filter by impact, asset class (FX/equities/crypto/commodities), specific tickers, or keyword."
+            "text": "Yes - query params let you filter by impact, asset class (FX/equities/crypto/commodities), specific tickers, or keyword."
           }
         },
         {
@@ -265,7 +265,7 @@
   <div class="container">
     <div class="hero-badge">Tool</div>
     <h1>Real-Time <span>Financial News API</span></h1>
-    <p class="hero-sub">Build your own trading app, bot, or dashboard on top of Trading News Terminal's news pipeline. Real-time wires from hundreds of institutional sources, AI-classified by impact and asset class — delivered via REST and WebSocket.</p>
+    <p class="hero-sub">Build your own trading app, bot, or dashboard on top of Trading News Terminal's news pipeline. Real-time wires from hundreds of institutional sources, AI-classified by impact and asset class - delivered via REST and WebSocket.</p>
     
     <p class="byline" style="font-size:13px;color:var(--muted, #8899aa);margin:18px auto 28px;max-width:640px;line-height:1.6;text-align:center;">
       <span style="color:var(--accent, #00d4ff);font-weight:600;">Updated 27 May 2026</span>
@@ -288,7 +288,7 @@
       <div class="card">
         <div class="card-icon">🔌</div>
         <h3>REST + WebSocket</h3>
-        <p>REST for history and filtering, WebSocket for live push — same data powering the TNT terminal.</p>
+        <p>REST for history and filtering, WebSocket for live push - same data powering the TNT terminal.</p>
       </div>
       <div class="card">
         <div class="card-icon">🏷️</div>
@@ -298,12 +298,12 @@
       <div class="card">
         <div class="card-icon">⚡</div>
         <h3>Wire-Speed</h3>
-        <p>Same second your app receives a headline as TNT's own terminal — no slowing for API customers.</p>
+        <p>Same second your app receives a headline as TNT's own terminal - no slowing for API customers.</p>
       </div>
       <div class="card">
         <div class="card-icon">🔒</div>
         <h3>Simple Authentication</h3>
-        <p>Bearer token authentication — get started in minutes with a single `curl`.</p>
+        <p>Bearer token authentication - get started in minutes with a single `curl`.</p>
       </div>
     </div>
   </div>
@@ -318,7 +318,7 @@
         <div class="step-num">1</div>
         <div class="step-body">
           <h3>Create your free account</h3>
-          <p>Sign up in under 30 seconds — no credit card required. Basic plan gives you the economic calendar, delayed news feed, and TradingView chart integration immediately.</p>
+          <p>Sign up in under 30 seconds - no credit card required. Basic plan gives you the economic calendar, delayed news feed, and TradingView chart integration immediately.</p>
         </div>
       </div>
       <div class="step">
@@ -343,15 +343,15 @@
   <div class="container">
     <div class="guide-content">
       <h3>Financial news APIs: building data pipelines for algorithmic trading</h3>
-      <p>A financial news API is a programmatic interface that delivers structured financial news, economic data and market information in machine-readable format (JSON, XML, WebSocket streams). APIs enable developers, quantitative analysts and fintech builders to integrate real-time market intelligence directly into trading algorithms, dashboards, risk systems and analytical workflows — without manual data entry or browser scraping.</p>
+      <p>A financial news API is a programmatic interface that delivers structured financial news, economic data and market information in machine-readable format (JSON, XML, WebSocket streams). APIs enable developers, quantitative analysts and fintech builders to integrate real-time market intelligence directly into trading algorithms, dashboards, risk systems and analytical workflows - without manual data entry or browser scraping.</p>
       <p>The financial data API market spans multiple tiers: institutional data vendors (Bloomberg API, Refinitiv Elektron, FactSet), specialist financial news APIs, economic data APIs (FRED, BLS, Eurostat), and next-generation combined news + data APIs designed for modern fintech stacks.</p>
 
       <h3>Key financial news API capabilities for trading applications</h3>
       <p>When evaluating financial news APIs for a trading or research application, the essential capabilities to assess:</p>
       <ul>
-        <li><strong>Latency and delivery method:</strong> REST APIs (polling-based, suitable for research and historical data) vs WebSocket/SSE streaming (push-based, essential for real-time trading applications). For news that needs to trigger trades, streaming is non-negotiable — polling every 5–30 seconds introduces unacceptable latency for news-driven strategies.</li>
+        <li><strong>Latency and delivery method:</strong> REST APIs (polling-based, suitable for research and historical data) vs WebSocket/SSE streaming (push-based, essential for real-time trading applications). For news that needs to trigger trades, streaming is non-negotiable - polling every 5–30 seconds introduces unacceptable latency for news-driven strategies.</li>
         <li><strong>News coverage:</strong> Which source wires are included? Professional APIs aggregate Dow Jones Newswires, Reuters, MNI, Bloomberg (through licensing), PR Newswire, SEC filings. The breadth and speed of source coverage directly determines the quality of news signal.</li>
-        <li><strong>Economic data releases:</strong> Structured delivery of macro data (NFP, CPI, PMI, GDP) with actual vs estimate vs prior values pre-processed and machine-readable — eliminating the need to parse raw text.</li>
+        <li><strong>Economic data releases:</strong> Structured delivery of macro data (NFP, CPI, PMI, GDP) with actual vs estimate vs prior values pre-processed and machine-readable - eliminating the need to parse raw text.</li>
         <li><strong>NLP and sentiment scoring:</strong> AI-powered sentiment analysis classifying news as positive/negative/neutral for specific tickers or topics. Enables automated sentiment-weighted position sizing or alerting systems.</li>
         <li><strong>Historical data:</strong> Access to historical news archives for backtesting news-driven strategies. Essential for quantitative research.</li>
       </ul>
@@ -361,16 +361,16 @@
       <ul>
         <li><strong>Authentication:</strong> Most financial APIs use API key + optional JWT authentication. Keys should be stored in environment variables, never in source code. Rate limits are typically enforced per API key.</li>
         <li><strong>Rate limits and throttling:</strong> Free tiers often have strict limits (5–60 requests/minute). For production trading systems, ensure your plan's rate limits support your expected query frequency.</li>
-        <li><strong>Error handling and reconnection:</strong> WebSocket connections to financial data APIs require robust reconnection logic. Connections drop due to network issues — your system must auto-reconnect without missing news events.</li>
+        <li><strong>Error handling and reconnection:</strong> WebSocket connections to financial data APIs require robust reconnection logic. Connections drop due to network issues - your system must auto-reconnect without missing news events.</li>
         <li><strong>Timestamp normalisation:</strong> Financial APIs deliver timestamps in UTC. Your application must normalise to the correct timezone for economic data interpretation (e.g., 08:30 ET for US data, 14:15 CET for ECB).</li>
-        <li><strong>Webhook delivery:</strong> Some APIs support webhook delivery — pushing data to your endpoint rather than requiring your system to poll or maintain a WebSocket. Simpler to implement but typically higher latency than streaming.</li>
+        <li><strong>Webhook delivery:</strong> Some APIs support webhook delivery - pushing data to your endpoint rather than requiring your system to poll or maintain a WebSocket. Simpler to implement but typically higher latency than streaming.</li>
       </ul>
 
       <h3>Use cases for financial news APIs</h3>
       <p>Common applications built on financial news APIs:</p>
       <ul>
-        <li><strong>Algorithmic trading systems:</strong> News-triggered execution — system detects NFP beat, automatically executes long USD/short EUR position within milliseconds of headline publication.</li>
-        <li><strong>Risk monitoring dashboards:</strong> Real-time news feeds filtered by portfolio holdings — alerts on any news mentioning held positions or related macro factors.</li>
+        <li><strong>Algorithmic trading systems:</strong> News-triggered execution - system detects NFP beat, automatically executes long USD/short EUR position within milliseconds of headline publication.</li>
+        <li><strong>Risk monitoring dashboards:</strong> Real-time news feeds filtered by portfolio holdings - alerts on any news mentioning held positions or related macro factors.</li>
         <li><strong>Research and analysis platforms:</strong> Aggregating news across multiple sources for analyst workstations, integrating with proprietary models and databases.</li>
         <li><strong>Backtesting engines:</strong> Historical news and economic data feeds enabling quantitative analysis of news-driven strategy performance across past market cycles.</li>
       </ul>
@@ -385,7 +385,7 @@
     <div class="faq">
       <div class="faq-item">
         <h3>Is the API publicly available?</h3>
-        <p>Currently in private beta — contact support@tradingnewsterminal.com with your use case and expected request volume.</p>
+        <p>Currently in private beta - contact support@tradingnewsterminal.com with your use case and expected request volume.</p>
       </div>
       <div class="faq-item">
         <h3>What's the pricing?</h3>
@@ -393,11 +393,11 @@
       </div>
       <div class="faq-item">
         <h3>Are rate limits reasonable?</h3>
-        <p>Yes — starter tiers cover typical personal-trading-bot workloads. Institutional tiers scale to thousands of requests/minute.</p>
+        <p>Yes - starter tiers cover typical personal-trading-bot workloads. Institutional tiers scale to thousands of requests/minute.</p>
       </div>
       <div class="faq-item">
         <h3>Can I filter by asset class at the API?</h3>
-        <p>Yes — query params let you filter by impact, asset class (FX/equities/crypto/commodities), specific tickers, or keyword.</p>
+        <p>Yes - query params let you filter by impact, asset class (FX/equities/crypto/commodities), specific tickers, or keyword.</p>
       </div>
       <div class="faq-item">
         <h3>How do I integrate it?</h3>
@@ -427,7 +427,7 @@
 <section class="footer-cta">
   <div class="container">
     <h2>Start Trading with Professional Intelligence</h2>
-    <p>Create your free account in under 30 seconds — no credit card required. Upgrade to Pro when you need zero-delay news, squawk box, and live financial TV.</p>
+    <p>Create your free account in under 30 seconds - no credit card required. Upgrade to Pro when you need zero-delay news, squawk box, and live financial TV.</p>
     <div class="hero-ctas">
       <a href="https://www.tradingnewsterminal.com/login?plan=trial&utm_source=seo&utm_medium=organic&utm_campaign=financial-news-api&utm_content=footer" class="btn btn-primary btn-lg">Start Free Trial</a>
       <a href="https://www.tradingnewsterminal.com/signup?utm_source=seo&utm_medium=organic&utm_campaign=financial-news-api&utm_content=footer" class="btn btn-outline btn-lg">Open Free Terminal</a>
@@ -436,8 +436,8 @@
 </section>
 <footer>
   <div class="container">
-    <p style="font-size:12px;color:var(--muted);max-width:760px;margin:0 auto 14px;line-height:1.6">Disclaimer: Trading News Terminal provides real-time news, data and educational content only — not investment advice or a recommendation to trade. Trading forex, futures and other leveraged products carries substantial risk of loss. Always do your own research.</p>
-    <div>© Trading News Terminal — real-time market intelligence for professional traders.</div>
+    <p style="font-size:12px;color:var(--muted);max-width:760px;margin:0 auto 14px;line-height:1.6">Disclaimer: Trading News Terminal provides real-time news, data and educational content only - not investment advice or a recommendation to trade. Trading forex, futures and other leveraged products carries substantial risk of loss. Always do your own research.</p>
+    <div>© Trading News Terminal - real-time market intelligence for professional traders.</div>
     <div class="footer-links">
       <a href="/terms">Terms</a>
       <a href="/privacy">Privacy</a>
