@@ -175,8 +175,8 @@
 
   <!-- Hero -->
   <div class="new-badge"><span class="dot"></span>🇵🇹 🇧🇷 Novidade · Maio 2026</div>
-  <h1>Squawk Box agora em <span class="hl">Português</span> - PT &amp; BR</h1>
-  <p class="hero-sub">Cada alerta lido por vozes naturais em português europeu (<strong>Duarte</strong>) ou brasileiro (<strong>Antônio</strong> e <strong>Francisca</strong>). Copom, Petrobras, Vale, balanços, Fed - tudo em português, sub-segundo, hands-free. Mantenha os olhos nos gráficos enquanto o terminal lê as notícias.</p>
+  <h1>Squawk Box agora em <span class="hl">Português</span>, PT &amp; BR</h1>
+  <p class="hero-sub">Cada alerta lido por vozes naturais em português europeu (<strong>Duarte</strong>) ou brasileiro (<strong>Antônio</strong> e <strong>Francisca</strong>). Copom, Petrobras, Vale, balanços, Fed, tudo em português, sub-segundo, hands-free. Mantenha os olhos nos gráficos enquanto o terminal lê as notícias.</p>
 
   <!-- Audio Demo -->
   <div class="audio-card">
@@ -225,7 +225,7 @@
     <div class="feature">
       <div class="icon">🇵🇹🇧🇷</div>
       <h3>Vozes PT &amp; BR</h3>
-      <p>Português brasileiro (Antônio, Francisca) e europeu (Duarte) - todas Microsoft Edge Neural. Pronúncia profissional.</p>
+      <p>Português brasileiro (Antônio, Francisca) e europeu (Duarte), todas Microsoft Edge Neural. Pronúncia profissional.</p>
     </div>
     <div class="feature">
       <div class="icon">⚡</div>
@@ -240,7 +240,7 @@
     <div class="feature">
       <div class="icon">💯</div>
       <h3>Grátis para Pro</h3>
-      <p>Incluído no plano Pro. Sem rate limits práticos - squawk ilimitado durante o pregão.</p>
+      <p>Incluído no plano Pro. Sem rate limits práticos, squawk ilimitado durante o pregão.</p>
     </div>
   </div>
 
@@ -301,7 +301,7 @@ async function play(btn, text) {
     const audio = new Audio(url);
     currentAudio = audio;
     audio.onplay = () => {
-      const ms = Math.round(performance.now() - t0);
+      const ms = Math.round(performance.now(), t0);
       setStatus(`A tocar · ${_VOICE_LABELS[currentVoice] || currentVoice} · gerado em ${ms} ms`);
     };
     audio.onended = () => {

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sign In - Trading News Terminal</title>
+<title>Sign In: Trading News Terminal</title>
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -257,7 +257,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);-webkit-font
         Your edge in<br><span>financial markets.</span>
       </h1>
       <p class="panel-desc">
-        Real-time news, live economic calendar, TradingView charts and more - all in one terminal built for active traders.
+        Real-time news, live economic calendar, TradingView charts and more, all in one terminal built for active traders.
       </p>
 
       <div class="panel-divider"></div>
@@ -377,13 +377,13 @@ body{background:var(--bg);color:var(--text);font-family:var(--font);-webkit-font
 </div><!-- /auth-layout -->
 
 <script>
-// ── AUTH i18n (shared strings - same object as login.html) ───────────────────
+// ── AUTH i18n (shared strings, same object as login.html) ───────────────────
 const _AUTH_STR = {
   en: {
     'logo.sub':'Real-time Market Intelligence','topbar.back':'← Back to tradingnewsterminal.com',
     'signin.badge':'Live Market Intelligence',
     'panel.title.basic':'Your edge in<br><span>financial markets.</span>',
-    'panel.desc.basic':'Real-time news, live economic calendar, TradingView charts and more - all in one terminal built for active traders.',
+    'panel.desc.basic':'Real-time news, live economic calendar, TradingView charts and more, all in one terminal built for active traders.',
     'panel.stat.price.label.basic':'Basic plan forever','panel.stat.time.label':'To create account','panel.stat.coverage.label':'Market coverage',
     'feat.news.name':'News Feed','feat.news.sub.basic':'Hundreds of sources, real-time coverage',
     'feat.cal.name':'Economic Calendar','feat.cal.sub':'Live releases with impact ratings',
@@ -405,7 +405,7 @@ const _AUTH_STR = {
     'logo.sub':'Inteligência de Mercado em Tempo Real','topbar.back':'← Voltar para tradingnewsterminal.com',
     'signin.badge':'Inteligência de Mercado ao Vivo',
     'panel.title.basic':'A tua vantagem nos<br><span>mercados financeiros.</span>',
-    'panel.desc.basic':'Notícias em tempo real, calendário económico, gráficos TradingView e muito mais - tudo num terminal para traders ativos.',
+    'panel.desc.basic':'Notícias em tempo real, calendário económico, gráficos TradingView e muito mais, tudo num terminal para traders ativos.',
     'panel.stat.price.label.basic':'Plano Basic para sempre','panel.stat.time.label':'Para criar conta','panel.stat.coverage.label':'Cobertura de mercado',
     'feat.news.name':'Feed de Notícias','feat.news.sub.basic':'Centenas de fontes, cobertura em tempo real',
     'feat.cal.name':'Calendário Económico','feat.cal.sub':'Dados ao vivo com classificação de impacto',
@@ -427,7 +427,7 @@ const _AUTH_STR = {
     'logo.sub':'Inteligencia de Mercado en Tiempo Real','topbar.back':'← Volver a tradingnewsterminal.com',
     'signin.badge':'Inteligencia de Mercado en Directo',
     'panel.title.basic':'Tu ventaja en los<br><span>mercados financieros.</span>',
-    'panel.desc.basic':'Noticias en tiempo real, calendario económico en directo, gráficos TradingView y más - todo en un terminal para traders activos.',
+    'panel.desc.basic':'Noticias en tiempo real, calendario económico en directo, gráficos TradingView y más, todo en un terminal para traders activos.',
     'panel.stat.price.label.basic':'Plan básico para siempre','panel.stat.time.label':'Para crear cuenta','panel.stat.coverage.label':'Cobertura de mercado',
     'feat.news.name':'Feed de Noticias','feat.news.sub.basic':'Cientos de fuentes, cobertura en tiempo real',
     'feat.cal.name':'Calendario Económico','feat.cal.sub':'Datos en directo con calificaciones de impacto',
@@ -449,7 +449,7 @@ const _AUTH_STR = {
     'logo.sub':'Intelligence de Marché en Temps Réel','topbar.back':'← Retour à tradingnewsterminal.com',
     'signin.badge':'Intelligence de Marché en Direct',
     'panel.title.basic':'Votre avantage sur<br><span>les marchés financiers.</span>',
-    'panel.desc.basic':'Actualités en temps réel, calendrier économique, graphiques TradingView et plus - tout dans un terminal pour traders actifs.',
+    'panel.desc.basic':'Actualités en temps réel, calendrier économique, graphiques TradingView et plus, tout dans un terminal pour traders actifs.',
     'panel.stat.price.label.basic':'Plan basique à vie','panel.stat.time.label':'Pour créer un compte','panel.stat.coverage.label':'Couverture des marchés',
     'feat.news.name':'Flux d\'actualités','feat.news.sub.basic':'Des centaines de sources, couverture en temps réel',
     'feat.cal.name':'Calendrier Économique','feat.cal.sub':'Publications en direct avec notes d\'impact',
@@ -471,7 +471,7 @@ const _AUTH_STR = {
     'logo.sub':'Echtzeit-Marktintelligenz','topbar.back':'← Zurück zu tradingnewsterminal.com',
     'signin.badge':'Live Marktintelligenz',
     'panel.title.basic':'Dein Vorteil auf<br><span>den Finanzmärkten.</span>',
-    'panel.desc.basic':'Echtzeit-Nachrichten, Live-Wirtschaftskalender, TradingView-Charts und mehr - alles in einem Terminal für aktive Trader.',
+    'panel.desc.basic':'Echtzeit-Nachrichten, Live-Wirtschaftskalender, TradingView-Charts und mehr, alles in einem Terminal für aktive Trader.',
     'panel.stat.price.label.basic':'Basic-Plan dauerhaft','panel.stat.time.label':'Zur Kontoerstellung','panel.stat.coverage.label':'Marktabdeckung',
     'feat.news.name':'News-Feed','feat.news.sub.basic':'Hunderte von Quellen, Echtzeit-Abdeckung',
     'feat.cal.name':'Wirtschaftskalender','feat.cal.sub':'Live-Veröffentlichungen mit Impaktbewertungen',
@@ -493,7 +493,7 @@ const _AUTH_STR = {
     'logo.sub':'Intelligence di Mercato in Tempo Reale','topbar.back':'← Torna a tradingnewsterminal.com',
     'signin.badge':'Intelligence di Mercato in Diretta',
     'panel.title.basic':'Il tuo vantaggio nei<br><span>mercati finanziari.</span>',
-    'panel.desc.basic':'Notizie in tempo reale, calendario economico in diretta, grafici TradingView e altro - tutto in un terminal per trader attivi.',
+    'panel.desc.basic':'Notizie in tempo reale, calendario economico in diretta, grafici TradingView e altro, tutto in un terminal per trader attivi.',
     'panel.stat.price.label.basic':'Piano Base per sempre','panel.stat.time.label':'Per creare account','panel.stat.coverage.label':'Copertura di mercato',
     'feat.news.name':'Feed di Notizie','feat.news.sub.basic':'Centinaia di fonti, copertura in tempo reale',
     'feat.cal.name':'Calendario Economico','feat.cal.sub':'Dati in diretta con valutazioni di impatto',

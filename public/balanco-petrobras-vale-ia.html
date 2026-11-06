@@ -18,7 +18,7 @@
 <meta property="og:title" content="Balanço PETR4 + VALE3 com IA: 5 Bullets PT-BR">
 <meta property="og:description" content="Resumo do balanço de Petrobras, Vale e qualquer blue chip da B3 gerado por IA em PT-BR. 5 bullets em ~400ms.">
 <meta property="og:image" content="https://www.tradingnewsterminal.com/og-image.png">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"SoftwareApplication","name":"Trading News Terminal - Balanço com IA","url":"https://www.tradingnewsterminal.com/balanco-petrobras-vale-ia","inLanguage":"pt-BR","applicationCategory":"FinanceApplication","operatingSystem":"Web Browser","description":"Resumo gerado por IA do balanço trimestral de qualquer blue chip da B3 (PETR4, VALE3, ITUB4, etc.) em 5 bullets PT-BR cobrindo receita, EBITDA, produção/operacional, dividendos e guidance.","offers":[{"@type":"Offer","name":"Pro Mensal","price":"44","priceCurrency":"USD"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"O que é o balanço com IA em PT-BR?","acceptedAnswer":{"@type":"Answer","text":"Quando uma empresa listada na B3 publica seu release de resultados trimestrais (geralmente entre 18:00 e 19:00 horário de Brasília), nosso sistema fetch o release no IPE da CVM/B3, processa via LLM (Cerebras + Groq) com prompt otimizado para análise de balanços brasileiros, e gera um resumo de 5 bullets em PT-BR cobrindo: (1) receita líquida + EBITDA, (2) margens, (3) produção/operacional, (4) dividendos anunciados, (5) guidance para próximo trimestre."}},{"@type":"Question","name":"Quais empresas têm cobertura?","acceptedAnswer":{"@type":"Answer","text":"Todas as ações que publicam release via sistema IPE da CVM/B3 - efetivamente todas as listadas na B3, com foco no Ibovespa: PETR4, VALE3, ITUB4, BBAS3, BBDC4, MGLU3, WEGE3, B3SA3, RENT3, EQTL3, PRIO3, JBSS3, RAIL3, ABEV3, SUZB3 e todas as outras blue chips. Cobertura também para ADRs no NYSE (PBR, VALE, ITUB)."}},{"@type":"Question","name":"Como é gerado o resumo?","acceptedAnswer":{"@type":"Answer","text":"Cerebras (primário) e Groq (fallback) - duas plataformas de inferência LLM state-of-the-art otimizadas para velocidade. Tempo típico de geração: 200-600ms após o fetch do release. Caching agressivo: a mesma versão do release gera o mesmo resumo, servido instantaneamente em requisições posteriores."}},{"@type":"Question","name":"Quão precisos são os números?","acceptedAnswer":{"@type":"Answer","text":"Alta precisão para números fatuais (receita líquida, EBITDA, produção em Mt ou boe/dia, dividendo em R$/ação, guidance percentual) porque o LLM é ancorado no release oficial. Interpretação de sentimento (bullish/bearish, comentários sobre o ambiente) tem mais variância - use o resumo como first-pass, depois clique no link para o release original quando o trade depender disso."}},{"@type":"Question","name":"Quão rápido aparece após o release?","acceptedAnswer":{"@type":"Answer","text":"Detectamos o release via IPE da CVM em menos de 30 segundos. Geração do resumo: 200-600ms. Total: ~30 segundos do release oficial ao resumo lido no app. Versão TTS (squawk) pode falar o resumo em voz neural PT-BR (Thalita, Vitória) ~5 segundos depois para usuários Pro com squawk habilitado."}},{"@type":"Question","name":"É grátis?","acceptedAnswer":{"@type":"Answer","text":"Resumo com IA é feature Pro. Plano Pro é $44/mês ou $33/mês anual. Usuários Basic veem o release no feed (grátis) mas não recebem o resumo sintetizado pela IA. Versão completa também disponível para empresas US-listed (AAPL, NVDA, TSLA, etc.) em /ai-earnings-call-summary."}},{"@type":"Question","name":"Funciona para ADRs como PBR e VALE?","acceptedAnswer":{"@type":"Answer","text":"Sim. Para ADRs no NYSE (PBR, VALE, ITUB) também processamos o 8-K Item 2.02 da SEC + filing Form 6-K. Mesma estrutura de 5 bullets em PT-BR."}}]}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"SoftwareApplication","name":"Trading News Terminal, Balanço com IA","url":"https://www.tradingnewsterminal.com/balanco-petrobras-vale-ia","inLanguage":"pt-BR","applicationCategory":"FinanceApplication","operatingSystem":"Web Browser","description":"Resumo gerado por IA do balanço trimestral de qualquer blue chip da B3 (PETR4, VALE3, ITUB4, etc.) em 5 bullets PT-BR cobrindo receita, EBITDA, produção/operacional, dividendos e guidance.","offers":[{"@type":"Offer","name":"Pro Mensal","price":"44","priceCurrency":"USD"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"O que é o balanço com IA em PT-BR?","acceptedAnswer":{"@type":"Answer","text":"Quando uma empresa listada na B3 publica seu release de resultados trimestrais (geralmente entre 18:00 e 19:00 horário de Brasília), nosso sistema fetch o release no IPE da CVM/B3, processa via LLM (Cerebras + Groq) com prompt otimizado para análise de balanços brasileiros, e gera um resumo de 5 bullets em PT-BR cobrindo: (1) receita líquida + EBITDA, (2) margens, (3) produção/operacional, (4) dividendos anunciados, (5) guidance para próximo trimestre."}},{"@type":"Question","name":"Quais empresas têm cobertura?","acceptedAnswer":{"@type":"Answer","text":"Todas as ações que publicam release via sistema IPE da CVM/B3, efetivamente todas as listadas na B3, com foco no Ibovespa: PETR4, VALE3, ITUB4, BBAS3, BBDC4, MGLU3, WEGE3, B3SA3, RENT3, EQTL3, PRIO3, JBSS3, RAIL3, ABEV3, SUZB3 e todas as outras blue chips. Cobertura também para ADRs no NYSE (PBR, VALE, ITUB)."}},{"@type":"Question","name":"Como é gerado o resumo?","acceptedAnswer":{"@type":"Answer","text":"Cerebras (primário) e Groq (fallback), duas plataformas de inferência LLM state-of-the-art otimizadas para velocidade. Tempo típico de geração: 200-600ms após o fetch do release. Caching agressivo: a mesma versão do release gera o mesmo resumo, servido instantaneamente em requisições posteriores."}},{"@type":"Question","name":"Quão precisos são os números?","acceptedAnswer":{"@type":"Answer","text":"Alta precisão para números fatuais (receita líquida, EBITDA, produção em Mt ou boe/dia, dividendo em R$/ação, guidance percentual) porque o LLM é ancorado no release oficial. Interpretação de sentimento (bullish/bearish, comentários sobre o ambiente) tem mais variância, use o resumo como first-pass, depois clique no link para o release original quando o trade depender disso."}},{"@type":"Question","name":"Quão rápido aparece após o release?","acceptedAnswer":{"@type":"Answer","text":"Detectamos o release via IPE da CVM em menos de 30 segundos. Geração do resumo: 200-600ms. Total: ~30 segundos do release oficial ao resumo lido no app. Versão TTS (squawk) pode falar o resumo em voz neural PT-BR (Thalita, Vitória) ~5 segundos depois para usuários Pro com squawk habilitado."}},{"@type":"Question","name":"É grátis?","acceptedAnswer":{"@type":"Answer","text":"Resumo com IA é feature Pro. Plano Pro é $44/mês ou $33/mês anual. Usuários Basic veem o release no feed (grátis) mas não recebem o resumo sintetizado pela IA. Versão completa também disponível para empresas US-listed (AAPL, NVDA, TSLA, etc.) em /ai-earnings-call-summary."}},{"@type":"Question","name":"Funciona para ADRs como PBR e VALE?","acceptedAnswer":{"@type":"Answer","text":"Sim. Para ADRs no NYSE (PBR, VALE, ITUB) também processamos o 8-K Item 2.02 da SEC + filing Form 6-K. Mesma estrutura de 5 bullets em PT-BR."}}]}]}</script>
 <style>
   :root{--bg:#0a0c0f;--card:#0f1218;--border:#1a2230;--text:#e2e8f0;--text-muted:#6b7d92;--muted:#8899aa;--accent:#00d4ff;--purple:#a78bfa;--green:#10b981;--orange:#f59e0b;--gold:#fcd34d}
   *{margin:0;padding:0;box-sizing:border-box}body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Inter","Segoe UI",Roboto,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
@@ -139,7 +139,7 @@
       <a href="https://app.tradingnewsterminal.com/?utm_source=seo&utm_campaign=balanco-petrobras-vale-ia&utm_content=hero&lang=pt" class="btn btn-primary btn-lg">Testar Grátis</a>
       <a href="#exemplo" class="btn btn-outline btn-lg">Ver Exemplo</a>
     </div>
-    <p class="price-note">Feature Pro - plano $44/mês ou $33/mês anual · Basic vê o release no feed (grátis) sem o resumo IA</p>
+    <p class="price-note">Feature Pro, plano $44/mês ou $33/mês anual · Basic vê o release no feed (grátis) sem o resumo IA</p>
     <div class="stats-row">
       <div class="stat"><div class="stat-num">5</div><div class="stat-lbl">Bullets por resumo</div></div>
       <div class="stat"><div class="stat-num">~400ms</div><div class="stat-lbl">Latência de geração</div></div>
@@ -157,14 +157,14 @@
     <div class="demo-box">
       <div class="demo-header">
         <span class="demo-ticker">PETR4</span>
-        <span class="demo-quarter">Resultado 1T26 - Release via IPE/CVM</span>
+        <span class="demo-quarter">Resultado 1T26, Release via IPE/CVM</span>
         <span class="demo-source-badge">✦ Resumo IA PT-BR</span>
       </div>
       <div class="demo-bullet">Receita líquida <strong>R$ 132.4B (+8% YoY)</strong>; EBITDA ajustado R$ 62.1B (margem 47%); produção total <strong>2.78 Mboe/dia</strong> (+3% YoY)</div>
       <div class="demo-bullet">Pré-sal continua sendo motor de crescimento: produção pré-sal <strong>+12% YoY</strong>, representando 79% da produção total da empresa</div>
       <div class="demo-bullet">Dividendo trimestral <strong>R$ 0.72/ação</strong> (data-com 27/05, pagamento 18/06); dividend yield anualizado ~12%</div>
       <div class="demo-bullet">CapEx do ano em US$ 16.8B (vs guidance US$ 18.0-21.0B); manutenção do plano de US$ 102B para 2027-2031</div>
-      <div class="demo-bullet">Sentimento: <strong>Bullish</strong> - beat em produção, dividendo sustentado, capex disciplinado; principal risco continua sendo política de preços de combustíveis</div>
+      <div class="demo-bullet">Sentimento: <strong>Bullish</strong>, beat em produção, dividendo sustentado, capex disciplinado; principal risco continua sendo política de preços de combustíveis</div>
     </div>
   </div>
 </section>
@@ -217,17 +217,17 @@
 
       <div class="guide-callout">
         <h4>Como usar no TNT</h4>
-        <p>Aba <strong>Empresas</strong> no menu lateral. Clique em qualquer ticker (PETR4, VALE3, ITUB4, etc.). No modal de detalhes da empresa, role até "✦ Resumo de Balanço com IA" - você vê os últimos 4 trimestres listados. Clique em qualquer trimestre. Os 5 bullets renderizam em ~400ms após o fetch. Visualizações repetidas são instantâneas via cache.</p>
+        <p>Aba <strong>Empresas</strong> no menu lateral. Clique em qualquer ticker (PETR4, VALE3, ITUB4, etc.). No modal de detalhes da empresa, role até "✦ Resumo de Balanço com IA", você vê os últimos 4 trimestres listados. Clique em qualquer trimestre. Os 5 bullets renderizam em ~400ms após o fetch. Visualizações repetidas são instantâneas via cache.</p>
       </div>
 
       <h3>Como o LLM é grounded em fatos</h3>
       <p>Três safeguards garantem alta precisão dos números:</p>
       <ul>
-        <li><strong>O LLM tem acesso ao release completo</strong> - não está "alucinando" - está extraindo e parafraseando do texto fonte.</li>
+        <li><strong>O LLM tem acesso ao release completo</strong>, não está "alucinando", está extraindo e parafraseando do texto fonte.</li>
         <li><strong>Prompt explícito:</strong> "Cite apenas números que aparecem no documento fonte. Se não estiverem presentes, escreva 'não divulgado'."</li>
         <li><strong>Validação de unidades:</strong> R$ vs US$, Mt vs Mboe, % vs bp. O prompt força explicitamente a unidade correta.</li>
       </ul>
-      <p>O resultado: precisão alta para números fatuais. Interpretação de sentimento tem mais variância porque é síntese - leia o sentimento como first-pass, depois clique no link para o release original quando o trade depender disso.</p>
+      <p>O resultado: precisão alta para números fatuais. Interpretação de sentimento tem mais variância porque é síntese, leia o sentimento como first-pass, depois clique no link para o release original quando o trade depender disso.</p>
 
       <h3>Por que Cerebras + Groq</h3>
       <p>Dois LLMs em pipeline com fallback automático:</p>
@@ -235,7 +235,7 @@
         <li><strong>Cerebras (primário):</strong> latência 100-300ms. Modelo Llama 3.1-70B otimizado para inferência rápida.</li>
         <li><strong>Groq (fallback):</strong> latência 200-500ms. Backup se Cerebras estiver em manutenção ou rate-limited.</li>
       </ul>
-      <p>O usuário nunca vê uma falha - se Cerebras falha, Groq assume. Latência média do pipeline completo: ~400ms.</p>
+      <p>O usuário nunca vê uma falha, se Cerebras falha, Groq assume. Latência média do pipeline completo: ~400ms.</p>
 
       <h3>E para AAPL, NVDA, TSLA?</h3>
       <p>Funciona igual para empresas US-listed. Para mega-caps usamos Alpha Vantage transcript (transcrição completa da call). Para o resto, fallback para 8-K Item 2.02 da SEC. Mesma estrutura de 5 bullets, mesma latência. Detalhes em <a href="/ai-earnings-call-summary">/ai-earnings-call-summary</a>.</p>
@@ -250,11 +250,11 @@
     <h2>Dúvidas comuns</h2>
     <div class="faq">
       <div class="faq-item"><h3>O que é o balanço com IA em PT-BR?</h3><p>Resumo de 5 bullets em PT-BR gerado por IA a partir do release oficial via IPE da CVM/B3. Cobre receita líquida, EBITDA, produção/operacional, dividendos e guidance.</p></div>
-      <div class="faq-item"><h3>Quais empresas têm cobertura?</h3><p>Todas que publicam release via IPE da CVM/B3 - efetivamente todas listadas. Foco no Ibovespa: PETR4, VALE3, ITUB4, BBAS3, BBDC4, MGLU3, WEGE3, etc. ADRs no NYSE (PBR, VALE, ITUB) também.</p></div>
+      <div class="faq-item"><h3>Quais empresas têm cobertura?</h3><p>Todas que publicam release via IPE da CVM/B3, efetivamente todas listadas. Foco no Ibovespa: PETR4, VALE3, ITUB4, BBAS3, BBDC4, MGLU3, WEGE3, etc. ADRs no NYSE (PBR, VALE, ITUB) também.</p></div>
       <div class="faq-item"><h3>Como é gerado o resumo?</h3><p>Cerebras (primário) + Groq (fallback). 200-600ms de latência típica. Caching agressivo: mesmo release = mesmo resumo, servido instantaneamente.</p></div>
-      <div class="faq-item"><h3>Quão precisos são os números?</h3><p>Alta precisão para números fatuais (receita, EBITDA, produção, dividendo) - ancorados no release. Sentimento tem variância - use como first-pass.</p></div>
+      <div class="faq-item"><h3>Quão precisos são os números?</h3><p>Alta precisão para números fatuais (receita, EBITDA, produção, dividendo), ancorados no release. Sentimento tem variância, use como first-pass.</p></div>
       <div class="faq-item"><h3>Quão rápido aparece?</h3><p>~30 segundos do release oficial à leitura. Squawk TTS PT-BR ~5s depois para Pro.</p></div>
-      <div class="faq-item"><h3>É grátis?</h3><p>Feature Pro - $44/mês ou $33/mês anual. Basic vê o release no feed sem o resumo IA.</p></div>
+      <div class="faq-item"><h3>É grátis?</h3><p>Feature Pro, $44/mês ou $33/mês anual. Basic vê o release no feed sem o resumo IA.</p></div>
       <div class="faq-item"><h3>Funciona para ADRs PBR e VALE?</h3><p>Sim. Processamos 8-K Item 2.02 da SEC + Form 6-K. Mesma estrutura de 5 bullets em PT-BR.</p></div>
     </div>
   </div>
@@ -293,7 +293,7 @@
 
 <footer>
   <div class="container">
-    <div>© Trading News Terminal - Resumo de balanço de blue chips brasileiras em 5 bullets PT-BR via IA</div>
+    <div>© Trading News Terminal, Resumo de balanço de blue chips brasileiras em 5 bullets PT-BR via IA</div>
     <div class="footer-links">
       <a href="/">Site Principal</a><a href="/br">🇧🇷 Edição Brasil</a><a href="/us">🇺🇸 US Edition</a><a href="/terms">Termos</a><a href="/privacy">Privacidade</a><a href="/faq">FAQ</a>
     </div>

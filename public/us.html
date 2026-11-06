@@ -41,7 +41,7 @@
   "@graph": [
     {
       "@type": "SoftwareApplication",
-      "name": "Trading News Terminal - US Edition",
+      "name": "Trading News Terminal, US Edition",
       "url": "https://www.tradingnewsterminal.com/us",
       "applicationCategory": "FinanceApplication",
       "operatingSystem": "Web Browser",
@@ -51,7 +51,7 @@
       "offers": [
         { "@type": "Offer", "name": "Basic", "price": "0", "priceCurrency": "USD", "description": "Free forever. Delayed news, economic calendar, SEC EDGAR feed, pre/after-hours session badges." },
         { "@type": "Offer", "name": "Pro Monthly", "price": "44", "priceCurrency": "USD", "billingIncrement": "P1M", "description": "Zero-delay news, AI earnings summaries, Reddit buzz, live squawk, 7 financial TV channels." },
-        { "@type": "Offer", "name": "Pro Annual", "price": "33", "priceCurrency": "USD", "billingIncrement": "P1M", "description": "Annual plan, billed $396/year - save 25% vs monthly." }
+        { "@type": "Offer", "name": "Pro Annual", "price": "33", "priceCurrency": "USD", "billingIncrement": "P1M", "description": "Annual plan, billed $396/year, save 25% vs monthly." }
       ],
       "featureList": [
         "FOMC sub-second scraper (Federal Reserve direct)",
@@ -71,14 +71,14 @@
     {
       "@type": "FAQPage",
       "mainEntity": [
-        { "@type": "Question", "name": "How fast does TNT pick up FOMC decisions?", "acceptedAnswer": { "@type": "Answer", "text": "Sub-second. Our scrapers hit federalreserve.gov directly the moment the embargo lifts - typically 0.5–1.2 seconds faster than aggregator-based news services that wait for redistribution. Same sub-second framework for ECB, BoE, BoJ, RBA. Comparable to institutional-grade feeds at a fraction of the cost." } },
+        { "@type": "Question", "name": "How fast does TNT pick up FOMC decisions?", "acceptedAnswer": { "@type": "Answer", "text": "Sub-second. Our scrapers hit federalreserve.gov directly the moment the embargo lifts, typically 0.5-1.2 seconds faster than aggregator-based news services that wait for redistribution. Same sub-second framework for ECB, BoE, BoJ, RBA. Comparable to institutional-grade feeds at a fraction of the cost." } },
         { "@type": "Question", "name": "Is SEC EDGAR data really live or just delayed snapshots?", "acceptedAnswer": { "@type": "Answer", "text": "Live. We poll official SEC atom feeds every 12 minutes for six form types: 8-K (material events including earnings releases), 10-Q (quarterly), 10-K (annual), 13F (institutional holdings), 13D/G (5%+ stake disclosures), and SC 13D/A amendments. Within ~15 minutes of any filing hitting EDGAR, it appears in the feed tagged with the ticker and a clickable ⚖ SEC EDGAR source chip." } },
-        { "@type": "Question", "name": "How does the AI Earnings Summary actually work?", "acceptedAnswer": { "@type": "Answer", "text": "Click any quarter on a US-listed ticker in the company detail modal. The system fetches the earnings call transcript (Alpha Vantage source) or falls back to the 8-K press release filed with the SEC if the transcript isn't published yet. We then run Cerebras (with Groq fallback) to generate a 5-bullet summary covering: guidance changes, margin trends, key business risks flagged by management, most-discussed Q&A topic, and net sentiment. Each bullet is capped at 25 words. Summaries are cached aggressively - repeat views are instant." } },
-        { "@type": "Question", "name": "How does Reddit Social Buzz tracking work?", "acceptedAnswer": { "@type": "Answer", "text": "We aggregate retail mentions across r/wallstreetbets, r/stocks, r/options, r/investing, r/StockMarket, r/pennystocks, r/RobinHoodPennyStocks, and r/Daytrading every 30 minutes via the ApeWisdom aggregation layer. Top 60 tickers are shown with mention count, 🔥 momentum badge, and sentiment derived from 24h mention velocity (accelerating = bullish, decelerating = bearish). Click any chip to filter the news feed by that ticker - useful for confirming whether a Reddit-trending name has corresponding institutional newsflow." } },
-        { "@type": "Question", "name": "How does TNT compare to premium news services at $200+/month?", "acceptedAnswer": { "@type": "Answer", "text": "Pricing: premium news services typically run $200+/month; TNT Pro is $44/month. Coverage: we have FOMC/ECB/BoE/BoJ/RBA sub-second scrapers, full SEC EDGAR ingestion across six form types, AI earnings summaries, and Reddit retail buzz - features that premium services either lack or charge extra for. Trade-off: we don't have a 24-hour human squawk desk yet - if your strategy specifically requires a live human voice operator reading every wire all day, dedicated squawk services may suit you better. For everyone else who wants the same edges at 1/5 the price, TNT is the play." } },
-        { "@type": "Question", "name": "Do you cover pre-market and after-hours sessions?", "acceptedAnswer": { "@type": "Answer", "text": "Yes - comprehensively. News during pre-market (04:00–09:30 ET) gets a 🌅 PRE-MKT badge. News during after-hours (16:00–20:00 ET) gets a 🌙 AFTER-HRS badge. Both badges are clickable filters - click PRE-MKT to instantly filter the feed to only show pre-market headlines. This is critical because earnings beats/misses (AAPL, MSFT, NVDA, GOOG, META, TSLA) and macro releases (NFP at 08:30 ET pre-bell) typically land outside regular hours." } },
-        { "@type": "Question", "name": "Is the news feed really real-time on Pro?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Pro users receive news items via WebSocket push the moment they're ingested. The economic calendar is real-time on both Basic and Pro. Basic plan has a 5-minute delay on the news feed to keep the free tier sustainable - for trading, the delay matters; for awareness, Basic is sufficient." } },
-        { "@type": "Question", "name": "Can I cancel anytime? Any hidden fees?", "acceptedAnswer": { "@type": "Answer", "text": "Yes - Stripe dashboard, one click, no phone calls, no retention games, no hidden fees. Monthly subscriptions cancel at end of cycle. Annual subscriptions have a 30-day money-back guarantee. Basic plan is free forever - we don't downgrade your account if you cancel Pro; you just lose Pro features." } }
+        { "@type": "Question", "name": "How does the AI Earnings Summary actually work?", "acceptedAnswer": { "@type": "Answer", "text": "Click any quarter on a US-listed ticker in the company detail modal. The system fetches the earnings call transcript (Alpha Vantage source) or falls back to the 8-K press release filed with the SEC if the transcript isn't published yet. We then run Cerebras (with Groq fallback) to generate a 5-bullet summary covering: guidance changes, margin trends, key business risks flagged by management, most-discussed Q&A topic, and net sentiment. Each bullet is capped at 25 words. Summaries are cached aggressively, repeat views are instant." } },
+        { "@type": "Question", "name": "How does Reddit Social Buzz tracking work?", "acceptedAnswer": { "@type": "Answer", "text": "We aggregate retail mentions across r/wallstreetbets, r/stocks, r/options, r/investing, r/StockMarket, r/pennystocks, r/RobinHoodPennyStocks, and r/Daytrading every 30 minutes via the ApeWisdom aggregation layer. Top 60 tickers are shown with mention count, 🔥 momentum badge, and sentiment derived from 24h mention velocity (accelerating = bullish, decelerating = bearish). Click any chip to filter the news feed by that ticker, useful for confirming whether a Reddit-trending name has corresponding institutional newsflow." } },
+        { "@type": "Question", "name": "How does TNT compare to premium news services at $200+/month?", "acceptedAnswer": { "@type": "Answer", "text": "Pricing: premium news services typically run $200+/month; TNT Pro is $44/month. Coverage: we have FOMC/ECB/BoE/BoJ/RBA sub-second scrapers, full SEC EDGAR ingestion across six form types, AI earnings summaries, and Reddit retail buzz, features that premium services either lack or charge extra for. Trade-off: we don't have a 24-hour human squawk desk yet, if your strategy specifically requires a live human voice operator reading every wire all day, dedicated squawk services may suit you better. For everyone else who wants the same edges at 1/5 the price, TNT is the play." } },
+        { "@type": "Question", "name": "Do you cover pre-market and after-hours sessions?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, comprehensively. News during pre-market (04:00-09:30 ET) gets a 🌅 PRE-MKT badge. News during after-hours (16:00-20:00 ET) gets a 🌙 AFTER-HRS badge. Both badges are clickable filters, click PRE-MKT to instantly filter the feed to only show pre-market headlines. This is critical because earnings beats/misses (AAPL, MSFT, NVDA, GOOG, META, TSLA) and macro releases (NFP at 08:30 ET pre-bell) typically land outside regular hours." } },
+        { "@type": "Question", "name": "Is the news feed really real-time on Pro?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Pro users receive news items via WebSocket push the moment they're ingested. The economic calendar is real-time on both Basic and Pro. Basic plan has a 5-minute delay on the news feed to keep the free tier sustainable, for trading, the delay matters; for awareness, Basic is sufficient." } },
+        { "@type": "Question", "name": "Can I cancel anytime? Any hidden fees?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, Stripe dashboard, one click, no phone calls, no retention games, no hidden fees. Monthly subscriptions cancel at end of cycle. Annual subscriptions have a 30-day money-back guarantee. Basic plan is free forever, we don't downgrade your account if you cancel Pro; you just lose Pro features." } }
       ]
     },
     {
@@ -297,14 +297,14 @@
       The News Terminal <span>Built for US Traders</span>
       <span class="sub-line">FOMC sub-second · SEC EDGAR live · AI earnings summaries · Reddit retail buzz</span>
     </h1>
-    <p class="hero-sub">Every NYSE / Nasdaq-moving headline tagged with pre-market or after-hours session. SEC filings within minutes of EDGAR - 8-K, 10-Q, 10-K, 13F, 13D/G. AI-generated 5-bullet summaries of any earnings call. Reddit retail buzz across r/wallstreetbets, r/stocks, r/options. <strong>Institutional-grade intelligence at $44/month.</strong></p>
+    <p class="hero-sub">Every NYSE / Nasdaq-moving headline tagged with pre-market or after-hours session. SEC filings within minutes of EDGAR, 8-K, 10-Q, 10-K, 13F, 13D/G. AI-generated 5-bullet summaries of any earnings call. Reddit retail buzz across r/wallstreetbets, r/stocks, r/options. <strong>Institutional-grade intelligence at $44/month.</strong></p>
     
     <p class="byline" style="font-size:13px;color:var(--muted, #8899aa);margin:18px auto 28px;max-width:640px;line-height:1.6;text-align:center;">
       <span style="color:var(--accent, #00d4ff);font-weight:600;">Updated 27 May 2026</span>
       &nbsp;·&nbsp; By <a href="https://www.tradingnewsterminal.com/about" style="color:var(--text);text-decoration:underline;text-decoration-color:rgba(0,212,255,0.35);text-underline-offset:3px;">Luís Barata</a>, founder of Trading News Terminal · 13+ years in macro & FX markets
     </p>
     <div class="hero-ctas">
-      <a href="https://app.tradingnewsterminal.com/?utm_source=landing&utm_medium=organic&utm_campaign=us&utm_content=hero" class="btn btn-primary btn-lg">Start Free - No Card</a>
+      <a href="https://app.tradingnewsterminal.com/?utm_source=landing&utm_medium=organic&utm_campaign=us&utm_content=hero" class="btn btn-primary btn-lg">Start Free, No Card</a>
       <a href="#pricing" class="btn btn-outline btn-lg">See Pricing</a>
     </div>
     <p class="price-note">Basic plan is <strong>permanently free</strong> · Pro at <strong>$44/mo</strong> or <strong>$33/mo annual</strong> (save 25%) · Cancel anytime</p>
@@ -321,17 +321,17 @@
   <div class="container">
     <div class="section-label">What You Get</div>
     <h2>Six edges your current terminal probably doesn't have</h2>
-    <p class="section-intro">Built specifically for how US traders consume markets - the same institutional edges that desks pay $24,000/year for, packaged for $44/month. <strong>No 30-day trials, no credit card on Basic, no upgrade pressure.</strong></p>
+    <p class="section-intro">Built specifically for how US traders consume markets, the same institutional edges that desks pay $24,000/year for, packaged for $44/month. <strong>No 30-day trials, no credit card on Basic, no upgrade pressure.</strong></p>
     <div class="cards">
       <div class="card">
         <div class="card-icon">🏛️</div>
         <h3>FOMC Sub-Second</h3>
-        <p>We scrape <span class="accent">federalreserve.gov</span> directly at the embargo lift moment. ~1 second before aggregator services that wait for redistribution. Same sub-second framework for ECB, BoE, BoJ, RBA. Eight rate decisions per year that move trillions - we want you ahead.</p>
+        <p>We scrape <span class="accent">federalreserve.gov</span> directly at the embargo lift moment. ~1 second before aggregator services that wait for redistribution. Same sub-second framework for ECB, BoE, BoJ, RBA. Eight rate decisions per year that move trillions, we want you ahead.</p>
       </div>
       <div class="card">
         <div class="card-icon">⚖</div>
         <h3>SEC EDGAR Live</h3>
-        <p>Polling official SEC atom feeds every 12 minutes for <span class="accent">8-K, 10-Q, 10-K, 13F, 13D/G, SC 13D/A</span>. Within ~15 minutes of an 8-K filing, it's in your feed tagged with the ticker. Material events, earnings releases, board changes, M&amp;A - you see them as they hit EDGAR.</p>
+        <p>Polling official SEC atom feeds every 12 minutes for <span class="accent">8-K, 10-Q, 10-K, 13F, 13D/G, SC 13D/A</span>. Within ~15 minutes of an 8-K filing, it's in your feed tagged with the ticker. Material events, earnings releases, board changes, M&amp;A, you see them as they hit EDGAR.</p>
       </div>
       <div class="card">
         <div class="card-icon">✦</div>
@@ -341,7 +341,7 @@
       <div class="card">
         <div class="card-icon">🌅</div>
         <h3>Pre-Market &amp; After-Hours</h3>
-        <p>Every headline gets a session badge: <span class="orange">PRE-MKT</span> (04:00–09:30 ET) or <span class="purple">AFTER-HRS</span> (16:00–20:00 ET). Click the badge to filter the feed by session. Critical because most earnings beats/misses and macro releases land outside RTH.</p>
+        <p>Every headline gets a session badge: <span class="orange">PRE-MKT</span> (04:00-09:30 ET) or <span class="purple">AFTER-HRS</span> (16:00-20:00 ET). Click the badge to filter the feed by session. Critical because most earnings beats/misses and macro releases land outside RTH.</p>
       </div>
       <div class="card">
         <div class="card-icon">🔥</div>
@@ -351,7 +351,7 @@
       <div class="card">
         <div class="card-icon">📡</div>
         <h3>Smart Virtual Tags</h3>
-        <p>Search box understands <span class="accent">"pre-market"</span>, <span class="accent">"sec edgar"</span>, <span class="accent">"8-k"</span>, <span class="accent">"central bank"</span>. Type once, filter the feed by computed properties - no manual setup, no learning curve. The terminal works the way you think.</p>
+        <p>Search box understands <span class="accent">"pre-market"</span>, <span class="accent">"sec edgar"</span>, <span class="accent">"8-k"</span>, <span class="accent">"central bank"</span>. Type once, filter the feed by computed properties, no manual setup, no learning curve. The terminal works the way you think.</p>
       </div>
     </div>
   </div>
@@ -361,7 +361,7 @@
   <div class="container">
     <div class="section-label">Compare</div>
     <h2>How TNT stacks up against the alternatives</h2>
-    <p class="section-intro">For active retail and prop-funded US traders running their own P&amp;L, paying $200+/month for legacy services rarely justifies the spend. TNT delivers the wins that actually matter - sub-second macro, SEC EDGAR live, AI earnings summaries - at retail pricing.</p>
+    <p class="section-intro">For active retail and prop-funded US traders running their own P&amp;L, paying $200+/month for legacy services rarely justifies the spend. TNT delivers the wins that actually matter, sub-second macro, SEC EDGAR live, AI earnings summaries, at retail pricing.</p>
     <div class="compare-wrap">
     <table class="compare-table">
       <thead>
@@ -369,13 +369,13 @@
           <th>Feature</th>
           <th>TNT Pro</th>
           <th>Premium news services<br><span style="font-weight:400;text-transform:none;color:var(--muted);font-size:10px;letter-spacing:0;">($200+/month)</span></th>
-          <th>Mid-tier forex/news sites<br><span style="font-weight:400;text-transform:none;color:var(--muted);font-size:10px;letter-spacing:0;">($30–80/month)</span></th>
+          <th>Mid-tier forex/news sites<br><span style="font-weight:400;text-transform:none;color:var(--muted);font-size:10px;letter-spacing:0;">($30-80/month)</span></th>
           <th>Free aggregators<br><span style="font-weight:400;text-transform:none;color:var(--muted);font-size:10px;letter-spacing:0;">(ad-supported)</span></th>
         </tr>
       </thead>
       <tbody>
-        <tr><td>Price / month</td><td class="ours">$44</td><td class="theirs">$200+</td><td class="theirs">$30–80</td><td class="theirs">$0 (ads)</td></tr>
-        <tr><td>FOMC sub-second alerts</td><td class="ours yes">✓ &lt;1s</td><td class="theirs partial">~2–5s</td><td class="theirs no">✗</td><td class="theirs no">✗ Delayed</td></tr>
+        <tr><td>Price / month</td><td class="ours">$44</td><td class="theirs">$200+</td><td class="theirs">$30-80</td><td class="theirs">$0 (ads)</td></tr>
+        <tr><td>FOMC sub-second alerts</td><td class="ours yes">✓ &lt;1s</td><td class="theirs partial">~2-5s</td><td class="theirs no">✗</td><td class="theirs no">✗ Delayed</td></tr>
         <tr><td>SEC EDGAR live ingestion</td><td class="ours yes">✓ All 6 forms</td><td class="theirs partial">Subset</td><td class="theirs no">✗</td><td class="theirs no">✗</td></tr>
         <tr><td>AI earnings call summaries</td><td class="ours yes">✓ 5 bullets</td><td class="theirs no">✗</td><td class="theirs no">✗</td><td class="theirs no">✗</td></tr>
         <tr><td>Pre-market / after-hours badges</td><td class="ours yes">✓ Clickable filter</td><td class="theirs partial">Mention only</td><td class="theirs no">✗</td><td class="theirs no">✗</td></tr>
@@ -395,22 +395,22 @@
 <section id="guide">
   <div class="container">
     <div class="section-label">The Guide</div>
-    <h2>The US trader's playbook - what matters and why</h2>
+    <h2>The US trader's playbook, what matters and why</h2>
     <p class="section-intro">A complete breakdown of the US market events that move price, when they happen, how to consume them, and how to interpret the institutional signals before retail catches up.</p>
     <div class="guide">
 
       <h3>The structure of the US trading day</h3>
-      <p>The US equity market trades regular hours <strong>09:30–16:00 ET</strong>. But for any active trader, regular hours is only one of three meaningfully tradeable sessions:</p>
+      <p>The US equity market trades regular hours <strong>09:30-16:00 ET</strong>. But for any active trader, regular hours is only one of three meaningfully tradeable sessions:</p>
       <ul>
-        <li><strong>Pre-market (04:00–09:30 ET):</strong> Where the day is built. Overnight earnings releases (META, GOOGL, AMZN, AAPL, MSFT, NVDA, TSLA usually report after-hours; banks, retailers, healthcare often pre-market), economic data (NFP at 08:30 ET, CPI at 08:30 ET, Retail Sales at 08:30 ET), and overseas catalyst spillover all hit here. E-mini S&amp;P futures (ES) trade nearly 24 hours and absorb this flow first - by the time the cash market opens at 09:30, the move is often half-done.</li>
-        <li><strong>Regular trading hours (09:30–16:00 ET):</strong> Liquidity is highest, spreads tightest. Most Fed and Treasury officials deliver public remarks during cash hours. The first 30 minutes (09:30–10:00) and last 30 minutes (15:30–16:00) account for 30–40% of daily volume.</li>
-        <li><strong>After-hours (16:00–20:00 ET):</strong> Earnings dump zone. AAPL, MSFT, NVDA, GOOG, META, AMZN, TSLA report at 16:05–16:30 ET on average. Single-stock can gap 5–15% in seconds. Liquidity thins after 18:00 ET.</li>
+        <li><strong>Pre-market (04:00-09:30 ET):</strong> Where the day is built. Overnight earnings releases (META, GOOGL, AMZN, AAPL, MSFT, NVDA, TSLA usually report after-hours; banks, retailers, healthcare often pre-market), economic data (NFP at 08:30 ET, CPI at 08:30 ET, Retail Sales at 08:30 ET), and overseas catalyst spillover all hit here. E-mini S&amp;P futures (ES) trade nearly 24 hours and absorb this flow first, by the time the cash market opens at 09:30, the move is often half-done.</li>
+        <li><strong>Regular trading hours (09:30-16:00 ET):</strong> Liquidity is highest, spreads tightest. Most Fed and Treasury officials deliver public remarks during cash hours. The first 30 minutes (09:30-10:00) and last 30 minutes (15:30-16:00) account for 30-40% of daily volume.</li>
+        <li><strong>After-hours (16:00-20:00 ET):</strong> Earnings dump zone. AAPL, MSFT, NVDA, GOOG, META, AMZN, TSLA report at 16:05-16:30 ET on average. Single-stock can gap 5-15% in seconds. Liquidity thins after 18:00 ET.</li>
       </ul>
-      <p>TNT tags every news item with its session via <span class="accent">🌅 PRE-MKT</span> or <span class="accent">🌙 AFTER-HRS</span> badges. Click the badge and the entire feed filters to that session - instantly see what's moving the tape outside cash hours.</p>
+      <p>TNT tags every news item with its session via <span class="accent">🌅 PRE-MKT</span> or <span class="accent">🌙 AFTER-HRS</span> badges. Click the badge and the entire feed filters to that session, instantly see what's moving the tape outside cash hours.</p>
 
       <h3>The Federal Reserve playbook: FOMC, dot plot, press conferences</h3>
-      <p>Eight times a year the Federal Open Market Committee (FOMC) makes a rate decision. Of those eight meetings, four (March, June, September, December) include a <strong>Summary of Economic Projections (SEP)</strong> with the "dot plot" - the median Fed member's projection of where rates will be at year-end across the next three years. The dot plot can move markets more than the rate decision itself, because rates are usually well-telegraphed but the forward path is not.</p>
-      <p>The statement is released at <strong>14:00 ET</strong>. The Fed Chair's press conference begins at <strong>14:30 ET</strong>. The first 60 seconds of the press conference are when the algorithmic moves happen - the Chair's tone shift in the opening remarks often signals the meeting's posture. The Q&amp;A from 14:35 onward is where institutional positioning rebalances.</p>
+      <p>Eight times a year the Federal Open Market Committee (FOMC) makes a rate decision. Of those eight meetings, four (March, June, September, December) include a <strong>Summary of Economic Projections (SEP)</strong> with the "dot plot", the median Fed member's projection of where rates will be at year-end across the next three years. The dot plot can move markets more than the rate decision itself, because rates are usually well-telegraphed but the forward path is not.</p>
+      <p>The statement is released at <strong>14:00 ET</strong>. The Fed Chair's press conference begins at <strong>14:30 ET</strong>. The first 60 seconds of the press conference are when the algorithmic moves happen, the Chair's tone shift in the opening remarks often signals the meeting's posture. The Q&amp;A from 14:35 onward is where institutional positioning rebalances.</p>
       <div class="guide-callout">
         <h4>How TNT covers FOMC</h4>
         <p>Sub-second scraper on federalreserve.gov fires the moment the statement embargo lifts. The headline carries the full statement text. Simultaneously, the SEP PDF is parsed and dot plot changes vs prior meeting are highlighted. Press conference is covered via live financial TV embedded in the terminal.</p>
@@ -419,20 +419,20 @@
       <h3>SEC EDGAR: the institutional information layer</h3>
       <p>SEC filings are how the institutional world communicates material changes. Every US-listed company files reports through EDGAR (Electronic Data Gathering, Analysis, and Retrieval). The forms that matter most for active traders:</p>
       <ul>
-        <li><strong>8-K (Material Events):</strong> Filed within 4 business days of a material event. Earnings releases, CEO departures, M&amp;A announcements, regulatory actions, customer wins/losses. Item 2.02 = "Results of Operations and Financial Condition" - this is the earnings press release. Item 1.01 = "Entry into Material Definitive Agreement" - often M&amp;A. Item 5.02 = "Departure of Directors or Certain Officers." Read the item codes first, then the body.</li>
+        <li><strong>8-K (Material Events):</strong> Filed within 4 business days of a material event. Earnings releases, CEO departures, M&amp;A announcements, regulatory actions, customer wins/losses. Item 2.02 = "Results of Operations and Financial Condition", this is the earnings press release. Item 1.01 = "Entry into Material Definitive Agreement", often M&amp;A. Item 5.02 = "Departure of Directors or Certain Officers." Read the item codes first, then the body.</li>
         <li><strong>10-Q (Quarterly Report):</strong> Filed within 40 days of quarter end. Detailed financials with management discussion. Footnote 2 (recent accounting pronouncements) and the legal proceedings section often contain forward-looking risk that the call doesn't cover.</li>
-        <li><strong>10-K (Annual Report):</strong> Filed within 60 days of year-end. Risk factors section is gold - companies disclose what worries them. Read the new risk factors added vs prior year - that's where management is signaling concern.</li>
-        <li><strong>13F (Institutional Holdings):</strong> Filed quarterly by institutional managers with $100M+ AUM. 45-day reporting lag, so positions are old. But useful for spotting concentrated bets - Berkshire's Apple stake, Pershing Square's portfolio rebuilds.</li>
+        <li><strong>10-K (Annual Report):</strong> Filed within 60 days of year-end. Risk factors section is gold, companies disclose what worries them. Read the new risk factors added vs prior year, that's where management is signaling concern.</li>
+        <li><strong>13F (Institutional Holdings):</strong> Filed quarterly by institutional managers with $100M+ AUM. 45-day reporting lag, so positions are old. But useful for spotting concentrated bets, Berkshire's Apple stake, Pershing Square's portfolio rebuilds.</li>
         <li><strong>13D / 13G (5%+ Stakes):</strong> Within 10 days when an investor crosses 5% ownership. 13D = activist intent (might push for changes). 13G = passive (no intent to influence). Activist 13D filings often coincide with stock pops.</li>
       </ul>
       <p>TNT polls all six form types every 12 minutes. New filings appear in the feed within ~15 minutes with the ⚖ SEC EDGAR source chip and ticker tagging. Click the chip to filter the feed to SEC filings only.</p>
 
       <h3>Earnings season: the highest-information-density period of the year</h3>
-      <p>US corporate earnings season runs four times per year, beginning 2–3 weeks after each quarter closes. The schedule concentrates the most market-moving individual stock events into a 5–6 week window each quarter. What matters:</p>
+      <p>US corporate earnings season runs four times per year, beginning 2-3 weeks after each quarter closes. The schedule concentrates the most market-moving individual stock events into a 5-6 week window each quarter. What matters:</p>
       <ul>
-        <li><strong>EPS vs consensus:</strong> Beat by 10%+ = typically 5–15% gap. Miss by 10%+ = 10–25% gap. But the magnitude of the beat matters less than the <em>quality</em> - is it real growth or one-time tax benefits?</li>
+        <li><strong>EPS vs consensus:</strong> Beat by 10%+ = typically 5-15% gap. Miss by 10%+ = 10-25% gap. But the magnitude of the beat matters less than the <em>quality</em>, is it real growth or one-time tax benefits?</li>
         <li><strong>Forward guidance:</strong> Guidance for the next quarter or year often matters more than the current results. A "beat and lower" (current quarter strong, guidance lowered) = sell. A "miss and raise" (current quarter weak, guidance raised) = buy.</li>
-        <li><strong>Mega-cap leverage:</strong> AAPL, MSFT, NVDA, GOOGL, META, AMZN, TSLA together represent ~30% of the S&amp;P 500 weight. Their individual earnings can move the index 0.5–1.5%.</li>
+        <li><strong>Mega-cap leverage:</strong> AAPL, MSFT, NVDA, GOOGL, META, AMZN, TSLA together represent ~30% of the S&amp;P 500 weight. Their individual earnings can move the index 0.5-1.5%.</li>
         <li><strong>Sector tone:</strong> Banks kick off (JPM, GS, BAC in week 1) and signal credit + economic health. Semis (NVDA, AMD, INTC, AVGO) signal AI / data center demand. Retailers (WMT, TGT, AMZN) signal consumer health.</li>
       </ul>
       <div class="guide-callout">
@@ -446,16 +446,16 @@
         <li><strong>Mention velocity matters more than absolute count.</strong> A ticker with 50 mentions trending toward 200 (4x in 24h) is a different signal than a ticker steady at 200/day for weeks.</li>
         <li><strong>Subreddit weighting matters.</strong> r/wallstreetbets is high noise / momentum-chasing. r/options skews more sophisticated (real positioning). r/investing skews long-term / boring. r/stocks is mixed.</li>
         <li><strong>Cross-reference with institutional news.</strong> A Reddit-trending ticker with no corresponding institutional newsflow = pump risk. With matching news (earnings beat, SEC filing, analyst upgrade) = high-conviction setup.</li>
-        <li><strong>The fade exists.</strong> Mega-momentum names on WSB often peak within 3–5 days of going viral. Buying the breakout works for 1–2 days; holding past the meme peak is where money gets lost.</li>
+        <li><strong>The fade exists.</strong> Mega-momentum names on WSB often peak within 3-5 days of going viral. Buying the breakout works for 1-2 days; holding past the meme peak is where money gets lost.</li>
       </ul>
-      <p>TNT shows the top 60 tickers in the Reddit Social Buzz panel (Sentiment tab). Each chip displays mention count + 🔥 momentum badge + sentiment color. Click any chip to filter the news feed by that ticker - the fastest way to confirm whether a Reddit-trending name has corresponding institutional newsflow.</p>
+      <p>TNT shows the top 60 tickers in the Reddit Social Buzz panel (Sentiment tab). Each chip displays mention count + 🔥 momentum badge + sentiment color. Click any chip to filter the news feed by that ticker, the fastest way to confirm whether a Reddit-trending name has corresponding institutional newsflow.</p>
 
       <h3>The macro calendar: economic data that moves equities most</h3>
       <p>In approximate order of typical equity market impact:</p>
       <ol>
-        <li><strong>FOMC rate decision (08 per year, 14:00 ET):</strong> Highest individual event impact. 1–3% intraday equity moves on statement / press conference surprises.</li>
-        <li><strong>Non-Farm Payrolls - NFP (first Friday of month, 08:30 ET):</strong> Strong NFP = mixed signal for equities (growth positive, rate-negative). Weak NFP = rate-cut hopes rally equities. Wage growth component is the most-watched detail post-2022.</li>
-        <li><strong>CPI - Consumer Price Index (mid-month, 08:30 ET):</strong> Hot CPI = sell equities (especially long-duration tech). Soft CPI = buy equities. Core CPI (ex-food and energy) is what the Fed watches.</li>
+        <li><strong>FOMC rate decision (08 per year, 14:00 ET):</strong> Highest individual event impact. 1-3% intraday equity moves on statement / press conference surprises.</li>
+        <li><strong>Non-Farm Payrolls, NFP (first Friday of month, 08:30 ET):</strong> Strong NFP = mixed signal for equities (growth positive, rate-negative). Weak NFP = rate-cut hopes rally equities. Wage growth component is the most-watched detail post-2022.</li>
+        <li><strong>CPI, Consumer Price Index (mid-month, 08:30 ET):</strong> Hot CPI = sell equities (especially long-duration tech). Soft CPI = buy equities. Core CPI (ex-food and energy) is what the Fed watches.</li>
         <li><strong>PCE Price Index (last Friday of month, 08:30 ET):</strong> The Fed's preferred inflation gauge. Direct input into rate decisions.</li>
         <li><strong>GDP (quarterly):</strong> Three releases per quarter (advance, second, final). A big GDP miss raises recession risk and sells equities (especially cyclicals).</li>
         <li><strong>Retail Sales (mid-month, 08:30 ET):</strong> Direct consumer health proxy. Drives retailer stocks and consumer discretionary sector.</li>
@@ -464,7 +464,7 @@
       <p>Every one of these is in the TNT economic calendar with countdown, consensus, prior reading, and live release coverage. Pro users get sub-second alerts on the release; Basic users see the release after a 5-minute delay.</p>
 
       <h3>S&amp;P 500 sector rotation: where the leadership shifts</h3>
-      <p>The S&amp;P 500 isn't a single thing - it's 11 sectors with distinct macro drivers. Understanding sector rotation tells you what the institutional flow is signaling about the next 3–6 months:</p>
+      <p>The S&amp;P 500 isn't a single thing, it's 11 sectors with distinct macro drivers. Understanding sector rotation tells you what the institutional flow is signaling about the next 3-6 months:</p>
       <ul>
         <li><strong>Technology (~29% weight):</strong> Rate-sensitive (high-duration cash flows). Outperforms when rates fall, underperforms when rates rise. AI infrastructure (NVDA, AVGO, MSFT, GOOGL) has been the dominant subsector since 2023.</li>
         <li><strong>Financials (~13%):</strong> Benefits from steeper yield curve + higher rates (better net interest margin). Credit quality concerns dominate in recession scenarios.</li>
@@ -485,7 +485,7 @@
   <div class="container">
     <div class="section-label">Pricing</div>
     <h2>Start free, upgrade when you need the edge</h2>
-    <p class="section-intro">No 30-day trials, no credit cards on Basic. The free plan is a real product - not a teaser. Upgrade to Pro when you want zero-delay news, AI earnings summaries, live financial TV, and the Reddit buzz panel.</p>
+    <p class="section-intro">No 30-day trials, no credit cards on Basic. The free plan is a real product, not a teaser. Upgrade to Pro when you want zero-delay news, AI earnings summaries, live financial TV, and the Reddit buzz panel.</p>
     <div class="pricing-grid">
       <div class="pricing-card">
         <div class="pricing-plan">Basic</div>
@@ -548,7 +548,7 @@
     <div class="faq">
       <div class="faq-item">
         <h3>How fast does TNT pick up FOMC decisions?</h3>
-        <p>Sub-second. Our scrapers hit federalreserve.gov directly the moment the embargo lifts - typically 0.5–1.2 seconds faster than aggregator-based news services that wait for redistribution. Same sub-second framework for ECB, BoE, BoJ, RBA. Comparable to institutional-grade feeds at a fraction of the cost.</p>
+        <p>Sub-second. Our scrapers hit federalreserve.gov directly the moment the embargo lifts, typically 0.5-1.2 seconds faster than aggregator-based news services that wait for redistribution. Same sub-second framework for ECB, BoE, BoJ, RBA. Comparable to institutional-grade feeds at a fraction of the cost.</p>
       </div>
       <div class="faq-item">
         <h3>Is SEC EDGAR data really live or just delayed snapshots?</h3>
@@ -556,7 +556,7 @@
       </div>
       <div class="faq-item">
         <h3>How does the AI Earnings Summary actually work?</h3>
-        <p>Click any quarter on a US-listed ticker in the company detail modal. The system fetches the earnings call transcript (Alpha Vantage source) or falls back to the 8-K press release if the transcript isn't yet published. We then run Cerebras (with Groq fallback) to generate a 5-bullet summary: guidance changes, margin trends, business risks, Q&A topic, net sentiment. Each bullet capped at 25 words. Summaries are cached - repeat views are instant.</p>
+        <p>Click any quarter on a US-listed ticker in the company detail modal. The system fetches the earnings call transcript (Alpha Vantage source) or falls back to the 8-K press release if the transcript isn't yet published. We then run Cerebras (with Groq fallback) to generate a 5-bullet summary: guidance changes, margin trends, business risks, Q&A topic, net sentiment. Each bullet capped at 25 words. Summaries are cached, repeat views are instant.</p>
       </div>
       <div class="faq-item">
         <h3>How does Reddit Social Buzz work?</h3>
@@ -564,11 +564,11 @@
       </div>
       <div class="faq-item">
         <h3>How does TNT compare to premium news services at $200+/month?</h3>
-        <p>Pricing: premium news services typically run $200+/month; TNT Pro is $44/month. Coverage: we have FOMC/ECB/BoE/BoJ/RBA sub-second scrapers, full SEC EDGAR ingestion across six form types, AI earnings summaries, and Reddit retail buzz - features that premium services either lack or charge extra for. Trade-off: we don't have a 24-hour human squawk desk yet - if your strategy specifically requires a live human voice operator reading every wire all day, dedicated squawk services may suit you better.</p>
+        <p>Pricing: premium news services typically run $200+/month; TNT Pro is $44/month. Coverage: we have FOMC/ECB/BoE/BoJ/RBA sub-second scrapers, full SEC EDGAR ingestion across six form types, AI earnings summaries, and Reddit retail buzz, features that premium services either lack or charge extra for. Trade-off: we don't have a 24-hour human squawk desk yet, if your strategy specifically requires a live human voice operator reading every wire all day, dedicated squawk services may suit you better.</p>
       </div>
       <div class="faq-item">
         <h3>Do you cover pre-market and after-hours?</h3>
-        <p>Yes - comprehensively. News during pre-market (04:00–09:30 ET) gets a 🌅 PRE-MKT badge. News during after-hours (16:00–20:00 ET) gets a 🌙 AFTER-HRS badge. Both badges are clickable filters. This is critical because earnings beats/misses (AAPL, MSFT, NVDA) and macro releases (NFP at 08:30 ET pre-bell) typically land outside regular hours.</p>
+        <p>Yes, comprehensively. News during pre-market (04:00-09:30 ET) gets a 🌅 PRE-MKT badge. News during after-hours (16:00-20:00 ET) gets a 🌙 AFTER-HRS badge. Both badges are clickable filters. This is critical because earnings beats/misses (AAPL, MSFT, NVDA) and macro releases (NFP at 08:30 ET pre-bell) typically land outside regular hours.</p>
       </div>
       <div class="faq-item">
         <h3>Is the data really real-time on Pro?</h3>
@@ -576,7 +576,7 @@
       </div>
       <div class="faq-item">
         <h3>Can I cancel anytime?</h3>
-        <p>Yes - Stripe dashboard, one click. No phone calls, no retention games. Monthly subscriptions cancel at end of cycle. Annual subscriptions have a 30-day money-back guarantee. Basic plan stays free forever - we don't downgrade your account if you cancel Pro.</p>
+        <p>Yes, Stripe dashboard, one click. No phone calls, no retention games. Monthly subscriptions cancel at end of cycle. Annual subscriptions have a 30-day money-back guarantee. Basic plan stays free forever, we don't downgrade your account if you cancel Pro.</p>
       </div>
     </div>
   </div>
@@ -586,7 +586,7 @@
   <div class="container">
     <div class="section-label">Explore</div>
     <h2>More tools in the Trading News Terminal</h2>
-    <p class="section-intro">The US Edition is part of the wider Trading News Terminal - every feature you see above plus the standard terminal capabilities for forex, crypto, commodities, central banks, and more.</p>
+    <p class="section-intro">The US Edition is part of the wider Trading News Terminal, every feature you see above plus the standard terminal capabilities for forex, crypto, commodities, central banks, and more.</p>
     <div class="explore-grid">
       <a href="/us-stock-market-news" class="explore-link"><span class="arrow">→</span> US Stock Market News</a>
       <a href="/fed-rate-decision-news" class="explore-link"><span class="arrow">→</span> Fed Rate Decisions</a>
@@ -611,7 +611,7 @@
 <section class="footer-cta">
   <div class="container">
     <h2>Start trading with US-grade intelligence</h2>
-    <p>Create your free account in 30 seconds - no credit card. FOMC sub-second alerts, SEC EDGAR feed, and pre/after-hours session tagging come with the free Basic tier. Upgrade to Pro when you want AI earnings summaries, Reddit buzz, and zero-delay news.</p>
+    <p>Create your free account in 30 seconds, no credit card. FOMC sub-second alerts, SEC EDGAR feed, and pre/after-hours session tagging come with the free Basic tier. Upgrade to Pro when you want AI earnings summaries, Reddit buzz, and zero-delay news.</p>
     <div class="hero-ctas">
       <a href="https://app.tradingnewsterminal.com/?utm_source=landing&utm_medium=organic&utm_campaign=us&utm_content=footer" class="btn btn-primary btn-lg">Start Free Now</a>
       <a href="#pricing" class="btn btn-outline btn-lg">View Pricing</a>
@@ -657,8 +657,8 @@
 
 <footer>
   <div class="container">
-    <p style="font-size:12px;color:var(--muted);max-width:760px;margin:0 auto 14px;line-height:1.6">Disclaimer: Trading News Terminal provides real-time news, data and educational content only - not investment advice or a recommendation to trade. Trading forex, futures and other leveraged products carries substantial risk of loss. Always do your own research.</p>
-    <div>© Trading News Terminal - Real-time market intelligence built for US traders</div>
+    <p style="font-size:12px;color:var(--muted);max-width:760px;margin:0 auto 14px;line-height:1.6">Disclaimer: Trading News Terminal provides real-time news, data and educational content only, not investment advice or a recommendation to trade. Trading forex, futures and other leveraged products carries substantial risk of loss. Always do your own research.</p>
+    <div>© Trading News Terminal, Real-time market intelligence built for US traders</div>
     <div class="footer-links">
       <a href="/">Main Site</a>
       <a href="/br">🇧🇷 Brasil</a>
