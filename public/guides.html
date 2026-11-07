@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trading Guides and Explainers | Trading News Terminal</title>
+  <meta name="description" content="Plain-English guides for active traders: how to trade NFP, CPI, FOMC, ECB and GDP, plus explainers on squawk boxes, economic calendars, inflation gauges, central-bank stance and market sentiment.">
+  <link rel="canonical" href="https://www.tradingnewsterminal.com/guides">
+  <link rel="alternate" hreflang="en" href="https://www.tradingnewsterminal.com/guides">
+  <link rel="alternate" hreflang="x-default" href="https://www.tradingnewsterminal.com/guides">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512x512.png">
+  <meta property="og:title" content="Trading Guides and Explainers | Trading News Terminal">
+  <meta property="og:description" content="How to trade the major releases, plus explainers on the tools and terms active traders use every day.">
+  <meta property="og:url" content="https://www.tradingnewsterminal.com/guides">
+  <meta property="og:image" content="https://www.tradingnewsterminal.com/og-image.png">
+  <meta property="og:type" content="website">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Luís Barata, Trading News Terminal">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Trading Guides and Explainers">
+  <meta name="twitter:description" content="How to trade the major releases, plus explainers on the tools and terms traders use.">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://www.tradingnewsterminal.com/guides#webpage",
+      "url": "https://www.tradingnewsterminal.com/guides",
+      "name": "Trading Guides and Explainers",
+      "description": "Guides for active traders: how to trade the major economic releases, plus explainers on the tools and terms traders use.",
+      "isPartOf": { "@id": "https://www.tradingnewsterminal.com/#website" },
+      "about": { "@id": "https://www.tradingnewsterminal.com/#organization" },
+      "author": { "@id": "https://www.tradingnewsterminal.com/about#luis-barata" }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://www.tradingnewsterminal.com/#organization",
+      "name": "Trading News Terminal",
+      "alternateName": "TNT",
+      "url": "https://www.tradingnewsterminal.com",
+      "logo": { "@type": "ImageObject", "url": "https://www.tradingnewsterminal.com/favicon-512x512.png", "width": 512, "height": 512 },
+      "sameAs": [ "https://t.me/tradingnewsterminal", "https://www.youtube.com/@tradingnewsterminal" ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.tradingnewsterminal.com/about#luis-barata",
+      "name": "Luís Barata",
+      "jobTitle": "Founder, Trading News Terminal",
+      "url": "https://www.tradingnewsterminal.com/about",
+      "sameAs": [ "https://luisbarataforextrader.com", "https://www.linkedin.com/in/luisbarata-forex-trader" ],
+      "knowsAbout": ["Forex trading", "Macroeconomics", "Central bank policy", "Futures markets", "Market news analysis"]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.tradingnewsterminal.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://www.tradingnewsterminal.com/guides" }
+      ]
+    }
+  ]
+}
+  </script>
+  <style>
+  :root { --bg:#0a0e14; --card:#0d1117; --border:#1e2a3a; --text:#e0e8f0; --muted:#8899aa; --accent:#00d4ff; --accent2:#00ff9c; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--bg); color:var(--text); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; line-height:1.6; }
+  a { color:var(--accent); text-decoration:none; }
+  .container { max-width:1120px; margin:0 auto; padding:0 24px; }
+  header { padding:20px 0; border-bottom:1px solid var(--border); position:sticky; top:0; background:rgba(10,14,20,0.92); backdrop-filter:blur(8px); z-index:50; }
+  header .container { display:flex; align-items:center; justify-content:space-between; }
+  .nav-logo { display:flex; align-items:center; gap:10px; color:var(--text); }
+  .nav-logo-icon { width:32px; height:32px; border:1.5px solid var(--accent); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .nav-logo-icon::before { content:''; width:10px; height:10px; background:var(--accent); animation:pulse 2s ease-in-out infinite; }
+  @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.4;transform:scale(0.7)} }
+  .nav-logo-text { font-size:13px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; line-height:1.3; }
+  .nav-logo-text span { color:var(--accent); }
+  .nav-logo-sub { font-size:9px; color:var(--muted); letter-spacing:0.1em; text-transform:uppercase; }
+  .btn { display:inline-block; padding:11px 22px; border-radius:6px; font-weight:700; font-size:14px; cursor:pointer; transition:transform .15s,box-shadow .15s; border:none; }
+  .btn:hover { transform:translateY(-1px); box-shadow:0 6px 24px rgba(0,212,255,0.2); }
+  .btn-primary { background:var(--accent); color:#002030; }
+  .btn-lg { padding:14px 28px; font-size:15px; }
+  .hero { padding:64px 0 32px; text-align:center; }
+  .hero-badge { display:inline-block; padding:5px 12px; background:rgba(0,212,255,0.1); border:1px solid rgba(0,212,255,0.3); color:var(--accent); border-radius:999px; font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:20px; }
+  h1 { font-size:clamp(30px,5vw,46px); font-weight:800; line-height:1.14; margin-bottom:18px; letter-spacing:-0.02em; }
+  h1 span { color:var(--accent); }
+  .hero-sub { color:var(--muted); font-size:clamp(16px,2vw,19px); max-width:760px; margin:0 auto; }
+  section { padding:36px 0; }
+  section + section { border-top:1px solid var(--border); }
+  .section-label { display:inline-block; padding:3px 10px; background:rgba(0,212,255,0.08); border:1px solid rgba(0,212,255,0.25); color:var(--accent); border-radius:999px; font-size:10px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; margin-bottom:14px; }
+  h2 { font-size:clamp(20px,3vw,26px); font-weight:700; margin-bottom:18px; color:var(--text); }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; }
+  .card { display:block; background:var(--card); border:1px solid var(--border); border-radius:12px; padding:20px 22px; transition:border-color .15s, transform .15s; }
+  .card:hover { border-color:var(--accent); transform:translateY(-2px); text-decoration:none; }
+  .card h3 { font-size:16px; font-weight:700; color:var(--text); margin-bottom:6px; }
+  .card p { font-size:14px; color:var(--muted); line-height:1.6; margin:0; }
+  .card .arrow { color:var(--accent); font-weight:700; }
+  .founder { display:flex; gap:24px; align-items:flex-start; background:var(--card); border:1px solid var(--border); border-radius:12px; padding:28px; max-width:860px; }
+  .founder-avatar { flex:0 0 72px; width:72px; height:72px; border-radius:50%; background:linear-gradient(135deg,var(--accent),var(--accent2)); display:flex; align-items:center; justify-content:center; font-size:28px; font-weight:800; color:#002030; }
+  .founder h3 { font-size:19px; margin-bottom:4px; color:var(--text); }
+  .founder .role { color:var(--accent); font-size:13px; font-weight:600; margin-bottom:12px; }
+  .founder p { color:var(--muted); font-size:15px; line-height:1.75; margin:0; }
+  .disclaimer { max-width:860px; font-size:13px; color:var(--muted); border-left:3px solid var(--border); padding:8px 0 8px 16px; margin-top:16px; }
+  .footer-cta { padding:56px 0; text-align:center; border-top:1px solid var(--border); border-bottom:1px solid var(--border); background:linear-gradient(180deg,var(--bg) 0%,rgba(0,212,255,0.03) 100%); }
+  .footer-cta h2 { font-size:clamp(22px,4vw,32px); margin-bottom:14px; }
+  .footer-cta p { color:var(--muted); font-size:16px; margin-bottom:28px; max-width:540px; margin-left:auto; margin-right:auto; }
+  footer { padding:28px 0; text-align:center; color:var(--muted); font-size:13px; }
+  footer a { color:var(--muted); }
+  .footer-links { display:flex; gap:20px; justify-content:center; flex-wrap:wrap; margin-top:8px; }
+  </style>
+</head>
+<body>
+<header>
+  <div class="container">
+    <a href="https://www.tradingnewsterminal.com/?utm_source=seo&utm_medium=organic&utm_campaign=guides&utm_content=header" class="nav-logo">
+      <div class="nav-logo-icon"></div>
+      <div><div class="nav-logo-text">Trading <span>News</span> Terminal</div><div class="nav-logo-sub">Real-Time Market Intelligence</div></div>
+    </a>
+    <a href="https://www.tradingnewsterminal.com/signup?utm_source=seo&utm_medium=organic&utm_campaign=guides&utm_content=header" class="btn btn-primary">Open the terminal →</a>
+  </div>
+</header>
+
+<section class="hero"><div class="container">
+  <div class="hero-badge">Guides</div>
+  <h1>Trading guides and <span>explainers</span></h1>
+  <p class="hero-sub">Plain-English guides for active traders. How to trade the releases that move markets, and clear explainers on the tools and terms you meet every day. Written by a trader, for traders.</p>
+</div></section>
+
+<section><div class="container">
+  <div class="section-label">How to trade the big releases</div>
+  <h2>Event playbooks</h2>
+  <div class="grid">
+    <a class="card" href="/how-to-trade-nfp"><h3>How to Trade the NFP Report <span class="arrow">→</span></h3><p>The US jobs report: the components, the surprise that moves the dollar, and the first-minutes whipsaw.</p></a>
+    <a class="card" href="/how-to-trade-cpi"><h3>How to Trade CPI <span class="arrow">→</span></h3><p>US inflation: core versus headline, and why the print reprices the path of interest rates.</p></a>
+    <a class="card" href="/how-to-trade-fomc"><h3>How to Trade FOMC <span class="arrow">→</span></h3><p>Four volatility events in one afternoon: the decision, the statement, the dot plot and the press conference.</p></a>
+    <a class="card" href="/how-to-trade-ecb"><h3>How to Trade the ECB Decision <span class="arrow">→</span></h3><p>The two-stage move, and the periphery spreads that often lead the euro.</p></a>
+    <a class="card" href="/how-to-trade-gdp"><h3>How to Trade GDP <span class="arrow">→</span></h3><p>The quarterly growth read: the advance estimate, the components, and the deflator inside the report.</p></a>
+  </div>
+</div></section>
+
+<section><div class="container">
+  <div class="section-label">Concepts and terms</div>
+  <h2>Market explainers</h2>
+  <div class="grid">
+    <a class="card" href="/what-is-a-squawk-box"><h3>What Is a Squawk Box? <span class="arrow">→</span></h3><p>The trading-desk tool that reads market-moving news aloud in real time.</p></a>
+    <a class="card" href="/how-to-read-an-economic-calendar"><h3>How to Read an Economic Calendar <span class="arrow">→</span></h3><p>The columns, the impact ratings, and how to read a beat versus a miss.</p></a>
+    <a class="card" href="/pce-vs-cpi"><h3>PCE vs CPI <span class="arrow">→</span></h3><p>The two US inflation gauges, and which one the Fed actually targets.</p></a>
+    <a class="card" href="/hawkish-vs-dovish"><h3>Hawkish vs Dovish <span class="arrow">→</span></h3><p>What a central bank's stance means, and how it moves currencies, bonds and gold.</p></a>
+    <a class="card" href="/risk-on-vs-risk-off"><h3>Risk-On vs Risk-Off <span class="arrow">→</span></h3><p>The sentiment regimes that move forex, indices, commodities and crypto together.</p></a>
+    <a class="card" href="/what-is-a-basis-point"><h3>What Is a Basis Point? <span class="arrow">→</span></h3><p>Why finance measures rate moves in bps, with a quick conversion table.</p></a>
+  </div>
+</div></section>
+
+<section><div class="container">
+  <div class="section-label">References and comparisons</div>
+  <h2>Reference</h2>
+  <div class="grid">
+    <a class="card" href="/economic-data-release-dates-2026-2027"><h3>Release Dates 2026-2027 <span class="arrow">→</span></h3><p>Official FOMC, ECB, NFP and CPI dates with release times.</p></a>
+    <a class="card" href="/best-economic-calendar"><h3>Best Economic Calendar <span class="arrow">→</span></h3><p>What separates a great trading calendar from a basic one.</p></a>
+    <a class="card" href="/forex-factory-alternative"><h3>Forex Factory Alternative <span class="arrow">→</span></h3><p>A live, multi-asset news terminal, not just a calendar.</p></a>
+  </div>
+</div></section>
+
+<section><div class="container">
+  <div class="section-label">Who writes these</div>
+  <h2>About the author</h2>
+  <div class="founder" id="luis-barata">
+    <div class="founder-avatar">LB</div>
+    <div>
+      <h3>Luís Barata</h3>
+      <div class="role">Founder, Trading News Terminal</div>
+      <p>Luís is a forex and macro trader with <strong>13+ years of experience</strong> trading European session opens and U.S. data releases. He writes and reviews these guides, and oversees how Trading News Terminal sources, times and classifies the news. See <a href="/methodology">our methodology</a>.</p>
+    </div>
+  </div>
+  <p class="disclaimer"><strong>Disclaimer:</strong> Trading News Terminal provides news, data and educational content. Nothing here is investment advice or a recommendation to buy or sell any instrument. Trading forex, futures and other leveraged products involves substantial risk, including losses that can exceed your deposit. Always do your own research.</p>
+</div></section>
+
+<section class="footer-cta"><div class="container">
+  <h2>Put the guides to work</h2>
+  <p>Open Trading News Terminal free and watch these releases land live, with instant beat or miss signals.</p>
+  <a href="https://www.tradingnewsterminal.com/signup?utm_source=seo&utm_medium=organic&utm_campaign=guides&utm_content=footer" class="btn btn-primary btn-lg">Open the terminal free</a>
+</div></section>
+
+<footer><div class="container">
+  <p style="font-size:12px;color:var(--muted);max-width:760px;margin:0 auto 14px;line-height:1.6">Disclaimer: Trading News Terminal provides real-time news, data and educational content only, not investment advice or a recommendation to trade. Trading forex, futures and other leveraged products carries substantial risk of loss. Always do your own research.</p>
+  <div>© Trading News Terminal, real-time market intelligence for professional traders.</div>
+  <div class="footer-links"><a href="/economic-calendar">Economic Calendar</a><a href="/methodology">Methodology</a><a href="/about">About</a><a href="/what-is-a-squawk-box">Squawk Box</a></div>
+</div>
+<div class="footer-yt" style="text-align:center;padding:14px 16px;font-size:12px;opacity:.75"><a href="https://www.youtube.com/@tradingnewsterminal" target="_blank" rel="noopener" style="color:inherit">Trading News Terminal on YouTube</a></div>
+</footer>
+</body>
+</html>
