@@ -1224,13 +1224,13 @@ footer { background:var(--bg2); border-top:1px solid var(--border); padding:64px
 <!-- ── WORKSPACE ── -->
 <section class="workspace-section" id="workspace" aria-labelledby="workspace-heading">
   <div class="container">
-    <div class="section-eyebrow">Custom Workspace</div>
-    <h2 class="section-title" id="workspace-heading">Your markets, your layout,<br>one workspace</h2>
-    <p class="section-sub">Build a multi-column view that fits how you trade. Choose exactly the news columns you want, by asset, topic, impact or source, drop live charts beside them, and save a workspace for every market you follow. Switch between them in one click. Available on Pro.</p>
+    <div class="section-eyebrow" data-i18n="ws.eyebrow">Custom Workspace</div>
+    <h2 class="section-title" id="workspace-heading" data-i18n-html="ws.h2">Your markets, your layout,<br>one workspace</h2>
+    <p class="section-sub" data-i18n="ws.sub">Build a multi-column view that fits how you trade. Choose exactly the news columns you want, by asset, topic, impact or source, drop live charts beside them, and save a workspace for every market you follow. Switch between them in one click. Available on Pro.</p>
 
     <figure style="margin:32px 0 10px;border:1px solid var(--border);border-radius:12px;overflow:hidden;background:var(--bg2);">
       <img src="/img/workspace/trading-news-terminal-custom-workspace-markets-overview.jpg" width="1483" height="776" loading="lazy" style="display:block;width:100%;height:auto;" alt="Trading News Terminal custom workspace with High Impact, Watchlist and Fed news columns beside a live S&amp;P 500 chart">
-      <figcaption style="font-size:12.5px;color:var(--text-dim);padding:11px 15px;">Markets Overview: high impact, watchlist and Fed news beside a live S&amp;P 500 chart.</figcaption>
+      <figcaption style="font-size:12.5px;color:var(--text-dim);padding:11px 15px;" data-i18n="ws.capmain">Markets Overview: high impact, watchlist and Fed news beside a live S&amp;P 500 chart.</figcaption>
     </figure>
 
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin-top:22px;">
@@ -1253,15 +1253,15 @@ footer { background:var(--bg2); border-top:1px solid var(--border); padding:64px
     </div>
 
     <ul style="list-style:none;margin:30px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px 26px;">
-      <li style="font-size:14px;color:var(--text-dim);line-height:1.6;">Filtered news columns: gold only, politics only, high impact only, or your watchlist.</li>
-      <li style="font-size:14px;color:var(--text-dim);line-height:1.6;">Live charts beside the news, change the symbol without relaunching.</li>
-      <li style="font-size:14px;color:var(--text-dim);line-height:1.6;">Save a layout per market and load it in one click.</li>
-      <li style="font-size:14px;color:var(--text-dim);line-height:1.6;">Drag, resize and arrange freely, then lock it when it is set.</li>
+      <li style="font-size:14px;color:var(--text-dim);line-height:1.6;" data-i18n="ws.b1">Filtered news columns: gold only, politics only, high impact only, or your watchlist.</li>
+      <li style="font-size:14px;color:var(--text-dim);line-height:1.6;" data-i18n="ws.b2">Live charts beside the news, change the symbol without relaunching.</li>
+      <li style="font-size:14px;color:var(--text-dim);line-height:1.6;" data-i18n="ws.b3">Save a layout per market and load it in one click.</li>
+      <li style="font-size:14px;color:var(--text-dim);line-height:1.6;" data-i18n="ws.b4">Drag, resize and arrange freely, then lock it when it is set.</li>
     </ul>
 
     <div style="display:flex;gap:18px;flex-wrap:wrap;align-items:center;margin-top:30px;">
-      <a href="https://app.tradingnewsterminal.com/signup?utm_source=seo&amp;utm_medium=organic&amp;utm_campaign=workspace" class="btn-primary">▶ Open Terminal, Free</a>
-      <a href="/custom-news-workspace" style="font-weight:600;color:var(--accent);">How the workspace works →</a>
+      <a href="https://app.tradingnewsterminal.com/signup?utm_source=seo&amp;utm_medium=organic&amp;utm_campaign=workspace" class="btn-primary" data-i18n="ws.cta">▶ Open Terminal, Free</a>
+      <a href="/custom-news-workspace" style="font-weight:600;color:var(--accent);" data-i18n="ws.learn">How the workspace works →</a>
     </div>
   </div>
 </section>
@@ -1944,6 +1944,7 @@ let _landingLang = localStorage.getItem('tnt_lang') || 'en';
 const _LS = {
   en: {
     'nav.tagline':'Real-time Market Intelligence',
+    'ws.eyebrow':'Custom Workspace','ws.h2':'Your markets, your layout,<br>one workspace','ws.sub':'Build a multi-column view that fits how you trade. Choose exactly the news columns you want, by asset, topic, impact or source, drop live charts beside them, and save a workspace for every market you follow. Switch between them in one click. Available on Pro.','ws.capmain':'Markets Overview: high impact, watchlist and Fed news beside a live S&P 500 chart.','ws.b1':'Filtered news columns: gold only, politics only, high impact only, or your watchlist.','ws.b2':'Live charts beside the news, change the symbol without relaunching.','ws.b3':'Save a layout per market and load it in one click.','ws.b4':'Drag, resize and arrange freely, then lock it when it is set.','ws.cta':'▶ Open Terminal, Free','ws.learn':'How the workspace works →',
     'nav.features':'Features','nav.charts':'Charts','nav.blog':'Blog','nav.pricing':'Pricing',
     'nav.compare':'Compare','nav.faq':'FAQ','nav.contact':'Contact','nav.affiliates':'Affiliates','nav.signin':'Sign In ↗',
     'nav.login':'Login','nav.launch_free':'Launch Free →','nav.get_pro':'Get Pro',
@@ -2176,6 +2177,7 @@ const _LS = {
   },
   pt: {
     'nav.tagline':'Inteligência de Mercado em Tempo Real',
+    'ws.eyebrow':'Workspace à Medida','ws.h2':'Os teus mercados, o teu layout,<br>um workspace','ws.sub':'Monta uma vista multicoluna à medida de como negoceias. Escolhe exatamente as colunas de notícias que queres, por ativo, tema, impacto ou fonte, coloca gráficos ao vivo ao lado e guarda um workspace para cada mercado que segues. Troca entre eles com um clique. Disponível no Pro.','ws.capmain':'Markets Overview: notícias de alto impacto, watchlist e Fed ao lado de um gráfico S&P 500 ao vivo.','ws.b1':'Colunas de notícias filtradas: só ouro, só política, só alto impacto, ou a tua watchlist.','ws.b2':'Gráficos ao vivo ao lado das notícias, muda o símbolo sem relançar.','ws.b3':'Guarda um layout por mercado e carrega com um clique.','ws.b4':'Arrasta, redimensiona e organiza à vontade, depois tranca quando estiver pronto.','ws.cta':'▶ Abrir Terminal, Grátis','ws.learn':'Como funciona o workspace →',
     'nav.features':'Funcionalidades','nav.charts':'Gráficos','nav.blog':'Blog','nav.pricing':'Preços',
     'nav.compare':'Comparar','nav.faq':'FAQ','nav.contact':'Contacto','nav.affiliates':'Afiliados','nav.signin':'Entrar ↗',
     'nav.login':'Login','nav.launch_free':'Começar Grátis →','nav.get_pro':'Obter Pro',
@@ -2408,6 +2410,7 @@ const _LS = {
   },
   es: {
     'nav.tagline':'Inteligencia de Mercado en Tiempo Real',
+    'ws.eyebrow':'Workspace a Medida','ws.h2':'Tus mercados, tu diseño,<br>un workspace','ws.sub':'Crea una vista de varias columnas a la medida de cómo operas. Elige exactamente las columnas de noticias que quieres, por activo, tema, impacto o fuente, coloca gráficos en vivo al lado y guarda un workspace para cada mercado que sigues. Cambia entre ellos con un clic. Disponible en Pro.','ws.capmain':'Markets Overview: noticias de alto impacto, watchlist y Fed junto a un gráfico S&P 500 en vivo.','ws.b1':'Columnas de noticias filtradas: solo oro, solo política, solo alto impacto, o tu watchlist.','ws.b2':'Gráficos en vivo junto a las noticias, cambia el símbolo sin relanzar.','ws.b3':'Guarda un diseño por mercado y cárgalo con un clic.','ws.b4':'Arrastra, redimensiona y organiza libremente, luego bloquéalo cuando esté listo.','ws.cta':'▶ Abrir Terminal, Gratis','ws.learn':'Cómo funciona el workspace →',
     'nav.features':'Características','nav.charts':'Gráficos','nav.blog':'Blog','nav.pricing':'Precios',
     'nav.compare':'Comparar','nav.faq':'FAQ','nav.contact':'Contacto','nav.affiliates':'Afiliados','nav.signin':'Iniciar Sesión ↗',
     'nav.login':'Login','nav.launch_free':'Empezar Gratis →','nav.get_pro':'Obtener Pro',
@@ -2628,6 +2631,7 @@ const _LS = {
   },
   fr: {
     'nav.tagline':'Intelligence de Marché en Temps Réel',
+    'ws.eyebrow':'Espace Personnalisé','ws.h2':'Vos marchés, votre mise en page,<br>un espace de travail','ws.sub':'Composez une vue multicolonne adaptée à votre façon de trader. Choisissez exactement les colonnes de news que vous voulez, par actif, thème, impact ou source, placez des graphiques en direct à côté et enregistrez un espace pour chaque marché que vous suivez. Passez de l’un à l’autre en un clic. Disponible sur Pro.','ws.capmain':'Markets Overview : news à fort impact, watchlist et Fed à côté d’un graphique S&P 500 en direct.','ws.b1':'Colonnes de news filtrées : or uniquement, politique uniquement, fort impact uniquement, ou votre watchlist.','ws.b2':'Graphiques en direct à côté des news, changez le symbole sans relancer.','ws.b3':'Enregistrez une mise en page par marché et chargez-la en un clic.','ws.b4':'Déplacez, redimensionnez et organisez librement, puis verrouillez quand c’est prêt.','ws.cta':'▶ Ouvrir le Terminal, Gratuit','ws.learn':'Comment fonctionne l’espace →',
     'nav.features':'Fonctionnalités','nav.charts':'Graphiques','nav.blog':'Blog','nav.pricing':'Tarifs',
     'nav.compare':'Comparer','nav.faq':'FAQ','nav.contact':'Contact','nav.affiliates':'Affiliés','nav.signin':'Se Connecter ↗',
     'nav.login':'Connexion','nav.launch_free':'Commencer Gratuitement →','nav.get_pro':'Obtenir Pro',
@@ -2849,6 +2853,7 @@ const _LS = {
   },
   de: {
     'nav.tagline':'Echtzeit-Marktintelligenz',
+    'ws.eyebrow':'Eigener Workspace','ws.h2':'Deine Märkte, dein Layout,<br>ein Workspace','ws.sub':'Baue eine mehrspaltige Ansicht, die zu deinem Trading passt. Wähle genau die News-Spalten, die du willst, nach Asset, Thema, Impact oder Quelle, setze Live-Charts daneben und speichere einen Workspace für jeden Markt, den du verfolgst. Wechsle mit einem Klick zwischen ihnen. Verfügbar im Pro.','ws.capmain':'Markets Overview: High-Impact-News, Watchlist und Fed neben einem Live-Chart des S&P 500.','ws.b1':'Gefilterte News-Spalten: nur Gold, nur Politik, nur High Impact, oder deine Watchlist.','ws.b2':'Live-Charts neben den News, Symbol wechseln ohne Neustart.','ws.b3':'Speichere ein Layout pro Markt und lade es mit einem Klick.','ws.b4':'Ziehen, skalieren und frei anordnen, dann sperren, wenn es passt.','ws.cta':'▶ Terminal öffnen, Gratis','ws.learn':'So funktioniert der Workspace →',
     'nav.features':'Funktionen','nav.charts':'Charts','nav.blog':'Blog','nav.pricing':'Preise',
     'nav.compare':'Vergleich','nav.faq':'FAQ','nav.contact':'Kontakt','nav.affiliates':'Affiliates','nav.signin':'Anmelden ↗',
     'nav.login':'Login','nav.launch_free':'Kostenlos starten →','nav.get_pro':'Pro holen',
@@ -3069,6 +3074,7 @@ const _LS = {
   },
   it: {
     'nav.tagline':'Intelligenza di Mercato in Tempo Reale',
+    'ws.eyebrow':'Workspace su Misura','ws.h2':'I tuoi mercati, il tuo layout,<br>un workspace','ws.sub':'Crea una vista a più colonne adatta a come fai trading. Scegli esattamente le colonne di notizie che vuoi, per asset, tema, impatto o fonte, metti grafici live accanto e salva un workspace per ogni mercato che segui. Passa da uno all’altro con un clic. Disponibile su Pro.','ws.capmain':'Markets Overview: notizie ad alto impatto, watchlist e Fed accanto a un grafico S&P 500 live.','ws.b1':'Colonne di notizie filtrate: solo oro, solo politica, solo alto impatto, o la tua watchlist.','ws.b2':'Grafici live accanto alle notizie, cambia il simbolo senza rilanciare.','ws.b3':'Salva un layout per mercato e caricalo con un clic.','ws.b4':'Trascina, ridimensiona e disponi liberamente, poi blocca quando è pronto.','ws.cta':'▶ Apri Terminal, Gratis','ws.learn':'Come funziona il workspace →',
     'nav.features':'Funzionalità','nav.charts':'Grafici','nav.blog':'Blog','nav.pricing':'Prezzi',
     'nav.compare':'Confronta','nav.faq':'FAQ','nav.contact':'Contatto','nav.affiliates':'Affiliati','nav.signin':'Accedi ↗',
     'nav.login':'Login','nav.launch_free':'Inizia Gratis →','nav.get_pro':'Ottieni Pro',
@@ -3404,7 +3410,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     const target = document.querySelector(a.getAttribute('href'));
     if (!target) return;
     e.preventDefault();
-    window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY, 80, behavior: 'smooth' });
+    window.scrollTo({ top: (target.getBoundingClientRect().top + window.scrollY)-80, behavior: 'smooth' });
   });
 });
 
