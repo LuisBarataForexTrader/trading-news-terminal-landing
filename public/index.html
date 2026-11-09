@@ -1228,29 +1228,51 @@ footer { background:var(--bg2); border-top:1px solid var(--border); padding:64px
     <h2 class="section-title" id="workspace-heading" data-i18n-html="ws.h2">Your markets, your layout,<br>one workspace</h2>
     <p class="section-sub" data-i18n="ws.sub">Build a multi-column view that fits how you trade. Choose exactly the news columns you want, by asset, topic, impact or source, drop live charts beside them, and save a workspace for every market you follow. Switch between them in one click. Available on Pro.</p>
 
-    <figure style="margin:32px 0 10px;border:1px solid var(--border);border-radius:12px;overflow:hidden;background:var(--bg2);">
-      <img src="/img/workspace/trading-news-terminal-custom-workspace-markets-overview.jpg" width="1483" height="776" loading="lazy" style="display:block;width:100%;height:auto;" alt="Trading News Terminal custom workspace with High Impact, Watchlist and Fed news columns beside a live S&amp;P 500 chart">
-      <figcaption style="font-size:12.5px;color:var(--text-dim);padding:11px 15px;" data-i18n="ws.capmain">Markets Overview: high impact, watchlist and Fed news beside a live S&amp;P 500 chart.</figcaption>
-    </figure>
-
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin-top:22px;">
-      <figure style="margin:0;border:1px solid var(--border);border-radius:10px;overflow:hidden;background:var(--bg2);">
-        <img src="/img/workspace/trading-news-terminal-forex-fx-news-workspace.jpg" width="1483" height="776" loading="lazy" style="display:block;width:100%;height:auto;" alt="Forex workspace with FX news, high impact headlines and central bank updates beside a live EUR/USD chart">
-        <figcaption style="font-size:12px;color:var(--text-dim);padding:9px 13px;">FX Desk</figcaption>
-      </figure>
-      <figure style="margin:0;border:1px solid var(--border);border-radius:10px;overflow:hidden;background:var(--bg2);">
-        <img src="/img/workspace/trading-news-terminal-crypto-bitcoin-news-workspace.jpg" width="1483" height="776" loading="lazy" style="display:block;width:100%;height:auto;" alt="Crypto workspace with Bitcoin and Ethereum news columns and a live Bitcoin chart">
-        <figcaption style="font-size:12px;color:var(--text-dim);padding:9px 13px;">Crypto Desk</figcaption>
-      </figure>
-      <figure style="margin:0;border:1px solid var(--border);border-radius:10px;overflow:hidden;background:var(--bg2);">
-        <img src="/img/workspace/trading-news-terminal-commodities-gold-oil-workspace.jpg" width="1483" height="776" loading="lazy" style="display:block;width:100%;height:auto;" alt="Commodities workspace with gold and oil news and a live gold chart">
-        <figcaption style="font-size:12px;color:var(--text-dim);padding:9px 13px;">Commodities</figcaption>
-      </figure>
-      <figure style="margin:0;border:1px solid var(--border);border-radius:10px;overflow:hidden;background:var(--bg2);">
-        <img src="/img/workspace/trading-news-terminal-macro-equities-news-workspace.jpg" width="1483" height="776" loading="lazy" style="display:block;width:100%;height:auto;" alt="Macro and equities workspace with macro, equities and politics news and a live Nasdaq 100 chart">
-        <figcaption style="font-size:12px;color:var(--text-dim);padding:9px 13px;">Macro and Equities</figcaption>
-      </figure>
+    <style>
+    .wsc{position:relative;margin:32px 0 10px;}
+    .wsc-view{position:relative;overflow:hidden;border:1px solid var(--border,#1e2a3a);border-radius:12px;background:var(--bg2,#0d1117);}
+    .wsc-track{display:flex;transition:transform .35s ease;}
+    .wsc-slide{min-width:100%;margin:0;}
+    .wsc-slide img{display:block;width:100%;height:auto;}
+    .wsc-cap{font-size:13px;color:var(--muted,#8899aa);padding:11px 15px;text-align:left;}
+    .wsc-btn{position:absolute;top:44%;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;border:1px solid var(--border,#1e2a3a);background:rgba(10,14,20,.72);color:#fff;font-size:24px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:3;}
+    .wsc-btn:hover{background:rgba(0,212,255,.22);border-color:var(--accent,#00d4ff);}
+    .wsc-prev{left:12px;} .wsc-next{right:12px;}
+    .wsc-dots{display:flex;gap:8px;justify-content:center;margin-top:16px;}
+    .wsc-dot{width:9px;height:9px;border-radius:50%;border:0;padding:0;background:rgba(255,255,255,.22);cursor:pointer;}
+    .wsc-dot.on{background:var(--accent,#00d4ff);transform:scale(1.25);}
+    @media(max-width:600px){.wsc-btn{width:34px;height:34px;font-size:20px;}}
+    </style>
+    <div class="wsc" data-ws-carousel>
+      <div class="wsc-view">
+        <div class="wsc-track">
+          <figure class="wsc-slide"><img src="/img/workspace/trading-news-terminal-custom-workspace-markets-overview.jpg" width="1483" height="776" style="display:block;width:100%;height:auto;" alt="Trading News Terminal custom workspace with High Impact, Watchlist and Fed news columns beside a live S&amp;P 500 chart"><figcaption class="wsc-cap" data-i18n="ws.capmain">Markets Overview: high impact, watchlist and Fed news beside a live S&amp;P 500 chart.</figcaption></figure>
+          <figure class="wsc-slide"><img src="/img/workspace/trading-news-terminal-forex-fx-news-workspace.jpg" width="1483" height="776" style="display:block;width:100%;height:auto;" alt="Forex workspace with FX news, high impact headlines and central bank updates beside a live EUR/USD chart"><figcaption class="wsc-cap">FX Desk: forex news and central banks beside a live EUR/USD chart.</figcaption></figure>
+          <figure class="wsc-slide"><img src="/img/workspace/trading-news-terminal-crypto-bitcoin-news-workspace.jpg" width="1483" height="776" style="display:block;width:100%;height:auto;" alt="Crypto workspace with Bitcoin and Ethereum news columns and a live Bitcoin chart"><figcaption class="wsc-cap">Crypto Desk: Bitcoin and Ethereum news with a live Bitcoin chart.</figcaption></figure>
+          <figure class="wsc-slide"><img src="/img/workspace/trading-news-terminal-commodities-gold-oil-workspace.jpg" width="1483" height="776" style="display:block;width:100%;height:auto;" alt="Commodities workspace with gold and oil news and a live gold chart"><figcaption class="wsc-cap">Commodities: gold and oil news with a live gold chart.</figcaption></figure>
+          <figure class="wsc-slide"><img src="/img/workspace/trading-news-terminal-macro-equities-news-workspace.jpg" width="1483" height="776" style="display:block;width:100%;height:auto;" alt="Macro and equities workspace with macro, equities and politics news and a live Nasdaq 100 chart"><figcaption class="wsc-cap">Macro and Equities: macro, equities and politics news with a live Nasdaq 100 chart.</figcaption></figure>
+        </div>
+        <button class="wsc-btn wsc-prev" type="button" aria-label="Previous">&#8249;</button>
+        <button class="wsc-btn wsc-next" type="button" aria-label="Next">&#8250;</button>
+      </div>
+      <div class="wsc-dots"></div>
     </div>
+    <script>
+    (function(){
+      function initC(root){
+        var track=root.querySelector('.wsc-track'), slides=root.querySelectorAll('.wsc-slide'), n=slides.length; if(!n)return;
+        var i=0, dotsWrap=root.querySelector('.wsc-dots'), dots=[];
+        for(var k=0;k<n;k++){ (function(k){ var b=document.createElement('button'); b.type='button'; b.className='wsc-dot'+(k===0?' on':''); b.setAttribute('aria-label','Slide '+(k+1)); b.onclick=function(){ go(k); }; dotsWrap.appendChild(b); dots.push(b); })(k); }
+        function go(x){ i=(x+n)%n; track.style.transform='translateX('+(i*-100)+'%)'; for(var d=0;d<dots.length;d++){ dots[d].className='wsc-dot'+(d===i?' on':''); } }
+        var p=root.querySelector('.wsc-prev'), nx=root.querySelector('.wsc-next');
+        if(p)p.onclick=function(){ go(i-1); }; if(nx)nx.onclick=function(){ go(i+1); };
+        var x0=null;
+        root.addEventListener('touchstart',function(e){ x0=e.touches[0].clientX; },{passive:true});
+        root.addEventListener('touchend',function(e){ if(x0===null)return; var dx=e.changedTouches[0].clientX-x0; if(Math.abs(dx)>40){ go(dx<0?i+1:i-1); } x0=null; },{passive:true});
+      }
+      var els=document.querySelectorAll('[data-ws-carousel]'); for(var j=0;j<els.length;j++) initC(els[j]);
+    })();
+    </script>
 
     <ul style="list-style:none;margin:30px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px 26px;">
       <li style="font-size:14px;color:var(--text-dim);line-height:1.6;" data-i18n="ws.b1">Filtered news columns: gold only, politics only, high impact only, or your watchlist.</li>
