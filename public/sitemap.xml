@@ -7,6 +7,12 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://www.tradingnewsterminal.com/custom-news-workspace</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.tradingnewsterminal.com/forex-news-feed</loc>
     <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
