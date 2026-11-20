@@ -879,6 +879,32 @@ let _lastUnverifiedEmail = '';
   }
 })();
 
+// ── GOOGLE ADS / GA4 ATTRIBUTION CAPTURE ─────────────────────────────────────
+(function() {
+  try {
+    var _p = new URLSearchParams(location.search);
+    var _g = _p.get('gclid') || _p.get('gbraid') || _p.get('wbraid') || '';
+    if (_g) {
+      var _e = new Date(); _e.setDate(_e.getDate() + 90);
+      document.cookie = 'tnt_gclid=' + _g + ';expires=' + _e.toUTCString() + ';path=/;SameSite=Lax';
+      try { localStorage.setItem('tnt_gclid', _g); } catch(_) {}
+    }
+  } catch(_) {}
+})();
+// GA4 client id from the _ga cookie (format GA1.1.<id1>.<id2> -> "<id1>.<id2>")
+function _gaClientId() {
+  try { var m = document.cookie.match(/_ga=GA\d\.\d\.(\d+\.\d+)/); return m ? m[1] : ''; } catch(_) { return ''; }
+}
+// Google click id: our captured param first, else Google's _gcl_aw linker cookie
+function _gclid() {
+  try {
+    var s = ''; try { s = localStorage.getItem('tnt_gclid') || ''; } catch(_) {}
+    if (s) return s;
+    var m = document.cookie.match(/_gcl_aw=GCL\.\d+\.([^;]+)/);
+    return m ? decodeURIComponent(m[1]) : '';
+  } catch(_) { return ''; }
+}
+
 // ── PRO FLOW DETECTION ──────────────────────────────────────────────────────
 const _params = new URLSearchParams(location.search);
 const PRO_FROM_URL   = _params.get('plan') === 'pro';
@@ -1181,10 +1207,12 @@ async function handleSignup(e) {
   try {
     const r = await fetch(BACKEND+'/auth/signup', {
       method:'POST', headers:{'Content-Type':'application/json'},
-      body: JSON.stringify({email, password, name, country})
+      body: JSON.stringify({email, password, name, country, ga_client_id: _gaClientId(), gclid: _gclid()})
     });
     const data = await r.json();
     if (!r.ok) { showMsg(data.detail || 'Signup failed. Please try again.', 'error'); return; }
+    // Google Ads / GA4 signup conversion (GA4 attributes it to the ad click in this session)
+    try { if (window.gtag) gtag('event', 'sign_up', { method: 'email' }); } catch(_) {}
     _lastUnverifiedEmail = email;
     showMsg(PRO_CHECKOUT ? _tl('msg.signup.pro') : _tl('msg.signup.basic'), 'success');
     setTimeout(() => { document.getElementById('resend-wrap').style.display = 'block'; }, 3000);
