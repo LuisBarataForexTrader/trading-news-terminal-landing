@@ -1,90 +1,75 @@
-/* TNT Black Friday popup — EN only, campaign-driven, self-removing.
- * Shows a small dismissible card linking to the 1-click annual checkout (€250).
- * Driven by GET /campaign/annual-offer: when the campaign ends (coupon expires)
- * the endpoint returns active:false and NOTHING shows — no date hardcoded, no
- * manual revert. Only renders on English pages (html lang^="en"); auth/admin
- * pages are skipped. (Luís 25-nov, Black Friday) */
+/* TNT Black Friday popup — shows the English BF creative as a modal.
+ * Campaign-driven: fetches GET /campaign/annual-offer and only shows while the
+ * campaign is active (coupon not expired). When it ends (6 Dec) the endpoint
+ * returns active:false and NOTHING shows — no date hardcoded, no manual revert.
+ * EN pages only (html lang^="en"); auth/admin pages skipped; dismissible. The
+ * creative image itself links to the 1-click annual checkout (€250). (Luís 25-nov) */
 (function () {
   'use strict';
+  var DISMISS_KEY = 'tnt_bf_popup_v2_dismissed';
   try {
     var lang = (document.documentElement.getAttribute('lang') || 'en').toLowerCase();
-    if (lang.slice(0, 2) !== 'en') return;               // EN pages only
+    if (lang.slice(0, 2) !== 'en') return;                 // EN pages only
     var path = (location.pathname || '').toLowerCase();
     var SKIP = ['/login', '/signin', '/signup', '/reset-password', '/verify-email', '/admin', '/404'];
     for (var i = 0; i < SKIP.length; i++) { if (path.indexOf(SKIP[i]) === 0) return; }
-    if (localStorage.getItem('tnt_bf_popup_dismissed_v1') === '1') return;
+    if (localStorage.getItem(DISMISS_KEY) === '1') return;
   } catch (_) { /* keep going if storage/lang read throws */ }
 
   var API = 'https://api.tradingnewsterminal.com/campaign/annual-offer';
   var CTA_URL = 'https://www.tradingnewsterminal.com/login?checkout=annual';
+  var IMG = '/campaign/bf-en.jpg';
 
   function dismiss() {
-    try { localStorage.setItem('tnt_bf_popup_dismissed_v1', '1'); } catch (_) {}
+    try { localStorage.setItem(DISMISS_KEY, '1'); } catch (_) {}
     var el = document.getElementById('tntBfPopup');
-    if (el) { el.classList.remove('tntbf-in'); setTimeout(function () { if (el.parentNode) el.parentNode.removeChild(el); }, 320); }
+    if (el) { el.classList.remove('tntbf-in'); setTimeout(function () { if (el.parentNode) el.parentNode.removeChild(el); }, 300); }
   }
 
-  function fmtDeadline(ts) {
-    if (!ts) return '';
-    try { return new Date(ts * 1000).toLocaleDateString('en-US', { month: 'short', day: 'numeric' }); } catch (_) { return ''; }
-  }
-
-  function show(d) {
-    var cur = (d.currency === 'EUR') ? '€' : ((d.currency || 'EUR') + ' ');
-    var price = cur + Math.round(d.annual_price);
-    var save = cur + Math.round(d.save);
-    var until = fmtDeadline(d.deadline);
-    var label = (d.label || 'Black Friday');
-
+  function show() {
     var css = document.createElement('style');
     css.textContent =
-      '#tntBfPopup{position:fixed;right:20px;bottom:20px;z-index:2147483000;width:340px;max-width:calc(100vw - 32px);' +
-      'background:#0f1521;border:1px solid #243244;border-radius:14px;padding:18px 18px 16px;' +
-      'box-shadow:0 18px 50px rgba(0,0,0,.55);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;' +
-      'opacity:0;transform:translateY(16px);transition:opacity .32s ease,transform .32s ease;}' +
-      '#tntBfPopup.tntbf-in{opacity:1;transform:translateY(0);}' +
-      '#tntBfPopup .tntbf-badge{display:inline-block;background:#00d4ff;color:#04121a;font-weight:800;font-size:10.5px;' +
-      'letter-spacing:.6px;padding:3px 9px;border-radius:5px;text-transform:uppercase;}' +
-      '#tntBfPopup .tntbf-h{color:#f0f9ff;font-size:18px;font-weight:800;margin:11px 0 5px;line-height:1.25;letter-spacing:-.01em;}' +
-      '#tntBfPopup .tntbf-h b{color:#00d4ff;}' +
-      '#tntBfPopup .tntbf-p{color:#9fb3c8;font-size:13px;line-height:1.5;margin:0 0 14px;}' +
-      '#tntBfPopup .tntbf-cta{display:block;text-align:center;background:#00d4ff;color:#04121a;text-decoration:none;' +
-      'border-radius:8px;padding:12px;font-weight:800;font-size:14px;letter-spacing:.2px;}' +
+      '#tntBfPopup{position:fixed;inset:0;z-index:2147483000;display:flex;align-items:center;justify-content:center;' +
+      'padding:20px;background:rgba(3,7,18,.82);opacity:0;transition:opacity .3s ease;}' +
+      '#tntBfPopup.tntbf-in{opacity:1;}' +
+      '#tntBfPopup .tntbf-card{position:relative;transform:translateY(14px) scale(.98);transition:transform .3s ease;}' +
+      '#tntBfPopup.tntbf-in .tntbf-card{transform:translateY(0) scale(1);}' +
+      '#tntBfPopup .tntbf-img{display:block;width:auto;max-width:min(440px,92vw);max-height:84vh;' +
+      'border-radius:14px;box-shadow:0 24px 70px rgba(0,0,0,.6);cursor:pointer;}' +
+      '#tntBfPopup .tntbf-cta{display:block;text-align:center;margin:12px auto 0;max-width:min(440px,92vw);' +
+      'background:#00d4ff;color:#04121a;text-decoration:none;border-radius:9px;padding:13px;font-weight:800;' +
+      'font-size:15px;letter-spacing:.2px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;}' +
       '#tntBfPopup .tntbf-cta:hover{background:#2ee0ff;}' +
-      '#tntBfPopup .tntbf-x{position:absolute;top:10px;right:12px;background:transparent;border:0;color:#5b6b7e;' +
-      'font-size:20px;line-height:1;cursor:pointer;padding:4px;}' +
-      '#tntBfPopup .tntbf-x:hover{color:#9fb3c8;}' +
-      '#tntBfPopup .tntbf-sub{color:#64748b;font-size:11px;margin-top:9px;text-align:center;}' +
-      '@media(max-width:520px){#tntBfPopup{right:12px;left:12px;bottom:12px;width:auto;}}';
+      '#tntBfPopup .tntbf-x{position:absolute;top:-14px;right:-14px;width:34px;height:34px;border-radius:50%;' +
+      'background:#0f1521;border:1px solid #2b3a4d;color:#cbd5e1;font-size:20px;line-height:1;cursor:pointer;' +
+      'display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.5);}' +
+      '#tntBfPopup .tntbf-x:hover{background:#1a2535;color:#fff;}' +
+      '@media(max-width:520px){#tntBfPopup .tntbf-x{top:-10px;right:-6px;}}';
     document.head.appendChild(css);
 
     var el = document.createElement('div');
     el.id = 'tntBfPopup';
     el.setAttribute('role', 'dialog');
-    el.setAttribute('aria-label', label + ' offer');
+    el.setAttribute('aria-label', 'Black Friday offer');
     el.innerHTML =
+      '<div class="tntbf-card">' +
       '<button class="tntbf-x" id="tntBfX" aria-label="Close">×</button>' +
-      '<span class="tntbf-badge">' + esc(label) + '</span>' +
-      '<div class="tntbf-h">Pro Annual — <b>' + esc(price) + '</b>/yr</div>' +
-      '<p class="tntbf-p">A full year of real-time market news. Save ' + esc(save) +
-      (until ? ' · ends ' + esc(until) : '') + '.</p>' +
-      '<a class="tntbf-cta" href="' + CTA_URL + '">Get the ' + esc(label) + ' deal →</a>' +
-      '<div class="tntbf-sub">1-click · no code needed</div>';
+      '<a href="' + CTA_URL + '" aria-label="Get the Black Friday deal">' +
+      '<img class="tntbf-img" src="' + IMG + '" alt="Trading News Terminal — Black Friday: Pro Annual deal" loading="eager">' +
+      '</a>' +
+      '<a class="tntbf-cta" href="' + CTA_URL + '">Get the Black Friday deal →</a>' +
+      '</div>';
     document.body.appendChild(el);
-    document.getElementById('tntBfX').onclick = dismiss;
-    requestAnimationFrame(function () { el.classList.add('tntbf-in'); });
-  }
 
-  function esc(s) {
-    return String(s).replace(/[&<>"']/g, function (c) {
-      return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c];
-    });
+    document.getElementById('tntBfX').onclick = dismiss;
+    el.addEventListener('click', function (e) { if (e.target === el) dismiss(); }); // click backdrop closes
+    requestAnimationFrame(function () { el.classList.add('tntbf-in'); });
   }
 
   function init() {
     fetch(API, { cache: 'no-store' })
       .then(function (r) { return r.ok ? r.json() : null; })
-      .then(function (d) { if (d && d.active && d.save > 0 && d.annual_price != null) { setTimeout(function () { show(d); }, 1400); } })
+      .then(function (d) { if (d && d.active) { setTimeout(show, 1400); } })
       .catch(function () {});
   }
 
