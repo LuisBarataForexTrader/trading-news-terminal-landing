@@ -979,9 +979,35 @@ function _initProFlow() {
       <div class="panel-stat"><div class="panel-stat-num">€40</div><div class="panel-stat-label">${_tl('panel.stat.price.label.pro')}</div></div>
       <div class="panel-stat"><div class="panel-stat-num">6</div><div class="panel-stat-label">${_tl('panel.stat.assets.label')}</div></div>
       <div class="panel-stat"><div class="panel-stat-num">7</div><div class="panel-stat-label">${_tl('panel.stat.tv.label')}</div></div>`;
+    // Fluxo ANUAL (?checkout=annual): troca o €40/mês FIXO pelo preço ANUAL dinâmico da campanha ativa
+    // (€250 BF agora / €360 depois, auto). O fluxo MENSAL (€40) fica intacto. (Luis 25-nov)
+    if (ANNUAL_FROM_URL) _applyAnnualOffer();
   }
   // Update signup benefits
   document.getElementById('signup-benefits').innerHTML = _buildProBenefitsHTML();
+}
+
+// Preço ANUAL dinâmico no painel de login (fluxo ?checkout=annual). Lê /campaign/annual-offer:
+// campanha ativa -> "Black Friday · €250 /ano" + "poupa €110"; sem campanha -> "€360 /ano". Auto-reverte
+// quando o cupão expira. NÃO afeta o fluxo mensal (€40/mês). Fallback €360 se o fetch falhar. (Luis 25-nov)
+async function _applyAnnualOffer() {
+  const lang = localStorage.getItem('tnt_lang') || 'en';
+  const yr = ({en:'/year',pt:'/ano',es:'/año',fr:'/an',de:'/Jahr',it:'/anno'})[lang] || '/year';
+  const sv = ({en:'save',pt:'poupa',es:'ahorra',fr:'économise',de:'spare',it:'risparmia'})[lang] || 'save';
+  let o = { active:false, annual_normal:360, annual_price:360, save:0, currency:'EUR', label:'' };
+  try {
+    const r = await fetch(BACKEND + '/campaign/annual-offer', { cache:'no-store' });
+    if (r.ok) { const d = await r.json(); if (d && d.annual_price != null) o = d; }
+  } catch(_) {}
+  const cur = (o.currency === 'EUR') ? '€' : ((o.currency||'EUR') + ' ');
+  const price = cur + Math.round(o.annual_price);
+  const bf = !!(o.active && o.save > 0);
+  const badge = document.getElementById('panel-badge');
+  const num = document.querySelector('#panel-stats .panel-stat-num');
+  const lbl = document.querySelector('#panel-stats .panel-stat-label');
+  if (badge) badge.textContent = (bf ? (o.label || 'Black Friday') : 'Pro Annual') + ' · ' + price + ' ' + yr;
+  if (num) num.textContent = price;
+  if (lbl) lbl.textContent = bf ? (sv + ' ' + cur + Math.round(o.save)) : yr.replace('/', '').toUpperCase();
 }
 
 // ── Plan picker ──────────────────────────────────────────────────────────────
