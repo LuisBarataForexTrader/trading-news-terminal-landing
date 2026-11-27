@@ -20,7 +20,7 @@ Trading News Terminal (TNT) delivers institutional-grade market news the moment 
 
 ## Pricing
 - Basic: Free forever, no credit card. News feed with a ~5-minute delay.
-- Pro: €40/month, or €360/year (3 months free vs monthly). 7-day free trial, cancel anytime. Removes the news delay and unlocks Squawk, 7 live TV channels, Market Screener, Central Banks Tracker, Market Sentiment and the Macro & Bonds Hub.
+- Pro: €40/month, or €360/year (3 months free vs monthly). 5-day free trial, cancel anytime. Removes the news delay and unlocks Squawk, 7 live TV channels, Market Screener, Central Banks Tracker, Market Sentiment and the Macro & Bonds Hub.
 - Telegram Premium: €19/month, unlimited real-time HIGH-impact alerts, ad-free.
 
 ## Key pages
